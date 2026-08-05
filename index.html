@@ -675,6 +675,31 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
 .bidang-card h4{color:var(--orange);font-size:.94rem;margin-bottom:8px;}
 .bidang-card p{font-size:.78rem;color:#c3ccd9;margin:0;line-height:1.5;}
 
+/* === Organel grid (Biologi) === */
+.organel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px;}
+.organel-card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 16px;
+  transition:transform .15s,border-color .15s,opacity .15s;
+}
+.organel-card:hover{transform:translateY(-3px);border-color:var(--orange);}
+.organel-card h4{font-size:.92rem;margin-bottom:6px;color:var(--heading);}
+.organel-card p{font-size:.78rem;color:var(--slate);margin:0;line-height:1.5;}
+.organel-card.hide{display:none;}
+
+/* === Step row (mitosis phases, Biologi) === */
+.step-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;}
+.step-pill{
+  flex:1;min-width:110px;padding:12px 10px;border-radius:10px;border:1.5px solid var(--line);
+  background:var(--paper-2);color:var(--heading-soft);font-family:'Space Grotesk';font-weight:600;font-size:.84rem;
+  cursor:pointer;transition:all .15s;text-align:center;
+}
+.step-pill:hover{border-color:var(--orange);}
+.step-pill.active{background:var(--navy);border-color:var(--navy);color:#fff;}
+
+/* === Grid column utility modifiers === */
+.grid-3{grid-template-columns:repeat(3,1fr);}
+.grid-4{grid-template-columns:repeat(4,1fr);}
+
 /* === Quiz === */
 .quiz-box{
   background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);
@@ -750,6 +775,9 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
   .bidang-grid{grid-template-columns:repeat(2,1fr);}
   .shu-grid{grid-template-columns:1fr;}
   .form-detail-grid{grid-template-columns:1fr;}
+  .grid-3{grid-template-columns:repeat(2,1fr);}
+  .grid-4{grid-template-columns:repeat(2,1fr);}
+  .organel-grid{grid-template-columns:repeat(2,1fr);}
 }
 @media(max-width:680px){
   nav.links{position:fixed;top:64px;left:0;right:0;background:var(--paper);flex-direction:column;align-items:stretch;padding:12px 20px;border-bottom:1px solid var(--line);display:none;gap:2px;}
@@ -768,6 +796,10 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
   .brand-sub{font-size:.58rem;letter-spacing:.06em;}
   .lesson-subnav{top:96px;}
   .lesson-subnav-inner{padding:10px 20px;}
+  .grid-3{grid-template-columns:1fr;}
+  .grid-4{grid-template-columns:1fr;}
+  .organel-grid{grid-template-columns:1fr;}
+  .step-pill{min-width:90px;font-size:.76rem;padding:10px 6px;}
 }
 </style>
 </head>
@@ -784,6 +816,7 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
     </a>
     <nav class="links" id="navLinks">
       <a href="#" data-subject="ekonomi" class="subject-link active">Ekonomi</a>
+      <a href="#" data-subject="biologi" class="subject-link">Biologi</a>
       <a href="#" data-subject="matematika" class="subject-link">Matematika</a>
       <a href="#" data-subject="kimia" class="subject-link">Kimia</a>
       <a href="#" data-subject="fisika" class="subject-link">Fisika</a>
@@ -1315,682 +1348,43 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
 
 </div><!-- /view-lesson -->
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="brand">
-      <img src="data:image/png;base64,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DkPmlQGfdynR6ERyjAOZfezI7m8LSKxuwYzW7X8fWYucS0Yy3jDk9yG0ackLsGye0uP3ieZ6tL1WgLbXCgBAzFd/A0daC45ZDKizGVBnNfh04kZVBFJNDgBAaowDabEOnB/XjqHxdmT0sQcs1DOFQrRua1cuwOxrr2S8YcrvgNXUTKXXrPXilzA9dnHUt7j40s6/ts9sQkNb1yd0fB3Urif3Z9rypl5Bj9Zt0vhsXjIKc5qcxDJOWKg4vnzPq0endMfbB30HQ0WTEX+p6YMDJ0wh+cTESeOzUfz8HxlvmNPsLHTsrS8qttcKhJZ3IYWSiiYj3vwhDh+YTSG1l+0M440cml5Gipm1XokeO0dYd8z1+HEqoUqmYM/EeCOL5teB1dRMJa7gEByVpaLt7Y2a362kB7NNxYf1JpTU9UblaSOONhulnGye8UYe/UYjZeYqhszcjlsP2w88HxJ75YomI6pOGzti/b41Wpq9a3fWrlzAE1YRSPfHi6qpmYqamoleeXfB1dIgXLVH4Kjai/IP3kNG1A+6rNMd6TfNRtS0RKPytBEtjqiwfVD4q09t5NQ4ESpgD/gGgKi4RCUqMxeGzFw8tjdaFL1WikSjEyaDCwAwpr/tnPf0MzoxJvHn10vqep/zdXecVkdUxD0gLSUpAXte3YYhaQMZb4QKaMCdabCrwC/hdbWHfEabB9SHldvn52NTwXKGG+GCHjB5JyUpAbufe5ijiggAA5bKw/evwG23cKJA+icGLIG1KxdgxeIbOZqIzsGAQ9gNM3LxwOolPElFXWLAIWjtygW4Of8qhks9YsAhIisjHevuWcLrueQVBhxEWRnpWHDTdFydm8O9LfmEAQfYpPHZ+N0NVyN3wiV8rCf5jQHrKCUpAZfnXISpuTkYkZHOa7ekOQbsJ3ekADA2OwsJ/eIxLjsLSf378rIP6U4RottnlOmmvuGUsFjPvfdZBvy8St5q+e/LOkKLve1lRPVN1eR3KGh7YH7+I/Kf/ANhiSIYAyaSGAMmkhgDJpIYAyaSGAMmkhgDJpIYAyaSGAMmkhgDJpIYAyaSGAMmkhgDJpIYxwMTBYDhgis7/q1Ex2i23KCNByYi//EQmkhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhi/w+yp7KHhGWorQAAAABJRU5ErkJggg==" alt="Dalton Lab" style="height:30px;">
-      <div>
-        <div class="brand-text" style="color:#fff;">DALTON <span>LAB</span></div>
-        <div class="brand-sub" style="color:#7d8ea1;">Mathematics · Physics · Chemistry</div>
-      </div>
-    </div>
-    <p class="footer-note">Dibuat untuk membantu belajar siswa SMA — satu tempat untuk semua mata pelajaran.</p>
+<!-- ===================== VIEW: LESSON (Biologi - Sel) ===================== -->
+<div id="view-lesson-biologi" style="display:none;">
+
+<div class="lesson-subnav">
+  <div class="wrap lesson-subnav-inner">
+    <button class="breadcrumb-back small" id="backToBabsBtnBio">← Biologi</button>
+    <nav class="lesson-links">
+      <a href="#sejarah-sel">Sejarah</a>
+      <a href="#komponen-kimiawi">Kimiawi</a>
+      <a href="#komponen-struktural">Struktural</a>
+      <a href="#organel">Organel</a>
+      <a href="#perbandingan-sel">Perbandingan</a>
+      <a href="#transpor-membran">Transpor</a>
+      <a href="#reproduksi-sel">Reproduksi</a>
+      <a href="#kuis-bio" class="cta">Kuis →</a>
+    </nav>
   </div>
-</footer>
+</div>
 
-<script>
-/* ===== Theme toggle ===== */
-function getCurrentTheme(){
-  return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-}
-function setTheme(theme){
-  if(theme === 'dark'){
-    document.documentElement.setAttribute('data-theme','dark');
-  } else {
-    document.documentElement.removeAttribute('data-theme');
-  }
-  try{ localStorage.setItem('daltonlab_theme', theme); }catch(e){}
-  const toggleBtn = document.getElementById('themeToggle');
-  if(toggleBtn){
-    toggleBtn.setAttribute('aria-pressed', theme === 'dark');
-    toggleBtn.title = theme === 'dark' ? 'Ganti ke tema terang' : 'Ganti ke tema gelap';
-  }
-}
-document.getElementById('themeToggle').addEventListener('click',()=>{
-  setTheme(getCurrentTheme() === 'dark' ? 'light' : 'dark');
-});
-setTheme(getCurrentTheme()); // sync aria/title with whatever the head script already applied
-
-/* ===== Mobile nav ===== */
-document.getElementById('hamburgerBtn').addEventListener('click',()=>{
-  document.getElementById('navLinks').classList.toggle('open');
-});
-document.querySelectorAll('#navLinks a').forEach(a=>{
-  a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
-});
-
-/* ===== Subjects / Babs data model ===== */
-const subjectsData = {
-  ekonomi: {
-    name:'Ekonomi', icon:'📊', ready:true,
-    desc:'Badan usaha, koperasi, manajemen, dan seluk-beluk ekonomi lainnya.',
-    babs:[
-      {id:'bab1-badan-usaha', num:'Bab 1', title:'Badan Usaha, Koperasi & Manajemen', desc:'Bentuk-bentuk badan usaha, BUMN/BUMD, koperasi & kalkulator SHU, dasar manajemen.', ready:true},
-    ]
-  },
-  matematika: {
-    name:'Matematika', icon:'📐', ready:false,
-    desc:'Aljabar, geometri, kalkulus, statistika, dan lainnya.',
-    babs:[]
-  },
-  kimia: {
-    name:'Kimia', icon:'🧪', ready:false,
-    desc:'Struktur atom, ikatan kimia, stoikiometri, dan lainnya.',
-    babs:[]
-  },
-  fisika: {
-    name:'Fisika', icon:'⚛️', ready:false,
-    desc:'Mekanika, listrik-magnet, gelombang, dan lainnya.',
-    babs:[]
-  },
-};
-
-/* ===== WhatsApp marketing links ===== */
-const WHATSAPP_NUMBER = '6282136673896'; // 082136673896 in international format
-
-/* ===== Google Sheets / Apps Script backend =====
-   Replace with your deployed Apps Script Web App URL (ends in /exec).
-   Used for BOTH login checks and quiz result logging. See setup notes provided separately. */
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHBK1OXZjz59KjTjRkcTEut8I007AGblM2px7PAxg1qUYYJzLHtfIQtHkGtQNjasasYw/exec";
-
-function waLink(message){
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-}
-document.getElementById('waFloat').href = waLink('Halo Dalton Lab! Saya tertarik belajar di Dalton Lab dan ingin tahu lebih lanjut tentang akses materi & bimbingan tutor 🙌');
-document.getElementById('homeWaBtn').href = waLink('Halo Dalton Lab! Saya ingin tanya-tanya soal kelas bimbingan (privat/grup) via Zoom 🙌');
-
-/* ===== Session / auth ===== */
-function getSession(){
-  try{
-    const raw = localStorage.getItem('daltonlab_session');
-    return raw ? JSON.parse(raw) : null;
-  }catch(e){ return null; }
-}
-function saveSession(session){
-  localStorage.setItem('daltonlab_session', JSON.stringify(session));
-  renderSessionBadge();
-}
-function clearSession(){
-  localStorage.removeItem('daltonlab_session');
-  renderSessionBadge();
-}
-function hasAccess(subjectKey){
-  const s = getSession();
-  if(!s || !s.akses) return false;
-  return s.akses.includes('all') || s.akses.includes(subjectKey);
-}
-function renderSessionBadge(){
-  const badge = document.getElementById('sessionBadge');
-  const s = getSession();
-  if(s){
-    badge.style.display = 'flex';
-    badge.innerHTML = `👋 ${s.nama || s.username} <button id="logoutBtn">Keluar</button>`;
-    document.getElementById('logoutBtn').addEventListener('click',()=>{
-      clearSession();
-      goToHome();
-    });
-  } else {
-    badge.style.display = 'none';
-    badge.innerHTML = '';
-  }
-}
-renderSessionBadge();
-
-/* ===== View router ===== */
-const viewHome = document.getElementById('view-home');
-const viewBabs = document.getElementById('view-babs');
-const viewSignin = document.getElementById('view-signin');
-const viewLesson = document.getElementById('view-lesson');
-let activeSubjectKey = 'ekonomi';
-
-function renderSubjectGrid(){
-  const grid = document.getElementById('subjectGrid');
-  grid.innerHTML = Object.entries(subjectsData).map(([key,s])=>`
-    <div class="subject-card ${s.ready?'ready':'soon'}" data-subject="${key}">
-      <span class="subj-icon">${s.icon}</span>
-      <h3>${s.name}</h3>
-      <p>${s.desc}</p>
-      <span class="subj-status">${s.ready ? 'Tersedia' : 'Segera Hadir'}</span>
-    </div>`).join('');
-  grid.querySelectorAll('.subject-card').forEach(card=>{
-    card.addEventListener('click',()=>enterSubject(card.dataset.subject));
-  });
-}
-renderSubjectGrid();
-
-function hideAllViews(){
-  viewHome.style.display = 'none';
-  viewBabs.style.display = 'none';
-  viewSignin.style.display = 'none';
-  viewLesson.style.display = 'none';
-}
-
-function goToHome(){
-  hideAllViews();
-  viewHome.style.display = '';
-  document.querySelectorAll('.subject-link').forEach(l=>l.classList.remove('active'));
-  window.scrollTo({top:0,behavior:'instant'});
-}
-
-/* Entry point when a subject is clicked: gate behind sign-in unless already authorized */
-function enterSubject(subjectKey){
-  activeSubjectKey = subjectKey;
-  if(hasAccess(subjectKey)){
-    goToBabs(subjectKey);
-  } else {
-    goToSignIn(subjectKey);
-  }
-}
-
-function goToSignIn(subjectKey){
-  activeSubjectKey = subjectKey;
-  const s = subjectsData[subjectKey];
-  document.getElementById('signinTitle').textContent = 'Masuk untuk Mengakses ' + s.name;
-  document.getElementById('signinSubtitle').textContent = `Materi ${s.name} khusus untuk siswa terdaftar Dalton Lab.`;
-  document.getElementById('signinError').classList.remove('show');
-  document.getElementById('signinUsername').value = '';
-  document.getElementById('signinPassword').value = '';
-  document.getElementById('signinWaBtn').href = waLink(`Halo Dalton Lab, saya belum punya akun untuk mengakses materi ${s.name}. Boleh dibantu daftarkan? 🙏`);
-
-  hideAllViews();
-  viewSignin.style.display = '';
-  document.querySelectorAll('.subject-link').forEach(l=>l.classList.toggle('active', l.dataset.subject===subjectKey));
-  window.scrollTo({top:0,behavior:'instant'});
-}
-
-function goToBabs(subjectKey){
-  activeSubjectKey = subjectKey;
-  const s = subjectsData[subjectKey];
-  document.getElementById('babsEyebrow').textContent = 'Mata Pelajaran';
-  document.getElementById('babsTitle').textContent = s.name + ' — Pilih Bab';
-  document.getElementById('babsSubtitle').textContent = s.desc;
-
-  const babGrid = document.getElementById('babGrid');
-  if(s.babs.length === 0){
-    babGrid.innerHTML = `<p style="color:var(--slate);grid-column:1/-1;">Materi ${s.name} sedang disiapkan — segera hadir di sini. 🚧</p>`;
-  } else {
-    babGrid.innerHTML = s.babs.map(b=>`
-      <div class="bab-card ${b.ready?'':'soon'}" data-bab="${b.id}">
-        ${b.ready?'':'<span class="soon-tag">Segera Hadir</span>'}
-        <div class="bab-num">${b.num}</div>
-        <h4>${b.title}</h4>
-        <p>${b.desc}</p>
-      </div>`).join('');
-    babGrid.querySelectorAll('.bab-card:not(.soon)').forEach(card=>{
-      card.addEventListener('click',()=>goToLesson(card.dataset.bab));
-    });
-  }
-
-  hideAllViews();
-  viewBabs.style.display = '';
-  document.querySelectorAll('.subject-link').forEach(l=>l.classList.toggle('active', l.dataset.subject===subjectKey));
-  window.scrollTo({top:0,behavior:'instant'});
-}
-
-let activeBabId = null;
-function goToLesson(babId){
-  activeBabId = babId;
-  document.getElementById('backToBabsBtn').textContent = '← ' + subjectsData[activeSubjectKey].name;
-  const session = getSession();
-  const gateNameInput = document.getElementById('gateName');
-  if(session && gateNameInput && !gateNameInput.value){
-    gateNameInput.value = session.nama || '';
-  }
-  hideAllViews();
-  viewLesson.style.display = '';
-  window.scrollTo({top:0,behavior:'instant'});
-}
-
-document.getElementById('logoHome').addEventListener('click',e=>{e.preventDefault(); goToHome();});
-document.getElementById('backToHomeBtn').addEventListener('click',goToHome);
-document.getElementById('backToHomeFromSignin').addEventListener('click',goToHome);
-document.getElementById('backToBabsBtn').addEventListener('click',()=>goToBabs(activeSubjectKey));
-document.querySelectorAll('.subject-link').forEach(link=>{
-  link.addEventListener('click',e=>{
-    e.preventDefault();
-    enterSubject(link.dataset.subject);
-  });
-});
-
-/* ===== Sign-in submit ===== */
-document.getElementById('signinSubmitBtn').addEventListener('click', attemptSignIn);
-document.getElementById('signinPassword').addEventListener('keydown', e=>{ if(e.key==='Enter') attemptSignIn(); });
-document.getElementById('signinUsername').addEventListener('keydown', e=>{ if(e.key==='Enter') attemptSignIn(); });
-
-function showSigninError(msg){
-  const el = document.getElementById('signinError');
-  el.textContent = msg;
-  el.classList.add('show');
-}
-
-async function attemptSignIn(){
-  const username = document.getElementById('signinUsername').value.trim();
-  const password = document.getElementById('signinPassword').value;
-  const btn = document.getElementById('signinSubmitBtn');
-  document.getElementById('signinError').classList.remove('show');
-
-  if(!username || !password){
-    showSigninError('Username dan password wajib diisi.');
-    return;
-  }
-  if(!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.indexOf('PASTE_YOUR') === 0){
-    showSigninError('Sistem login belum diaktifkan oleh admin. Hubungi kami via WhatsApp di panel sebelah.');
-    return;
-  }
-
-  btn.disabled = true;
-  btn.textContent = 'Memeriksa…';
-  try{
-    const res = await fetch(GOOGLE_SCRIPT_URL, {
-      method:'POST',
-      headers:{'Content-Type':'text/plain;charset=utf-8'},
-      body: JSON.stringify({type:'login', username, password})
-    });
-    const data = await res.json();
-    if(data.success){
-      saveSession({username, nama:data.nama || username, akses: data.akses || []});
-      if(hasAccess(activeSubjectKey)){
-        goToBabs(activeSubjectKey);
-      } else {
-        showSigninError(`Akun kamu berhasil masuk, tapi belum punya akses ke ${subjectsData[activeSubjectKey].name}. Hubungi admin via WhatsApp untuk upgrade akses.`);
-      }
-    } else {
-      showSigninError(data.message || 'Username atau password salah.');
-    }
-  }catch(err){
-    showSigninError('Gagal terhubung ke server. Periksa koneksi internet kamu.');
-  }finally{
-    btn.disabled = false;
-    btn.textContent = 'Masuk';
-  }
-}
-
-/* ===== Sector grid ===== */
-const sectors = [
-  {n:'01',t:'Ekstraktif',d:'Mengambil / mengolah hasil alam langsung.',ex:'Pertamina · Freeport · PTBA'},
-  {n:'02',t:'Agraris',d:'Mengolah hasil pertanian, perkebunan & peternakan.',ex:'Perkebunan · Pertanian · Charoen Pokphand'},
-  {n:'03',t:'Manufaktur / Industri',d:'Mengolah bahan mentah jadi barang setengah/jadi.',ex:'Astra · ICBP · Semen Indonesia'},
-  {n:'04',t:'Dagang',d:'Menjual kembali barang tanpa mengubah bentuknya.',ex:'Alfamart · Matahari · Ace Hardware'},
-  {n:'05',t:'Jasa',d:'Menyediakan layanan operasional & pelayanan.',ex:'Telkom · RS Siloam · Bank · Perhotelan'},
-];
-document.getElementById('sectorGrid').innerHTML = sectors.map(s=>`
-  <div class="sector-card">
-    <div class="sector-num">${s.n}</div>
-    <h4>${s.t}</h4>
-    <p>${s.d}</p>
-    <p style="margin-top:8px;color:var(--orange);font-family:'IBM Plex Mono';font-size:.72rem;">${s.ex}</p>
-  </div>`).join('');
-
-/* ===== Bentuk Badan Usaha ===== */
-const forms = [
-  {id:'perseorangan',name:'Perseorangan',owner:'1 orang',
-    modal:'Pribadi milik satu orang', status:'Bukan badan hukum', tanggung:'Tidak terbatas (harta pribadi ikut menanggung)',
-    plus:['Mudah didirikan & dikelola','Keputusan cepat, seluruh profit untuk pemilik','Pajak sederhana'],
-    minus:['Modal terbatas','Menanggung rugi sendiri','Kelangsungan usaha rendah, sulit dapat kredit']},
-  {id:'firma',name:'Firma',owner:'>1 orang, aktif semua',
-    modal:'Gabungan modal semua sekutu', status:'Bukan badan hukum', tanggung:'Tidak terbatas, tanggung renteng bersama',
-    plus:['Modal lebih besar dari perseorangan','Keterampilan gabungan sekutu','Kepercayaan kredit & bank lebih tinggi'],
-    minus:['Kerugian ditanggung bersama','Bisa konflik antar pendiri','Keputusan besar butuh banyak persetujuan']},
-  {id:'cv',name:'CV (Commanditaire Vennootschap)',owner:'>1 orang: sekutu aktif (komplementer) & pasif (komanditer)',
-    modal:'Aktif: skill & uang · Pasif: uang saja', status:'Bukan badan hukum', tanggung:'Aktif: tidak terbatas · Pasif: terbatas pada modal disetor',
-    plus:['Modal > perseorangan','Risiko sekutu pasif terbatas','Kepercayaan kredit & bank meningkat'],
-    minus:['Sulit menarik kembali modal','Konflik antar pendiri berpotensi terjadi']},
-  {id:'pt',name:'PT (Perseroan Terbatas)',owner:'>1 orang, kepemilikan = lembar saham',
-    modal:'Saham', status:'Badan hukum ✓', tanggung:'Terbatas pada modal yang disetor',
-    plus:['Tanggung jawab terbatas','Modal besar, mudah dapat tambahan modal','Kelangsungan usaha stabil','Akses kredit mudah','Ada manajemen profesional (Direksi & Komisaris)'],
-    minus:['Kena pajak ganda (double tax)','Biaya pendirian tinggi','Diatur ketat oleh pemerintah','Kerahasiaan usaha lebih terbuka']},
-  {id:'koperasi',name:'Koperasi',owner:'Minimal 20 anggota',
-    modal:'Simpanan anggota (pokok, wajib, sukarela)', status:'Badan hukum ✓', tanggung:'Terbatas pada modal / simpanan',
-    plus:['Sejahtera bersama & keanggotaan terbuka','Pembagian SHU adil','Mendapat dukungan pemerintah','Berlandaskan prinsip demokrasi'],
-    minus:['Sulit ekspansi dibanding PT','Manajemen kadang kurang profesional','Partisipasi anggota tidak selalu merata','Pengambilan keputusan lambat (demokrasi)']},
-  {id:'bumn',name:'BUMN / BUMD',owner:'Negara / Pemerintah Daerah',
-    modal:'APBN (BUMN) atau APBD (BUMD)', status:'Badan hukum ✓', tanggung:'Sesuai bentuk: Perum/Perumda 100% atau Persero/Perseroda min. 51%',
-    plus:['Modal besar, cakupan pelayanan luas','Menjaga sektor vital dari monopoli swasta','Keberlangsungan usaha didukung pemerintah'],
-    minus:['Rawan kurang efisien & birokratis','Kurang inovatif karena minim kompetisi','Rawan KKN jika pengawasan lemah']},
-];
-
-const formTabsEl = document.getElementById('formTabs');
-const formDetailEl = document.getElementById('formDetail');
-function renderFormDetail(f){
-  formDetailEl.innerHTML = `
-    <div class="form-detail-head">
-      <h3>${f.name}</h3>
-      <span class="owner-pill">Pemilik: ${f.owner}</span>
-    </div>
-    <div class="form-detail-grid">
-      <div class="col">
-        <h5>Modal</h5><p>${f.modal}</p>
-        <h5 style="margin-top:14px;">Status Badan Hukum</h5><p>${f.status}</p>
-        <h5 style="margin-top:14px;">Tanggung Jawab</h5><p>${f.tanggung}</p>
+<section class="hero">
+  <div class="hero-decor"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Materi Kelas XI · Biologi</div>
+      <h1 style="max-width:640px;">Sel: <em>Unit Dasar</em> Kehidupan.</h1>
+      <p class="lead" style="max-width:520px;">Ringkasan interaktif materi Biologi Sel: sejarah penemuan, komponen kimiawi &amp; struktural, organel, transpor membran, hingga reproduksi sel. Lengkap dengan kuis untuk uji pemahamanmu.</p>
+      <div class="hero-btns">
+        <a href="#sejarah-sel" class="btn btn-primary">Mulai Belajar ↓</a>
+        <a href="#kuis-bio" class="btn btn-ghost">Langsung ke Kuis</a>
       </div>
-      <div class="col">
-        <h5>Kelebihan &amp; Kekurangan</h5>
-        <div class="pros-cons">
-          ${f.plus.map(p=>`<span class="plus">${p}</span>`).join('')}
-          ${f.minus.map(m=>`<span class="minus">${m}</span>`).join('')}
-        </div>
+      <div class="badge-row">
+        <span class="badge">Nukleus</span>
+        <span class="badge">Mitokondria</span>
+        <span class="badge">Ribosom</span>
+        <span class="badge">Membran Sel</span>
+        <span class="badge">Kloroplas</span>
       </div>
-    </div>`;
-}
-formTabsEl.innerHTML = forms.map((f,i)=>`<button class="form-tab ${i===0?'active':''}" data-id="${f.id}">${f.name.split(' (')[0]}</button>`).join('');
-renderFormDetail(forms[0]);
-formTabsEl.addEventListener('click',e=>{
-  const btn = e.target.closest('.form-tab');
-  if(!btn) return;
-  formTabsEl.querySelectorAll('.form-tab').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  renderFormDetail(forms.find(f=>f.id===btn.dataset.id));
-});
-
-/* Comparison table (5 core forms) */
-const tableForms = forms.slice(0,5);
-const tableRows = [
-  {label:'Owner', key:'owner'},
-  {label:'Status Badan Hukum', key:'status'},
-  {label:'Tanggung Jawab', key:'tanggung'},
-  {label:'Modal', key:'modal'},
-];
-document.getElementById('compareTable').innerHTML = `
-  <thead><tr><th>Aspek</th>${tableForms.map(f=>`<th>${f.name.split(' (')[0]}</th>`).join('')}</tr></thead>
-  <tbody>
-    ${tableRows.map(r=>`<tr><th>${r.label}</th>${tableForms.map(f=>`<td>${f[r.key]}</td>`).join('')}</tr>`).join('')}
-  </tbody>`;
-
-/* ===== BUMN/BUMD toggle ===== */
-document.getElementById('bumnToggle').addEventListener('click',e=>{
-  const btn = e.target.closest('.toggle-opt');
-  if(!btn) return;
-  document.querySelectorAll('.toggle-opt').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('bumnPanel').style.display = btn.dataset.target==='bumn' ? '' : 'none';
-  document.getElementById('bumdPanel').style.display = btn.dataset.target==='bumd' ? '' : 'none';
-});
-
-/* ===== SHU Calculator ===== */
-function fmtRp(n){
-  if(isNaN(n)) n = 0;
-  return 'Rp ' + Math.round(n).toLocaleString('id-ID');
-}
-function calcSHU(){
-  const total = parseFloat(document.getElementById('shuTotal').value)||0;
-  const pctModal = parseFloat(document.getElementById('pctModal').value)||0;
-  const pctUsaha = 100-pctModal;
-  const totalSimpanan = parseFloat(document.getElementById('totalSimpanan').value)||0;
-  const totalBelanja = parseFloat(document.getElementById('totalBelanja').value)||0;
-  const mySimpanan = parseFloat(document.getElementById('myAnggotaSimpanan').value)||0;
-  const myBelanja = parseFloat(document.getElementById('myAnggotaBelanja').value)||0;
-
-  const shuModal = totalSimpanan>0 ? (mySimpanan/totalSimpanan) * (pctModal/100) * total : 0;
-  const shuUsaha = totalBelanja>0 ? (myBelanja/totalBelanja) * (pctUsaha/100) * total : 0;
-
-  document.getElementById('pctModalLabel').textContent = pctModal + '%';
-  document.getElementById('outModal').textContent = fmtRp(shuModal);
-  document.getElementById('outUsaha').textContent = fmtRp(shuUsaha);
-  document.getElementById('outTotal').textContent = fmtRp(shuModal+shuUsaha);
-}
-['shuTotal','pctModal','totalSimpanan','totalBelanja','myAnggotaSimpanan','myAnggotaBelanja'].forEach(id=>{
-  document.getElementById(id).addEventListener('input',calcSHU);
-});
-calcSHU();
-
-/* ===== Koperasi Org Chart ===== */
-const orgRoles = {
-  'rapat-anggota':{title:'Rapat Anggota', body:'Forum tertinggi koperasi, dihadiri seluruh anggota. Menetapkan AD/ART & kebijakan umum, serta memilih dan memberhentikan Pengurus & Pengawas.'},
-  'pengurus':{title:'Pengurus', body:'Dipilih oleh Rapat Anggota untuk mengelola usaha & organisasi koperasi sehari-hari, serta menyusun laporan pertanggungjawaban tahunan.'},
-  'pengawas':{title:'Pengawas', body:'Dipilih oleh Rapat Anggota, bertugas mengawasi kinerja & kebijakan Pengurus secara independen agar tetap sesuai AD/ART.'},
-  'manajer':{title:'Manajer', body:'Diangkat oleh Pengurus sebagai tenaga profesional untuk memimpin operasional teknis unit-unit usaha koperasi.'},
-  'karyawan':{title:'Karyawan / Unit Usaha', body:'Menjalankan kegiatan unit usaha (toko, simpan pinjam, dll.) sehari-hari untuk melayani kebutuhan anggota.'},
-};
-function showOrgDetail(role){
-  document.querySelectorAll('.org-node').forEach(n=>n.classList.toggle('active', n.dataset.role===role));
-  const d = orgRoles[role];
-  document.getElementById('orgDetail').innerHTML = `<b>${d.title}</b> — ${d.body}`;
-}
-document.getElementById('orgChart').addEventListener('click', e=>{
-  const node = e.target.closest('.org-node');
-  if(!node) return;
-  showOrgDetail(node.dataset.role);
-});
-
-/* ===== Pyramid ===== */
-const pyramidData = {
-  top:{title:'Top Management', body:'CEO, Direktur, Presiden. Menentukan tujuan perusahaan, visi-misi & strategi jangka panjang, serta evaluasi bisnis secara keseluruhan.'},
-  middle:{title:'Middle Management', body:'Manager, Head of Division, Head of Branch. Menerjemahkan strategi dari Top Management ke level di bawahnya, bertanggung jawab atas bidangnya.'},
-  lower:{title:'Lower Management (Supervisor)', body:'Mengarahkan & memimpin pelaksanaan prosedur teknis/operasional harian, memantau langsung pekerja di lapangan.'},
-};
-const pyramidDetail = document.getElementById('pyramidDetail');
-function showPyramid(level){
-  document.querySelectorAll('.p-level').forEach(el=>el.classList.toggle('active', el.dataset.level===level));
-  const d = pyramidData[level];
-  pyramidDetail.innerHTML = `<b>${d.title}</b><br>${d.body}`;
-}
-document.getElementById('pyramid').addEventListener('click',e=>{
-  const el = e.target.closest('.p-level');
-  if(!el) return;
-  showPyramid(el.dataset.level);
-});
-showPyramid('top');
-
-/* ===== Fayol accordion ===== */
-const fayol = [
-  ['Division of Work','Pembagian kerja sesuai keahlian agar lebih efisien.'],
-  ['Authority & Responsibility','Wewenang harus seimbang dengan tanggung jawab yang diberikan.'],
-  ['Discipline','Kepatuhan terhadap aturan & kesepakatan organisasi.'],
-  ['Unity of Command','Setiap karyawan hanya menerima perintah dari satu atasan.'],
-  ['Unity of Direction','Kegiatan dengan tujuan sama harus dipimpin satu rencana & satu kepala.'],
-  ['Subordination of Individual Interest','Kepentingan bersama harus didahulukan dari kepentingan pribadi.'],
-  ['Remuneration of Personnel','Gaji/imbalan harus adil bagi karyawan & perusahaan.'],
-  ['Centralization','Keseimbangan antara pengambilan keputusan terpusat & terdesentralisasi.'],
-  ['Chain of Command','Alur komando/wewenang yang jelas dari atas ke bawah.'],
-  ['Order','Tata tertib — orang & barang berada pada tempat yang semestinya.'],
-  ['Equity','Keadilan & kebaikan dalam memperlakukan karyawan.'],
-  ['Stability of Tenure of Personnel','Tingkat turnover karyawan yang rendah demi stabilitas kerja.'],
-  ['Initiative','Memberi ruang karyawan untuk berinisiatif menyusun & menjalankan rencana.'],
-  ['Esprit de Corps','Semangat kerja sama & kekompakan tim dalam organisasi.'],
-];
-document.getElementById('fayolAccordion').innerHTML = fayol.map((f,i)=>`
-  <div class="fayol-item">
-    <div class="fayol-q"><span class="fnum">${String(i+1).padStart(2,'0')}</span>${f[0]}<span class="fchev">⌄</span></div>
-    <div class="fayol-a"><p>${f[1]}</p></div>
-  </div>`).join('');
-document.getElementById('fayolAccordion').addEventListener('click',e=>{
-  const q = e.target.closest('.fayol-q');
-  if(!q) return;
-  const item = q.parentElement;
-  const a = item.querySelector('.fayol-a');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.fayol-item.open').forEach(el=>{
-    el.classList.remove('open');
-    el.querySelector('.fayol-a').style.maxHeight = null;
-  });
-  if(!isOpen){
-    item.classList.add('open');
-    a.style.maxHeight = a.scrollHeight + 'px';
-  }
-});
-
-/* ===== Quiz ===== */
-const quiz = [
-  {q:'Perbedaan mendasar antara "badan usaha" dan "perusahaan" adalah…',
-   opts:['Badan usaha adalah tempat fisik, perusahaan adalah kesatuan hukum','Badan usaha adalah kesatuan yuridis-ekonomis yang mencari laba, perusahaan adalah tempat/wadah fisik kegiatannya','Keduanya adalah istilah yang persis sama','Badan usaha selalu berbentuk PT, perusahaan berbentuk apa saja'],
-   correct:1, explain:'Badan usaha = kesatuan hukum & ekonomi (yuridis) yang bertujuan mencari laba & memberi pelayanan. Perusahaan = wadah/tempat fisik tempat kegiatan produksi berlangsung, sebagai alat mencapai tujuan badan usaha.'},
-  {q:'PT Indofood Sukses Makmur Tbk adalah badan usaha, sedangkan pabrik & merek Indofood adalah…',
-   opts:['Badan usaha juga','Perusahaannya','Koperasinya','BUMN-nya'],
-   correct:1, explain:'Pabrik & merek yang beroperasi (mis. Indofood, GraPARI untuk Telkom) berperan sebagai "perusahaan" — wadah fisik dari badan usaha induknya.'},
-  {q:'Pertamina, Freeport, dan PTBA adalah contoh badan usaha di sektor…',
-   opts:['Agraris','Dagang','Ekstraktif','Jasa'],
-   correct:2, explain:'Ketiganya mengambil/mengolah hasil alam (minyak, mineral, batu bara) secara langsung — ini ciri sektor ekstraktif.'},
-  {q:'Dalam CV, sekutu pasif (komanditer) memiliki tanggung jawab yang…',
-   opts:['Tidak terbatas, sama seperti sekutu aktif','Terbatas hanya pada modal yang disetorkan','Tidak ada tanggung jawab sama sekali','Ditanggung penuh oleh sekutu aktif'],
-   correct:1, explain:'Sekutu pasif (komanditer) hanya menanamkan modal dan tidak ikut mengelola usaha, sehingga tanggung jawabnya terbatas pada modal yang disetorkannya.'},
-  {q:'Ciri khas Perseroan Terbatas (PT) dibanding bentuk usaha lain adalah…',
-   opts:['Modal berupa simpanan anggota','Tanggung jawab pemilik tidak terbatas','Kepemilikan berbentuk saham dan berstatus badan hukum','Tidak boleh memiliki lebih dari satu pemilik'],
-   correct:2, explain:'PT adalah badan hukum resmi dengan kepemilikan berupa lembar saham, dan tanggung jawab pemilik terbatas pada modal yang disetor.'},
-  {q:'Perbedaan utama antara Perum dan Persero dalam BUMN adalah…',
-   opts:['Perum modalnya 100% negara & fokus pelayanan, Persero minimal 51% negara & fokus laba','Perum dan Persero sama-sama 100% milik negara','Persero tidak boleh mencari laba','Perum hanya beroperasi di luar negeri'],
-   correct:0, explain:'Perum: modal 100% negara, orientasi pelayanan publik penuh. Persero: minimal 51% saham negara, berorientasi mencari laba (contoh: BNI, PLN, Pertamina, KAI).'},
-  {q:'Dasar hukum yang mengatur BUMD adalah…',
-   opts:['UU No. 19 Tahun 2003','UU No. 25 Tahun 1992','PP No. 54 Tahun 2017','UUD 1945 Pasal 33'],
-   correct:2, explain:'BUMD diatur dalam PP No. 54 Tahun 2017, dan hanya beroperasi di wilayah otoritas pemerintah daerah masing-masing — berbeda dengan BUMN (UU No. 19/2003) yang beroperasi skala nasional.'},
-  {q:'Prinsip koperasi yang menyatakan bahwa keanggotaan bersifat terbuka dan tanpa paksaan disebut prinsip…',
-   opts:['Mandiri','Sukarela & Terbuka','Demokratis','Concern for Community'],
-   correct:1, explain:'Prinsip sukarela & terbuka berarti siapa pun boleh bergabung sebagai anggota koperasi tanpa ada paksaan dari pihak manapun.'},
-  {q:'Sebuah koperasi memiliki total SHU Rp40.000.000, dialokasikan 60% untuk jasa modal. Jika total simpanan seluruh anggota Rp200.000.000 dan simpanan Bu Sari Rp10.000.000, berapa SHU jasa modal yang diterima Bu Sari?',
-   opts:['Rp1.000.000','Rp1.200.000','Rp2.000.000','Rp2.400.000'],
-   correct:1, explain:'SHU modal = (simpanan pribadi ÷ total simpanan) × %modal × SHU total = (10.000.000/200.000.000) × 60% × 40.000.000 = 0,05 × 0,6 × 40.000.000 = Rp1.200.000.'},
-  {q:'Fungsi manajemen yang bertugas mengarahkan sumber daya manusia agar melaksanakan tugasnya sesuai rencana disebut…',
-   opts:['Planning','Organizing','Actuating','Controlling'],
-   correct:2, explain:'Actuating (commanding/penggerakan) adalah fungsi manajemen yang mengarahkan & memimpin SDM agar benar-benar menjalankan tugas sesuai rencana yang telah disusun.'},
-  {q:'Tokoh yang mendefinisikan manajemen sebagai "seni menyelesaikan pekerjaan melalui orang lain" adalah…',
-   opts:['James A.F. Stoner','Luther Gulick','Henry Fayol','Mary Parker Follet'],
-   correct:3, explain:'Mary Parker Follet mendefinisikan manajemen sebagai seni (art) menyelesaikan pekerjaan melalui orang lain — menekankan aspek kepemimpinan & koordinasi manusia.'},
-  {q:'Prinsip manajemen Fayol "Esprit de Corps" menekankan pentingnya…',
-   opts:['Pembagian kerja yang jelas','Semangat kerja sama & kekompakan tim','Sistem penggajian yang adil','Rantai komando dari atas ke bawah'],
-   correct:1, explain:'Esprit de corps berarti semangat kerja sama / kekompakan tim — menumbuhkan rasa persatuan agar organisasi berjalan harmonis.'},
-];
-
-let currentQ = 0, score = 0, answered = false;
-const quizQuestionArea = document.getElementById('quizQuestionArea');
-const quizBox = document.getElementById('quizBox');
-const quizResult = document.getElementById('quizResult');
-const quizGate = document.getElementById('quizGate');
-let studentName = '', studentClass = '';
-
-/* ===== Google Sheets submission =====
-   Replace GOOGLE_SCRIPT_URL below with your deployed Apps Script Web App URL.
-   See setup instructions provided separately. */
-
-function submitToSheet(payload){
-  const statusEl = document.getElementById('submitStatus');
-  if(!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.indexOf('PASTE_YOUR') === 0){
-    statusEl.textContent = '⚠ Belum terhubung ke Google Sheets (lihat catatan setup guru).';
-    statusEl.className = 'submit-status err';
-    return;
-  }
-  statusEl.textContent = 'Menyimpan hasil…';
-  statusEl.className = 'submit-status pending';
-  fetch(GOOGLE_SCRIPT_URL, {
-    method: 'POST',
-    headers: {'Content-Type': 'text/plain;charset=utf-8'},
-    body: JSON.stringify(payload)
-  }).then(r=>r.json()).then(data=>{
-    if(data && data.success){
-      statusEl.textContent = '✓ Hasil kamu sudah tercatat.';
-      statusEl.className = 'submit-status ok';
-    } else {
-      statusEl.textContent = '⚠ Gagal menyimpan hasil ke server.';
-      statusEl.className = 'submit-status err';
-    }
-  }).catch(()=>{
-    statusEl.textContent = '⚠ Gagal menyimpan hasil — periksa koneksi internet.';
-    statusEl.className = 'submit-status err';
-  });
-}
-
-/* ===== Gate ===== */
-document.getElementById('gateStartBtn').addEventListener('click',()=>{
-  const nameVal = document.getElementById('gateName').value.trim();
-  const classVal = document.getElementById('gateClass').value.trim();
-  const hint = document.getElementById('gateHint');
-  if(!nameVal || !classVal){
-    hint.textContent = 'Nama dan kelas wajib diisi sebelum memulai kuis.';
-    hint.classList.add('warn');
-    return;
-  }
-  studentName = nameVal;
-  studentClass = classVal;
-  quizGate.style.display = 'none';
-  quizBox.style.display = '';
-  renderQuiz();
-});
-
-function renderQuiz(){
-  answered = false;
-  const item = quiz[currentQ];
-  document.getElementById('quizCounter').textContent = `Soal ${currentQ+1} / ${quiz.length}`;
-  document.getElementById('quizScore').textContent = `Skor: ${score}`;
-  document.getElementById('quizProgressFill').style.width = (currentQ/quiz.length*100)+'%';
-
-  const letters = ['A','B','C','D'];
-  quizQuestionArea.innerHTML = `
-    <div class="q-title">${item.q}</div>
-    <div class="q-options">
-      ${item.opts.map((o,i)=>`<div class="q-opt" data-i="${i}"><span class="opt-letter">${letters[i]}</span>${o}</div>`).join('')}
     </div>
-    <div class="q-explain" id="qExplain"><b>Penjelasan:</b> ${item.explain}</div>
-    <button class="btn btn-primary q-nextbtn" id="qNextBtn">${currentQ===quiz.length-1?'Lihat Hasil':'Soal Berikutnya →'}</button>
-  `;
-
-  quizQuestionArea.querySelectorAll('.q-opt').forEach(opt=>{
-    opt.addEventListener('click',()=>{
-      if(answered) return;
-      answered = true;
-      const chosen = parseInt(opt.dataset.i);
-      quizQuestionArea.querySelectorAll('.q-opt').forEach(o=>{
-        o.classList.add('disabled');
-        const idx = parseInt(o.dataset.i);
-        if(idx===item.correct) o.classList.add('correct');
-        else if(idx===chosen) o.classList.add('wrong');
-      });
-      if(chosen===item.correct) score++;
-      document.getElementById('quizScore').textContent = `Skor: ${score}`;
-      document.getElementById('qExplain').style.display = 'block';
-      document.getElementById('qNextBtn').style.display = 'inline-flex';
-      document.getElementById('qNextBtn').addEventListener('click',()=>{
-        currentQ++;
-        if(currentQ >= quiz.length){ showResult(); }
-        else { renderQuiz(); }
-      });
-    });
-  });
-}
-
-function showResult(){
-  quizBox.style.display = 'none';
-  quizResult.style.display = 'block';
-  const pct = Math.round(score/quiz.length*100);
-  document.getElementById('resultPct').textContent = pct+'%';
-  document.getElementById('quizProgressFill').style.width='100%';
-  let msg = '';
-  if(pct>=85) msg = 'Luar biasa! Kamu sudah menguasai materi ini dengan sangat baik.';
-  else if(pct>=60) msg = 'Bagus! Sebagian besar sudah paham, coba ulas lagi bagian yang masih meleset.';
-  else msg = 'Yuk baca ulang materi di atas, lalu coba lagi — kamu pasti bisa lebih baik!';
-  document.getElementById('resultMsg').textContent = `Kamu menjawab benar ${score} dari ${quiz.length} soal. ${msg}`;
-
-  const session = getSession();
-  submitToSheet({
-    type: 'quiz',
-    sheetName: `Kuis - ${subjectsData[activeSubjectKey].name} - ${activeBabId || 'umum'}`,
-    username: session ? session.username : '',
-    nama: studentName,
-    kelas: studentClass,
-    skor: score,
-    total: quiz.length,
-    persentase: pct,
-    waktu: new Date().toLocaleString('id-ID', {timeZone:'Asia/Jakarta'})
-  });
-}
-
-document.getElementById('quizRestart').addEventListener('click',()=>{
-  currentQ = 0; score = 0;
-  quizResult.style.display = 'none';
-  document.getElementById('gateName').value = '';
-  document.getElementById('gateClass').value = '';
-  document.getElementById('gateHint').textContent = 'Isi nama & kelas untuk mulai — hasil kuismu akan tercatat.';
-  document.getElementById('gateHint').classList.remove('warn');
-  document.getElementById('submitStatus').textContent = '';
-  quizGate.style.display = '';
-});
-
-/* ===== Scroll reveal (lightweight) ===== */
-const revealEls = document.querySelectorAll('section');
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting) e.target.style.opacity='1';
-  });
-},{threshold:0.05});
-revealEls.forEach(el=>io.observe(el));
-</script>
-
-</body>
-</html>
+    <div class="orbit-card">
+      <img class="orbit-mark" src="data:image/png;base64,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
