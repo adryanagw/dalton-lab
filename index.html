@@ -731,7 +731,7 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
 
 <!-- ===================== VIEW: HOME (subject portal) ===================== -->
 <div id="view-home">
-  <section class="hero" style="padding:90px 0 70px;">
+  <section class="hero" style="padding:90px 0 10px;">
     <div class="wrap">
       <div class="eyebrow">Dalton Lab · Portal Belajar</div>
       <h1 style="max-width:760px;">Pilih mata pelajaran, lalu pilih babnya.</h1>
@@ -768,7 +768,7 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
 
 <!-- ===================== VIEW: BAB PICKER ===================== -->
 <div id="view-babs" style="display:none;">
-  <section class="hero" style="padding:60px 0 50px;">
+  <section class="hero" style="padding:60px 0 10px;">
     <div class="wrap">
       <button class="breadcrumb-back" id="backToHomeBtn">← Semua Mata Pelajaran</button>
       <div class="eyebrow" id="babsEyebrow">Mata Pelajaran</div>
@@ -785,7 +785,7 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
 
 <!-- ===================== VIEW: SIGN IN ===================== -->
 <div id="view-signin" style="display:none;">
-  <section class="hero" style="padding:60px 0 50px;">
+  <section class="hero" style="padding:60px 0 10px;">
     <div class="wrap">
       <button class="breadcrumb-back" id="backToHomeFromSignin">← Semua Mata Pelajaran</button>
       <div class="eyebrow">Akses Materi</div>
@@ -1302,7 +1302,7 @@ const WHATSAPP_NUMBER = '6282136673896'; // 082136673896 in international format
 /* ===== Google Sheets / Apps Script backend =====
    Replace with your deployed Apps Script Web App URL (ends in /exec).
    Used for BOTH login checks and quiz result logging. See setup notes provided separately. */
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHBK1OXZjz59KjTjRkcTEut8I007AGblM2px7PAxg1qUYYJzLHtfIQtHkGtQNjasasYw/exec";
+const GOOGLE_SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
 
 function waLink(message){
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
