@@ -98,8 +98,188 @@ nav.links a.cta{
   background:var(--navy);color:#fff;
 }
 nav.links a.cta:hover{background:var(--orange-dark);}
+nav.links a.subject-link.active{background:var(--navy);color:#fff;}
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
 .hamburger span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px;}
+
+/* === Subject portal (home) === */
+.subject-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.subject-card{
+  position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;
+  padding:30px 24px;text-align:left;cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s;
+  display:block;text-decoration:none;
+}
+.subject-card:hover{transform:translateY(-4px);border-color:var(--orange);box-shadow:var(--shadow);}
+.subject-card .subj-icon{font-size:1.8rem;display:block;margin-bottom:16px;}
+.subject-card h3{font-size:1.15rem;margin-bottom:6px;}
+.subject-card p{font-size:.84rem;color:var(--slate);margin:0;}
+.subject-card .subj-status{
+  display:inline-block;margin-top:16px;font-family:'IBM Plex Mono';font-size:.68rem;
+  text-transform:uppercase;letter-spacing:.06em;padding:5px 10px;border-radius:20px;
+}
+.subject-card.ready .subj-status{background:rgba(47,158,110,0.12);color:var(--success);}
+.subject-card.soon{opacity:.62;cursor:default;}
+.subject-card.soon:hover{transform:none;border-color:var(--line);box-shadow:none;}
+.subject-card.soon .subj-status{background:var(--paper-2);color:var(--slate);}
+
+/* === Bab picker === */
+.breadcrumb-back{
+  background:none;border:none;cursor:pointer;color:var(--slate);
+  font-family:'IBM Plex Mono';font-size:.78rem;padding:0;margin-bottom:18px;
+  display:inline-flex;align-items:center;gap:6px;transition:color .15s;
+}
+.breadcrumb-back:hover{color:var(--orange-dark);}
+.breadcrumb-back.small{margin-bottom:0;font-size:.76rem;}
+.bab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.bab-card{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;
+  cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s;position:relative;
+}
+.bab-card:hover{transform:translateY(-4px);border-color:var(--orange);box-shadow:var(--shadow);}
+.bab-card .bab-num{
+  font-family:'IBM Plex Mono';color:var(--orange);font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;
+}
+.bab-card h4{font-size:1.05rem;margin:8px 0 6px;}
+.bab-card p{font-size:.84rem;color:var(--slate);margin:0;}
+.bab-card.soon{opacity:.55;cursor:default;}
+.bab-card.soon:hover{transform:none;border-color:var(--line);box-shadow:none;}
+.bab-card .soon-tag{
+  position:absolute;top:20px;right:20px;font-family:'IBM Plex Mono';font-size:.66rem;
+  background:var(--paper-2);color:var(--slate);padding:4px 9px;border-radius:14px;
+}
+
+/* === Lesson sub-nav === */
+.lesson-subnav{
+  position:sticky;top:65px;z-index:90;
+  background:rgba(250,246,238,0.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.lesson-subnav-inner{display:flex;align-items:center;gap:26px;padding:12px 24px;flex-wrap:wrap;}
+.lesson-links{display:flex;gap:2px;flex-wrap:wrap;}
+.lesson-links a{
+  font-size:.82rem;font-weight:600;color:var(--navy-2);text-decoration:none;
+  padding:7px 11px;border-radius:8px;transition:background .15s;white-space:nowrap;
+}
+.lesson-links a:hover{background:var(--paper-2);}
+.lesson-links a.cta{background:var(--navy);color:#fff;}
+.lesson-links a.cta:hover{background:var(--orange-dark);}
+
+@media(max-width:760px){
+  .subject-grid{grid-template-columns:repeat(2,1fr);}
+  .bab-grid{grid-template-columns:1fr;}
+  .lesson-subnav-inner{gap:10px;}
+}
+
+/* === Sign-in view === */
+.signin-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;max-width:1000px;margin:0 auto;}
+.signin-card{
+  background:var(--card);border:1px solid var(--line);border-radius:18px;padding:34px;box-shadow:var(--shadow);
+}
+.signin-card h3{font-size:1.2rem;margin-bottom:6px;}
+.signin-card .signin-sub{color:var(--slate);font-size:.86rem;margin-bottom:24px;}
+.signin-field{margin-bottom:16px;}
+.signin-field label{
+  display:block;font-family:'IBM Plex Mono';font-size:.72rem;color:var(--slate);
+  text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;
+}
+.signin-field input{
+  width:100%;padding:12px 14px;border-radius:9px;border:1.5px solid var(--line);
+  background:var(--paper);font-size:.94rem;color:var(--ink);font-family:'Inter';
+}
+.signin-field input:focus{outline:none;border-color:var(--orange);}
+.signin-error{
+  background:rgba(226,87,76,0.1);border:1px solid rgba(226,87,76,0.3);color:#b23a30;
+  border-radius:8px;padding:10px 14px;font-size:.82rem;margin-bottom:16px;display:none;
+}
+.signin-error.show{display:block;}
+.signin-note{
+  font-size:.76rem;color:var(--slate);margin-top:16px;text-align:center;
+}
+.signin-submit{width:100%;justify-content:center;}
+.signin-submit:disabled{opacity:.6;cursor:default;}
+
+.marketing-panel{
+  background:var(--navy);border-radius:18px;padding:34px;color:#fff;
+  background-image:radial-gradient(circle at 85% 0%, rgba(238,125,49,0.22), transparent 55%);
+}
+.marketing-panel .eyebrow{color:var(--orange);}
+.marketing-panel h3{color:#fff;font-size:1.25rem;margin-bottom:12px;}
+.marketing-panel p.mk-lead{color:#c3ccd9;font-size:.9rem;margin-bottom:20px;}
+.mk-benefits{list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:14px;}
+.mk-benefits li{
+  display:flex;gap:12px;align-items:flex-start;font-size:.87rem;color:#e6ecf2;
+}
+.mk-benefits .mk-icon{
+  width:30px;height:30px;flex-shrink:0;border-radius:8px;background:rgba(238,125,49,0.18);
+  display:flex;align-items:center;justify-content:center;font-size:1rem;
+}
+.mk-benefits b{display:block;color:#fff;margin-bottom:2px;}
+.wa-btn{
+  display:inline-flex;align-items:center;gap:10px;width:100%;justify-content:center;
+  background:#25D366;color:#0d1b2e;font-weight:700;font-size:.95rem;
+  padding:14px 20px;border-radius:11px;text-decoration:none;transition:transform .15s,background .15s;
+}
+.wa-btn:hover{background:#1ebe5a;transform:translateY(-2px);}
+.wa-btn svg{width:20px;height:20px;flex-shrink:0;}
+.mk-schedule{
+  margin-top:16px;font-family:'IBM Plex Mono';font-size:.72rem;color:#9fb0c2;text-align:center;
+}
+
+/* === Home marketing section === */
+.home-marketing{
+  background:var(--navy);border-radius:22px;padding:44px;margin-top:10px;
+  background-image:radial-gradient(circle at 88% 8%, rgba(238,125,49,0.2), transparent 55%);
+}
+.home-marketing-head{max-width:600px;margin-bottom:32px;}
+.home-marketing-head h2{color:#fff;}
+.home-marketing-head p{color:#c3ccd9;}
+.hm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:30px;}
+.hm-card{
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);
+  border-radius:14px;padding:20px 18px;
+}
+.hm-card .hm-icon{font-size:1.4rem;display:block;margin-bottom:10px;}
+.hm-card h4{color:#fff;font-size:.92rem;margin-bottom:6px;}
+.hm-card p{color:#a9b7c5;font-size:.78rem;margin:0;line-height:1.5;}
+.hm-cta-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.hm-cta-row .wa-btn{width:auto;}
+.hm-cta-note{color:#9fb0c2;font-size:.78rem;}
+
+/* === Floating WhatsApp button === */
+.wa-float{
+  position:fixed;bottom:22px;right:22px;z-index:200;
+  width:58px;height:58px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(37,211,102,0.45);
+  text-decoration:none;transition:transform .18s;
+}
+.wa-float:hover{transform:scale(1.08);}
+.wa-float svg{width:28px;height:28px;}
+.wa-float-pulse{
+  position:absolute;inset:0;border-radius:50%;background:#25D366;opacity:.55;
+  animation:wa-pulse 2.2s ease-out infinite;
+}
+@keyframes wa-pulse{0%{transform:scale(1);opacity:.55;}100%{transform:scale(1.9);opacity:0;}}
+
+/* === Session badge in nav === */
+.session-badge{
+  display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--navy-2);
+  font-family:'IBM Plex Mono';
+}
+.session-badge button{
+  background:none;border:none;color:var(--slate);cursor:pointer;font-family:'IBM Plex Mono';
+  font-size:.72rem;text-decoration:underline;padding:0;
+}
+.session-badge button:hover{color:var(--orange-dark);}
+
+@media(max-width:900px){
+  .signin-wrap{grid-template-columns:1fr;}
+  .hm-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){
+  .hm-grid{grid-template-columns:1fr;}
+  .wa-float{bottom:16px;right:16px;width:52px;height:52px;}
+  .wa-float svg{width:24px;height:24px;}
+}
 
 /* === HERO === */
 .hero{
@@ -289,33 +469,40 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
 .role-n{position:absolute;top:12px;left:18px;font-family:'IBM Plex Mono';color:var(--orange);font-size:.78rem;font-weight:600;}
 
 /* === Koperasi === */
-.principle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:44px;}
+.principle-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:44px;}
 .principle-card{
-  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 12px;
   transition:transform .15s;
 }
 .principle-card:hover{transform:translateY(-3px);border-color:var(--orange);}
-.p-icon{font-size:1.6rem;display:block;margin-bottom:10px;}
-.principle-card h4{font-size:1rem;margin-bottom:6px;}
-.principle-card p{font-size:.84rem;color:var(--slate);margin:0;}
+.p-icon{font-size:1.15rem;display:block;margin-bottom:6px;}
+.principle-card h4{font-size:.78rem;margin-bottom:4px;line-height:1.25;}
+.principle-card p{font-size:.7rem;color:var(--slate);margin:0;line-height:1.35;}
 
 .two-col{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-bottom:50px;}
 .struct-box, .jenis-box{
   background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow);
 }
-.struct-flow{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:18px;}
-.struct-node{
-  background:var(--paper-2);border:1px solid var(--line);border-radius:10px;
+.struct-hint{font-family:'IBM Plex Mono';font-size:.68rem;font-weight:400;color:var(--slate);text-transform:none;}
+.org-chart{display:flex;flex-direction:column;align-items:center;gap:4px;margin-top:16px;}
+.org-node{
+  background:var(--paper-2);border:1.5px solid var(--line);border-radius:10px;
   padding:10px 16px;text-align:center;font-family:'Space Grotesk';font-weight:600;font-size:.86rem;color:var(--navy);
-  display:flex;flex-direction:column;gap:2px;
+  display:flex;flex-direction:column;gap:2px;cursor:pointer;transition:all .15s;width:100%;
 }
-.struct-node span{font-family:'Inter';font-weight:400;font-size:.72rem;color:var(--slate);}
-.struct-node.top, .struct-node.bottom{background:var(--navy);color:#fff;}
-.struct-node.top span, .struct-node.bottom span{color:#c3ccd9;}
-.struct-row{display:flex;gap:10px;width:100%;justify-content:center;}
-.struct-row.three .struct-node{flex:1;}
-.struct-node.small{font-size:.78rem;padding:8px 10px;}
-.struct-arrow{color:var(--orange);font-weight:700;}
+.org-node:hover{border-color:var(--orange);transform:translateY(-1px);}
+.org-node.active{background:var(--navy);border-color:var(--navy);color:#fff;}
+.org-node.active span{color:#c3ccd9;}
+.org-node span{font-family:'Inter';font-weight:400;font-size:.72rem;color:var(--slate);}
+.org-row{display:flex;gap:8px;width:100%;}
+.org-row .org-node{flex:1;}
+.org-arrow{color:var(--orange);font-weight:700;font-family:'IBM Plex Mono';font-size:.7rem;padding:2px 0;}
+.org-detail{
+  margin-top:16px;background:var(--paper-2);border:1px dashed var(--line);border-radius:10px;
+  padding:14px 16px;font-size:.84rem;color:var(--ink);min-height:20px;
+}
+.org-detail b{color:var(--navy);}
+.org-loop-note{font-size:.76rem;color:var(--slate);margin:12px 0 0;line-height:1.5;}
 
 .jenis-item{padding:14px 0;border-bottom:1px solid var(--line);}
 .jenis-item:last-child{border-bottom:none;}
@@ -392,14 +579,15 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
 }
 .pyramid-detail b{color:var(--navy);}
 
-.poac-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-.poac-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 20px;position:relative;overflow:hidden;}
-.poac-letter{
-  font-family:'Space Grotesk';font-weight:700;font-size:2.2rem;color:var(--paper-2);
-  position:absolute;top:6px;right:14px;line-height:1;
+.poac-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+.poac-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 16px;position:relative;overflow:hidden;}
+.poac-num{
+  font-family:'IBM Plex Mono';font-weight:600;font-size:.72rem;color:var(--orange);
+  display:block;margin-bottom:8px;
 }
-.poac-card h4{font-size:1rem;margin-bottom:8px;}
-.poac-card p{font-size:.82rem;color:var(--slate);margin:0;position:relative;z-index:1;}
+.poac-card h4{font-size:.94rem;margin-bottom:2px;}
+.poac-en{font-family:'IBM Plex Mono';font-size:.68rem;color:var(--slate);text-transform:uppercase;letter-spacing:.05em;margin:0 0 8px;}
+.poac-card p:last-child{font-size:.8rem;color:var(--slate);margin:0;position:relative;z-index:1;font-family:'Inter';text-transform:none;letter-spacing:normal;}
 
 .fayol-accordion{display:flex;flex-direction:column;gap:8px;}
 .fayol-item{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
@@ -486,7 +674,7 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
   .sector-grid{grid-template-columns:repeat(2,1fr);}
   .split-grid{grid-template-columns:1fr;}
   .role-cards{grid-template-columns:repeat(2,1fr);}
-  .principle-grid{grid-template-columns:repeat(2,1fr);}
+  .principle-grid{grid-template-columns:repeat(3,1fr);}
   .two-col{grid-template-columns:1fr;}
   .six-m-grid{grid-template-columns:repeat(3,1fr);}
   .poac-grid{grid-template-columns:repeat(2,1fr);}
@@ -501,13 +689,16 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
   .hamburger{display:block;}
   .sector-grid{grid-template-columns:1fr 1fr;}
   .role-cards{grid-template-columns:1fr;}
-  .principle-grid{grid-template-columns:1fr;}
+  .principle-grid{grid-template-columns:repeat(2,1fr);}
   .six-m-grid{grid-template-columns:repeat(2,1fr);}
   .poac-grid{grid-template-columns:1fr;}
   .bidang-grid{grid-template-columns:1fr;}
   .thinker-strip{grid-template-columns:1fr;}
   .hero h1{font-size:2rem;}
   section{padding:56px 0;}
+  .brand-sub{font-size:.58rem;letter-spacing:.06em;}
+  .lesson-subnav{top:96px;}
+  .lesson-subnav-inner{padding:10px 20px;}
 }
 </style>
 </head>
@@ -515,14 +706,140 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
 
 <header class="site-nav">
   <div class="nav-inner">
-    <a href="#top" class="brand">
+    <a href="#" class="brand" id="logoHome">
       <img src="data:image/png;base64,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DkPmlQGfdynR6ERyjAOZfezI7m8LSKxuwYzW7X8fWYucS0Yy3jDk9yG0ackLsGye0uP3ieZ6tL1WgLbXCgBAzFd/A0daC45ZDKizGVBnNfh04kZVBFJNDgBAaowDabEOnB/XjqHxdmT0sQcs1DOFQrRua1cuwOxrr2S8YcrvgNXUTKXXrPXilzA9dnHUt7j40s6/ts9sQkNb1yd0fB3Urif3Z9rypl5Bj9Zt0vhsXjIKc5qcxDJOWKg4vnzPq0endMfbB30HQ0WTEX+p6YMDJ0wh+cTESeOzUfz8HxlvmNPsLHTsrS8qttcKhJZ3IYWSiiYj3vwhDh+YTSG1l+0M440cml5Gipm1XokeO0dYd8z1+HEqoUqmYM/EeCOL5teB1dRMJa7gEByVpaLt7Y2a362kB7NNxYf1JpTU9UblaSOONhulnGye8UYe/UYjZeYqhszcjlsP2w88HxJ75YomI6pOGzti/b41Wpq9a3fWrlzAE1YRSPfHi6qpmYqamoleeXfB1dIgXLVH4Kjai/IP3kNG1A+6rNMd6TfNRtS0RKPytBEtjqiwfVD4q09t5NQ4ESpgD/gGgKi4RCUqMxeGzFw8tjdaFL1WikSjEyaDCwAwpr/tnPf0MzoxJvHn10vqep/zdXecVkdUxD0gLSUpAXte3YYhaQMZb4QKaMCdabCrwC/hdbWHfEabB9SHldvn52NTwXKGG+GCHjB5JyUpAbufe5ijiggAA5bKw/evwG23cKJA+icGLIG1KxdgxeIbOZqIzsGAQ9gNM3LxwOolPElFXWLAIWjtygW4Of8qhks9YsAhIisjHevuWcLrueQVBhxEWRnpWHDTdFydm8O9LfmEAQfYpPHZ+N0NVyN3wiV8rCf5jQHrKCUpAZfnXISpuTkYkZHOa7ekOQbsJ3ekADA2OwsJ/eIxLjsLSf378rIP6U4RottnlOmmvuGUsFjPvfdZBvy8St5q+e/LOkKLve1lRPVN1eR3KGh7YH7+I/Kf/ANhiSIYAyaSGAMmkhgDJpIYAyaSGAMmkhgDJpIYAyaSGAMmkhgDJpIYAyaSGAMmkhgDJpIYxwMTBYDhgis7/q1Ex2i23KCNByYi//EQmkhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhiDJhIYgyYSGIMmEhi/w+yp7KHhGWorQAAAABJRU5ErkJggg==" alt="Dalton Lab logo">
       <div>
         <div class="brand-text">DALTON <span>LAB</span></div>
-        <div class="brand-sub">Ekonomi · Kurikulum Merdeka</div>
+        <div class="brand-sub">Portal Belajar · Kurikulum Merdeka</div>
       </div>
     </a>
     <nav class="links" id="navLinks">
+      <a href="#" data-subject="ekonomi" class="subject-link active">Ekonomi</a>
+      <a href="#" data-subject="matematika" class="subject-link">Matematika</a>
+      <a href="#" data-subject="kimia" class="subject-link">Kimia</a>
+      <a href="#" data-subject="fisika" class="subject-link">Fisika</a>
+      <span class="session-badge" id="sessionBadge" style="display:none;"></span>
+    </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat WhatsApp Dalton Lab">
+  <span class="wa-float-pulse"></span>
+  <svg viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.005c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm5.8 14.1c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.2-.15.32-.29.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.75 1.24 1.61 2 1.11.99 2.04 1.3 2.34 1.44.3.15.47.13.65-.08.18-.2.76-.88.96-1.19.2-.3.4-.25.68-.15.28.1 1.77.84 2.07.99.3.15.5.22.57.35.08.13.08.75-.16 1.43z"/></svg>
+</a>
+
+<!-- ===================== VIEW: HOME (subject portal) ===================== -->
+<div id="view-home">
+  <section class="hero" style="padding:90px 0 70px;">
+    <div class="wrap">
+      <div class="eyebrow">Dalton Lab · Portal Belajar</div>
+      <h1 style="max-width:760px;">Pilih mata pelajaran, lalu pilih babnya.</h1>
+      <p class="lead" style="max-width:600px;">Ringkasan interaktif per bab, lengkap dengan latihan &amp; kuis — dibuat untuk menemani belajar Kurikulum Merdeka.</p>
+    </div>
+  </section>
+  <section class="tight">
+    <div class="wrap">
+      <div class="subject-grid" id="subjectGrid"></div>
+
+      <div class="home-marketing">
+        <div class="home-marketing-head">
+          <div class="eyebrow">Naik Level Bareng Tutor Asli</div>
+          <h2>Materi gratis, hasil maksimal kalau ada yang bimbing.</h2>
+          <p>Semua ringkasan &amp; kuis di sini bisa dicoba dulu. Tapi kalau kamu mau benar-benar paham — bukan cuma hafal — gabung kelas bimbingan Dalton Lab bareng tutor asli, online lewat Zoom.</p>
+        </div>
+        <div class="hm-grid">
+          <div class="hm-card"><span class="hm-icon">🎥</span><h4>Live via Zoom</h4><p>Sesi belajar interaktif, bukan rekaman — kamu bisa tanya langsung kapan saja.</p></div>
+          <div class="hm-card"><span class="hm-icon">🧑‍🏫</span><h4>Privat atau Grup</h4><p>Pilih sesuai kebutuhan &amp; budget — belajar sendiri atau bareng teman.</p></div>
+          <div class="hm-card"><span class="hm-icon">📅</span><h4>Senin – Jumat</h4><p>Jadwal rutin tiap hari kerja, menyesuaikan waktu luangmu.</p></div>
+          <div class="hm-card"><span class="hm-icon">✅</span><h4>Bahas Soal Tuntas</h4><p>PR &amp; soal yang bikin bingung dikupas langsung sampai benar-benar ngerti.</p></div>
+        </div>
+        <div class="hm-cta-row">
+          <a class="wa-btn" id="homeWaBtn" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="#0d1b2e"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.005c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm5.8 14.1c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.2-.15.32-.29.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.75 1.24 1.61 2 1.11.99 2.04 1.3 2.34 1.44.3.15.47.13.65-.08.18-.2.76-.88.96-1.19.2-.3.4-.25.68-.15.28.1 1.77.84 2.07.99.3.15.5.22.57.35.08.13.08.75-.16 1.43z"/></svg>
+            Chat di WhatsApp
+          </a>
+          <span class="hm-cta-note">Respons cepat · Konsultasi jadwal &amp; harga gratis</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== VIEW: BAB PICKER ===================== -->
+<div id="view-babs" style="display:none;">
+  <section class="hero" style="padding:60px 0 50px;">
+    <div class="wrap">
+      <button class="breadcrumb-back" id="backToHomeBtn">← Semua Mata Pelajaran</button>
+      <div class="eyebrow" id="babsEyebrow">Mata Pelajaran</div>
+      <h1 id="babsTitle" style="max-width:760px;">—</h1>
+      <p class="lead" id="babsSubtitle" style="max-width:600px;"></p>
+    </div>
+  </section>
+  <section class="tight">
+    <div class="wrap">
+      <div class="bab-grid" id="babGrid"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== VIEW: SIGN IN ===================== -->
+<div id="view-signin" style="display:none;">
+  <section class="hero" style="padding:60px 0 50px;">
+    <div class="wrap">
+      <button class="breadcrumb-back" id="backToHomeFromSignin">← Semua Mata Pelajaran</button>
+      <div class="eyebrow">Akses Materi</div>
+      <h1 id="signinTitle" style="max-width:760px;">Masuk untuk Melanjutkan</h1>
+      <p class="lead" id="signinSubtitle" style="max-width:600px;">Materi ini khusus untuk siswa terdaftar Dalton Lab.</p>
+    </div>
+  </section>
+  <section class="tight">
+    <div class="wrap">
+      <div class="signin-wrap">
+        <div class="signin-card">
+          <h3>Masuk ke Akunmu</h3>
+          <p class="signin-sub">Gunakan username &amp; password yang diberikan oleh Dalton Lab.</p>
+          <div class="signin-error" id="signinError"></div>
+          <div class="signin-field">
+            <label>Username</label>
+            <input type="text" id="signinUsername" autocomplete="username" class="mono">
+          </div>
+          <div class="signin-field">
+            <label>Password</label>
+            <input type="password" id="signinPassword" autocomplete="current-password" class="mono">
+          </div>
+          <button class="btn btn-primary signin-submit" id="signinSubmitBtn">Masuk</button>
+          <p class="signin-note">Belum punya akun? Pendaftaran dilakukan manual oleh admin — lihat panel di samping. →</p>
+        </div>
+
+        <div class="marketing-panel">
+          <div class="eyebrow">Belum Punya Akun?</div>
+          <h3>Gabung Dalton Lab &amp; Belajar Bareng Tutor Asli</h3>
+          <p class="mk-lead">Pendaftaran saat ini dilakukan langsung oleh admin Dalton Lab — chat kami dan akunmu bisa aktif hari itu juga.</p>
+          <ul class="mk-benefits">
+            <li><span class="mk-icon">🎥</span><div><b>Live Tutoring via Zoom</b>Privat atau grup, ketemu tutor asli — bukan video rekaman.</div></li>
+            <li><span class="mk-icon">📅</span><div><b>Senin – Jumat</b>Jadwal rutin tiap hari kerja, fleksibel sesuai waktumu.</div></li>
+            <li><span class="mk-icon">💬</span><div><b>Tanya Kapan Saja</b>Bingung soal atau PR? Tinggal chat, langsung dibahas.</div></li>
+            <li><span class="mk-icon">🔓</span><div><b>Akses Penuh</b>Semua materi &amp; kuis interaktif Dalton Lab, tanpa batas.</div></li>
+          </ul>
+          <a class="wa-btn" id="signinWaBtn" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="#0d1b2e"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.005c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm5.8 14.1c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.2-.15.32-.29.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.75 1.24 1.61 2 1.11.99 2.04 1.3 2.34 1.44.3.15.47.13.65-.08.18-.2.76-.88.96-1.19.2-.3.4-.25.68-.15.28.1 1.77.84 2.07.99.3.15.5.22.57.35.08.13.08.75-.16 1.43z"/></svg>
+            Chat di WhatsApp
+          </a>
+          <p class="mk-schedule">📞 082136673896 · Respons cepat setiap hari</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== VIEW: LESSON (bab content) ===================== -->
+<div id="view-lesson" style="display:none;">
+
+<div class="lesson-subnav" id="lessonSubnav">
+  <div class="wrap lesson-subnav-inner">
+    <button class="breadcrumb-back small" id="backToBabsBtn">← Ekonomi</button>
+    <nav class="lesson-links">
       <a href="#badan-usaha">Badan Usaha</a>
       <a href="#bentuk">Bentuk BU</a>
       <a href="#bumn">BUMN/BUMD</a>
@@ -530,9 +847,8 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
       <a href="#manajemen">Manajemen</a>
       <a href="#kuis" class="cta">Kuis →</a>
     </nav>
-    <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
-</header>
+</div>
 
 <section class="hero" id="top">
   <div class="hero-decor"></div>
@@ -728,25 +1044,23 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
 
     <div class="two-col">
       <div class="struct-box">
-        <h3 style="font-size:1.15rem;">Struktur Organisasi</h3>
-        <div class="struct-flow">
-          <div class="struct-node top">Rapat Anggota <span>visi, misi, AD/ART, pemilihan pengurus</span></div>
-          <div class="struct-arrow">↓</div>
-          <div class="struct-row">
-            <div class="struct-node">Pengawas <span>mengawasi pengurus</span></div>
-            <div class="struct-node">Pengurus <span>mengelola usaha, susun laporan</span></div>
+        <h3 style="font-size:1.15rem;">Struktur Organisasi <span class="struct-hint">— klik tiap jabatan</span></h3>
+        <div class="org-chart" id="orgChart">
+          <div class="org-node" data-role="rapat-anggota">
+            <b>Rapat Anggota</b><span>Kekuasaan tertinggi</span>
           </div>
-          <div class="struct-arrow">↓</div>
-          <div class="struct-node">Manager <span>mengelola usaha-usaha koperasi</span></div>
-          <div class="struct-arrow">↓</div>
-          <div class="struct-row three">
-            <div class="struct-node small">Unit Usaha</div>
-            <div class="struct-node small">Unit Usaha</div>
-            <div class="struct-node small">Unit Usaha</div>
+          <div class="org-arrow">↓ memilih &amp; mengawasi</div>
+          <div class="org-row">
+            <div class="org-node" data-role="pengurus"><b>Pengurus</b><span>Mengelola usaha</span></div>
+            <div class="org-node" data-role="pengawas"><b>Pengawas</b><span>Mengawasi pengurus</span></div>
           </div>
-          <div class="struct-arrow">↓</div>
-          <div class="struct-node bottom">Anggota</div>
+          <div class="org-arrow">↓ mengangkat</div>
+          <div class="org-node" data-role="manajer"><b>Manajer</b><span>Memimpin operasional</span></div>
+          <div class="org-arrow">↓ memimpin</div>
+          <div class="org-node" data-role="karyawan"><b>Karyawan / Unit Usaha</b><span>Menjalankan usaha harian</span></div>
         </div>
+        <div class="org-detail" id="orgDetail">👆 Klik salah satu jabatan di atas untuk melihat tugasnya.</div>
+        <p class="org-loop-note">↻ Karyawan &amp; unit usaha melayani kebutuhan <b>Anggota</b> — yang juga adalah pemilik koperasi dan hadir langsung dalam Rapat Anggota di puncak struktur.</p>
       </div>
 
       <div class="jenis-box">
@@ -859,13 +1173,14 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
     </div>
 
     <div class="section-head" style="margin-top:56px;">
-      <div class="eyebrow">Fungsi Manajemen — POAC</div>
+      <div class="eyebrow">5 Fungsi Manajemen</div>
     </div>
     <div class="poac-grid">
-      <div class="poac-card"><span class="poac-letter">P</span><h4>Planning</h4><p>Merencanakan tujuan, kebijakan, proyek, prosedur &amp; anggaran (fundamental / strategi).</p></div>
-      <div class="poac-card"><span class="poac-letter">O</span><h4>Organizing</h4><p>Membagi kerja &amp; kegiatan agar efektif &amp; efisien — mengatur posisi, wewenang &amp; tanggung jawab.</p></div>
-      <div class="poac-card"><span class="poac-letter">A</span><h4>Actuating</h4><p>Mengarahkan S.D. Manusia agar melaksanakan tugasnya (pendelegasian tanggung jawab).</p></div>
-      <div class="poac-card"><span class="poac-letter">C</span><h4>Controlling</h4><p>Memantau pelaksanaan sesuai planning &amp; SOP — mencari apa yang tak sesuai untuk diperbaiki.</p></div>
+      <div class="poac-card"><span class="poac-num">01</span><h4>Perencanaan</h4><p class="poac-en">Planning</p><p>Merencanakan tujuan, kebijakan, proyek, prosedur &amp; anggaran (fundamental / strategi).</p></div>
+      <div class="poac-card"><span class="poac-num">02</span><h4>Pengorganisasian</h4><p class="poac-en">Organizing</p><p>Membagi kerja &amp; kegiatan agar efektif &amp; efisien — mengatur posisi, wewenang &amp; tanggung jawab.</p></div>
+      <div class="poac-card"><span class="poac-num">03</span><h4>Pengarahan</h4><p class="poac-en">Directing</p><p>Mengarahkan &amp; memotivasi S.D. Manusia agar melaksanakan tugasnya sesuai rencana.</p></div>
+      <div class="poac-card"><span class="poac-num">04</span><h4>Pengoordinasian</h4><p class="poac-en">Coordinating</p><p>Menyelaraskan seluruh unit &amp; sumber daya agar bergerak searah, menghindari tumpang tindih kerja.</p></div>
+      <div class="poac-card"><span class="poac-num">05</span><h4>Pengendalian</h4><p class="poac-en">Controlling</p><p>Memantau pelaksanaan sesuai rencana &amp; SOP — mencari apa yang tak sesuai untuk diperbaiki.</p></div>
     </div>
 
     <div class="section-head" style="margin-top:56px;">
@@ -931,6 +1246,8 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
   </div>
 </section>
 
+</div><!-- /view-lesson -->
+
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <div class="brand">
@@ -940,7 +1257,7 @@ table.compare-table tbody th{font-family:'IBM Plex Mono';font-size:.74rem;color:
         <div class="brand-sub" style="color:#7d8ea1;">Mathematics · Physics · Chemistry</div>
       </div>
     </div>
-    <p class="footer-note">Dibuat untuk membantu belajar Ekonomi Kurikulum Merdeka — Badan Usaha, Koperasi &amp; Manajemen.</p>
+    <p class="footer-note">Dibuat untuk membantu belajar Kurikulum Merdeka — satu tempat untuk semua mata pelajaran.</p>
   </div>
 </footer>
 
@@ -952,6 +1269,252 @@ document.getElementById('hamburgerBtn').addEventListener('click',()=>{
 document.querySelectorAll('#navLinks a').forEach(a=>{
   a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
 });
+
+/* ===== Subjects / Babs data model ===== */
+const subjectsData = {
+  ekonomi: {
+    name:'Ekonomi', icon:'📊', ready:true,
+    desc:'Badan usaha, koperasi, manajemen, dan seluk-beluk ekonomi lainnya.',
+    babs:[
+      {id:'bab1-badan-usaha', num:'Bab 1', title:'Badan Usaha, Koperasi & Manajemen', desc:'Bentuk-bentuk badan usaha, BUMN/BUMD, koperasi & kalkulator SHU, dasar manajemen.', ready:true},
+    ]
+  },
+  matematika: {
+    name:'Matematika', icon:'📐', ready:false,
+    desc:'Aljabar, geometri, kalkulus, statistika, dan lainnya.',
+    babs:[]
+  },
+  kimia: {
+    name:'Kimia', icon:'🧪', ready:false,
+    desc:'Struktur atom, ikatan kimia, stoikiometri, dan lainnya.',
+    babs:[]
+  },
+  fisika: {
+    name:'Fisika', icon:'⚛️', ready:false,
+    desc:'Mekanika, listrik-magnet, gelombang, dan lainnya.',
+    babs:[]
+  },
+};
+
+/* ===== WhatsApp marketing links ===== */
+const WHATSAPP_NUMBER = '6282136673896'; // 082136673896 in international format
+
+/* ===== Google Sheets / Apps Script backend =====
+   Replace with your deployed Apps Script Web App URL (ends in /exec).
+   Used for BOTH login checks and quiz result logging. See setup notes provided separately. */
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHBK1OXZjz59KjTjRkcTEut8I007AGblM2px7PAxg1qUYYJzLHtfIQtHkGtQNjasasYw/exec";
+
+function waLink(message){
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+document.getElementById('waFloat').href = waLink('Halo Dalton Lab! Saya tertarik belajar di Dalton Lab dan ingin tahu lebih lanjut tentang akses materi & bimbingan tutor 🙌');
+document.getElementById('homeWaBtn').href = waLink('Halo Dalton Lab! Saya ingin tanya-tanya soal kelas bimbingan (privat/grup) via Zoom 🙌');
+
+/* ===== Session / auth ===== */
+function getSession(){
+  try{
+    const raw = localStorage.getItem('daltonlab_session');
+    return raw ? JSON.parse(raw) : null;
+  }catch(e){ return null; }
+}
+function saveSession(session){
+  localStorage.setItem('daltonlab_session', JSON.stringify(session));
+  renderSessionBadge();
+}
+function clearSession(){
+  localStorage.removeItem('daltonlab_session');
+  renderSessionBadge();
+}
+function hasAccess(subjectKey){
+  const s = getSession();
+  if(!s || !s.akses) return false;
+  return s.akses.includes('all') || s.akses.includes(subjectKey);
+}
+function renderSessionBadge(){
+  const badge = document.getElementById('sessionBadge');
+  const s = getSession();
+  if(s){
+    badge.style.display = 'flex';
+    badge.innerHTML = `👋 ${s.nama || s.username} <button id="logoutBtn">Keluar</button>`;
+    document.getElementById('logoutBtn').addEventListener('click',()=>{
+      clearSession();
+      goToHome();
+    });
+  } else {
+    badge.style.display = 'none';
+    badge.innerHTML = '';
+  }
+}
+renderSessionBadge();
+
+/* ===== View router ===== */
+const viewHome = document.getElementById('view-home');
+const viewBabs = document.getElementById('view-babs');
+const viewSignin = document.getElementById('view-signin');
+const viewLesson = document.getElementById('view-lesson');
+let activeSubjectKey = 'ekonomi';
+
+function renderSubjectGrid(){
+  const grid = document.getElementById('subjectGrid');
+  grid.innerHTML = Object.entries(subjectsData).map(([key,s])=>`
+    <div class="subject-card ${s.ready?'ready':'soon'}" data-subject="${key}">
+      <span class="subj-icon">${s.icon}</span>
+      <h3>${s.name}</h3>
+      <p>${s.desc}</p>
+      <span class="subj-status">${s.ready ? 'Tersedia' : 'Segera Hadir'}</span>
+    </div>`).join('');
+  grid.querySelectorAll('.subject-card').forEach(card=>{
+    card.addEventListener('click',()=>enterSubject(card.dataset.subject));
+  });
+}
+renderSubjectGrid();
+
+function hideAllViews(){
+  viewHome.style.display = 'none';
+  viewBabs.style.display = 'none';
+  viewSignin.style.display = 'none';
+  viewLesson.style.display = 'none';
+}
+
+function goToHome(){
+  hideAllViews();
+  viewHome.style.display = '';
+  document.querySelectorAll('.subject-link').forEach(l=>l.classList.remove('active'));
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+/* Entry point when a subject is clicked: gate behind sign-in unless already authorized */
+function enterSubject(subjectKey){
+  activeSubjectKey = subjectKey;
+  if(hasAccess(subjectKey)){
+    goToBabs(subjectKey);
+  } else {
+    goToSignIn(subjectKey);
+  }
+}
+
+function goToSignIn(subjectKey){
+  activeSubjectKey = subjectKey;
+  const s = subjectsData[subjectKey];
+  document.getElementById('signinTitle').textContent = 'Masuk untuk Mengakses ' + s.name;
+  document.getElementById('signinSubtitle').textContent = `Materi ${s.name} khusus untuk siswa terdaftar Dalton Lab.`;
+  document.getElementById('signinError').classList.remove('show');
+  document.getElementById('signinUsername').value = '';
+  document.getElementById('signinPassword').value = '';
+  document.getElementById('signinWaBtn').href = waLink(`Halo Dalton Lab, saya belum punya akun untuk mengakses materi ${s.name}. Boleh dibantu daftarkan? 🙏`);
+
+  hideAllViews();
+  viewSignin.style.display = '';
+  document.querySelectorAll('.subject-link').forEach(l=>l.classList.toggle('active', l.dataset.subject===subjectKey));
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+function goToBabs(subjectKey){
+  activeSubjectKey = subjectKey;
+  const s = subjectsData[subjectKey];
+  document.getElementById('babsEyebrow').textContent = 'Mata Pelajaran';
+  document.getElementById('babsTitle').textContent = s.name + ' — Pilih Bab';
+  document.getElementById('babsSubtitle').textContent = s.desc;
+
+  const babGrid = document.getElementById('babGrid');
+  if(s.babs.length === 0){
+    babGrid.innerHTML = `<p style="color:var(--slate);grid-column:1/-1;">Materi ${s.name} sedang disiapkan — segera hadir di sini. 🚧</p>`;
+  } else {
+    babGrid.innerHTML = s.babs.map(b=>`
+      <div class="bab-card ${b.ready?'':'soon'}" data-bab="${b.id}">
+        ${b.ready?'':'<span class="soon-tag">Segera Hadir</span>'}
+        <div class="bab-num">${b.num}</div>
+        <h4>${b.title}</h4>
+        <p>${b.desc}</p>
+      </div>`).join('');
+    babGrid.querySelectorAll('.bab-card:not(.soon)').forEach(card=>{
+      card.addEventListener('click',()=>goToLesson(card.dataset.bab));
+    });
+  }
+
+  hideAllViews();
+  viewBabs.style.display = '';
+  document.querySelectorAll('.subject-link').forEach(l=>l.classList.toggle('active', l.dataset.subject===subjectKey));
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+let activeBabId = null;
+function goToLesson(babId){
+  activeBabId = babId;
+  document.getElementById('backToBabsBtn').textContent = '← ' + subjectsData[activeSubjectKey].name;
+  const session = getSession();
+  const gateNameInput = document.getElementById('gateName');
+  if(session && gateNameInput && !gateNameInput.value){
+    gateNameInput.value = session.nama || '';
+  }
+  hideAllViews();
+  viewLesson.style.display = '';
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+document.getElementById('logoHome').addEventListener('click',e=>{e.preventDefault(); goToHome();});
+document.getElementById('backToHomeBtn').addEventListener('click',goToHome);
+document.getElementById('backToHomeFromSignin').addEventListener('click',goToHome);
+document.getElementById('backToBabsBtn').addEventListener('click',()=>goToBabs(activeSubjectKey));
+document.querySelectorAll('.subject-link').forEach(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+    enterSubject(link.dataset.subject);
+  });
+});
+
+/* ===== Sign-in submit ===== */
+document.getElementById('signinSubmitBtn').addEventListener('click', attemptSignIn);
+document.getElementById('signinPassword').addEventListener('keydown', e=>{ if(e.key==='Enter') attemptSignIn(); });
+document.getElementById('signinUsername').addEventListener('keydown', e=>{ if(e.key==='Enter') attemptSignIn(); });
+
+function showSigninError(msg){
+  const el = document.getElementById('signinError');
+  el.textContent = msg;
+  el.classList.add('show');
+}
+
+async function attemptSignIn(){
+  const username = document.getElementById('signinUsername').value.trim();
+  const password = document.getElementById('signinPassword').value;
+  const btn = document.getElementById('signinSubmitBtn');
+  document.getElementById('signinError').classList.remove('show');
+
+  if(!username || !password){
+    showSigninError('Username dan password wajib diisi.');
+    return;
+  }
+  if(!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.indexOf('PASTE_YOUR') === 0){
+    showSigninError('Sistem login belum diaktifkan oleh admin. Hubungi kami via WhatsApp di panel sebelah.');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Memeriksa…';
+  try{
+    const res = await fetch(GOOGLE_SCRIPT_URL, {
+      method:'POST',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify({type:'login', username, password})
+    });
+    const data = await res.json();
+    if(data.success){
+      saveSession({username, nama:data.nama || username, akses: data.akses || []});
+      if(hasAccess(activeSubjectKey)){
+        goToBabs(activeSubjectKey);
+      } else {
+        showSigninError(`Akun kamu berhasil masuk, tapi belum punya akses ke ${subjectsData[activeSubjectKey].name}. Hubungi admin via WhatsApp untuk upgrade akses.`);
+      }
+    } else {
+      showSigninError(data.message || 'Username atau password salah.');
+    }
+  }catch(err){
+    showSigninError('Gagal terhubung ke server. Periksa koneksi internet kamu.');
+  }finally{
+    btn.disabled = false;
+    btn.textContent = 'Masuk';
+  }
+}
 
 /* ===== Sector grid ===== */
 const sectors = [
@@ -1081,6 +1644,25 @@ function calcSHU(){
 });
 calcSHU();
 
+/* ===== Koperasi Org Chart ===== */
+const orgRoles = {
+  'rapat-anggota':{title:'Rapat Anggota', body:'Forum tertinggi koperasi, dihadiri seluruh anggota. Menetapkan AD/ART & kebijakan umum, serta memilih dan memberhentikan Pengurus & Pengawas.'},
+  'pengurus':{title:'Pengurus', body:'Dipilih oleh Rapat Anggota untuk mengelola usaha & organisasi koperasi sehari-hari, serta menyusun laporan pertanggungjawaban tahunan.'},
+  'pengawas':{title:'Pengawas', body:'Dipilih oleh Rapat Anggota, bertugas mengawasi kinerja & kebijakan Pengurus secara independen agar tetap sesuai AD/ART.'},
+  'manajer':{title:'Manajer', body:'Diangkat oleh Pengurus sebagai tenaga profesional untuk memimpin operasional teknis unit-unit usaha koperasi.'},
+  'karyawan':{title:'Karyawan / Unit Usaha', body:'Menjalankan kegiatan unit usaha (toko, simpan pinjam, dll.) sehari-hari untuk melayani kebutuhan anggota.'},
+};
+function showOrgDetail(role){
+  document.querySelectorAll('.org-node').forEach(n=>n.classList.toggle('active', n.dataset.role===role));
+  const d = orgRoles[role];
+  document.getElementById('orgDetail').innerHTML = `<b>${d.title}</b> — ${d.body}`;
+}
+document.getElementById('orgChart').addEventListener('click', e=>{
+  const node = e.target.closest('.org-node');
+  if(!node) return;
+  showOrgDetail(node.dataset.role);
+});
+
 /* ===== Pyramid ===== */
 const pyramidData = {
   top:{title:'Top Management', body:'CEO, Direktur, Presiden. Menentukan tujuan perusahaan, visi-misi & strategi jangka panjang, serta evaluasi bisnis secara keseluruhan.'},
@@ -1188,7 +1770,6 @@ let studentName = '', studentClass = '';
 /* ===== Google Sheets submission =====
    Replace GOOGLE_SCRIPT_URL below with your deployed Apps Script Web App URL.
    See setup instructions provided separately. */
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwcmx_-dugmCWQ0XhjqLBQVnYVvC_F_5PsZFBOTLI8GIkWHxoKyZovWYnUWPaPWyrvZQQ/exec";
 
 function submitToSheet(payload){
   const statusEl = document.getElementById('submitStatus');
@@ -1201,12 +1782,16 @@ function submitToSheet(payload){
   statusEl.className = 'submit-status pending';
   fetch(GOOGLE_SCRIPT_URL, {
     method: 'POST',
-    mode: 'no-cors',
     headers: {'Content-Type': 'text/plain;charset=utf-8'},
     body: JSON.stringify(payload)
-  }).then(()=>{
-    statusEl.textContent = '✓ Hasil kamu sudah tercatat.';
-    statusEl.className = 'submit-status ok';
+  }).then(r=>r.json()).then(data=>{
+    if(data && data.success){
+      statusEl.textContent = '✓ Hasil kamu sudah tercatat.';
+      statusEl.className = 'submit-status ok';
+    } else {
+      statusEl.textContent = '⚠ Gagal menyimpan hasil ke server.';
+      statusEl.className = 'submit-status err';
+    }
   }).catch(()=>{
     statusEl.textContent = '⚠ Gagal menyimpan hasil — periksa koneksi internet.';
     statusEl.className = 'submit-status err';
@@ -1283,7 +1868,11 @@ function showResult(){
   else msg = 'Yuk baca ulang materi di atas, lalu coba lagi — kamu pasti bisa lebih baik!';
   document.getElementById('resultMsg').textContent = `Kamu menjawab benar ${score} dari ${quiz.length} soal. ${msg}`;
 
+  const session = getSession();
   submitToSheet({
+    type: 'quiz',
+    sheetName: `Kuis - ${subjectsData[activeSubjectKey].name} - ${activeBabId || 'umum'}`,
+    username: session ? session.username : '',
     nama: studentName,
     kelas: studentClass,
     skor: score,
