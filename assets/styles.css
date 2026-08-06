@@ -657,9 +657,9 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
   padding:16px 0;text-align:center;font-family:'Space Grotesk';font-weight:700;color:#fff;cursor:pointer;
   border-radius:8px;transition:opacity .15s, transform .15s;
 }
-.p-level[data-level="top"]{background:var(--navy);}
-.p-level[data-level="middle"]{background:var(--navy-2);}
-.p-level[data-level="lower"]{background:var(--orange);}
+.p-level-top{background:var(--navy);}
+.p-level-middle{background:var(--navy-2);}
+.p-level-lower{background:var(--orange);}
 .p-level:hover{opacity:.85;transform:scale(1.01);}
 .p-level.active{outline:3px solid var(--orange-dark);outline-offset:2px;}
 .pyramid-detail{
