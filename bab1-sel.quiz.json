@@ -1,0 +1,74 @@
+[
+  {
+    "q": "Ilmuwan yang pertama kali mengamati sel hidup (bakteri, protozoa) dan menyebutnya \"animalcules\" adalah…",
+    "opts": ["Robert Hooke", "Antonie van Leeuwenhoek", "Theodor Schwann", "Rudolf Virchow"],
+    "correct": 1,
+    "explain": "Antonie van Leeuwenhoek, Bapak Mikrobiologi, menggunakan mikroskop rancangannya sendiri untuk pertama kali mengamati sel hidup, menyebutnya \"animalcules\"."
+  },
+  {
+    "q": "Prinsip \"Omnis cellula e cellula\" yang menyatakan setiap sel berasal dari sel sebelumnya dikemukakan oleh…",
+    "opts": ["Matthias Schleiden", "Robert Hooke", "Rudolf Virchow", "Theodor Schwann"],
+    "correct": 2,
+    "explain": "Rudolf Virchow (1855–1858) melengkapi teori sel dengan prinsip \"Omnis cellula e cellula\" — sel tidak muncul secara spontan, melainkan dari pembelahan sel yang sudah ada."
+  },
+  {
+    "q": "Makromolekul organik yang berfungsi menyimpan & menyalurkan informasi genetik, dengan monomer nukleotida, adalah…",
+    "opts": ["Karbohidrat", "Protein", "Lipid", "Asam Nukleat"],
+    "correct": 3,
+    "explain": "Asam nukleat (DNA & RNA), tersusun dari monomer nukleotida, berfungsi menyimpan & menyalurkan informasi genetik sel."
+  },
+  {
+    "q": "Perbedaan basa nitrogen yang membedakan RNA dari DNA adalah…",
+    "opts": ["RNA memiliki Urasil menggantikan Timin", "RNA memiliki Timin menggantikan Urasil", "RNA tidak memiliki basa nitrogen", "RNA memiliki basa nitrogen ekstra"],
+    "correct": 0,
+    "explain": "DNA memiliki basa Adenin, Timin, Guanin, Sitosin — sedangkan RNA memiliki Urasil sebagai pengganti Timin."
+  },
+  {
+    "q": "Model struktur membran sel yang menjelaskan susunan fosfolipid bilayer dengan protein yang \"mengapung\" di dalamnya disebut…",
+    "opts": ["Model Sel Terbuka", "Model Mozaik Cair (Fluid Mosaic Model)", "Model Membran Statis", "Model Bilayer Tunggal"],
+    "correct": 1,
+    "explain": "Model Mozaik Cair (Fluid Mosaic Model), dikemukakan Singer & Nicolson (1972), menjelaskan membran sebagai fosfolipid bilayer dengan protein yang dapat bergerak di dalamnya."
+  },
+  {
+    "q": "Organel berikut yang TIDAK memiliki membran pembungkus adalah…",
+    "opts": ["Mitokondria", "Ribosom", "Retikulum Endoplasma", "Badan Golgi"],
+    "correct": 1,
+    "explain": "Ribosom (bersama sentriol & sitoskeleton) tidak memiliki membran pembungkus — berbeda dari mitokondria, RE, dan Golgi yang bermembran."
+  },
+  {
+    "q": "Fungsi utama mitokondria, yang dijuluki \"the powerhouse of the cell\", adalah…",
+    "opts": ["Sintesis protein", "Fotosintesis", "Respirasi seluler (produksi ATP)", "Pencernaan intraseluler"],
+    "correct": 2,
+    "explain": "Mitokondria adalah pusat respirasi seluler tempat produksi energi (ATP) — karenanya dijuluki \"the powerhouse of the cell\"."
+  },
+  {
+    "q": "Ciri khas yang dimiliki sel tumbuhan tetapi TIDAK dimiliki sel hewan adalah…",
+    "opts": ["Membran sel", "Sentriol", "Dinding sel dari selulosa & kloroplas", "Ribosom"],
+    "correct": 2,
+    "explain": "Sel tumbuhan memiliki dinding sel dari selulosa dan kloroplas untuk fotosintesis — dua hal yang tidak dimiliki sel hewan."
+  },
+  {
+    "q": "Sel prokariotik dicirikan dengan…",
+    "opts": ["Memiliki membran inti", "Tidak memiliki membran inti (materi genetik di nukleoid)", "Memiliki banyak organel bermembran", "Ukuran sel lebih besar dari eukariotik"],
+    "correct": 1,
+    "explain": "Sel prokariotik tidak memiliki membran inti — materi genetiknya berada bebas di sitoplasma pada daerah yang disebut nukleoid."
+  },
+  {
+    "q": "Sel darah putih yang menelan bakteri untuk melawan infeksi merupakan contoh proses…",
+    "opts": ["Pinositosis", "Eksositosis", "Fagositosis", "Osmosis"],
+    "correct": 2,
+    "explain": "Fagositosis adalah proses \"menelan\" partikel padat oleh sel — contohnya sel darah putih (leukosit) yang memakan bakteri."
+  },
+  {
+    "q": "Ketika sel hewan diletakkan pada larutan hipertonis (pekat), sel akan mengalami…",
+    "opts": ["Lisis (membengkak & pecah)", "Turgid", "Krenasi (mengerut)", "Plasmolisis"],
+    "correct": 2,
+    "explain": "Pada larutan hipertonis, air keluar dari sel hewan sehingga sel mengerut — kondisi ini disebut krenasi. (Plasmolisis adalah istilah khusus untuk sel tumbuhan.)"
+  },
+  {
+    "q": "Bukti yang mendukung Teori Endosimbiotik tentang asal-usul mitokondria & kloroplas adalah…",
+    "opts": ["Keduanya tidak memiliki membran", "Keduanya memiliki DNA sirkular sendiri & ribosom tipe 70S mirip bakteri", "Keduanya hanya ditemukan pada sel hewan", "Keduanya berukuran jauh lebih besar dari bakteri"],
+    "correct": 1,
+    "explain": "Mitokondria & kloroplas memiliki DNA sirkular sendiri dan ribosom tipe 70S (mirip bakteri) — bukti kuat bahwa keduanya berasal dari sel prokariotik bebas yang bersimbiosis (Teori Endosimbiotik, Lynn Margulis 1967)."
+  }
+]

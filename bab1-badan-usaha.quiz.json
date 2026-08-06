@@ -1,0 +1,74 @@
+[
+  {
+    "q": "Perbedaan mendasar antara \"badan usaha\" dan \"perusahaan\" adalah…",
+    "opts": ["Badan usaha adalah tempat fisik, perusahaan adalah kesatuan hukum", "Badan usaha adalah kesatuan yuridis-ekonomis yang mencari laba, perusahaan adalah tempat/wadah fisik kegiatannya", "Keduanya adalah istilah yang persis sama", "Badan usaha selalu berbentuk PT, perusahaan berbentuk apa saja"],
+    "correct": 1,
+    "explain": "Badan usaha = kesatuan hukum & ekonomi (yuridis) yang bertujuan mencari laba & memberi pelayanan. Perusahaan = wadah/tempat fisik tempat kegiatan produksi berlangsung, sebagai alat mencapai tujuan badan usaha."
+  },
+  {
+    "q": "PT Indofood Sukses Makmur Tbk adalah badan usaha, sedangkan pabrik & merek Indofood adalah…",
+    "opts": ["Badan usaha juga", "Perusahaannya", "Koperasinya", "BUMN-nya"],
+    "correct": 1,
+    "explain": "Pabrik & merek yang beroperasi (mis. Indofood, GraPARI untuk Telkom) berperan sebagai \"perusahaan\" — wadah fisik dari badan usaha induknya."
+  },
+  {
+    "q": "Pertamina, Freeport, dan PTBA adalah contoh badan usaha di sektor…",
+    "opts": ["Agraris", "Dagang", "Ekstraktif", "Jasa"],
+    "correct": 2,
+    "explain": "Ketiganya mengambil/mengolah hasil alam (minyak, mineral, batu bara) secara langsung — ini ciri sektor ekstraktif."
+  },
+  {
+    "q": "Dalam CV, sekutu pasif (komanditer) memiliki tanggung jawab yang…",
+    "opts": ["Tidak terbatas, sama seperti sekutu aktif", "Terbatas hanya pada modal yang disetorkan", "Tidak ada tanggung jawab sama sekali", "Ditanggung penuh oleh sekutu aktif"],
+    "correct": 1,
+    "explain": "Sekutu pasif (komanditer) hanya menanamkan modal dan tidak ikut mengelola usaha, sehingga tanggung jawabnya terbatas pada modal yang disetorkannya."
+  },
+  {
+    "q": "Ciri khas Perseroan Terbatas (PT) dibanding bentuk usaha lain adalah…",
+    "opts": ["Modal berupa simpanan anggota", "Tanggung jawab pemilik tidak terbatas", "Kepemilikan berbentuk saham dan berstatus badan hukum", "Tidak boleh memiliki lebih dari satu pemilik"],
+    "correct": 2,
+    "explain": "PT adalah badan hukum resmi dengan kepemilikan berupa lembar saham, dan tanggung jawab pemilik terbatas pada modal yang disetor."
+  },
+  {
+    "q": "Perbedaan utama antara Perum dan Persero dalam BUMN adalah…",
+    "opts": ["Perum modalnya 100% negara & fokus pelayanan, Persero minimal 51% negara & fokus laba", "Perum dan Persero sama-sama 100% milik negara", "Persero tidak boleh mencari laba", "Perum hanya beroperasi di luar negeri"],
+    "correct": 0,
+    "explain": "Perum: modal 100% negara, orientasi pelayanan publik penuh. Persero: minimal 51% saham negara, berorientasi mencari laba (contoh: BNI, PLN, Pertamina, KAI)."
+  },
+  {
+    "q": "Dasar hukum yang mengatur BUMD adalah…",
+    "opts": ["UU No. 19 Tahun 2003", "UU No. 25 Tahun 1992", "PP No. 54 Tahun 2017", "UUD 1945 Pasal 33"],
+    "correct": 2,
+    "explain": "BUMD diatur dalam PP No. 54 Tahun 2017, dan hanya beroperasi di wilayah otoritas pemerintah daerah masing-masing — berbeda dengan BUMN (UU No. 19/2003) yang beroperasi skala nasional."
+  },
+  {
+    "q": "Prinsip koperasi yang menyatakan bahwa keanggotaan bersifat terbuka dan tanpa paksaan disebut prinsip…",
+    "opts": ["Mandiri", "Sukarela & Terbuka", "Demokratis", "Concern for Community"],
+    "correct": 1,
+    "explain": "Prinsip sukarela & terbuka berarti siapa pun boleh bergabung sebagai anggota koperasi tanpa ada paksaan dari pihak manapun."
+  },
+  {
+    "q": "Sebuah koperasi memiliki total SHU Rp40.000.000, dialokasikan 60% untuk jasa modal. Jika total simpanan seluruh anggota Rp200.000.000 dan simpanan Bu Sari Rp10.000.000, berapa SHU jasa modal yang diterima Bu Sari?",
+    "opts": ["Rp1.000.000", "Rp1.200.000", "Rp2.000.000", "Rp2.400.000"],
+    "correct": 1,
+    "explain": "SHU modal = (simpanan pribadi ÷ total simpanan) × %modal × SHU total = (10.000.000/200.000.000) × 60% × 40.000.000 = 0,05 × 0,6 × 40.000.000 = Rp1.200.000."
+  },
+  {
+    "q": "Fungsi manajemen yang bertugas mengarahkan sumber daya manusia agar melaksanakan tugasnya sesuai rencana disebut…",
+    "opts": ["Planning", "Organizing", "Actuating", "Controlling"],
+    "correct": 2,
+    "explain": "Actuating (commanding/penggerakan) adalah fungsi manajemen yang mengarahkan & memimpin SDM agar benar-benar menjalankan tugas sesuai rencana yang telah disusun."
+  },
+  {
+    "q": "Tokoh yang mendefinisikan manajemen sebagai \"seni menyelesaikan pekerjaan melalui orang lain\" adalah…",
+    "opts": ["James A.F. Stoner", "Luther Gulick", "Henry Fayol", "Mary Parker Follet"],
+    "correct": 3,
+    "explain": "Mary Parker Follet mendefinisikan manajemen sebagai seni (art) menyelesaikan pekerjaan melalui orang lain — menekankan aspek kepemimpinan & koordinasi manusia."
+  },
+  {
+    "q": "Prinsip manajemen Fayol \"Esprit de Corps\" menekankan pentingnya…",
+    "opts": ["Pembagian kerja yang jelas", "Semangat kerja sama & kekompakan tim", "Sistem penggajian yang adil", "Rantai komando dari atas ke bawah"],
+    "correct": 1,
+    "explain": "Esprit de corps berarti semangat kerja sama / kekompakan tim — menumbuhkan rasa persatuan agar organisasi berjalan harmonis."
+  }
+]
