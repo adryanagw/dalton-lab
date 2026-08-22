@@ -798,6 +798,23 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 .gate-hint.warn{color:var(--orange);}
 @media(max-width:560px){.gate-row{grid-template-columns:1fr;}}
 
+/* === 3-level exercises ("Latihan Bertingkat") === */
+.exercise-root{max-width:640px;margin:0 auto;}
+.level-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 4px;}
+.level-tab{
+  flex:1;min-width:120px;font-family:'Space Grotesk';font-weight:600;font-size:.84rem;
+  padding:12px 14px;border-radius:12px;cursor:pointer;text-align:center;
+  background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.16);color:#c3ccd9;
+  transition:all .15s;
+}
+.level-tab:hover{border-color:var(--orange);}
+.level-tab.active{background:var(--orange);border-color:var(--orange);color:#241505;}
+.level-tab .level-badge{display:block;font-size:.68rem;font-weight:500;opacity:.85;margin-top:3px;}
+.level-hint{margin-top:6px !important;}
+.ex-result-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px;}
+.btn-outline-light{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.4);}
+.btn-outline-light:hover{background:rgba(255,255,255,0.1);border-color:#fff;transform:translateY(-2px);}
+
 /* === Footer === */
 .site-footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.1);padding:36px 0;}
 .footer-inner{display:flex;flex-direction:column;gap:16px;align-items:flex-start;}

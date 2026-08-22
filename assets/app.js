@@ -57,9 +57,11 @@ const subjectsData = {
     ]
   },
   matematika: {
-    name:'Matematika', icon:'📐', ready:false,
-    desc:'Aljabar, geometri, kalkulus, statistika, dan lainnya.',
-    babs:[]
+    name:'Matematika', icon:'📐', ready:true,
+    desc:'Eksponen, logaritma, aljabar, geometri, statistika, dan lainnya.',
+    babs:[
+      {id:'bab1-eksponen-logaritma', num:'Bab 1', title:'Eksponen & Logaritma', desc:'Sifat-sifat bilangan berpangkat, bentuk akar, fungsi eksponensial, sifat-sifat logaritma, hingga persamaan sederhana keduanya — plus latihan bertingkat per topik.', ready:true, contentUrl:'content/matematika/bab1-eksponen-logaritma.html'},
+    ]
   },
   kimia: {
     name:'Kimia', icon:'🧪', ready:false,
@@ -640,6 +642,238 @@ function initQuizzes(root){
   });
 }
 
+/* =====================================================================
+   GENERIC 3-LEVEL EXERCISE ENGINE ("Latihan Bertingkat")
+   Any topic within a chapter just needs:
+   <div class="exercise-root" data-exercise-src="…json"
+        data-exercise-sheet="Latihan - Subject - babId - Topik"></div>
+
+   The JSON shape is: { "topic": "Nama Topik", "basic":[...], "intermediate":[...], "advanced":[...] }
+   — each level array uses the exact same question shape as quiz JSON
+   ({ q, opts, correct, explain }).
+
+   Students fill the gate (name/class) ONCE, then can freely switch between
+   Dasar / Menengah / Lanjutan. Every submission is tagged with topik+level
+   (in addition to skor/total/persentase) so a future performance dashboard
+   can tell, per student per topic, which level they've cleared — this is
+   the data plumbing the "automatic performance analysis" concept depends on.
+   Reuses the same .quiz-box/.quiz-gate/.q-* visual language as the chapter
+   quiz so it needs no new CSS beyond the level-tab pills.
+   ===================================================================== */
+const EXERCISE_LEVELS = {
+  basic:        { label: 'Dasar',     hint: 'Pemanasan — konsep inti, langsung kepake.' },
+  intermediate: { label: 'Menengah',  hint: 'Butuh 2 langkah atau gabungan beberapa konsep.' },
+  advanced:     { label: 'Lanjutan',  hint: 'Soal non-rutin / cerita, mirip level olimpiade ringan.' }
+};
+
+function initExercises(root){
+  root.querySelectorAll('.exercise-root').forEach(async (mount)=>{
+    const src = mount.dataset.exerciseSrc;
+    const sheetBase = mount.dataset.exerciseSheet || 'Latihan - Umum';
+    if(!src) return;
+
+    mount.innerHTML = `<p style="color:#c3ccd9;text-align:center;">Memuat latihan…</p>`;
+    let data;
+    try{
+      const res = await fetch(src);
+      data = await res.json();
+    }catch(err){
+      mount.innerHTML = `<p style="color:#f0a597;text-align:center;">⚠️ Gagal memuat latihan. Coba refresh halaman ya.</p>`;
+      return;
+    }
+
+    const levelKeys = Object.keys(EXERCISE_LEVELS).filter(lv=>Array.isArray(data[lv]) && data[lv].length);
+    if(!levelKeys.length){
+      mount.innerHTML = `<p style="color:#c3ccd9;text-align:center;">Latihan untuk topik ini belum tersedia.</p>`;
+      return;
+    }
+
+    mount.innerHTML = `
+      <div class="quiz-gate" data-ex-gate>
+        <div class="gate-row">
+          <div class="input-row">
+            <label>Nama Lengkap</label>
+            <input type="text" data-gate-name placeholder="Contoh: Budi Santoso" class="mono">
+          </div>
+          <div class="input-row">
+            <label>Kelas</label>
+            <input type="text" data-gate-class placeholder="Contoh: XI-2" class="mono">
+          </div>
+        </div>
+        <p class="gate-hint" data-gate-hint>Isi nama &amp; kelas kamu, terus pilih mau mulai dari level mana.</p>
+        <div class="level-tabs" data-level-tabs>
+          ${levelKeys.map((lv,i)=>`<button type="button" class="level-tab${i===0?' active':''}" data-level="${lv}">${EXERCISE_LEVELS[lv].label}<span class="level-badge">${data[lv].length} soal</span></button>`).join('')}
+        </div>
+        <p class="gate-hint level-hint" data-level-hint>${EXERCISE_LEVELS[levelKeys[0]].hint}</p>
+        <button class="btn btn-primary" data-ex-start>Mulai Latihan →</button>
+      </div>
+      <div data-ex-session></div>
+    `;
+
+    const gate = mount.querySelector('[data-ex-gate]');
+    const sessionMount = mount.querySelector('[data-ex-session]');
+    const nameInput = mount.querySelector('[data-gate-name]');
+    const classInput = mount.querySelector('[data-gate-class]');
+    const hint = mount.querySelector('[data-gate-hint]');
+    const levelHint = mount.querySelector('[data-level-hint]');
+    let activeLevel = levelKeys[0];
+
+    try{
+      const raw = localStorage.getItem('daltonlab_session');
+      const session = raw ? JSON.parse(raw) : null;
+      if(session && session.nama) nameInput.value = session.nama;
+    }catch(e){}
+
+    mount.querySelectorAll('[data-level-tabs] [data-level]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        mount.querySelectorAll('[data-level-tabs] [data-level]').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        activeLevel = btn.dataset.level;
+        levelHint.textContent = EXERCISE_LEVELS[activeLevel].hint;
+      });
+    });
+
+    mount.querySelector('[data-ex-start]').addEventListener('click', ()=>{
+      const nameVal = nameInput.value.trim();
+      const classVal = classInput.value.trim();
+      if(!nameVal || !classVal){
+        hint.textContent = 'Nama dan kelas wajib diisi sebelum memulai latihan.';
+        hint.classList.add('warn');
+        return;
+      }
+      gate.style.display = 'none';
+      runExerciseLevel(sessionMount, data[activeLevel], {
+        sheetName: sheetBase,
+        studentName: nameVal,
+        studentClass: classVal,
+        topik: data.topic || '',
+        levelLabel: EXERCISE_LEVELS[activeLevel].label,
+        onBack: ()=>{ sessionMount.innerHTML = ''; gate.style.display = ''; }
+      });
+    });
+  });
+}
+
+/** Runs one level's question set inside `mount` (a fresh scratch container),
+ *  then reports back to `onBack` so the student can pick another level.
+ *  Mirrors the chapter-quiz question/scoring flow in initQuizzes(), but
+ *  tags its Sheets submission with topik + level for per-topic tracking. */
+function runExerciseLevel(mount, questions, meta){
+  mount.innerHTML = `
+    <div class="quiz-box" data-quiz-box>
+      <div class="quiz-top">
+        <div class="quiz-progress-track"><div class="quiz-progress-fill" data-quiz-progress></div></div>
+        <div class="quiz-meta">
+          <span data-quiz-counter class="mono">Soal 1 / ${questions.length}</span>
+          <span data-quiz-score class="mono">Skor: 0</span>
+        </div>
+      </div>
+      <div data-quiz-question-area></div>
+    </div>
+    <div class="quiz-result" data-quiz-result style="display:none;">
+      <div class="result-ring"><span data-quiz-pct>0%</span></div>
+      <h3 style="color:#fff;">Level ${meta.levelLabel} Selesai!</h3>
+      <p data-quiz-resultmsg style="color:#c3ccd9;"></p>
+      <p class="submit-status" data-quiz-submitstatus></p>
+      <div class="ex-result-actions">
+        <button class="btn btn-primary" data-quiz-restart>Ulangi Level Ini</button>
+        <button class="btn btn-outline-light" data-ex-backbtn>← Pilih Level Lain</button>
+      </div>
+    </div>
+  `;
+
+  const box = mount.querySelector('[data-quiz-box]');
+  const resultEl = mount.querySelector('[data-quiz-result]');
+  const questionArea = mount.querySelector('[data-quiz-question-area]');
+  const progressFill = mount.querySelector('[data-quiz-progress]');
+  const counterEl = mount.querySelector('[data-quiz-counter]');
+  const scoreEl = mount.querySelector('[data-quiz-score]');
+  let currentQ = 0, score = 0, answered = false;
+
+  function renderQuestion(){
+    answered = false;
+    const item = questions[currentQ];
+    counterEl.textContent = `Soal ${currentQ+1} / ${questions.length}`;
+    scoreEl.textContent = `Skor: ${score}`;
+    progressFill.style.width = (currentQ/questions.length*100)+'%';
+
+    const letters = ['A','B','C','D'];
+    questionArea.innerHTML = `
+      <div class="q-title">${item.q}</div>
+      <div class="q-options">
+        ${item.opts.map((o,i)=>`<div class="q-opt" data-i="${i}"><span class="opt-letter">${letters[i]}</span>${o}</div>`).join('')}
+      </div>
+      <div class="q-explain" data-explain><b>Penjelasan:</b> ${item.explain}</div>
+      <button class="btn btn-primary q-nextbtn" data-next>${currentQ===questions.length-1?'Lihat Hasil':'Soal Berikutnya →'}</button>
+    `;
+
+    questionArea.querySelectorAll('.q-opt').forEach(opt=>{
+      opt.addEventListener('click', ()=>{
+        if(answered) return;
+        answered = true;
+        const chosen = parseInt(opt.dataset.i);
+        questionArea.querySelectorAll('.q-opt').forEach(o=>{
+          o.classList.add('disabled');
+          const idx = parseInt(o.dataset.i);
+          if(idx===item.correct) o.classList.add('correct');
+          else if(idx===chosen) o.classList.add('wrong');
+        });
+        if(chosen===item.correct) score++;
+        scoreEl.textContent = `Skor: ${score}`;
+        questionArea.querySelector('[data-explain]').style.display = 'block';
+        const nextBtn = questionArea.querySelector('[data-next]');
+        nextBtn.style.display = 'inline-flex';
+        nextBtn.addEventListener('click', ()=>{
+          currentQ++;
+          if(currentQ >= questions.length){ showResult(); }
+          else { renderQuestion(); }
+        });
+      });
+    });
+  }
+
+  function showResult(){
+    box.style.display = 'none';
+    resultEl.style.display = 'block';
+    const pct = Math.round(score/questions.length*100);
+    resultEl.querySelector('[data-quiz-pct]').textContent = pct+'%';
+    progressFill.style.width = '100%';
+    let msg = '';
+    if(pct>=85) msg = `Mantap! Level ${meta.levelLabel} udah kamu kuasin.`;
+    else if(pct>=60) msg = 'Lumayan — sebagian besar udah nyantol, cek lagi yang masih meleset.';
+    else msg = 'Santai, coba baca ulang materinya terus balik lagi ke level ini — atau mulai dari level yang lebih ringan dulu.';
+    resultEl.querySelector('[data-quiz-resultmsg]').textContent = `Kamu menjawab benar ${score} dari ${questions.length} soal. ${msg}`;
+
+    let session = null;
+    try{ session = JSON.parse(localStorage.getItem('daltonlab_session')); }catch(e){}
+    submitToSheet({
+      type: 'quiz',
+      sheetName: meta.sheetName,
+      username: session ? session.username : '',
+      nama: meta.studentName,
+      kelas: meta.studentClass,
+      skor: score,
+      total: questions.length,
+      persentase: pct,
+      topik: meta.topik,
+      level: meta.levelLabel,
+      waktu: new Date().toLocaleString('id-ID', {timeZone:'Asia/Jakarta'})
+    }, resultEl.querySelector('[data-quiz-submitstatus]'));
+  }
+
+  resultEl.querySelector('[data-quiz-restart]').addEventListener('click', ()=>{
+    currentQ = 0; score = 0;
+    resultEl.style.display = 'none';
+    box.style.display = '';
+    renderQuestion();
+  });
+  resultEl.querySelector('[data-ex-backbtn]').addEventListener('click', ()=>{
+    if(meta.onBack) meta.onBack();
+  });
+
+  renderQuestion();
+}
+
 function submitToSheet(payload, statusEl){
   if(!statusEl) return;
   if(!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.indexOf('PASTE_YOUR') === 0){
@@ -675,6 +909,7 @@ function initAllComponents(root){
   initClickGroups(root);
   initShuCalculator(root);
   initQuizzes(root);
+  initExercises(root);
 }
 
 /* ===== Scroll reveal (lightweight) ===== */

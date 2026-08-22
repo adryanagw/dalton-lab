@@ -1,0 +1,273 @@
+<section class="hero">
+  <div class="hero-decor"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Materi Kelas X · Matematika</div>
+      <h1 style="max-width:640px;">Eksponen &amp; <em>Logaritma</em>.</h1>
+      <p class="lead" style="max-width:520px;">Dari bilangan berpangkat, bentuk akar, sampai kebalikannya — logaritma. Dua bab yang sering bikin bingung ini sebenarnya cuma soal 8 aturan yang kalau udah nyantol, langsung kepake terus. Yuk pelan-pelan, terus cobain latihan bertingkatnya!</p>
+      <div class="hero-btns">
+        <a href="#pengertian-eksponen" class="btn btn-primary">Mulai Belajar ↓</a>
+        <a href="#kuis-matematika" class="btn btn-ghost">Langsung ke Kuis</a>
+      </div>
+      <div class="badge-row">
+        <span class="badge">Bilangan Berpangkat</span>
+        <span class="badge">Bentuk Akar</span>
+        <span class="badge">Logaritma</span>
+        <span class="badge">Persamaan Eksponen</span>
+      </div>
+    </div>
+    <div class="orbit-card">
+      <h3>Dua Sisi Mata Uang</h3>
+      <p style="color:var(--slate);font-size:.94rem;">Eksponen jawab pertanyaan "2 dipangkatkan berapa hasilnya 8?" arahnya ke depan. Logaritma jawab pertanyaan yang sama, tapi dibalik: "2 dipangkatkan <b>berapa</b> supaya hasilnya 8?" — keduanya saling invers.</p>
+      <div class="stat-row">
+        <div class="stat"><b>8</b><span>Sifat Eksponen</span></div>
+        <div class="stat"><b>9</b><span>Sifat Logaritma</span></div>
+        <div class="stat"><b>3</b><span>Level Latihan</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pengertian-eksponen" class="notebook-bg" data-nav="Pengertian">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">01 · Bilangan Berpangkat</div>
+      <h2>Apa Itu Eksponen?</h2>
+      <p>Eksponen (bilangan berpangkat) itu cuma "singkatan" dari perkalian berulang. <b style="color:var(--heading);">a<sup>n</sup></b> artinya <b>a</b> dikalikan dirinya sendiri sebanyak <b>n</b> kali — <b>a</b> disebut <b>basis</b>, <b>n</b> disebut <b>pangkat/eksponen</b>.</p>
+    </div>
+
+    <div class="law-strip" style="margin-bottom:30px;">
+      <b>💡 Contoh Cepat:</b> 2<sup>4</sup> = 2 × 2 × 2 × 2 = 16. Basisnya 2, pangkatnya 4, hasilnya (disebut <i>nilai eksponen</i>) 16.
+    </div>
+
+    <div class="organel-grid grid-4">
+      <div class="organel-card oc-blue"><span class="oc-icon">🔢</span><h4>Pangkat Positif</h4><p>a<sup>n</sup> = a × a × … × a (sebanyak n kali), untuk n bilangan bulat positif. Contoh: 5³ = 5×5×5 = 125.</p></div>
+      <div class="organel-card oc-teal"><span class="oc-icon">1️⃣</span><h4>Pangkat Nol</h4><p>a⁰ = 1, untuk a ≠ 0. Berapapun basisnya (asal bukan 0), dipangkatkan nol selalu jadi 1. Contoh: 99⁰ = 1.</p></div>
+      <div class="organel-card oc-purple"><span class="oc-icon">↩️</span><h4>Pangkat Negatif</h4><p>a<sup>-n</sup> = 1/a<sup>n</sup>, untuk a ≠ 0. Pangkat negatif = kebalikan (invers) dari pangkat positifnya. Contoh: 2<sup>-3</sup> = 1/2³ = 1/8.</p></div>
+      <div class="organel-card oc-pink"><span class="oc-icon">🔀</span><h4>Pangkat Pecahan</h4><p>a<sup>m/n</sup> = ⁿ√(a<sup>m</sup>) — pangkat pecahan itu sebenarnya bentuk akar yang "disamarkan". Contoh: 8<sup>1/3</sup> = ³√8 = 2.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="sifat-eksponen" data-nav="Sifat">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">02 · Aturan Main</div>
+      <h2>8 Sifat Eksponen</h2>
+      <p>Ini dia inti dari seluruh bab eksponen — kalau 8 sifat ini udah lancar, hampir semua soal eksponen (sesulit apapun kelihatannya) tinggal "dibongkar" pakai salah satu (atau kombinasi) dari sifat-sifat di bawah.</p>
+    </div>
+
+    <div class="table-scroll">
+      <table class="compare-table">
+        <thead><tr><th>#</th><th>Sifat</th><th>Rumus</th><th>Contoh</th></tr></thead>
+        <tbody>
+          <tr><th>1</th><td>Perkalian basis sama</td><td>a<sup>m</sup> · a<sup>n</sup> = a<sup>m+n</sup></td><td>2³ · 2² = 2⁵ = 32</td></tr>
+          <tr><th>2</th><td>Pembagian basis sama</td><td>a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m-n</sup></td><td>3⁵ ÷ 3² = 3³ = 27</td></tr>
+          <tr><th>3</th><td>Pangkat dari pangkat</td><td>(a<sup>m</sup>)<sup>n</sup> = a<sup>m×n</sup></td><td>(2²)³ = 2⁶ = 64</td></tr>
+          <tr><th>4</th><td>Pangkat dari perkalian</td><td>(a·b)<sup>m</sup> = a<sup>m</sup>·b<sup>m</sup></td><td>(2·3)² = 2²·3² = 36</td></tr>
+          <tr><th>5</th><td>Pangkat dari pembagian</td><td>(a/b)<sup>m</sup> = a<sup>m</sup>/b<sup>m</sup></td><td>(4/2)³ = 4³/2³ = 8</td></tr>
+          <tr><th>6</th><td>Pangkat nol</td><td>a⁰ = 1 (a ≠ 0)</td><td>123⁰ = 1</td></tr>
+          <tr><th>7</th><td>Pangkat negatif</td><td>a<sup>-n</sup> = 1/a<sup>n</sup></td><td>5<sup>-2</sup> = 1/25</td></tr>
+          <tr><th>8</th><td>Pangkat pecahan (akar)</td><td>a<sup>m/n</sup> = ⁿ√(a<sup>m</sup>)</td><td>4<sup>3/2</sup> = √(4³) = 8</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-hint">→ Geser ke samping untuk melihat kolom lainnya di layar kecil.</p>
+
+    <div class="jenis-box" style="margin-top:36px;">
+      <h3 style="font-size:1.1rem;">⚠️ Jebakan yang Sering Kejadian</h3>
+      <ul class="check-list" style="margin-top:14px;">
+        <li>Sifat 1 &amp; 2 <b>hanya berlaku kalau basisnya sama</b>. 2³ · 3² ≠ 6⁵ — nggak bisa langsung digabung begitu saja.</li>
+        <li>a<sup>-n</sup> itu <b>bukan berarti hasilnya negatif</b> — 2<sup>-3</sup> = 1/8 (positif, cuma pecahan kecil), bukan -8.</li>
+        <li>0⁰ dianggap <b>tidak terdefinisi</b> di jenjang SMA — beda dengan a⁰ untuk a ≠ 0 yang selalu 1.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="bentuk-akar" class="notebook-bg" data-nav="Akar">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">03 · Sepupu Dekat Eksponen</div>
+      <h2>Bentuk Akar (Radikal)</h2>
+      <p>Ingat sifat ke-8 tadi? <b style="color:var(--heading);">Bentuk akar dan pangkat pecahan itu dua wajah dari hal yang sama</b>. √a itu sama dengan a<sup>1/2</sup>, ³√a sama dengan a<sup>1/3</sup>, dan seterusnya.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="jenis-box">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+          <span class="oc-icon" style="background:var(--blue-soft);">➕</span>
+          <h3 style="font-size:1.15rem;margin:0;">Operasi Bentuk Akar</h3>
+        </div>
+        <div class="jenis-item"><b>Penjumlahan/pengurangan</b><span>Hanya bisa digabung kalau akarnya "sejenis" (sama isinya): 3√2 + 5√2 = 8√2. Beda isi, nggak bisa digabung.</span></div>
+        <div class="jenis-item"><b>Perkalian</b><span>√a · √b = √(ab). Contoh: √3 · √12 = √36 = 6.</span></div>
+        <div class="jenis-item"><b>Pembagian</b><span>√a ÷ √b = √(a/b). Contoh: √50 ÷ √2 = √25 = 5.</span></div>
+      </div>
+      <div class="jenis-box">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+          <span class="oc-icon" style="background:var(--green-soft);">🧮</span>
+          <h3 style="font-size:1.15rem;margin:0;">Merasionalkan Penyebut</h3>
+        </div>
+        <p style="color:var(--slate);font-size:.87rem;margin:8px 0 12px;">Kalau ada akar di penyebut pecahan, kaidahnya: hilangkan akarnya dengan mengalikan pembilang &amp; penyebut dengan "sekawan"-nya.</p>
+        <div class="role-cards">
+          <div class="role-card"><span class="role-n">01</span>Bentuk 1/√a → kalikan dengan √a/√a, hasil: √a/a</div>
+          <div class="role-card"><span class="role-n">02</span>Bentuk 1/(√a+√b) → kalikan dengan sekawannya (√a-√b)/(√a-√b)</div>
+          <div class="role-card"><span class="role-n">03</span>Sekawan dari (√a+√b) adalah (√a-√b), karena (x+y)(x-y)=x²-y² akan menghilangkan akarnya</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="latihan-eksponen" style="background:var(--navy);" data-nav="Latihan Eksponen">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="color:var(--orange);">04 · Latihan Bertingkat</div>
+      <h2 style="color:#fff;">Latihan: Eksponen &amp; Bentuk Akar</h2>
+      <p style="color:#c3ccd9;">Pilih level yang sesuai kemampuanmu sekarang — nggak harus mulai dari Dasar kalau kamu udah pede. Tiap level punya soal &amp; pembahasan sendiri, dan kamu bisa gonta-ganti level sepuasnya.</p>
+    </div>
+
+    <div class="exercise-root" data-exercise-src="content/matematika/bab1-eksponen-logaritma.eksponen.exercise.json" data-exercise-sheet="Latihan - Matematika - bab1-eksponen-logaritma - Eksponen"></div>
+  </div>
+</section>
+
+<section id="fungsi-eksponen" data-nav="Fungsi">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">05 · Eksponen sebagai Fungsi</div>
+      <h2>Fungsi Eksponensial</h2>
+      <p>Bentuknya <b style="color:var(--heading);">f(x) = a<sup>x</sup></b>, dengan syarat <b>a &gt; 0</b> dan <b>a ≠ 1</b>. Grafiknya punya dua wajah tergantung nilai basis <b>a</b>-nya.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="split-card">
+        <div class="split-tag">Basis a &gt; 1</div>
+        <p style="font-size:.9rem;color:var(--ink);">Grafik <b>naik terus (monoton naik)</b> dari kiri ke kanan — makin besar x, makin cepat y meroket. Contoh: pertumbuhan penduduk, bunga majemuk, penyebaran virus di awal wabah.</p>
+      </div>
+      <div class="split-card">
+        <div class="split-tag">Basis 0 &lt; a &lt; 1</div>
+        <p style="font-size:.9rem;color:var(--ink);">Grafik <b>turun terus (monoton turun)</b> — makin besar x, y makin mendekati nol. Contoh: peluruhan zat radioaktif, penyusutan nilai barang.</p>
+      </div>
+    </div>
+
+    <div class="law-strip" style="margin-top:30px;">
+      <b>💡 Yang Selalu Sama:</b> Berapapun nilai basisnya, domain fungsi eksponen selalu semua bilangan real, rangenya selalu y &gt; 0 (grafik nggak pernah nyentuh atau nembus sumbu-x), dan grafiknya selalu lewat titik (0, 1) — karena a⁰ = 1.
+    </div>
+  </div>
+</section>
+
+<section id="logaritma" class="notebook-bg" data-nav="Logaritma">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">06 · Kebalikan Eksponen</div>
+      <h2>Apa Itu Logaritma?</h2>
+      <p>Logaritma lahir dari satu pertanyaan: kalau eksponen jawab "2 pangkat 3 = berapa?", gimana caranya jawab pertanyaan sebaliknya — "2 pangkat <b style="color:var(--heading);">berapa</b> supaya hasilnya 8?" Jawabannya: pakai logaritma.</p>
+    </div>
+
+    <div class="jenis-box" style="margin-bottom:30px;">
+      <h3 style="font-size:1.1rem;">📐 Definisi Formal</h3>
+      <p style="color:var(--slate);font-size:.9rem;margin:10px 0;"><b style="color:var(--heading);"><sup>a</sup>log b = c</b> artinya sama persis dengan <b style="color:var(--heading);">a<sup>c</sup> = b</b> — dua bentuk penulisan untuk hubungan yang sama, tinggal pilih mana yang lebih gampang dipakai.</p>
+      <ul class="check-list">
+        <li><b>a</b> = basis logaritma, syaratnya a &gt; 0 dan a ≠ 1</li>
+        <li><b>b</b> = numerus (bilangan yang dicari logaritmanya), syaratnya b &gt; 0</li>
+        <li><b>c</b> = hasil logaritma (pangkat yang dicari)</li>
+      </ul>
+    </div>
+
+    <div class="law-strip" style="margin-bottom:30px;">
+      <b>💡 Contoh:</b> ²log 8 = 3, karena 2³ = 8. Begitu juga ³log 9 = 2, karena 3² = 9.
+    </div>
+
+    <div class="two-col">
+      <div class="jenis-box">
+        <h4 style="font-size:1rem;color:var(--heading);">Notasi Khusus</h4>
+        <div class="jenis-item"><b>log b</b> (tanpa basis ditulis)<span>Basisnya otomatis 10 — disebut logaritma biasa/Briggs.</span></div>
+        <div class="jenis-item"><b>ln b</b><span>Logaritma natural, basisnya bilangan e (≈2,71828) — sering dipakai di kalkulus &amp; sains.</span></div>
+      </div>
+      <div class="jenis-box">
+        <h4 style="font-size:1rem;color:var(--heading);">Kenapa a ≠ 1?</h4>
+        <p style="color:var(--slate);font-size:.87rem;margin-top:10px;">Karena 1 dipangkatkan berapapun hasilnya selalu 1 — jadi <sup>1</sup>log b nggak mungkin punya jawaban tunggal (kecuali b=1, tapi itupun bisa berapa saja). Basis 1 bikin logaritmanya nggak terdefinisi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sifat-logaritma" data-nav="Sifat Log">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">07 · Aturan Main (Lagi)</div>
+      <h2>9 Sifat Logaritma</h2>
+      <p>Pola pikirnya mirip banget sama sifat eksponen — wajar, karena memang saling berkebalikan. Begitu kamu lihat polanya, sifat-sifat ini jadi jauh lebih gampang diinget.</p>
+    </div>
+
+    <div class="table-scroll">
+      <table class="compare-table">
+        <thead><tr><th>#</th><th>Sifat</th><th>Rumus</th><th>Contoh</th></tr></thead>
+        <tbody>
+          <tr><th>1</th><td>Logaritma dari 1</td><td><sup>a</sup>log 1 = 0</td><td>⁵log 1 = 0</td></tr>
+          <tr><th>2</th><td>Logaritma basis sendiri</td><td><sup>a</sup>log a = 1</td><td>⁷log 7 = 1</td></tr>
+          <tr><th>3</th><td>Perkalian → penjumlahan</td><td><sup>a</sup>log (x·y) = <sup>a</sup>log x + <sup>a</sup>log y</td><td>²log(4·8) = ²log4 + ²log8 = 2+3 = 5</td></tr>
+          <tr><th>4</th><td>Pembagian → pengurangan</td><td><sup>a</sup>log (x/y) = <sup>a</sup>log x − <sup>a</sup>log y</td><td>²log(32/4) = ²log32 − ²log4 = 5−2 = 3</td></tr>
+          <tr><th>5</th><td>Pangkat numerus</td><td><sup>a</sup>log x<sup>n</sup> = n · <sup>a</sup>log x</td><td>²log 4³ = 3·²log4 = 3·2 = 6</td></tr>
+          <tr><th>6</th><td>Pangkat basis</td><td><sup>a<sup>m</sup></sup>log x = (1/m) · <sup>a</sup>log x</td><td>⁴log 8 = (1/2)·²log8 = 1,5</td></tr>
+          <tr><th>7</th><td>Kebalikan basis &amp; numerus</td><td><sup>a</sup>log b = 1 / <sup>b</sup>log a</td><td>²log 8 = 1/(⁸log2) = 1/(1/3) = 3</td></tr>
+          <tr><th>8</th><td>Rantai (basis berbeda)</td><td><sup>a</sup>log b · <sup>b</sup>log c = <sup>a</sup>log c</td><td>²log3 · ³log4 = ²log4 = 2</td></tr>
+          <tr><th>9</th><td>a dipangkatkan logaritmanya sendiri</td><td>a<sup>(<sup>a</sup>log b)</sup> = b</td><td>2<sup>(²log 5)</sup> = 5</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-hint">→ Geser ke samping untuk melihat kolom lainnya di layar kecil.</p>
+  </div>
+</section>
+
+<section id="latihan-logaritma" style="background:var(--navy);" data-nav="Latihan Log">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="color:var(--orange);">08 · Latihan Bertingkat</div>
+      <h2 style="color:#fff;">Latihan: Logaritma</h2>
+      <p style="color:#c3ccd9;">Sama seperti sebelumnya — pilih levelnya, isi nama &amp; kelas sekali, terus bebas gonta-ganti level.</p>
+    </div>
+
+    <div class="exercise-root" data-exercise-src="content/matematika/bab1-eksponen-logaritma.logaritma.exercise.json" data-exercise-sheet="Latihan - Matematika - bab1-eksponen-logaritma - Logaritma"></div>
+  </div>
+</section>
+
+<section id="persamaan" class="notebook-bg" data-nav="Persamaan">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">09 · Menggabungkan Semuanya</div>
+      <h2>Persamaan Eksponen &amp; Logaritma Sederhana</h2>
+      <p>Begitu basisnya sama, persamaan eksponen &amp; logaritma sebenarnya "berubah wujud" jadi persamaan biasa yang jauh lebih familiar.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="split-card">
+        <div class="split-tag">Persamaan Eksponen</div>
+        <p style="font-size:.9rem;color:var(--ink);margin-bottom:10px;">Kalau <b>a<sup>f(x)</sup> = a<sup>g(x)</sup></b> (basis sama, a&gt;0, a≠1), maka cukup samakan pangkatnya: <b>f(x) = g(x)</b>.</p>
+        <p style="font-size:.84rem;color:var(--slate);">Contoh: 2<sup>x+1</sup> = 2⁵ → x+1 = 5 → x = 4</p>
+      </div>
+      <div class="split-card">
+        <div class="split-tag">Persamaan Logaritma</div>
+        <p style="font-size:.9rem;color:var(--ink);margin-bottom:10px;">Kalau <b><sup>a</sup>log f(x) = <sup>a</sup>log g(x)</b>, maka <b>f(x) = g(x)</b> — dengan syarat wajib f(x) &gt; 0 dan g(x) &gt; 0.</p>
+        <p style="font-size:.84rem;color:var(--slate);">Contoh: ³log(x+2) = ³log 9 → x+2 = 9 → x = 7</p>
+      </div>
+    </div>
+
+    <div class="jenis-box" style="margin-top:30px;">
+      <h3 style="font-size:1.1rem;">⚠️ Jangan Lupa Cek Syarat!</h3>
+      <p style="color:var(--slate);font-size:.88rem;margin-top:8px;">Untuk soal logaritma, <b>selalu cek ulang jawabanmu ke syarat numerus &gt; 0</b>. Kadang hasil hitungan aljabarnya benar, tapi kalau disubstitusi balik bikin numerusnya jadi negatif atau nol, jawaban itu harus dibuang (disebut <i>akar asing</i>).</p>
+    </div>
+  </div>
+</section>
+
+<section id="kuis-matematika" style="background:var(--navy);" data-nav="Kuis" data-nav-cta>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="color:var(--orange);">10 · Uji Pemahaman</div>
+      <h2 style="color:#fff;">Kuis: Eksponen &amp; Logaritma</h2>
+      <p style="color:#c3ccd9;">12 soal pilihan ganda mencakup semua materi di atas — dari sifat eksponen sampai persamaan logaritma. Jawab satu-satu, dapatkan pembahasan langsung setelah menjawab.</p>
+    </div>
+
+    <div class="quiz-root" data-quiz-src="content/matematika/bab1-eksponen-logaritma.quiz.json" data-quiz-sheet="Kuis - Matematika - bab1-eksponen-logaritma"></div>
+  </div>
+</section>

@@ -58,14 +58,22 @@ function handleQuiz(ss, data) {
   // Sheet tab names can't exceed 100 chars and can't contain: / \ ? * [ ]
   sheetName = sheetName.toString().substring(0, 95).replace(/[\/\\\?\*\[\]]/g, '-');
 
+  // The 3-level exercise engine tags submissions with a topic + level (e.g.
+  // "Eksponen" / "Dasar") so a future per-topic performance dashboard can
+  // read them; the plain chapter quiz doesn't send these and keeps the
+  // original 7-column sheet shape untouched.
+  var hasTopikLevel = !!(data.topik || data.level);
+
   var sheet = ss.getSheetByName(sheetName);
   if (!sheet) {
     sheet = ss.insertSheet(sheetName);
-    sheet.appendRow(['Waktu', 'Username', 'Nama', 'Kelas', 'Skor', 'Total Soal', 'Persentase']);
-    sheet.getRange(1, 1, 1, 7).setFontWeight('bold');
+    var header = ['Waktu', 'Username', 'Nama', 'Kelas', 'Skor', 'Total Soal', 'Persentase'];
+    if (hasTopikLevel) header = header.concat(['Topik', 'Level']);
+    sheet.appendRow(header);
+    sheet.getRange(1, 1, 1, header.length).setFontWeight('bold');
   }
 
-  sheet.appendRow([
+  var row = [
     data.waktu || new Date(),
     data.username || '',
     data.nama || '',
@@ -73,7 +81,10 @@ function handleQuiz(ss, data) {
     data.skor,
     data.total,
     data.persentase
-  ]);
+  ];
+  if (hasTopikLevel) row = row.concat([data.topik || '', data.level || '']);
+
+  sheet.appendRow(row);
 
   return jsonOutput({ success: true });
 }
