@@ -577,6 +577,7 @@ function initQuizzes(root){
         <div class="q-explain" data-explain><b>Penjelasan:</b> ${item.explain}</div>
         <button class="btn btn-primary q-nextbtn" data-next>${currentQ===quiz.length-1?'Lihat Hasil':'Soal Berikutnya →'}</button>
       `;
+      initMath(questionArea);
 
       questionArea.querySelectorAll('.q-opt').forEach(opt=>{
         opt.addEventListener('click', ()=>{
@@ -806,6 +807,7 @@ function runExerciseLevel(mount, questions, meta){
       <div class="q-explain" data-explain><b>Penjelasan:</b> ${item.explain}</div>
       <button class="btn btn-primary q-nextbtn" data-next>${currentQ===questions.length-1?'Lihat Hasil':'Soal Berikutnya →'}</button>
     `;
+    initMath(questionArea);
 
     questionArea.querySelectorAll('.q-opt').forEach(opt=>{
       opt.addEventListener('click', ()=>{
@@ -901,6 +903,26 @@ function submitToSheet(payload, statusEl){
   });
 }
 
+/* ===== LaTeX rendering (KaTeX) =====
+   Convention for chapter-content authors:
+     - Inline math:   \( ... \)
+     - Display math:  $$ ... $$   or   \[ ... \]
+     - Chemistry (mhchem): \(\ce{...}\) or inside any of the above, e.g. \(\ce{H2O + CO2 -> H2CO3}\)
+   Deliberately NOT using single-$ delimiters — this site prints a lot of
+   "Rp 32.000.000"-style currency (Ekonomi) that would otherwise get eaten
+   by a naive $...$ matcher. */
+function initMath(root){
+  if(typeof window.renderMathInElement !== 'function') return;
+  window.renderMathInElement(root, {
+    delimiters: [
+      {left:'$$', right:'$$', display:true},
+      {left:'\\[', right:'\\]', display:true},
+      {left:'\\(', right:'\\)', display:false}
+    ],
+    throwOnError:false
+  });
+}
+
 /* ===== Wire everything up for a freshly-loaded chapter ===== */
 function initAllComponents(root){
   initAccordions(root);
@@ -910,6 +932,7 @@ function initAllComponents(root){
   initShuCalculator(root);
   initQuizzes(root);
   initExercises(root);
+  initMath(root);
 }
 
 /* ===== Scroll reveal (lightweight) ===== */
