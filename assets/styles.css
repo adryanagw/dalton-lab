@@ -75,12 +75,24 @@ html{scroll-behavior:smooth;background:var(--paper);}
 body{
   margin:0;
   min-height:100vh;
+  display:flex;
+  flex-direction:column;
   background:var(--paper);
   color:var(--ink);
   font-family:'Inter',sans-serif;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
   transition:background-color .3s ease, color .3s ease;
+}
+/* Sticky footer: whichever view is showing stretches to fill the
+   leftover space so the footer always sits at the bottom of the
+   viewport on short pages (e.g. "coming soon" subjects), instead of
+   leaving a gap of bare background under it. */
+#view-home, #view-babs, #view-signin, #view-lesson{
+  flex:1 0 auto;
+}
+.site-footer{
+  flex-shrink:0;
 }
 body, body *{
   transition-property: background-color, border-color, color, box-shadow;
