@@ -328,10 +328,11 @@ nav.links a.subject-link.active{background:var(--navy);color:#fff;}
 .wa-float:hover{transform:scale(1.08);}
 .wa-float svg{width:28px;height:28px;}
 .wa-float-pulse{
-  position:absolute;inset:0;border-radius:50%;background:#25D366;opacity:.55;
-  animation:wa-pulse 2.2s ease-out infinite;
+  position:absolute;inset:0;border-radius:50%;background:transparent;
+  border:2px solid #25D366;opacity:0;
+  animation:wa-pulse 2.6s ease-out infinite;
 }
-@keyframes wa-pulse{0%{transform:scale(1);opacity:.55;}100%{transform:scale(1.9);opacity:0;}}
+@keyframes wa-pulse{0%{transform:scale(1);opacity:.6;}70%{opacity:0;}100%{transform:scale(1.55);opacity:0;}}
 
 /* === Session badge in nav === */
 .session-badge{
