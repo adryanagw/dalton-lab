@@ -854,9 +854,12 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 
 /* === Manajemen === */
 .thinker-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.thinker{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--orange);border-radius:0 12px 12px 0;padding:18px 20px;}
-.thinker b{display:block;font-family:'Space Grotesk';color:var(--heading);margin-bottom:6px;font-size:.94rem;}
-.thinker span{font-size:.84rem;color:var(--slate);}
+.thinker{background:var(--amber-soft);border-radius:12px;padding:18px 20px;}
+.thinker b{
+  display:block;font-family:'Space Grotesk';color:var(--orange-dark);margin-bottom:6px;
+  font-size:.76rem;text-transform:uppercase;letter-spacing:.05em;
+}
+.thinker span{font-size:.86rem;color:var(--ink);}
 
 .six-m-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;}
 .m-card{
@@ -918,8 +921,9 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 .acc-q .acc-num{font-family:'Space Grotesk';color:var(--orange);font-weight:600;font-size:.82rem;width:26px;}
 .acc-q .acc-chev{margin-left:auto;transition:transform .2s;color:var(--slate);}
 .acc-item.open .acc-chev{transform:rotate(180deg);}
-.acc-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
-.acc-a p{margin:0;padding:0 18px 16px 58px;font-size:.84rem;color:var(--slate);}
+.acc-a{display:grid;grid-template-rows:0fr;overflow:hidden;transition:grid-template-rows .25s ease;}
+.acc-item.open .acc-a{grid-template-rows:1fr;}
+.acc-a p{margin:0;padding:0 18px 16px 58px;font-size:.84rem;color:var(--slate);min-height:0;overflow:hidden;}
 
 .bidang-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
 .bidang-card{background:var(--navy);color:#fff;border-radius:14px;padding:20px 16px;}
@@ -996,9 +1000,10 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 .q-opt.wrong .opt-letter{background:var(--danger);color:#fff;}
 .q-opt.disabled{cursor:default;}
 .q-explain{
-  margin-top:18px;background:rgba(238,125,49,0.12);border-left:3px solid var(--orange);
-  border-radius:0 10px 10px 0;padding:14px 18px;color:#e6ecf2;font-size:.86rem;display:none;
+  margin-top:18px;background:rgba(238,125,49,0.12);
+  border-radius:10px;padding:14px 18px;color:#e6ecf2;font-size:.86rem;display:none;
 }
+.q-explain b{color:var(--orange);}
 .q-nextbtn{margin-top:20px;display:none;}
 
 .quiz-result{text-align:center;padding:40px 20px 10px;}

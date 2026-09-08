@@ -752,16 +752,9 @@ function initAccordions(root){
       const q = e.target.closest('.acc-q');
       if(!q || !group.contains(q)) return;
       const item = q.parentElement;
-      const a = item.querySelector('.acc-a');
       const isOpen = item.classList.contains('open');
-      group.querySelectorAll('.acc-item.open').forEach(el=>{
-        el.classList.remove('open');
-        el.querySelector('.acc-a').style.maxHeight = null;
-      });
-      if(!isOpen){
-        item.classList.add('open');
-        a.style.maxHeight = a.scrollHeight + 'px';
-      }
+      group.querySelectorAll('.acc-item.open').forEach(el=>el.classList.remove('open'));
+      if(!isOpen) item.classList.add('open');
     });
   });
 }
