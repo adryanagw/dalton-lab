@@ -117,6 +117,9 @@ h1,h2,h3,h4{
 .mono{font-family:'IBM Plex Mono','Space Grotesk',monospace;}
 a{color:inherit;}
 img{max-width:100%;display:block;}
+a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible{
+  outline:2px solid var(--orange);outline-offset:2px;border-radius:4px;
+}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 
 /* Inline icon system — replaces emoji used as functional UI icons
@@ -282,6 +285,23 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
   .subject-row, .bab-row{gap:14px;}
 }
 
+/* === Chapter prev/next nav — catalog-driven, appended after chapter
+   content loads. Only rendered when there's an actual neighbor chapter. === */
+.chapter-nav{
+  display:flex;justify-content:space-between;gap:16px;
+  padding:36px 24px 60px;border-top:1px solid var(--line);margin-top:24px;
+}
+.chapter-nav-link{
+  display:flex;align-items:center;gap:10px;max-width:46%;
+  background:none;border:none;cursor:pointer;color:var(--heading);
+  font-family:'Inter';padding:8px;border-radius:8px;transition:background .15s;
+}
+.chapter-nav-link:hover{background:var(--paper-2);}
+.chapter-nav-link.next{margin-left:auto;text-align:right;flex-direction:row-reverse;}
+.chapter-nav-link small{display:block;font-family:'Space Grotesk';font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--slate);margin-bottom:2px;}
+.chapter-nav-link span{font-weight:600;font-size:.92rem;}
+.chapter-nav-link .icon{flex-shrink:0;color:var(--orange-dark);}
+
 /* === Sign-in view — single centered column, not a login-vs-sales split === */
 .signin-center{max-width:420px;margin:0 auto;text-align:center;}
 .signin-center h1{font-size:1.9rem;}
@@ -397,13 +417,16 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
   transition:padding-left .15s,background .15s;
 }
 .subject-row:hover{padding-left:10px;background:var(--paper-2);}
+.subject-row:hover h3{font-weight:700;}
 .subject-row .subj-icon-wrap{
   width:44px;height:44px;border-radius:12px;background:var(--paper-2);
   display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:background .15s;
 }
+.subject-row:hover .subj-icon-wrap{background:rgba(238,125,49,0.14);}
 .subject-row .subj-icon-wrap .icon{width:1.3em;height:1.3em;color:var(--orange-dark);}
 .subject-row .subj-body{flex:1;min-width:0;}
-.subject-row h3{font-size:1.02rem;margin-bottom:3px;}
+.subject-row h3{font-size:1.02rem;margin-bottom:3px;transition:font-weight .15s;}
 .subject-row p{font-size:.82rem;color:var(--slate);margin:0;}
 .subject-row .subj-status{
   font-family:'Space Grotesk';font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;
@@ -412,7 +435,29 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 .subject-row.ready .subj-status{background:rgba(47,158,110,0.12);color:var(--success);}
 .subject-row.soon{opacity:.55;cursor:default;}
 .subject-row.soon:hover{padding-left:4px;background:none;}
+.subject-row.soon:hover h3{font-weight:600;}
 .subject-row.soon .subj-status{background:var(--paper-2);color:var(--slate);}
+.subject-row .subj-arrow{
+  color:var(--line);flex-shrink:0;opacity:0;transform:translateX(-4px);
+  transition:opacity .15s,transform .15s,color .15s;
+}
+.subject-row:hover .subj-arrow{opacity:1;transform:translateX(0);color:var(--orange-dark);}
+
+/* === Home hero layout — text column + optional visual anchor. The image
+   slot degrades gracefully (collapses to single column via JS onerror)
+   until an illustration file actually exists at the given path, so this
+   is safe to ship ahead of the asset. Deliberately separate from the
+   generic .hero-grid used inside chapter content, so it can't affect
+   content-private pages. === */
+.home-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;}
+.home-hero.no-visual{grid-template-columns:1fr;}
+.home-hero-visual{display:flex;align-items:center;justify-content:center;}
+.home-hero-visual img{max-width:100%;height:auto;}
+@media(max-width:860px){
+  .home-hero{grid-template-columns:1fr;gap:28px;}
+  .home-hero-visual{order:2;max-width:260px;margin:0 auto;}
+  .home-hero-visual img{max-height:220px;object-fit:contain;}
+}
 
 /* === "Lanjutkan belajar" banner === */
 .continue-banner{
@@ -422,6 +467,12 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 }
 .continue-banner .cb-label{font-family:'Space Grotesk';font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);margin-bottom:4px;}
 .continue-banner .cb-title{font-weight:600;font-size:.98rem;}
+.continue-banner .cb-cta{
+  display:flex;align-items:center;gap:8px;flex-shrink:0;
+  font-family:'Space Grotesk';font-weight:600;font-size:.86rem;color:var(--orange);
+  transition:gap .15s;
+}
+.continue-banner:hover .cb-cta{gap:12px;}
 .continue-banner .cb-arrow{color:var(--orange);flex-shrink:0;}
 
 /* === Floating WhatsApp button === */

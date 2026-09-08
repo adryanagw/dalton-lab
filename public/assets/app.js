@@ -41,7 +41,9 @@ const ICON_PATHS = {
   check: '<path d="M4 12.5l5 5L20 6"/>',
   clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>',
   'book-open': '<path d="M12 6c-2-1.5-5-2-8-1v14c3-1 6-.5 8 1 2-1.5 5-2 8-1V5c-3-1-6-.5-8 1z"/><path d="M12 6v14"/>',
-  'trending-up': '<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>'
+  'trending-up': '<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+  'arrow-right': '<path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>',
+  'arrow-left': '<path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/>'
 };
 function icon(name, extraClass){
   const path = ICON_PATHS[name];
@@ -145,6 +147,15 @@ const WHATSAPP_NUMBER = '6282136673896'; // 082136673896 in international format
 function waLink(message){
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
+// Homepage visual anchor is optional — if the illustration file hasn't been
+// dropped in yet (see assets/img/README or the Visual Assets list in the
+// redesign notes), collapse back to a single-column hero instead of showing
+// a broken image.
+document.getElementById('homeIllustration').addEventListener('error', function(){
+  document.getElementById('homeHero').classList.add('no-visual');
+  this.parentElement.style.display = 'none';
+});
+
 document.getElementById('waFloat').href = waLink('Halo Dalton Lab! Aku pengen tau lebih lanjut soal akses materi & bimbingan tutor di sini 🙌');
 document.getElementById('homeWaBtn').href = waLink('Halo Dalton Lab! Aku mau nanya-nanya soal kelas bimbingan (privat/grup) via Zoom 🙌');
 
@@ -341,19 +352,34 @@ const viewLesson = document.getElementById('view-lesson');
 let activeSubjectKey = 'ekonomi';
 let activeBabId = null;
 
+// Makes a click-only div behave like a real link for keyboard users: focusable,
+// announced as a link, and activatable with Enter/Space — without changing its
+// click wiring or visual markup.
+function makeRowFocusable(el, activate){
+  if(el.classList.contains('soon')) return;
+  el.tabIndex = 0;
+  el.setAttribute('role','link');
+  el.addEventListener('keydown', e=>{
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); activate(); }
+  });
+}
+
 function renderSubjectGrid(){
   const grid = document.getElementById('subjectGrid');
   grid.innerHTML = Object.entries(subjectsData).map(([key,s])=>`
-    <div class="subject-row ${s.ready?'ready':'soon'}" data-subject="${key}">
+    <div class="subject-row ${s.ready?'ready':'soon'}" data-subject="${key}" aria-label="${s.name}">
       <span class="subj-icon-wrap">${icon(s.icon)}</span>
       <div class="subj-body">
         <h3>${s.name}</h3>
         <p>${s.desc}</p>
       </div>
       <span class="subj-status">${s.ready ? 'Tersedia' : 'Segera Hadir'}</span>
+      ${s.ready ? icon('arrow-right','subj-arrow') : ''}
     </div>`).join('');
   grid.querySelectorAll('.subject-row').forEach(row=>{
-    row.addEventListener('click',()=>enterSubject(row.dataset.subject));
+    const go = ()=>enterSubject(row.dataset.subject);
+    row.addEventListener('click',go);
+    makeRowFocusable(row, go);
   });
 }
 renderSubjectGrid();
@@ -381,12 +407,14 @@ function renderContinueBanner(){
       <div class="cb-label">Lanjutkan Belajar</div>
       <div class="cb-title">${found.subject.name} · ${found.bab.title}</div>
     </div>
-    ${icon('trending-up','cb-arrow')}
+    <span class="cb-cta">Lanjutkan belajar ${icon('arrow-right','cb-arrow')}</span>
   `;
-  banner.onclick = () => {
+  const go = () => {
     activeSubjectKey = found.subjectKey;
     goToLesson(found.bab.id);
   };
+  banner.onclick = go;
+  makeRowFocusable(banner, go);
 }
 
 function hideAllViews(){
@@ -492,7 +520,7 @@ function goToBabs(subjectKey){
       const progBadge = prog === 'completed' ? '<span class="bab-progress done">Selesai</span>'
         : prog === 'started' ? '<span class="bab-progress ongoing">Lagi Dipelajari</span>' : '';
       return `
-      <div class="bab-row ${b.ready?'':'soon'}" data-bab="${b.id}">
+      <div class="bab-row ${b.ready?'':'soon'}" data-bab="${b.id}" aria-label="${b.title}">
         <span class="bab-num mono">${b.num.replace(/\D/g,'').padStart(2,'0')}</span>
         <div class="bab-body">
           <h4>${b.title}</h4>
@@ -502,7 +530,9 @@ function goToBabs(subjectKey){
       </div>`;
     }).join('');
     babGrid.querySelectorAll('.bab-row:not(.soon)').forEach(row=>{
-      row.addEventListener('click',()=>goToLesson(row.dataset.bab));
+      const go = ()=>goToLesson(row.dataset.bab);
+      row.addEventListener('click',go);
+      makeRowFocusable(row, go);
     });
   }
 
@@ -572,6 +602,32 @@ async function goToLesson(babId){
   initAllComponents(lessonContent);
   observeReveal(lessonContent.querySelectorAll('section'));
   markProgress(babId, 'started');
+  renderChapterNav(activeSubjectKey, babId);
+}
+
+// Prev/next chapter shortcut, driven entirely by the subjectsData catalog
+// (not the chapter HTML itself) so it works for any subject without the
+// chapter-content files needing to know about their neighbors. Renders
+// nothing when there's only one ready chapter in the subject (true for
+// every subject today) — nothing to page between yet.
+function renderChapterNav(subjectKey, babId){
+  const s = subjectsData[subjectKey];
+  const readyBabs = s.babs.filter(b=>b.ready);
+  const idx = readyBabs.findIndex(b=>b.id===babId);
+  const prev = idx > 0 ? readyBabs[idx-1] : null;
+  const next = idx >= 0 && idx < readyBabs.length-1 ? readyBabs[idx+1] : null;
+  if(!prev && !next) return;
+
+  const nav = document.createElement('div');
+  nav.className = 'wrap chapter-nav';
+  nav.innerHTML = `
+    ${prev ? `<button class="chapter-nav-link prev" data-bab="${prev.id}">${icon('arrow-left')}<span><small>Bab Sebelumnya</small>${prev.title}</span></button>` : '<span></span>'}
+    ${next ? `<button class="chapter-nav-link next" data-bab="${next.id}"><span><small>Bab Berikutnya</small>${next.title}</span>${icon('arrow-right')}</button>` : '<span></span>'}
+  `;
+  nav.querySelectorAll('.chapter-nav-link').forEach(btn=>{
+    btn.addEventListener('click',()=>goToLesson(btn.dataset.bab));
+  });
+  document.getElementById('lessonContent').appendChild(nav);
 }
 
 function buildLessonSubnav(root){
