@@ -1,0 +1,10 @@
+{
+  "name": "dalton-lab",
+  "private": true,
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "1.1.0"
+  }
+}

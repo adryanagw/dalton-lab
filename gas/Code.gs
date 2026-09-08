@@ -1,4 +1,12 @@
 /**
+ * DEPRECATED — no longer used. Login, orders, progress, and quiz/exercise
+ * results were migrated off Google Sheets/Apps Script to Postgres (Neon),
+ * served by the /api/* functions (see api/_db.js and db/schema.sql).
+ * Nothing in the site calls this Apps Script deployment anymore. Kept
+ * only as historical reference; safe to delete this file, or turn
+ * off/delete the Apps Script deployment itself, whenever you're ready.
+ *
+ * ---- Original header, for reference ----
  * Dalton Lab — backend for sign-in + quiz results.
  * Deploy: Deploy > New deployment > Web app
  *   Execute as: Me
