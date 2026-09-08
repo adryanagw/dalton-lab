@@ -43,7 +43,8 @@ const ICON_PATHS = {
   'book-open': '<path d="M12 6c-2-1.5-5-2-8-1v14c3-1 6-.5 8 1 2-1.5 5-2 8-1V5c-3-1-6-.5-8 1z"/><path d="M12 6v14"/>',
   'trending-up': '<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
   'arrow-right': '<path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>',
-  'arrow-left': '<path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/>'
+  'arrow-left': '<path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/>',
+  sparkle: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2 2M16 16l2 2M6 18l2-2M16 8l2-2"/>'
 };
 function icon(name, extraClass){
   const path = ICON_PATHS[name];
@@ -88,33 +89,33 @@ document.querySelectorAll('#navLinks a').forEach(a=>{
    ===================================================================== */
 const subjectsData = {
   ekonomi: {
-    name:'Ekonomi', icon:'bar-chart', ready:true,
+    name:'Ekonomi', icon:'bar-chart', ready:true, color:'amber',
     desc:'Badan usaha, koperasi, manajemen, dan seluk-beluk ekonomi lainnya.',
     babs:[
-      {id:'bab1-badan-usaha', num:'Bab 1', title:'Badan Usaha, Koperasi & Manajemen', desc:'Bentuk-bentuk badan usaha, BUMN/BUMD, koperasi & kalkulator SHU, dasar manajemen.', ready:true},
+      {id:'bab1-badan-usaha', num:'Bab 1', title:'Badan Usaha, Koperasi & Manajemen', desc:'Bentuk-bentuk badan usaha, BUMN/BUMD, koperasi & kalkulator SHU, dasar manajemen.', ready:true, estMinutes:18, subbabCount:6},
     ]
   },
   biologi: {
-    name:'Biologi', icon:'leaf', ready:true,
+    name:'Biologi', icon:'leaf', ready:true, color:'green',
     desc:'Sel, jaringan, sistem organ tubuh, dan makhluk hidup lainnya.',
     babs:[
-      {id:'bab1-sel', num:'Bab 1', title:'Sel: Unit Dasar Kehidupan', desc:'Sejarah penemuan sel, komponen kimiawi & struktural, organel, transpor membran, hingga reproduksi sel.', ready:true},
+      {id:'bab1-sel', num:'Bab 1', title:'Sel: Unit Dasar Kehidupan', desc:'Sejarah penemuan sel, komponen kimiawi & struktural, organel, transpor membran, hingga reproduksi sel.', ready:true, estMinutes:20, subbabCount:7},
     ]
   },
   matematika: {
-    name:'Matematika', icon:'function', ready:true,
+    name:'Matematika', icon:'function', ready:true, color:'blue',
     desc:'Eksponen, logaritma, aljabar, geometri, statistika, dan lainnya.',
     babs:[
-      {id:'bab1-eksponen-logaritma', num:'Bab 1', title:'Eksponen & Logaritma', desc:'Sifat-sifat bilangan berpangkat, bentuk akar, fungsi eksponensial, sifat-sifat logaritma, hingga persamaan sederhana keduanya — plus latihan bertingkat per topik.', ready:true},
+      {id:'bab1-eksponen-logaritma', num:'Bab 1', title:'Eksponen & Logaritma', desc:'Sifat-sifat bilangan berpangkat, bentuk akar, fungsi eksponensial, sifat-sifat logaritma, hingga persamaan sederhana keduanya — plus latihan bertingkat per topik.', ready:true, estMinutes:22, subbabCount:8},
     ]
   },
   kimia: {
-    name:'Kimia', icon:'flask', ready:false,
+    name:'Kimia', icon:'flask', ready:false, color:'pink',
     desc:'Struktur atom, ikatan kimia, stoikiometri, dan lainnya.',
     babs:[]
   },
   fisika: {
-    name:'Fisika', icon:'atom', ready:false,
+    name:'Fisika', icon:'atom', ready:false, color:'purple',
     desc:'Mekanika, listrik-magnet, gelombang, dan lainnya.',
     babs:[]
   },
@@ -340,7 +341,13 @@ function markProgress(babId, status){
 // (fixes a bug where this used to fire before `let progressCache` existed —
 // harmless for anonymous visitors since getSession() is null, but would
 // throw a ReferenceError for any returning logged-in student).
-if(getSession()) fetchProgress().then(renderContinueBanner);
+{
+  const initialSession = getSession();
+  if(initialSession){
+    document.getElementById('homeEyebrow').textContent = `Halo, ${initialSession.nama || initialSession.username}!`;
+    fetchProgress().then(renderContinueBanner);
+  }
+}
 
 /* =====================================================================
    VIEW ROUTER
@@ -367,16 +374,21 @@ function makeRowFocusable(el, activate){
 function renderSubjectGrid(){
   const grid = document.getElementById('subjectGrid');
   grid.innerHTML = Object.entries(subjectsData).map(([key,s])=>`
-    <div class="subject-row ${s.ready?'ready':'soon'}" data-subject="${key}" aria-label="${s.name}">
-      <span class="subj-icon-wrap">${icon(s.icon)}</span>
-      <div class="subj-body">
+    <div class="subject-item ${s.ready?'ready':'soon'}" data-subject="${key}" aria-label="${s.name}">
+      <div class="book-cover book-cover--${s.color}">
+        <span class="book-status">${s.ready ? 'Tersedia' : 'Segera Hadir'}</span>
         <h3>${s.name}</h3>
         <p>${s.desc}</p>
       </div>
-      <span class="subj-status">${s.ready ? 'Tersedia' : 'Segera Hadir'}</span>
-      ${s.ready ? icon('arrow-right','subj-arrow') : ''}
+      <div class="subject-meta">
+        <span class="subj-icon-wrap">${icon(s.icon)}</span>
+        <div class="subj-meta-body">
+          <div class="subj-meta-name">${s.name}${s.ready ? icon('arrow-right','subj-arrow') : ''}</div>
+          <p>${s.desc}</p>
+        </div>
+      </div>
     </div>`).join('');
-  grid.querySelectorAll('.subject-row').forEach(row=>{
+  grid.querySelectorAll('.subject-item').forEach(row=>{
     const go = ()=>enterSubject(row.dataset.subject);
     row.addEventListener('click',go);
     makeRowFocusable(row, go);
@@ -401,13 +413,23 @@ function renderContinueBanner(){
   }
   if(!found){ banner.style.display = 'none'; return; }
 
+  const meta = (found.bab.estMinutes && found.bab.subbabCount)
+    ? `<div class="cb-meta">${found.bab.estMinutes} menit · ${found.bab.subbabCount} subbab</div>`
+    : '';
+
   banner.style.display = '';
   banner.innerHTML = `
-    <div>
+    <div class="cb-info">
       <div class="cb-label">Lanjutkan Belajar</div>
-      <div class="cb-title">${found.subject.name} · ${found.bab.title}</div>
+      <div class="cb-title">${found.bab.title}</div>
+      <div class="cb-sub">${found.subject.name} · ${found.bab.num}</div>
+      ${meta}
+      <span class="cb-cta">Lanjutkan belajar ${icon('arrow-right')}</span>
     </div>
-    <span class="cb-cta">Lanjutkan belajar ${icon('arrow-right','cb-arrow')}</span>
+    <div class="book-cover book-cover--${found.subject.color} book-cover--mini">
+      <h4>${found.bab.title}</h4>
+      <span class="mini-eyebrow">${found.subject.name}</span>
+    </div>
   `;
   const go = () => {
     activeSubjectKey = found.subjectKey;
@@ -428,12 +450,13 @@ function goToHome(){
   hideAllViews();
   viewHome.style.display = '';
   document.querySelectorAll('.subject-link').forEach(l=>l.classList.remove('active'));
+  document.getElementById('navHomeLink').classList.add('active');
   renderSubjectGrid();
   renderContinueBanner();
   const session = getSession();
-  document.getElementById('homeGreeting').textContent = session
+  document.getElementById('homeEyebrow').textContent = session
     ? `Halo, ${session.nama || session.username}!`
-    : 'Mau belajar apa hari ini?';
+    : 'Halo, selamat datang!';
   window.scrollTo({top:0,behavior:'instant'});
 }
 
@@ -484,6 +507,7 @@ function goToSignIn(subjectKey){
 
   hideAllViews();
   viewSignin.style.display = '';
+  document.getElementById('navHomeLink').classList.remove('active');
   document.querySelectorAll('.subject-link').forEach(l=>l.classList.toggle('active', l.dataset.subject===subjectKey));
   window.scrollTo({top:0,behavior:'instant'});
 }
@@ -538,6 +562,7 @@ function goToBabs(subjectKey){
 
   hideAllViews();
   viewBabs.style.display = '';
+  document.getElementById('navHomeLink').classList.remove('active');
   document.querySelectorAll('.subject-link').forEach(l=>l.classList.toggle('active', l.dataset.subject===subjectKey));
   window.scrollTo({top:0,behavior:'instant'});
 }
@@ -552,6 +577,8 @@ async function goToLesson(babId){
   const bab = findBab(babId);
   hideAllViews();
   viewLesson.style.display = '';
+  document.getElementById('navHomeLink').classList.remove('active');
+  document.querySelectorAll('.subject-link').forEach(l=>l.classList.toggle('active', l.dataset.subject===activeSubjectKey));
   window.scrollTo({top:0,behavior:'instant'});
 
   document.getElementById('backToBabsBtn').textContent = '← ' + subjectsData[activeSubjectKey].name;

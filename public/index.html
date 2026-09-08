@@ -33,9 +33,9 @@
       </div>
     </a>
     <nav class="links" id="navLinks">
-      <a href="#" id="navHomeLink">Beranda</a>
+      <a href="#" id="navHomeLink" class="active">Beranda</a>
       <div class="subject-switcher">
-        <a href="#" data-subject="ekonomi" class="subject-link active" title="Ekonomi" aria-label="Ekonomi">
+        <a href="#" data-subject="ekonomi" class="subject-link" title="Ekonomi" aria-label="Ekonomi">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M8 17v-5M13 17V9M18 17V6"/></svg>
           <span class="subject-link-label">Ekonomi</span>
         </a>
@@ -80,21 +80,35 @@
     <div class="wrap">
       <div class="home-hero" id="homeHero">
         <div class="home-hero-text">
+          <div class="hero-eyebrow">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2 2M16 16l2 2M6 18l2-2M16 8l2-2"/></svg>
+            <span id="homeEyebrow">Halo, selamat datang!</span>
+          </div>
           <h1 id="homeGreeting" style="max-width:640px;">Mau belajar apa hari ini?</h1>
-          <p class="lead" id="homeSubtext" style="max-width:540px;margin-bottom:28px;">Rangkuman tiap bab, plus latihan bertingkat & kuis interaktif.</p>
+          <p class="lead" id="homeSubtext" style="max-width:540px;margin-bottom:28px;">Rangkuman tiap bab, latihan bertingkat, dan kuis interaktif untuk bantu kamu paham lebih cepat.</p>
           <div class="continue-banner" id="continueBanner" style="display:none;"></div>
-          <div class="subject-list" id="subjectGrid"></div>
         </div>
         <div class="home-hero-visual" id="homeHeroVisual">
           <img src="assets/img/home-illustration.png" alt="" id="homeIllustration">
         </div>
       </div>
+      <div class="section-head-sm">
+        <h2>Pilih mata pelajaran</h2>
+        <p>Temukan materi yang kamu butuhkan, atau lanjutkan dari yang terakhir kamu pelajari.</p>
+      </div>
+      <div class="subject-card-grid" id="subjectGrid"></div>
     </div>
   </section>
   <section class="tight" style="padding:20px 0 60px;">
     <div class="wrap">
       <div class="tutor-strip">
-        <span class="tutor-strip-text">Mau belajar bareng tutor asli lewat Zoom, bukan cuma baca sendiri?</span>
+        <div class="tutor-strip-info">
+          <span class="tutor-strip-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/><circle cx="18" cy="8" r="2.5"/><path d="M16.5 13.2c2.6.4 4.5 2.7 4.5 5.3"/></svg></span>
+          <div>
+            <div class="tutor-strip-title">Mau belajar bareng tutor asli lewat Zoom?</div>
+            <p class="tutor-strip-sub">Dapatkan pembahasan lebih mendalam dan interaktif.</p>
+          </div>
+        </div>
         <a class="tutor-strip-link" id="homeWaBtn" href="#" target="_blank" rel="noopener">Chat di WhatsApp →</a>
       </div>
     </div>

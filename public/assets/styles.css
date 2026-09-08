@@ -175,27 +175,29 @@ header.site-nav{
 .brand-text{font-family:'Space Grotesk';font-weight:700;font-size:1.05rem;color:var(--heading);line-height:1;}
 .brand-text span{color:var(--orange);}
 .brand-sub{font-family:'Inter';font-weight:500;font-size:.66rem;letter-spacing:.06em;color:var(--slate);text-transform:uppercase;}
-nav.links{display:flex;gap:14px;align-items:center;}
+nav.links{display:flex;gap:22px;align-items:center;}
 nav.links a{
   font-size:.86rem;font-weight:600;color:var(--heading-soft);
-  text-decoration:none;padding:8px 12px;border-radius:8px;
-  transition:background .15s,color .15s;
+  text-decoration:none;padding:8px 2px;border-radius:0;
+  border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;
   white-space:nowrap;
 }
-nav.links a:hover{background:var(--paper-2);}
+nav.links a:hover{color:var(--heading);}
 nav.links a.cta{
-  background:var(--navy);color:#fff;
+  background:var(--navy);color:#fff;padding:8px 16px;border-radius:8px;border-bottom-color:transparent;
 }
-nav.links a.cta:hover{background:var(--accent-hover);}
+nav.links a.cta:hover{background:var(--accent-hover);color:#fff;}
 
-/* Subject switcher — a compact icon row rather than a wall of text
-   links, so the nav stays lean whether there are 2 subjects or 8. */
-.subject-switcher{display:flex;gap:2px;align-items:center;padding:3px;background:var(--paper-2);border-radius:11px;}
+/* Subject links — flat inline text+icon, active tab gets an orange
+   underline (matches Beranda's active state) instead of a pill background. */
+.subject-switcher{display:flex;gap:22px;align-items:center;}
 nav.links a.subject-link{
-  display:flex;align-items:center;gap:6px;padding:7px 11px;border-radius:8px;font-size:.8rem;
+  display:flex;align-items:center;gap:6px;padding:8px 2px;font-size:.86rem;
 }
 nav.links a.subject-link .icon{color:var(--slate);}
-nav.links a.subject-link.active{background:var(--card);color:var(--heading);box-shadow:0 1px 3px rgba(13,27,46,0.08);}
+#navHomeLink.active,
+nav.links a.subject-link.active{color:var(--heading);border-color:var(--orange);}
 nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 @media(max-width:900px){
   .subject-link-label{display:none;}
@@ -402,46 +404,75 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
   display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
   padding:16px 22px;border-radius:12px;background:var(--paper-2);border:1px solid var(--line);
 }
-.tutor-strip-text{font-size:.86rem;color:var(--slate);}
-.tutor-strip-link{
-  font-family:'Space Grotesk';font-weight:600;font-size:.84rem;color:var(--orange-dark);
-  text-decoration:none;white-space:nowrap;
-}
-.tutor-strip-link:hover{color:var(--navy);}
-
-/* === Subject list (Home) — editorial rows, not a grid of shadowed cards === */
-.subject-list{display:flex;flex-direction:column;border-top:1px solid var(--line);}
-.subject-row{
-  display:flex;align-items:center;gap:18px;padding:20px 4px;
-  border-bottom:1px solid var(--line);cursor:pointer;text-decoration:none;color:inherit;
-  transition:padding-left .15s,background .15s;
-}
-.subject-row:hover{padding-left:10px;background:var(--paper-2);}
-.subject-row:hover h3{font-weight:700;}
-.subject-row .subj-icon-wrap{
-  width:44px;height:44px;border-radius:12px;background:var(--paper-2);
+.tutor-strip-info{display:flex;align-items:center;gap:14px;}
+.tutor-strip-icon{
+  width:38px;height:38px;border-radius:10px;background:var(--card);border:1px solid var(--line);
   display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  transition:background .15s;
 }
-.subject-row:hover .subj-icon-wrap{background:rgba(238,125,49,0.14);}
-.subject-row .subj-icon-wrap .icon{width:1.3em;height:1.3em;color:var(--orange-dark);}
-.subject-row .subj-body{flex:1;min-width:0;}
-.subject-row h3{font-size:1.02rem;margin-bottom:3px;transition:font-weight .15s;}
-.subject-row p{font-size:.82rem;color:var(--slate);margin:0;}
-.subject-row .subj-status{
-  font-family:'Space Grotesk';font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;
-  padding:5px 10px;border-radius:20px;flex-shrink:0;
+.tutor-strip-icon .icon{color:var(--orange-dark);}
+.tutor-strip-title{font-weight:600;font-size:.9rem;color:var(--heading);}
+.tutor-strip-sub{font-size:.8rem;color:var(--slate);margin:2px 0 0;}
+.tutor-strip-link{
+  font-family:'Space Grotesk';font-weight:600;font-size:.84rem;color:#fff;
+  text-decoration:none;white-space:nowrap;background:var(--navy);padding:10px 18px;border-radius:9px;
+  transition:background .15s,transform .15s;
 }
-.subject-row.ready .subj-status{background:rgba(47,158,110,0.12);color:var(--success);}
-.subject-row.soon{opacity:.55;cursor:default;}
-.subject-row.soon:hover{padding-left:4px;background:none;}
-.subject-row.soon:hover h3{font-weight:600;}
-.subject-row.soon .subj-status{background:var(--paper-2);color:var(--slate);}
-.subject-row .subj-arrow{
-  color:var(--line);flex-shrink:0;opacity:0;transform:translateX(-4px);
+.tutor-strip-link:hover{background:var(--accent-hover);transform:translateY(-1px);}
+
+/* === Hero eyebrow — small greeting line above the H1 === */
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk';font-weight:600;
+  font-size:.84rem;color:var(--orange-dark);margin-bottom:14px;
+}
+.hero-eyebrow .icon{color:var(--orange);}
+
+/* === Section heading above the subject grid — smaller than .section-head === */
+.section-head-sm{margin:44px 0 22px;}
+.section-head-sm h2{font-size:1.4rem;margin-bottom:6px;}
+.section-head-sm p{color:var(--slate);font-size:.92rem;margin:0;}
+
+/* === Subject grid — colored "book cover" cards (one color per subject,
+   semantic not positional — see design notes) with a compact icon+arrow
+   meta row underneath, instead of a plain editorial list. === */
+.subject-card-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:22px;
+}
+.subject-item{cursor:pointer;}
+.subject-item.soon{cursor:default;}
+.book-cover{
+  position:relative;aspect-ratio:3/4;border-radius:14px;padding:18px;
+  display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;
+  transition:transform .18s,box-shadow .18s;
+}
+.subject-item:not(.soon):hover .book-cover{transform:translateY(-4px);box-shadow:var(--shadow);}
+.book-cover h3{color:#fff;font-size:1.05rem;margin:0 0 4px;}
+.book-cover p{color:rgba(255,255,255,0.78);font-size:.78rem;margin:0;line-height:1.4;}
+.book-status{
+  position:absolute;top:14px;right:14px;font-family:'Space Grotesk';font-size:.64rem;
+  text-transform:uppercase;letter-spacing:.05em;padding:4px 9px;border-radius:20px;
+  background:rgba(255,255,255,0.2);color:#fff;
+}
+.subject-item.soon .book-cover{opacity:.55;}
+.book-cover--amber{background:linear-gradient(160deg,var(--amber),var(--orange-dark));}
+.book-cover--green{background:linear-gradient(160deg,var(--green),#1f7a43);}
+.book-cover--blue{background:linear-gradient(160deg,var(--blue),#1c4f8f);}
+.book-cover--pink{background:linear-gradient(160deg,var(--pink),#9c2455);}
+.book-cover--purple{background:linear-gradient(160deg,var(--purple),#4c2f96);}
+
+.subject-meta{display:flex;align-items:flex-start;gap:10px;margin-top:14px;}
+.subject-meta .subj-icon-wrap{
+  width:34px;height:34px;border-radius:10px;background:var(--paper-2);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.subject-meta .subj-icon-wrap .icon{width:1.15em;height:1.15em;color:var(--orange-dark);}
+.subj-meta-body{min-width:0;}
+.subj-meta-name{display:flex;align-items:center;gap:6px;font-weight:600;font-size:.92rem;}
+.subj-meta-name .subj-arrow{
+  color:var(--line);opacity:0;transform:translateX(-4px);
   transition:opacity .15s,transform .15s,color .15s;
 }
-.subject-row:hover .subj-arrow{opacity:1;transform:translateX(0);color:var(--orange-dark);}
+.subject-item:hover .subj-meta-name .subj-arrow{opacity:1;transform:translateX(0);color:var(--orange-dark);}
+.subject-meta p{font-size:.78rem;color:var(--slate);margin:2px 0 0;}
 
 /* === Home hero layout — text column + optional visual anchor. The image
    slot degrades gracefully (collapses to single column via JS onerror)
@@ -461,19 +492,30 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 
 /* === "Lanjutkan belajar" banner === */
 .continue-banner{
-  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
-  background:var(--navy);border-radius:14px;padding:18px 22px;margin-bottom:28px;color:#fff;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  background:var(--navy);border-radius:16px;padding:26px 28px;margin-bottom:8px;color:#fff;
   cursor:pointer;text-decoration:none;
 }
-.continue-banner .cb-label{font-family:'Space Grotesk';font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);margin-bottom:4px;}
-.continue-banner .cb-title{font-weight:600;font-size:.98rem;}
+.continue-banner .cb-info{flex:1;min-width:200px;}
+.continue-banner .cb-label{font-family:'Space Grotesk';font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);margin-bottom:6px;}
+.continue-banner .cb-title{font-weight:700;font-size:1.15rem;margin-bottom:2px;}
+.continue-banner .cb-sub{font-size:.82rem;color:#c3ccd9;}
+.continue-banner .cb-meta{font-family:'IBM Plex Mono';font-size:.74rem;color:#9fb0c2;margin-top:10px;}
 .continue-banner .cb-cta{
-  display:flex;align-items:center;gap:8px;flex-shrink:0;
-  font-family:'Space Grotesk';font-weight:600;font-size:.86rem;color:var(--orange);
-  transition:gap .15s;
+  display:inline-flex;align-items:center;gap:8px;margin-top:16px;
+  font-family:'Space Grotesk';font-weight:600;font-size:.86rem;color:#0d1b2e;
+  background:var(--orange);padding:10px 18px;border-radius:9px;transition:gap .15s,background .15s;
 }
-.continue-banner:hover .cb-cta{gap:12px;}
-.continue-banner .cb-arrow{color:var(--orange);flex-shrink:0;}
+.continue-banner:hover .cb-cta{gap:12px;background:var(--orange-dark);color:#0d1b2e;}
+.continue-banner .cb-cta .icon{color:inherit;}
+.continue-banner .book-cover--mini{
+  width:110px;flex-shrink:0;padding:12px;display:none;
+}
+.continue-banner .book-cover--mini h4{color:#fff;font-size:.78rem;margin:0 0 4px;line-height:1.25;}
+.continue-banner .mini-eyebrow{font-family:'Space Grotesk';font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,0.7);}
+@media(min-width:560px){
+  .continue-banner .book-cover--mini{display:flex;}
+}
 
 /* === Floating WhatsApp button === */
 .wa-float{
