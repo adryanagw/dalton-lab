@@ -17,6 +17,41 @@
    kept only as historical reference.
    ===================================================================== */
 
+/* =====================================================================
+   ICON SYSTEM — replaces emoji used as functional UI icons (nav, buttons,
+   subject markers, status messages) with a small set of hand-authored
+   minimal-line SVGs. Emoji left inside chapter body copy as an informal
+   voice/tone device are untouched — this is specifically about icons
+   that stand in for meaning (a subject, a warning, a checkmark), not
+   personality flourishes in prose.
+   ===================================================================== */
+const ICON_PATHS = {
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>',
+  moon: '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>',
+  'bar-chart': '<path d="M3 3v18h18"/><path d="M8 17v-5M13 17V9M18 17V6"/>',
+  leaf: '<path d="M6 20C6 14 9 9 18 5c0 8-4 13-10 15-1 .3-2 .3-2 0z"/><path d="M6 20c1-3 3-6 6-8"/>',
+  function: '<path d="M3 12c2-6 4-6 6 0s4 6 6 0 4-6 6 0"/>',
+  flask: '<path d="M9 2v6L4 20a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3L15 8V2"/><path d="M9 2h6"/><path d="M7 15h10"/>',
+  atom: '<circle cx="12" cy="12" r="1.5"/><ellipse cx="12" cy="12" rx="9" ry="4"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(120 12 12)"/>',
+  video: '<rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-4v12l-6-4"/>',
+  users: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/><circle cx="18" cy="8" r="2.5"/><path d="M16.5 13.2c2.6.4 4.5 2.7 4.5 5.3"/>',
+  calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  'check-circle': '<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/>',
+  'alert-triangle': '<path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17.5v.1"/>',
+  check: '<path d="M4 12.5l5 5L20 6"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>',
+  'book-open': '<path d="M12 6c-2-1.5-5-2-8-1v14c3-1 6-.5 8 1 2-1.5 5-2 8-1V5c-3-1-6-.5-8 1z"/><path d="M12 6v14"/>',
+  'trending-up': '<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+  'arrow-right': '<path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>',
+  'arrow-left': '<path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/>',
+  sparkle: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2 2M16 16l2 2M6 18l2-2M16 8l2-2"/>'
+};
+function icon(name, extraClass){
+  const path = ICON_PATHS[name];
+  if(!path) return '';
+  return `<svg class="icon${extraClass ? ' ' + extraClass : ''}" viewBox="0 0 24 24" aria-hidden="true">${path}</svg>`;
+}
+
 /* ===== Theme toggle ===== */
 function getCurrentTheme(){
   return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
@@ -54,33 +89,33 @@ document.querySelectorAll('#navLinks a').forEach(a=>{
    ===================================================================== */
 const subjectsData = {
   ekonomi: {
-    name:'Ekonomi', icon:'📊', ready:true,
+    name:'Ekonomi', icon:'bar-chart', ready:true, color:'amber',
     desc:'Badan usaha, koperasi, manajemen, dan seluk-beluk ekonomi lainnya.',
     babs:[
-      {id:'bab1-badan-usaha', num:'Bab 1', title:'Badan Usaha, Koperasi & Manajemen', desc:'Bentuk-bentuk badan usaha, BUMN/BUMD, koperasi & kalkulator SHU, dasar manajemen.', ready:true},
+      {id:'bab1-badan-usaha', num:'Bab 1', title:'Badan Usaha, Koperasi & Manajemen', desc:'Bentuk-bentuk badan usaha, BUMN/BUMD, koperasi & kalkulator SHU, dasar manajemen.', ready:true, estMinutes:18, subbabCount:6},
     ]
   },
   biologi: {
-    name:'Biologi', icon:'🧬', ready:true,
+    name:'Biologi', icon:'leaf', ready:true, color:'green',
     desc:'Sel, jaringan, sistem organ tubuh, dan makhluk hidup lainnya.',
     babs:[
-      {id:'bab1-sel', num:'Bab 1', title:'Sel: Unit Dasar Kehidupan', desc:'Sejarah penemuan sel, komponen kimiawi & struktural, organel, transpor membran, hingga reproduksi sel.', ready:true},
+      {id:'bab1-sel', num:'Bab 1', title:'Sel: Unit Dasar Kehidupan', desc:'Sejarah penemuan sel, komponen kimiawi & struktural, organel, transpor membran, hingga reproduksi sel.', ready:true, estMinutes:20, subbabCount:7},
     ]
   },
   matematika: {
-    name:'Matematika', icon:'📐', ready:true,
+    name:'Matematika', icon:'function', ready:true, color:'blue',
     desc:'Eksponen, logaritma, aljabar, geometri, statistika, dan lainnya.',
     babs:[
-      {id:'bab1-eksponen-logaritma', num:'Bab 1', title:'Eksponen & Logaritma', desc:'Sifat-sifat bilangan berpangkat, bentuk akar, fungsi eksponensial, sifat-sifat logaritma, hingga persamaan sederhana keduanya — plus latihan bertingkat per topik.', ready:true},
+      {id:'bab1-eksponen-logaritma', num:'Bab 1', title:'Eksponen & Logaritma', desc:'Sifat-sifat bilangan berpangkat, bentuk akar, fungsi eksponensial, sifat-sifat logaritma, hingga persamaan sederhana keduanya — plus latihan bertingkat per topik.', ready:true, estMinutes:22, subbabCount:8},
     ]
   },
   kimia: {
-    name:'Kimia', icon:'🧪', ready:false,
+    name:'Kimia', icon:'flask', ready:false, color:'pink',
     desc:'Struktur atom, ikatan kimia, stoikiometri, dan lainnya.',
     babs:[]
   },
   fisika: {
-    name:'Fisika', icon:'⚛️', ready:false,
+    name:'Fisika', icon:'atom', ready:false, color:'purple',
     desc:'Mekanika, listrik-magnet, gelombang, dan lainnya.',
     babs:[]
   },
@@ -113,6 +148,15 @@ const WHATSAPP_NUMBER = '6282136673896'; // 082136673896 in international format
 function waLink(message){
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
+// Homepage visual anchor is optional — if the illustration file hasn't been
+// dropped in yet (see assets/img/README or the Visual Assets list in the
+// redesign notes), collapse back to a single-column hero instead of showing
+// a broken image.
+document.getElementById('homeIllustration').addEventListener('error', function(){
+  document.getElementById('homeHero').classList.add('no-visual');
+  this.parentElement.style.display = 'none';
+});
+
 document.getElementById('waFloat').href = waLink('Halo Dalton Lab! Aku pengen tau lebih lanjut soal akses materi & bimbingan tutor di sini 🙌');
 document.getElementById('homeWaBtn').href = waLink('Halo Dalton Lab! Aku mau nanya-nanya soal kelas bimbingan (privat/grup) via Zoom 🙌');
 
@@ -184,7 +228,7 @@ async function submitOrder() {
   document.getElementById('orderError').classList.remove('show');
 
   if (!selectedPackage) { showOrderError('Pilih paketnya dulu ya.'); return; }
-  if (!nama || !wa || !username) { showOrderError('Nama, WhatsApp, dan username wajib diisi semua.'); return; }
+  if (!nama || !wa || !username) { showOrderError('Nama, WhatsApp, sama username-nya diisi dulu ya.'); return; }
 
   const btn = document.getElementById('orderSubmitBtn');
   btn.disabled = true;
@@ -251,7 +295,7 @@ function renderSessionBadge(){
     const statusHtml = hasAccess()
       ? `<span class="session-status ok">Aktif s.d. ${expiryStr}</span>`
       : `<span class="session-status expired">Paket habis</span>`;
-    badge.innerHTML = `👋 ${s.nama || s.username} ${statusHtml} <button id="logoutBtn">Keluar</button>`;
+    badge.innerHTML = `${s.nama || s.username} ${statusHtml} <button id="logoutBtn">Keluar</button>`;
     document.getElementById('logoutBtn').addEventListener('click',()=>{
       clearSession();
       goToHome();
@@ -262,7 +306,6 @@ function renderSessionBadge(){
   }
 }
 renderSessionBadge();
-if(getSession()) fetchProgress();
 
 /* =====================================================================
    PROGRESS — per-student, per-chapter, saved server-side (not just this
@@ -294,6 +337,18 @@ function markProgress(babId, status){
   }).catch(()=>{});
 }
 
+// Runs after progressCache/fetchProgress/markProgress are all declared above
+// (fixes a bug where this used to fire before `let progressCache` existed —
+// harmless for anonymous visitors since getSession() is null, but would
+// throw a ReferenceError for any returning logged-in student).
+{
+  const initialSession = getSession();
+  if(initialSession){
+    document.getElementById('homeEyebrow').textContent = `Halo, ${initialSession.nama || initialSession.username}!`;
+    fetchProgress().then(renderContinueBanner);
+  }
+}
+
 /* =====================================================================
    VIEW ROUTER
    ===================================================================== */
@@ -304,20 +359,85 @@ const viewLesson = document.getElementById('view-lesson');
 let activeSubjectKey = 'ekonomi';
 let activeBabId = null;
 
+// Makes a click-only div behave like a real link for keyboard users: focusable,
+// announced as a link, and activatable with Enter/Space — without changing its
+// click wiring or visual markup.
+function makeRowFocusable(el, activate){
+  if(el.classList.contains('soon')) return;
+  el.tabIndex = 0;
+  el.setAttribute('role','link');
+  el.addEventListener('keydown', e=>{
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); activate(); }
+  });
+}
+
 function renderSubjectGrid(){
   const grid = document.getElementById('subjectGrid');
   grid.innerHTML = Object.entries(subjectsData).map(([key,s])=>`
-    <div class="subject-card ${s.ready?'ready':'soon'}" data-subject="${key}">
-      <span class="subj-icon">${s.icon}</span>
-      <h3>${s.name}</h3>
-      <p>${s.desc}</p>
-      <span class="subj-status">${s.ready ? 'Tersedia' : 'Segera Hadir'}</span>
+    <div class="subject-item ${s.ready?'ready':'soon'}" data-subject="${key}" aria-label="${s.name}">
+      <div class="book-cover book-cover--${s.color}">
+        <span class="book-status">${s.ready ? 'Tersedia' : 'Segera Hadir'}</span>
+        <h3>${s.name}</h3>
+        <p>${s.desc}</p>
+      </div>
+      <div class="subject-meta">
+        <span class="subj-icon-wrap">${icon(s.icon)}</span>
+        <div class="subj-meta-body">
+          <div class="subj-meta-name">${s.name}${s.ready ? icon('arrow-right','subj-arrow') : ''}</div>
+          <p>${s.desc}</p>
+        </div>
+      </div>
     </div>`).join('');
-  grid.querySelectorAll('.subject-card').forEach(card=>{
-    card.addEventListener('click',()=>enterSubject(card.dataset.subject));
+  grid.querySelectorAll('.subject-item').forEach(row=>{
+    const go = ()=>enterSubject(row.dataset.subject);
+    row.addEventListener('click',go);
+    makeRowFocusable(row, go);
   });
 }
 renderSubjectGrid();
+
+/* "Lanjutkan belajar" — if the student has a chapter marked 'started'
+   (not yet 'completed') anywhere, surface a direct shortcut back into it
+   instead of making them re-navigate subject -> chapter list every visit. */
+function renderContinueBanner(){
+  const banner = document.getElementById('continueBanner');
+  const session = getSession();
+  if(!session || !hasAccess()){ banner.style.display = 'none'; return; }
+
+  let found = null;
+  for(const [subjectKey, s] of Object.entries(subjectsData)){
+    for(const b of s.babs){
+      if(progressCache[b.id] === 'started'){ found = {subjectKey, subject:s, bab:b}; break; }
+    }
+    if(found) break;
+  }
+  if(!found){ banner.style.display = 'none'; return; }
+
+  const meta = (found.bab.estMinutes && found.bab.subbabCount)
+    ? `<div class="cb-meta">${found.bab.estMinutes} menit · ${found.bab.subbabCount} subbab</div>`
+    : '';
+
+  banner.style.display = '';
+  banner.innerHTML = `
+    <div class="cb-info">
+      <div class="cb-label">Lanjutkan Belajar</div>
+      <div class="cb-title">${found.bab.title}</div>
+      <div class="cb-sub">${found.subject.name} · ${found.bab.num}</div>
+      ${meta}
+      <span class="cb-cta">Lanjutkan belajar ${icon('arrow-right')}</span>
+    </div>
+    <div class="book-cover book-cover--${found.subject.color} book-cover--mini">
+      <h4>${found.bab.title}</h4>
+      <span class="mini-eyebrow">${found.subject.name}</span>
+    </div>
+  `;
+  const go = () => {
+    activeSubjectKey = found.subjectKey;
+    goToLesson(found.bab.id);
+  };
+  banner.onclick = go;
+  makeRowFocusable(banner, go);
+}
 
 function hideAllViews(){
   viewHome.style.display = 'none';
@@ -330,6 +450,13 @@ function goToHome(){
   hideAllViews();
   viewHome.style.display = '';
   document.querySelectorAll('.subject-link').forEach(l=>l.classList.remove('active'));
+  document.getElementById('navHomeLink').classList.add('active');
+  renderSubjectGrid();
+  renderContinueBanner();
+  const session = getSession();
+  document.getElementById('homeEyebrow').textContent = session
+    ? `Halo, ${session.nama || session.username}!`
+    : 'Halo, selamat datang!';
   window.scrollTo({top:0,behavior:'instant'});
 }
 
@@ -346,14 +473,26 @@ function goToSignIn(subjectKey){
   activeSubjectKey = subjectKey;
   const s = subjectsData[subjectKey];
   const session = getSession();
+  const packagesPanel = document.getElementById('packagesPanel');
+  const toggleBtn = document.getElementById('togglePackagesBtn');
+  const loginBlock = document.getElementById('loginBlock');
 
-  if(session && session.expiresAt){
+  const expired = session && session.expiresAt;
+  if(expired){
     const expiryStr = new Date(session.expiresAt).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
     document.getElementById('signinTitle').textContent = 'Paketmu Udah Habis';
-    document.getElementById('signinSubtitle').textContent = `Halo ${session.nama || session.username}! Langgananmu berakhir ${expiryStr}. Beli paket baru di samping buat lanjut belajar ${s.name} & mata pelajaran lainnya.`;
+    document.getElementById('signinSubtitle').textContent = `Halo ${session.nama || session.username}! Langgananmu berakhir ${expiryStr} — perpanjang buat lanjut belajar ${s.name}.`;
+    // They're already identified; skip the login form and go straight to renewal.
+    loginBlock.style.display = 'none';
+    packagesPanel.style.display = '';
+    toggleBtn.style.display = 'none';
   } else {
-    document.getElementById('signinTitle').textContent = 'Yuk, Buka Akses ' + s.name;
-    document.getElementById('signinSubtitle').textContent = `Materi & kuis ${s.name} — plus semua mata pelajaran lain — kebuka begitu kamu punya paket aktif di Dalton Lab.`;
+    document.getElementById('signinTitle').textContent = 'Siap lanjut belajar?';
+    document.getElementById('signinSubtitle').textContent = `Masuk buat buka materi ${s.name} dan mata pelajaran lainnya.`;
+    loginBlock.style.display = '';
+    packagesPanel.style.display = 'none';
+    toggleBtn.style.display = '';
+    toggleBtn.textContent = 'Belum punya akses? Lihat paket →';
   }
 
   document.getElementById('signinError').classList.remove('show');
@@ -368,6 +507,7 @@ function goToSignIn(subjectKey){
 
   hideAllViews();
   viewSignin.style.display = '';
+  document.getElementById('navHomeLink').classList.remove('active');
   document.querySelectorAll('.subject-link').forEach(l=>l.classList.toggle('active', l.dataset.subject===subjectKey));
   window.scrollTo({top:0,behavior:'instant'});
 }
@@ -375,34 +515,54 @@ function goToSignIn(subjectKey){
 function goToBabs(subjectKey){
   activeSubjectKey = subjectKey;
   const s = subjectsData[subjectKey];
-  document.getElementById('babsEyebrow').textContent = 'Mata Pelajaran';
-  document.getElementById('babsTitle').textContent = s.name + ' — Pilih Bab';
+  document.getElementById('babsTitle').textContent = s.name;
   document.getElementById('babsSubtitle').textContent = s.desc;
 
   const babGrid = document.getElementById('babGrid');
-  if(s.babs.length === 0){
-    babGrid.innerHTML = `<p style="color:var(--slate);grid-column:1/-1;">Materi ${s.name} sedang disiapkan — segera hadir di sini. 🚧</p>`;
+  const progressEl = document.getElementById('babsProgress');
+  const readyBabs = s.babs.filter(b=>b.ready);
+
+  if(readyBabs.length === 0){
+    progressEl.style.display = 'none';
+    babGrid.innerHTML = `<p style="color:var(--slate);">Materi ${s.name} sedang disiapkan — segera hadir di sini.</p>`;
   } else {
+    const doneCount = readyBabs.filter(b=>progressCache[b.id] === 'completed').length;
+    if(doneCount > 0){
+      const pct = Math.round(doneCount / readyBabs.length * 100);
+      progressEl.style.display = '';
+      progressEl.innerHTML = `
+        <div class="subject-progress">
+          <div class="subject-progress-track"><div class="subject-progress-fill" style="width:${pct}%;"></div></div>
+          <span class="mono">${pct}% selesai</span>
+        </div>`;
+    } else {
+      progressEl.style.display = 'none';
+    }
+
     babGrid.innerHTML = s.babs.map(b=>{
       const prog = progressCache[b.id];
-      const progBadge = prog === 'completed' ? '<span class="bab-progress done">✓ Selesai</span>'
-        : prog === 'started' ? '<span class="bab-progress ongoing">● Lagi Dipelajari</span>' : '';
+      const progBadge = prog === 'completed' ? '<span class="bab-progress done">Selesai</span>'
+        : prog === 'started' ? '<span class="bab-progress ongoing">Lagi Dipelajari</span>' : '';
       return `
-      <div class="bab-card ${b.ready?'':'soon'}" data-bab="${b.id}">
-        ${b.ready?'':'<span class="soon-tag">Segera Hadir</span>'}
-        ${b.ready ? progBadge : ''}
-        <div class="bab-num">${b.num}</div>
-        <h4>${b.title}</h4>
-        <p>${b.desc}</p>
+      <div class="bab-row ${b.ready?'':'soon'}" data-bab="${b.id}" aria-label="${b.title}">
+        <span class="bab-num mono">${b.num.replace(/\D/g,'').padStart(2,'0')}</span>
+        <div class="bab-body">
+          <h4>${b.title}</h4>
+          <p>${b.desc}</p>
+        </div>
+        ${b.ready ? progBadge : '<span class="soon-tag">Segera Hadir</span>'}
       </div>`;
     }).join('');
-    babGrid.querySelectorAll('.bab-card:not(.soon)').forEach(card=>{
-      card.addEventListener('click',()=>goToLesson(card.dataset.bab));
+    babGrid.querySelectorAll('.bab-row:not(.soon)').forEach(row=>{
+      const go = ()=>goToLesson(row.dataset.bab);
+      row.addEventListener('click',go);
+      makeRowFocusable(row, go);
     });
   }
 
   hideAllViews();
   viewBabs.style.display = '';
+  document.getElementById('navHomeLink').classList.remove('active');
   document.querySelectorAll('.subject-link').forEach(l=>l.classList.toggle('active', l.dataset.subject===subjectKey));
   window.scrollTo({top:0,behavior:'instant'});
 }
@@ -417,6 +577,8 @@ async function goToLesson(babId){
   const bab = findBab(babId);
   hideAllViews();
   viewLesson.style.display = '';
+  document.getElementById('navHomeLink').classList.remove('active');
+  document.querySelectorAll('.subject-link').forEach(l=>l.classList.toggle('active', l.dataset.subject===activeSubjectKey));
   window.scrollTo({top:0,behavior:'instant'});
 
   document.getElementById('backToBabsBtn').textContent = '← ' + subjectsData[activeSubjectKey].name;
@@ -426,7 +588,7 @@ async function goToLesson(babId){
   lessonContent.innerHTML = `<div class="wrap" style="padding:80px 0;text-align:center;color:var(--slate);">Memuat materi…</div>`;
 
   if(!bab || !bab.ready){
-    lessonContent.innerHTML = `<div class="wrap" style="padding:80px 0;text-align:center;color:var(--slate);">Materi ini belum tersedia.</div>`;
+    lessonContent.innerHTML = `<div class="wrap" style="padding:80px 0;text-align:center;color:var(--slate);">Waduh, materi ini belum ada.</div>`;
     return;
   }
 
@@ -451,7 +613,7 @@ async function goToLesson(babId){
     lessonContent.innerHTML = html;
   }catch(err){
     lessonContent.innerHTML = `<div class="wrap" style="padding:80px 0;text-align:center;color:var(--slate);">
-      ⚠️ Gagal memuat materi. Coba refresh halaman, atau pastikan paketmu masih aktif.
+      ${icon('alert-triangle')} Gagal memuat materi. Coba refresh halaman, atau pastikan paketmu masih aktif.
     </div>`;
     return;
   }
@@ -467,6 +629,32 @@ async function goToLesson(babId){
   initAllComponents(lessonContent);
   observeReveal(lessonContent.querySelectorAll('section'));
   markProgress(babId, 'started');
+  renderChapterNav(activeSubjectKey, babId);
+}
+
+// Prev/next chapter shortcut, driven entirely by the subjectsData catalog
+// (not the chapter HTML itself) so it works for any subject without the
+// chapter-content files needing to know about their neighbors. Renders
+// nothing when there's only one ready chapter in the subject (true for
+// every subject today) — nothing to page between yet.
+function renderChapterNav(subjectKey, babId){
+  const s = subjectsData[subjectKey];
+  const readyBabs = s.babs.filter(b=>b.ready);
+  const idx = readyBabs.findIndex(b=>b.id===babId);
+  const prev = idx > 0 ? readyBabs[idx-1] : null;
+  const next = idx >= 0 && idx < readyBabs.length-1 ? readyBabs[idx+1] : null;
+  if(!prev && !next) return;
+
+  const nav = document.createElement('div');
+  nav.className = 'wrap chapter-nav';
+  nav.innerHTML = `
+    ${prev ? `<button class="chapter-nav-link prev" data-bab="${prev.id}">${icon('arrow-left')}<span><small>Bab Sebelumnya</small>${prev.title}</span></button>` : '<span></span>'}
+    ${next ? `<button class="chapter-nav-link next" data-bab="${next.id}"><span><small>Bab Berikutnya</small>${next.title}</span>${icon('arrow-right')}</button>` : '<span></span>'}
+  `;
+  nav.querySelectorAll('.chapter-nav-link').forEach(btn=>{
+    btn.addEventListener('click',()=>goToLesson(btn.dataset.bab));
+  });
+  document.getElementById('lessonContent').appendChild(nav);
 }
 
 function buildLessonSubnav(root){
@@ -480,6 +668,7 @@ function buildLessonSubnav(root){
 }
 
 document.getElementById('logoHome').addEventListener('click',e=>{e.preventDefault(); goToHome();});
+document.getElementById('navHomeLink').addEventListener('click',e=>{e.preventDefault(); goToHome();});
 document.getElementById('backToHomeBtn').addEventListener('click',goToHome);
 document.getElementById('backToHomeFromSignin').addEventListener('click',goToHome);
 document.getElementById('backToBabsBtn').addEventListener('click',()=>goToBabs(activeSubjectKey));
@@ -494,6 +683,16 @@ document.querySelectorAll('.subject-link').forEach(link=>{
 document.getElementById('signinSubmitBtn').addEventListener('click', attemptSignIn);
 document.getElementById('signinPassword').addEventListener('keydown', e=>{ if(e.key==='Enter') attemptSignIn(); });
 document.getElementById('signinUsername').addEventListener('keydown', e=>{ if(e.key==='Enter') attemptSignIn(); });
+
+document.getElementById('togglePackagesBtn').addEventListener('click', ()=>{
+  const packagesPanel = document.getElementById('packagesPanel');
+  const opening = packagesPanel.style.display === 'none';
+  packagesPanel.style.display = opening ? '' : 'none';
+  document.getElementById('togglePackagesBtn').textContent = opening
+    ? '← Kembali ke login'
+    : 'Belum punya akses? Lihat paket →';
+  if(opening) packagesPanel.scrollIntoView({behavior:'smooth', block:'nearest'});
+});
 
 function showSigninError(msg){
   const el = document.getElementById('signinError');
@@ -533,7 +732,7 @@ async function attemptSignIn(){
       showSigninError(data.message || 'Hmm, username atau password-nya salah nih. Coba cek lagi ya.');
     }
   }catch(err){
-    showSigninError('Gagal terhubung ke server. Periksa koneksi internet kamu.');
+    showSigninError('Gagal konek ke server nih. Cek koneksi internet kamu, terus coba lagi.');
   }finally{
     btn.disabled = false;
     btn.textContent = 'Masuk';
@@ -553,16 +752,9 @@ function initAccordions(root){
       const q = e.target.closest('.acc-q');
       if(!q || !group.contains(q)) return;
       const item = q.parentElement;
-      const a = item.querySelector('.acc-a');
       const isOpen = item.classList.contains('open');
-      group.querySelectorAll('.acc-item.open').forEach(el=>{
-        el.classList.remove('open');
-        el.querySelector('.acc-a').style.maxHeight = null;
-      });
-      if(!isOpen){
-        item.classList.add('open');
-        a.style.maxHeight = a.scrollHeight + 'px';
-      }
+      group.querySelectorAll('.acc-item.open').forEach(el=>el.classList.remove('open'));
+      if(!isOpen) item.classList.add('open');
     });
   });
 }
@@ -683,7 +875,7 @@ function initQuizzes(root){
     mount.innerHTML = `<p style="color:#c3ccd9;">Memuat kuis…</p>`;
     const session = getSession();
     if(!session || !session.token){
-      mount.innerHTML = `<p style="color:#f0a597;">⚠️ Sesi kamu habis — refresh halaman & login ulang ya.</p>`;
+      mount.innerHTML = `<p style="color:#f0a597;">${icon('alert-triangle')} Sesi kamu habis — refresh halaman & login ulang ya.</p>`;
       return;
     }
     let quiz;
@@ -694,7 +886,7 @@ function initQuizzes(root){
       if(!res.ok) throw new Error('fetch failed');
       quiz = await res.json();
     }catch(err){
-      mount.innerHTML = `<p style="color:#f0a597;">⚠️ Gagal memuat soal kuis. Coba refresh halaman ya.</p>`;
+      mount.innerHTML = `<p style="color:#f0a597;">${icon('alert-triangle')} Gagal memuat soal kuis. Coba refresh halaman ya.</p>`;
       return;
     }
 
@@ -755,7 +947,7 @@ function initQuizzes(root){
       const nameVal = nameInput.value.trim();
       const classVal = classInput.value.trim();
       if(!nameVal || !classVal){
-        hint.textContent = 'Nama dan kelas wajib diisi sebelum memulai kuis.';
+        hint.textContent = 'Isi nama & kelas kamu dulu ya, biar hasil kuismu kesimpen.';
         hint.classList.add('warn');
         return;
       }
@@ -771,7 +963,7 @@ function initQuizzes(root){
       const item = quiz[currentQ];
       counterEl.textContent = `Soal ${currentQ+1} / ${quiz.length}`;
       scoreEl.textContent = `Skor: ${score}`;
-      progressFill.style.width = (currentQ/quiz.length*100)+'%';
+      progressFill.style.transform = `scaleX(${currentQ/quiz.length})`;
 
       const letters = ['A','B','C','D'];
       questionArea.innerHTML = `
@@ -814,7 +1006,7 @@ function initQuizzes(root){
       resultEl.style.display = 'block';
       const pct = Math.round(score/quiz.length*100);
       resultEl.querySelector('[data-quiz-pct]').textContent = pct+'%';
-      progressFill.style.width = '100%';
+      progressFill.style.transform = 'scaleX(1)';
       let msg = '';
       if(pct>=85) msg = 'Mantap banget! Kayaknya kamu udah jago materi ini.';
       else if(pct>=60) msg = 'Lumayan nih! Sebagian besar udah nyantol, tinggal cek lagi yang masih meleset.';
@@ -880,7 +1072,7 @@ function initExercises(root){
     mount.innerHTML = `<p style="color:#c3ccd9;text-align:center;">Memuat latihan…</p>`;
     const session = getSession();
     if(!session || !session.token){
-      mount.innerHTML = `<p style="color:#f0a597;text-align:center;">⚠️ Sesi kamu habis — refresh halaman & login ulang ya.</p>`;
+      mount.innerHTML = `<p style="color:#f0a597;text-align:center;">${icon('alert-triangle')} Sesi kamu habis — refresh halaman & login ulang ya.</p>`;
       return;
     }
     let data;
@@ -891,7 +1083,7 @@ function initExercises(root){
       if(!res.ok) throw new Error('fetch failed');
       data = await res.json();
     }catch(err){
-      mount.innerHTML = `<p style="color:#f0a597;text-align:center;">⚠️ Gagal memuat latihan. Coba refresh halaman ya.</p>`;
+      mount.innerHTML = `<p style="color:#f0a597;text-align:center;">${icon('alert-triangle')} Gagal memuat latihan. Coba refresh halaman ya.</p>`;
       return;
     }
 
@@ -946,7 +1138,7 @@ function initExercises(root){
       const nameVal = nameInput.value.trim();
       const classVal = classInput.value.trim();
       if(!nameVal || !classVal){
-        hint.textContent = 'Nama dan kelas wajib diisi sebelum memulai latihan.';
+        hint.textContent = 'Isi nama & kelas kamu dulu ya, biar hasil latihanmu kesimpen.';
         hint.classList.add('warn');
         return;
       }
@@ -1006,7 +1198,7 @@ function runExerciseLevel(mount, questions, meta){
     const item = questions[currentQ];
     counterEl.textContent = `Soal ${currentQ+1} / ${questions.length}`;
     scoreEl.textContent = `Skor: ${score}`;
-    progressFill.style.width = (currentQ/questions.length*100)+'%';
+    progressFill.style.transform = `scaleX(${currentQ/questions.length})`;
 
     const letters = ['A','B','C','D'];
     questionArea.innerHTML = `
@@ -1049,7 +1241,7 @@ function runExerciseLevel(mount, questions, meta){
     resultEl.style.display = 'block';
     const pct = Math.round(score/questions.length*100);
     resultEl.querySelector('[data-quiz-pct]').textContent = pct+'%';
-    progressFill.style.width = '100%';
+    progressFill.style.transform = 'scaleX(1)';
     let msg = '';
     if(pct>=85) msg = `Mantap! Level ${meta.levelLabel} udah kamu kuasin.`;
     else if(pct>=60) msg = 'Lumayan — sebagian besar udah nyantol, cek lagi yang masih meleset.';
@@ -1086,7 +1278,7 @@ function runExerciseLevel(mount, questions, meta){
 function submitQuizResult(payload, statusEl, token){
   if(!statusEl) return;
   if(!token){
-    statusEl.textContent = '⚠ Sesi kamu habis, hasil ini gak kesimpen — refresh & login ulang ya.';
+    statusEl.innerHTML = `${icon('alert-triangle')} Sesi kamu habis, hasil ini gak kesimpen — refresh & login ulang ya.`;
     statusEl.className = 'submit-status err';
     return;
   }
@@ -1098,14 +1290,14 @@ function submitQuizResult(payload, statusEl, token){
     body: JSON.stringify(payload)
   }).then(r=>r.json()).then(data=>{
     if(data && data.success){
-      statusEl.textContent = '✓ Hasil kamu sudah tercatat.';
+      statusEl.innerHTML = `${icon('check')} Hasil kamu udah kesimpen.`;
       statusEl.className = 'submit-status ok';
     } else {
-      statusEl.textContent = '⚠ Gagal menyimpan hasil ke server.';
+      statusEl.innerHTML = `${icon('alert-triangle')} Gagal nyimpen hasil ke server nih.`;
       statusEl.className = 'submit-status err';
     }
   }).catch(()=>{
-    statusEl.textContent = '⚠ Gagal menyimpan hasil — periksa koneksi internet.';
+    statusEl.innerHTML = `${icon('alert-triangle')} Gagal nyimpen hasil — cek koneksi internet kamu ya.`;
     statusEl.className = 'submit-status err';
   });
 }
