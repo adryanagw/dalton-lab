@@ -17,6 +17,38 @@
    kept only as historical reference.
    ===================================================================== */
 
+/* =====================================================================
+   ICON SYSTEM — replaces emoji used as functional UI icons (nav, buttons,
+   subject markers, status messages) with a small set of hand-authored
+   minimal-line SVGs. Emoji left inside chapter body copy as an informal
+   voice/tone device are untouched — this is specifically about icons
+   that stand in for meaning (a subject, a warning, a checkmark), not
+   personality flourishes in prose.
+   ===================================================================== */
+const ICON_PATHS = {
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>',
+  moon: '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>',
+  'bar-chart': '<path d="M3 3v18h18"/><path d="M8 17v-5M13 17V9M18 17V6"/>',
+  leaf: '<path d="M6 20C6 14 9 9 18 5c0 8-4 13-10 15-1 .3-2 .3-2 0z"/><path d="M6 20c1-3 3-6 6-8"/>',
+  function: '<path d="M3 12c2-6 4-6 6 0s4 6 6 0 4-6 6 0"/>',
+  flask: '<path d="M9 2v6L4 20a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3L15 8V2"/><path d="M9 2h6"/><path d="M7 15h10"/>',
+  atom: '<circle cx="12" cy="12" r="1.5"/><ellipse cx="12" cy="12" rx="9" ry="4"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(120 12 12)"/>',
+  video: '<rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-4v12l-6-4"/>',
+  users: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/><circle cx="18" cy="8" r="2.5"/><path d="M16.5 13.2c2.6.4 4.5 2.7 4.5 5.3"/>',
+  calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  'check-circle': '<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/>',
+  'alert-triangle': '<path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17.5v.1"/>',
+  check: '<path d="M4 12.5l5 5L20 6"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>',
+  'book-open': '<path d="M12 6c-2-1.5-5-2-8-1v14c3-1 6-.5 8 1 2-1.5 5-2 8-1V5c-3-1-6-.5-8 1z"/><path d="M12 6v14"/>',
+  'trending-up': '<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>'
+};
+function icon(name, extraClass){
+  const path = ICON_PATHS[name];
+  if(!path) return '';
+  return `<svg class="icon${extraClass ? ' ' + extraClass : ''}" viewBox="0 0 24 24" aria-hidden="true">${path}</svg>`;
+}
+
 /* ===== Theme toggle ===== */
 function getCurrentTheme(){
   return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
@@ -54,33 +86,33 @@ document.querySelectorAll('#navLinks a').forEach(a=>{
    ===================================================================== */
 const subjectsData = {
   ekonomi: {
-    name:'Ekonomi', icon:'📊', ready:true,
+    name:'Ekonomi', icon:'bar-chart', ready:true,
     desc:'Badan usaha, koperasi, manajemen, dan seluk-beluk ekonomi lainnya.',
     babs:[
       {id:'bab1-badan-usaha', num:'Bab 1', title:'Badan Usaha, Koperasi & Manajemen', desc:'Bentuk-bentuk badan usaha, BUMN/BUMD, koperasi & kalkulator SHU, dasar manajemen.', ready:true},
     ]
   },
   biologi: {
-    name:'Biologi', icon:'🧬', ready:true,
+    name:'Biologi', icon:'leaf', ready:true,
     desc:'Sel, jaringan, sistem organ tubuh, dan makhluk hidup lainnya.',
     babs:[
       {id:'bab1-sel', num:'Bab 1', title:'Sel: Unit Dasar Kehidupan', desc:'Sejarah penemuan sel, komponen kimiawi & struktural, organel, transpor membran, hingga reproduksi sel.', ready:true},
     ]
   },
   matematika: {
-    name:'Matematika', icon:'📐', ready:true,
+    name:'Matematika', icon:'function', ready:true,
     desc:'Eksponen, logaritma, aljabar, geometri, statistika, dan lainnya.',
     babs:[
       {id:'bab1-eksponen-logaritma', num:'Bab 1', title:'Eksponen & Logaritma', desc:'Sifat-sifat bilangan berpangkat, bentuk akar, fungsi eksponensial, sifat-sifat logaritma, hingga persamaan sederhana keduanya — plus latihan bertingkat per topik.', ready:true},
     ]
   },
   kimia: {
-    name:'Kimia', icon:'🧪', ready:false,
+    name:'Kimia', icon:'flask', ready:false,
     desc:'Struktur atom, ikatan kimia, stoikiometri, dan lainnya.',
     babs:[]
   },
   fisika: {
-    name:'Fisika', icon:'⚛️', ready:false,
+    name:'Fisika', icon:'atom', ready:false,
     desc:'Mekanika, listrik-magnet, gelombang, dan lainnya.',
     babs:[]
   },
@@ -251,7 +283,7 @@ function renderSessionBadge(){
     const statusHtml = hasAccess()
       ? `<span class="session-status ok">Aktif s.d. ${expiryStr}</span>`
       : `<span class="session-status expired">Paket habis</span>`;
-    badge.innerHTML = `👋 ${s.nama || s.username} ${statusHtml} <button id="logoutBtn">Keluar</button>`;
+    badge.innerHTML = `${s.nama || s.username} ${statusHtml} <button id="logoutBtn">Keluar</button>`;
     document.getElementById('logoutBtn').addEventListener('click',()=>{
       clearSession();
       goToHome();
@@ -262,7 +294,6 @@ function renderSessionBadge(){
   }
 }
 renderSessionBadge();
-if(getSession()) fetchProgress();
 
 /* =====================================================================
    PROGRESS — per-student, per-chapter, saved server-side (not just this
@@ -294,6 +325,12 @@ function markProgress(babId, status){
   }).catch(()=>{});
 }
 
+// Runs after progressCache/fetchProgress/markProgress are all declared above
+// (fixes a bug where this used to fire before `let progressCache` existed —
+// harmless for anonymous visitors since getSession() is null, but would
+// throw a ReferenceError for any returning logged-in student).
+if(getSession()) fetchProgress().then(renderContinueBanner);
+
 /* =====================================================================
    VIEW ROUTER
    ===================================================================== */
@@ -307,17 +344,50 @@ let activeBabId = null;
 function renderSubjectGrid(){
   const grid = document.getElementById('subjectGrid');
   grid.innerHTML = Object.entries(subjectsData).map(([key,s])=>`
-    <div class="subject-card ${s.ready?'ready':'soon'}" data-subject="${key}">
-      <span class="subj-icon">${s.icon}</span>
-      <h3>${s.name}</h3>
-      <p>${s.desc}</p>
+    <div class="subject-row ${s.ready?'ready':'soon'}" data-subject="${key}">
+      <span class="subj-icon-wrap">${icon(s.icon)}</span>
+      <div class="subj-body">
+        <h3>${s.name}</h3>
+        <p>${s.desc}</p>
+      </div>
       <span class="subj-status">${s.ready ? 'Tersedia' : 'Segera Hadir'}</span>
     </div>`).join('');
-  grid.querySelectorAll('.subject-card').forEach(card=>{
-    card.addEventListener('click',()=>enterSubject(card.dataset.subject));
+  grid.querySelectorAll('.subject-row').forEach(row=>{
+    row.addEventListener('click',()=>enterSubject(row.dataset.subject));
   });
 }
 renderSubjectGrid();
+
+/* "Lanjutkan belajar" — if the student has a chapter marked 'started'
+   (not yet 'completed') anywhere, surface a direct shortcut back into it
+   instead of making them re-navigate subject -> chapter list every visit. */
+function renderContinueBanner(){
+  const banner = document.getElementById('continueBanner');
+  const session = getSession();
+  if(!session || !hasAccess()){ banner.style.display = 'none'; return; }
+
+  let found = null;
+  for(const [subjectKey, s] of Object.entries(subjectsData)){
+    for(const b of s.babs){
+      if(progressCache[b.id] === 'started'){ found = {subjectKey, subject:s, bab:b}; break; }
+    }
+    if(found) break;
+  }
+  if(!found){ banner.style.display = 'none'; return; }
+
+  banner.style.display = '';
+  banner.innerHTML = `
+    <div>
+      <div class="cb-label">Lanjutkan Belajar</div>
+      <div class="cb-title">${found.subject.name} · ${found.bab.title}</div>
+    </div>
+    ${icon('trending-up','cb-arrow')}
+  `;
+  banner.onclick = () => {
+    activeSubjectKey = found.subjectKey;
+    goToLesson(found.bab.id);
+  };
+}
 
 function hideAllViews(){
   viewHome.style.display = 'none';
@@ -330,6 +400,12 @@ function goToHome(){
   hideAllViews();
   viewHome.style.display = '';
   document.querySelectorAll('.subject-link').forEach(l=>l.classList.remove('active'));
+  renderSubjectGrid();
+  renderContinueBanner();
+  const session = getSession();
+  document.getElementById('homeGreeting').textContent = session
+    ? `Halo, ${session.nama || session.username}!`
+    : 'Mau belajar apa hari ini?';
   window.scrollTo({top:0,behavior:'instant'});
 }
 
@@ -346,14 +422,26 @@ function goToSignIn(subjectKey){
   activeSubjectKey = subjectKey;
   const s = subjectsData[subjectKey];
   const session = getSession();
+  const packagesPanel = document.getElementById('packagesPanel');
+  const toggleBtn = document.getElementById('togglePackagesBtn');
+  const loginBlock = document.getElementById('loginBlock');
 
-  if(session && session.expiresAt){
+  const expired = session && session.expiresAt;
+  if(expired){
     const expiryStr = new Date(session.expiresAt).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
     document.getElementById('signinTitle').textContent = 'Paketmu Udah Habis';
-    document.getElementById('signinSubtitle').textContent = `Halo ${session.nama || session.username}! Langgananmu berakhir ${expiryStr}. Beli paket baru di samping buat lanjut belajar ${s.name} & mata pelajaran lainnya.`;
+    document.getElementById('signinSubtitle').textContent = `Halo ${session.nama || session.username}! Langgananmu berakhir ${expiryStr} — perpanjang buat lanjut belajar ${s.name}.`;
+    // They're already identified; skip the login form and go straight to renewal.
+    loginBlock.style.display = 'none';
+    packagesPanel.style.display = '';
+    toggleBtn.style.display = 'none';
   } else {
-    document.getElementById('signinTitle').textContent = 'Yuk, Buka Akses ' + s.name;
-    document.getElementById('signinSubtitle').textContent = `Materi & kuis ${s.name} — plus semua mata pelajaran lain — kebuka begitu kamu punya paket aktif di Dalton Lab.`;
+    document.getElementById('signinTitle').textContent = 'Siap lanjut belajar?';
+    document.getElementById('signinSubtitle').textContent = `Masuk buat buka materi ${s.name} dan mata pelajaran lainnya.`;
+    loginBlock.style.display = '';
+    packagesPanel.style.display = 'none';
+    toggleBtn.style.display = '';
+    toggleBtn.textContent = 'Belum punya akses? Lihat paket →';
   }
 
   document.getElementById('signinError').classList.remove('show');
@@ -375,29 +463,46 @@ function goToSignIn(subjectKey){
 function goToBabs(subjectKey){
   activeSubjectKey = subjectKey;
   const s = subjectsData[subjectKey];
-  document.getElementById('babsEyebrow').textContent = 'Mata Pelajaran';
-  document.getElementById('babsTitle').textContent = s.name + ' — Pilih Bab';
+  document.getElementById('babsTitle').textContent = s.name;
   document.getElementById('babsSubtitle').textContent = s.desc;
 
   const babGrid = document.getElementById('babGrid');
-  if(s.babs.length === 0){
-    babGrid.innerHTML = `<p style="color:var(--slate);grid-column:1/-1;">Materi ${s.name} sedang disiapkan — segera hadir di sini. 🚧</p>`;
+  const progressEl = document.getElementById('babsProgress');
+  const readyBabs = s.babs.filter(b=>b.ready);
+
+  if(readyBabs.length === 0){
+    progressEl.style.display = 'none';
+    babGrid.innerHTML = `<p style="color:var(--slate);">Materi ${s.name} sedang disiapkan — segera hadir di sini.</p>`;
   } else {
+    const doneCount = readyBabs.filter(b=>progressCache[b.id] === 'completed').length;
+    if(doneCount > 0){
+      const pct = Math.round(doneCount / readyBabs.length * 100);
+      progressEl.style.display = '';
+      progressEl.innerHTML = `
+        <div class="subject-progress">
+          <div class="subject-progress-track"><div class="subject-progress-fill" style="width:${pct}%;"></div></div>
+          <span class="mono">${pct}% selesai</span>
+        </div>`;
+    } else {
+      progressEl.style.display = 'none';
+    }
+
     babGrid.innerHTML = s.babs.map(b=>{
       const prog = progressCache[b.id];
-      const progBadge = prog === 'completed' ? '<span class="bab-progress done">✓ Selesai</span>'
-        : prog === 'started' ? '<span class="bab-progress ongoing">● Lagi Dipelajari</span>' : '';
+      const progBadge = prog === 'completed' ? '<span class="bab-progress done">Selesai</span>'
+        : prog === 'started' ? '<span class="bab-progress ongoing">Lagi Dipelajari</span>' : '';
       return `
-      <div class="bab-card ${b.ready?'':'soon'}" data-bab="${b.id}">
-        ${b.ready?'':'<span class="soon-tag">Segera Hadir</span>'}
-        ${b.ready ? progBadge : ''}
-        <div class="bab-num">${b.num}</div>
-        <h4>${b.title}</h4>
-        <p>${b.desc}</p>
+      <div class="bab-row ${b.ready?'':'soon'}" data-bab="${b.id}">
+        <span class="bab-num mono">${b.num.replace(/\D/g,'').padStart(2,'0')}</span>
+        <div class="bab-body">
+          <h4>${b.title}</h4>
+          <p>${b.desc}</p>
+        </div>
+        ${b.ready ? progBadge : '<span class="soon-tag">Segera Hadir</span>'}
       </div>`;
     }).join('');
-    babGrid.querySelectorAll('.bab-card:not(.soon)').forEach(card=>{
-      card.addEventListener('click',()=>goToLesson(card.dataset.bab));
+    babGrid.querySelectorAll('.bab-row:not(.soon)').forEach(row=>{
+      row.addEventListener('click',()=>goToLesson(row.dataset.bab));
     });
   }
 
@@ -451,7 +556,7 @@ async function goToLesson(babId){
     lessonContent.innerHTML = html;
   }catch(err){
     lessonContent.innerHTML = `<div class="wrap" style="padding:80px 0;text-align:center;color:var(--slate);">
-      ⚠️ Gagal memuat materi. Coba refresh halaman, atau pastikan paketmu masih aktif.
+      ${icon('alert-triangle')} Gagal memuat materi. Coba refresh halaman, atau pastikan paketmu masih aktif.
     </div>`;
     return;
   }
@@ -480,6 +585,7 @@ function buildLessonSubnav(root){
 }
 
 document.getElementById('logoHome').addEventListener('click',e=>{e.preventDefault(); goToHome();});
+document.getElementById('navHomeLink').addEventListener('click',e=>{e.preventDefault(); goToHome();});
 document.getElementById('backToHomeBtn').addEventListener('click',goToHome);
 document.getElementById('backToHomeFromSignin').addEventListener('click',goToHome);
 document.getElementById('backToBabsBtn').addEventListener('click',()=>goToBabs(activeSubjectKey));
@@ -494,6 +600,16 @@ document.querySelectorAll('.subject-link').forEach(link=>{
 document.getElementById('signinSubmitBtn').addEventListener('click', attemptSignIn);
 document.getElementById('signinPassword').addEventListener('keydown', e=>{ if(e.key==='Enter') attemptSignIn(); });
 document.getElementById('signinUsername').addEventListener('keydown', e=>{ if(e.key==='Enter') attemptSignIn(); });
+
+document.getElementById('togglePackagesBtn').addEventListener('click', ()=>{
+  const packagesPanel = document.getElementById('packagesPanel');
+  const opening = packagesPanel.style.display === 'none';
+  packagesPanel.style.display = opening ? '' : 'none';
+  document.getElementById('togglePackagesBtn').textContent = opening
+    ? '← Kembali ke login'
+    : 'Belum punya akses? Lihat paket →';
+  if(opening) packagesPanel.scrollIntoView({behavior:'smooth', block:'nearest'});
+});
 
 function showSigninError(msg){
   const el = document.getElementById('signinError');
@@ -683,7 +799,7 @@ function initQuizzes(root){
     mount.innerHTML = `<p style="color:#c3ccd9;">Memuat kuis…</p>`;
     const session = getSession();
     if(!session || !session.token){
-      mount.innerHTML = `<p style="color:#f0a597;">⚠️ Sesi kamu habis — refresh halaman & login ulang ya.</p>`;
+      mount.innerHTML = `<p style="color:#f0a597;">${icon('alert-triangle')} Sesi kamu habis — refresh halaman & login ulang ya.</p>`;
       return;
     }
     let quiz;
@@ -694,7 +810,7 @@ function initQuizzes(root){
       if(!res.ok) throw new Error('fetch failed');
       quiz = await res.json();
     }catch(err){
-      mount.innerHTML = `<p style="color:#f0a597;">⚠️ Gagal memuat soal kuis. Coba refresh halaman ya.</p>`;
+      mount.innerHTML = `<p style="color:#f0a597;">${icon('alert-triangle')} Gagal memuat soal kuis. Coba refresh halaman ya.</p>`;
       return;
     }
 
@@ -880,7 +996,7 @@ function initExercises(root){
     mount.innerHTML = `<p style="color:#c3ccd9;text-align:center;">Memuat latihan…</p>`;
     const session = getSession();
     if(!session || !session.token){
-      mount.innerHTML = `<p style="color:#f0a597;text-align:center;">⚠️ Sesi kamu habis — refresh halaman & login ulang ya.</p>`;
+      mount.innerHTML = `<p style="color:#f0a597;text-align:center;">${icon('alert-triangle')} Sesi kamu habis — refresh halaman & login ulang ya.</p>`;
       return;
     }
     let data;
@@ -891,7 +1007,7 @@ function initExercises(root){
       if(!res.ok) throw new Error('fetch failed');
       data = await res.json();
     }catch(err){
-      mount.innerHTML = `<p style="color:#f0a597;text-align:center;">⚠️ Gagal memuat latihan. Coba refresh halaman ya.</p>`;
+      mount.innerHTML = `<p style="color:#f0a597;text-align:center;">${icon('alert-triangle')} Gagal memuat latihan. Coba refresh halaman ya.</p>`;
       return;
     }
 
@@ -1086,7 +1202,7 @@ function runExerciseLevel(mount, questions, meta){
 function submitQuizResult(payload, statusEl, token){
   if(!statusEl) return;
   if(!token){
-    statusEl.textContent = '⚠ Sesi kamu habis, hasil ini gak kesimpen — refresh & login ulang ya.';
+    statusEl.innerHTML = `${icon('alert-triangle')} Sesi kamu habis, hasil ini gak kesimpen — refresh & login ulang ya.`;
     statusEl.className = 'submit-status err';
     return;
   }
@@ -1098,14 +1214,14 @@ function submitQuizResult(payload, statusEl, token){
     body: JSON.stringify(payload)
   }).then(r=>r.json()).then(data=>{
     if(data && data.success){
-      statusEl.textContent = '✓ Hasil kamu sudah tercatat.';
+      statusEl.innerHTML = `${icon('check')} Hasil kamu sudah tercatat.`;
       statusEl.className = 'submit-status ok';
     } else {
-      statusEl.textContent = '⚠ Gagal menyimpan hasil ke server.';
+      statusEl.innerHTML = `${icon('alert-triangle')} Gagal menyimpan hasil ke server.`;
       statusEl.className = 'submit-status err';
     }
   }).catch(()=>{
-    statusEl.textContent = '⚠ Gagal menyimpan hasil — periksa koneksi internet.';
+    statusEl.innerHTML = `${icon('alert-triangle')} Gagal menyimpan hasil — periksa koneksi internet.`;
     statusEl.className = 'submit-status err';
   });
 }

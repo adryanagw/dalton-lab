@@ -33,17 +33,35 @@
       </div>
     </a>
     <nav class="links" id="navLinks">
-      <a href="#" data-subject="ekonomi" class="subject-link active">Ekonomi</a>
-      <a href="#" data-subject="biologi" class="subject-link">Biologi</a>
-      <a href="#" data-subject="matematika" class="subject-link">Matematika</a>
-      <a href="#" data-subject="kimia" class="subject-link">Kimia</a>
-      <a href="#" data-subject="fisika" class="subject-link">Fisika</a>
+      <a href="#" id="navHomeLink">Beranda</a>
+      <div class="subject-switcher">
+        <a href="#" data-subject="ekonomi" class="subject-link active" title="Ekonomi" aria-label="Ekonomi">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M8 17v-5M13 17V9M18 17V6"/></svg>
+          <span class="subject-link-label">Ekonomi</span>
+        </a>
+        <a href="#" data-subject="biologi" class="subject-link" title="Biologi" aria-label="Biologi">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20C6 14 9 9 18 5c0 8-4 13-10 15-1 .3-2 .3-2 0z"/><path d="M6 20c1-3 3-6 6-8"/></svg>
+          <span class="subject-link-label">Biologi</span>
+        </a>
+        <a href="#" data-subject="matematika" class="subject-link" title="Matematika" aria-label="Matematika">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12c2-6 4-6 6 0s4 6 6 0 4-6 6 0"/></svg>
+          <span class="subject-link-label">Matematika</span>
+        </a>
+        <a href="#" data-subject="kimia" class="subject-link" title="Kimia" aria-label="Kimia">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2v6L4 20a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3L15 8V2"/><path d="M9 2h6"/><path d="M7 15h10"/></svg>
+          <span class="subject-link-label">Kimia</span>
+        </a>
+        <a href="#" data-subject="fisika" class="subject-link" title="Fisika" aria-label="Fisika">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="1.5"/><ellipse cx="12" cy="12" rx="9" ry="4"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(120 12 12)"/></svg>
+          <span class="subject-link-label">Fisika</span>
+        </a>
+      </div>
       <span class="session-badge" id="sessionBadge" style="display:none;"></span>
     </nav>
     <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema terang/gelap" title="Ganti tema">
       <span class="theme-toggle-track">
-        <span class="theme-toggle-icon sun">☀️</span>
-        <span class="theme-toggle-icon moon">🌙</span>
+        <span class="theme-toggle-icon sun"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
+        <span class="theme-toggle-icon moon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
         <span class="theme-toggle-thumb"></span>
       </span>
     </button>
@@ -58,35 +76,19 @@
 
 <!-- ===================== VIEW: HOME (subject portal) ===================== -->
 <div id="view-home">
-  <section class="hero" style="padding:90px 0 70px;">
+  <section class="hero" style="padding:64px 0 46px;">
     <div class="wrap">
-      <div class="eyebrow">Dalton Lab · Portal Belajar</div>
-      <h1 style="max-width:760px;">Pilih mata pelajaran, lalu pilih babnya.</h1>
-      <p class="lead" style="max-width:600px;margin-bottom:44px;">Rangkuman tiap bab, plus latihan & kuis, biar belajar kamu makin gampang — dibikin khusus buat anak SMA se-Indonesia.</p>
-      <div class="subject-grid" id="subjectGrid"></div>
+      <h1 id="homeGreeting" style="max-width:640px;">Mau belajar apa hari ini?</h1>
+      <p class="lead" id="homeSubtext" style="max-width:540px;margin-bottom:28px;">Rangkuman tiap bab, plus latihan bertingkat & kuis interaktif.</p>
+      <div class="continue-banner" id="continueBanner" style="display:none;"></div>
+      <div class="subject-list" id="subjectGrid"></div>
     </div>
   </section>
-  <section class="tight">
+  <section class="tight" style="padding:20px 0 60px;">
     <div class="wrap">
-      <div class="home-marketing">
-        <div class="home-marketing-head">
-          <div class="eyebrow">Pengen Belajar Bareng?</div>
-          <h2>Semua materi ini gratis buat kamu baca-baca sendiri.</h2>
-          <p>Tapi kalau mau beneran paham — bukan cuma hafal terus lupa lagi — mending gabung kelas bareng tutor asli lewat Zoom. Dijamin lebih enak daripada belajar sendirian.</p>
-        </div>
-        <div class="hm-grid">
-          <div class="hm-card"><span class="hm-icon">🎥</span><h4>Zoom, Bukan Rekaman</h4><p>Bisa nanya langsung pas lagi bingung — beda sama nonton video doang.</p></div>
-          <div class="hm-card"><span class="hm-icon">🧑‍🏫</span><h4>Privat atau Bareng Temen</h4><p>Mau belajar sendirian atau rame-rame, tinggal pilih sesuka kamu.</p></div>
-          <div class="hm-card"><span class="hm-icon">📅</span><h4>Senin – Jumat</h4><p>Ada jadwal tiap hari kerja, gampang dicocokin sama waktu luangmu.</p></div>
-          <div class="hm-card"><span class="hm-icon">✅</span><h4>PR Numpuk? Santai</h4><p>Soal yang bikin pusing kita bahas bareng sampai kamu bener-bener ngerti, bukan cuma dikasih jawabannya.</p></div>
-        </div>
-        <div class="hm-cta-row">
-          <a class="wa-btn" id="homeWaBtn" href="#" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="#0d1b2e"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.005c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm5.8 14.1c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.2-.15.32-.29.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.75 1.24 1.61 2 1.11.99 2.04 1.3 2.34 1.44.3.15.47.13.65-.08.18-.2.76-.88.96-1.19.2-.3.4-.25.68-.15.28.1 1.77.84 2.07.99.3.15.5.22.57.35.08.13.08.75-.16 1.43z"/></svg>
-            Chat di WhatsApp
-          </a>
-          <span class="hm-cta-note">Kita balas cepet kok · Ngobrolin jadwal & harga, gratis</span>
-        </div>
+      <div class="tutor-strip">
+        <span class="tutor-strip-text">Mau belajar bareng tutor asli lewat Zoom, bukan cuma baca sendiri?</span>
+        <a class="tutor-strip-link" id="homeWaBtn" href="#" target="_blank" rel="noopener">Chat di WhatsApp →</a>
       </div>
     </div>
   </section>
@@ -94,29 +96,27 @@
 
 <!-- ===================== VIEW: BAB PICKER ===================== -->
 <div id="view-babs" style="display:none;">
-  <section class="hero" style="padding:60px 0 70px;">
+  <section class="hero" style="padding:52px 0 60px;">
     <div class="wrap">
       <button class="breadcrumb-back" id="backToHomeBtn">← Semua Mata Pelajaran</button>
-      <div class="eyebrow" id="babsEyebrow">Mata Pelajaran</div>
       <h1 id="babsTitle" style="max-width:760px;">—</h1>
-      <p class="lead" id="babsSubtitle" style="max-width:600px;margin-bottom:44px;"></p>
-      <div class="bab-grid" id="babGrid"></div>
+      <p class="lead" id="babsSubtitle" style="max-width:600px;margin-bottom:8px;"></p>
+      <div id="babsProgress" style="display:none;"></div>
+      <div class="bab-list" id="babGrid"></div>
     </div>
   </section>
 </div>
 
 <!-- ===================== VIEW: SIGN IN / BELI AKSES ===================== -->
 <div id="view-signin" style="display:none;">
-  <section class="hero" style="padding:60px 0 70px;">
+  <section class="hero" style="padding:52px 0 60px;">
     <div class="wrap">
       <button class="breadcrumb-back" id="backToHomeFromSignin">← Semua Mata Pelajaran</button>
-      <div class="eyebrow">Akses Materi</div>
-      <h1 id="signinTitle" style="max-width:760px;">Yuk, Masuk Dulu</h1>
-      <p class="lead" id="signinSubtitle" style="max-width:600px;margin-bottom:44px;">Materi ini cuma bisa dibuka sama siswa yang punya paket aktif di Dalton Lab.</p>
-      <div class="signin-wrap">
-        <div class="signin-card">
-          <h3>Masuk ke Akunmu</h3>
-          <p class="signin-sub">Udah punya akun &amp; paket aktif? Masuk di sini.</p>
+      <div class="signin-center">
+        <h1 id="signinTitle">Siap lanjut belajar?</h1>
+        <p class="lead" id="signinSubtitle">Masuk buat buka materinya.</p>
+
+        <div class="signin-card" id="loginBlock">
           <div class="signin-error" id="signinError"></div>
           <div class="signin-field">
             <label>Username</label>
@@ -127,13 +127,13 @@
             <input type="password" id="signinPassword" autocomplete="current-password" class="mono">
           </div>
           <button class="btn btn-primary signin-submit" id="signinSubmitBtn">Masuk</button>
-          <p class="signin-note">Belum punya akun? Beli paket di samping — akun langsung dibikinin otomatis. →</p>
         </div>
 
-        <div class="marketing-panel">
-          <div class="eyebrow">Buka Semua Materi</div>
-          <h3>Beli Paket Akses Dalton Lab</h3>
-          <p class="mk-lead">Satu paket buka semua mata pelajaran &amp; kuis interaktif. Aksesnya aktif otomatis begitu pembayaran kamu dikonfirmasi lewat WhatsApp.</p>
+        <button class="signin-toggle-packages" id="togglePackagesBtn" type="button">Belum punya akses? Lihat paket →</button>
+
+        <div class="marketing-panel" id="packagesPanel" style="display:none;">
+          <h3>Paket Akses Dalton Lab</h3>
+          <p class="mk-lead">Satu paket buka semua mata pelajaran &amp; kuis interaktif. Aktif otomatis begitu pembayaran dikonfirmasi lewat WhatsApp.</p>
 
           <div class="package-grid" id="packageGrid"></div>
 

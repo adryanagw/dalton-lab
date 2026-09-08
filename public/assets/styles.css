@@ -32,6 +32,8 @@
   --amber-soft:#fdf3e2;
   --green:#3fa15c;
   --green-soft:#eaf6ec;
+  --warning:#c07a1e;
+  --warning-soft:#fdf0dc;
   --scheme: light;
   color-scheme: light;
 }
@@ -67,6 +69,8 @@
   --amber-soft:#332413;
   --green:#68c583;
   --green-soft:#122a1a;
+  --warning:#f0b95e;
+  --warning-soft:#332413;
   --scheme: dark;
   color-scheme: dark;
 }
@@ -105,10 +109,26 @@ h1,h2,h3,h4{
   margin:0 0 .4em 0;
   letter-spacing:-0.01em;
 }
-.mono{font-family:'Space Grotesk',monospace;}
+/* Data/numeral texture — chapter numbers, scores, prices, percentages,
+   dates. Deliberately distinct from the Space Grotesk headings so numbers
+   read as "data" the way they do in an edited textbook, not as more UI
+   chrome. This is IBM Plex Mono actually being used (it was loaded via
+   the Google Fonts link but never applied anywhere). */
+.mono{font-family:'IBM Plex Mono','Space Grotesk',monospace;}
 a{color:inherit;}
 img{max-width:100%;display:block;}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+/* Inline icon system — replaces emoji used as functional UI icons
+   (nav, buttons, callouts, status). Icons are hand-authored minimal-line
+   SVGs (24x24, stroke=currentColor) rendered via the icon() helper in
+   app.js, sized to sit on the text baseline. */
+.icon{
+  width:1.05em;height:1.05em;display:inline-block;flex-shrink:0;
+  vertical-align:-0.2em;
+  stroke:currentColor;fill:none;stroke-width:1.75;
+  stroke-linecap:round;stroke-linejoin:round;
+}
 .eyebrow{
   font-family:'Space Grotesk',monospace;
   text-transform:uppercase;
@@ -152,7 +172,7 @@ header.site-nav{
 .brand-text{font-family:'Space Grotesk';font-weight:700;font-size:1.05rem;color:var(--heading);line-height:1;}
 .brand-text span{color:var(--orange);}
 .brand-sub{font-family:'Inter';font-weight:500;font-size:.66rem;letter-spacing:.06em;color:var(--slate);text-transform:uppercase;}
-nav.links{display:flex;gap:4px;align-items:center;}
+nav.links{display:flex;gap:14px;align-items:center;}
 nav.links a{
   font-size:.86rem;font-weight:600;color:var(--heading-soft);
   text-decoration:none;padding:8px 12px;border-radius:8px;
@@ -164,7 +184,20 @@ nav.links a.cta{
   background:var(--navy);color:#fff;
 }
 nav.links a.cta:hover{background:var(--accent-hover);}
-nav.links a.subject-link.active{background:var(--navy);color:#fff;}
+
+/* Subject switcher — a compact icon row rather than a wall of text
+   links, so the nav stays lean whether there are 2 subjects or 8. */
+.subject-switcher{display:flex;gap:2px;align-items:center;padding:3px;background:var(--paper-2);border-radius:11px;}
+nav.links a.subject-link{
+  display:flex;align-items:center;gap:6px;padding:7px 11px;border-radius:8px;font-size:.8rem;
+}
+nav.links a.subject-link .icon{color:var(--slate);}
+nav.links a.subject-link.active{background:var(--card);color:var(--heading);box-shadow:0 1px 3px rgba(13,27,46,0.08);}
+nav.links a.subject-link.active .icon{color:var(--orange-dark);}
+@media(max-width:900px){
+  .subject-link-label{display:none;}
+  nav.links a.subject-link{padding:8px;}
+}
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
 .hamburger span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px;}
 
@@ -187,26 +220,6 @@ nav.links a.subject-link.active{background:var(--navy);color:#fff;}
   background:var(--orange);
 }
 
-/* === Subject portal (home) === */
-.subject-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-.subject-card{
-  position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;
-  padding:30px 24px;text-align:left;cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s;
-  display:block;text-decoration:none;
-}
-.subject-card:hover{transform:translateY(-4px);border-color:var(--orange);box-shadow:var(--shadow);}
-.subject-card .subj-icon{font-size:1.8rem;display:block;margin-bottom:16px;}
-.subject-card h3{font-size:1.15rem;margin-bottom:6px;}
-.subject-card p{font-size:.84rem;color:var(--slate);margin:0;}
-.subject-card .subj-status{
-  display:inline-block;margin-top:16px;font-family:'Space Grotesk';font-size:.68rem;
-  text-transform:uppercase;letter-spacing:.06em;padding:5px 10px;border-radius:20px;
-}
-.subject-card.ready .subj-status{background:rgba(47,158,110,0.12);color:var(--success);}
-.subject-card.soon{opacity:.62;cursor:default;}
-.subject-card.soon:hover{transform:none;border-color:var(--line);box-shadow:none;}
-.subject-card.soon .subj-status{background:var(--paper-2);color:var(--slate);}
-
 /* === Bab picker === */
 .breadcrumb-back{
   background:none;border:none;cursor:pointer;color:var(--slate);
@@ -215,26 +228,35 @@ nav.links a.subject-link.active{background:var(--navy);color:#fff;}
 }
 .breadcrumb-back:hover{color:var(--orange-dark);}
 .breadcrumb-back.small{margin-bottom:0;font-size:.76rem;}
-.bab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.bab-card{
-  background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;
-  cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s;position:relative;
+/* Subject progress summary bar (bab picker) */
+.subject-progress{display:flex;align-items:center;gap:12px;margin-bottom:36px;}
+.subject-progress-track{flex:1;max-width:280px;height:6px;border-radius:4px;background:var(--paper-2);overflow:hidden;}
+.subject-progress-fill{height:100%;background:var(--orange);border-radius:4px;}
+.subject-progress .mono{font-size:.76rem;color:var(--slate);}
+
+/* Chapter list — numbered editorial rows instead of a grid of shadowed cards */
+.bab-list{display:flex;flex-direction:column;border-top:1px solid var(--line);}
+.bab-row{
+  display:flex;align-items:center;gap:20px;padding:22px 4px;
+  border-bottom:1px solid var(--line);cursor:pointer;
+  transition:padding-left .15s,background .15s;
 }
-.bab-card:hover{transform:translateY(-4px);border-color:var(--orange);box-shadow:var(--shadow);}
-.bab-card .bab-num{
-  font-family:'Space Grotesk';color:var(--orange);font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;
+.bab-row:hover{padding-left:10px;background:var(--paper-2);}
+.bab-row .bab-num{
+  font-size:1.3rem;font-weight:600;color:var(--line);flex-shrink:0;width:2.2ch;
 }
-.bab-card h4{font-size:1.05rem;margin:8px 0 6px;}
-.bab-card p{font-size:.84rem;color:var(--slate);margin:0;}
-.bab-card.soon{opacity:.55;cursor:default;}
-.bab-card.soon:hover{transform:none;border-color:var(--line);box-shadow:none;}
-.bab-card .soon-tag{
-  position:absolute;top:20px;right:20px;font-family:'Space Grotesk';font-size:.66rem;
+.bab-row:hover .bab-num{color:var(--orange);}
+.bab-row .bab-body{flex:1;min-width:0;}
+.bab-row h4{font-size:1.02rem;margin:0 0 4px;}
+.bab-row p{font-size:.84rem;color:var(--slate);margin:0;}
+.bab-row.soon{opacity:.55;cursor:default;}
+.bab-row.soon:hover{padding-left:4px;background:none;}
+.bab-row .soon-tag{
+  font-family:'Space Grotesk';font-size:.66rem;flex-shrink:0;
   background:var(--paper-2);color:var(--slate);padding:4px 9px;border-radius:14px;
 }
-.bab-progress{
-  position:absolute;top:20px;right:20px;font-family:'Space Grotesk';font-size:.66rem;
-  padding:4px 9px;border-radius:14px;
+.bab-row .bab-progress{
+  font-family:'Space Grotesk';font-size:.66rem;flex-shrink:0;padding:4px 9px;border-radius:14px;
 }
 .bab-progress.done{background:rgba(47,158,110,0.12);color:var(--success);}
 .bab-progress.ongoing{background:rgba(238,125,49,0.14);color:var(--orange-dark);}
@@ -256,18 +278,27 @@ nav.links a.subject-link.active{background:var(--navy);color:#fff;}
 .lesson-links a.cta:hover{background:var(--accent-hover);}
 
 @media(max-width:760px){
-  .subject-grid{grid-template-columns:repeat(2,1fr);}
-  .bab-grid{grid-template-columns:1fr;}
   .lesson-subnav-inner{gap:10px;}
+  .subject-row, .bab-row{gap:14px;}
 }
 
-/* === Sign-in view === */
-.signin-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;max-width:1000px;margin:0 auto;}
+/* === Sign-in view — single centered column, not a login-vs-sales split === */
+.signin-center{max-width:420px;margin:0 auto;text-align:center;}
+.signin-center h1{font-size:1.9rem;}
+.signin-center .lead{margin:0 auto 32px;}
+.signin-center .signin-card,
+.signin-center .marketing-panel{text-align:left;}
 .signin-card{
-  background:var(--card);border:1px solid var(--line);border-radius:18px;padding:34px;box-shadow:var(--shadow);
+  background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;
 }
 .signin-card h3{font-size:1.2rem;margin-bottom:6px;}
 .signin-card .signin-sub{color:var(--slate);font-size:.86rem;margin-bottom:24px;}
+.signin-toggle-packages{
+  display:block;width:100%;text-align:center;background:none;border:none;cursor:pointer;
+  color:var(--slate);font-size:.82rem;font-family:'Inter';padding:18px 0 0;
+}
+.signin-toggle-packages:hover{color:var(--orange-dark);}
+.signin-center .marketing-panel{margin-top:18px;}
 .signin-field{margin-bottom:16px;}
 .signin-field label{
   display:block;font-family:'Space Grotesk';font-size:.72rem;color:var(--slate);
@@ -346,25 +377,52 @@ nav.links a.subject-link.active{background:var(--navy);color:#fff;}
   margin-top:16px;font-family:'Space Grotesk';font-size:.72rem;color:#9fb0c2;text-align:center;
 }
 
-/* === Home marketing section === */
-.home-marketing{
-  background:var(--navy);border-radius:22px;padding:44px;margin-top:10px;
-  background-image:radial-gradient(circle at 88% 8%, rgba(238,125,49,0.2), transparent 55%);
+/* === Tutor promo strip — one line, not a competing second hero === */
+.tutor-strip{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding:16px 22px;border-radius:12px;background:var(--paper-2);border:1px solid var(--line);
 }
-.home-marketing-head{max-width:600px;margin-bottom:32px;}
-.home-marketing-head h2{color:#fff;}
-.home-marketing-head p{color:#c3ccd9;}
-.hm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:30px;}
-.hm-card{
-  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);
-  border-radius:14px;padding:20px 18px;
+.tutor-strip-text{font-size:.86rem;color:var(--slate);}
+.tutor-strip-link{
+  font-family:'Space Grotesk';font-weight:600;font-size:.84rem;color:var(--orange-dark);
+  text-decoration:none;white-space:nowrap;
 }
-.hm-card .hm-icon{font-size:1.4rem;display:block;margin-bottom:10px;}
-.hm-card h4{color:#fff;font-size:.92rem;margin-bottom:6px;}
-.hm-card p{color:#a9b7c5;font-size:.78rem;margin:0;line-height:1.5;}
-.hm-cta-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
-.hm-cta-row .wa-btn{width:auto;}
-.hm-cta-note{color:#9fb0c2;font-size:.78rem;}
+.tutor-strip-link:hover{color:var(--navy);}
+
+/* === Subject list (Home) — editorial rows, not a grid of shadowed cards === */
+.subject-list{display:flex;flex-direction:column;border-top:1px solid var(--line);}
+.subject-row{
+  display:flex;align-items:center;gap:18px;padding:20px 4px;
+  border-bottom:1px solid var(--line);cursor:pointer;text-decoration:none;color:inherit;
+  transition:padding-left .15s,background .15s;
+}
+.subject-row:hover{padding-left:10px;background:var(--paper-2);}
+.subject-row .subj-icon-wrap{
+  width:44px;height:44px;border-radius:12px;background:var(--paper-2);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.subject-row .subj-icon-wrap .icon{width:1.3em;height:1.3em;color:var(--orange-dark);}
+.subject-row .subj-body{flex:1;min-width:0;}
+.subject-row h3{font-size:1.02rem;margin-bottom:3px;}
+.subject-row p{font-size:.82rem;color:var(--slate);margin:0;}
+.subject-row .subj-status{
+  font-family:'Space Grotesk';font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;
+  padding:5px 10px;border-radius:20px;flex-shrink:0;
+}
+.subject-row.ready .subj-status{background:rgba(47,158,110,0.12);color:var(--success);}
+.subject-row.soon{opacity:.55;cursor:default;}
+.subject-row.soon:hover{padding-left:4px;background:none;}
+.subject-row.soon .subj-status{background:var(--paper-2);color:var(--slate);}
+
+/* === "Lanjutkan belajar" banner === */
+.continue-banner{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  background:var(--navy);border-radius:14px;padding:18px 22px;margin-bottom:28px;color:#fff;
+  cursor:pointer;text-decoration:none;
+}
+.continue-banner .cb-label{font-family:'Space Grotesk';font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);margin-bottom:4px;}
+.continue-banner .cb-title{font-weight:600;font-size:.98rem;}
+.continue-banner .cb-arrow{color:var(--orange);flex-shrink:0;}
 
 /* === Floating WhatsApp button === */
 .wa-float{
@@ -398,12 +456,7 @@ nav.links a.subject-link.active{background:var(--navy);color:#fff;}
 .session-status.ok{background:rgba(47,158,110,0.12);color:var(--success);}
 .session-status.expired{background:rgba(226,87,76,0.12);color:var(--danger-text);}
 
-@media(max-width:900px){
-  .signin-wrap{grid-template-columns:1fr;}
-  .hm-grid{grid-template-columns:repeat(2,1fr);}
-}
 @media(max-width:600px){
-  .hm-grid{grid-template-columns:1fr;}
   .wa-float{bottom:16px;right:16px;width:52px;height:52px;}
   .wa-float svg{width:24px;height:24px;}
 }
@@ -515,12 +568,7 @@ nav.links a.subject-link.active{background:var(--navy);color:#fff;}
   transition:transform .18s, background .18s;
 }
 .sector-card:hover{transform:translateY(-4px);background:rgba(238,125,49,0.14);border-color:var(--orange);}
-.sector-num{font-family:'Space Grotesk';font-weight:700;font-size:.85rem;margin-bottom:10px;}
-.sector-grid .sector-card:nth-child(5n+1) .sector-num{color:var(--blue);}
-.sector-grid .sector-card:nth-child(5n+2) .sector-num{color:var(--teal);}
-.sector-grid .sector-card:nth-child(5n+3) .sector-num{color:var(--purple);}
-.sector-grid .sector-card:nth-child(5n+4) .sector-num{color:var(--pink);}
-.sector-grid .sector-card:nth-child(5n+5) .sector-num{color:var(--amber);}
+.sector-num{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:.85rem;margin-bottom:10px;color:var(--orange);}
 .sector-card h4{color:#fff;font-size:1rem;margin-bottom:8px;}
 .sector-card p{color:#b7c1cf;font-size:.82rem;margin:0;line-height:1.5;}
 
@@ -588,16 +636,26 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
   font-family:'Space Grotesk';font-size:.82rem;background:var(--card);border:1px dashed var(--orange);
   border-radius:10px;padding:12px 18px;margin-bottom:22px;color:var(--heading-soft);
 }
+/* Shared static-content-box recipe. These used to be 8+ separately named
+   but visually identical classes (.split-card/.role-card/.struct-box/
+   .jenis-box/.m-card/.poac-card/.organel-card/.principle-card all had
+   their own copy of background+border+radius). None are clickable, so
+   none carry a shadow — shadow is reserved for things you can click
+   (.subject-card, .bab-card). Consolidated here rather than renamed in
+   content HTML, since the class names are already used across every
+   chapter file. */
+.split-card, .role-card, .struct-box, .jenis-box{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+}
 .split-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-.split-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow);}
+.split-card{padding:26px;}
 .split-tag{font-family:'Space Grotesk';font-weight:700;font-size:1.1rem;color:var(--heading);}
 .split-big{font-family:'Space Grotesk';font-size:2.1rem;color:var(--orange);font-weight:600;margin:6px 0 12px;}
 .split-card p{font-size:.9rem;color:var(--ink);margin-bottom:14px;}
 .mini-note{font-size:.84rem;color:var(--slate);margin-top:18px;font-style:italic;}
 .role-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
 .role-card{
-  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;
-  font-size:.86rem;color:var(--ink);position:relative;padding-top:34px;
+  padding:18px;font-size:.86rem;color:var(--ink);position:relative;padding-top:34px;
 }
 .role-n{position:absolute;top:12px;left:18px;font-family:'Space Grotesk';color:var(--orange);font-size:.78rem;font-weight:600;}
 
@@ -605,15 +663,14 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 .principle-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:44px;}
 .principle-card{
   background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 12px;
-  transition:transform .15s;border-top:3px solid var(--line);
+  transition:transform .15s,border-color .15s;border-top:3px solid var(--line);
 }
-.principle-card:hover{transform:translateY(-3px);}
-.principle-grid .principle-card:nth-child(6n+1){border-top-color:var(--blue);}
-.principle-grid .principle-card:nth-child(6n+2){border-top-color:var(--teal);}
-.principle-grid .principle-card:nth-child(6n+3){border-top-color:var(--purple);}
-.principle-grid .principle-card:nth-child(6n+4){border-top-color:var(--pink);}
-.principle-grid .principle-card:nth-child(6n+5){border-top-color:var(--amber);}
-.principle-grid .principle-card:nth-child(6n+6){border-top-color:var(--green);}
+/* Accent color used to be assigned by position (nth-child rainbow) —
+   every principle got a different color for no reason tied to its
+   meaning. Now it's a single consistent accent that lights up on hover
+   instead, which reads as "these are equally-weighted items" rather
+   than an arbitrary color wheel. */
+.principle-card:hover{transform:translateY(-3px);border-top-color:var(--orange);}
 .p-icon{font-size:1.15rem;display:block;margin-bottom:6px;}
 .principle-card h4{font-size:.78rem;margin-bottom:4px;line-height:1.25;}
 .principle-card p{font-size:.7rem;color:var(--slate);margin:0;line-height:1.35;}
