@@ -2,8 +2,19 @@
    DALTON LAB — app.js
    Shared shell logic: theme, auth, routing, WhatsApp links, and a small
    set of GENERIC interactive engines (accordion, tab-switch, filter,
-   click-detail, quiz) that any chapter content file can plug into just
-   by using the right data-attributes. No chapter-specific JS needed.
+   click-detail, quiz, leveled exercises) that any chapter content file
+   can plug into just by using the right data-attributes. No
+   chapter-specific JS needed.
+
+   Chapter HTML, quiz JSON, and exercise JSON are NOT static files — they
+   live in /content-private (outside the public/ output dir Vercel
+   serves) and are only ever returned by the /api/content, /api/quiz,
+   and /api/exercise serverless functions, which require a valid,
+   unexpired session token (see /api/_auth.js). Login, orders, progress,
+   and quiz/exercise results all go through /api/* functions backed by
+   Postgres (Neon) — see /api/_db.js and db/schema.sql. Google Sheets /
+   Apps Script (gas/Code.gs) is no longer used anywhere; that file is
+   kept only as historical reference.
    ===================================================================== */
 
 /* ===== Theme toggle ===== */
@@ -46,21 +57,21 @@ const subjectsData = {
     name:'Ekonomi', icon:'📊', ready:true,
     desc:'Badan usaha, koperasi, manajemen, dan seluk-beluk ekonomi lainnya.',
     babs:[
-      {id:'bab1-badan-usaha', num:'Bab 1', title:'Badan Usaha, Koperasi & Manajemen', desc:'Bentuk-bentuk badan usaha, BUMN/BUMD, koperasi & kalkulator SHU, dasar manajemen.', ready:true, contentUrl:'content/ekonomi/bab1-badan-usaha.html'},
+      {id:'bab1-badan-usaha', num:'Bab 1', title:'Badan Usaha, Koperasi & Manajemen', desc:'Bentuk-bentuk badan usaha, BUMN/BUMD, koperasi & kalkulator SHU, dasar manajemen.', ready:true},
     ]
   },
   biologi: {
     name:'Biologi', icon:'🧬', ready:true,
     desc:'Sel, jaringan, sistem organ tubuh, dan makhluk hidup lainnya.',
     babs:[
-      {id:'bab1-sel', num:'Bab 1', title:'Sel: Unit Dasar Kehidupan', desc:'Sejarah penemuan sel, komponen kimiawi & struktural, organel, transpor membran, hingga reproduksi sel.', ready:true, contentUrl:'content/biologi/bab1-sel.html'},
+      {id:'bab1-sel', num:'Bab 1', title:'Sel: Unit Dasar Kehidupan', desc:'Sejarah penemuan sel, komponen kimiawi & struktural, organel, transpor membran, hingga reproduksi sel.', ready:true},
     ]
   },
   matematika: {
     name:'Matematika', icon:'📐', ready:true,
     desc:'Eksponen, logaritma, aljabar, geometri, statistika, dan lainnya.',
     babs:[
-      {id:'bab1-eksponen-logaritma', num:'Bab 1', title:'Eksponen & Logaritma', desc:'Sifat-sifat bilangan berpangkat, bentuk akar, fungsi eksponensial, sifat-sifat logaritma, hingga persamaan sederhana keduanya — plus latihan bertingkat per topik.', ready:true, contentUrl:'content/matematika/bab1-eksponen-logaritma.html'},
+      {id:'bab1-eksponen-logaritma', num:'Bab 1', title:'Eksponen & Logaritma', desc:'Sifat-sifat bilangan berpangkat, bentuk akar, fungsi eksponensial, sifat-sifat logaritma, hingga persamaan sederhana keduanya — plus latihan bertingkat per topik.', ready:true},
     ]
   },
   kimia: {
@@ -75,18 +86,141 @@ const subjectsData = {
   },
 };
 
+/* =====================================================================
+   PACKAGES — all-access bundles. EDIT the prices/durations here, and
+   PAYMENT_INFO_HTML below with your real bank/QRIS details, before
+   going live.
+   ===================================================================== */
+const PACKAGES = [
+  { id: 'p30',  label: '1 Bulan', hari: 30,  harga: 49000,  note: '' },
+  { id: 'p90',  label: '3 Bulan', hari: 90,  harga: 129000, note: 'Hemat 12%' },
+  { id: 'p365', label: '1 Tahun', hari: 365, harga: 399000, note: 'Paling Worth It' },
+];
+
+// EDIT: ganti dengan rekening/QRIS asli sebelum go-live.
+const PAYMENT_INFO_HTML = `
+  <div class="pay-row"><span>Transfer Bank</span><b>BCA 1234567890 a.n. Dalton Lab</b></div>
+  <div class="pay-row"><span>QRIS / E-wallet</span><b>Ketik "QRIS" di chat WhatsApp</b></div>
+`;
+
+function fmtRp(n) {
+  return 'Rp ' + Number(n).toLocaleString('id-ID');
+}
+
 /* ===== WhatsApp marketing links ===== */
 const WHATSAPP_NUMBER = '6282136673896'; // 082136673896 in international format
-
-/* ===== Google Sheets / Apps Script backend =====
-   Used for BOTH login checks and quiz result logging (see Code.gs). */
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHBK1OXZjz59KjTjRkcTEut8I007AGblM2px7PAxg1qUYYJzLHtfIQtHkGtQNjasasYw/exec";
 
 function waLink(message){
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 document.getElementById('waFloat').href = waLink('Halo Dalton Lab! Aku pengen tau lebih lanjut soal akses materi & bimbingan tutor di sini 🙌');
 document.getElementById('homeWaBtn').href = waLink('Halo Dalton Lab! Aku mau nanya-nanya soal kelas bimbingan (privat/grup) via Zoom 🙌');
+
+/* =====================================================================
+   PACKAGE PURCHASE — package picker + order form on the sign-in view.
+   Submits an order to /api/order, which lands as a pending row in
+   Postgres for the admin to approve at /admin.html.
+   ===================================================================== */
+let selectedPackage = null;
+let lastOrderId = null;
+
+function renderPackages() {
+  const grid = document.getElementById('packageGrid');
+  grid.innerHTML = PACKAGES.map(p => `
+    <button type="button" class="package-card" data-pkg="${p.id}">
+      ${p.note ? `<span class="package-note">${p.note}</span>` : ''}
+      <span class="package-label">${p.label}</span>
+      <span class="package-price">${fmtRp(p.harga)}</span>
+      <span class="package-sub">${p.hari} hari akses penuh ke semua mata pelajaran</span>
+    </button>`).join('');
+  grid.querySelectorAll('.package-card').forEach(card => {
+    card.addEventListener('click', () => selectPackage(card.dataset.pkg));
+  });
+}
+renderPackages();
+
+function selectPackage(pkgId) {
+  selectedPackage = PACKAGES.find(p => p.id === pkgId);
+  if (!selectedPackage) return;
+  document.getElementById('packageGrid').querySelectorAll('.package-card').forEach(c => {
+    c.classList.toggle('active', c.dataset.pkg === pkgId);
+  });
+  document.getElementById('orderFormTitle').textContent = `Beli Paket ${selectedPackage.label} — ${fmtRp(selectedPackage.harga)}`;
+  document.getElementById('orderForm').style.display = '';
+  document.getElementById('orderSuccess').style.display = 'none';
+  document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function resetOrderPanel() {
+  selectedPackage = null;
+  lastOrderId = null;
+  document.getElementById('packageGrid').querySelectorAll('.package-card').forEach(c => c.classList.remove('active'));
+  document.getElementById('orderForm').style.display = 'none';
+  document.getElementById('orderSuccess').style.display = 'none';
+  document.getElementById('orderError').classList.remove('show');
+  document.getElementById('orderNama').value = '';
+  document.getElementById('orderWa').value = '';
+  document.getElementById('orderUsername').value = '';
+}
+
+document.getElementById('orderFormBack').addEventListener('click', () => {
+  document.getElementById('orderForm').style.display = 'none';
+  selectedPackage = null;
+  document.getElementById('packageGrid').querySelectorAll('.package-card').forEach(c => c.classList.remove('active'));
+});
+
+function showOrderError(msg) {
+  const el = document.getElementById('orderError');
+  el.textContent = msg;
+  el.classList.add('show');
+}
+
+document.getElementById('orderSubmitBtn').addEventListener('click', submitOrder);
+
+async function submitOrder() {
+  const nama = document.getElementById('orderNama').value.trim();
+  const wa = document.getElementById('orderWa').value.trim();
+  const username = document.getElementById('orderUsername').value.trim().toLowerCase();
+  document.getElementById('orderError').classList.remove('show');
+
+  if (!selectedPackage) { showOrderError('Pilih paketnya dulu ya.'); return; }
+  if (!nama || !wa || !username) { showOrderError('Nama, WhatsApp, dan username wajib diisi semua.'); return; }
+
+  const btn = document.getElementById('orderSubmitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Memproses…';
+  try {
+    const res = await fetch('/api/order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nama, whatsapp: wa, username,
+        paket: selectedPackage.label, durasiHari: selectedPackage.hari, harga: selectedPackage.harga
+      })
+    });
+    const data = await res.json();
+    if (data.success) {
+      lastOrderId = data.orderId;
+      showOrderSuccess(nama, username);
+    } else {
+      showOrderError(data.message || 'Gagal bikin pesanan. Coba lagi ya.');
+    }
+  } catch (err) {
+    showOrderError('Gagal terhubung ke server. Periksa koneksi internet kamu.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Lanjut ke Pembayaran →';
+  }
+}
+
+function showOrderSuccess(nama, username) {
+  document.getElementById('orderForm').style.display = 'none';
+  document.getElementById('orderSuccess').style.display = '';
+  document.getElementById('orderIdOut').textContent = lastOrderId || '-';
+  document.getElementById('paymentBox').innerHTML = PAYMENT_INFO_HTML;
+  const msg = `Halo Dalton Lab! Aku mau konfirmasi pembayaran paket ${selectedPackage.label} (${fmtRp(selectedPackage.harga)}).\nID Pesanan: ${lastOrderId}\nNama: ${nama}\nUsername: ${username}\n\nIni bukti transfernya 👇`;
+  document.getElementById('orderWaBtn').href = waLink(msg);
+}
 
 /* ===== Session / auth ===== */
 function getSession(){
@@ -103,17 +237,21 @@ function clearSession(){
   localStorage.removeItem('daltonlab_session');
   renderSessionBadge();
 }
-function hasAccess(subjectKey){
+function hasAccess(){
   const s = getSession();
-  if(!s || !s.akses) return false;
-  return s.akses.includes('all') || s.akses.includes(subjectKey);
+  if(!s || !s.expiresAt) return false;
+  return new Date(s.expiresAt).getTime() > Date.now();
 }
 function renderSessionBadge(){
   const badge = document.getElementById('sessionBadge');
   const s = getSession();
   if(s){
     badge.style.display = 'flex';
-    badge.innerHTML = `👋 ${s.nama || s.username} <button id="logoutBtn">Keluar</button>`;
+    const expiryStr = s.expiresAt ? new Date(s.expiresAt).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'}) : null;
+    const statusHtml = hasAccess()
+      ? `<span class="session-status ok">Aktif s.d. ${expiryStr}</span>`
+      : `<span class="session-status expired">Paket habis</span>`;
+    badge.innerHTML = `👋 ${s.nama || s.username} ${statusHtml} <button id="logoutBtn">Keluar</button>`;
     document.getElementById('logoutBtn').addEventListener('click',()=>{
       clearSession();
       goToHome();
@@ -124,6 +262,37 @@ function renderSessionBadge(){
   }
 }
 renderSessionBadge();
+if(getSession()) fetchProgress();
+
+/* =====================================================================
+   PROGRESS — per-student, per-chapter, saved server-side (not just this
+   browser) so it follows the student across devices.
+   ===================================================================== */
+let progressCache = {};
+
+async function fetchProgress(){
+  const session = getSession();
+  progressCache = {};
+  if(!session || !session.token) return;
+  try{
+    const res = await fetch('/api/progress', {
+      headers: { 'Authorization': 'Bearer ' + session.token }
+    });
+    const data = await res.json();
+    if(data.success) progressCache = data.progress || {};
+  }catch(err){ /* non-critical — progress badges just won't show this load */ }
+}
+
+function markProgress(babId, status){
+  const session = getSession();
+  if(!session || !session.token || !babId) return;
+  if(status === 'completed' || !progressCache[babId]) progressCache[babId] = status;
+  fetch('/api/progress', {
+    method:'POST',
+    headers:{'Content-Type':'application/json', 'Authorization':'Bearer ' + session.token},
+    body: JSON.stringify({babId, status})
+  }).catch(()=>{});
+}
 
 /* =====================================================================
    VIEW ROUTER
@@ -166,7 +335,7 @@ function goToHome(){
 
 function enterSubject(subjectKey){
   activeSubjectKey = subjectKey;
-  if(hasAccess(subjectKey)){
+  if(hasAccess()){
     goToBabs(subjectKey);
   } else {
     goToSignIn(subjectKey);
@@ -176,12 +345,26 @@ function enterSubject(subjectKey){
 function goToSignIn(subjectKey){
   activeSubjectKey = subjectKey;
   const s = subjectsData[subjectKey];
-  document.getElementById('signinTitle').textContent = 'Yuk Masuk Dulu buat Buka ' + s.name;
-  document.getElementById('signinSubtitle').textContent = `Materi ${s.name} cuma bisa dibuka kalau kamu udah terdaftar di Dalton Lab.`;
+  const session = getSession();
+
+  if(session && session.expiresAt){
+    const expiryStr = new Date(session.expiresAt).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+    document.getElementById('signinTitle').textContent = 'Paketmu Udah Habis';
+    document.getElementById('signinSubtitle').textContent = `Halo ${session.nama || session.username}! Langgananmu berakhir ${expiryStr}. Beli paket baru di samping buat lanjut belajar ${s.name} & mata pelajaran lainnya.`;
+  } else {
+    document.getElementById('signinTitle').textContent = 'Yuk, Buka Akses ' + s.name;
+    document.getElementById('signinSubtitle').textContent = `Materi & kuis ${s.name} — plus semua mata pelajaran lain — kebuka begitu kamu punya paket aktif di Dalton Lab.`;
+  }
+
   document.getElementById('signinError').classList.remove('show');
-  document.getElementById('signinUsername').value = '';
+  document.getElementById('signinUsername').value = session ? (session.username || '') : '';
   document.getElementById('signinPassword').value = '';
-  document.getElementById('signinWaBtn').href = waLink(`Halo Dalton Lab, aku belum punya akun buat buka materi ${s.name}. Boleh dibantu daftarin? 🙏`);
+
+  resetOrderPanel();
+  if(session){
+    document.getElementById('orderNama').value = session.nama || '';
+    document.getElementById('orderUsername').value = session.username || '';
+  }
 
   hideAllViews();
   viewSignin.style.display = '';
@@ -200,13 +383,19 @@ function goToBabs(subjectKey){
   if(s.babs.length === 0){
     babGrid.innerHTML = `<p style="color:var(--slate);grid-column:1/-1;">Materi ${s.name} sedang disiapkan — segera hadir di sini. 🚧</p>`;
   } else {
-    babGrid.innerHTML = s.babs.map(b=>`
+    babGrid.innerHTML = s.babs.map(b=>{
+      const prog = progressCache[b.id];
+      const progBadge = prog === 'completed' ? '<span class="bab-progress done">✓ Selesai</span>'
+        : prog === 'started' ? '<span class="bab-progress ongoing">● Lagi Dipelajari</span>' : '';
+      return `
       <div class="bab-card ${b.ready?'':'soon'}" data-bab="${b.id}">
         ${b.ready?'':'<span class="soon-tag">Segera Hadir</span>'}
+        ${b.ready ? progBadge : ''}
         <div class="bab-num">${b.num}</div>
         <h4>${b.title}</h4>
         <p>${b.desc}</p>
-      </div>`).join('');
+      </div>`;
+    }).join('');
     babGrid.querySelectorAll('.bab-card:not(.soon)').forEach(card=>{
       card.addEventListener('click',()=>goToLesson(card.dataset.bab));
     });
@@ -236,25 +425,38 @@ async function goToLesson(babId){
   lessonLinks.innerHTML = '';
   lessonContent.innerHTML = `<div class="wrap" style="padding:80px 0;text-align:center;color:var(--slate);">Memuat materi…</div>`;
 
-  if(!bab || !bab.contentUrl){
+  if(!bab || !bab.ready){
     lessonContent.innerHTML = `<div class="wrap" style="padding:80px 0;text-align:center;color:var(--slate);">Materi ini belum tersedia.</div>`;
     return;
   }
 
+  const session = getSession();
+  if(!session || !session.token){
+    goToSignIn(activeSubjectKey);
+    return;
+  }
+
   try{
-    const res = await fetch(bab.contentUrl);
+    const res = await fetch(`/api/content?subject=${encodeURIComponent(activeSubjectKey)}&bab=${encodeURIComponent(babId)}`, {
+      headers: { 'Authorization': 'Bearer ' + session.token }
+    });
+    if(res.status === 401){
+      // Token expired/invalid server-side (e.g. paket habis) — bounce to the paywall
+      // even if the client's own clock/cache thought access was still fine.
+      goToSignIn(activeSubjectKey);
+      return;
+    }
     if(!res.ok) throw new Error('fetch failed');
     const html = await res.text();
     lessonContent.innerHTML = html;
   }catch(err){
     lessonContent.innerHTML = `<div class="wrap" style="padding:80px 0;text-align:center;color:var(--slate);">
-      ⚠️ Gagal memuat materi. Kalau kamu membuka file ini langsung (file://), coba jalankan lewat web server lokal atau buka versi yang sudah di-hosting.
+      ⚠️ Gagal memuat materi. Coba refresh halaman, atau pastikan paketmu masih aktif.
     </div>`;
     return;
   }
 
   // Prefill quiz gate name from session, for any quiz on this page
-  const session = getSession();
   if(session){
     lessonContent.querySelectorAll('[data-gate-name]').forEach(input=>{
       if(!input.value) input.value = session.nama || '';
@@ -264,6 +466,7 @@ async function goToLesson(babId){
   buildLessonSubnav(lessonContent);
   initAllComponents(lessonContent);
   observeReveal(lessonContent.querySelectorAll('section'));
+  markProgress(babId, 'started');
 }
 
 function buildLessonSubnav(root){
@@ -308,26 +511,23 @@ async function attemptSignIn(){
     showSigninError('Username & password-nya jangan lupa diisi ya.');
     return;
   }
-  if(!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.indexOf('PASTE_YOUR') === 0){
-    showSigninError('Waduh, sistem loginnya belum aktif nih. Coba chat kita dulu lewat WhatsApp di sebelah ya.');
-    return;
-  }
 
   btn.disabled = true;
   btn.textContent = 'Memeriksa…';
   try{
-    const res = await fetch(GOOGLE_SCRIPT_URL, {
+    const res = await fetch('/api/login', {
       method:'POST',
-      headers:{'Content-Type':'text/plain;charset=utf-8'},
-      body: JSON.stringify({type:'login', username, password})
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({username, password})
     });
     const data = await res.json();
     if(data.success){
-      saveSession({username, nama:data.nama || username, akses: data.akses || []});
-      if(hasAccess(activeSubjectKey)){
+      saveSession({username, nama:data.nama || username, expiresAt: data.expiresAt || null, token: data.token || null});
+      await fetchProgress();
+      if(hasAccess()){
         goToBabs(activeSubjectKey);
       } else {
-        showSigninError(`Login berhasil! Tapi akunmu belum punya akses ke ${subjectsData[activeSubjectKey].name} nih — chat admin lewat WhatsApp buat upgrade akses ya.`);
+        showSigninError('Login berhasil! Tapi paketmu belum aktif/udah habis — beli paket di panel sebelah kanan ya.');
       }
     } else {
       showSigninError(data.message || 'Hmm, username atau password-nya salah nih. Coba cek lagi ya.');
@@ -468,21 +668,30 @@ function initShuCalculator(root){
 
 /* =====================================================================
    GENERIC QUIZ ENGINE
-   Any chapter just needs: <div class="quiz-root" data-quiz-src="…json"
-   data-quiz-sheet="Kuis - Subject - babId"></div>
-   Everything else (gate, questions, scoring, Sheets submission) is built
-   here from the fetched JSON — zero per-chapter quiz JavaScript.
+   Any chapter just needs: <div class="quiz-root" data-quiz-subject="…"
+   data-quiz-bab="…"></div>
+   Everything else (gate, questions, scoring, auth-gated fetch via
+   /api/quiz, result submission via /api/quiz-result) is built here —
+   zero per-chapter quiz JavaScript.
    ===================================================================== */
 function initQuizzes(root){
   root.querySelectorAll('.quiz-root').forEach(async (mount)=>{
-    const src = mount.dataset.quizSrc;
-    const sheetName = mount.dataset.quizSheet || 'Kuis - Umum';
-    if(!src) return;
+    const subject = mount.dataset.quizSubject;
+    const bab = mount.dataset.quizBab;
+    if(!subject || !bab) return;
 
     mount.innerHTML = `<p style="color:#c3ccd9;">Memuat kuis…</p>`;
+    const session = getSession();
+    if(!session || !session.token){
+      mount.innerHTML = `<p style="color:#f0a597;">⚠️ Sesi kamu habis — refresh halaman & login ulang ya.</p>`;
+      return;
+    }
     let quiz;
     try{
-      const res = await fetch(src);
+      const res = await fetch(`/api/quiz?subject=${encodeURIComponent(subject)}&bab=${encodeURIComponent(bab)}`, {
+        headers: { 'Authorization': 'Bearer ' + session.token }
+      });
+      if(!res.ok) throw new Error('fetch failed');
       quiz = await res.json();
     }catch(err){
       mount.innerHTML = `<p style="color:#f0a597;">⚠️ Gagal memuat soal kuis. Coba refresh halaman ya.</p>`;
@@ -540,11 +749,7 @@ function initQuizzes(root){
 
     // prefill from session if available (router also does this post-load, but
     // handle it here too in case this quiz mounts after that pass)
-    try{
-      const raw = localStorage.getItem('daltonlab_session');
-      const session = raw ? JSON.parse(raw) : null;
-      if(session && session.nama) nameInput.value = session.nama;
-    }catch(e){}
+    if(session.nama) nameInput.value = session.nama;
 
     mount.querySelector('[data-gate-start]').addEventListener('click', ()=>{
       const nameVal = nameInput.value.trim();
@@ -616,19 +821,16 @@ function initQuizzes(root){
       else msg = 'Santai aja, coba baca-baca lagi materinya di atas terus tes ulang — kamu pasti bisa lebih jago!';
       resultEl.querySelector('[data-quiz-resultmsg]').textContent = `Kamu menjawab benar ${score} dari ${quiz.length} soal. ${msg}`;
 
-      let session = null;
-      try{ session = JSON.parse(localStorage.getItem('daltonlab_session')); }catch(e){}
-      submitToSheet({
-        type: 'quiz',
-        sheetName,
-        username: session ? session.username : '',
+      markProgress(activeBabId, 'completed');
+
+      submitQuizResult({
+        subject, babId: bab,
         nama: studentName,
         kelas: studentClass,
         skor: score,
         total: quiz.length,
-        persentase: pct,
-        waktu: new Date().toLocaleString('id-ID', {timeZone:'Asia/Jakarta'})
-      }, resultEl.querySelector('[data-quiz-submitstatus]'));
+        persentase: pct
+      }, resultEl.querySelector('[data-quiz-submitstatus]'), session ? session.token : null);
     }
 
     resultEl.querySelector('[data-quiz-restart]').addEventListener('click', ()=>{
@@ -646,8 +848,9 @@ function initQuizzes(root){
 /* =====================================================================
    GENERIC 3-LEVEL EXERCISE ENGINE ("Latihan Bertingkat")
    Any topic within a chapter just needs:
-   <div class="exercise-root" data-exercise-src="…json"
-        data-exercise-sheet="Latihan - Subject - babId - Topik"></div>
+   <div class="exercise-root" data-exercise-subject="…" data-exercise-bab="…"
+        data-exercise-topic="…"></div>
+   (topic is the filename segment: {bab}.{topic}.exercise.json)
 
    The JSON shape is: { "topic": "Nama Topik", "basic":[...], "intermediate":[...], "advanced":[...] }
    — each level array uses the exact same question shape as quiz JSON
@@ -669,14 +872,23 @@ const EXERCISE_LEVELS = {
 
 function initExercises(root){
   root.querySelectorAll('.exercise-root').forEach(async (mount)=>{
-    const src = mount.dataset.exerciseSrc;
-    const sheetBase = mount.dataset.exerciseSheet || 'Latihan - Umum';
-    if(!src) return;
+    const subject = mount.dataset.exerciseSubject;
+    const bab = mount.dataset.exerciseBab;
+    const topic = mount.dataset.exerciseTopic;
+    if(!subject || !bab || !topic) return;
 
     mount.innerHTML = `<p style="color:#c3ccd9;text-align:center;">Memuat latihan…</p>`;
+    const session = getSession();
+    if(!session || !session.token){
+      mount.innerHTML = `<p style="color:#f0a597;text-align:center;">⚠️ Sesi kamu habis — refresh halaman & login ulang ya.</p>`;
+      return;
+    }
     let data;
     try{
-      const res = await fetch(src);
+      const res = await fetch(`/api/exercise?subject=${encodeURIComponent(subject)}&bab=${encodeURIComponent(bab)}&topic=${encodeURIComponent(topic)}`, {
+        headers: { 'Authorization': 'Bearer ' + session.token }
+      });
+      if(!res.ok) throw new Error('fetch failed');
       data = await res.json();
     }catch(err){
       mount.innerHTML = `<p style="color:#f0a597;text-align:center;">⚠️ Gagal memuat latihan. Coba refresh halaman ya.</p>`;
@@ -719,11 +931,7 @@ function initExercises(root){
     const levelHint = mount.querySelector('[data-level-hint]');
     let activeLevel = levelKeys[0];
 
-    try{
-      const raw = localStorage.getItem('daltonlab_session');
-      const session = raw ? JSON.parse(raw) : null;
-      if(session && session.nama) nameInput.value = session.nama;
-    }catch(e){}
+    if(session.nama) nameInput.value = session.nama;
 
     mount.querySelectorAll('[data-level-tabs] [data-level]').forEach(btn=>{
       btn.addEventListener('click', ()=>{
@@ -744,7 +952,8 @@ function initExercises(root){
       }
       gate.style.display = 'none';
       runExerciseLevel(sessionMount, data[activeLevel], {
-        sheetName: sheetBase,
+        subject, babId: bab,
+        token: session.token,
         studentName: nameVal,
         studentClass: classVal,
         topik: data.topic || '',
@@ -758,7 +967,8 @@ function initExercises(root){
 /** Runs one level's question set inside `mount` (a fresh scratch container),
  *  then reports back to `onBack` so the student can pick another level.
  *  Mirrors the chapter-quiz question/scoring flow in initQuizzes(), but
- *  tags its Sheets submission with topik + level for per-topic tracking. */
+ *  tags its /api/quiz-result submission with topik + level for per-topic
+ *  tracking. */
 function runExerciseLevel(mount, questions, meta){
   mount.innerHTML = `
     <div class="quiz-box" data-quiz-box>
@@ -846,21 +1056,18 @@ function runExerciseLevel(mount, questions, meta){
     else msg = 'Santai, coba baca ulang materinya terus balik lagi ke level ini — atau mulai dari level yang lebih ringan dulu.';
     resultEl.querySelector('[data-quiz-resultmsg]').textContent = `Kamu menjawab benar ${score} dari ${questions.length} soal. ${msg}`;
 
-    let session = null;
-    try{ session = JSON.parse(localStorage.getItem('daltonlab_session')); }catch(e){}
-    submitToSheet({
-      type: 'quiz',
-      sheetName: meta.sheetName,
-      username: session ? session.username : '',
+    markProgress(meta.babId, 'started');
+
+    submitQuizResult({
+      subject: meta.subject, babId: meta.babId,
       nama: meta.studentName,
       kelas: meta.studentClass,
       skor: score,
       total: questions.length,
       persentase: pct,
       topik: meta.topik,
-      level: meta.levelLabel,
-      waktu: new Date().toLocaleString('id-ID', {timeZone:'Asia/Jakarta'})
-    }, resultEl.querySelector('[data-quiz-submitstatus]'));
+      level: meta.levelLabel
+    }, resultEl.querySelector('[data-quiz-submitstatus]'), meta.token);
   }
 
   resultEl.querySelector('[data-quiz-restart]').addEventListener('click', ()=>{
@@ -876,18 +1083,18 @@ function runExerciseLevel(mount, questions, meta){
   renderQuestion();
 }
 
-function submitToSheet(payload, statusEl){
+function submitQuizResult(payload, statusEl, token){
   if(!statusEl) return;
-  if(!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.indexOf('PASTE_YOUR') === 0){
-    statusEl.textContent = '⚠ Belum terhubung ke Google Sheets (lihat catatan setup guru).';
+  if(!token){
+    statusEl.textContent = '⚠ Sesi kamu habis, hasil ini gak kesimpen — refresh & login ulang ya.';
     statusEl.className = 'submit-status err';
     return;
   }
   statusEl.textContent = 'Menyimpan hasil…';
   statusEl.className = 'submit-status pending';
-  fetch(GOOGLE_SCRIPT_URL, {
+  fetch('/api/quiz-result', {
     method: 'POST',
-    headers: {'Content-Type': 'text/plain;charset=utf-8'},
+    headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token},
     body: JSON.stringify(payload)
   }).then(r=>r.json()).then(data=>{
     if(data && data.success){
