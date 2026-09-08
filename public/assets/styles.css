@@ -6,19 +6,19 @@
   --paper:#faf6ee;
   --paper-2:#f1ead8;
   --ink:#1c2b3a;
-  --slate:#5b6b7c;
+  --slate:#4f6376;
   --success:#2f9e6e;
   --danger:#e2574c;
   --line:#e3d9c2;
   --card:#ffffff;
   --radius:14px;
-  --shadow: 0 10px 30px -12px rgba(13,27,46,0.18);
+  --shadow: 0 10px 30px -12px rgba(0,0,0,0.16);
   --heading:#0d1b2e;
   --heading-soft:#16304f;
   --nav-bg: rgba(250,246,238,0.86);
   --subnav-bg: rgba(250,246,238,0.92);
   --dot-color:#d8cfb6;
-  --accent-hover:#d4631a;
+  --accent-hover:#b34f0d;
   --danger-text:#b23a30;
   --blue:#2f7edb;
   --blue-soft:#eaf2fd;
@@ -174,7 +174,7 @@ header.site-nav{
 .brand img{height:34px;width:auto;}
 .brand-text{font-family:'Space Grotesk';font-weight:700;font-size:1.05rem;color:var(--heading);line-height:1;}
 .brand-text span{color:var(--orange);}
-.brand-sub{font-family:'Inter';font-weight:500;font-size:.66rem;letter-spacing:.06em;color:var(--slate);text-transform:uppercase;}
+.brand-sub{font-family:'Inter';font-weight:500;font-size:.76rem;letter-spacing:.06em;color:var(--slate);text-transform:uppercase;}
 nav.links{display:flex;gap:22px;align-items:center;}
 nav.links a{
   font-size:.86rem;font-weight:600;color:var(--heading-soft);
@@ -244,9 +244,9 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 .bab-row{
   display:flex;align-items:center;gap:20px;padding:22px 4px;
   border-bottom:1px solid var(--line);cursor:pointer;
-  transition:padding-left .15s,background .15s;
+  transition:transform .15s,background .15s;
 }
-.bab-row:hover{padding-left:10px;background:var(--paper-2);}
+.bab-row:hover{transform:translateX(6px);background:var(--paper-2);}
 .bab-row .bab-num{
   font-size:1.3rem;font-weight:600;color:var(--line);flex-shrink:0;width:2.2ch;
 }
@@ -255,7 +255,7 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 .bab-row h4{font-size:1.02rem;margin:0 0 4px;}
 .bab-row p{font-size:.84rem;color:var(--slate);margin:0;}
 .bab-row.soon{opacity:.55;cursor:default;}
-.bab-row.soon:hover{padding-left:4px;background:none;}
+.bab-row.soon:hover{transform:none;background:none;}
 .bab-row .soon-tag{
   font-family:'Space Grotesk';font-size:.66rem;flex-shrink:0;
   background:var(--paper-2);color:var(--slate);padding:4px 9px;border-radius:14px;
@@ -347,7 +347,7 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
   background-image:radial-gradient(circle at 85% 0%, rgba(238,125,49,0.22), transparent 55%);
 }
 .marketing-panel .eyebrow{color:var(--orange);}
-.marketing-panel h3{color:#fff;font-size:1.25rem;margin-bottom:12px;}
+.marketing-panel h2{color:#fff;font-size:1.25rem;margin-bottom:12px;}
 .marketing-panel p.mk-lead{color:#c3ccd9;font-size:.9rem;margin-bottom:20px;}
 /* === Package / purchase panel === */
 .package-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:6px;}
@@ -368,7 +368,7 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 .package-card .package-sub{width:100%;font-size:.76rem;color:#9fb0c2;}
 
 .order-form{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.14);}
-.order-form h4{color:#fff;font-size:1rem;margin-bottom:14px;}
+.order-form h3{color:#fff;font-size:1rem;margin-bottom:14px;}
 .order-form-back{
   background:none;border:none;color:#9fb0c2;font-family:'Space Grotesk';font-size:.74rem;
   cursor:pointer;padding:0;margin-bottom:14px;
@@ -379,7 +379,7 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 
 .order-success{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.14);}
 .order-success-id{font-family:'Space Grotesk';font-size:.72rem;color:#9fb0c2;margin-bottom:8px;}
-.order-success h4{color:#fff;font-size:1rem;margin-bottom:12px;}
+.order-success h3{color:#fff;font-size:1rem;margin-bottom:12px;}
 .payment-box{
   background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);
   border-radius:10px;padding:14px 16px;margin-bottom:16px;
@@ -396,7 +396,7 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 .wa-btn:hover{background:#1ebe5a;transform:translateY(-2px);}
 .wa-btn svg{width:20px;height:20px;flex-shrink:0;}
 .mk-schedule{
-  margin-top:16px;font-family:'Space Grotesk';font-size:.72rem;color:#9fb0c2;text-align:center;
+  margin-top:16px;font-family:'Space Grotesk';font-size:.8rem;color:#9fb0c2;text-align:center;
 }
 
 /* === Tutor promo strip — one line, not a competing second hero === */
@@ -756,7 +756,7 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 .principle-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:44px;}
 .principle-card{
   background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 12px;
-  transition:transform .15s,border-color .15s;border-top:3px solid var(--line);
+  transition:transform .15s,border-color .15s;border-top:2px solid var(--line);
 }
 /* Accent color used to be assigned by position (nth-child rainbow) —
    every principle got a different color for no reason tied to its
@@ -854,7 +854,7 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 
 /* === Manajemen === */
 .thinker-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.thinker{background:var(--card);border-left:3px solid var(--orange);border-radius:0 12px 12px 0;padding:18px 20px;box-shadow:var(--shadow);}
+.thinker{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--orange);border-radius:0 12px 12px 0;padding:18px 20px;}
 .thinker b{display:block;font-family:'Space Grotesk';color:var(--heading);margin-bottom:6px;font-size:.94rem;}
 .thinker span{font-size:.84rem;color:var(--slate);}
 
@@ -931,7 +931,7 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 .organel-card{
   background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px;
   transition:transform .15s,border-color .15s,opacity .15s,box-shadow .15s;
-  border-top:4px solid var(--line);
+  border-top:2px solid var(--line);
 }
 .organel-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
 .organel-card .oc-icon{
@@ -974,7 +974,7 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 }
 .quiz-top{margin-bottom:24px;}
 .quiz-progress-track{height:6px;background:rgba(255,255,255,0.14);border-radius:6px;overflow:hidden;margin-bottom:12px;}
-.quiz-progress-fill{height:100%;width:0%;background:var(--orange);transition:width .3s;}
+.quiz-progress-fill{height:100%;width:100%;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
 .quiz-meta{display:flex;justify-content:space-between;color:#c3ccd9;font-size:.8rem;}
 .quiz-meta #quizScore{color:var(--orange);font-weight:600;}
 .q-title{color:#fff;font-family:'Space Grotesk';font-size:1.15rem;font-weight:600;margin-bottom:22px;line-height:1.5;}
@@ -1078,7 +1078,7 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
   .thinker-strip{grid-template-columns:1fr;}
   .hero h1{font-size:2rem;}
   section{padding:56px 0;}
-  .brand-sub{font-size:.58rem;letter-spacing:.06em;}
+  .brand-sub{font-size:.7rem;letter-spacing:.06em;}
   .lesson-subnav{top:96px;}
   .lesson-subnav-inner{padding:10px 20px;}
   .grid-3{grid-template-columns:1fr;}

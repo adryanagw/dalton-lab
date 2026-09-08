@@ -970,7 +970,7 @@ function initQuizzes(root){
       const item = quiz[currentQ];
       counterEl.textContent = `Soal ${currentQ+1} / ${quiz.length}`;
       scoreEl.textContent = `Skor: ${score}`;
-      progressFill.style.width = (currentQ/quiz.length*100)+'%';
+      progressFill.style.transform = `scaleX(${currentQ/quiz.length})`;
 
       const letters = ['A','B','C','D'];
       questionArea.innerHTML = `
@@ -1013,7 +1013,7 @@ function initQuizzes(root){
       resultEl.style.display = 'block';
       const pct = Math.round(score/quiz.length*100);
       resultEl.querySelector('[data-quiz-pct]').textContent = pct+'%';
-      progressFill.style.width = '100%';
+      progressFill.style.transform = 'scaleX(1)';
       let msg = '';
       if(pct>=85) msg = 'Mantap banget! Kayaknya kamu udah jago materi ini.';
       else if(pct>=60) msg = 'Lumayan nih! Sebagian besar udah nyantol, tinggal cek lagi yang masih meleset.';
@@ -1205,7 +1205,7 @@ function runExerciseLevel(mount, questions, meta){
     const item = questions[currentQ];
     counterEl.textContent = `Soal ${currentQ+1} / ${questions.length}`;
     scoreEl.textContent = `Skor: ${score}`;
-    progressFill.style.width = (currentQ/questions.length*100)+'%';
+    progressFill.style.transform = `scaleX(${currentQ/questions.length})`;
 
     const letters = ['A','B','C','D'];
     questionArea.innerHTML = `
@@ -1248,7 +1248,7 @@ function runExerciseLevel(mount, questions, meta){
     resultEl.style.display = 'block';
     const pct = Math.round(score/questions.length*100);
     resultEl.querySelector('[data-quiz-pct]').textContent = pct+'%';
-    progressFill.style.width = '100%';
+    progressFill.style.transform = 'scaleX(1)';
     let msg = '';
     if(pct>=85) msg = `Mantap! Level ${meta.levelLabel} udah kamu kuasin.`;
     else if(pct>=60) msg = 'Lumayan — sebagian besar udah nyantol, cek lagi yang masih meleset.';
