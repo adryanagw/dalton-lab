@@ -216,7 +216,7 @@ async function submitOrder() {
   document.getElementById('orderError').classList.remove('show');
 
   if (!selectedPackage) { showOrderError('Pilih paketnya dulu ya.'); return; }
-  if (!nama || !wa || !username) { showOrderError('Nama, WhatsApp, dan username wajib diisi semua.'); return; }
+  if (!nama || !wa || !username) { showOrderError('Nama, WhatsApp, sama username-nya diisi dulu ya.'); return; }
 
   const btn = document.getElementById('orderSubmitBtn');
   btn.disabled = true;
@@ -531,7 +531,7 @@ async function goToLesson(babId){
   lessonContent.innerHTML = `<div class="wrap" style="padding:80px 0;text-align:center;color:var(--slate);">Memuat materi…</div>`;
 
   if(!bab || !bab.ready){
-    lessonContent.innerHTML = `<div class="wrap" style="padding:80px 0;text-align:center;color:var(--slate);">Materi ini belum tersedia.</div>`;
+    lessonContent.innerHTML = `<div class="wrap" style="padding:80px 0;text-align:center;color:var(--slate);">Waduh, materi ini belum ada.</div>`;
     return;
   }
 
@@ -649,7 +649,7 @@ async function attemptSignIn(){
       showSigninError(data.message || 'Hmm, username atau password-nya salah nih. Coba cek lagi ya.');
     }
   }catch(err){
-    showSigninError('Gagal terhubung ke server. Periksa koneksi internet kamu.');
+    showSigninError('Gagal konek ke server nih. Cek koneksi internet kamu, terus coba lagi.');
   }finally{
     btn.disabled = false;
     btn.textContent = 'Masuk';
@@ -871,7 +871,7 @@ function initQuizzes(root){
       const nameVal = nameInput.value.trim();
       const classVal = classInput.value.trim();
       if(!nameVal || !classVal){
-        hint.textContent = 'Nama dan kelas wajib diisi sebelum memulai kuis.';
+        hint.textContent = 'Isi nama & kelas kamu dulu ya, biar hasil kuismu kesimpen.';
         hint.classList.add('warn');
         return;
       }
@@ -1062,7 +1062,7 @@ function initExercises(root){
       const nameVal = nameInput.value.trim();
       const classVal = classInput.value.trim();
       if(!nameVal || !classVal){
-        hint.textContent = 'Nama dan kelas wajib diisi sebelum memulai latihan.';
+        hint.textContent = 'Isi nama & kelas kamu dulu ya, biar hasil latihanmu kesimpen.';
         hint.classList.add('warn');
         return;
       }
@@ -1214,14 +1214,14 @@ function submitQuizResult(payload, statusEl, token){
     body: JSON.stringify(payload)
   }).then(r=>r.json()).then(data=>{
     if(data && data.success){
-      statusEl.innerHTML = `${icon('check')} Hasil kamu sudah tercatat.`;
+      statusEl.innerHTML = `${icon('check')} Hasil kamu udah kesimpen.`;
       statusEl.className = 'submit-status ok';
     } else {
-      statusEl.innerHTML = `${icon('alert-triangle')} Gagal menyimpan hasil ke server.`;
+      statusEl.innerHTML = `${icon('alert-triangle')} Gagal nyimpen hasil ke server nih.`;
       statusEl.className = 'submit-status err';
     }
   }).catch(()=>{
-    statusEl.innerHTML = `${icon('alert-triangle')} Gagal menyimpan hasil — periksa koneksi internet.`;
+    statusEl.innerHTML = `${icon('alert-triangle')} Gagal nyimpen hasil — cek koneksi internet kamu ya.`;
     statusEl.className = 'submit-status err';
   });
 }
