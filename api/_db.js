@@ -106,12 +106,30 @@ async function ensureSchema() {
         note       TEXT NOT NULL DEFAULT '',
         sort_order INTEGER NOT NULL DEFAULT 0
       )
+    `,
+    // One row per logged-in device for a student account. A device's
+    // session id (sid) is embedded in its signed token at login and
+    // deleted here on an explicit sign-out (see api/logout.js) — this is
+    // what /api/login counts against the 2-device cap. created_at is
+    // "when this device logged in," not a live last-activity clock (no
+    // protected endpoint touches this table per-request), used both for
+    // admin display and to auto-reclaim a slot abandoned >30 days ago
+    // instead of permanently locking a student out over a lost device.
+    sql`
+      CREATE TABLE IF NOT EXISTS sessions (
+        id         SERIAL PRIMARY KEY,
+        username   TEXT NOT NULL,
+        sid        TEXT UNIQUE NOT NULL,
+        user_agent TEXT,
+        created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+      )
     `
   ]);
 
   await Promise.all([
     sql`CREATE INDEX IF NOT EXISTS idx_orders_status ON orders (status)`,
-    sql`CREATE INDEX IF NOT EXISTS idx_quiz_results_username ON quiz_results (username)`
+    sql`CREATE INDEX IF NOT EXISTS idx_quiz_results_username ON quiz_results (username)`,
+    sql`CREATE INDEX IF NOT EXISTS idx_sessions_username ON sessions (username)`
   ]);
 
   // Retrofits for columns/tables added after the orders table already

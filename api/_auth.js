@@ -32,12 +32,13 @@ function signToken(payload) {
 }
 
 /**
- * Verifies signature + expiry. Returns the decoded payload only when the
- * token is authentic AND the embedded expiry is still in the future —
- * this is the single choke point every protected endpoint calls before
- * it will hand back a chapter, quiz, exercise, or admin action.
+ * Verifies signature only — no expiry check. Used only where a lapsed
+ * subscription must not block the action (namely /api/logout: a student
+ * whose token's embedded expiresAt has passed still needs to be able to
+ * sign out and free their device slot for the 2-device cap, not get
+ * stuck occupying it until they renew).
  */
-function verifyToken(token) {
+function verifySignature(token) {
   if (!token || typeof token !== 'string' || token.indexOf('.') === -1) return null;
 
   let secret;
@@ -54,9 +55,22 @@ function verifyToken(token) {
   let payload;
   try { payload = JSON.parse(b64urlToBuffer(payloadB64).toString('utf8')); } catch (e) { return null; }
   if (!payload || !payload.u || !payload.e) return null;
+
+  return payload;
+}
+
+/**
+ * Verifies signature + expiry. Returns the decoded payload only when the
+ * token is authentic AND the embedded expiry is still in the future —
+ * this is the single choke point every protected endpoint calls before
+ * it will hand back a chapter, quiz, exercise, or admin action.
+ */
+function verifyToken(token) {
+  const payload = verifySignature(token);
+  if (!payload) return null;
   if (new Date(payload.e).getTime() <= Date.now()) return null; // expired
 
-  return payload; // { u: username, e: expiresAt ISO, t: issuedAt millis, r: 'student'|'admin' }
+  return payload; // { u: username, e: expiresAt ISO, t: issuedAt millis, r: 'student'|'admin', s: sessionId }
 }
 
 function getBearerToken(req) {
@@ -66,4 +80,4 @@ function getBearerToken(req) {
   return (req.query && req.query.token) || null;
 }
 
-module.exports = { signToken, verifyToken, getBearerToken };
+module.exports = { signToken, verifyToken, verifySignature, getBearerToken };

@@ -351,6 +351,13 @@ function saveSession(session){
   renderSessionBadge();
 }
 function clearSession(){
+  // Free this device's slot against the 2-device cap server-side too —
+  // otherwise "Keluar" only forgets the session locally, and this device
+  // keeps occupying a slot until it naturally goes stale (see login.js).
+  const s = getSession();
+  if(s && s.token){
+    fetch('/api/logout', { method:'POST', headers:{'Authorization':'Bearer '+s.token} }).catch(()=>{});
+  }
   localStorage.removeItem('daltonlab_session');
   renderSessionBadge();
 }

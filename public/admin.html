@@ -86,6 +86,22 @@
   .pkg-actions-row{display:flex; align-items:center; gap:12px; margin-top:16px;}
   .saved-note{color:var(--success); font-size:.82rem; display:none;}
   .saved-note.show{display:inline;}
+
+  .session-card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:16px 20px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;
+  }
+  .session-username{font-weight:700; font-family:monospace; font-size:.92rem;}
+  .session-meta{font-size:.8rem; color:var(--slate); margin-top:3px;}
+  .device-count{font-size:.72rem; padding:4px 10px; border-radius:20px; font-weight:700;}
+  .device-count.ok{background:rgba(47,158,110,.12); color:var(--success);}
+  .device-count.full{background:rgba(226,87,76,.12); color:var(--danger);}
+  button.btn-force-logout{
+    background:none; color:var(--slate); border:1.5px solid var(--line); padding:8px 14px; border-radius:8px;
+    font-size:.8rem; font-weight:600; cursor:pointer;
+  }
+  button.btn-force-logout:hover{border-color:var(--danger); color:var(--danger);}
+  button.btn-force-logout:disabled{opacity:.6; cursor:default;}
 </style>
 </head>
 <body>
@@ -114,6 +130,10 @@
 
     <h2 class="section-title">Riwayat Terbaru</h2>
     <div id="recentList"></div>
+
+    <h2 class="section-title">Sesi Aktif (Device)</h2>
+    <p style="color:var(--slate); font-size:.82rem; margin:-6px 0 14px;">Maksimal 2 device per akun. Paksa keluar buat bebasin slot kalau siswa kehilangan device atau butuh login di device baru.</p>
+    <div id="sessionsList"></div>
 
     <h2 class="section-title">Kelola Paket</h2>
     <div class="pkg-editor" id="pkgEditor"><p class="empty">Memuat…</p></div>
@@ -148,6 +168,7 @@ function showDashboard(){
   document.getElementById('dashboardView').style.display = '';
   loadOrders();
   loadPackages();
+  loadSessions();
 }
 
 document.getElementById('loginBtn').addEventListener('click', attemptLogin);
@@ -307,6 +328,68 @@ async function rejectOrder(orderId, btn){
   }catch(e){
     alert('Gagal terhubung ke server.');
     btn.disabled = false; btn.textContent = '✕ Reject';
+  }
+}
+
+async function loadSessions(){
+  const token = getToken();
+  const list = document.getElementById('sessionsList');
+  list.innerHTML = '<p class="empty">Memuat…</p>';
+  try{
+    const res = await fetch('/api/admin/sessions', { headers:{ 'Authorization': 'Bearer ' + token } });
+    if(res.status === 401){ clearToken(); showLogin(); return; }
+    const data = await res.json();
+    if(!data.success){ list.innerHTML = `<p class="empty">${data.message || 'Gagal memuat sesi.'}</p>`; return; }
+    list.innerHTML = data.sessions.length === 0
+      ? '<p class="empty">Belum ada siswa yang login.</p>'
+      : data.sessions.map(renderSessionCard).join('');
+    list.querySelectorAll('[data-force-logout]').forEach(btn=>{
+      btn.addEventListener('click', ()=>forceLogout(btn.dataset.forceLogout, btn));
+    });
+  }catch(e){
+    list.innerHTML = '<p class="empty">Gagal terhubung ke server.</p>';
+  }
+}
+
+function renderSessionCard(s){
+  const full = s.device_count >= 2;
+  const loginRange = s.oldest_login === s.newest_login
+    ? fmtDate(s.newest_login)
+    : `${fmtDate(s.oldest_login)} – ${fmtDate(s.newest_login)}`;
+  return `
+    <div class="session-card">
+      <div>
+        <div class="session-username">${escapeHtml(s.username)}</div>
+        <div class="session-meta">Login: ${loginRange}</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span class="device-count ${full ? 'full' : 'ok'}">${s.device_count}/2 device</span>
+        <button class="btn-force-logout" data-force-logout="${escapeHtml(s.username)}">Paksa Keluar Semua</button>
+      </div>
+    </div>`;
+}
+
+async function forceLogout(username, btn){
+  if(!confirm(`Paksa keluar semua device buat akun "${username}"? Slot device-nya langsung bebas buat login baru.`)) return;
+  const token = getToken();
+  btn.disabled = true; btn.textContent = 'Memproses…';
+  try{
+    const res = await fetch('/api/admin/sessions', {
+      method:'POST',
+      headers:{'Content-Type':'application/json', 'Authorization':'Bearer ' + token},
+      body: JSON.stringify({username})
+    });
+    if(res.status === 401){ clearToken(); showLogin(); return; }
+    const data = await res.json();
+    if(data.success){
+      await loadSessions();
+    } else {
+      alert(data.message || 'Gagal memproses.');
+      btn.disabled = false; btn.textContent = 'Paksa Keluar Semua';
+    }
+  }catch(e){
+    alert('Gagal terhubung ke server.');
+    btn.disabled = false; btn.textContent = 'Paksa Keluar Semua';
   }
 }
 
