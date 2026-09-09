@@ -130,7 +130,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
   *:hover{transform:none !important;}
   .wa-float-pulse{animation:none;}
   .acc-a, .quiz-progress-fill{transition-duration:.01ms !important;}
+  ::view-transition-group(root),
+  ::view-transition-old(root),
+  ::view-transition-new(root){animation:none !important;}
 }
+
+/* Theme toggle circular reveal — the incoming theme's snapshot is animated
+   (via JS, clip-path circle growing from the click point) while the
+   outgoing one stays put underneath, so no built-in cross-fade fights it. */
+::view-transition-old(root),
+::view-transition-new(root){
+  animation:none;
+  mix-blend-mode:normal;
+}
+::view-transition-old(root){z-index:1;}
+::view-transition-new(root){z-index:2;}
 
 /* Inline icon system — replaces emoji used as functional UI icons
    (nav, buttons, callouts, status). Icons are hand-authored minimal-line
@@ -169,50 +183,62 @@ section.tight{padding:60px 0;}
   background-size: 22px 22px;
 }
 
-/* === NAV === */
-header.site-nav{
-  position:sticky; top:0; z-index:100;
-  background:var(--nav-bg);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-}
-.nav-inner{
-  max-width:1120px;margin:0 auto;padding:14px 24px;
-  display:flex;align-items:center;justify-content:space-between;gap:20px;
-}
+/* === App shell (sidebar navigation, à la library-app reference) === */
+.app-shell{display:flex;min-height:100vh;align-items:flex-start;}
+
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .brand img{height:34px;width:auto;}
 .brand-text{font-family:'Space Grotesk';font-weight:700;font-size:1.05rem;color:var(--heading);line-height:1;}
 .brand-text span{color:var(--orange);}
 .brand-sub{font-family:'Inter';font-weight:500;font-size:.76rem;letter-spacing:.06em;color:var(--slate);text-transform:uppercase;}
-nav.links{display:flex;gap:22px;align-items:center;}
-nav.links a{
-  font-size:.86rem;font-weight:600;color:var(--heading-soft);
-  text-decoration:none;padding:8px 2px;border-radius:0;
-  border-bottom:2px solid transparent;
-  transition:color .15s,border-color .15s;
-  white-space:nowrap;
-}
-nav.links a:hover{color:var(--heading);}
-nav.links a.cta{
-  background:var(--navy);color:#fff;padding:8px 16px;border-radius:8px;border-bottom-color:transparent;
-}
-nav.links a.cta:hover{background:var(--accent-hover);color:#fff;}
 
-/* Subject links — flat inline text+icon, active tab gets an orange
-   underline (matches Beranda's active state) instead of a pill background. */
-.subject-switcher{display:flex;gap:22px;align-items:center;}
-nav.links a.subject-link{
-  display:flex;align-items:center;gap:6px;padding:8px 2px;font-size:.86rem;
+.mobile-topbar{
+  display:none;
+  position:sticky;top:0;z-index:100;width:100%;
+  align-items:center;justify-content:space-between;
+  padding:0 16px;height:58px;flex-shrink:0;
+  background:var(--nav-bg);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
 }
-nav.links a.subject-link .icon{color:var(--slate);}
-#navHomeLink.active,
-nav.links a.subject-link.active{color:var(--heading);border-color:var(--orange);}
-nav.links a.subject-link.active .icon{color:var(--orange-dark);}
-@media(max-width:900px){
-  .subject-link-label{display:none;}
-  nav.links a.subject-link{padding:8px;}
+.mobile-topbar .brand img{height:26px;}
+.mobile-topbar .brand-text{font-size:.92rem;}
+
+.sidebar-backdrop{
+  display:none;position:fixed;inset:0;z-index:210;
+  background:rgba(13,27,46,.45);opacity:0;pointer-events:none;
+  transition:opacity .2s ease;
 }
+
+.sidebar{
+  width:248px;flex-shrink:0;
+  position:sticky;top:0;align-self:flex-start;height:100vh;
+  display:flex;flex-direction:column;
+  background:var(--nav-bg);border-right:1px solid var(--line);
+  padding:20px 16px;overflow-y:auto;
+}
+.sidebar-brand{padding:4px 6px 20px;}
+.sidebar-brand img{height:32px;}
+.sidebar-nav{display:flex;flex-direction:column;gap:2px;flex:1;}
+.sidebar-section-label{
+  font-family:'Space Grotesk';font-size:.7rem;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--slate);padding:18px 12px 6px;
+}
+.sidebar-link{
+  display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;
+  font-size:.9rem;font-weight:600;color:var(--heading-soft);
+  text-decoration:none;transition:background-color .15s,color .15s;
+}
+.sidebar-link .icon{width:19px;height:19px;flex-shrink:0;color:var(--slate);transition:color .15s;}
+.sidebar-link:hover{background:var(--paper-2);color:var(--heading);}
+.sidebar-link.active{background:var(--paper-2);color:var(--heading);}
+.sidebar-link.active .icon{color:var(--orange-dark);}
+.sidebar-footer{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding-top:16px;margin-top:12px;border-top:1px solid var(--line);
+}
+
+.app-main{flex:1;min-width:0;}
+
 .hamburger{
   display:none;background:none;border:none;cursor:pointer;
   min-width:44px;min-height:44px;flex-direction:column;align-items:center;justify-content:center;
@@ -284,7 +310,7 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 
 /* === Lesson sub-nav === */
 .lesson-subnav{
-  position:sticky;top:65px;z-index:90;
+  position:sticky;top:0;z-index:90;
   background:var(--subnav-bg);backdrop-filter:blur(8px);
   border-bottom:1px solid var(--line);
 }
@@ -377,7 +403,7 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 .package-card.active{border-color:var(--orange);background:rgba(238,125,49,0.12);}
 .package-card .package-note{
   position:absolute;top:-9px;right:12px;background:var(--orange);color:#0d1b2e;
-  font-family:'Space Grotesk';font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:20px;
+  font-family:'Space Grotesk';font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:20px;
 }
 .package-card .package-label{font-weight:600;font-size:.94rem;}
 .package-card .package-price{font-family:'Space Grotesk';font-weight:700;color:var(--orange);font-size:1rem;}
@@ -435,60 +461,61 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 }
 .tutor-strip-link:hover{background:var(--accent-hover);transform:translateY(-1px);}
 
-/* === Hero eyebrow — small greeting line above the H1 === */
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk';font-weight:600;
-  font-size:.84rem;color:var(--orange-dark);margin-bottom:14px;
-}
-.hero-eyebrow .icon{color:var(--orange);}
-
 /* === Section heading above the subject grid — smaller than .section-head === */
 .section-head-sm{margin:44px 0 22px;}
 .section-head-sm h2{font-size:1.4rem;margin-bottom:6px;}
-.section-head-sm p{color:var(--slate);font-size:.92rem;margin:0;}
+.section-head-sm p{color:var(--slate);font-size:.92rem;margin:0;max-width:60ch;}
 
-/* === Subject grid — colored "book cover" cards (one color per subject,
-   semantic not positional — see design notes) with a compact icon+arrow
-   meta row underneath, instead of a plain editorial list. === */
-.subject-card-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:22px;
+/* === Subject list — ranked rows with real cover art (Malaka Books
+   reference), same editorial-row pattern as .bab-list. === */
+.subject-list{display:flex;flex-direction:column;border-top:1px solid var(--line);}
+.subject-row{
+  display:flex;align-items:center;gap:18px;padding:16px 4px;
+  border-bottom:1px solid var(--line);cursor:pointer;
+  transition:transform .15s,background .15s;
 }
-.subject-item{cursor:pointer;}
-.subject-item.soon{cursor:default;}
-.book-cover{
-  position:relative;aspect-ratio:3/4;border-radius:14px;padding:18px;
-  display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;
-  transition:transform .18s,box-shadow .18s;
+.subject-row:hover{transform:translateX(6px);background:var(--paper-2);}
+.subject-row .subject-rank{
+  font-family:'IBM Plex Mono';font-size:1.05rem;font-weight:600;color:var(--line);
+  flex-shrink:0;width:2ch;text-align:center;
 }
-.subject-item:not(.soon):hover .book-cover{transform:translateY(-4px);box-shadow:var(--shadow);}
-.book-cover h3{color:#fff;font-size:1.05rem;margin:0 0 4px;}
-.book-cover p{color:rgba(255,255,255,0.78);font-size:.78rem;margin:0;line-height:1.4;}
-.book-status{
-  position:absolute;top:14px;right:14px;font-family:'Space Grotesk';font-size:.64rem;
-  text-transform:uppercase;letter-spacing:.05em;padding:4px 9px;border-radius:20px;
-  background:rgba(255,255,255,0.2);color:#fff;
+.subject-row:hover .subject-rank{color:var(--orange);}
+.subject-row .subject-cover{
+  width:52px;height:68px;flex-shrink:0;object-fit:contain;border-radius:6px;
+  background:var(--paper-2);
 }
-.subject-item.soon .book-cover{opacity:.55;}
-.book-cover--amber{background:linear-gradient(160deg,var(--amber),var(--orange-dark));}
-.book-cover--green{background:linear-gradient(160deg,var(--green),#1f7a43);}
-.book-cover--blue{background:linear-gradient(160deg,var(--blue),#1c4f8f);}
-.book-cover--pink{background:linear-gradient(160deg,var(--pink),#9c2455);}
-.book-cover--purple{background:linear-gradient(160deg,var(--purple),#4c2f96);}
-
-.subject-meta{display:flex;align-items:flex-start;gap:10px;margin-top:14px;}
-.subject-meta .subj-icon-wrap{
-  width:34px;height:34px;border-radius:10px;background:var(--paper-2);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+.subject-row .subject-body{flex:1;min-width:0;}
+.subject-row h3{font-size:1.02rem;margin:0 0 4px;}
+.subject-row p{font-size:.84rem;color:var(--slate);margin:0;}
+.subject-row .subject-status-badge{
+  font-family:'Space Grotesk';font-size:.66rem;font-weight:600;flex-shrink:0;
+  padding:4px 10px;border-radius:14px;white-space:nowrap;
 }
-.subject-meta .subj-icon-wrap .icon{width:1.15em;height:1.15em;color:var(--orange-dark);}
-.subj-meta-body{min-width:0;}
-.subj-meta-name{display:flex;align-items:center;gap:6px;font-weight:600;font-size:.92rem;}
-.subj-meta-name .subj-arrow{
-  color:var(--line);opacity:0;transform:translateX(-4px);
+.subject-row .status-ready{background:rgba(47,158,110,0.12);color:var(--success);}
+.subject-row .status-soon{background:var(--paper-2);color:var(--slate);}
+.subject-row.soon{opacity:.7;cursor:default;}
+.subject-row.soon:hover{transform:none;background:none;}
+.subject-row .subj-arrow{
+  color:var(--slate);opacity:0;transform:translateX(-4px);flex-shrink:0;
   transition:opacity .15s,transform .15s,color .15s;
 }
-.subject-item:hover .subj-meta-name .subj-arrow{opacity:1;transform:translateX(0);color:var(--orange-dark);}
-.subject-meta p{font-size:.78rem;color:var(--slate);margin:2px 0 0;}
+.subject-row:hover .subj-arrow{opacity:1;transform:translateX(0);color:var(--orange-dark);}
+
+/* Small colored "book cover" — still used by the continue-banner's mini
+   card (a title/subject label over a semantic-hue gradient, not the
+   photo cover art above). Solid per-subject hues, independently darkened
+   to clear 4.5:1 for the white card text (measured 5.6-7.2:1 here, not
+   the shared --amber/--green/etc. tokens, which stay unchanged for their
+   other uses as icon/link colors). */
+.book-cover{
+  position:relative;border-radius:14px;
+  display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;
+}
+.book-cover--amber{background:linear-gradient(160deg,#905c11,#794e0e);}
+.book-cover--green{background:linear-gradient(160deg,#2e7543,#276238);}
+.book-cover--blue{background:linear-gradient(160deg,#2067bb,#1b579e);}
+.book-cover--pink{background:linear-gradient(160deg,#c51f5c,#a71a4e);}
+.book-cover--purple{background:linear-gradient(160deg,#753df4,#5d1cf2);}
 
 /* === Home hero layout — text column + optional visual anchor. The image
    slot degrades gracefully (collapses to single column via JS onerror)
@@ -528,7 +555,7 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
   width:110px;flex-shrink:0;padding:12px;display:none;
 }
 .continue-banner .book-cover--mini h4{color:#fff;font-size:.78rem;margin:0 0 4px;line-height:1.25;}
-.continue-banner .mini-eyebrow{font-family:'Space Grotesk';font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,0.7);}
+.continue-banner .mini-eyebrow{font-family:'Space Grotesk';font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,0.92);}
 @media(min-width:560px){
   .continue-banner .book-cover--mini{display:flex;}
 }
@@ -573,11 +600,7 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 /* === HERO === */
 .hero{
   padding:90px 0 70px;
-  background:
-    radial-gradient(ellipse 900px 500px at 85% -10%, rgba(238,125,49,0.16), transparent 60%),
-    linear-gradient(180deg, var(--paper) 0%, var(--paper) 100%);
-  overflow:hidden;
-  position:relative;
+  background:var(--paper);
 }
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;}
 .hero-grid.single{grid-template-columns:1fr;max-width:720px;}
@@ -1085,11 +1108,20 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
   .grid-5{grid-template-columns:repeat(3,1fr);}
   .organel-grid{grid-template-columns:repeat(2,1fr);}
 }
-@media(max-width:680px){
-  nav.links{position:fixed;top:64px;left:0;right:0;background:var(--paper);flex-direction:column;align-items:stretch;padding:12px 20px;border-bottom:1px solid var(--line);display:none;gap:2px;}
-  nav.links.open{display:flex;}
-  nav.links a{padding:12px;}
+@media(max-width:900px){
+  .app-shell{flex-direction:column;}
+  .mobile-topbar{display:flex;}
+  .sidebar{
+    position:fixed;top:0;left:0;z-index:220;
+    transform:translateX(-100%);transition:transform .25s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);
+  }
+  .sidebar.open{transform:translateX(0);}
+  .sidebar-backdrop.open{display:block;opacity:1;pointer-events:auto;}
   .hamburger{display:flex;}
+  .lesson-subnav{top:58px;}
+}
+@media(max-width:680px){
   .sector-grid{grid-template-columns:1fr 1fr;}
   .role-cards{grid-template-columns:1fr;}
   .principle-grid{grid-template-columns:repeat(2,1fr);}
@@ -1100,7 +1132,6 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
   .hero h1{font-size:2rem;}
   section{padding:56px 0;}
   .brand-sub{font-size:.7rem;letter-spacing:.06em;}
-  .lesson-subnav{top:96px;}
   .lesson-subnav-inner{padding:10px 20px;}
   .grid-3{grid-template-columns:1fr;}
   .grid-4{grid-template-columns:1fr;}

@@ -1,2 +1,8 @@
 node_modules/
 .vercel/
+
+# Impeccable live-mode runtime state (not project source; config.json itself is tracked)
+.impeccable/live/server.json
+.impeccable/live/roots.json
+.impeccable/live/sessions/
+.impeccable/live/inject-journal.json
