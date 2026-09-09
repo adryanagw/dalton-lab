@@ -103,6 +103,15 @@ body, body *{
   transition-duration: .25s;
   transition-timing-function: ease;
 }
+/* The theme toggle's circular wipe (app.js) hides the live DOM behind
+   static view-transition snapshots for its whole duration — so the
+   rule above fires invisibly on every element in the tree at once
+   during that window, purely as wasted main-thread style/paint work
+   competing with the clip-path animation for frames. Suppressed while
+   the wipe is running; nothing below is visible then anyway. */
+.theme-wipe-active, .theme-wipe-active *{
+  transition: none !important;
+}
 h1,h2,h3,h4{
   font-family:'Space Grotesk',sans-serif;
   color:var(--heading);

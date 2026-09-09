@@ -78,7 +78,15 @@ function applyThemeAttr(theme){
 }
 function setTheme(theme, originEvent){
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!document.startViewTransition || prefersReduced){
+  // Mobile browsers — especially in-app browsers (WhatsApp, Instagram,
+  // etc.) with a collapsing address-bar chrome — can resize the viewport
+  // mid-transition, desyncing the frozen view-transition snapshot from
+  // the live layout and leaving a permanent split/ghosted frame instead
+  // of a brief wipe. The circle is also barely visible on a phone-sized
+  // screen anyway, so skip it below the sidebar breakpoint and just
+  // swap instantly there.
+  const isMobileViewport = window.innerWidth <= 900;
+  if(!document.startViewTransition || prefersReduced || isMobileViewport){
     applyThemeAttr(theme);
     return;
   }
@@ -88,13 +96,20 @@ function setTheme(theme, originEvent){
     Math.max(x, window.innerWidth - x),
     Math.max(y, window.innerHeight - y)
   );
+  // The live DOM is fully hidden behind static view-transition snapshots
+  // for the wipe's duration, so the per-element color transitions below
+  // would otherwise fire invisibly on every node at once — pure
+  // main-thread contention that was stuttering the clip-path animation
+  // right around screen-center. Suppressed for the wipe only.
+  document.documentElement.classList.add('theme-wipe-active');
   const transition = document.startViewTransition(() => applyThemeAttr(theme));
-  transition.ready.then(()=>{
-    document.documentElement.animate(
+  transition.ready
+    .then(()=> document.documentElement.animate(
       { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`] },
-      { duration: 550, easing: 'ease-in-out', pseudoElement: '::view-transition-new(root)' }
-    );
-  }).catch(()=>{});
+      { duration: 600, easing: 'ease-in-out', pseudoElement: '::view-transition-new(root)' }
+    ).finished)
+    .catch(()=>{})
+    .finally(()=> document.documentElement.classList.remove('theme-wipe-active'));
 }
 document.querySelectorAll('.theme-toggle').forEach(btn=>{
   btn.addEventListener('click', e=>{
@@ -171,24 +186,31 @@ const subjectsData = {
 };
 
 /* =====================================================================
-   PACKAGES — all-access bundles. EDIT the prices/durations here, and
-   PAYMENT_INFO_HTML below with your real bank/QRIS details, before
-   going live.
+   PACKAGES — all-access bundles. Pricing is admin-editable (admin.html
+   "Kelola Paket"), stored in the packages table, and fetched below.
+   These are just the fallback shown for the first paint / if the fetch
+   fails, so the pricing panel is never empty.
    ===================================================================== */
-const PACKAGES = [
+let PACKAGES = [
   { id: 'p30',  label: '1 Bulan', hari: 30,  harga: 49000,  note: '' },
   { id: 'p90',  label: '3 Bulan', hari: 90,  harga: 129000, note: 'Hemat 12%' },
   { id: 'p365', label: '1 Tahun', hari: 365, harga: 399000, note: 'Paling Worth It' },
 ];
 
-// EDIT: ganti dengan rekening/QRIS asli sebelum go-live.
 const PAYMENT_INFO_HTML = `
-  <div class="pay-row"><span>Transfer Bank</span><b>BCA 1234567890 a.n. Dalton Lab</b></div>
+  <div class="pay-row"><span>Transfer Bank</span><b>BCA 1100336908 a.n. Adryan Allen Gerald</b></div>
   <div class="pay-row"><span>QRIS / E-wallet</span><b>Ketik "QRIS" di chat WhatsApp</b></div>
 `;
 
 function fmtRp(n) {
   return 'Rp ' + Number(n).toLocaleString('id-ID');
+}
+
+function isValidEmail(str) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str);
+}
+function isValidWaNumber(str) {
+  return /^(?:\+?62|0)8\d{7,11}$/.test(str.replace(/[\s-]/g, ''));
 }
 
 /* ===== WhatsApp marketing links ===== */
@@ -231,6 +253,12 @@ function renderPackages() {
   });
 }
 renderPackages();
+fetch('/api/packages').then(r => r.json()).then(data => {
+  if (data.success && Array.isArray(data.packages) && data.packages.length) {
+    PACKAGES = data.packages;
+    renderPackages();
+  }
+}).catch(()=>{});
 
 function selectPackage(pkgId) {
   selectedPackage = PACKAGES.find(p => p.id === pkgId);
@@ -253,6 +281,7 @@ function resetOrderPanel() {
   document.getElementById('orderError').classList.remove('show');
   document.getElementById('orderNama').value = '';
   document.getElementById('orderWa').value = '';
+  document.getElementById('orderEmail').value = '';
   document.getElementById('orderUsername').value = '';
 }
 
@@ -273,11 +302,14 @@ document.getElementById('orderSubmitBtn').addEventListener('click', submitOrder)
 async function submitOrder() {
   const nama = document.getElementById('orderNama').value.trim();
   const wa = document.getElementById('orderWa').value.trim();
+  const email = document.getElementById('orderEmail').value.trim();
   const username = document.getElementById('orderUsername').value.trim().toLowerCase();
   document.getElementById('orderError').classList.remove('show');
 
   if (!selectedPackage) { showOrderError('Pilih paketnya dulu ya.'); return; }
-  if (!nama || !wa || !username) { showOrderError('Nama, WhatsApp, sama username-nya diisi dulu ya.'); return; }
+  if (!nama || !wa || !email || !username) { showOrderError('Nama, WhatsApp, email, sama username-nya diisi dulu ya.'); return; }
+  if (!isValidWaNumber(wa)) { showOrderError('Nomor WhatsApp-nya kayaknya belum bener nih. Contoh: 08123456789.'); return; }
+  if (!isValidEmail(email)) { showOrderError('Formatnya emailnya belum bener nih. Contoh: kamu@email.com.'); return; }
 
   const btn = document.getElementById('orderSubmitBtn');
   btn.disabled = true;
@@ -287,7 +319,7 @@ async function submitOrder() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        nama, whatsapp: wa, username,
+        nama, whatsapp: wa, email, username,
         paket: selectedPackage.label, durasiHari: selectedPackage.hari, harga: selectedPackage.harga
       })
     });
@@ -327,6 +359,13 @@ function saveSession(session){
   renderSessionBadge();
 }
 function clearSession(){
+  // Free this device's slot against the 2-device cap server-side too —
+  // otherwise "Keluar" only forgets the session locally, and this device
+  // keeps occupying a slot until it naturally goes stale (see login.js).
+  const s = getSession();
+  if(s && s.token){
+    fetch('/api/login', { method:'DELETE', headers:{'Authorization':'Bearer '+s.token} }).catch(()=>{});
+  }
   localStorage.removeItem('daltonlab_session');
   renderSessionBadge();
 }

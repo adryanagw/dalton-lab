@@ -6,6 +6,9 @@
  */
 const { sql, ensureSchema } = require('./_db');
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const WA_RE = /^(?:\+?62|0)8\d{7,11}$/;
+
 function generateOrderId() {
   const now = new Date();
   const parts = new Intl.DateTimeFormat('en-CA', {
@@ -28,12 +31,21 @@ module.exports = async function handler(req, res) {
   const username = String((body && body.username) || '').trim().toLowerCase();
   const nama = String((body && body.nama) || '').trim();
   const whatsapp = String((body && body.whatsapp) || '').trim();
+  const email = String((body && body.email) || '').trim();
   const paket = String((body && body.paket) || '').trim();
   const durasiHari = Number((body && body.durasiHari) || 0);
   const harga = Number((body && body.harga) || 0);
 
-  if (!username || !nama || !whatsapp || !paket || !durasiHari) {
+  if (!username || !nama || !whatsapp || !email || !paket || !durasiHari) {
     res.status(400).json({ success: false, message: 'Data pesanan tidak lengkap.' });
+    return;
+  }
+  if (!WA_RE.test(whatsapp.replace(/[\s-]/g, ''))) {
+    res.status(400).json({ success: false, message: 'Nomor WhatsApp-nya kayaknya belum bener nih.' });
+    return;
+  }
+  if (!EMAIL_RE.test(email)) {
+    res.status(400).json({ success: false, message: 'Formatnya emailnya belum bener nih.' });
     return;
   }
 
@@ -41,8 +53,8 @@ module.exports = async function handler(req, res) {
     await ensureSchema();
     const orderId = generateOrderId();
     await sql`
-      INSERT INTO orders (order_id, username, nama, whatsapp, paket, durasi_hari, harga, status)
-      VALUES (${orderId}, ${username}, ${nama}, ${whatsapp}, ${paket}, ${durasiHari}, ${harga}, 'pending')
+      INSERT INTO orders (order_id, username, nama, whatsapp, email, paket, durasi_hari, harga, status)
+      VALUES (${orderId}, ${username}, ${nama}, ${whatsapp}, ${email}, ${paket}, ${durasiHari}, ${harga}, 'pending')
     `;
     res.status(200).json({ success: true, orderId });
   } catch (err) {

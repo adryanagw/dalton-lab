@@ -60,6 +60,7 @@ async function ensureSchema() {
         username     TEXT NOT NULL,
         nama         TEXT NOT NULL,
         whatsapp     TEXT NOT NULL,
+        email        TEXT,
         paket        TEXT NOT NULL,
         durasi_hari  INTEGER NOT NULL,
         harga        INTEGER NOT NULL,
@@ -93,13 +94,56 @@ async function ensureSchema() {
         level       TEXT,
         created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
       )
+    `,
+    // Admin-editable package pricing — seeded below with the original
+    // hardcoded values so behavior is unchanged until an admin edits one.
+    sql`
+      CREATE TABLE IF NOT EXISTS packages (
+        id         TEXT PRIMARY KEY,
+        label      TEXT NOT NULL,
+        hari       INTEGER NOT NULL,
+        harga      INTEGER NOT NULL,
+        note       TEXT NOT NULL DEFAULT '',
+        sort_order INTEGER NOT NULL DEFAULT 0
+      )
+    `,
+    // One row per logged-in device for a student account. A device's
+    // session id (sid) is embedded in its signed token at login and
+    // deleted here on an explicit sign-out (see api/logout.js) — this is
+    // what /api/login counts against the 2-device cap. created_at is
+    // "when this device logged in," not a live last-activity clock (no
+    // protected endpoint touches this table per-request), used both for
+    // admin display and to auto-reclaim a slot abandoned >30 days ago
+    // instead of permanently locking a student out over a lost device.
+    sql`
+      CREATE TABLE IF NOT EXISTS sessions (
+        id         SERIAL PRIMARY KEY,
+        username   TEXT NOT NULL,
+        sid        TEXT UNIQUE NOT NULL,
+        user_agent TEXT,
+        created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+      )
     `
   ]);
 
   await Promise.all([
     sql`CREATE INDEX IF NOT EXISTS idx_orders_status ON orders (status)`,
-    sql`CREATE INDEX IF NOT EXISTS idx_quiz_results_username ON quiz_results (username)`
+    sql`CREATE INDEX IF NOT EXISTS idx_quiz_results_username ON quiz_results (username)`,
+    sql`CREATE INDEX IF NOT EXISTS idx_sessions_username ON sessions (username)`
   ]);
+
+  // Retrofits for columns/tables added after the orders table already
+  // existed live — CREATE TABLE IF NOT EXISTS above is a no-op once a
+  // table exists, so a new column needs its own idempotent migration.
+  await sql`ALTER TABLE orders ADD COLUMN IF NOT EXISTS email TEXT`;
+
+  await sql`
+    INSERT INTO packages (id, label, hari, harga, note, sort_order) VALUES
+      ('p30',  '1 Bulan', 30,  49000,  '', 0),
+      ('p90',  '3 Bulan', 90,  129000, 'Hemat 12%', 1),
+      ('p365', '1 Tahun', 365, 399000, 'Paling Worth It', 2)
+    ON CONFLICT (id) DO NOTHING
+  `;
 
   schemaEnsured = true;
 }
