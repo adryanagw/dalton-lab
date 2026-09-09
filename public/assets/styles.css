@@ -470,7 +470,7 @@ section.tight{padding:60px 0;}
    reference), same editorial-row pattern as .bab-list. === */
 .subject-list{display:flex;flex-direction:column;border-top:1px solid var(--line);}
 .subject-row{
-  display:flex;align-items:center;gap:18px;padding:16px 4px;
+  display:flex;align-items:center;gap:22px;padding:14px 4px;
   border-bottom:1px solid var(--line);cursor:pointer;
   transition:transform .15s,background .15s;
 }
@@ -481,12 +481,13 @@ section.tight{padding:60px 0;}
 }
 .subject-row:hover .subject-rank{color:var(--orange);}
 .subject-row .subject-cover{
-  width:52px;height:68px;flex-shrink:0;object-fit:contain;border-radius:6px;
-  background:var(--paper-2);
+  width:84px;height:108px;flex-shrink:0;object-fit:contain;border-radius:6px;
+  background:var(--paper-2);box-shadow:0 4px 12px rgba(13,27,46,.15);
 }
-.subject-row .subject-body{flex:1;min-width:0;}
-.subject-row h3{font-size:1.02rem;margin:0 0 4px;}
-.subject-row p{font-size:.84rem;color:var(--slate);margin:0;}
+.subject-row .subject-body{
+  flex:1;min-width:0;margin:0;
+  font-family:'Space Grotesk';font-weight:600;font-size:1.1rem;color:var(--heading);
+}
 .subject-row .subject-status-badge{
   font-family:'Space Grotesk';font-size:.66rem;font-weight:600;flex-shrink:0;
   padding:4px 10px;border-radius:14px;white-space:nowrap;
