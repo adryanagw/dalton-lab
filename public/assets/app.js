@@ -106,7 +106,7 @@ function setTheme(theme, originEvent){
   transition.ready
     .then(()=> document.documentElement.animate(
       { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`] },
-      { duration: 600, easing: 'ease-in-out', pseudoElement: '::view-transition-new(root)' }
+      { duration: 1200, easing: 'ease-in-out', pseudoElement: '::view-transition-new(root)' }
     ).finished)
     .catch(()=>{})
     .finally(()=> document.documentElement.classList.remove('theme-wipe-active'));
