@@ -52,34 +52,82 @@ function icon(name, extraClass){
   return `<svg class="icon${extraClass ? ' ' + extraClass : ''}" viewBox="0 0 24 24" aria-hidden="true">${path}</svg>`;
 }
 
-/* ===== Theme toggle ===== */
+/* ===== Theme toggle =====
+   Switching themes does a circular reveal expanding from wherever the
+   toggle button was clicked, via the View Transitions API — the new
+   theme wipes in as a growing circle over the old one. Works identically
+   in both directions (light→dark and dark→light) since it's always the
+   *incoming* theme that expands, never a fixed "light wipes over dark"
+   or vice versa. Falls back to an instant swap on unsupported browsers
+   or reduced-motion. */
 function getCurrentTheme(){
   return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
 }
-function setTheme(theme){
+function applyThemeAttr(theme){
   if(theme === 'dark'){
     document.documentElement.setAttribute('data-theme','dark');
   } else {
     document.documentElement.removeAttribute('data-theme');
   }
   try{ localStorage.setItem('daltonlab_theme', theme); }catch(e){}
-  const toggleBtn = document.getElementById('themeToggle');
-  if(toggleBtn){
-    toggleBtn.setAttribute('aria-pressed', theme === 'dark');
-    toggleBtn.title = theme === 'dark' ? 'Ganti ke tema terang' : 'Ganti ke tema gelap';
-  }
+  document.querySelectorAll('.theme-toggle').forEach(btn=>{
+    btn.setAttribute('aria-pressed', theme === 'dark');
+    btn.title = theme === 'dark' ? 'Ganti ke tema terang' : 'Ganti ke tema gelap';
+  });
 }
-document.getElementById('themeToggle').addEventListener('click',()=>{
-  setTheme(getCurrentTheme() === 'dark' ? 'light' : 'dark');
+function setTheme(theme, originEvent){
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!document.startViewTransition || prefersReduced){
+    applyThemeAttr(theme);
+    return;
+  }
+  const x = originEvent ? originEvent.clientX : window.innerWidth - 32;
+  const y = originEvent ? originEvent.clientY : 32;
+  const endRadius = Math.hypot(
+    Math.max(x, window.innerWidth - x),
+    Math.max(y, window.innerHeight - y)
+  );
+  const transition = document.startViewTransition(() => applyThemeAttr(theme));
+  transition.ready.then(()=>{
+    document.documentElement.animate(
+      { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`] },
+      { duration: 550, easing: 'ease-in-out', pseudoElement: '::view-transition-new(root)' }
+    );
+  }).catch(()=>{});
+}
+document.querySelectorAll('.theme-toggle').forEach(btn=>{
+  btn.addEventListener('click', e=>{
+    setTheme(getCurrentTheme() === 'dark' ? 'light' : 'dark', e);
+  });
 });
-setTheme(getCurrentTheme());
+applyThemeAttr(getCurrentTheme());
 
-/* ===== Mobile nav ===== */
-document.getElementById('hamburgerBtn').addEventListener('click',()=>{
-  document.getElementById('navLinks').classList.toggle('open');
+/* ===== Mobile sidebar drawer ===== */
+const sidebarEl = document.getElementById('sidebar');
+const sidebarBackdropEl = document.getElementById('sidebarBackdrop');
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+function openSidebar(){
+  sidebarEl.classList.add('open');
+  sidebarBackdropEl.classList.add('open');
+  hamburgerBtn.setAttribute('aria-expanded','true');
+}
+function closeSidebar(){
+  sidebarEl.classList.remove('open');
+  sidebarBackdropEl.classList.remove('open');
+  hamburgerBtn.setAttribute('aria-expanded','false');
+}
+hamburgerBtn.addEventListener('click',()=>{
+  sidebarEl.classList.contains('open') ? closeSidebar() : openSidebar();
 });
+sidebarBackdropEl.addEventListener('click', closeSidebar);
 document.querySelectorAll('#navLinks a').forEach(a=>{
-  a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
+  a.addEventListener('click', closeSidebar);
+});
+document.addEventListener('keydown', e=>{
+  if(e.key === 'Escape') closeSidebar();
+});
+document.getElementById('logoHomeMobile').addEventListener('click', e=>{
+  e.preventDefault(); closeSidebar(); goToHome();
 });
 
 /* =====================================================================
@@ -372,19 +420,18 @@ function makeRowFocusable(el, activate){
 
 function renderSubjectGrid(){
   const grid = document.getElementById('subjectGrid');
-  grid.innerHTML = Object.entries(subjectsData).map(([key,s])=>`
-    <div class="subject-item ${s.ready?'ready':'soon'}" data-subject="${key}" aria-label="${s.name}">
-      <div class="book-cover book-cover--${s.color}">
-        <span class="book-status">${s.ready ? 'Tersedia' : 'Segera Hadir'}</span>
+  grid.innerHTML = Object.entries(subjectsData).map(([key,s],i)=>`
+    <div class="subject-row ${s.ready?'ready':'soon'}" data-subject="${key}" aria-label="${s.name}">
+      <span class="subject-rank mono">${i+1}</span>
+      <img class="subject-cover" src="assets/img/covers/${key}.png" alt="" loading="lazy">
+      <div class="subject-body">
         <h3>${s.name}</h3>
         <p>${s.desc}</p>
       </div>
-      <div class="subject-meta">
-        <span class="subj-icon-wrap">${icon(s.icon)}</span>
-        ${s.ready ? icon('arrow-right','subj-arrow') : `<span class="subj-meta-soon">Segera hadir</span>`}
-      </div>
+      <span class="subject-status-badge ${s.ready?'status-ready':'status-soon'}">${s.ready ? 'Tersedia' : 'Segera Hadir'}</span>
+      ${s.ready ? icon('arrow-right','subj-arrow') : ''}
     </div>`).join('');
-  grid.querySelectorAll('.subject-item').forEach(row=>{
+  grid.querySelectorAll('.subject-row').forEach(row=>{
     const go = ()=>enterSubject(row.dataset.subject);
     row.addEventListener('click',go);
     makeRowFocusable(row, go);
