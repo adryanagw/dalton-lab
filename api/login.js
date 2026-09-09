@@ -8,20 +8,43 @@
  * Also enforces a 2-device cap per account: each successful login rows
  * itself into `sessions`, and a login attempt is refused once 2 rows
  * already exist for that username — the student has to sign out of one
- * of the other devices (frees the row via /api/logout) before a new one
- * can log in. The oldest row is auto-reclaimed instead of blocking
+ * of the other devices (frees the row via DELETE /api/login) before a new
+ * one can log in. The oldest row is auto-reclaimed instead of blocking
  * forever if it's more than 30 days old, so a lost/abandoned device
  * doesn't permanently eat a slot.
+ *
+ * DELETE /api/login — logout. Frees this device's slot against the
+ * 2-device cap above by deleting its session row. Uses signature-only
+ * verification (not the full verifyToken expiry check) so a student
+ * whose subscription has lapsed can still sign out and free the slot
+ * instead of being stuck occupying it until they renew. Always responds
+ * success — signing out of an already-dead/invalid session isn't an
+ * error from the client's point of view.
  */
 const crypto = require('crypto');
 const { sql, ensureSchema } = require('./_db');
 const { verifyPassword } = require('./_password');
-const { signToken } = require('./_auth');
+const { signToken, verifySignature, getBearerToken } = require('./_auth');
 
 const MAX_DEVICES = 2;
 const STALE_SESSION_DAYS = 30;
 
 module.exports = async function handler(req, res) {
+  if (req.method === 'DELETE') {
+    const payload = verifySignature(getBearerToken(req));
+    if (payload && payload.u && payload.s) {
+      try {
+        await ensureSchema();
+        await sql`DELETE FROM sessions WHERE username = ${payload.u} AND sid = ${payload.s}`;
+      } catch (err) {
+        // Non-critical — the session row will still auto-reclaim after
+        // STALE_SESSION_DAYS if this delete didn't go through.
+      }
+    }
+    res.status(200).json({ success: true });
+    return;
+  }
+
   if (req.method !== 'POST') {
     res.status(405).json({ success: false, message: 'Method not allowed.' });
     return;

@@ -288,10 +288,10 @@ async function approveOrder(orderId, btn){
   const token = getToken();
   btn.disabled = true; btn.textContent = 'Memproses…';
   try{
-    const res = await fetch('/api/admin/approve', {
+    const res = await fetch('/api/admin/orders', {
       method:'POST',
       headers:{'Content-Type':'application/json', 'Authorization':'Bearer ' + token},
-      body: JSON.stringify({orderId})
+      body: JSON.stringify({orderId, action:'approve'})
     });
     if(res.status === 401){ clearToken(); showLogin(); return; }
     const data = await res.json();
@@ -312,10 +312,10 @@ async function rejectOrder(orderId, btn){
   const token = getToken();
   btn.disabled = true; btn.textContent = 'Memproses…';
   try{
-    const res = await fetch('/api/admin/reject', {
+    const res = await fetch('/api/admin/orders', {
       method:'POST',
       headers:{'Content-Type':'application/json', 'Authorization':'Bearer ' + token},
-      body: JSON.stringify({orderId})
+      body: JSON.stringify({orderId, action:'reject'})
     });
     if(res.status === 401){ clearToken(); showLogin(); return; }
     const data = await res.json();
@@ -457,7 +457,7 @@ async function savePackages(){
   const btn = document.getElementById('savePkgBtn');
   btn.disabled = true; btn.textContent = 'Menyimpan…';
   try{
-    const res = await fetch('/api/admin/packages', {
+    const res = await fetch('/api/packages', {
       method: 'PUT',
       headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token},
       body: JSON.stringify({packages})

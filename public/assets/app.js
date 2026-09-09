@@ -364,7 +364,7 @@ function clearSession(){
   // keeps occupying a slot until it naturally goes stale (see login.js).
   const s = getSession();
   if(s && s.token){
-    fetch('/api/logout', { method:'POST', headers:{'Authorization':'Bearer '+s.token} }).catch(()=>{});
+    fetch('/api/login', { method:'DELETE', headers:{'Authorization':'Bearer '+s.token} }).catch(()=>{});
   }
   localStorage.removeItem('daltonlab_session');
   renderSessionBadge();
