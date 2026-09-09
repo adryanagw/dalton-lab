@@ -94,6 +94,18 @@ async function ensureSchema() {
         level       TEXT,
         created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
       )
+    `,
+    // Admin-editable package pricing — seeded below with the original
+    // hardcoded values so behavior is unchanged until an admin edits one.
+    sql`
+      CREATE TABLE IF NOT EXISTS packages (
+        id         TEXT PRIMARY KEY,
+        label      TEXT NOT NULL,
+        hari       INTEGER NOT NULL,
+        harga      INTEGER NOT NULL,
+        note       TEXT NOT NULL DEFAULT '',
+        sort_order INTEGER NOT NULL DEFAULT 0
+      )
     `
   ]);
 
@@ -106,6 +118,14 @@ async function ensureSchema() {
   // existed live — CREATE TABLE IF NOT EXISTS above is a no-op once a
   // table exists, so a new column needs its own idempotent migration.
   await sql`ALTER TABLE orders ADD COLUMN IF NOT EXISTS email TEXT`;
+
+  await sql`
+    INSERT INTO packages (id, label, hari, harga, note, sort_order) VALUES
+      ('p30',  '1 Bulan', 30,  49000,  '', 0),
+      ('p90',  '3 Bulan', 90,  129000, 'Hemat 12%', 1),
+      ('p365', '1 Tahun', 365, 399000, 'Paling Worth It', 2)
+    ON CONFLICT (id) DO NOTHING
+  `;
 
   schemaEnsured = true;
 }

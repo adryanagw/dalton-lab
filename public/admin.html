@@ -74,6 +74,18 @@
   #refreshBtn{background:none; border:1px solid var(--line); color:var(--slate); padding:8px 14px; border-radius:8px; font-size:.8rem; cursor:pointer;}
   #refreshBtn:hover{border-color:var(--orange); color:var(--orange-dark);}
   .toolbar{display:flex; justify-content:flex-end; margin-bottom:6px;}
+
+  .pkg-editor{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:8px 20px;}
+  .pkg-row{display:flex; gap:14px; align-items:flex-end; padding:14px 0; border-bottom:1px solid var(--line); flex-wrap:wrap;}
+  .pkg-row:last-child{border-bottom:none;}
+  .pkg-field{flex:1; min-width:120px;}
+  .pkg-field label{margin-bottom:4px;}
+  .pkg-field input{margin-bottom:0;}
+  .pkg-field.pkg-hari{max-width:90px;}
+  .pkg-field.pkg-harga{max-width:150px;}
+  .pkg-actions-row{display:flex; align-items:center; gap:12px; margin-top:16px;}
+  .saved-note{color:var(--success); font-size:.82rem; display:none;}
+  .saved-note.show{display:inline;}
 </style>
 </head>
 <body>
@@ -102,6 +114,14 @@
 
     <h2 class="section-title">Riwayat Terbaru</h2>
     <div id="recentList"></div>
+
+    <h2 class="section-title">Kelola Paket</h2>
+    <div class="pkg-editor" id="pkgEditor"><p class="empty">Memuat…</p></div>
+    <div class="pkg-actions-row">
+      <button class="btn" id="savePkgBtn">💾 Simpan Harga</button>
+      <span class="saved-note" id="pkgSavedNote">Tersimpan.</span>
+    </div>
+    <div class="error" id="pkgError"></div>
   </div>
 </div>
 
@@ -127,6 +147,7 @@ function showDashboard(){
   document.getElementById('loginView').style.display = 'none';
   document.getElementById('dashboardView').style.display = '';
   loadOrders();
+  loadPackages();
 }
 
 document.getElementById('loginBtn').addEventListener('click', attemptLogin);
@@ -286,6 +307,93 @@ async function rejectOrder(orderId, btn){
   }catch(e){
     alert('Gagal terhubung ke server.');
     btn.disabled = false; btn.textContent = '✕ Reject';
+  }
+}
+
+async function loadPackages(){
+  const editor = document.getElementById('pkgEditor');
+  try{
+    const res = await fetch('/api/packages');
+    const data = await res.json();
+    if(!data.success){ editor.innerHTML = `<p class="empty">${data.message || 'Gagal memuat paket.'}</p>`; return; }
+    renderPkgEditor(data.packages);
+  }catch(e){
+    editor.innerHTML = '<p class="empty">Gagal terhubung ke server.</p>';
+  }
+}
+
+function renderPkgEditor(packages){
+  const editor = document.getElementById('pkgEditor');
+  editor.innerHTML = packages.map(p => `
+    <div class="pkg-row" data-pkg-id="${escapeHtml(p.id)}">
+      <div class="pkg-field">
+        <label>Label</label>
+        <input type="text" class="pkg-label" value="${escapeHtml(p.label)}">
+      </div>
+      <div class="pkg-field pkg-hari">
+        <label>Hari</label>
+        <input type="text" inputmode="numeric" class="pkg-hari-input" value="${p.hari}">
+      </div>
+      <div class="pkg-field pkg-harga">
+        <label>Harga (Rp)</label>
+        <input type="text" inputmode="numeric" class="pkg-harga-input" value="${p.harga}">
+      </div>
+      <div class="pkg-field">
+        <label>Badge (opsional)</label>
+        <input type="text" class="pkg-note" value="${escapeHtml(p.note || '')}" placeholder="mis. Hemat 12%">
+      </div>
+    </div>`).join('');
+}
+
+document.getElementById('savePkgBtn').addEventListener('click', savePackages);
+
+async function savePackages(){
+  const token = getToken();
+  const errEl = document.getElementById('pkgError');
+  const savedNote = document.getElementById('pkgSavedNote');
+  errEl.classList.remove('show');
+  savedNote.classList.remove('show');
+
+  const rows = document.querySelectorAll('#pkgEditor .pkg-row');
+  const packages = Array.from(rows).map(row => ({
+    id: row.dataset.pkgId,
+    label: row.querySelector('.pkg-label').value.trim(),
+    hari: parseInt(row.querySelector('.pkg-hari-input').value, 10),
+    harga: parseInt(row.querySelector('.pkg-harga-input').value, 10),
+    note: row.querySelector('.pkg-note').value.trim(),
+  }));
+
+  for(const p of packages){
+    if(!p.label || !Number.isInteger(p.hari) || p.hari <= 0 || !Number.isInteger(p.harga) || p.harga <= 0){
+      errEl.textContent = `Cek lagi data paket "${p.label || p.id}" — label, hari, sama harganya harus keisi bener.`;
+      errEl.classList.add('show');
+      return;
+    }
+  }
+
+  const btn = document.getElementById('savePkgBtn');
+  btn.disabled = true; btn.textContent = 'Menyimpan…';
+  try{
+    const res = await fetch('/api/admin/packages', {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token},
+      body: JSON.stringify({packages})
+    });
+    if(res.status === 401){ clearToken(); showLogin(); return; }
+    const data = await res.json();
+    if(data.success){
+      renderPkgEditor(data.packages);
+      savedNote.classList.add('show');
+      setTimeout(()=>savedNote.classList.remove('show'), 3000);
+    } else {
+      errEl.textContent = data.message || 'Gagal menyimpan harga paket.';
+      errEl.classList.add('show');
+    }
+  }catch(e){
+    errEl.textContent = 'Gagal terhubung ke server.';
+    errEl.classList.add('show');
+  }finally{
+    btn.disabled = false; btn.textContent = '💾 Simpan Harga';
   }
 }
 

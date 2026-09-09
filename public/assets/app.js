@@ -178,11 +178,12 @@ const subjectsData = {
 };
 
 /* =====================================================================
-   PACKAGES — all-access bundles. EDIT the prices/durations here, and
-   PAYMENT_INFO_HTML below with your real bank/QRIS details, before
-   going live.
+   PACKAGES — all-access bundles. Pricing is admin-editable (admin.html
+   "Kelola Paket"), stored in the packages table, and fetched below.
+   These are just the fallback shown for the first paint / if the fetch
+   fails, so the pricing panel is never empty.
    ===================================================================== */
-const PACKAGES = [
+let PACKAGES = [
   { id: 'p30',  label: '1 Bulan', hari: 30,  harga: 49000,  note: '' },
   { id: 'p90',  label: '3 Bulan', hari: 90,  harga: 129000, note: 'Hemat 12%' },
   { id: 'p365', label: '1 Tahun', hari: 365, harga: 399000, note: 'Paling Worth It' },
@@ -244,6 +245,12 @@ function renderPackages() {
   });
 }
 renderPackages();
+fetch('/api/packages').then(r => r.json()).then(data => {
+  if (data.success && Array.isArray(data.packages) && data.packages.length) {
+    PACKAGES = data.packages;
+    renderPackages();
+  }
+}).catch(()=>{});
 
 function selectPackage(pkgId) {
   selectedPackage = PACKAGES.find(p => p.id === pkgId);
