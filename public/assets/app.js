@@ -44,7 +44,8 @@ const ICON_PATHS = {
   'trending-up': '<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
   'arrow-right': '<path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>',
   'arrow-left': '<path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/>',
-  sparkle: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2 2M16 16l2 2M6 18l2-2M16 8l2-2"/>'
+  sparkle: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2 2M16 16l2 2M6 18l2-2M16 8l2-2"/>',
+  'log-in': '<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/>'
 };
 function icon(name, extraClass){
   const path = ICON_PATHS[name];
@@ -349,8 +350,12 @@ function renderSessionBadge(){
       goToHome();
     });
   } else {
-    badge.style.display = 'none';
-    badge.innerHTML = '';
+    badge.style.display = 'flex';
+    badge.innerHTML = `<button id="signinNavBtn" class="session-signin-btn">${icon('log-in')}<span>Masuk</span></button>`;
+    document.getElementById('signinNavBtn').addEventListener('click',()=>{
+      closeSidebar();
+      goToSignIn();
+    });
   }
 }
 renderSessionBadge();
@@ -420,15 +425,13 @@ function makeRowFocusable(el, activate){
 
 function renderSubjectGrid(){
   const grid = document.getElementById('subjectGrid');
-  grid.innerHTML = Object.entries(subjectsData).map(([key,s],i)=>`
-    <div class="subject-row ${s.ready?'ready':'soon'}" data-subject="${key}" aria-label="${s.name}">
-      <span class="subject-rank mono">${i+1}</span>
-      <img class="subject-cover" src="assets/img/covers/${key}.png" alt="" loading="lazy">
-      <h3 class="subject-body">${s.name}</h3>
-      <span class="subject-status-badge ${s.ready?'status-ready':'status-soon'}">${s.ready ? 'Tersedia' : 'Segera Hadir'}</span>
-      ${s.ready ? icon('arrow-right','subj-arrow') : ''}
+  grid.innerHTML = Object.entries(subjectsData).map(([key,s])=>`
+    <div class="subject-card ${s.ready?'ready':'soon'}" data-subject="${key}" aria-label="${s.name}">
+      <img class="subject-card-cover" src="assets/img/covers/${key}.png" alt="" loading="lazy">
+      <h3>${s.name}</h3>
+      <span class="subject-card-badge ${s.ready?'status-ready':'status-soon'}">${s.ready ? 'Tersedia' : 'Segera Hadir'}</span>
     </div>`).join('');
-  grid.querySelectorAll('.subject-row').forEach(row=>{
+  grid.querySelectorAll('.subject-card').forEach(row=>{
     const go = ()=>enterSubject(row.dataset.subject);
     row.addEventListener('click',go);
     makeRowFocusable(row, go);
@@ -520,15 +523,18 @@ function goToSignIn(subjectKey){
   const expired = session && session.expiresAt;
   if(expired){
     const expiryStr = new Date(session.expiresAt).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+    const forWhat = s ? `lanjut belajar ${s.name}` : 'lanjut belajar';
     document.getElementById('signinTitle').textContent = 'Paketmu Udah Habis';
-    document.getElementById('signinSubtitle').textContent = `Halo ${session.nama || session.username}! Langgananmu berakhir ${expiryStr} — perpanjang buat lanjut belajar ${s.name}.`;
+    document.getElementById('signinSubtitle').textContent = `Halo ${session.nama || session.username}! Langgananmu berakhir ${expiryStr} — perpanjang buat ${forWhat}.`;
     // They're already identified; skip the login form and go straight to renewal.
     loginBlock.style.display = 'none';
     packagesPanel.style.display = '';
     toggleBtn.style.display = 'none';
   } else {
     document.getElementById('signinTitle').textContent = 'Siap lanjut belajar?';
-    document.getElementById('signinSubtitle').textContent = `Masuk buat buka materi ${s.name} dan mata pelajaran lainnya.`;
+    document.getElementById('signinSubtitle').textContent = s
+      ? `Masuk buat buka materi ${s.name} dan mata pelajaran lainnya.`
+      : 'Masuk buat lanjut belajar di Dalton Lab.';
     loginBlock.style.display = '';
     packagesPanel.style.display = 'none';
     toggleBtn.style.display = '';
@@ -768,7 +774,7 @@ async function attemptSignIn(){
       saveSession({username, nama:data.nama || username, expiresAt: data.expiresAt || null, token: data.token || null});
       await fetchProgress();
       if(hasAccess()){
-        goToBabs(activeSubjectKey);
+        activeSubjectKey ? goToBabs(activeSubjectKey) : goToHome();
       } else {
         showSigninError('Login berhasil! Tapi paketmu belum aktif/udah habis — beli paket di panel sebelah kanan ya.');
       }
