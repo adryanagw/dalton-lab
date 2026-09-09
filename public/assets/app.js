@@ -396,8 +396,8 @@ function markProgress(babId, status){
 // throw a ReferenceError for any returning logged-in student).
 {
   const initialSession = getSession();
+  updateHomeHero();
   if(initialSession){
-    document.getElementById('homeGreeting').textContent = `Halo, ${initialSession.nama || initialSession.username}! Mau belajar apa hari ini?`;
     fetchProgress().then(renderContinueBanner);
   }
 }
@@ -469,10 +469,7 @@ function renderContinueBanner(){
       ${meta}
       <span class="cb-cta">Lanjutkan belajar ${icon('arrow-right')}</span>
     </div>
-    <div class="book-cover book-cover--${found.subject.color} book-cover--mini">
-      <h4>${found.bab.title}</h4>
-      <span class="mini-eyebrow">${found.subject.name}</span>
-    </div>
+    <img class="cb-cover" src="assets/img/covers/${found.subjectKey}.png" alt="">
   `;
   const go = () => {
     activeSubjectKey = found.subjectKey;
@@ -489,6 +486,22 @@ function hideAllViews(){
   viewLesson.style.display = 'none';
 }
 
+function updateHomeHero(){
+  const session = getSession();
+  const homeGreeting = document.getElementById('homeGreeting');
+  const homeSubtext = document.getElementById('homeSubtext');
+  if(session && !hasAccess()){
+    homeGreeting.textContent = `Halo, ${session.nama || session.username}! Paketmu udah habis.`;
+    homeSubtext.innerHTML = `Progress belajarmu masih kesimpan — perpanjang buat lanjut. <a href="#" id="homeRenewLink" class="home-renew-link">Perpanjang paket →</a>`;
+    document.getElementById('homeRenewLink').addEventListener('click', e=>{ e.preventDefault(); goToSignIn(); });
+  } else {
+    homeGreeting.textContent = session
+      ? `Halo, ${session.nama || session.username}! Mau belajar apa hari ini?`
+      : 'Mau belajar apa hari ini?';
+    homeSubtext.textContent = 'Rangkuman tiap bab, latihan bertingkat, dan kuis interaktif untuk bantu kamu paham lebih cepat.';
+  }
+}
+
 function goToHome(){
   hideAllViews();
   viewHome.style.display = '';
@@ -496,10 +509,7 @@ function goToHome(){
   document.getElementById('navHomeLink').classList.add('active');
   renderSubjectGrid();
   renderContinueBanner();
-  const session = getSession();
-  document.getElementById('homeGreeting').textContent = session
-    ? `Halo, ${session.nama || session.username}! Mau belajar apa hari ini?`
-    : 'Mau belajar apa hari ini?';
+  updateHomeHero();
   window.scrollTo({top:0,behavior:'instant'});
 }
 
@@ -597,7 +607,7 @@ function goToBabs(subjectKey){
       <div class="bab-row ${b.ready?'':'soon'}" data-bab="${b.id}" aria-label="${b.title}">
         <span class="bab-num mono">${b.num.replace(/\D/g,'').padStart(2,'0')}</span>
         <div class="bab-body">
-          <h4>${b.title}</h4>
+          <h2>${b.title}</h2>
           <p>${b.desc}</p>
         </div>
         ${b.ready ? progBadge : '<span class="soon-tag">Segera Hadir</span>'}
@@ -736,12 +746,14 @@ document.getElementById('signinUsername').addEventListener('keydown', e=>{ if(e.
 
 document.getElementById('togglePackagesBtn').addEventListener('click', ()=>{
   const packagesPanel = document.getElementById('packagesPanel');
+  const loginBlock = document.getElementById('loginBlock');
   const opening = packagesPanel.style.display === 'none';
   packagesPanel.style.display = opening ? '' : 'none';
+  loginBlock.style.display = opening ? 'none' : '';
   document.getElementById('togglePackagesBtn').textContent = opening
     ? '← Kembali ke login'
     : 'Belum punya akses? Lihat paket →';
-  if(opening) packagesPanel.scrollIntoView({behavior:'smooth', block:'nearest'});
+  window.scrollTo({top:0,behavior:'smooth'});
 });
 
 function showSigninError(msg){

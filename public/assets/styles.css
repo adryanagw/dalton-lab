@@ -184,7 +184,7 @@ section.tight{padding:60px 0;}
 }
 
 /* === App shell (sidebar navigation, à la library-app reference) === */
-.app-shell{display:flex;min-height:100vh;align-items:flex-start;}
+.app-shell{display:flex;min-height:100vh;align-items:stretch;}
 
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .brand img{height:34px;width:auto;}
@@ -237,7 +237,11 @@ section.tight{padding:60px 0;}
   padding-top:16px;margin-top:12px;border-top:1px solid var(--line);
 }
 
-.app-main{flex:1;min-width:0;}
+/* Sticky footer lives at this level now: the view divs and .site-footer
+   are app-main's direct children (see body/#view-* rule above, which
+   this reuses), so app-main itself must be the flex column that
+   stretches them — .app-shell just stretches app-main to full height. */
+.app-main{flex:1;min-width:0;display:flex;flex-direction:column;}
 
 .hamburger{
   display:none;background:none;border:none;cursor:pointer;
@@ -294,16 +298,16 @@ section.tight{padding:60px 0;}
 }
 .bab-row:hover .bab-num{color:var(--orange);}
 .bab-row .bab-body{flex:1;min-width:0;}
-.bab-row h4{font-size:1.02rem;margin:0 0 4px;}
-.bab-row p{font-size:.84rem;color:var(--slate);margin:0;}
+.bab-row h2{font-size:1.02rem;font-weight:600;margin:0 0 4px;}
+.bab-row p{font-size:.84rem;color:var(--slate);margin:0;max-width:60ch;}
 .bab-row.soon{opacity:.55;cursor:default;}
 .bab-row.soon:hover{transform:none;background:none;}
 .bab-row .soon-tag{
-  font-family:'Space Grotesk';font-size:.66rem;flex-shrink:0;
+  font-family:'Space Grotesk';font-size:.72rem;flex-shrink:0;
   background:var(--paper-2);color:var(--slate);padding:4px 9px;border-radius:14px;
 }
 .bab-row .bab-progress{
-  font-family:'Space Grotesk';font-size:.66rem;flex-shrink:0;padding:4px 9px;border-radius:14px;
+  font-family:'Space Grotesk';font-size:.72rem;flex-shrink:0;padding:4px 9px;border-radius:14px;
 }
 .bab-progress.done{background:rgba(47,158,110,0.12);color:var(--success);}
 .bab-progress.ongoing{background:rgba(238,125,49,0.14);color:var(--orange-dark);}
@@ -460,6 +464,10 @@ section.tight{padding:60px 0;}
   transition:background .15s,transform .15s;
 }
 .tutor-strip-link:hover{background:var(--accent-hover);transform:translateY(-1px);}
+.home-renew-link{
+  font-weight:600;color:var(--orange-dark);text-decoration:underline;white-space:nowrap;
+}
+.home-renew-link:hover{color:var(--orange);}
 
 /* === Section heading above the subject grid — smaller than .section-head === */
 .section-head-sm{margin:44px 0 22px;}
@@ -469,7 +477,7 @@ section.tight{padding:60px 0;}
 /* === Subject list — horizontal scrolling cover-art cards (Malaka Books'
    "Terbaru" row reference), rather than a vertical list. === */
 .subject-list{
-  display:flex;gap:24px;overflow-x:auto;padding:4px 4px 14px;
+  display:flex;gap:24px;overflow-x:auto;padding:4px 20px 14px 4px;
   scroll-snap-type:x proximity;
 }
 .subject-card{
@@ -488,27 +496,11 @@ section.tight{padding:60px 0;}
   margin:0;font-family:'Space Grotesk';font-weight:600;font-size:1rem;color:var(--heading);
 }
 .subject-card .subject-card-badge{
-  align-self:flex-start;font-family:'Space Grotesk';font-size:.66rem;font-weight:600;
+  align-self:flex-start;font-family:'Space Grotesk';font-size:.72rem;font-weight:600;
   padding:4px 10px;border-radius:14px;white-space:nowrap;
 }
 .subject-card .status-ready{background:rgba(47,158,110,0.12);color:var(--success);}
 .subject-card .status-soon{background:var(--paper-2);color:var(--slate);}
-
-/* Small colored "book cover" — still used by the continue-banner's mini
-   card (a title/subject label over a semantic-hue gradient, not the
-   photo cover art above). Solid per-subject hues, independently darkened
-   to clear 4.5:1 for the white card text (measured 5.6-7.2:1 here, not
-   the shared --amber/--green/etc. tokens, which stay unchanged for their
-   other uses as icon/link colors). */
-.book-cover{
-  position:relative;border-radius:14px;
-  display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;
-}
-.book-cover--amber{background:linear-gradient(160deg,#905c11,#794e0e);}
-.book-cover--green{background:linear-gradient(160deg,#2e7543,#276238);}
-.book-cover--blue{background:linear-gradient(160deg,#2067bb,#1b579e);}
-.book-cover--pink{background:linear-gradient(160deg,#c51f5c,#a71a4e);}
-.book-cover--purple{background:linear-gradient(160deg,#753df4,#5d1cf2);}
 
 /* === Home hero layout — text column + optional visual anchor. The image
    slot degrades gracefully (collapses to single column via JS onerror)
@@ -544,13 +536,12 @@ section.tight{padding:60px 0;}
 }
 .continue-banner:hover .cb-cta{gap:12px;background:var(--orange-dark);color:#0d1b2e;}
 .continue-banner .cb-cta .icon{color:inherit;}
-.continue-banner .book-cover--mini{
-  width:110px;flex-shrink:0;padding:12px;display:none;
+.continue-banner .cb-cover{
+  width:78px;height:100px;flex-shrink:0;object-fit:contain;border-radius:6px;
+  background:rgba(255,255,255,0.06);box-shadow:0 4px 14px rgba(0,0,0,.3);display:none;
 }
-.continue-banner .book-cover--mini h4{color:#fff;font-size:.78rem;margin:0 0 4px;line-height:1.25;}
-.continue-banner .mini-eyebrow{font-family:'Space Grotesk';font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,0.92);}
 @media(min-width:560px){
-  .continue-banner .book-cover--mini{display:flex;}
+  .continue-banner .cb-cover{display:block;}
 }
 
 /* === Floating WhatsApp button === */
@@ -588,7 +579,7 @@ section.tight{padding:60px 0;}
 .session-badge .session-signin-btn:hover{background:var(--accent-hover);color:#fff;}
 .session-badge .session-signin-btn .icon{color:inherit;}
 .session-status{
-  font-family:'Space Grotesk';font-size:.68rem;padding:3px 9px;border-radius:20px;white-space:nowrap;
+  font-family:'Space Grotesk';font-size:.72rem;padding:3px 9px;border-radius:20px;white-space:nowrap;
 }
 .session-status.ok{background:rgba(47,158,110,0.12);color:var(--success);}
 .session-status.expired{background:rgba(226,87,76,0.12);color:var(--danger-text);}
