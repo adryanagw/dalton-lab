@@ -1121,6 +1121,16 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
     position:fixed;top:0;left:0;z-index:220;
     transform:translateX(-100%);transition:transform .25s ease;
     box-shadow:0 0 40px rgba(0,0,0,.25);
+    /* .sidebar's default background (--nav-bg) is a translucent frosted-
+       glass tone meant to pair with backdrop-filter:blur() the way
+       .mobile-topbar uses it — but the sidebar never got that blur, so
+       on mobile, where it's a fixed full-height drawer sitting directly
+       over live page content instead of a thin sticky bar, the page
+       underneath just reads through as faint ghosted text instead of a
+       blurred wash. A full-height nav drawer has nothing meaningful to
+       "see through" anyway, so make it a solid opaque panel instead of
+       adding the (costlier, mobile-Safari-unfriendly) blur. */
+    background:var(--paper);
   }
   .sidebar.open{transform:translateX(0);}
   .sidebar-backdrop.open{display:block;opacity:1;pointer-events:auto;}
