@@ -102,11 +102,27 @@ function setTheme(theme, originEvent){
   // main-thread contention that was stuttering the clip-path animation
   // right around screen-center. Suppressed for the wipe only.
   document.documentElement.classList.add('theme-wipe-active');
+  // What the eye tracks is screen AREA revealed, not radius — and area
+  // grows with radius squared. Easing the *radius* with ease-in-out (or
+  // even linear) means the reveal rushes through the small-area middle
+  // and then decelerates hard right as it's covering the *most* new area
+  // per pixel of radius, which reads as the wipe stalling near the end —
+  // consistently around the same relative point no matter how long the
+  // animation runs, since ease-in-out is self-similar under duration
+  // changes. Interpolating radius as sqrt(progress) instead makes AREA
+  // grow at a constant rate over time, so the reveal feels evenly paced
+  // start to finish.
+  const RADIUS_STEPS = 24;
+  const clipPathKeyframes = [];
+  for (let i = 0; i <= RADIUS_STEPS; i++){
+    const r = endRadius * Math.sqrt(i / RADIUS_STEPS);
+    clipPathKeyframes.push(`circle(${r}px at ${x}px ${y}px)`);
+  }
   const transition = document.startViewTransition(() => applyThemeAttr(theme));
   transition.ready
     .then(()=> document.documentElement.animate(
-      { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`] },
-      { duration: 1200, easing: 'ease-in-out', pseudoElement: '::view-transition-new(root)' }
+      { clipPath: clipPathKeyframes },
+      { duration: 1200, easing: 'linear', pseudoElement: '::view-transition-new(root)' }
     ).finished)
     .catch(()=>{})
     .finally(()=> document.documentElement.classList.remove('theme-wipe-active'));
