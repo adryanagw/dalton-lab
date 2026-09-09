@@ -504,20 +504,31 @@ section.tight{padding:60px 0;}
 /* === Subject list — horizontal scrolling cover-art cards (Malaka Books'
    "Terbaru" row reference), rather than a vertical list. === */
 .subject-list{
-  display:flex;gap:24px;overflow-x:auto;padding:4px 20px 14px 4px;
+  display:flex;gap:24px;overflow-x:auto;
+  /* overflow-x:auto without an explicit overflow-y forces the vertical
+     axis to compute as auto too (the CSS overflow spec's "the visible
+     one becomes auto" rule) — extra top/bottom padding gives the
+     hover lift+scale below room to grow into without getting clipped
+     by that vertical scroll box. */
+  padding:22px 20px 26px 4px;
   scroll-snap-type:x proximity;
 }
 .subject-card{
   flex:0 0 auto;width:160px;scroll-snap-align:start;cursor:pointer;
   display:flex;flex-direction:column;gap:10px;
-  transition:transform .15s;
+  transition:transform .3s cubic-bezier(0.16, 1, 0.3, 1);
+  position:relative;
 }
-.subject-card:hover{transform:translateY(-4px);}
+.subject-card:hover{transform:translateY(-10px) scale(1.06);z-index:5;}
 .subject-card.soon{opacity:.7;cursor:default;}
 .subject-card.soon:hover{transform:none;}
 .subject-card .subject-card-cover{
   width:160px;height:206px;object-fit:contain;border-radius:8px;
   background:var(--paper-2);box-shadow:0 6px 18px rgba(13,27,46,.18);
+  transition:box-shadow .3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.subject-card:hover .subject-card-cover{
+  box-shadow:0 22px 38px -6px rgba(13,27,46,.38);
 }
 .subject-card h3{
   margin:0;font-family:'Space Grotesk';font-weight:600;font-size:1rem;color:var(--heading);
