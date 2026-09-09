@@ -76,6 +76,7 @@ function applyThemeAttr(theme){
     btn.title = theme === 'dark' ? 'Ganti ke tema terang' : 'Ganti ke tema gelap';
   });
 }
+let themeWipeInFlight = false;
 function setTheme(theme){
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   // Mobile browsers — especially in-app browsers (WhatsApp, Instagram,
@@ -90,6 +91,14 @@ function setTheme(theme){
     applyThemeAttr(theme);
     return;
   }
+  // Rapid re-clicking crashed the tab (Chromium renderer OOM): each click
+  // started a brand new document.startViewTransition() — capturing a
+  // fresh full-viewport snapshot — before the previous one had finished
+  // and released its own. Spam a few of those in quick succession and the
+  // snapshots pile up faster than the renderer can free them. A toggle
+  // click while a wipe is already running is a no-op instead — wait for
+  // the current one to finish before starting another.
+  if (themeWipeInFlight) return;
   // Fixed top-right origin (not the toggle's actual position, which is
   // bottom-left in the sidebar) — a deliberate visual choice, not a
   // fallback. NOTE: this brings back the known devicePixelRatio-linked
@@ -126,6 +135,7 @@ function setTheme(theme){
   // main-thread contention competing with the wipe for frames.
   // Suppressed for the wipe only.
   document.documentElement.classList.add('theme-wipe-active');
+  themeWipeInFlight = true;
   // What the eye tracks is screen AREA revealed, not radius — and area
   // grows with radius squared. Easing the raw radius rushes through the
   // small-area middle and decelerates hard right as it's covering the
@@ -145,7 +155,10 @@ function setTheme(theme){
       { duration: 1200, easing: 'linear', fill: 'forwards', pseudoElement: '::view-transition-new(root)' }
     ).finished)
     .catch(()=>{})
-    .finally(()=> document.documentElement.classList.remove('theme-wipe-active'));
+    .finally(()=> {
+      document.documentElement.classList.remove('theme-wipe-active');
+      themeWipeInFlight = false;
+    });
 }
 document.querySelectorAll('.theme-toggle').forEach(btn=>{
   btn.addEventListener('click', ()=>{
