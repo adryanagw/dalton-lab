@@ -101,10 +101,25 @@ function setTheme(theme){
   // guarantee here.
   const x = window.innerWidth - 32;
   const y = 32;
-  const endRadius = Math.hypot(
+  const endRadiusPx = Math.hypot(
     Math.max(x, window.innerWidth - x),
     Math.max(y, window.innerHeight - y)
   );
+  // Express the circle in PERCENTAGES, not px. A raw-pixel clip-path
+  // assumes ::view-transition-new(root)'s box is always exactly
+  // window.innerWidth x innerHeight — reported live as landing dead
+  // center instead of the corner at some zoom levels, meaning that
+  // assumption doesn't reliably hold (the CSS View Transitions spec
+  // allows this pseudo-element to be sized/letterboxed independently of
+  // the raw viewport in some cases). Percentages resolve against
+  // whatever box the browser actually paints at animation time, so they
+  // can't drift out of sync the way an absolute px guess can. The radius
+  // percentage uses the same reference-length formula the CSS Shapes
+  // spec itself uses to resolve a percentage in circle():
+  // sqrt(width^2 + height^2) / sqrt(2).
+  const originX = (x / window.innerWidth * 100) + '%';
+  const originY = (y / window.innerHeight * 100) + '%';
+  const radiusScale = Math.hypot(window.innerWidth, window.innerHeight) / Math.SQRT2;
   // The live DOM is fully hidden behind static view-transition snapshots
   // for the wipe's duration, so the per-element color transitions below
   // would otherwise fire invisibly on every node at once — pure
@@ -120,14 +135,14 @@ function setTheme(theme){
   const RADIUS_STEPS = 24;
   const clipPathKeyframes = [];
   for (let i = 0; i <= RADIUS_STEPS; i++){
-    const r = endRadius * Math.sqrt(i / RADIUS_STEPS);
-    clipPathKeyframes.push(`circle(${r}px at ${x}px ${y}px)`);
+    const rPercent = (endRadiusPx * Math.sqrt(i / RADIUS_STEPS) / radiusScale * 100) + '%';
+    clipPathKeyframes.push(`circle(${rPercent} at ${originX} ${originY})`);
   }
   const transition = document.startViewTransition(() => applyThemeAttr(theme));
   transition.ready
     .then(()=> document.documentElement.animate(
       { clipPath: clipPathKeyframes },
-      { duration: 1200, easing: 'linear', pseudoElement: '::view-transition-new(root)' }
+      { duration: 1200, easing: 'linear', fill: 'forwards', pseudoElement: '::view-transition-new(root)' }
     ).finished)
     .catch(()=>{})
     .finally(()=> document.documentElement.classList.remove('theme-wipe-active'));
