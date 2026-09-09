@@ -92,38 +92,44 @@ function setTheme(theme, originEvent){
   }
   const x = originEvent ? originEvent.clientX : window.innerWidth - 32;
   const y = originEvent ? originEvent.clientY : 32;
-  const endRadius = Math.hypot(
-    Math.max(x, window.innerWidth - x),
-    Math.max(y, window.innerHeight - y)
-  );
+  // Anchors the crossfade's scale origin at the click point via CSS (see
+  // ::view-transition-new(root) in styles.css) — keeps a trace of "grows
+  // from where you clicked" without animating clip-path.
+  document.documentElement.style.setProperty('--wipe-x', x + 'px');
+  document.documentElement.style.setProperty('--wipe-y', y + 'px');
   // The live DOM is fully hidden behind static view-transition snapshots
   // for the wipe's duration, so the per-element color transitions below
   // would otherwise fire invisibly on every node at once — pure
-  // main-thread contention that was stuttering the clip-path animation
-  // right around screen-center. Suppressed for the wipe only.
+  // main-thread contention competing with the wipe for frames.
+  // Suppressed for the wipe only.
+  //
+  // Three rounds of tuning a clip-path circle() reveal (duration, easing,
+  // sqrt-paced radius) never fixed reports of it stalling/flickering —
+  // because the actual bottleneck was never the timing curve. Animating
+  // clip-path means the browser re-rasterizes the mask boundary against
+  // the *physical* pixel grid every frame, and that cost scales with
+  // devicePixelRatio — which Chrome folds page zoom into. At normal-to-
+  // high zoom on an ordinary HiDPI screen, that blew the frame budget and
+  // the browser just snapped to the end. transform + opacity are the only
+  // two properties compositor-cheap regardless of pixel density: a
+  // crossfade with a subtle scale-settle, anchored at the click point via
+  // transform-origin, keeps the "emerges from where you clicked" feel
+  // without ever asking the browser to rasterize a growing mask.
   document.documentElement.classList.add('theme-wipe-active');
-  // What the eye tracks is screen AREA revealed, not radius — and area
-  // grows with radius squared. Easing the *radius* with ease-in-out (or
-  // even linear) means the reveal rushes through the small-area middle
-  // and then decelerates hard right as it's covering the *most* new area
-  // per pixel of radius, which reads as the wipe stalling near the end —
-  // consistently around the same relative point no matter how long the
-  // animation runs, since ease-in-out is self-similar under duration
-  // changes. Interpolating radius as sqrt(progress) instead makes AREA
-  // grow at a constant rate over time, so the reveal feels evenly paced
-  // start to finish.
-  const RADIUS_STEPS = 24;
-  const clipPathKeyframes = [];
-  for (let i = 0; i <= RADIUS_STEPS; i++){
-    const r = endRadius * Math.sqrt(i / RADIUS_STEPS);
-    clipPathKeyframes.push(`circle(${r}px at ${x}px ${y}px)`);
-  }
   const transition = document.startViewTransition(() => applyThemeAttr(theme));
+  const easing = 'cubic-bezier(0.16, 1, 0.3, 1)';
+  const duration = 480;
   transition.ready
-    .then(()=> document.documentElement.animate(
-      { clipPath: clipPathKeyframes },
-      { duration: 1200, easing: 'linear', pseudoElement: '::view-transition-new(root)' }
-    ).finished)
+    .then(()=> Promise.all([
+      document.documentElement.animate(
+        { opacity: [0, 1], transform: ['scale(0.96)', 'scale(1)'] },
+        { duration, easing, pseudoElement: '::view-transition-new(root)' }
+      ).finished,
+      document.documentElement.animate(
+        { opacity: [1, 0] },
+        { duration, easing: 'ease-in', pseudoElement: '::view-transition-old(root)' }
+      ).finished
+    ]))
     .catch(()=>{})
     .finally(()=> document.documentElement.classList.remove('theme-wipe-active'));
 }

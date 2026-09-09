@@ -144,14 +144,22 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
   ::view-transition-new(root){animation:none !important;}
 }
 
-/* Theme toggle circular reveal — the incoming theme's snapshot is animated
-   (via JS, clip-path circle growing from the click point) while the
-   outgoing one stays put underneath, so no built-in cross-fade fights it. */
+/* Theme toggle crossfade — animated via JS (app.js setTheme) as a plain
+   opacity + transform:scale() pair instead of an animated clip-path:
+   clip-path forces the browser to re-rasterize a growing mask against the
+   *physical* pixel grid every frame, and that cost scales with
+   devicePixelRatio (which Chrome folds page zoom into), so it stalls and
+   snaps to the end on an ordinary HiDPI screen at normal zoom. transform
+   and opacity are compositor-only regardless of pixel density.
+   transform-origin anchors the incoming layer's scale-in at the click
+   point (set as --wipe-x/--wipe-y custom properties) so it still reads as
+   "emerging from where you clicked." animation:none kills the browser's
+   own default cross-fade so it doesn't fight the explicit one. */
 ::view-transition-old(root),
 ::view-transition-new(root){
   animation:none;
-  mix-blend-mode:normal;
 }
+::view-transition-new(root){transform-origin:var(--wipe-x, 50%) var(--wipe-y, 50%);}
 ::view-transition-old(root){z-index:1;}
 ::view-transition-new(root){z-index:2;}
 
