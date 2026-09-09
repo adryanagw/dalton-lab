@@ -512,6 +512,11 @@ section.tight{padding:60px 0;}
 .home-hero.no-visual{grid-template-columns:1fr;}
 .home-hero-visual{display:flex;align-items:center;justify-content:center;}
 .home-hero-visual img{max-width:100%;height:auto;}
+/* The illustration's palette was tuned for the light paper background;
+   on dark it reads a touch flat against pure navy. A small vibrancy
+   lift (not a glow — that pattern is banned for this hero, see the
+   critique history) is enough to make it feel intentional there. */
+:root[data-theme="dark"] .home-hero-visual img{filter:brightness(1.08) saturate(1.15);}
 @media(max-width:860px){
   .home-hero{grid-template-columns:1fr;gap:28px;}
   .home-hero-visual{order:2;max-width:260px;margin:0 auto;}
