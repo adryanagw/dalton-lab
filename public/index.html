@@ -2,14 +2,9 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<script>
-(function(){
-  try{
-    var saved = localStorage.getItem('daltonlab_theme');
-    if(saved === 'dark'){ document.documentElement.setAttribute('data-theme','dark'); }
-  }catch(e){}
-})();
-</script>
+<!-- Light is always the theme on first paint, on every device and every
+     load — a manual dark-mode toggle (see app.js setTheme) only affects
+     the current view and is never remembered across reloads. -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dalton Lab · Portal Belajar</title>
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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">

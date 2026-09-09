@@ -70,7 +70,9 @@ function applyThemeAttr(theme){
   } else {
     document.documentElement.removeAttribute('data-theme');
   }
-  try{ localStorage.setItem('daltonlab_theme', theme); }catch(e){}
+  // Deliberately not persisted (no localStorage write) — light is always
+  // the theme on the next load, on every device, regardless of any choice
+  // made in a previous view. The toggle only affects the current one.
   document.querySelectorAll('.theme-toggle').forEach(btn=>{
     btn.setAttribute('aria-pressed', theme === 'dark');
     btn.title = theme === 'dark' ? 'Ganti ke tema terang' : 'Ganti ke tema gelap';
