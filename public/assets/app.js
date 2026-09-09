@@ -70,7 +70,9 @@ function applyThemeAttr(theme){
   } else {
     document.documentElement.removeAttribute('data-theme');
   }
-  try{ localStorage.setItem('daltonlab_theme', theme); }catch(e){}
+  // Deliberately not persisted (no localStorage write) — light is always
+  // the theme on the next load, on every device, regardless of any choice
+  // made in a previous view. The toggle only affects the current one.
   document.querySelectorAll('.theme-toggle').forEach(btn=>{
     btn.setAttribute('aria-pressed', theme === 'dark');
     btn.title = theme === 'dark' ? 'Ganti ke tema terang' : 'Ganti ke tema gelap';
@@ -149,13 +151,34 @@ function setTheme(theme){
     clipPathKeyframes.push(`circle(${rPercent} at ${originX} ${originY})`);
   }
   const transition = document.startViewTransition(() => applyThemeAttr(theme));
+  // fill:'forwards' previously here (to match malakabooks.id's version) made
+  // the animation's effect persist indefinitely once finished, and we never
+  // called .cancel() on the returned Animation object — it stuck around
+  // targeting ::view-transition-new(root) for the rest of the page's life.
+  // The pseudo-element itself gets torn down when the transition ends, but
+  // the leftover Animation appears to still get reasserted against
+  // whatever ::view-transition-new(root) the *next* transition creates,
+  // stacking/conflicting with that transition's own animation — reported
+  // live as every transition after the first breaking mid-motion, and a
+  // full page reload (which clears all JS state, including this leftover
+  // Animation) making exactly the next one smooth again before it repeats.
+  // We don't need the fill to persist anything — applyThemeAttr already
+  // set the real, permanent theme state synchronously above, before this
+  // animation even starts — so drop fill:'forwards' and explicitly cancel
+  // the animation once it's done, guaranteeing nothing lingers into the
+  // next click.
+  let wipeAnimation = null;
   transition.ready
-    .then(()=> document.documentElement.animate(
-      { clipPath: clipPathKeyframes },
-      { duration: 1200, easing: 'linear', fill: 'forwards', pseudoElement: '::view-transition-new(root)' }
-    ).finished)
+    .then(()=> {
+      wipeAnimation = document.documentElement.animate(
+        { clipPath: clipPathKeyframes },
+        { duration: 1200, easing: 'linear', pseudoElement: '::view-transition-new(root)' }
+      );
+      return wipeAnimation.finished;
+    })
     .catch(()=>{})
     .finally(()=> {
+      if (wipeAnimation) wipeAnimation.cancel();
       document.documentElement.classList.remove('theme-wipe-active');
       themeWipeInFlight = false;
     });

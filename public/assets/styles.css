@@ -226,6 +226,19 @@ section.tight{padding:60px 0;}
 .sidebar{
   width:248px;flex-shrink:0;
   position:sticky;top:0;align-self:flex-start;height:100vh;
+  /* iOS Safari's address bar/toolbar chrome can collapse on scroll, so
+     100vh — the "large viewport," as if that chrome were already hidden —
+     is often taller than what's actually visible on screen right now. On
+     the mobile fixed-position drawer variant below, that stretched
+     .sidebar-footer (Masuk + the theme toggle) below the visible fold
+     with no way to reach it: the underlying page doesn't scroll while the
+     drawer is open, so the chrome never collapses to reveal the rest.
+     100dvh tracks the *currently visible* viewport instead, so the
+     drawer's own overflow-y:auto correctly scrolls to reveal everything
+     inside it regardless of browser-chrome state. Kept as a second
+     declaration (not a replacement) so browsers without dvh support keep
+     the 100vh fallback above. */
+  height:100dvh;
   display:flex;flex-direction:column;
   background:var(--nav-bg);border-right:1px solid var(--line);
   padding:20px 16px;overflow-y:auto;
