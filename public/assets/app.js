@@ -78,7 +78,15 @@ function applyThemeAttr(theme){
 }
 function setTheme(theme, originEvent){
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!document.startViewTransition || prefersReduced){
+  // Mobile browsers — especially in-app browsers (WhatsApp, Instagram,
+  // etc.) with a collapsing address-bar chrome — can resize the viewport
+  // mid-transition, desyncing the frozen view-transition snapshot from
+  // the live layout and leaving a permanent split/ghosted frame instead
+  // of a brief wipe. The circle is also barely visible on a phone-sized
+  // screen anyway, so skip it below the sidebar breakpoint and just
+  // swap instantly there.
+  const isMobileViewport = window.innerWidth <= 900;
+  if(!document.startViewTransition || prefersReduced || isMobileViewport){
     applyThemeAttr(theme);
     return;
   }
