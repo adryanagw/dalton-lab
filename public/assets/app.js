@@ -344,7 +344,7 @@ function markProgress(babId, status){
 {
   const initialSession = getSession();
   if(initialSession){
-    document.getElementById('homeEyebrow').textContent = `Halo, ${initialSession.nama || initialSession.username}!`;
+    document.getElementById('homeGreeting').textContent = `Halo, ${initialSession.nama || initialSession.username}! Mau belajar apa hari ini?`;
     fetchProgress().then(renderContinueBanner);
   }
 }
@@ -363,7 +363,6 @@ let activeBabId = null;
 // announced as a link, and activatable with Enter/Space — without changing its
 // click wiring or visual markup.
 function makeRowFocusable(el, activate){
-  if(el.classList.contains('soon')) return;
   el.tabIndex = 0;
   el.setAttribute('role','link');
   el.addEventListener('keydown', e=>{
@@ -382,10 +381,7 @@ function renderSubjectGrid(){
       </div>
       <div class="subject-meta">
         <span class="subj-icon-wrap">${icon(s.icon)}</span>
-        <div class="subj-meta-body">
-          <div class="subj-meta-name">${s.name}${s.ready ? icon('arrow-right','subj-arrow') : ''}</div>
-          <p>${s.desc}</p>
-        </div>
+        ${s.ready ? icon('arrow-right','subj-arrow') : `<span class="subj-meta-soon">Segera hadir</span>`}
       </div>
     </div>`).join('');
   grid.querySelectorAll('.subject-item').forEach(row=>{
@@ -454,9 +450,9 @@ function goToHome(){
   renderSubjectGrid();
   renderContinueBanner();
   const session = getSession();
-  document.getElementById('homeEyebrow').textContent = session
-    ? `Halo, ${session.nama || session.username}!`
-    : 'Halo, selamat datang!';
+  document.getElementById('homeGreeting').textContent = session
+    ? `Halo, ${session.nama || session.username}! Mau belajar apa hari ini?`
+    : 'Mau belajar apa hari ini?';
   window.scrollTo({top:0,behavior:'instant'});
 }
 
@@ -524,7 +520,11 @@ function goToBabs(subjectKey){
 
   if(readyBabs.length === 0){
     progressEl.style.display = 'none';
-    babGrid.innerHTML = `<p style="color:var(--slate);">Materi ${s.name} sedang disiapkan — segera hadir di sini.</p>`;
+    const notifyLink = waLink(`Halo Dalton Lab! Materi ${s.name} kapan kira-kira ada ya? Aku mau belajar itu duluan 🙌`);
+    babGrid.innerHTML = `
+      <p style="color:var(--slate);">Materi ${s.name} sedang disiapkan — segera hadir di sini.</p>
+      <a class="tutor-strip-link" href="${notifyLink}" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;">Kasih tau kalau udah ada →</a>
+    `;
   } else {
     const doneCount = readyBabs.filter(b=>progressCache[b.id] === 'completed').length;
     if(doneCount > 0){

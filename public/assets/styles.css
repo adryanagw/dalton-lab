@@ -377,7 +377,7 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 .package-card.active{border-color:var(--orange);background:rgba(238,125,49,0.12);}
 .package-card .package-note{
   position:absolute;top:-9px;right:12px;background:var(--orange);color:#0d1b2e;
-  font-family:'Space Grotesk';font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:20px;
+  font-family:'Space Grotesk';font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:20px;
 }
 .package-card .package-label{font-weight:600;font-size:.94rem;}
 .package-card .package-price{font-family:'Space Grotesk';font-weight:700;color:var(--orange);font-size:1rem;}
@@ -435,17 +435,10 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 }
 .tutor-strip-link:hover{background:var(--accent-hover);transform:translateY(-1px);}
 
-/* === Hero eyebrow — small greeting line above the H1 === */
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk';font-weight:600;
-  font-size:.84rem;color:var(--orange-dark);margin-bottom:14px;
-}
-.hero-eyebrow .icon{color:var(--orange);}
-
 /* === Section heading above the subject grid — smaller than .section-head === */
 .section-head-sm{margin:44px 0 22px;}
 .section-head-sm h2{font-size:1.4rem;margin-bottom:6px;}
-.section-head-sm p{color:var(--slate);font-size:.92rem;margin:0;}
+.section-head-sm p{color:var(--slate);font-size:.92rem;margin:0;max-width:60ch;}
 
 /* === Subject grid — colored "book cover" cards (one color per subject,
    semantic not positional — see design notes) with a compact icon+arrow
@@ -462,33 +455,36 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 }
 .subject-item:not(.soon):hover .book-cover{transform:translateY(-4px);box-shadow:var(--shadow);}
 .book-cover h3{color:#fff;font-size:1.05rem;margin:0 0 4px;}
-.book-cover p{color:rgba(255,255,255,0.78);font-size:.78rem;margin:0;line-height:1.4;}
+.book-cover p{color:rgba(255,255,255,0.92);font-size:.78rem;margin:0;line-height:1.4;}
 .book-status{
-  position:absolute;top:14px;right:14px;font-family:'Space Grotesk';font-size:.64rem;
+  position:absolute;top:14px;right:14px;font-family:'Space Grotesk';font-size:.72rem;
   text-transform:uppercase;letter-spacing:.05em;padding:4px 9px;border-radius:20px;
-  background:rgba(255,255,255,0.2);color:#fff;
+  background:rgba(255,255,255,0.95);color:var(--navy);
 }
 .subject-item.soon .book-cover{opacity:.55;}
-.book-cover--amber{background:linear-gradient(160deg,var(--amber),var(--orange-dark));}
-.book-cover--green{background:linear-gradient(160deg,var(--green),#1f7a43);}
-.book-cover--blue{background:linear-gradient(160deg,var(--blue),#1c4f8f);}
-.book-cover--pink{background:linear-gradient(160deg,var(--pink),#9c2455);}
-.book-cover--purple{background:linear-gradient(160deg,var(--purple),#4c2f96);}
+/* Solid per-subject hues, independently darkened to clear 4.5:1 for the white
+   card text (measured 5.6-7.2:1 here, not the shared --amber/--green/etc.
+   tokens, which stay unchanged for their other uses as icon/link colors). */
+.book-cover--amber{background:linear-gradient(160deg,#905c11,#794e0e);}
+.book-cover--green{background:linear-gradient(160deg,#2e7543,#276238);}
+.book-cover--blue{background:linear-gradient(160deg,#2067bb,#1b579e);}
+.book-cover--pink{background:linear-gradient(160deg,#c51f5c,#a71a4e);}
+.book-cover--purple{background:linear-gradient(160deg,#753df4,#5d1cf2);}
 
-.subject-meta{display:flex;align-items:flex-start;gap:10px;margin-top:14px;}
+/* Meta row is a compact affordance strip, not a second copy of the card's
+   name/description — those already live once, on the book cover itself. */
+.subject-meta{display:flex;align-items:center;justify-content:space-between;margin-top:14px;}
 .subject-meta .subj-icon-wrap{
   width:34px;height:34px;border-radius:10px;background:var(--paper-2);
   display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
 .subject-meta .subj-icon-wrap .icon{width:1.15em;height:1.15em;color:var(--orange-dark);}
-.subj-meta-body{min-width:0;}
-.subj-meta-name{display:flex;align-items:center;gap:6px;font-weight:600;font-size:.92rem;}
-.subj-meta-name .subj-arrow{
+.subject-meta .subj-arrow{
   color:var(--line);opacity:0;transform:translateX(-4px);
   transition:opacity .15s,transform .15s,color .15s;
 }
-.subject-item:hover .subj-meta-name .subj-arrow{opacity:1;transform:translateX(0);color:var(--orange-dark);}
-.subject-meta p{font-size:.78rem;color:var(--slate);margin:2px 0 0;}
+.subject-item:hover .subject-meta .subj-arrow{opacity:1;transform:translateX(0);color:var(--orange-dark);}
+.subject-meta .subj-meta-soon{font-size:.76rem;color:var(--slate);}
 
 /* === Home hero layout — text column + optional visual anchor. The image
    slot degrades gracefully (collapses to single column via JS onerror)
@@ -528,7 +524,7 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
   width:110px;flex-shrink:0;padding:12px;display:none;
 }
 .continue-banner .book-cover--mini h4{color:#fff;font-size:.78rem;margin:0 0 4px;line-height:1.25;}
-.continue-banner .mini-eyebrow{font-family:'Space Grotesk';font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,0.7);}
+.continue-banner .mini-eyebrow{font-family:'Space Grotesk';font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,0.92);}
 @media(min-width:560px){
   .continue-banner .book-cover--mini{display:flex;}
 }
@@ -573,11 +569,7 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
 /* === HERO === */
 .hero{
   padding:90px 0 70px;
-  background:
-    radial-gradient(ellipse 900px 500px at 85% -10%, rgba(238,125,49,0.16), transparent 60%),
-    linear-gradient(180deg, var(--paper) 0%, var(--paper) 100%);
-  overflow:hidden;
-  position:relative;
+  background:var(--paper);
 }
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;}
 .hero-grid.single{grid-template-columns:1fr;max-width:720px;}
