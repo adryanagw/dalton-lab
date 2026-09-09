@@ -60,6 +60,7 @@ async function ensureSchema() {
         username     TEXT NOT NULL,
         nama         TEXT NOT NULL,
         whatsapp     TEXT NOT NULL,
+        email        TEXT,
         paket        TEXT NOT NULL,
         durasi_hari  INTEGER NOT NULL,
         harga        INTEGER NOT NULL,
@@ -100,6 +101,11 @@ async function ensureSchema() {
     sql`CREATE INDEX IF NOT EXISTS idx_orders_status ON orders (status)`,
     sql`CREATE INDEX IF NOT EXISTS idx_quiz_results_username ON quiz_results (username)`
   ]);
+
+  // Retrofits for columns/tables added after the orders table already
+  // existed live — CREATE TABLE IF NOT EXISTS above is a no-op once a
+  // table exists, so a new column needs its own idempotent migration.
+  await sql`ALTER TABLE orders ADD COLUMN IF NOT EXISTS email TEXT`;
 
   schemaEnsured = true;
 }

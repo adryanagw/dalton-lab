@@ -21,11 +21,11 @@ module.exports = async function handler(req, res) {
   try {
     await ensureSchema();
     const pending = await sql`
-      SELECT order_id, username, nama, whatsapp, paket, durasi_hari, harga, status, created_at
+      SELECT order_id, username, nama, whatsapp, email, paket, durasi_hari, harga, status, created_at
       FROM orders WHERE status = 'pending' ORDER BY created_at ASC
     `;
     const recent = await sql`
-      SELECT order_id, username, nama, whatsapp, paket, durasi_hari, harga, status, created_at, approved_at, new_password
+      SELECT order_id, username, nama, whatsapp, email, paket, durasi_hari, harga, status, created_at, approved_at, new_password
       FROM orders WHERE status != 'pending' ORDER BY created_at DESC LIMIT 25
     `;
     res.status(200).json({ success: true, pending, recent });

@@ -197,6 +197,13 @@ function fmtRp(n) {
   return 'Rp ' + Number(n).toLocaleString('id-ID');
 }
 
+function isValidEmail(str) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str);
+}
+function isValidWaNumber(str) {
+  return /^(?:\+?62|0)8\d{7,11}$/.test(str.replace(/[\s-]/g, ''));
+}
+
 /* ===== WhatsApp marketing links ===== */
 const WHATSAPP_NUMBER = '6282136673896'; // 082136673896 in international format
 
@@ -259,6 +266,7 @@ function resetOrderPanel() {
   document.getElementById('orderError').classList.remove('show');
   document.getElementById('orderNama').value = '';
   document.getElementById('orderWa').value = '';
+  document.getElementById('orderEmail').value = '';
   document.getElementById('orderUsername').value = '';
 }
 
@@ -279,11 +287,14 @@ document.getElementById('orderSubmitBtn').addEventListener('click', submitOrder)
 async function submitOrder() {
   const nama = document.getElementById('orderNama').value.trim();
   const wa = document.getElementById('orderWa').value.trim();
+  const email = document.getElementById('orderEmail').value.trim();
   const username = document.getElementById('orderUsername').value.trim().toLowerCase();
   document.getElementById('orderError').classList.remove('show');
 
   if (!selectedPackage) { showOrderError('Pilih paketnya dulu ya.'); return; }
-  if (!nama || !wa || !username) { showOrderError('Nama, WhatsApp, sama username-nya diisi dulu ya.'); return; }
+  if (!nama || !wa || !email || !username) { showOrderError('Nama, WhatsApp, email, sama username-nya diisi dulu ya.'); return; }
+  if (!isValidWaNumber(wa)) { showOrderError('Nomor WhatsApp-nya kayaknya belum bener nih. Contoh: 08123456789.'); return; }
+  if (!isValidEmail(email)) { showOrderError('Formatnya emailnya belum bener nih. Contoh: kamu@email.com.'); return; }
 
   const btn = document.getElementById('orderSubmitBtn');
   btn.disabled = true;
@@ -293,7 +304,7 @@ async function submitOrder() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        nama, whatsapp: wa, username,
+        nama, whatsapp: wa, email, username,
         paket: selectedPackage.label, durasiHari: selectedPackage.hari, harga: selectedPackage.harga
       })
     });

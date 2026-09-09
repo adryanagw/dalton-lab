@@ -59,6 +59,13 @@
   .badge{font-size:.68rem; padding:4px 10px; border-radius:20px; font-weight:600;}
   .badge.pending{background:rgba(238,125,49,.14); color:var(--orange-dark);}
   .badge.approved{background:rgba(47,158,110,.12); color:var(--success);}
+  .badge.rejected{background:rgba(226,87,76,.12); color:var(--danger);}
+  button.btn-reject{
+    background:none; color:var(--danger); border:1.5px solid rgba(226,87,76,.4); padding:9.5px 18px; border-radius:9px;
+    font-size:.9rem; font-weight:600; cursor:pointer; transition:background .15s,border-color .15s;
+  }
+  button.btn-reject:hover{background:rgba(226,87,76,.08); border-color:var(--danger);}
+  button.btn-reject:disabled{opacity:.6; cursor:default;}
   .price{font-family:monospace; font-weight:700; color:var(--navy);}
   .new-pass-note{
     background:rgba(47,158,110,.1); border:1px solid rgba(47,158,110,.3); color:#1e6b48;
@@ -186,6 +193,9 @@ async function loadOrders(){
     pendingList.querySelectorAll('[data-approve]').forEach(btn=>{
       btn.addEventListener('click', ()=>approveOrder(btn.dataset.approve, btn));
     });
+    pendingList.querySelectorAll('[data-reject]').forEach(btn=>{
+      btn.addEventListener('click', ()=>rejectOrder(btn.dataset.reject, btn));
+    });
   }catch(e){
     pendingList.innerHTML = '<p class="empty">Gagal terhubung ke server.</p>';
   }
@@ -199,31 +209,35 @@ function renderPendingCard(o){
         <div class="order-name">${escapeHtml(o.nama)} <span style="color:var(--slate);font-weight:400;">(${escapeHtml(o.username)})</span></div>
         <div class="order-meta">
           ${escapeHtml(o.paket)} · ${o.durasi_hari} hari · <span class="price">${fmtRp(o.harga)}</span><br>
-          <a href="${waLink(o.whatsapp, 'Halo ' + o.nama + ', paket Dalton Lab kamu (' + o.paket + ') udah aktif ya!')}" target="_blank" rel="noopener">${escapeHtml(o.whatsapp)}</a> · ${fmtDate(o.created_at)}
+          <a href="${waLink(o.whatsapp, 'Halo ' + o.nama + ', paket Dalton Lab kamu (' + o.paket + ') udah aktif ya!')}" target="_blank" rel="noopener">${escapeHtml(o.whatsapp)}</a>
+          ${o.email ? ' · ' + escapeHtml(o.email) : ''} · ${fmtDate(o.created_at)}
         </div>
       </div>
       <div class="order-actions">
         <span class="badge pending">Pending</span>
         <button class="btn" data-approve="${o.order_id}">✓ Approve</button>
+        <button class="btn-reject" data-reject="${o.order_id}">✕ Reject</button>
       </div>
     </div>`;
 }
 
 function renderRecentCard(o){
   const passNote = o.new_password ? `<div class="new-pass-note">Akun baru — password: ${escapeHtml(o.new_password)}</div>` : '';
+  const isRejected = o.status === 'rejected';
+  const statusLabel = isRejected ? 'Ditolak' : 'Disetujui';
   return `
     <div class="order-card">
       <div class="order-main">
         <div class="order-id">${o.order_id}</div>
         <div class="order-name">${escapeHtml(o.nama)} <span style="color:var(--slate);font-weight:400;">(${escapeHtml(o.username)})</span></div>
         <div class="order-meta">
-          ${escapeHtml(o.paket)} · ${o.durasi_hari} hari · <span class="price">${fmtRp(o.harga)}</span><br>
-          Disetujui ${o.approved_at ? fmtDate(o.approved_at) : '-'}
+          ${escapeHtml(o.paket)} · ${o.durasi_hari} hari · <span class="price">${fmtRp(o.harga)}</span>${o.email ? ' · ' + escapeHtml(o.email) : ''}<br>
+          ${statusLabel} ${o.approved_at ? fmtDate(o.approved_at) : '-'}
         </div>
         ${passNote}
       </div>
       <div class="order-actions">
-        <span class="badge approved">${escapeHtml(o.status)}</span>
+        <span class="badge ${isRejected ? 'rejected' : 'approved'}">${escapeHtml(o.status)}</span>
       </div>
     </div>`;
 }
@@ -248,6 +262,30 @@ async function approveOrder(orderId, btn){
   }catch(e){
     alert('Gagal terhubung ke server.');
     btn.disabled = false; btn.textContent = '✓ Approve';
+  }
+}
+
+async function rejectOrder(orderId, btn){
+  if(!confirm(`Tolak pesanan ${orderId}? Ini gak bisa dibatalin.`)) return;
+  const token = getToken();
+  btn.disabled = true; btn.textContent = 'Memproses…';
+  try{
+    const res = await fetch('/api/admin/reject', {
+      method:'POST',
+      headers:{'Content-Type':'application/json', 'Authorization':'Bearer ' + token},
+      body: JSON.stringify({orderId})
+    });
+    if(res.status === 401){ clearToken(); showLogin(); return; }
+    const data = await res.json();
+    if(data.success){
+      await loadOrders();
+    } else {
+      alert(data.message || 'Gagal reject order.');
+      btn.disabled = false; btn.textContent = '✕ Reject';
+    }
+  }catch(e){
+    alert('Gagal terhubung ke server.');
+    btn.disabled = false; btn.textContent = '✕ Reject';
   }
 }
 
