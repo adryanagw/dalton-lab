@@ -76,7 +76,8 @@ function applyThemeAttr(theme){
     btn.title = theme === 'dark' ? 'Ganti ke tema terang' : 'Ganti ke tema gelap';
   });
 }
-function setTheme(theme, originEvent){
+let themeWipeInFlight = false;
+function setTheme(theme){
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   // Mobile browsers — especially in-app browsers (WhatsApp, Instagram,
   // etc.) with a collapsing address-bar chrome — can resize the viewport
@@ -90,30 +91,78 @@ function setTheme(theme, originEvent){
     applyThemeAttr(theme);
     return;
   }
-  const x = originEvent ? originEvent.clientX : window.innerWidth - 32;
-  const y = originEvent ? originEvent.clientY : 32;
-  const endRadius = Math.hypot(
+  // Rapid re-clicking crashed the tab (Chromium renderer OOM): each click
+  // started a brand new document.startViewTransition() — capturing a
+  // fresh full-viewport snapshot — before the previous one had finished
+  // and released its own. Spam a few of those in quick succession and the
+  // snapshots pile up faster than the renderer can free them. A toggle
+  // click while a wipe is already running is a no-op instead — wait for
+  // the current one to finish before starting another.
+  if (themeWipeInFlight) return;
+  // Fixed top-right origin (not the toggle's actual position, which is
+  // bottom-left in the sidebar) — a deliberate visual choice, not a
+  // fallback. NOTE: this brings back the known devicePixelRatio-linked
+  // stutter/flicker at normal-to-high browser zoom (see the crossfade
+  // commit this replaces) — animating clip-path forces the browser to
+  // re-rasterize the mask against the *physical* pixel grid every frame,
+  // and that cost is independent of where the circle starts. Reverted
+  // knowingly: the circular reveal was worth more than the smoothness
+  // guarantee here.
+  const x = window.innerWidth - 32;
+  const y = 32;
+  const endRadiusPx = Math.hypot(
     Math.max(x, window.innerWidth - x),
     Math.max(y, window.innerHeight - y)
   );
+  // Express the circle in PERCENTAGES, not px. A raw-pixel clip-path
+  // assumes ::view-transition-new(root)'s box is always exactly
+  // window.innerWidth x innerHeight — reported live as landing dead
+  // center instead of the corner at some zoom levels, meaning that
+  // assumption doesn't reliably hold (the CSS View Transitions spec
+  // allows this pseudo-element to be sized/letterboxed independently of
+  // the raw viewport in some cases). Percentages resolve against
+  // whatever box the browser actually paints at animation time, so they
+  // can't drift out of sync the way an absolute px guess can. The radius
+  // percentage uses the same reference-length formula the CSS Shapes
+  // spec itself uses to resolve a percentage in circle():
+  // sqrt(width^2 + height^2) / sqrt(2).
+  const originX = (x / window.innerWidth * 100) + '%';
+  const originY = (y / window.innerHeight * 100) + '%';
+  const radiusScale = Math.hypot(window.innerWidth, window.innerHeight) / Math.SQRT2;
   // The live DOM is fully hidden behind static view-transition snapshots
   // for the wipe's duration, so the per-element color transitions below
   // would otherwise fire invisibly on every node at once — pure
-  // main-thread contention that was stuttering the clip-path animation
-  // right around screen-center. Suppressed for the wipe only.
+  // main-thread contention competing with the wipe for frames.
+  // Suppressed for the wipe only.
   document.documentElement.classList.add('theme-wipe-active');
+  themeWipeInFlight = true;
+  // What the eye tracks is screen AREA revealed, not radius — and area
+  // grows with radius squared. Easing the raw radius rushes through the
+  // small-area middle and decelerates hard right as it's covering the
+  // most new area per pixel of radius, reading as a stall near the end.
+  // Interpolating radius as sqrt(progress) instead makes area grow at a
+  // constant rate, so the reveal feels evenly paced start to finish.
+  const RADIUS_STEPS = 24;
+  const clipPathKeyframes = [];
+  for (let i = 0; i <= RADIUS_STEPS; i++){
+    const rPercent = (endRadiusPx * Math.sqrt(i / RADIUS_STEPS) / radiusScale * 100) + '%';
+    clipPathKeyframes.push(`circle(${rPercent} at ${originX} ${originY})`);
+  }
   const transition = document.startViewTransition(() => applyThemeAttr(theme));
   transition.ready
     .then(()=> document.documentElement.animate(
-      { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`] },
-      { duration: 1200, easing: 'ease-in-out', pseudoElement: '::view-transition-new(root)' }
+      { clipPath: clipPathKeyframes },
+      { duration: 1200, easing: 'linear', fill: 'forwards', pseudoElement: '::view-transition-new(root)' }
     ).finished)
     .catch(()=>{})
-    .finally(()=> document.documentElement.classList.remove('theme-wipe-active'));
+    .finally(()=> {
+      document.documentElement.classList.remove('theme-wipe-active');
+      themeWipeInFlight = false;
+    });
 }
 document.querySelectorAll('.theme-toggle').forEach(btn=>{
-  btn.addEventListener('click', e=>{
-    setTheme(getCurrentTheme() === 'dark' ? 'light' : 'dark', e);
+  btn.addEventListener('click', ()=>{
+    setTheme(getCurrentTheme() === 'dark' ? 'light' : 'dark');
   });
 });
 applyThemeAttr(getCurrentTheme());
