@@ -88,13 +88,20 @@ function setTheme(theme, originEvent){
     Math.max(x, window.innerWidth - x),
     Math.max(y, window.innerHeight - y)
   );
+  // The live DOM is fully hidden behind static view-transition snapshots
+  // for the wipe's duration, so the per-element color transitions below
+  // would otherwise fire invisibly on every node at once — pure
+  // main-thread contention that was stuttering the clip-path animation
+  // right around screen-center. Suppressed for the wipe only.
+  document.documentElement.classList.add('theme-wipe-active');
   const transition = document.startViewTransition(() => applyThemeAttr(theme));
-  transition.ready.then(()=>{
-    document.documentElement.animate(
+  transition.ready
+    .then(()=> document.documentElement.animate(
       { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`] },
-      { duration: 550, easing: 'ease-in-out', pseudoElement: '::view-transition-new(root)' }
-    );
-  }).catch(()=>{});
+      { duration: 600, easing: 'ease-in-out', pseudoElement: '::view-transition-new(root)' }
+    ).finished)
+    .catch(()=>{})
+    .finally(()=> document.documentElement.classList.remove('theme-wipe-active'));
 }
 document.querySelectorAll('.theme-toggle').forEach(btn=>{
   btn.addEventListener('click', e=>{
@@ -181,9 +188,8 @@ const PACKAGES = [
   { id: 'p365', label: '1 Tahun', hari: 365, harga: 399000, note: 'Paling Worth It' },
 ];
 
-// EDIT: ganti dengan rekening/QRIS asli sebelum go-live.
 const PAYMENT_INFO_HTML = `
-  <div class="pay-row"><span>Transfer Bank</span><b>BCA 1234567890 a.n. Dalton Lab</b></div>
+  <div class="pay-row"><span>Transfer Bank</span><b>BCA 1100336908 a.n. Adryan Allen Gerald</b></div>
   <div class="pay-row"><span>QRIS / E-wallet</span><b>Ketik "QRIS" di chat WhatsApp</b></div>
 `;
 
