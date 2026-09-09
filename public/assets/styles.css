@@ -466,41 +466,33 @@ section.tight{padding:60px 0;}
 .section-head-sm h2{font-size:1.4rem;margin-bottom:6px;}
 .section-head-sm p{color:var(--slate);font-size:.92rem;margin:0;max-width:60ch;}
 
-/* === Subject list — ranked rows with real cover art (Malaka Books
-   reference), same editorial-row pattern as .bab-list. === */
-.subject-list{display:flex;flex-direction:column;border-top:1px solid var(--line);}
-.subject-row{
-  display:flex;align-items:center;gap:22px;padding:14px 4px;
-  border-bottom:1px solid var(--line);cursor:pointer;
-  transition:transform .15s,background .15s;
+/* === Subject list — horizontal scrolling cover-art cards (Malaka Books'
+   "Terbaru" row reference), rather than a vertical list. === */
+.subject-list{
+  display:flex;gap:24px;overflow-x:auto;padding:4px 4px 14px;
+  scroll-snap-type:x proximity;
 }
-.subject-row:hover{transform:translateX(6px);background:var(--paper-2);}
-.subject-row .subject-rank{
-  font-family:'IBM Plex Mono';font-size:1.05rem;font-weight:600;color:var(--line);
-  flex-shrink:0;width:2ch;text-align:center;
+.subject-card{
+  flex:0 0 auto;width:160px;scroll-snap-align:start;cursor:pointer;
+  display:flex;flex-direction:column;gap:10px;
+  transition:transform .15s;
 }
-.subject-row:hover .subject-rank{color:var(--orange);}
-.subject-row .subject-cover{
-  width:84px;height:108px;flex-shrink:0;object-fit:contain;border-radius:6px;
-  background:var(--paper-2);box-shadow:0 4px 12px rgba(13,27,46,.15);
+.subject-card:hover{transform:translateY(-4px);}
+.subject-card.soon{opacity:.7;cursor:default;}
+.subject-card.soon:hover{transform:none;}
+.subject-card .subject-card-cover{
+  width:160px;height:206px;object-fit:contain;border-radius:8px;
+  background:var(--paper-2);box-shadow:0 6px 18px rgba(13,27,46,.18);
 }
-.subject-row .subject-body{
-  flex:1;min-width:0;margin:0;
-  font-family:'Space Grotesk';font-weight:600;font-size:1.1rem;color:var(--heading);
+.subject-card h3{
+  margin:0;font-family:'Space Grotesk';font-weight:600;font-size:1rem;color:var(--heading);
 }
-.subject-row .subject-status-badge{
-  font-family:'Space Grotesk';font-size:.66rem;font-weight:600;flex-shrink:0;
+.subject-card .subject-card-badge{
+  align-self:flex-start;font-family:'Space Grotesk';font-size:.66rem;font-weight:600;
   padding:4px 10px;border-radius:14px;white-space:nowrap;
 }
-.subject-row .status-ready{background:rgba(47,158,110,0.12);color:var(--success);}
-.subject-row .status-soon{background:var(--paper-2);color:var(--slate);}
-.subject-row.soon{opacity:.7;cursor:default;}
-.subject-row.soon:hover{transform:none;background:none;}
-.subject-row .subj-arrow{
-  color:var(--slate);opacity:0;transform:translateX(-4px);flex-shrink:0;
-  transition:opacity .15s,transform .15s,color .15s;
-}
-.subject-row:hover .subj-arrow{opacity:1;transform:translateX(0);color:var(--orange-dark);}
+.subject-card .status-ready{background:rgba(47,158,110,0.12);color:var(--success);}
+.subject-card .status-soon{background:var(--paper-2);color:var(--slate);}
 
 /* Small colored "book cover" — still used by the continue-banner's mini
    card (a title/subject label over a semantic-hue gradient, not the
@@ -580,13 +572,21 @@ section.tight{padding:60px 0;}
 /* === Session badge in nav === */
 .session-badge{
   display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--heading-soft);
-  font-family:'Space Grotesk';
+  font-family:'Space Grotesk';flex:1;min-width:0;flex-wrap:wrap;
 }
 .session-badge button{
   background:none;border:none;color:var(--slate);cursor:pointer;font-family:'Space Grotesk';
   font-size:.72rem;text-decoration:underline;padding:0;
 }
 .session-badge button:hover{color:var(--orange-dark);}
+.session-badge .session-signin-btn{
+  display:flex;align-items:center;gap:8px;width:100%;
+  background:var(--navy);color:#fff;font-family:'Space Grotesk';font-weight:600;
+  font-size:.86rem;text-decoration:none;border-radius:9px;padding:10px 14px;
+  transition:background-color .15s;
+}
+.session-badge .session-signin-btn:hover{background:var(--accent-hover);color:#fff;}
+.session-badge .session-signin-btn .icon{color:inherit;}
 .session-status{
   font-family:'Space Grotesk';font-size:.68rem;padding:3px 9px;border-radius:20px;white-space:nowrap;
 }
