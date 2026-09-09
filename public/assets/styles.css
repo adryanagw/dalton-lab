@@ -122,6 +122,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 }
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 
+/* Reduced motion: kill decorative movement (hover lifts, the WA pulse loop)
+   but keep every hover's color/background feedback intact, and make state
+   changes that actually carry information (accordion open, quiz progress)
+   apply instantly instead of animating — motion off, feedback still on. */
+@media (prefers-reduced-motion: reduce){
+  *:hover{transform:none !important;}
+  .wa-float-pulse{animation:none;}
+  .acc-a, .quiz-progress-fill{transition-duration:.01ms !important;}
+}
+
 /* Inline icon system — replaces emoji used as functional UI icons
    (nav, buttons, callouts, status). Icons are hand-authored minimal-line
    SVGs (24x24, stroke=currentColor) rendered via the icon() helper in
@@ -203,11 +213,17 @@ nav.links a.subject-link.active .icon{color:var(--orange-dark);}
   .subject-link-label{display:none;}
   nav.links a.subject-link{padding:8px;}
 }
-.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+.hamburger{
+  display:none;background:none;border:none;cursor:pointer;
+  min-width:44px;min-height:44px;flex-direction:column;align-items:center;justify-content:center;
+}
 .hamburger span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px;}
 
 /* === Theme toggle === */
-.theme-toggle{background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;}
+.theme-toggle{
+  background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;
+  min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;
+}
 .theme-toggle-track{
   position:relative;width:52px;height:28px;border-radius:20px;
   background:var(--paper-2);border:1.5px solid var(--line);
@@ -1073,7 +1089,7 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
   nav.links{position:fixed;top:64px;left:0;right:0;background:var(--paper);flex-direction:column;align-items:stretch;padding:12px 20px;border-bottom:1px solid var(--line);display:none;gap:2px;}
   nav.links.open{display:flex;}
   nav.links a{padding:12px;}
-  .hamburger{display:block;}
+  .hamburger{display:flex;}
   .sector-grid{grid-template-columns:1fr 1fr;}
   .role-cards{grid-template-columns:1fr;}
   .principle-grid{grid-template-columns:repeat(2,1fr);}
