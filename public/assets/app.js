@@ -424,10 +424,7 @@ function renderSubjectGrid(){
     <div class="subject-row ${s.ready?'ready':'soon'}" data-subject="${key}" aria-label="${s.name}">
       <span class="subject-rank mono">${i+1}</span>
       <img class="subject-cover" src="assets/img/covers/${key}.png" alt="" loading="lazy">
-      <div class="subject-body">
-        <h3>${s.name}</h3>
-        <p>${s.desc}</p>
-      </div>
+      <h3 class="subject-body">${s.name}</h3>
       <span class="subject-status-badge ${s.ready?'status-ready':'status-soon'}">${s.ready ? 'Tersedia' : 'Segera Hadir'}</span>
       ${s.ready ? icon('arrow-right','subj-arrow') : ''}
     </div>`).join('');
