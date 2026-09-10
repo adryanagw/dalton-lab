@@ -54,16 +54,34 @@
     "explain": "SHU modal = (simpanan pribadi ÷ total simpanan) × %modal × SHU total = (10.000.000/200.000.000) × 60% × 40.000.000 = 0,05 × 0,6 × 40.000.000 = Rp1.200.000."
   },
   {
-    "q": "Fungsi manajemen yang bertugas mengarahkan sumber daya manusia agar melaksanakan tugasnya sesuai rencana disebut…",
-    "opts": ["Planning", "Organizing", "Actuating", "Controlling"],
+    "q": "SHU koperasi dan dividen PT sama-sama merupakan bentuk pembagian keuntungan, tapi dasar perhitungannya berbeda. Perbedaan utamanya adalah…",
+    "opts": ["SHU dibagi rata ke semua anggota, dividen berdasarkan jumlah saham", "SHU dipengaruhi simpanan & transaksi anggota (jasa modal + jasa usaha), sedangkan dividen PT murni berdasarkan jumlah saham yang dimiliki", "Keduanya dihitung dengan rumus yang sama persis", "Dividen PT wajib dibagi meski perusahaan rugi, SHU koperasi tidak"],
+    "correct": 1,
+    "explain": "SHU koperasi punya dua komponen (jasa modal dari simpanan & jasa usaha dari transaksi), sedangkan dividen PT dibagi murni proporsional terhadap jumlah saham yang dimiliki pemegang saham — mencerminkan filosofi koperasi yang menghargai partisipasi aktif, bukan cuma besar modal."
+  },
+  {
+    "q": "Jika seorang sekutu pasif (komanditer) dalam CV ikut turun tangan mengelola operasional usaha sehari-hari, maka…",
+    "opts": ["Statusnya tetap sekutu pasif dengan tanggung jawab tetap terbatas", "Statusnya berubah seperti sekutu aktif, sehingga tanggung jawabnya bisa jadi tidak terbatas", "CV tersebut otomatis berubah bentuk jadi PT", "Tidak ada konsekuensi apa pun karena CV bukan badan hukum"],
+    "correct": 1,
+    "explain": "Batasan tanggung jawab sekutu pasif berlaku selama ia benar-benar tidak ikut campur mengelola usaha. Begitu ia aktif mengurus operasional, ia dianggap bertindak seperti sekutu aktif, dan tanggung jawabnya bisa meluas jadi tidak terbatas sampai harta pribadi."
+  },
+  {
+    "q": "Fungsi manajemen yang bertugas mengarahkan & membimbing sumber daya manusia agar melaksanakan tugasnya sesuai rencana disebut…",
+    "opts": ["Perencanaan (Planning)", "Pengorganisasian (Organizing)", "Pengarahan (Directing/Actuating)", "Pengendalian (Controlling)"],
     "correct": 2,
-    "explain": "Actuating (commanding/penggerakan) adalah fungsi manajemen yang mengarahkan & memimpin SDM agar benar-benar menjalankan tugas sesuai rencana yang telah disusun."
+    "explain": "Pengarahan — kadang ditulis Directing, kadang Actuating tergantung sumbernya, maksudnya sama — adalah fungsi manajemen yang mengarahkan & membimbing SDM agar benar-benar menjalankan tugas sesuai rencana yang telah disusun."
   },
   {
     "q": "Tokoh yang mendefinisikan manajemen sebagai \"seni menyelesaikan pekerjaan melalui orang lain\" adalah…",
     "opts": ["James A.F. Stoner", "Luther Gulick", "Henry Fayol", "Mary Parker Follet"],
     "correct": 3,
     "explain": "Mary Parker Follet mendefinisikan manajemen sebagai seni (art) menyelesaikan pekerjaan melalui orang lain — menekankan aspek kepemimpinan & koordinasi manusia."
+  },
+  {
+    "q": "Man, Money, Material, Machine, Method, dan Market (6M) berbeda dengan 4P (Product, Price, Promotion, Place) karena…",
+    "opts": ["6M dan 4P sebenarnya istilah yang sama, cuma disingkat berbeda", "6M adalah sumber daya yang dikelola manajemen secara umum, sedangkan 4P adalah strategi khusus di bidang pemasaran", "4P hanya berlaku untuk BUMN, 6M hanya untuk PT", "6M dipakai di tingkat top management, 4P di tingkat lower management"],
+    "correct": 1,
+    "explain": "6M adalah unsur-unsur dasar yang dikelola manajemen di seluruh bidang (produksi, keuangan, dst), sedangkan 4P adalah kerangka strategi yang spesifik dipakai di bidang manajemen pemasaran (marketing) saja."
   },
   {
     "q": "Prinsip manajemen Fayol \"Esprit de Corps\" menekankan pentingnya…",
