@@ -3,6 +3,13 @@
  * logged-in device (normally at most one row each, since /api/login
  * auto-evicts other devices on a fresh sign-in) and when it logged in.
  *
+ * GET /api/admin/sessions?resource=students — lists every student
+ * account with the personal info (KYC) they've filled in from Settings.
+ * Folded into this same file/function rather than a separate
+ * /api/admin/students endpoint — Vercel's Hobby plan caps a deployment
+ * at 12 Serverless Functions, so admin's read-only GET endpoints share a
+ * file and multiplex on this query param instead of each getting one.
+ *
  * POST /api/admin/sessions { username } — force-logout: deletes the
  * session row for that account. Note this does not retroactively kill an
  * already-open device's token in real time (tokens are stateless and
@@ -22,6 +29,15 @@ module.exports = async function handler(req, res) {
 
   try {
     await ensureSchema();
+
+    if (req.method === 'GET' && req.query.resource === 'students') {
+      const students = await sql`
+        SELECT username, nama, email, whatsapp, sekolah, kelas, tanggal_lahir, expires_at, created_at
+        FROM users ORDER BY created_at DESC
+      `;
+      res.status(200).json({ success: true, students });
+      return;
+    }
 
     if (req.method === 'GET') {
       const sessions = await sql`
@@ -52,6 +68,6 @@ module.exports = async function handler(req, res) {
 
     res.status(405).json({ success: false, message: 'Method not allowed.' });
   } catch (err) {
-    res.status(500).json({ success: false, message: 'Gagal memproses sesi.' });
+    res.status(500).json({ success: false, message: 'Gagal terhubung ke database.' });
   }
 };

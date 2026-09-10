@@ -415,7 +415,7 @@ async function loadStudents(){
   const list = document.getElementById('studentsList');
   list.innerHTML = '<p class="empty">Memuat…</p>';
   try{
-    const res = await fetch('/api/admin/students', { headers:{ 'Authorization': 'Bearer ' + token } });
+    const res = await fetch('/api/admin/sessions?resource=students', { headers:{ 'Authorization': 'Bearer ' + token } });
     if(res.status === 401){ clearToken(); showLogin(); return; }
     const data = await res.json();
     if(!data.success){ list.innerHTML = `<p class="empty">${data.message || 'Gagal memuat data siswa.'}</p>`; return; }

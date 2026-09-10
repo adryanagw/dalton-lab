@@ -704,7 +704,7 @@ async function goToSettings(){
   window.scrollTo({top:0,behavior:'instant'});
 
   try{
-    const res = await fetch('/api/settings', { headers:{ 'Authorization': 'Bearer ' + session.token } });
+    const res = await fetch('/api/login', { headers:{ 'Authorization': 'Bearer ' + session.token } });
     const data = await res.json();
     if(data.success){
       document.getElementById('profileEmail').value = data.profile.email;
@@ -749,8 +749,8 @@ document.getElementById('pwSubmitBtn').addEventListener('click', async ()=>{
   const btn = document.getElementById('pwSubmitBtn');
   btn.disabled = true; btn.textContent = 'Menyimpan…';
   try{
-    const res = await fetch('/api/change-password', {
-      method:'POST',
+    const res = await fetch('/api/login', {
+      method:'PATCH',
       headers:{'Content-Type':'application/json', 'Authorization':'Bearer ' + session.token},
       body: JSON.stringify({currentPassword, newPassword})
     });
@@ -790,7 +790,7 @@ document.getElementById('profileSubmitBtn').addEventListener('click', async ()=>
   const btn = document.getElementById('profileSubmitBtn');
   btn.disabled = true; btn.textContent = 'Menyimpan…';
   try{
-    const res = await fetch('/api/settings', {
+    const res = await fetch('/api/login', {
       method:'PUT',
       headers:{'Content-Type':'application/json', 'Authorization':'Bearer ' + session.token},
       body: JSON.stringify({
