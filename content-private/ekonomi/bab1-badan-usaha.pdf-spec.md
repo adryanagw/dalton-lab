@@ -2,10 +2,15 @@
 
 Curated content for the PDF companion, built on `public/assets/pdf-template/page-template.html`
 (`.pdf-page[data-subject="ekonomi"]`). Not an export of the HTML page — this is the
-formula/advanced-example material per CHAPTER_CONTENT_GUIDE.md §5. Ekonomi stays
-prose-first; LaTeX only appears where a real formula/calculation shows up (the SHU pages).
+formula/advanced-example/dense-reference material per CHAPTER_CONTENT_GUIDE.md §5. Ekonomi
+stays prose-first; LaTeX only appears where a real formula/calculation shows up (the SHU pages).
 
-6 pages: 1 chapter-opener + 5 content pages.
+Every page in this spec is self-contained — it must not depend on content that lives only in
+`bab1-badan-usaha.html`, since the HTML lesson covers basics/interactive exploration only and
+this PDF is the "further detail" companion (some content below used to also live in the HTML
+and has since been trimmed there — this file is now the sole canonical source for it).
+
+7 pages: 1 chapter-opener + 6 content pages.
 
 ## Page 1 — Chapter opener
 
@@ -23,8 +28,9 @@ ul.learn-list:
     (jasa modal + jasa usaha) sekaligus
   - Referensi cepat: badan hukum, tanggung jawab & modal tiap bentuk badan
     usaha (termasuk pecahan BUMN/BUMD: Perum, Persero, Perumda, Perseroda)
-  - 14 Prinsip Manajemen Henry Fayol dalam satu tabel ringkas untuk dihafal
-    cepat
+  - 7 Peran BUMN dalam perekonomian nasional — referensi lengkap
+  - 14 Prinsip Manajemen Henry Fayol lengkap, satu per satu, untuk dihafal
+    & dipahami di luar sesi belajar interaktif
   - 2 studi kasus SHU lanjutan: membandingkan dua anggota koperasi dengan
     proporsi simpanan/transaksi berbeda, dan efek perubahan persentase jasa
     modal antar tahun
@@ -34,6 +40,10 @@ ul.learn-list:
 
 Dense static table showing all 6 forms + the BUMN/BUMD split side by side —
 something the HTML's tab-switch never shows all at once, genuine PDF-only value.
+This is now the only place this full comparison table lives (previously also
+duplicated under the HTML's #bentuk section as a static table right after the
+interactive tabs — removed there since it was redundant with the tabs above it;
+this page is the canonical reference).
 
 | Bentuk | Badan Hukum | Tanggung Jawab | Modal |
 |---|---|---|---|
@@ -60,7 +70,47 @@ callout.mistake — Kesalahan Umum
   usaha, tanggung jawabnya otomatis berubah jadi tidak terbatas juga.
 ```
 
-## Page 3 — Menghitung Pembagian SHU (formula + contoh lanjutan #1)
+## Page 3 — Referensi: 7 Peran BUMN dalam Perekonomian
+
+New page. This content previously lived in the HTML under #bumn as a
+`.role-cards` list — removed there as supplementary depth not needed to
+grasp the core Perum/Persero/Perumda/Perseroda distinctions, and moved
+here in full as the canonical reference.
+
+```
+chapter-tag: Bab 1 · BUMN & BUMD
+subject-chip: Ekonomi
+
+h2.section-title: 7 Peran Utama BUMN dalam Perekonomian
+Numbered reference list, full text:
+  1. Penghasil barang & jasa untuk hajat hidup orang banyak — BUMN
+     menyediakan kebutuhan dasar (listrik, air, transportasi publik, dll.)
+     yang harus tetap tersedia meski secara komersial kurang menguntungkan.
+  2. Pelopor di sektor usaha yang belum diminati swasta — masuk duluan ke
+     sektor berisiko tinggi/modal besar yang swasta masih ragu garap.
+  3. Sumber penerimaan negara & roda utama ekonomi — lewat pajak, dividen,
+     dan kontribusi langsung ke PDB.
+  4. Penyedia pelayanan publik / umum — menjamin akses layanan esensial
+     merata sampai ke daerah yang secara bisnis kurang menarik bagi
+     swasta.
+  5. Pembuka lapangan kerja terbesar — menyerap tenaga kerja dalam jumlah
+     besar di berbagai sektor strategis.
+  6. Penyelamat krisis ekonomi — jadi instrumen negara untuk stabilisasi
+     saat kondisi ekonomi bergejolak (mis. menjaga pasokan bahan pokok,
+     menstabilkan harga/nilai tukar).
+  7. Menguasai sektor vital agar tidak terjadi monopoli swasta — sektor
+     yang menguasai hajat hidup orang banyak (listrik, air, minyak & gas)
+     tetap dikontrol negara sesuai amanat UUD 1945 Pasal 33.
+
+callout.mistake — Kesalahan Umum
+❌ Salah: mengira BUMN selalu 100% dimiliki negara dan tidak boleh mencari
+  laba.
+✅ Benar: hanya Perum yang 100% milik negara dan murni berorientasi
+  pelayanan; Persero minimal 51% milik negara dan justru berorientasi
+  laba seperti perusahaan pada umumnya (lihat Halaman 2).
+```
+
+## Page 4 — Menghitung Pembagian SHU (formula + contoh lanjutan #1)
 
 ```
 chapter-tag: Bab 1 · Koperasi
@@ -89,7 +139,7 @@ example-box — Contoh Soal · Tingkat Lanjut (Perbandingan Dua Anggota)
      kecil, karena porsi belanjanya jauh lebih dominan.
 ```
 
-## Page 4 — Studi Kasus: Perubahan Porsi Jasa Modal Antar Tahun
+## Page 5 — Studi Kasus: Perubahan Porsi Jasa Modal Antar Tahun
 
 ```
 chapter-tag: Bab 1 · Koperasi
@@ -114,7 +164,13 @@ callout.mistake — Kesalahan Umum
   simpanannya kecil (lihat Anggota B, halaman sebelumnya).
 ```
 
-## Page 5 — Referensi Cepat: Fungsi & Prinsip Manajemen
+## Page 6 — Referensi Lengkap: Fungsi & 14 Prinsip Manajemen (Henry Fayol)
+
+The HTML lesson keeps its `[data-accordion]` with all 14 principles as a
+genuine interactive/exploratory element (click-through, one at a time) — it
+was judged core rather than a reference-dump, so it was not trimmed there.
+This page is still written fully self-contained (complete real text for all
+14, not a pointer back to the HTML) so the PDF works standalone offline.
 
 | Fungsi | Istilah lain | Inti |
 |---|---|---|
@@ -128,13 +184,34 @@ callout.mistake — Kesalahan Umum
 chapter-tag: Bab 1 · Manajemen
 subject-chip: Ekonomi
 
-h2.section-title: 14 Prinsip Manajemen (Henry Fayol) — ringkas
-Numbered dense list, all 14 in one flat pass (same content as the HTML
-accordion, laid out for print instead of click-through):
-  1. Division of Work — pembagian kerja sesuai keahlian
-  2. Authority & Responsibility — wewenang seimbang tanggung jawab
-  3–14. (same short glosses as the HTML accordion — see #manajemen
-  section in bab1-badan-usaha.html for the canonical text)
+h2.section-title: 14 Prinsip Manajemen (Henry Fayol)
+Numbered reference list, full text for all 14:
+  1. Division of Work — pembagian kerja sesuai keahlian agar lebih
+     efisien.
+  2. Authority & Responsibility — wewenang harus seimbang dengan
+     tanggung jawab yang diberikan.
+  3. Discipline — kepatuhan terhadap aturan & kesepakatan organisasi.
+  4. Unity of Command — setiap karyawan hanya menerima perintah dari
+     satu atasan.
+  5. Unity of Direction — kegiatan dengan tujuan sama harus dipimpin
+     satu rencana & satu kepala.
+  6. Subordination of Individual Interest — kepentingan bersama harus
+     didahulukan dari kepentingan pribadi.
+  7. Remuneration of Personnel — gaji/imbalan harus adil bagi karyawan
+     & perusahaan.
+  8. Centralization — keseimbangan antara pengambilan keputusan
+     terpusat & terdesentralisasi.
+  9. Chain of Command — alur komando/wewenang yang jelas dari atas ke
+     bawah.
+  10. Order — tata tertib: orang & barang berada pada tempat yang
+      semestinya.
+  11. Equity — keadilan & kebaikan dalam memperlakukan karyawan.
+  12. Stability of Tenure of Personnel — tingkat turnover karyawan yang
+      rendah demi stabilitas kerja.
+  13. Initiative — memberi ruang karyawan untuk berinisiatif menyusun &
+      menjalankan rencana.
+  14. Esprit de Corps — semangat kerja sama & kekompakan tim dalam
+      organisasi.
 
 callout.mistake — Kesalahan Umum
 ❌ Salah: mengira "Actuating" dan "Pengarahan/Directing" adalah dua fungsi
@@ -145,7 +222,7 @@ callout.mistake — Kesalahan Umum
   khusus bidang pemasaran saja.
 ```
 
-## Page 6 — Latihan Tambahan (print-friendly practice set)
+## Page 7 — Latihan Tambahan (print-friendly practice set)
 
 ```
 chapter-tag: Bab 1 · Latihan
@@ -164,7 +241,8 @@ h2.section-title: Latihan Tambahan
    penerapannya di sebuah OSIS sekolah.
 
 Kunci Jawaban (kecil, di footer halaman):
-  1. Rp4.950.000 (5%×55%×45jt) · 2. lihat Bentuk BU & Koperasi (bab ini) ·
-  3. minimal 51% saham tetap milik negara · 4. jawaban terbuka, cek
-  terhadap definisi di halaman utama
+  1. Rp4.950.000 (5%×55%×45jt) · 2. lihat Halaman 2 (referensi bentuk
+  badan usaha) & materi Koperasi di halaman utama · 3. minimal 51% saham
+  tetap milik negara · 4. jawaban terbuka, cek terhadap definisi di
+  halaman utama
 ```
