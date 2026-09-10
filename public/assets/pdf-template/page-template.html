@@ -2,13 +2,20 @@
 <!-- Reusable PDF-companion page template. Every generated chapter PDF page should
      be built as one .pdf-page block using these classes, so pages stay visually
      consistent across subjects and across whichever pipeline eventually rasterizes
-     them to images. This file is a reference/preview doc, not wired into the app. -->
+     them to images. This file is a reference/preview doc, not wired into the app.
+
+     Type system is deliberately not the site's Space Grotesk/Inter pairing — these
+     pages are read at length like a book/ebook, so headings use Fraunces (warm,
+     literary serif) and body copy uses Literata (the typeface built for Google
+     Play Books' e-reader). IBM Plex Mono is kept only for small data/tag marks
+     (page numbers, chapter tags, section labels) — a margin-note register, not
+     a UI chrome font. -->
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <title>Dalton Lab — PDF Page Template</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../vendor/katex/katex.min.css">
 <style>
   :root{
@@ -32,7 +39,7 @@
   body{
     margin:0;
     background:#dfe3e8;
-    font-family:'Inter',sans-serif;
+    font-family:'Literata',serif;
     padding:48px 0 96px;
     display:flex;
     flex-direction:column;
@@ -74,7 +81,7 @@
     opacity:.055;
   }
   .watermark span{
-    font:700 15px/1 'Space Grotesk',sans-serif;
+    font:600 15px/1 'Fraunces',serif;
     letter-spacing:.05em;
     color:var(--navy);
     white-space:nowrap;
@@ -93,13 +100,13 @@
   }
   .page-head .brand{display:flex;align-items:center;gap:2px;}
   .page-head .brand img{height:34px;width:auto;display:block;}
-  .page-head .brand-word{font:700 15px/1 'Space Grotesk',sans-serif;color:var(--navy);letter-spacing:.01em;}
+  .page-head .brand-word{font:600 15px/1 'Fraunces',serif;color:var(--navy);letter-spacing:.01em;}
   .page-head .brand-word span{color:var(--accent);}
   .page-head .meta{display:flex;align-items:center;gap:10px;}
   .subject-chip{
-    font:600 11px/1 'Inter',sans-serif;
+    font:600 10px/1 'IBM Plex Mono',monospace;
     text-transform:uppercase;
-    letter-spacing:.06em;
+    letter-spacing:.07em;
     color:#fff;
     background:var(--accent);
     padding:6px 11px;
@@ -127,29 +134,29 @@
     display:block;
   }
   h1.page-title{
-    font:700 34px/1.15 'Space Grotesk',sans-serif;
+    font:700 34px/1.15 'Fraunces',serif;
     color:var(--navy);
     margin:0 0 12px;
   }
   h2.section-title{
-    font:600 20px/1.25 'Space Grotesk',sans-serif;
+    font:600 21px/1.25 'Fraunces',serif;
     color:var(--navy);
     margin:0 0 12px;
   }
   p.lead{
-    font:400 15.5px/1.65 'Inter',sans-serif;
+    font:400 15.5px/1.65 'Literata',serif;
     color:var(--slate);
     margin:0 0 20px;
     max-width:560px;
   }
   p.body-text{
-    font:400 14.5px/1.7 'Inter',sans-serif;
+    font:400 14.5px/1.7 'Literata',serif;
     color:#22303f;
     margin:0 0 16px;
   }
   ul.learn-list{margin:0 0 20px;padding-left:20px;}
   ul.learn-list li{
-    font:400 14.5px/1.7 'Inter',sans-serif;
+    font:400 14.5px/1.7 'Literata',serif;
     color:#22303f;
     margin-bottom:6px;
   }
@@ -162,16 +169,16 @@
     margin:0 0 18px;
   }
   .formula-box .label{
-    font:600 11px/1 'Inter',sans-serif;
+    font:600 10.5px/1 'IBM Plex Mono',monospace;
     text-transform:uppercase;
-    letter-spacing:.06em;
+    letter-spacing:.07em;
     color:var(--accent-dark, var(--orange-dark));
     margin-bottom:10px;
     display:block;
   }
   .formula-box .katex{font-size:1.15em;}
   .formula-box .var-def{
-    font:400 13px/1.6 'Inter',sans-serif;
+    font:400 13px/1.6 'Literata',serif;
     color:var(--slate);
     margin-top:10px;
   }
@@ -188,14 +195,16 @@
     margin:0 0 18px;
   }
   .example-box .label{
-    font:600 12px/1 'Space Grotesk',sans-serif;
+    font:600 11px/1 'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.07em;
     color:var(--navy);
     margin-bottom:12px;
     display:block;
   }
   .example-box ol{margin:0;padding-left:18px;}
   .example-box li{
-    font:400 14px/1.7 'Inter',sans-serif;
+    font:400 14px/1.7 'Literata',serif;
     color:#22303f;
     margin-bottom:8px;
   }
@@ -204,15 +213,15 @@
     border-radius:0 8px 8px 0;
     padding:14px 18px;
     margin:0 0 18px;
-    font:400 13.5px/1.6 'Inter',sans-serif;
+    font:400 13.5px/1.6 'Literata',serif;
   }
   .callout.mistake{background:#fdf1ef;border-left:4px solid var(--danger);}
   .callout.mistake .label{color:var(--danger);}
   .callout .label{
     display:block;
-    font:600 11px/1 'Inter',sans-serif;
+    font:600 10.5px/1 'IBM Plex Mono',monospace;
     text-transform:uppercase;
-    letter-spacing:.06em;
+    letter-spacing:.07em;
     margin-bottom:6px;
   }
   .callout .wrong{color:var(--danger);}
@@ -229,7 +238,7 @@
     border-top:1px solid #eef0f2;
   }
   .page-foot .license{
-    font:400 10.5px/1.4 'Inter',sans-serif;
+    font:italic 400 10.5px/1.4 'Literata',serif;
     color:#9aa6b1;
     max-width:380px;
   }
