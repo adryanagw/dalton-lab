@@ -1184,3 +1184,87 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
   .organel-grid{grid-template-columns:1fr;}
   .step-pill{min-width:90px;font-size:.76rem;padding:10px 6px;}
 }
+
+/* ===== PDF companion viewer — read-only paginated page images, gated
+   behind /api/pdf-content the same way lesson content is gated behind
+   /api/content. No download affordance by design (deterrent, not true
+   prevention — see the watermark overlay below). ===== */
+.pdf-viewer{max-width:600px;margin:0 auto;}
+.pdf-viewer-stage{
+  position:relative;
+  aspect-ratio:210/297;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.pdf-viewer-loading{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--slate);
+  font-size:.9rem;
+  background:var(--card);
+  z-index:2;
+}
+.pdf-viewer-loading[hidden]{display:none;}
+.pdf-viewer-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  opacity:0;
+  transition:opacity .25s ease;
+  -webkit-user-select:none;user-select:none;
+  pointer-events:none;
+}
+.pdf-viewer-watermark{
+  position:absolute;
+  inset:-20% -30%;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  transform:rotate(-28deg);
+  pointer-events:none;
+  z-index:1;
+  opacity:.05;
+}
+.pdf-viewer-watermark span{
+  font:600 12px/1 'Space Grotesk',sans-serif;
+  letter-spacing:.03em;
+  color:var(--navy);
+  white-space:nowrap;
+}
+.pdf-viewer-controls{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  margin-top:16px;
+}
+.pdf-viewer-prev,.pdf-viewer-next{
+  width:38px;height:38px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--navy);
+  font-size:1.1rem;
+  cursor:pointer;
+  transition:background .15s, opacity .15s;
+}
+.pdf-viewer-prev:hover:not(:disabled),.pdf-viewer-next:hover:not(:disabled){background:var(--paper);}
+.pdf-viewer-prev:disabled,.pdf-viewer-next:disabled{opacity:.35;cursor:default;}
+.pdf-viewer-pagenum{
+  font:500 .85rem/1 'Space Grotesk',sans-serif;
+  color:var(--slate);
+  min-width:120px;
+  text-align:center;
+}
+@media(max-width:680px){
+  .pdf-viewer{max-width:100%;}
+}

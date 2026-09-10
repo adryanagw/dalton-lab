@@ -1475,6 +1475,93 @@ function submitQuizResult(payload, statusEl, token){
   });
 }
 
+/* ===== PDF companion viewer =====
+   Read-only, paginated page images served by /api/pdf-content — the same
+   auth gate as /api/content, just returning pre-rendered PNGs instead of
+   HTML. <img> can't carry an Authorization header, so each page is
+   fetched as a blob and shown via an object URL (same reasoning as any
+   other authenticated-fetch content on this site, just binary).
+   No download affordance anywhere here by design: images render at
+   pointer-events:none, and a faint diagonal watermark (student name +
+   view timestamp, from the logged-in session) is drawn over every page —
+   a deterrent, not real prevention, consistent with how this project has
+   always treated the "can this be saved" question for paid content. */
+function initPdfViewers(root){
+  root.querySelectorAll('.pdf-viewer').forEach((viewer)=>{
+    const subject = viewer.dataset.pdfSubject;
+    const bab = viewer.dataset.pdfBab;
+    if(!subject || !bab) return;
+
+    const imgEl = viewer.querySelector('.pdf-viewer-img');
+    const loadingEl = viewer.querySelector('.pdf-viewer-loading');
+    const watermarkEl = viewer.querySelector('.pdf-viewer-watermark');
+    const pageNumEl = viewer.querySelector('.pdf-viewer-pagenum');
+    const prevBtn = viewer.querySelector('.pdf-viewer-prev');
+    const nextBtn = viewer.querySelector('.pdf-viewer-next');
+
+    const session = getSession();
+    if(!session || !session.token){
+      loadingEl.textContent = 'Login dulu buat lihat materi PDF.';
+      return;
+    }
+
+    let pageCount = 0;
+    let currentPage = 1;
+    let currentObjectUrl = null;
+
+    function renderWatermark(){
+      const name = (session.nama || session.username || '').toUpperCase();
+      const stamp = new Date().toLocaleString('id-ID', { dateStyle:'medium', timeStyle:'short' });
+      const line = (name + ' · ' + stamp + '   ').repeat(3);
+      watermarkEl.innerHTML = Array.from({length:8}, ()=> `<span>${line}</span>`).join('');
+    }
+
+    async function loadPage(n){
+      prevBtn.disabled = true; nextBtn.disabled = true;
+      loadingEl.hidden = false;
+      loadingEl.textContent = 'Memuat…';
+      imgEl.style.opacity = '0';
+      try{
+        const res = await fetch(`/api/pdf-content?subject=${encodeURIComponent(subject)}&bab=${encodeURIComponent(bab)}&page=${n}`, {
+          headers: { 'Authorization': 'Bearer ' + session.token }
+        });
+        if(!res.ok) throw new Error('fetch failed');
+        const blob = await res.blob();
+        if(currentObjectUrl) URL.revokeObjectURL(currentObjectUrl);
+        currentObjectUrl = URL.createObjectURL(blob);
+        imgEl.onload = ()=>{ imgEl.style.opacity = '1'; };
+        imgEl.src = currentObjectUrl;
+        currentPage = n;
+        pageNumEl.textContent = `Halaman ${currentPage} / ${pageCount}`;
+        loadingEl.hidden = true;
+      }catch(err){
+        loadingEl.textContent = 'Gagal memuat halaman ini.';
+      }finally{
+        prevBtn.disabled = currentPage <= 1;
+        nextBtn.disabled = currentPage >= pageCount;
+      }
+    }
+
+    fetch(`/api/pdf-content?subject=${encodeURIComponent(subject)}&bab=${encodeURIComponent(bab)}`, {
+      headers: { 'Authorization': 'Bearer ' + session.token }
+    })
+      .then((r)=> r.ok ? r.json() : Promise.reject())
+      .then((data)=>{
+        pageCount = data.pageCount || 0;
+        if(pageCount > 0){
+          renderWatermark();
+          loadPage(1);
+        }else{
+          loadingEl.textContent = 'Materi PDF belum tersedia untuk bab ini.';
+        }
+      })
+      .catch(()=>{ loadingEl.textContent = 'Gagal memuat materi PDF.'; });
+
+    prevBtn.addEventListener('click', ()=>{ if(currentPage > 1) loadPage(currentPage - 1); });
+    nextBtn.addEventListener('click', ()=>{ if(currentPage < pageCount) loadPage(currentPage + 1); });
+  });
+}
+
 /* ===== LaTeX rendering (KaTeX) =====
    Convention for chapter-content authors:
      - Inline math:   \( ... \)
@@ -1504,6 +1591,7 @@ function initAllComponents(root){
   initShuCalculator(root);
   initQuizzes(root);
   initExercises(root);
+  initPdfViewers(root);
   initMath(root);
 }
 
