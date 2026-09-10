@@ -455,7 +455,11 @@ function renderSessionBadge(){
     const statusHtml = hasAccess()
       ? `<span class="session-status ok">Aktif s.d. ${expiryStr}</span>`
       : `<span class="session-status expired">Paket habis</span>`;
-    badge.innerHTML = `${s.nama || s.username} ${statusHtml} <button id="logoutBtn">Keluar</button>`;
+    badge.innerHTML = `${s.nama || s.username} ${statusHtml} <button id="settingsBtn">Pengaturan</button> <button id="logoutBtn">Keluar</button>`;
+    document.getElementById('settingsBtn').addEventListener('click',()=>{
+      closeSidebar();
+      goToSettings();
+    });
     document.getElementById('logoutBtn').addEventListener('click',()=>{
       clearSession();
       goToHome();
@@ -519,6 +523,7 @@ function markProgress(babId, status){
 const viewHome = document.getElementById('view-home');
 const viewBabs = document.getElementById('view-babs');
 const viewSignin = document.getElementById('view-signin');
+const viewSettings = document.getElementById('view-settings');
 const viewLesson = document.getElementById('view-lesson');
 let activeSubjectKey = 'ekonomi';
 let activeBabId = null;
@@ -594,6 +599,7 @@ function hideAllViews(){
   viewHome.style.display = 'none';
   viewBabs.style.display = 'none';
   viewSignin.style.display = 'none';
+  viewSettings.style.display = 'none';
   viewLesson.style.display = 'none';
 }
 
@@ -678,6 +684,137 @@ function goToSignIn(subjectKey){
   document.querySelectorAll('.subject-link').forEach(l=>l.classList.toggle('active', l.dataset.subject===subjectKey));
   window.scrollTo({top:0,behavior:'instant'});
 }
+
+async function goToSettings(){
+  const session = getSession();
+  if(!session){ goToSignIn(); return; }
+
+  document.getElementById('pwError').classList.remove('show');
+  document.getElementById('pwSuccess').classList.remove('show');
+  document.getElementById('pwCurrent').value = '';
+  document.getElementById('pwNew').value = '';
+  document.getElementById('pwConfirm').value = '';
+  document.getElementById('profileError').classList.remove('show');
+  document.getElementById('profileSuccess').classList.remove('show');
+
+  hideAllViews();
+  viewSettings.style.display = '';
+  document.getElementById('navHomeLink').classList.remove('active');
+  document.querySelectorAll('.subject-link').forEach(l=>l.classList.remove('active'));
+  window.scrollTo({top:0,behavior:'instant'});
+
+  try{
+    const res = await fetch('/api/settings', { headers:{ 'Authorization': 'Bearer ' + session.token } });
+    const data = await res.json();
+    if(data.success){
+      document.getElementById('profileEmail').value = data.profile.email;
+      document.getElementById('profileWa').value = data.profile.whatsapp;
+      document.getElementById('profileSekolah').value = data.profile.sekolah;
+      document.getElementById('profileKelas').value = data.profile.kelas;
+      document.getElementById('profileTgl').value = data.profile.tanggalLahir;
+    }
+  }catch(err){ /* fields just stay blank — student can still fill & save */ }
+}
+
+document.getElementById('backToHomeFromSettings').addEventListener('click',goToHome);
+
+document.getElementById('pwSubmitBtn').addEventListener('click', async ()=>{
+  const session = getSession();
+  const errEl = document.getElementById('pwError');
+  const okEl = document.getElementById('pwSuccess');
+  errEl.classList.remove('show');
+  okEl.classList.remove('show');
+  if(!session){ goToSignIn(); return; }
+
+  const currentPassword = document.getElementById('pwCurrent').value;
+  const newPassword = document.getElementById('pwNew').value;
+  const confirm = document.getElementById('pwConfirm').value;
+
+  if(!currentPassword || !newPassword){
+    errEl.textContent = 'Isi password lama & baru dulu ya.';
+    errEl.classList.add('show');
+    return;
+  }
+  if(newPassword.length < 6){
+    errEl.textContent = 'Password baru minimal 6 karakter.';
+    errEl.classList.add('show');
+    return;
+  }
+  if(newPassword !== confirm){
+    errEl.textContent = 'Konfirmasi password baru belum sama.';
+    errEl.classList.add('show');
+    return;
+  }
+
+  const btn = document.getElementById('pwSubmitBtn');
+  btn.disabled = true; btn.textContent = 'Menyimpan…';
+  try{
+    const res = await fetch('/api/change-password', {
+      method:'POST',
+      headers:{'Content-Type':'application/json', 'Authorization':'Bearer ' + session.token},
+      body: JSON.stringify({currentPassword, newPassword})
+    });
+    const data = await res.json();
+    if(data.success){
+      document.getElementById('pwCurrent').value = '';
+      document.getElementById('pwNew').value = '';
+      document.getElementById('pwConfirm').value = '';
+      okEl.classList.add('show');
+    } else {
+      errEl.textContent = data.message || 'Gagal ganti password.';
+      errEl.classList.add('show');
+    }
+  }catch(err){
+    errEl.textContent = 'Gagal terhubung ke server.';
+    errEl.classList.add('show');
+  }finally{
+    btn.disabled = false; btn.textContent = 'Ganti Password';
+  }
+});
+
+document.getElementById('profileSubmitBtn').addEventListener('click', async ()=>{
+  const session = getSession();
+  const errEl = document.getElementById('profileError');
+  const okEl = document.getElementById('profileSuccess');
+  errEl.classList.remove('show');
+  okEl.classList.remove('show');
+  if(!session){ goToSignIn(); return; }
+
+  const email = document.getElementById('profileEmail').value.trim();
+  if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    errEl.textContent = 'Format email-nya belum bener.';
+    errEl.classList.add('show');
+    return;
+  }
+
+  const btn = document.getElementById('profileSubmitBtn');
+  btn.disabled = true; btn.textContent = 'Menyimpan…';
+  try{
+    const res = await fetch('/api/settings', {
+      method:'PUT',
+      headers:{'Content-Type':'application/json', 'Authorization':'Bearer ' + session.token},
+      body: JSON.stringify({
+        email,
+        whatsapp: document.getElementById('profileWa').value.trim(),
+        sekolah: document.getElementById('profileSekolah').value.trim(),
+        kelas: document.getElementById('profileKelas').value.trim(),
+        tanggalLahir: document.getElementById('profileTgl').value
+      })
+    });
+    const data = await res.json();
+    if(data.success){
+      okEl.classList.add('show');
+    } else {
+      errEl.textContent = data.message || 'Gagal menyimpan data.';
+      errEl.classList.add('show');
+    }
+  }catch(err){
+    errEl.textContent = 'Gagal terhubung ke server.';
+    errEl.classList.add('show');
+  }finally{
+    btn.disabled = false; btn.textContent = 'Simpan Data';
+  }
+});
 
 function goToBabs(subjectKey){
   activeSubjectKey = subjectKey;

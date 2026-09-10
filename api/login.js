@@ -5,19 +5,19 @@
  * /api/content, /api/quiz, /api/exercise, and /api/progress require on
  * every request.
  *
- * Also enforces a 2-device cap per account: each successful login rows
- * itself into `sessions`, and a login attempt is refused once 2 rows
- * already exist for that username — the student has to sign out of one
- * of the other devices (frees the row via DELETE /api/login) before a new
- * one can log in. The oldest row is auto-reclaimed instead of blocking
- * forever if it's more than 30 days old, so a lost/abandoned device
- * doesn't permanently eat a slot.
+ * Single active device per account: logging in on a new device
+ * automatically signs out every other device on that account (their
+ * session rows are deleted) instead of blocking the new login — the
+ * student never has to manually sign out elsewhere first. Tokens are
+ * stateless (see _auth.js) and not checked against the sessions table
+ * per-request, so an evicted device's own token keeps working locally
+ * until it naturally expires — this eviction is "sign in here frees the
+ * slot," not a live kill-switch on the other tab.
  *
- * DELETE /api/login — logout. Frees this device's slot against the
- * 2-device cap above by deleting its session row. Uses signature-only
- * verification (not the full verifyToken expiry check) so a student
- * whose subscription has lapsed can still sign out and free the slot
- * instead of being stuck occupying it until they renew. Always responds
+ * DELETE /api/login — logout. Deletes this device's session row. Uses
+ * signature-only verification (not the full verifyToken expiry check) so
+ * a student whose subscription has lapsed can still sign out instead of
+ * being stuck occupying the slot until they renew. Always responds
  * success — signing out of an already-dead/invalid session isn't an
  * error from the client's point of view.
  */
@@ -25,9 +25,6 @@ const crypto = require('crypto');
 const { sql, ensureSchema } = require('./_db');
 const { verifyPassword } = require('./_password');
 const { signToken, verifySignature, getBearerToken } = require('./_auth');
-
-const MAX_DEVICES = 2;
-const STALE_SESSION_DAYS = 30;
 
 module.exports = async function handler(req, res) {
   if (req.method === 'DELETE') {
@@ -37,8 +34,8 @@ module.exports = async function handler(req, res) {
         await ensureSchema();
         await sql`DELETE FROM sessions WHERE username = ${payload.u} AND sid = ${payload.s}`;
       } catch (err) {
-        // Non-critical — the session row will still auto-reclaim after
-        // STALE_SESSION_DAYS if this delete didn't go through.
+        // Non-critical — a later login on any device still evicts this
+        // row via the auto-evict delete below, even if this delete fails.
       }
     }
     res.status(200).json({ success: true });
@@ -73,22 +70,8 @@ module.exports = async function handler(req, res) {
       return;
     }
 
-    const existingSessions = await sql`
-      SELECT id, created_at FROM sessions WHERE username = ${user.username} ORDER BY created_at ASC
-    `;
-    if (existingSessions.length >= MAX_DEVICES) {
-      const oldest = existingSessions[0];
-      const staleMs = Date.now() - new Date(oldest.created_at).getTime();
-      if (staleMs > STALE_SESSION_DAYS * 24 * 60 * 60 * 1000) {
-        await sql`DELETE FROM sessions WHERE id = ${oldest.id}`;
-      } else {
-        res.status(403).json({
-          success: false,
-          message: `Akun ini lagi aktif di ${MAX_DEVICES} perangkat. Sign out dulu dari salah satu perangkat, baru login lagi di sini.`
-        });
-        return;
-      }
-    }
+    // Auto-evict: a fresh login always wins, no manual sign-out elsewhere required.
+    await sql`DELETE FROM sessions WHERE username = ${user.username}`;
 
     const expiresAt = user.expires_at ? new Date(user.expires_at).toISOString() : null;
     const sid = crypto.randomUUID();

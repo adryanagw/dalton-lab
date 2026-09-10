@@ -202,7 +202,66 @@
   </section>
 </div>
 
-<!-- ===================== VIEW: LESSON (bab content) ===================== -->
+<!-- ===================== VIEW: SETTINGS ===================== -->
+<div id="view-settings" style="display:none;">
+  <section class="hero" style="padding:52px 0 60px;">
+    <div class="wrap">
+      <button class="breadcrumb-back" id="backToHomeFromSettings">← Beranda</button>
+      <div class="signin-center">
+        <h1>Pengaturan Akun</h1>
+        <p class="lead">Kelola password &amp; data pribadi kamu.</p>
+
+        <div class="signin-card" style="margin-bottom:20px;">
+          <h3>Ganti Password</h3>
+          <p class="signin-sub">Minimal 6 karakter.</p>
+          <div class="signin-error" id="pwError"></div>
+          <div class="signin-success" id="pwSuccess">Password berhasil diganti.</div>
+          <div class="signin-field">
+            <label for="pwCurrent">Password Saat Ini</label>
+            <input type="password" id="pwCurrent" autocomplete="current-password" class="mono">
+          </div>
+          <div class="signin-field">
+            <label for="pwNew">Password Baru</label>
+            <input type="password" id="pwNew" autocomplete="new-password" class="mono">
+          </div>
+          <div class="signin-field">
+            <label for="pwConfirm">Ulangi Password Baru</label>
+            <input type="password" id="pwConfirm" autocomplete="new-password" class="mono">
+          </div>
+          <button class="btn btn-primary signin-submit" id="pwSubmitBtn">Ganti Password</button>
+        </div>
+
+        <div class="signin-card">
+          <h3>Data Pribadi</h3>
+          <p class="signin-sub">Bantu kami menghubungi kamu kalau perlu — data ini nggak dibagikan ke siapa pun.</p>
+          <div class="signin-error" id="profileError"></div>
+          <div class="signin-success" id="profileSuccess">Data tersimpan.</div>
+          <div class="signin-field">
+            <label for="profileEmail">Email</label>
+            <input type="email" id="profileEmail" class="mono" placeholder="kamu@email.com" autocomplete="email">
+          </div>
+          <div class="signin-field">
+            <label for="profileWa">No. WhatsApp</label>
+            <input type="text" id="profileWa" class="mono" placeholder="08xxxxxxxxxx" inputmode="tel" autocomplete="tel">
+          </div>
+          <div class="signin-field">
+            <label for="profileSekolah">Asal Sekolah</label>
+            <input type="text" id="profileSekolah" class="mono">
+          </div>
+          <div class="signin-field">
+            <label for="profileKelas">Kelas</label>
+            <input type="text" id="profileKelas" class="mono" placeholder="Contoh: XI-2">
+          </div>
+          <div class="signin-field">
+            <label for="profileTgl">Tanggal Lahir</label>
+            <input type="date" id="profileTgl" class="mono">
+          </div>
+          <button class="btn btn-primary signin-submit" id="profileSubmitBtn">Simpan Data</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
 <!-- ===================== VIEW: LESSON (bab content, injected on demand) ===================== -->
 <div id="view-lesson" style="display:none;">

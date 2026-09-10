@@ -1,17 +1,14 @@
 /**
- * GET /api/admin/sessions — lists every account that currently has at
- * least one logged-in device, with a device count (against the 2-device
- * cap enforced at login) and when the oldest/newest of those devices
- * logged in.
+ * GET /api/admin/sessions — lists every account that currently has a
+ * logged-in device (normally at most one row each, since /api/login
+ * auto-evicts other devices on a fresh sign-in) and when it logged in.
  *
- * POST /api/admin/sessions { username } — force-logout: deletes every
- * session row for that account, freeing all its device slots for new
- * logins immediately. Note this does not retroactively kill an
+ * POST /api/admin/sessions { username } — force-logout: deletes the
+ * session row for that account. Note this does not retroactively kill an
  * already-open device's token in real time (tokens are stateless and
- * self-expire on their own per the subscription's expiresAt) — it frees
- * the slot so the student (or someone else, if the account was
- * compromised) can log in fresh; existing open tabs keep working until
- * their own token naturally expires.
+ * self-expire on their own per the subscription's expiresAt) — it just
+ * lets a fresh login proceed cleanly; an existing open tab keeps working
+ * until its own token naturally expires.
  */
 const { sql, ensureSchema } = require('../_db');
 const { verifyToken, getBearerToken } = require('../_auth');
