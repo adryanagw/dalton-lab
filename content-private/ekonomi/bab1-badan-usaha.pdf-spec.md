@@ -10,8 +10,10 @@ prose-first; LaTeX only appears where a real formula/calculation shows up (the S
 ## Page 1 — Chapter opener
 
 ```
-eyebrow-num: 01 · MATERI PDF
+chapter-tag: Bab 1
+subject-chip: Ekonomi
 h1.page-title: Badan Usaha, Koperasi & Manajemen
+p.dek: Materi PDF — pelengkap Bab 1
 p.lead: Materi tambahan ini fokus ke rumus, referensi cepat, dan contoh soal
   lanjutan yang butuh perhitungan bertingkat — pelengkap materi interaktif
   di halaman utama, bukan salinannya.
@@ -26,7 +28,6 @@ ul.learn-list:
   - 2 studi kasus SHU lanjutan: membandingkan dua anggota koperasi dengan
     proporsi simpanan/transaksi berbeda, dan efek perubahan persentase jasa
     modal antar tahun
-chapter-tag: Bab 1
 ```
 
 ## Page 2 — Referensi Cepat: Bentuk Badan Usaha
@@ -47,6 +48,9 @@ something the HTML's tab-switch never shows all at once, genuine PDF-only value.
 | Perseroda (BUMD) | Ya | Min. 51% daerah | APBD + pihak lain |
 
 ```
+chapter-tag: Bab 1 · Bentuk Badan Usaha
+subject-chip: Ekonomi
+
 callout.mistake — Kesalahan Umum
 ❌ Salah: menganggap CV dan Firma itu sama karena keduanya "bukan badan
   hukum".
@@ -59,6 +63,9 @@ callout.mistake — Kesalahan Umum
 ## Page 3 — Menghitung Pembagian SHU (formula + contoh lanjutan #1)
 
 ```
+chapter-tag: Bab 1 · Koperasi
+subject-chip: Ekonomi
+
 h2.section-title: Menghitung Pembagian SHU
 
 formula-box — Rumus
@@ -85,6 +92,9 @@ example-box — Contoh Soal · Tingkat Lanjut (Perbandingan Dua Anggota)
 ## Page 4 — Studi Kasus: Perubahan Porsi Jasa Modal Antar Tahun
 
 ```
+chapter-tag: Bab 1 · Koperasi
+subject-chip: Ekonomi
+
 h2.section-title: Studi Kasus — Perubahan Porsi Jasa Modal
 
 example-box — Contoh Soal · Tingkat Lanjut (Perbandingan Antar Tahun)
@@ -115,6 +125,9 @@ callout.mistake — Kesalahan Umum
 | Pengendalian | Controlling | Memantau & mengoreksi penyimpangan |
 
 ```
+chapter-tag: Bab 1 · Manajemen
+subject-chip: Ekonomi
+
 h2.section-title: 14 Prinsip Manajemen (Henry Fayol) — ringkas
 Numbered dense list, all 14 in one flat pass (same content as the HTML
 accordion, laid out for print instead of click-through):
@@ -135,6 +148,9 @@ callout.mistake — Kesalahan Umum
 ## Page 6 — Latihan Tambahan (print-friendly practice set)
 
 ```
+chapter-tag: Bab 1 · Latihan
+subject-chip: Ekonomi
+
 h2.section-title: Latihan Tambahan
 1. Koperasi X membagi SHU Rp45.000.000 (55% jasa modal). Total simpanan
    anggota Rp450.000.000, simpanan Ibu Tuti Rp45.000.000. Hitung SHU jasa
