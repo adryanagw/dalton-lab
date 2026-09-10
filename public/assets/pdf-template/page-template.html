@@ -7,9 +7,12 @@
      Type system is deliberately not the site's Space Grotesk/Inter pairing — these
      pages are read at length like a book/ebook, so headings use Fraunces (warm,
      literary serif) and body copy uses Literata (the typeface built for Google
-     Play Books' e-reader). IBM Plex Mono is kept only for small data/tag marks
-     (page numbers, chapter tags, section labels) — a margin-note register, not
-     a UI chrome font. -->
+     Play Books' e-reader). Content-block labels (Rumus, Contoh Soal, Kesalahan
+     Umum) are italic Literata, not boxed/mono UI chips — content blocks are set
+     off with hairline rules or a plain tint, never a colored card rail, so the
+     page reads as print typography rather than an app UI ported onto paper.
+     IBM Plex Mono is reserved for genuine data (page numbers, timestamps) and
+     inline formula variables — not as a "technical" label costume. -->
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -29,6 +32,7 @@
     --success:#2f9e6a;
     --danger:#d64545;
     --accent:var(--orange);
+    --orange-ink:#bb4d0e; /* orange-dark fails 4.5:1 as text on white; this passes ~5:1, kept separate from the accent-frame/graphic orange tokens */
   }
   /* Per-subject accent — only Ekonomi is decided so far (this is the chapter
      being rebuilt). Add matematika/biologi/kimia/fisika here once those
@@ -52,6 +56,7 @@
     position:relative;
     width:794px;
     height:1123px;
+    padding:26px;
     background:var(--accent);
     border-radius:6px;
     box-shadow:0 30px 60px -20px rgba(13,27,46,.35);
@@ -59,8 +64,9 @@
     flex-shrink:0;
   }
   .pdf-page .sheet{
-    position:absolute;
-    inset:26px;
+    position:relative;
+    width:100%;
+    height:100%;
     background:var(--card);
     border-radius:4px;
     display:flex;
@@ -81,11 +87,10 @@
     opacity:.055;
   }
   .watermark span{
-    font:600 15px/1 'Fraunces',serif;
-    letter-spacing:.05em;
+    font:italic 600 15px/1 'Fraunces',serif;
+    letter-spacing:.03em;
     color:var(--navy);
     white-space:nowrap;
-    text-transform:uppercase;
   }
 
   /* ---- header ---- */
@@ -102,18 +107,13 @@
   .page-head .brand img{height:34px;width:auto;display:block;}
   .page-head .brand-word{font:600 15px/1 'Fraunces',serif;color:var(--navy);letter-spacing:.01em;}
   .page-head .brand-word span{color:var(--accent);}
-  .page-head .meta{display:flex;align-items:center;gap:10px;}
+  .page-head .meta{display:flex;align-items:baseline;gap:8px;}
   .subject-chip{
-    font:600 10px/1 'IBM Plex Mono',monospace;
-    text-transform:uppercase;
-    letter-spacing:.07em;
-    color:#fff;
-    background:var(--accent);
-    padding:6px 11px;
-    border-radius:20px;
+    font:italic 600 14px/1 'Fraunces',serif;
+    color:var(--orange-ink);
   }
   .chapter-tag{
-    font:500 12.5px/1 'IBM Plex Mono',monospace;
+    font:italic 400 13.5px/1 'Literata',serif;
     color:var(--slate);
   }
 
@@ -126,17 +126,15 @@
     overflow:hidden;
   }
 
-  .eyebrow-num{
-    font:600 13px/1 'IBM Plex Mono',monospace;
-    color:var(--accent);
-    letter-spacing:.08em;
-    margin-bottom:10px;
-    display:block;
-  }
   h1.page-title{
     font:700 34px/1.15 'Fraunces',serif;
     color:var(--navy);
-    margin:0 0 12px;
+    margin:0 0 6px;
+  }
+  p.dek{
+    font:italic 400 14.5px/1.4 'Literata',serif;
+    color:var(--orange-ink);
+    margin:0 0 18px;
   }
   h2.section-title{
     font:600 21px/1.25 'Fraunces',serif;
@@ -162,25 +160,22 @@
   }
 
   .formula-box{
-    background:#faf6ee;
-    border-left:4px solid var(--accent);
-    border-radius:0 8px 8px 0;
-    padding:18px 22px;
-    margin:0 0 18px;
+    border-top:1px solid #e6dfd0;
+    border-bottom:1px solid #e6dfd0;
+    padding:22px 2px;
+    margin:0 0 26px;
   }
   .formula-box .label{
-    font:600 10.5px/1 'IBM Plex Mono',monospace;
-    text-transform:uppercase;
-    letter-spacing:.07em;
-    color:var(--accent-dark, var(--orange-dark));
-    margin-bottom:10px;
+    font:italic 500 14px/1 'Literata',serif;
+    color:var(--orange-ink);
+    margin-bottom:12px;
     display:block;
   }
   .formula-box .katex{font-size:1.15em;}
   .formula-box .var-def{
     font:400 13px/1.6 'Literata',serif;
     color:var(--slate);
-    margin-top:10px;
+    margin-top:12px;
   }
   .formula-box .var-def b{
     font-family:'IBM Plex Mono',monospace;
@@ -189,43 +184,37 @@
   }
 
   .example-box{
-    border:1px solid #e7e2d6;
-    border-radius:10px;
-    padding:18px 20px;
-    margin:0 0 18px;
+    border-top:1px solid #e6dfd0;
+    padding:20px 2px 4px;
+    margin:0 0 26px;
   }
   .example-box .label{
-    font:600 11px/1 'IBM Plex Mono',monospace;
-    text-transform:uppercase;
-    letter-spacing:.07em;
+    font:italic 500 14px/1 'Literata',serif;
     color:var(--navy);
-    margin-bottom:12px;
+    margin-bottom:14px;
     display:block;
   }
-  .example-box ol{margin:0;padding-left:18px;}
+  .example-box ol{margin:0;padding-left:20px;}
   .example-box li{
     font:400 14px/1.7 'Literata',serif;
     color:#22303f;
-    margin-bottom:8px;
+    margin-bottom:10px;
   }
 
   .callout{
-    border-radius:0 8px 8px 0;
-    padding:14px 18px;
-    margin:0 0 18px;
+    padding:18px 20px;
+    margin:0 0 24px;
     font:400 13.5px/1.6 'Literata',serif;
   }
-  .callout.mistake{background:#fdf1ef;border-left:4px solid var(--danger);}
+  .callout.mistake{background:#fbf0ed;}
   .callout.mistake .label{color:var(--danger);}
   .callout .label{
     display:block;
-    font:600 10.5px/1 'IBM Plex Mono',monospace;
-    text-transform:uppercase;
-    letter-spacing:.07em;
-    margin-bottom:6px;
+    font:italic 600 13.5px/1 'Literata',serif;
+    margin-bottom:8px;
   }
-  .callout .wrong{color:var(--danger);}
-  .callout .right{color:var(--success);}
+  .callout .wrong{color:var(--danger);font-weight:600;}
+  .callout .right{color:var(--success);font-weight:600;}
 
   /* ---- footer ---- */
   .page-foot{
@@ -238,13 +227,13 @@
     border-top:1px solid #eef0f2;
   }
   .page-foot .license{
-    font:italic 400 10.5px/1.4 'Literata',serif;
-    color:#9aa6b1;
+    font:italic 400 12px/1.4 'Literata',serif;
+    color:#5c6670;
     max-width:380px;
   }
   .page-foot .watermark-meta{
-    font:500 10px/1.4 'IBM Plex Mono',monospace;
-    color:#b7bfc7;
+    font:500 12px/1.4 'IBM Plex Mono',monospace;
+    color:#5c6670;
     text-align:right;
   }
   .page-foot .page-num{
@@ -254,9 +243,8 @@
 
   .page-caption{
     font:500 12px/1 'IBM Plex Mono',monospace;
-    color:#6b7684;
-    text-transform:uppercase;
-    letter-spacing:.06em;
+    color:#4c5964;
+    letter-spacing:.02em;
   }
 </style>
 </head>
@@ -266,14 +254,14 @@
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
     <div class="watermark">
-      <span>ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD</span>
-      <span>2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10</span>
-      <span>ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD</span>
-      <span>2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10</span>
-      <span>ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD</span>
-      <span>2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10</span>
-      <span>ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD</span>
-      <span>2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10</span>
+      <span>Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald</span>
+      <span>2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10</span>
+      <span>Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald</span>
+      <span>2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10</span>
+      <span>Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald</span>
+      <span>2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10</span>
+      <span>Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald</span>
+      <span>2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10</span>
     </div>
 
     <div class="page-head">
@@ -288,8 +276,8 @@
     </div>
 
     <div class="page-body">
-      <span class="eyebrow-num">01 &middot; MATERI PDF</span>
       <h1 class="page-title">Badan Usaha &amp; Koperasi</h1>
+      <p class="dek">Materi PDF — pelengkap Bab 1</p>
       <p class="lead">Materi tambahan ini fokus ke rumus, contoh soal lanjutan, dan konsep yang butuh perhitungan bertahap — pelengkap dari materi interaktif di halaman utama, bukan salinannya.</p>
 
       <h2 class="section-title">Yang akan kamu pelajari</h2>
@@ -311,14 +299,14 @@
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
     <div class="watermark">
-      <span>ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD</span>
-      <span>2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10</span>
-      <span>ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD</span>
-      <span>2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10</span>
-      <span>ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD</span>
-      <span>2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10</span>
-      <span>ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD</span>
-      <span>2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10</span>
+      <span>Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald</span>
+      <span>2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10</span>
+      <span>Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald</span>
+      <span>2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10</span>
+      <span>Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald</span>
+      <span>2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10</span>
+      <span>Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald</span>
+      <span>2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10 14:32 &nbsp; Adryan Gerald &middot; 2026-09-10</span>
     </div>
 
     <div class="page-head">
