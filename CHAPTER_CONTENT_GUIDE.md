@@ -100,6 +100,8 @@ Existing chapters use ~4 questions per tier as a rough baseline, not a hard rule
 
 The PDF is not a export-to-PDF of the HTML page. It's a separate, curated document: **formulas, advanced concepts, and worked exercise examples** — the material that benefits from print/offline/dense reference, not the intuition-building prose that already lives on the page. Read-only, rendered as images (not a native embed) per the earlier decision in this thread, with a student-identity watermark once that viewer exists.
 
+**Page template:** every PDF page is built as one `.pdf-page[data-subject="..."]` block from `public/assets/pdf-template/page-template.html` — bright per-subject accent frame around a white reading sheet, branded header (logo + wordmark + subject/chapter meta), diagonal student-identity watermark, footer with license text. Reuse its classes (`.formula-box`, `.example-box`, `.callout.mistake`, etc.) rather than inventing new page markup per chapter. Only `ekonomi` has an `--accent` color defined so far — other subjects get theirs added there once decided, not invented per-chapter.
+
 **By subject:**
 - **Matematika, Fisika, Kimia** — equation-dense. Typeset via **LaTeX**, not plain text: proper fraction bars, aligned derivation steps, subscripts/superscripts, summation/integral notation. This is the actual reason the PDF path exists — the HTML page's inline KaTeX is fine for a formula or two, not for a full derivation or a page of worked problems.
 - **Biologi, Ekonomi** — prose-first, same as the HTML page's voice. Use LaTeX only where an actual formula shows up (Hardy-Weinberg, reaction stoichiometry, SHU/break-even calculations) — don't typeset the whole document in LaTeX just because the tool is available.

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!-- Reusable PDF-companion page template. Every generated chapter PDF page should
+     be built as one .pdf-page block using these classes, so pages stay visually
+     consistent across subjects and across whichever pipeline eventually rasterizes
+     them to images. This file is a reference/preview doc, not wired into the app. -->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dalton Lab — PDF Page Template</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<style>
+  :root{
+    --navy:#0d1b2e;
+    --navy-2:#16304f;
+    --orange:#ee7d31;
+    --orange-dark:#d4631a;
+    --paper:#faf6ee;
+    --card:#ffffff;
+    --slate:#4f6376;
+    --success:#2f9e6a;
+    --danger:#d64545;
+    --accent:var(--orange);
+  }
+  /* Per-subject accent — only Ekonomi is decided so far (this is the chapter
+     being rebuilt). Add matematika/biologi/kimia/fisika here once those
+     bright accents are picked, rather than inventing them speculatively. */
+  .pdf-page[data-subject="ekonomi"]{ --accent:#ee7d31; }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#dfe3e8;
+    font-family:'Inter',sans-serif;
+    padding:48px 0 96px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:40px;
+  }
+
+  /* ---- the reusable page shell ---- */
+  .pdf-page{
+    position:relative;
+    width:794px;
+    height:1123px;
+    background:var(--accent);
+    border-radius:6px;
+    box-shadow:0 30px 60px -20px rgba(13,27,46,.35);
+    overflow:hidden;
+    flex-shrink:0;
+  }
+  .pdf-page .sheet{
+    position:absolute;
+    inset:26px;
+    background:var(--card);
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  /* ---- watermark: student identity, tiled diagonally, very low opacity ---- */
+  .watermark{
+    position:absolute;
+    inset:-20% -30%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transform:rotate(-28deg);
+    pointer-events:none;
+    z-index:1;
+    opacity:.055;
+  }
+  .watermark span{
+    font:700 15px/1 'Space Grotesk',sans-serif;
+    letter-spacing:.05em;
+    color:var(--navy);
+    white-space:nowrap;
+    text-transform:uppercase;
+  }
+
+  /* ---- header ---- */
+  .page-head{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 40px 18px;
+    border-bottom:1px solid #eef0f2;
+  }
+  .page-head .brand{display:flex;align-items:center;gap:2px;}
+  .page-head .brand img{height:34px;width:auto;display:block;}
+  .page-head .brand-word{font:700 15px/1 'Space Grotesk',sans-serif;color:var(--navy);letter-spacing:.01em;}
+  .page-head .brand-word span{color:var(--accent);}
+  .page-head .meta{display:flex;align-items:center;gap:10px;}
+  .subject-chip{
+    font:600 11px/1 'Inter',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:#fff;
+    background:var(--accent);
+    padding:6px 11px;
+    border-radius:20px;
+  }
+  .chapter-tag{
+    font:500 12.5px/1 'IBM Plex Mono',monospace;
+    color:var(--slate);
+  }
+
+  /* ---- body ---- */
+  .page-body{
+    position:relative;
+    z-index:2;
+    flex:1;
+    padding:34px 40px 0;
+    overflow:hidden;
+  }
+
+  .eyebrow-num{
+    font:600 13px/1 'IBM Plex Mono',monospace;
+    color:var(--accent);
+    letter-spacing:.08em;
+    margin-bottom:10px;
+    display:block;
+  }
+  h1.page-title{
+    font:700 34px/1.15 'Space Grotesk',sans-serif;
+    color:var(--navy);
+    margin:0 0 12px;
+  }
+  h2.section-title{
+    font:600 20px/1.25 'Space Grotesk',sans-serif;
+    color:var(--navy);
+    margin:0 0 12px;
+  }
+  p.lead{
+    font:400 15.5px/1.65 'Inter',sans-serif;
+    color:var(--slate);
+    margin:0 0 20px;
+    max-width:560px;
+  }
+  p.body-text{
+    font:400 14.5px/1.7 'Inter',sans-serif;
+    color:#22303f;
+    margin:0 0 16px;
+  }
+  ul.learn-list{margin:0 0 20px;padding-left:20px;}
+  ul.learn-list li{
+    font:400 14.5px/1.7 'Inter',sans-serif;
+    color:#22303f;
+    margin-bottom:6px;
+  }
+
+  .formula-box{
+    background:#faf6ee;
+    border-left:4px solid var(--accent);
+    border-radius:0 8px 8px 0;
+    padding:18px 22px;
+    margin:0 0 18px;
+  }
+  .formula-box .label{
+    font:600 11px/1 'Inter',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--accent-dark, var(--orange-dark));
+    margin-bottom:10px;
+    display:block;
+  }
+  .formula-box .katex{font-size:1.15em;}
+  .formula-box .var-def{
+    font:400 13px/1.6 'Inter',sans-serif;
+    color:var(--slate);
+    margin-top:10px;
+  }
+  .formula-box .var-def b{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:500;
+    color:#22303f;
+  }
+
+  .example-box{
+    border:1px solid #e7e2d6;
+    border-radius:10px;
+    padding:18px 20px;
+    margin:0 0 18px;
+  }
+  .example-box .label{
+    font:600 12px/1 'Space Grotesk',sans-serif;
+    color:var(--navy);
+    margin-bottom:12px;
+    display:block;
+  }
+  .example-box ol{margin:0;padding-left:18px;}
+  .example-box li{
+    font:400 14px/1.7 'Inter',sans-serif;
+    color:#22303f;
+    margin-bottom:8px;
+  }
+
+  .callout{
+    border-radius:0 8px 8px 0;
+    padding:14px 18px;
+    margin:0 0 18px;
+    font:400 13.5px/1.6 'Inter',sans-serif;
+  }
+  .callout.mistake{background:#fdf1ef;border-left:4px solid var(--danger);}
+  .callout.mistake .label{color:var(--danger);}
+  .callout .label{
+    display:block;
+    font:600 11px/1 'Inter',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    margin-bottom:6px;
+  }
+  .callout .wrong{color:var(--danger);}
+  .callout .right{color:var(--success);}
+
+  /* ---- footer ---- */
+  .page-foot{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 40px 22px;
+    border-top:1px solid #eef0f2;
+  }
+  .page-foot .license{
+    font:400 10.5px/1.4 'Inter',sans-serif;
+    color:#9aa6b1;
+    max-width:380px;
+  }
+  .page-foot .watermark-meta{
+    font:500 10px/1.4 'IBM Plex Mono',monospace;
+    color:#b7bfc7;
+    text-align:right;
+  }
+  .page-foot .page-num{
+    font:600 13px/1 'IBM Plex Mono',monospace;
+    color:var(--navy);
+  }
+
+  .page-caption{
+    font:500 12px/1 'IBM Plex Mono',monospace;
+    color:#6b7684;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-caption">Halaman 1 — Pembuka bab (chapter opener)</div>
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD</span>
+      <span>2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10</span>
+      <span>ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD</span>
+      <span>2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10</span>
+      <span>ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD</span>
+      <span>2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10</span>
+      <span>ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD</span>
+      <span>2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10</span>
+    </div>
+
+    <div class="page-head">
+      <div class="brand">
+        <img src="../img/logo.png" alt="Dalton Lab">
+        <span class="brand-word">DALTON <span>LAB</span></span>
+      </div>
+      <div class="meta">
+        <span class="chapter-tag">Bab 1</span>
+        <span class="subject-chip">Ekonomi</span>
+      </div>
+    </div>
+
+    <div class="page-body">
+      <span class="eyebrow-num">01 &middot; MATERI PDF</span>
+      <h1 class="page-title">Badan Usaha &amp; Koperasi</h1>
+      <p class="lead">Materi tambahan ini fokus ke rumus, contoh soal lanjutan, dan konsep yang butuh perhitungan bertahap — pelengkap dari materi interaktif di halaman utama, bukan salinannya.</p>
+
+      <h2 class="section-title">Yang akan kamu pelajari</h2>
+      <ul class="learn-list">
+        <li>Cara menghitung dan membagi Sisa Hasil Usaha (SHU) koperasi</li>
+        <li>Perbandingan struktur permodalan tiap jenis badan usaha</li>
+        <li>Studi kasus: memilih bentuk badan usaha untuk skenario nyata</li>
+      </ul>
+    </div>
+
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
+    </div>
+  </div>
+</div>
+
+<div class="page-caption">Halaman 2 — Rumus &amp; contoh soal (content page)</div>
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD</span>
+      <span>2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10</span>
+      <span>ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD</span>
+      <span>2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10</span>
+      <span>ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD</span>
+      <span>2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10</span>
+      <span>ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD</span>
+      <span>2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10 14:32 &nbsp; ADRYAN GERALD &middot; 2026-09-10</span>
+    </div>
+
+    <div class="page-head">
+      <div class="brand">
+        <img src="../img/logo.png" alt="Dalton Lab">
+        <span class="brand-word">DALTON <span>LAB</span></span>
+      </div>
+      <div class="meta">
+        <span class="chapter-tag">Bab 1 &middot; Koperasi</span>
+        <span class="subject-chip">Ekonomi</span>
+      </div>
+    </div>
+
+    <div class="page-body">
+      <h2 class="section-title">Menghitung Pembagian SHU</h2>
+
+      <div class="formula-box">
+        <span class="label">Rumus</span>
+        <div id="formula-shu"></div>
+        <div class="var-def">
+          <b>SHU<sub>a</sub></b> = SHU jasa anggota &nbsp;&nbsp;
+          <b>JUA</b> = jasa usaha anggota (Rp) &nbsp;&nbsp;
+          <b>JUK</b> = total jasa usaha koperasi (Rp)
+        </div>
+      </div>
+
+      <div class="example-box">
+        <span class="label">Contoh Soal — Tingkat Lanjut</span>
+        <ol>
+          <li>Koperasi Sejahtera mencatat total transaksi anggota Rp 120.000.000 dengan SHU jasa usaha Rp 18.000.000.</li>
+          <li>Budi bertransaksi Rp 4.500.000 sepanjang tahun. Berapa bagian SHU jasa usaha yang diterima Budi?</li>
+          <li>Substitusi ke rumus: SHU<sub>a</sub> = (4.500.000 / 120.000.000) &times; 18.000.000 = <b>Rp 675.000</b>.</li>
+        </ol>
+      </div>
+
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> membagi SHU rata rata ke semua anggota tanpa memperhitungkan besar transaksi masing-masing.<br>
+        <span class="right">✅ Benar:</span> pembagian proporsional terhadap jasa usaha/modal tiap anggota — itulah prinsip koperasi.
+      </div>
+    </div>
+
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
+    </div>
+  </div>
+</div>
+
+<script src="../vendor/katex/katex.min.js"></script>
+<script>
+  katex.render("SHU_a = \\dfrac{JUA}{JUK} \\times SHU_{jasa\\ usaha}", document.getElementById('formula-shu'), { displayMode:true });
+</script>
+</body>
+</html>
