@@ -789,13 +789,6 @@ async function goToLesson(babId){
     return;
   }
 
-  // Prefill quiz gate name from session, for any quiz on this page
-  if(session){
-    lessonContent.querySelectorAll('[data-gate-name]').forEach(input=>{
-      if(!input.value) input.value = session.nama || '';
-    });
-  }
-
   buildLessonSubnav(lessonContent);
   initAllComponents(lessonContent);
   observeReveal(lessonContent.querySelectorAll('section'));
@@ -1064,22 +1057,7 @@ function initQuizzes(root){
     }
 
     mount.innerHTML = `
-      <div class="quiz-gate">
-        <div class="gate-row">
-          <div class="input-row">
-            <label>Nama Lengkap</label>
-            <input type="text" data-gate-name placeholder="Contoh: Budi Santoso" class="mono">
-          </div>
-          <div class="input-row">
-            <label>Kelas</label>
-            <input type="text" data-gate-class placeholder="Contoh: XI-2" class="mono">
-          </div>
-        </div>
-        <p class="gate-hint" data-gate-hint>Isi nama & kelas kamu dulu ya, biar hasil kuismu kesimpen.</p>
-        <button class="btn btn-primary" data-gate-start>Mulai Kuis →</button>
-      </div>
-
-      <div class="quiz-box" data-quiz-box style="display:none;">
+      <div class="quiz-box" data-quiz-box>
         <div class="quiz-top">
           <div class="quiz-progress-track"><div class="quiz-progress-fill" data-quiz-progress></div></div>
           <div class="quiz-meta">
@@ -1099,37 +1077,22 @@ function initQuizzes(root){
       </div>
     `;
 
-    const gate = mount.querySelector('.quiz-gate');
     const box = mount.querySelector('[data-quiz-box]');
     const resultEl = mount.querySelector('[data-quiz-result]');
-    const nameInput = mount.querySelector('[data-gate-name]');
-    const classInput = mount.querySelector('[data-gate-class]');
-    const hint = mount.querySelector('[data-gate-hint]');
     const questionArea = mount.querySelector('[data-quiz-question-area]');
     const progressFill = mount.querySelector('[data-quiz-progress]');
     const counterEl = mount.querySelector('[data-quiz-counter]');
     const scoreEl = mount.querySelector('[data-quiz-score]');
 
-    let currentQ = 0, score = 0, answered = false, studentName = '', studentClass = '';
+    // No name/class gate — straight into the quiz. Identity for the result
+    // row comes from the session (nama) plus the verified token (username)
+    // server-side; kelas has no reliable source without asking, so it's
+    // left blank rather than prompted for.
+    let currentQ = 0, score = 0, answered = false;
+    const studentName = session.nama || session.username || '';
+    const studentClass = '';
 
-    // prefill from session if available (router also does this post-load, but
-    // handle it here too in case this quiz mounts after that pass)
-    if(session.nama) nameInput.value = session.nama;
-
-    mount.querySelector('[data-gate-start]').addEventListener('click', ()=>{
-      const nameVal = nameInput.value.trim();
-      const classVal = classInput.value.trim();
-      if(!nameVal || !classVal){
-        hint.textContent = 'Isi nama & kelas kamu dulu ya, biar hasil kuismu kesimpen.';
-        hint.classList.add('warn');
-        return;
-      }
-      studentName = nameVal;
-      studentClass = classVal;
-      gate.style.display = 'none';
-      box.style.display = '';
-      renderQuestion();
-    });
+    renderQuestion();
 
     function renderQuestion(){
       answered = false;
@@ -1201,11 +1164,8 @@ function initQuizzes(root){
     resultEl.querySelector('[data-quiz-restart]').addEventListener('click', ()=>{
       currentQ = 0; score = 0;
       resultEl.style.display = 'none';
-      nameInput.value = '';
-      classInput.value = '';
-      hint.textContent = 'Isi nama & kelas kamu dulu ya, biar hasil kuismu kesimpen.';
-      hint.classList.remove('warn');
-      gate.style.display = '';
+      box.style.display = '';
+      renderQuestion();
     });
   });
 }
@@ -1268,17 +1228,7 @@ function initExercises(root){
 
     mount.innerHTML = `
       <div class="quiz-gate" data-ex-gate>
-        <div class="gate-row">
-          <div class="input-row">
-            <label>Nama Lengkap</label>
-            <input type="text" data-gate-name placeholder="Contoh: Budi Santoso" class="mono">
-          </div>
-          <div class="input-row">
-            <label>Kelas</label>
-            <input type="text" data-gate-class placeholder="Contoh: XI-2" class="mono">
-          </div>
-        </div>
-        <p class="gate-hint" data-gate-hint>Isi nama &amp; kelas kamu, terus pilih mau mulai dari level mana.</p>
+        <p class="gate-hint" data-gate-hint>Pilih mau mulai dari level mana.</p>
         <div class="level-tabs" data-level-tabs>
           ${levelKeys.map((lv,i)=>`<button type="button" class="level-tab${i===0?' active':''}" data-level="${lv}">${EXERCISE_LEVELS[lv].label}<span class="level-badge">${data[lv].length} soal</span></button>`).join('')}
         </div>
@@ -1290,13 +1240,10 @@ function initExercises(root){
 
     const gate = mount.querySelector('[data-ex-gate]');
     const sessionMount = mount.querySelector('[data-ex-session]');
-    const nameInput = mount.querySelector('[data-gate-name]');
-    const classInput = mount.querySelector('[data-gate-class]');
-    const hint = mount.querySelector('[data-gate-hint]');
     const levelHint = mount.querySelector('[data-level-hint]');
     let activeLevel = levelKeys[0];
-
-    if(session.nama) nameInput.value = session.nama;
+    const studentName = session.nama || session.username || '';
+    const studentClass = '';
 
     mount.querySelectorAll('[data-level-tabs] [data-level]').forEach(btn=>{
       btn.addEventListener('click', ()=>{
@@ -1308,19 +1255,12 @@ function initExercises(root){
     });
 
     mount.querySelector('[data-ex-start]').addEventListener('click', ()=>{
-      const nameVal = nameInput.value.trim();
-      const classVal = classInput.value.trim();
-      if(!nameVal || !classVal){
-        hint.textContent = 'Isi nama & kelas kamu dulu ya, biar hasil latihanmu kesimpen.';
-        hint.classList.add('warn');
-        return;
-      }
       gate.style.display = 'none';
       runExerciseLevel(sessionMount, data[activeLevel], {
         subject, babId: bab,
         token: session.token,
-        studentName: nameVal,
-        studentClass: classVal,
+        studentName,
+        studentClass,
         topik: data.topic || '',
         levelLabel: EXERCISE_LEVELS[activeLevel].label,
         onBack: ()=>{ sessionMount.innerHTML = ''; gate.style.display = ''; }
