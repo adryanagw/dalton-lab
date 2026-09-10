@@ -71,8 +71,9 @@
     background:rgba(47,158,110,.1); border:1px solid rgba(47,158,110,.3); color:#1e6b48;
     border-radius:8px; padding:8px 12px; font-size:.78rem; margin-top:8px; font-family:monospace;
   }
-  #refreshBtn{background:none; border:1px solid var(--line); color:var(--slate); padding:8px 14px; border-radius:8px; font-size:.8rem; cursor:pointer;}
-  #refreshBtn:hover{border-color:var(--orange); color:var(--orange-dark);}
+  #refreshBtn, .btn-secondary{background:none; border:1px solid var(--line); color:var(--slate); padding:8px 14px; border-radius:8px; font-size:.8rem; cursor:pointer;}
+  #refreshBtn:hover, .btn-secondary:hover{border-color:var(--orange); color:var(--orange-dark);}
+  .btn-secondary:disabled{opacity:.6; cursor:default;}
   .toolbar{display:flex; justify-content:flex-end; margin-bottom:6px;}
 
   .pkg-editor{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:8px 20px;}
@@ -102,6 +103,16 @@
   }
   button.btn-force-logout:hover{border-color:var(--danger); color:var(--danger);}
   button.btn-force-logout:disabled{opacity:.6; cursor:default;}
+
+  .student-card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:16px 20px; margin-bottom:10px;
+  }
+  .student-name{font-weight:700; font-size:.96rem;}
+  .student-name span{color:var(--slate); font-weight:400; font-family:monospace; font-size:.82rem;}
+  .student-fields{font-size:.82rem; color:var(--slate); margin-top:6px; line-height:1.7;}
+  .student-fields b{color:var(--ink); font-weight:600;}
+  .student-fields .empty-field{color:var(--line); font-style:italic;}
 </style>
 </head>
 <body>
@@ -132,8 +143,12 @@
     <div id="recentList"></div>
 
     <h2 class="section-title">Sesi Aktif (Device)</h2>
-    <p style="color:var(--slate); font-size:.82rem; margin:-6px 0 14px;">Maksimal 2 device per akun. Paksa keluar buat bebasin slot kalau siswa kehilangan device atau butuh login di device baru.</p>
+    <p style="color:var(--slate); font-size:.82rem; margin:-6px 0 14px;">Login di device baru otomatis logout device lama — cuma 1 device aktif per akun. Paksa keluar cuma dibutuhin buat kasus khusus (mis. akun dicurigai dipakai orang lain).</p>
     <div id="sessionsList"></div>
+
+    <h2 class="section-title">Data Siswa (KYC)</h2>
+    <div class="toolbar"><button id="exportStudentsBtn" class="btn-secondary">⬇ Export CSV</button></div>
+    <div id="studentsList"></div>
 
     <h2 class="section-title">Kelola Paket</h2>
     <div class="pkg-editor" id="pkgEditor"><p class="empty">Memuat…</p></div>
@@ -169,6 +184,7 @@ function showDashboard(){
   loadOrders();
   loadPackages();
   loadSessions();
+  loadStudents();
 }
 
 document.getElementById('loginBtn').addEventListener('click', attemptLogin);
@@ -352,7 +368,6 @@ async function loadSessions(){
 }
 
 function renderSessionCard(s){
-  const full = s.device_count >= 2;
   const loginRange = s.oldest_login === s.newest_login
     ? fmtDate(s.newest_login)
     : `${fmtDate(s.oldest_login)} – ${fmtDate(s.newest_login)}`;
@@ -363,14 +378,14 @@ function renderSessionCard(s){
         <div class="session-meta">Login: ${loginRange}</div>
       </div>
       <div style="display:flex; align-items:center; gap:12px;">
-        <span class="device-count ${full ? 'full' : 'ok'}">${s.device_count}/2 device</span>
-        <button class="btn-force-logout" data-force-logout="${escapeHtml(s.username)}">Paksa Keluar Semua</button>
+        <span class="device-count ok">Aktif</span>
+        <button class="btn-force-logout" data-force-logout="${escapeHtml(s.username)}">Paksa Keluar</button>
       </div>
     </div>`;
 }
 
 async function forceLogout(username, btn){
-  if(!confirm(`Paksa keluar semua device buat akun "${username}"? Slot device-nya langsung bebas buat login baru.`)) return;
+  if(!confirm(`Paksa keluar akun "${username}" dari device-nya? Dia bisa langsung login lagi di device manapun.`)) return;
   const token = getToken();
   btn.disabled = true; btn.textContent = 'Memproses…';
   try{
@@ -391,6 +406,60 @@ async function forceLogout(username, btn){
     alert('Gagal terhubung ke server.');
     btn.disabled = false; btn.textContent = 'Paksa Keluar Semua';
   }
+}
+
+let studentsCache = [];
+
+async function loadStudents(){
+  const token = getToken();
+  const list = document.getElementById('studentsList');
+  list.innerHTML = '<p class="empty">Memuat…</p>';
+  try{
+    const res = await fetch('/api/admin/sessions?resource=students', { headers:{ 'Authorization': 'Bearer ' + token } });
+    if(res.status === 401){ clearToken(); showLogin(); return; }
+    const data = await res.json();
+    if(!data.success){ list.innerHTML = `<p class="empty">${data.message || 'Gagal memuat data siswa.'}</p>`; return; }
+    studentsCache = data.students;
+    list.innerHTML = studentsCache.length === 0
+      ? '<p class="empty">Belum ada siswa terdaftar.</p>'
+      : studentsCache.map(renderStudentCard).join('');
+  }catch(e){
+    list.innerHTML = '<p class="empty">Gagal terhubung ke server.</p>';
+  }
+}
+
+function fieldOrEmpty(v){ return v ? escapeHtml(v) : '<span class="empty-field">belum diisi</span>'; }
+
+function renderStudentCard(s){
+  const tgl = s.tanggal_lahir ? new Date(s.tanggal_lahir).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'}) : '';
+  return `
+    <div class="student-card">
+      <div class="student-name">${escapeHtml(s.nama)} <span>(${escapeHtml(s.username)})</span></div>
+      <div class="student-fields">
+        Email: <b>${fieldOrEmpty(s.email)}</b> · WhatsApp: <b>${fieldOrEmpty(s.whatsapp)}</b><br>
+        Sekolah: <b>${fieldOrEmpty(s.sekolah)}</b> · Kelas: <b>${fieldOrEmpty(s.kelas)}</b> · Tgl Lahir: <b>${fieldOrEmpty(tgl)}</b>
+      </div>
+    </div>`;
+}
+
+document.getElementById('exportStudentsBtn').addEventListener('click', exportStudentsCSV);
+
+function exportStudentsCSV(){
+  if(!studentsCache.length){ alert('Belum ada data siswa buat di-export.'); return; }
+  const cols = ['username','nama','email','whatsapp','sekolah','kelas','tanggal_lahir','expires_at','created_at'];
+  const csvEscape = v => `"${String(v == null ? '' : v).replace(/"/g,'""')}"`;
+  const rows = [cols.join(',')].concat(
+    studentsCache.map(s => cols.map(c => csvEscape(s[c])).join(','))
+  );
+  const blob = new Blob([rows.join('\n')], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `dalton-lab-siswa-${new Date().toISOString().slice(0,10)}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
 
 async function loadPackages(){

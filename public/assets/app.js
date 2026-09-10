@@ -455,7 +455,11 @@ function renderSessionBadge(){
     const statusHtml = hasAccess()
       ? `<span class="session-status ok">Aktif s.d. ${expiryStr}</span>`
       : `<span class="session-status expired">Paket habis</span>`;
-    badge.innerHTML = `${s.nama || s.username} ${statusHtml} <button id="logoutBtn">Keluar</button>`;
+    badge.innerHTML = `${s.nama || s.username} ${statusHtml} <button id="settingsBtn">Pengaturan</button> <button id="logoutBtn">Keluar</button>`;
+    document.getElementById('settingsBtn').addEventListener('click',()=>{
+      closeSidebar();
+      goToSettings();
+    });
     document.getElementById('logoutBtn').addEventListener('click',()=>{
       clearSession();
       goToHome();
@@ -519,6 +523,7 @@ function markProgress(babId, status){
 const viewHome = document.getElementById('view-home');
 const viewBabs = document.getElementById('view-babs');
 const viewSignin = document.getElementById('view-signin');
+const viewSettings = document.getElementById('view-settings');
 const viewLesson = document.getElementById('view-lesson');
 let activeSubjectKey = 'ekonomi';
 let activeBabId = null;
@@ -594,6 +599,7 @@ function hideAllViews(){
   viewHome.style.display = 'none';
   viewBabs.style.display = 'none';
   viewSignin.style.display = 'none';
+  viewSettings.style.display = 'none';
   viewLesson.style.display = 'none';
 }
 
@@ -678,6 +684,137 @@ function goToSignIn(subjectKey){
   document.querySelectorAll('.subject-link').forEach(l=>l.classList.toggle('active', l.dataset.subject===subjectKey));
   window.scrollTo({top:0,behavior:'instant'});
 }
+
+async function goToSettings(){
+  const session = getSession();
+  if(!session){ goToSignIn(); return; }
+
+  document.getElementById('pwError').classList.remove('show');
+  document.getElementById('pwSuccess').classList.remove('show');
+  document.getElementById('pwCurrent').value = '';
+  document.getElementById('pwNew').value = '';
+  document.getElementById('pwConfirm').value = '';
+  document.getElementById('profileError').classList.remove('show');
+  document.getElementById('profileSuccess').classList.remove('show');
+
+  hideAllViews();
+  viewSettings.style.display = '';
+  document.getElementById('navHomeLink').classList.remove('active');
+  document.querySelectorAll('.subject-link').forEach(l=>l.classList.remove('active'));
+  window.scrollTo({top:0,behavior:'instant'});
+
+  try{
+    const res = await fetch('/api/login', { headers:{ 'Authorization': 'Bearer ' + session.token } });
+    const data = await res.json();
+    if(data.success){
+      document.getElementById('profileEmail').value = data.profile.email;
+      document.getElementById('profileWa').value = data.profile.whatsapp;
+      document.getElementById('profileSekolah').value = data.profile.sekolah;
+      document.getElementById('profileKelas').value = data.profile.kelas;
+      document.getElementById('profileTgl').value = data.profile.tanggalLahir;
+    }
+  }catch(err){ /* fields just stay blank — student can still fill & save */ }
+}
+
+document.getElementById('backToHomeFromSettings').addEventListener('click',goToHome);
+
+document.getElementById('pwSubmitBtn').addEventListener('click', async ()=>{
+  const session = getSession();
+  const errEl = document.getElementById('pwError');
+  const okEl = document.getElementById('pwSuccess');
+  errEl.classList.remove('show');
+  okEl.classList.remove('show');
+  if(!session){ goToSignIn(); return; }
+
+  const currentPassword = document.getElementById('pwCurrent').value;
+  const newPassword = document.getElementById('pwNew').value;
+  const confirm = document.getElementById('pwConfirm').value;
+
+  if(!currentPassword || !newPassword){
+    errEl.textContent = 'Isi password lama & baru dulu ya.';
+    errEl.classList.add('show');
+    return;
+  }
+  if(newPassword.length < 6){
+    errEl.textContent = 'Password baru minimal 6 karakter.';
+    errEl.classList.add('show');
+    return;
+  }
+  if(newPassword !== confirm){
+    errEl.textContent = 'Konfirmasi password baru belum sama.';
+    errEl.classList.add('show');
+    return;
+  }
+
+  const btn = document.getElementById('pwSubmitBtn');
+  btn.disabled = true; btn.textContent = 'Menyimpan…';
+  try{
+    const res = await fetch('/api/login', {
+      method:'PATCH',
+      headers:{'Content-Type':'application/json', 'Authorization':'Bearer ' + session.token},
+      body: JSON.stringify({currentPassword, newPassword})
+    });
+    const data = await res.json();
+    if(data.success){
+      document.getElementById('pwCurrent').value = '';
+      document.getElementById('pwNew').value = '';
+      document.getElementById('pwConfirm').value = '';
+      okEl.classList.add('show');
+    } else {
+      errEl.textContent = data.message || 'Gagal ganti password.';
+      errEl.classList.add('show');
+    }
+  }catch(err){
+    errEl.textContent = 'Gagal terhubung ke server.';
+    errEl.classList.add('show');
+  }finally{
+    btn.disabled = false; btn.textContent = 'Ganti Password';
+  }
+});
+
+document.getElementById('profileSubmitBtn').addEventListener('click', async ()=>{
+  const session = getSession();
+  const errEl = document.getElementById('profileError');
+  const okEl = document.getElementById('profileSuccess');
+  errEl.classList.remove('show');
+  okEl.classList.remove('show');
+  if(!session){ goToSignIn(); return; }
+
+  const email = document.getElementById('profileEmail').value.trim();
+  if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    errEl.textContent = 'Format email-nya belum bener.';
+    errEl.classList.add('show');
+    return;
+  }
+
+  const btn = document.getElementById('profileSubmitBtn');
+  btn.disabled = true; btn.textContent = 'Menyimpan…';
+  try{
+    const res = await fetch('/api/login', {
+      method:'PUT',
+      headers:{'Content-Type':'application/json', 'Authorization':'Bearer ' + session.token},
+      body: JSON.stringify({
+        email,
+        whatsapp: document.getElementById('profileWa').value.trim(),
+        sekolah: document.getElementById('profileSekolah').value.trim(),
+        kelas: document.getElementById('profileKelas').value.trim(),
+        tanggalLahir: document.getElementById('profileTgl').value
+      })
+    });
+    const data = await res.json();
+    if(data.success){
+      okEl.classList.add('show');
+    } else {
+      errEl.textContent = data.message || 'Gagal menyimpan data.';
+      errEl.classList.add('show');
+    }
+  }catch(err){
+    errEl.textContent = 'Gagal terhubung ke server.';
+    errEl.classList.add('show');
+  }finally{
+    btn.disabled = false; btn.textContent = 'Simpan Data';
+  }
+});
 
 function goToBabs(subjectKey){
   activeSubjectKey = subjectKey;
@@ -787,13 +924,6 @@ async function goToLesson(babId){
       ${icon('alert-triangle')} Gagal memuat materi. Coba refresh halaman, atau pastikan paketmu masih aktif.
     </div>`;
     return;
-  }
-
-  // Prefill quiz gate name from session, for any quiz on this page
-  if(session){
-    lessonContent.querySelectorAll('[data-gate-name]').forEach(input=>{
-      if(!input.value) input.value = session.nama || '';
-    });
   }
 
   buildLessonSubnav(lessonContent);
@@ -1064,22 +1194,7 @@ function initQuizzes(root){
     }
 
     mount.innerHTML = `
-      <div class="quiz-gate">
-        <div class="gate-row">
-          <div class="input-row">
-            <label>Nama Lengkap</label>
-            <input type="text" data-gate-name placeholder="Contoh: Budi Santoso" class="mono">
-          </div>
-          <div class="input-row">
-            <label>Kelas</label>
-            <input type="text" data-gate-class placeholder="Contoh: XI-2" class="mono">
-          </div>
-        </div>
-        <p class="gate-hint" data-gate-hint>Isi nama & kelas kamu dulu ya, biar hasil kuismu kesimpen.</p>
-        <button class="btn btn-primary" data-gate-start>Mulai Kuis →</button>
-      </div>
-
-      <div class="quiz-box" data-quiz-box style="display:none;">
+      <div class="quiz-box" data-quiz-box>
         <div class="quiz-top">
           <div class="quiz-progress-track"><div class="quiz-progress-fill" data-quiz-progress></div></div>
           <div class="quiz-meta">
@@ -1099,37 +1214,22 @@ function initQuizzes(root){
       </div>
     `;
 
-    const gate = mount.querySelector('.quiz-gate');
     const box = mount.querySelector('[data-quiz-box]');
     const resultEl = mount.querySelector('[data-quiz-result]');
-    const nameInput = mount.querySelector('[data-gate-name]');
-    const classInput = mount.querySelector('[data-gate-class]');
-    const hint = mount.querySelector('[data-gate-hint]');
     const questionArea = mount.querySelector('[data-quiz-question-area]');
     const progressFill = mount.querySelector('[data-quiz-progress]');
     const counterEl = mount.querySelector('[data-quiz-counter]');
     const scoreEl = mount.querySelector('[data-quiz-score]');
 
-    let currentQ = 0, score = 0, answered = false, studentName = '', studentClass = '';
+    // No name/class gate — straight into the quiz. Identity for the result
+    // row comes from the session (nama) plus the verified token (username)
+    // server-side; kelas has no reliable source without asking, so it's
+    // left blank rather than prompted for.
+    let currentQ = 0, score = 0, answered = false;
+    const studentName = session.nama || session.username || '';
+    const studentClass = '';
 
-    // prefill from session if available (router also does this post-load, but
-    // handle it here too in case this quiz mounts after that pass)
-    if(session.nama) nameInput.value = session.nama;
-
-    mount.querySelector('[data-gate-start]').addEventListener('click', ()=>{
-      const nameVal = nameInput.value.trim();
-      const classVal = classInput.value.trim();
-      if(!nameVal || !classVal){
-        hint.textContent = 'Isi nama & kelas kamu dulu ya, biar hasil kuismu kesimpen.';
-        hint.classList.add('warn');
-        return;
-      }
-      studentName = nameVal;
-      studentClass = classVal;
-      gate.style.display = 'none';
-      box.style.display = '';
-      renderQuestion();
-    });
+    renderQuestion();
 
     function renderQuestion(){
       answered = false;
@@ -1201,11 +1301,8 @@ function initQuizzes(root){
     resultEl.querySelector('[data-quiz-restart]').addEventListener('click', ()=>{
       currentQ = 0; score = 0;
       resultEl.style.display = 'none';
-      nameInput.value = '';
-      classInput.value = '';
-      hint.textContent = 'Isi nama & kelas kamu dulu ya, biar hasil kuismu kesimpen.';
-      hint.classList.remove('warn');
-      gate.style.display = '';
+      box.style.display = '';
+      renderQuestion();
     });
   });
 }
@@ -1268,17 +1365,7 @@ function initExercises(root){
 
     mount.innerHTML = `
       <div class="quiz-gate" data-ex-gate>
-        <div class="gate-row">
-          <div class="input-row">
-            <label>Nama Lengkap</label>
-            <input type="text" data-gate-name placeholder="Contoh: Budi Santoso" class="mono">
-          </div>
-          <div class="input-row">
-            <label>Kelas</label>
-            <input type="text" data-gate-class placeholder="Contoh: XI-2" class="mono">
-          </div>
-        </div>
-        <p class="gate-hint" data-gate-hint>Isi nama &amp; kelas kamu, terus pilih mau mulai dari level mana.</p>
+        <p class="gate-hint" data-gate-hint>Pilih mau mulai dari level mana.</p>
         <div class="level-tabs" data-level-tabs>
           ${levelKeys.map((lv,i)=>`<button type="button" class="level-tab${i===0?' active':''}" data-level="${lv}">${EXERCISE_LEVELS[lv].label}<span class="level-badge">${data[lv].length} soal</span></button>`).join('')}
         </div>
@@ -1290,13 +1377,10 @@ function initExercises(root){
 
     const gate = mount.querySelector('[data-ex-gate]');
     const sessionMount = mount.querySelector('[data-ex-session]');
-    const nameInput = mount.querySelector('[data-gate-name]');
-    const classInput = mount.querySelector('[data-gate-class]');
-    const hint = mount.querySelector('[data-gate-hint]');
     const levelHint = mount.querySelector('[data-level-hint]');
     let activeLevel = levelKeys[0];
-
-    if(session.nama) nameInput.value = session.nama;
+    const studentName = session.nama || session.username || '';
+    const studentClass = '';
 
     mount.querySelectorAll('[data-level-tabs] [data-level]').forEach(btn=>{
       btn.addEventListener('click', ()=>{
@@ -1308,19 +1392,12 @@ function initExercises(root){
     });
 
     mount.querySelector('[data-ex-start]').addEventListener('click', ()=>{
-      const nameVal = nameInput.value.trim();
-      const classVal = classInput.value.trim();
-      if(!nameVal || !classVal){
-        hint.textContent = 'Isi nama & kelas kamu dulu ya, biar hasil latihanmu kesimpen.';
-        hint.classList.add('warn');
-        return;
-      }
       gate.style.display = 'none';
       runExerciseLevel(sessionMount, data[activeLevel], {
         subject, babId: bab,
         token: session.token,
-        studentName: nameVal,
-        studentClass: classVal,
+        studentName,
+        studentClass,
         topik: data.topic || '',
         levelLabel: EXERCISE_LEVELS[activeLevel].label,
         onBack: ()=>{ sessionMount.innerHTML = ''; gate.style.display = ''; }

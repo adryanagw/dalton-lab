@@ -108,13 +108,12 @@ async function ensureSchema() {
       )
     `,
     // One row per logged-in device for a student account. A device's
-    // session id (sid) is embedded in its signed token at login and
-    // deleted here on an explicit sign-out (see api/logout.js) — this is
-    // what /api/login counts against the 2-device cap. created_at is
-    // "when this device logged in," not a live last-activity clock (no
-    // protected endpoint touches this table per-request), used both for
-    // admin display and to auto-reclaim a slot abandoned >30 days ago
-    // instead of permanently locking a student out over a lost device.
+    // session id (sid) is embedded in its signed token at login. Only one
+    // row exists per username at a time — /api/login deletes any existing
+    // row(s) before inserting a fresh one, so signing in on a new device
+    // auto-evicts every other device. created_at is "when this device
+    // logged in," not a live last-activity clock (no protected endpoint
+    // touches this table per-request); used for admin display.
     sql`
       CREATE TABLE IF NOT EXISTS sessions (
         id         SERIAL PRIMARY KEY,
@@ -136,6 +135,17 @@ async function ensureSchema() {
   // existed live — CREATE TABLE IF NOT EXISTS above is a no-op once a
   // table exists, so a new column needs its own idempotent migration.
   await sql`ALTER TABLE orders ADD COLUMN IF NOT EXISTS email TEXT`;
+
+  // Personal info (KYC) a student can fill in from Settings — separate
+  // from the per-order whatsapp/email above, since a student's own
+  // profile should persist independent of any single purchase.
+  await Promise.all([
+    sql`ALTER TABLE users ADD COLUMN IF NOT EXISTS email TEXT`,
+    sql`ALTER TABLE users ADD COLUMN IF NOT EXISTS whatsapp TEXT`,
+    sql`ALTER TABLE users ADD COLUMN IF NOT EXISTS sekolah TEXT`,
+    sql`ALTER TABLE users ADD COLUMN IF NOT EXISTS kelas TEXT`,
+    sql`ALTER TABLE users ADD COLUMN IF NOT EXISTS tanggal_lahir DATE`
+  ]);
 
   await sql`
     INSERT INTO packages (id, label, hari, harga, note, sort_order) VALUES

@@ -1,33 +1,52 @@
 /**
+ * The student "account" endpoint — kept as one file/function (Vercel
+ * Hobby plan caps a deployment at 12 Serverless Functions, so this
+ * multiplexes on HTTP method instead of splitting into /api/settings,
+ * /api/change-password, etc.):
+ *
  * POST /api/login — verifies username/password against the users table in
  * Postgres, then mints a signed session token carrying the student's
- * subscription expiry. That token — not the password — is what
- * /api/content, /api/quiz, /api/exercise, and /api/progress require on
- * every request.
+ * subscription expiry. That token — not the password — is what every
+ * method below, plus /api/content, /api/quiz, /api/exercise, and
+ * /api/progress, require on every request.
  *
- * Also enforces a 2-device cap per account: each successful login rows
- * itself into `sessions`, and a login attempt is refused once 2 rows
- * already exist for that username — the student has to sign out of one
- * of the other devices (frees the row via DELETE /api/login) before a new
- * one can log in. The oldest row is auto-reclaimed instead of blocking
- * forever if it's more than 30 days old, so a lost/abandoned device
- * doesn't permanently eat a slot.
+ * Single active device per account: logging in on a new device
+ * automatically signs out every other device on that account (their
+ * session rows are deleted) instead of blocking the new login — the
+ * student never has to manually sign out elsewhere first. Tokens are
+ * stateless (see _auth.js) and not checked against the sessions table
+ * per-request, so an evicted device's own token keeps working locally
+ * until it naturally expires — this eviction is "sign in here frees the
+ * slot," not a live kill-switch on the other tab.
  *
- * DELETE /api/login — logout. Frees this device's slot against the
- * 2-device cap above by deleting its session row. Uses signature-only
- * verification (not the full verifyToken expiry check) so a student
- * whose subscription has lapsed can still sign out and free the slot
- * instead of being stuck occupying it until they renew. Always responds
+ * DELETE /api/login — logout. Deletes this device's session row. Uses
+ * signature-only verification (not the full verifyToken expiry check) so
+ * a student whose subscription has lapsed can still sign out instead of
+ * being stuck occupying the slot until they renew. Always responds
  * success — signing out of an already-dead/invalid session isn't an
  * error from the client's point of view.
+ *
+ * GET /api/login — returns the logged-in student's own profile (personal
+ * info collected for admin's KYC records; nama is admin-set, shown
+ * read-only client-side).
+ *
+ * PUT /api/login — updates that personal info (email, whatsapp, sekolah,
+ * kelas, tanggalLahir). No username in the body — the bearer token is the
+ * only thing that decides which account gets written.
+ *
+ * PATCH /api/login — changes the student's own password. Requires the
+ * current password (re-verified server-side) plus a new one, then evicts
+ * every other active session for the account (same auto-evict mechanism
+ * as login) so a changed password also signs out anyone else who might
+ * have been using it elsewhere.
  */
 const crypto = require('crypto');
 const { sql, ensureSchema } = require('./_db');
-const { verifyPassword } = require('./_password');
-const { signToken, verifySignature, getBearerToken } = require('./_auth');
+const { verifyPassword, hashPassword } = require('./_password');
+const { signToken, verifyToken, verifySignature, getBearerToken } = require('./_auth');
 
-const MAX_DEVICES = 2;
-const STALE_SESSION_DAYS = 30;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MIN_PASSWORD_LENGTH = 6;
 
 module.exports = async function handler(req, res) {
   if (req.method === 'DELETE') {
@@ -37,11 +56,114 @@ module.exports = async function handler(req, res) {
         await ensureSchema();
         await sql`DELETE FROM sessions WHERE username = ${payload.u} AND sid = ${payload.s}`;
       } catch (err) {
-        // Non-critical — the session row will still auto-reclaim after
-        // STALE_SESSION_DAYS if this delete didn't go through.
+        // Non-critical — a later login on any device still evicts this
+        // row via the auto-evict delete below, even if this delete fails.
       }
     }
     res.status(200).json({ success: true });
+    return;
+  }
+
+  if (req.method === 'GET' || req.method === 'PUT' || req.method === 'PATCH') {
+    const payload = verifyToken(getBearerToken(req));
+    if (!payload || payload.r !== 'student') {
+      res.status(401).json({ success: false, message: 'Sesi kamu habis, login ulang ya.' });
+      return;
+    }
+
+    try {
+      await ensureSchema();
+
+      if (req.method === 'GET') {
+        const rows = await sql`
+          SELECT nama, username, email, whatsapp, sekolah, kelas, tanggal_lahir
+          FROM users WHERE username = ${payload.u}
+        `;
+        const user = rows[0];
+        if (!user) { res.status(404).json({ success: false, message: 'Akun tidak ditemukan.' }); return; }
+        res.status(200).json({
+          success: true,
+          profile: {
+            nama: user.nama,
+            username: user.username,
+            email: user.email || '',
+            whatsapp: user.whatsapp || '',
+            sekolah: user.sekolah || '',
+            kelas: user.kelas || '',
+            tanggalLahir: user.tanggal_lahir ? new Date(user.tanggal_lahir).toISOString().slice(0, 10) : ''
+          }
+        });
+        return;
+      }
+
+      if (req.method === 'PUT') {
+        let body = req.body;
+        if (typeof body === 'string') {
+          try { body = JSON.parse(body); } catch (e) { body = {}; }
+        }
+        const email = String((body && body.email) || '').trim();
+        const whatsapp = String((body && body.whatsapp) || '').trim();
+        const sekolah = String((body && body.sekolah) || '').trim();
+        const kelas = String((body && body.kelas) || '').trim();
+        const tanggalLahirRaw = String((body && body.tanggalLahir) || '').trim();
+
+        if (email && !EMAIL_RE.test(email)) {
+          res.status(400).json({ success: false, message: 'Format email-nya belum bener.' });
+          return;
+        }
+        let tanggalLahir = null;
+        if (tanggalLahirRaw) {
+          const d = new Date(tanggalLahirRaw);
+          if (Number.isNaN(d.getTime())) {
+            res.status(400).json({ success: false, message: 'Format tanggal lahir-nya belum bener.' });
+            return;
+          }
+          tanggalLahir = tanggalLahirRaw;
+        }
+
+        await sql`
+          UPDATE users SET
+            email = ${email || null},
+            whatsapp = ${whatsapp || null},
+            sekolah = ${sekolah || null},
+            kelas = ${kelas || null},
+            tanggal_lahir = ${tanggalLahir}
+          WHERE username = ${payload.u}
+        `;
+        res.status(200).json({ success: true });
+        return;
+      }
+
+      // PATCH — change password
+      let body = req.body;
+      if (typeof body === 'string') {
+        try { body = JSON.parse(body); } catch (e) { body = {}; }
+      }
+      const currentPassword = String((body && body.currentPassword) || '');
+      const newPassword = String((body && body.newPassword) || '');
+
+      if (!currentPassword || !newPassword) {
+        res.status(400).json({ success: false, message: 'Password lama & baru wajib diisi.' });
+        return;
+      }
+      if (newPassword.length < MIN_PASSWORD_LENGTH) {
+        res.status(400).json({ success: false, message: `Password baru minimal ${MIN_PASSWORD_LENGTH} karakter.` });
+        return;
+      }
+
+      const rows = await sql`SELECT password_hash FROM users WHERE username = ${payload.u}`;
+      const user = rows[0];
+      if (!user || !verifyPassword(currentPassword, user.password_hash)) {
+        res.status(401).json({ success: false, message: 'Password lama-nya salah.' });
+        return;
+      }
+
+      await sql`UPDATE users SET password_hash = ${hashPassword(newPassword)} WHERE username = ${payload.u}`;
+      await sql`DELETE FROM sessions WHERE username = ${payload.u} AND sid != ${payload.s}`;
+      res.status(200).json({ success: true });
+    } catch (err) {
+      res.status(500).json({ success: false, message: 'Gagal terhubung ke database.' });
+    }
     return;
   }
 
@@ -73,22 +195,8 @@ module.exports = async function handler(req, res) {
       return;
     }
 
-    const existingSessions = await sql`
-      SELECT id, created_at FROM sessions WHERE username = ${user.username} ORDER BY created_at ASC
-    `;
-    if (existingSessions.length >= MAX_DEVICES) {
-      const oldest = existingSessions[0];
-      const staleMs = Date.now() - new Date(oldest.created_at).getTime();
-      if (staleMs > STALE_SESSION_DAYS * 24 * 60 * 60 * 1000) {
-        await sql`DELETE FROM sessions WHERE id = ${oldest.id}`;
-      } else {
-        res.status(403).json({
-          success: false,
-          message: `Akun ini lagi aktif di ${MAX_DEVICES} perangkat. Sign out dulu dari salah satu perangkat, baru login lagi di sini.`
-        });
-        return;
-      }
-    }
+    // Auto-evict: a fresh login always wins, no manual sign-out elsewhere required.
+    await sql`DELETE FROM sessions WHERE username = ${user.username}`;
 
     const expiresAt = user.expires_at ? new Date(user.expires_at).toISOString() : null;
     const sid = crypto.randomUUID();
