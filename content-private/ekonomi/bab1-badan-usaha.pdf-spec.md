@@ -10,7 +10,8 @@ Every page in this spec is self-contained — it must not depend on content that
 this PDF is the "further detail" companion (some content below used to also live in the HTML
 and has since been trimmed there — this file is now the sole canonical source for it).
 
-7 pages: 1 chapter-opener + 6 content pages.
+This spec matches the actual rendered PDF in `bab1-badan-usaha.pdf-pages.html` exactly —
+same headings, same content, same page boundaries. 7 pages: 1 chapter-opener + 6 content pages.
 
 ## Page 1 — Chapter opener
 
@@ -72,10 +73,10 @@ callout.mistake — Kesalahan Umum
 
 ## Page 3 — Referensi: 7 Peran BUMN dalam Perekonomian
 
-New page. This content previously lived in the HTML under #bumn as a
-`.role-cards` list — removed there as supplementary depth not needed to
-grasp the core Perum/Persero/Perumda/Perseroda distinctions, and moved
-here in full as the canonical reference.
+This content previously lived in the HTML under #bumn as a `.role-cards`
+list — removed there as supplementary depth not needed to grasp the core
+Perum/Persero/Perumda/Perseroda distinctions, and moved here in full as
+the canonical reference.
 
 ```
 chapter-tag: Bab 1 · BUMN & BUMD
@@ -164,13 +165,12 @@ callout.mistake — Kesalahan Umum
   simpanannya kecil (lihat Anggota B, halaman sebelumnya).
 ```
 
-## Page 6 — Referensi Lengkap: Fungsi & 14 Prinsip Manajemen (Henry Fayol)
+## Page 6 — Referensi: Fungsi Manajemen
 
-The HTML lesson keeps its `[data-accordion]` with all 14 principles as a
-genuine interactive/exploratory element (click-through, one at a time) — it
-was judged core rather than a reference-dump, so it was not trimmed there.
-This page is still written fully self-contained (complete real text for all
-14, not a pointer back to the HTML) so the PDF works standalone offline.
+The 5 fungsi manajemen table + mistake callout. Kept as its own page (split
+off from the 14 Prinsip content below) because the full 2-column 14-item
+list didn't fit on one page alongside the functions table and the mistake
+callout — 14 Prinsip now gets its own standalone page (Page 7).
 
 | Fungsi | Istilah lain | Inti |
 |---|---|---|
@@ -184,34 +184,10 @@ This page is still written fully self-contained (complete real text for all
 chapter-tag: Bab 1 · Manajemen
 subject-chip: Ekonomi
 
-h2.section-title: 14 Prinsip Manajemen (Henry Fayol)
-Numbered reference list, full text for all 14:
-  1. Division of Work — pembagian kerja sesuai keahlian agar lebih
-     efisien.
-  2. Authority & Responsibility — wewenang harus seimbang dengan
-     tanggung jawab yang diberikan.
-  3. Discipline — kepatuhan terhadap aturan & kesepakatan organisasi.
-  4. Unity of Command — setiap karyawan hanya menerima perintah dari
-     satu atasan.
-  5. Unity of Direction — kegiatan dengan tujuan sama harus dipimpin
-     satu rencana & satu kepala.
-  6. Subordination of Individual Interest — kepentingan bersama harus
-     didahulukan dari kepentingan pribadi.
-  7. Remuneration of Personnel — gaji/imbalan harus adil bagi karyawan
-     & perusahaan.
-  8. Centralization — keseimbangan antara pengambilan keputusan
-     terpusat & terdesentralisasi.
-  9. Chain of Command — alur komando/wewenang yang jelas dari atas ke
-     bawah.
-  10. Order — tata tertib: orang & barang berada pada tempat yang
-      semestinya.
-  11. Equity — keadilan & kebaikan dalam memperlakukan karyawan.
-  12. Stability of Tenure of Personnel — tingkat turnover karyawan yang
-      rendah demi stabilitas kerja.
-  13. Initiative — memberi ruang karyawan untuk berinisiatif menyusun &
-      menjalankan rencana.
-  14. Esprit de Corps — semangat kerja sama & kekompakan tim dalam
-      organisasi.
+h2.section-title: Referensi: Fungsi Manajemen
+p.lead: Lima fungsi manajemen, dengan istilah alternatifnya (kadang
+  ditulis beda di sumber lain, maksudnya sama). 14 Prinsip Manajemen
+  Henry Fayol ada di halaman berikutnya.
 
 callout.mistake — Kesalahan Umum
 ❌ Salah: mengira "Actuating" dan "Pengarahan/Directing" adalah dua fungsi
@@ -222,27 +198,57 @@ callout.mistake — Kesalahan Umum
   khusus bidang pemasaran saja.
 ```
 
-## Page 7 — Latihan Tambahan (print-friendly practice set)
+## Page 7 — 14 Prinsip Manajemen (Henry Fayol)
+
+Standalone page, full 2-column reference list of all 14 principles. The
+HTML lesson only names what the 14 principles are (with a couple named as
+examples) and points here for the full list — this page is the sole
+canonical source for the complete enumeration, written fully
+self-contained (complete real text for all 14, not a pointer back to the
+HTML) so the PDF works standalone offline.
 
 ```
-chapter-tag: Bab 1 · Latihan
+chapter-tag: Bab 1 · Manajemen
 subject-chip: Ekonomi
 
-h2.section-title: Latihan Tambahan
-1. Koperasi X membagi SHU Rp45.000.000 (55% jasa modal). Total simpanan
-   anggota Rp450.000.000, simpanan Ibu Tuti Rp45.000.000. Hitung SHU jasa
-   modal Ibu Tuti.
-2. Bandingkan: PT dan Koperasi sama-sama badan hukum. Sebutkan 2
-   perbedaan utama dalam hal tanggung jawab & cara pembagian laba.
-3. Sebuah Persero BUMN akan melantai di bursa saham (IPO). Jelaskan
-   mengapa ini tidak mengubah statusnya sebagai BUMN, selama syarat
-   minimal kepemilikan negara masih terpenuhi.
-4. Sebutkan 3 dari 5 fungsi manajemen dan berikan satu contoh
-   penerapannya di sebuah OSIS sekolah.
+h2.section-title: 14 Prinsip Manajemen (Henry Fayol)
+p.lead: Referensi lengkap — halaman utama hanya menautkan ke sini alih-alih
+  menampilkan semuanya sekaligus.
 
-Kunci Jawaban (kecil, di footer halaman):
-  1. Rp4.950.000 (5%×55%×45jt) · 2. lihat Halaman 2 (referensi bentuk
-  badan usaha) & materi Koperasi di halaman utama · 3. minimal 51% saham
-  tetap milik negara · 4. jawaban terbuka, cek terhadap definisi di
-  halaman utama
+ref-list-2col, full text for all 14:
+  01. Division of Work — pembagian kerja sesuai keahlian agar lebih
+      efisien.
+  02. Authority & Responsibility — wewenang harus seimbang dengan
+      tanggung jawab yang diberikan.
+  03. Discipline — kepatuhan terhadap aturan & kesepakatan organisasi.
+  04. Unity of Command — setiap karyawan hanya menerima perintah dari
+      satu atasan.
+  05. Unity of Direction — kegiatan dengan tujuan sama harus dipimpin
+      satu rencana & satu kepala.
+  06. Subordination of Individual Interest — kepentingan bersama harus
+      didahulukan dari kepentingan pribadi.
+  07. Remuneration of Personnel — gaji/imbalan harus adil bagi karyawan
+      & perusahaan.
+  08. Centralization — keseimbangan antara pengambilan keputusan
+      terpusat & terdesentralisasi.
+  09. Chain of Command — alur komando/wewenang yang jelas dari atas ke
+      bawah.
+  10. Order — tata tertib: orang & barang berada pada tempat yang
+      semestinya.
+  11. Equity — keadilan & kebaikan dalam memperlakukan karyawan.
+  12. Stability of Tenure of Personnel — tingkat turnover karyawan yang
+      rendah demi stabilitas kerja.
+  13. Initiative — memberi ruang karyawan untuk berinisiatif menyusun &
+      menjalankan rencana.
+  14. Esprit de Corps — semangat kerja sama & kekompakan tim dalam
+      organisasi.
 ```
+
+## Note on practice questions
+
+There is no standalone "Latihan Tambahan" page in this PDF. The print-style
+practice questions that used to close this document were migrated into
+`bab1-badan-usaha.quiz.json` instead (converted to multiple-choice, matching
+the quiz's existing schema) — see that file for the current questions
+covering SHU calculation, PT vs. Koperasi, Persero IPO status, and fungsi
+manajemen applied to an OSIS scenario.

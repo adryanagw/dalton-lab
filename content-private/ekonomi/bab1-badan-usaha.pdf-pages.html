@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<!-- Rendered PDF companion content for Bab 1 Ekonomi (Badan Usaha, Koperasi & Manajemen),
+     built from bab1-badan-usaha.pdf-spec.md on public/assets/pdf-template/page-template.html.
+     This is the actual filled source — a future per-student rendering pipeline reads this
+     (or its equivalent) rather than a fresh hand-authored file per request. The watermark
+     name/timestamp below is a placeholder until that pipeline stamps it dynamically. -->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dalton Lab — PDF Bab 1 Ekonomi</title>
+<link rel="stylesheet" href="../../public/assets/vendor/fonts/pdf-fonts.css">
+<link rel="stylesheet" href="../../public/assets/vendor/katex/katex.min.css">
+<style>
+  @page{ size:210mm 297mm; margin:0; }
+
+  :root{
+    --navy:#0d1b2e;
+    --navy-2:#16304f;
+    --orange:#ee7d31;
+    --orange-dark:#d4631a;
+    --paper:#faf6ee;
+    --card:#ffffff;
+    --slate:#4f6376;
+    --success:#2f9e6a;
+    --danger:#d64545;
+    --accent:var(--orange);
+    --orange-ink:#bb4d0e;
+  }
+  .pdf-page[data-subject="ekonomi"]{ --accent:#ee7d31; }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#fff;font-family:'Literata',serif;}
+
+  /* ---- the reusable page shell — print version: no floating-card chrome,
+       the page IS the physical page, so no radius/shadow/desk background ---- */
+  .pdf-page{
+    position:relative;
+    width:210mm;
+    height:297mm;
+    padding:26px;
+    background:var(--accent);
+    overflow:hidden;
+    break-after:page;
+    page-break-after:always;
+  }
+  .pdf-page:last-child{break-after:auto;page-break-after:avoid;}
+  .pdf-page .sheet{
+    position:relative;
+    width:100%;
+    height:100%;
+    background:var(--card);
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  .watermark{
+    position:absolute;
+    inset:-20% -30%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transform:rotate(-28deg);
+    pointer-events:none;
+    z-index:1;
+    opacity:.055;
+  }
+  .watermark span{
+    font:italic 600 15px/1 'Fraunces',serif;
+    letter-spacing:.03em;
+    color:var(--navy);
+    white-space:nowrap;
+  }
+
+  .page-head{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 40px 18px;
+    border-bottom:1px solid #eef0f2;
+  }
+  .page-head .brand{display:flex;align-items:center;gap:2px;}
+  .page-head .brand img{height:34px;width:auto;display:block;}
+  .page-head .brand-word{font:600 15px/1 'Fraunces',serif;color:var(--navy);letter-spacing:.01em;}
+  .page-head .brand-word span{color:var(--accent);}
+  .page-head .meta{display:flex;align-items:baseline;gap:8px;}
+  .subject-chip{font:italic 600 14px/1 'Fraunces',serif;color:var(--orange-ink);}
+  .chapter-tag{font:italic 400 13.5px/1 'Literata',serif;color:var(--slate);}
+
+  .page-body{
+    position:relative;
+    z-index:2;
+    flex:1;
+    padding:30px 40px 0;
+    overflow:hidden;
+  }
+
+  h1.page-title{font:700 34px/1.15 'Fraunces',serif;color:var(--navy);margin:0 0 6px;}
+  p.dek{font:italic 400 14.5px/1.4 'Literata',serif;color:var(--orange-ink);margin:0 0 18px;}
+  h2.section-title{font:600 21px/1.25 'Fraunces',serif;color:var(--navy);margin:0 0 10px;}
+  p.lead{font:400 15px/1.6 'Literata',serif;color:var(--slate);margin:0 0 18px;max-width:600px;}
+  ul.learn-list{margin:0 0 20px;padding-left:20px;}
+  ul.learn-list li{font:400 14.5px/1.65 'Literata',serif;color:#22303f;margin-bottom:6px;}
+
+  .formula-box{border-top:1px solid #e6dfd0;border-bottom:1px solid #e6dfd0;padding:20px 2px;margin:0 0 22px;}
+  .formula-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;display:block;}
+  .formula-box .katex{font-size:1.05em;}
+  .formula-box .var-def{font:400 12.5px/1.55 'Literata',serif;color:var(--slate);margin-top:10px;}
+  .formula-box .var-def b{font-family:'IBM Plex Mono',monospace;font-weight:500;color:#22303f;}
+
+  .example-box{border-top:1px solid #e6dfd0;padding:18px 2px 4px;margin:0 0 22px;}
+  .example-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--navy);margin-bottom:12px;display:block;}
+  .example-box p.setup{font:400 13.5px/1.6 'Literata',serif;color:#22303f;margin:0 0 10px;}
+  .example-box ol{margin:0;padding-left:18px;}
+  .example-box li{font:400 13.5px/1.6 'Literata',serif;color:#22303f;margin-bottom:8px;}
+
+  .callout{padding:16px 18px;margin:0 0 20px;font:400 13px/1.55 'Literata',serif;}
+  .callout.mistake{background:#fbf0ed;}
+  .callout.mistake .label{color:var(--danger);}
+  .callout .label{display:block;font:italic 600 13px/1 'Literata',serif;margin-bottom:7px;}
+  .callout .wrong{color:var(--danger);font-weight:600;}
+  .callout .right{color:var(--success);font-weight:600;}
+
+  .ref-table{width:100%;border-collapse:collapse;margin:0 0 20px;}
+  .ref-table caption{caption-side:top;text-align:left;font:italic 500 13.5px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;}
+  .ref-table th,.ref-table td{
+    text-align:left;
+    padding:7px 10px;
+    font:400 12px/1.4 'Literata',serif;
+    color:#22303f;
+    border-bottom:1px solid #eee7d8;
+    vertical-align:top;
+  }
+  .ref-table thead th{
+    font:600 11px/1.2 'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--slate);
+    border-bottom:1.5px solid var(--navy);
+    padding-bottom:8px;
+  }
+  .ref-table tbody tr:first-child td{padding-top:10px;}
+
+  ol.ref-list{margin:0 0 20px;padding-left:20px;}
+  ol.ref-list li{font:400 12.5px/1.55 'Literata',serif;color:#22303f;margin-bottom:9px;}
+
+  .ref-list-2col{columns:2;column-gap:26px;margin:0 0 18px;}
+  .ref-list-2col .item{break-inside:avoid;margin-bottom:11px;}
+  .ref-list-2col .item .num{font:600 11px/1 'IBM Plex Mono',monospace;color:var(--orange-ink);}
+  .ref-list-2col .item .term{font:600 13px/1.3 'Literata',serif;color:var(--navy);display:block;margin:3px 0 2px;}
+  .ref-list-2col .item .gloss{font:400 12px/1.45 'Literata',serif;color:#4a5560;}
+
+  .page-foot{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 40px 22px;
+    border-top:1px solid #eef0f2;
+  }
+  .page-foot .license{font:italic 400 12px/1.4 'Literata',serif;color:#5c6670;max-width:380px;}
+  .page-foot .watermark-meta{font:500 12px/1.4 'IBM Plex Mono',monospace;color:#5c6670;text-align:right;}
+</style>
+</head>
+<body>
+
+<!-- ===== Page 1 — Chapter opener ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body">
+      <h1 class="page-title">Badan Usaha, Koperasi &amp; Manajemen</h1>
+      <p class="dek">Materi PDF — pelengkap Bab 1</p>
+      <p class="lead">Materi tambahan ini fokus ke rumus, referensi cepat, dan contoh soal lanjutan yang butuh perhitungan bertingkat — pelengkap materi interaktif di halaman utama, bukan salinannya.</p>
+      <h2 class="section-title">Yang akan kamu pelajari</h2>
+      <ul class="learn-list">
+        <li>Cara menghitung &amp; membagi SHU koperasi, termasuk skenario dua komponen (jasa modal + jasa usaha) sekaligus</li>
+        <li>Referensi cepat: badan hukum, tanggung jawab &amp; modal tiap bentuk badan usaha (termasuk pecahan BUMN/BUMD: Perum, Persero, Perumda, Perseroda)</li>
+        <li>7 Peran BUMN dalam perekonomian nasional — referensi lengkap</li>
+        <li>14 Prinsip Manajemen Henry Fayol lengkap, satu per satu, untuk dihafal &amp; dipahami di luar sesi belajar interaktif</li>
+        <li>2 studi kasus SHU lanjutan: membandingkan dua anggota koperasi dengan proporsi simpanan/transaksi berbeda, dan efek perubahan persentase jasa modal antar tahun</li>
+      </ul>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 2 — Referensi Cepat: Bentuk Badan Usaha ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Bentuk Badan Usaha</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Referensi Cepat: Bentuk Badan Usaha</h2>
+      <p class="lead">Semua bentuk badan usaha &mdash; termasuk pecahan BUMN &amp; BUMD &mdash; dalam satu tabel, sesuatu yang tab interaktif di halaman utama tidak pernah tunjukkan sekaligus.</p>
+      <table class="ref-table">
+        <thead><tr><th>Bentuk</th><th>Badan Hukum</th><th>Tanggung Jawab</th><th>Modal</th></tr></thead>
+        <tbody>
+          <tr><td>Perseorangan</td><td>Tidak</td><td>Tidak terbatas</td><td>Pribadi</td></tr>
+          <tr><td>Firma</td><td>Tidak</td><td>Tidak terbatas, tanggung renteng</td><td>Gabungan sekutu</td></tr>
+          <tr><td>CV</td><td>Tidak</td><td>Aktif: tidak terbatas &middot; Pasif: terbatas modal</td><td>Aktif: skill+uang &middot; Pasif: uang</td></tr>
+          <tr><td>PT</td><td>Ya</td><td>Terbatas modal disetor</td><td>Saham</td></tr>
+          <tr><td>Koperasi</td><td>Ya</td><td>Terbatas modal/simpanan</td><td>Simpanan anggota</td></tr>
+          <tr><td>Perum (BUMN)</td><td>Ya</td><td>100% negara</td><td>APBN</td></tr>
+          <tr><td>Persero (BUMN)</td><td>Ya</td><td>Min. 51% negara</td><td>APBN + publik/swasta</td></tr>
+          <tr><td>Perumda (BUMD)</td><td>Ya</td><td>100% daerah</td><td>APBD</td></tr>
+          <tr><td>Perseroda (BUMD)</td><td>Ya</td><td>Min. 51% daerah</td><td>APBD + pihak lain</td></tr>
+        </tbody>
+      </table>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> menganggap CV dan Firma itu sama karena keduanya "bukan badan hukum".<br>
+        <span class="right">✅ Benar:</span> CV punya dua jenis sekutu dengan tanggung jawab berbeda (aktif: tidak terbatas, pasif: terbatas modal disetor); di Firma semua sekutu aktif dan sama-sama tidak terbatas. Kalau sekutu pasif CV ikut mengelola usaha, tanggung jawabnya otomatis berubah jadi tidak terbatas juga.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 3 — Referensi: 7 Peran BUMN ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; BUMN &amp; BUMD</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">7 Peran Utama BUMN dalam Perekonomian</h2>
+      <ol class="ref-list">
+        <li><b>Penghasil barang &amp; jasa untuk hajat hidup orang banyak</b> — BUMN menyediakan kebutuhan dasar (listrik, air, transportasi publik, dll.) yang harus tetap tersedia meski secara komersial kurang menguntungkan.</li>
+        <li><b>Pelopor di sektor usaha yang belum diminati swasta</b> — masuk duluan ke sektor berisiko tinggi/modal besar yang swasta masih ragu garap.</li>
+        <li><b>Sumber penerimaan negara &amp; roda utama ekonomi</b> — lewat pajak, dividen, dan kontribusi langsung ke PDB.</li>
+        <li><b>Penyedia pelayanan publik / umum</b> — menjamin akses layanan esensial merata sampai ke daerah yang secara bisnis kurang menarik bagi swasta.</li>
+        <li><b>Pembuka lapangan kerja terbesar</b> — menyerap tenaga kerja dalam jumlah besar di berbagai sektor strategis.</li>
+        <li><b>Penyelamat krisis ekonomi</b> — jadi instrumen negara untuk stabilisasi saat kondisi ekonomi bergejolak (mis. menjaga pasokan bahan pokok, menstabilkan harga/nilai tukar).</li>
+        <li><b>Menguasai sektor vital agar tidak terjadi monopoli swasta</b> — sektor yang menguasai hajat hidup orang banyak (listrik, air, minyak &amp; gas) tetap dikontrol negara sesuai amanat UUD 1945 Pasal 33.</li>
+      </ol>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira BUMN selalu 100% dimiliki negara dan tidak boleh mencari laba.<br>
+        <span class="right">✅ Benar:</span> hanya Perum yang 100% milik negara dan murni berorientasi pelayanan; Persero minimal 51% milik negara dan justru berorientasi laba seperti perusahaan pada umumnya (lihat Halaman 2).
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 4 — Menghitung Pembagian SHU ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Koperasi</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Menghitung Pembagian SHU</h2>
+      <div class="formula-box">
+        <span class="label">Rumus</span>
+        <div id="formula-shu-p4"></div>
+        <div class="var-def">
+          <b>SHU<sub>a</sub></b> = SHU diterima anggota &nbsp;&middot;&nbsp;
+          <b>T</b> = total SHU koperasi (Rp) &nbsp;&middot;&nbsp;
+          <b>p</b> = persentase jasa modal (sisanya 1&minus;p = jasa usaha) &nbsp;&middot;&nbsp;
+          <b>S<sub>a</sub>, S<sub>total</sub></b> = simpanan anggota &amp; total simpanan (Rp) &nbsp;&middot;&nbsp;
+          <b>B<sub>a</sub>, B<sub>total</sub></b> = belanja anggota &amp; total belanja koperasi (Rp)
+        </div>
+      </div>
+      <div class="example-box">
+        <span class="label">Contoh Soal &middot; Tingkat Lanjut (Perbandingan Dua Anggota)</span>
+        <p class="setup">Koperasi "Sentosa" membagi SHU Rp36.000.000, porsi 60% jasa modal : 40% jasa usaha. Total simpanan anggota Rp360.000.000, total belanja Rp180.000.000. Anggota A &mdash; simpanan Rp36.000.000, belanja Rp9.000.000. Anggota B &mdash; simpanan Rp9.000.000, belanja Rp36.000.000.</p>
+        <ol>
+          <li>A &mdash; jasa modal: (36/360)&times;60%&times;36jt = Rp2.160.000; jasa usaha: (9/180)&times;40%&times;36jt = Rp720.000; total = <b>Rp2.880.000</b></li>
+          <li>B &mdash; jasa modal: (9/360)&times;60%&times;36jt = Rp540.000; jasa usaha: (36/180)&times;40%&times;36jt = Rp2.880.000; total = <b>Rp3.420.000</b></li>
+          <li>Selisih = Rp540.000 &mdash; B lebih besar meski simpanannya jauh lebih kecil, karena porsi belanjanya jauh lebih dominan.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 5 — Studi Kasus: Perubahan Porsi Jasa Modal Antar Tahun ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Koperasi</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Studi Kasus — Perubahan Porsi Jasa Modal</h2>
+      <div class="example-box" style="border-top:none;padding-top:0;">
+        <span class="label">Contoh Soal &middot; Tingkat Lanjut (Perbandingan Antar Tahun)</span>
+        <p class="setup">Koperasi "Untung Bersama": tahun lalu porsi jasa modal 70% dari SHU Rp50.000.000; tahun ini diubah jadi 40% dari SHU yang sama besarnya. Made memegang simpanan tetap 10% dari total simpanan di kedua tahun.</p>
+        <ol>
+          <li>Tahun lalu: 10% &times; 70% &times; 50jt = <b>Rp3.500.000</b></li>
+          <li>Tahun ini: 10% &times; 40% &times; 50jt = <b>Rp2.000.000</b></li>
+          <li>Selisih: turun Rp1.500.000</li>
+        </ol>
+      </div>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> menganggap SHU dibagi rata ke semua anggota, atau menyamakan SHU dengan dividen PT.<br>
+        <span class="right">✅ Benar:</span> SHU dibagi proporsional lewat dua komponen (jasa modal + jasa usaha) &mdash; bukan rata, dan bukan murni berdasar kepemilikan seperti dividen saham. Anggota aktif bertransaksi tetap kebagian besar meski simpanannya kecil (lihat Anggota B, Halaman 4).
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 6 — Referensi Lengkap: Fungsi & 14 Prinsip Manajemen ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Manajemen</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Referensi: Fungsi Manajemen</h2>
+      <p class="lead">Lima fungsi manajemen, dengan istilah alternatifnya (kadang ditulis beda di sumber lain, maksudnya sama). 14 Prinsip Manajemen Henry Fayol ada di halaman berikutnya.</p>
+      <table class="ref-table">
+        <thead><tr><th>Fungsi</th><th>Istilah lain</th><th>Inti</th></tr></thead>
+        <tbody>
+          <tr><td>Perencanaan</td><td>Planning</td><td>Menentukan tujuan, strategi, anggaran</td></tr>
+          <tr><td>Pengorganisasian</td><td>Organizing</td><td>Membagi tugas, wewenang, tanggung jawab</td></tr>
+          <tr><td>Pengarahan</td><td>Directing / Actuating</td><td>Membimbing &amp; menggerakkan SDM</td></tr>
+          <tr><td>Pengoordinasian</td><td>Coordinating</td><td>Menyelaraskan semua unit</td></tr>
+          <tr><td>Pengendalian</td><td>Controlling</td><td>Memantau &amp; mengoreksi penyimpangan</td></tr>
+        </tbody>
+      </table>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira "Actuating" dan "Pengarahan/Directing" adalah dua fungsi manajemen yang berbeda; atau menyamakan 6M dengan 4P.<br>
+        <span class="right">✅ Benar:</span> Actuating/Directing = istilah yang sama, sumber beda. 6M (Man, Money, Material, Machine, Method, Market) = sumber daya yang dikelola manajemen secara umum; 4P (Product, Price, Promotion, Place) = strategi khusus bidang pemasaran saja.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 7 — Referensi Lengkap: 14 Prinsip Manajemen (Henry Fayol) ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
+      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Manajemen</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">14 Prinsip Manajemen (Henry Fayol)</h2>
+      <p class="lead">Referensi lengkap &mdash; halaman utama hanya menautkan ke sini alih-alih menampilkan semuanya sekaligus.</p>
+      <div class="ref-list-2col">
+        <div class="item"><span class="num">01</span><span class="term">Division of Work</span><span class="gloss">Pembagian kerja sesuai keahlian agar lebih efisien.</span></div>
+        <div class="item"><span class="num">02</span><span class="term">Authority &amp; Responsibility</span><span class="gloss">Wewenang harus seimbang dengan tanggung jawab yang diberikan.</span></div>
+        <div class="item"><span class="num">03</span><span class="term">Discipline</span><span class="gloss">Kepatuhan terhadap aturan &amp; kesepakatan organisasi.</span></div>
+        <div class="item"><span class="num">04</span><span class="term">Unity of Command</span><span class="gloss">Setiap karyawan hanya menerima perintah dari satu atasan.</span></div>
+        <div class="item"><span class="num">05</span><span class="term">Unity of Direction</span><span class="gloss">Kegiatan dengan tujuan sama harus dipimpin satu rencana &amp; satu kepala.</span></div>
+        <div class="item"><span class="num">06</span><span class="term">Subordination of Individual Interest</span><span class="gloss">Kepentingan bersama harus didahulukan dari kepentingan pribadi.</span></div>
+        <div class="item"><span class="num">07</span><span class="term">Remuneration of Personnel</span><span class="gloss">Gaji/imbalan harus adil bagi karyawan &amp; perusahaan.</span></div>
+        <div class="item"><span class="num">08</span><span class="term">Centralization</span><span class="gloss">Keseimbangan antara pengambilan keputusan terpusat &amp; terdesentralisasi.</span></div>
+        <div class="item"><span class="num">09</span><span class="term">Chain of Command</span><span class="gloss">Alur komando/wewenang yang jelas dari atas ke bawah.</span></div>
+        <div class="item"><span class="num">10</span><span class="term">Order</span><span class="gloss">Tata tertib: orang &amp; barang berada pada tempat yang semestinya.</span></div>
+        <div class="item"><span class="num">11</span><span class="term">Equity</span><span class="gloss">Keadilan &amp; kebaikan dalam memperlakukan karyawan.</span></div>
+        <div class="item"><span class="num">12</span><span class="term">Stability of Tenure of Personnel</span><span class="gloss">Tingkat turnover karyawan yang rendah demi stabilitas kerja.</span></div>
+        <div class="item"><span class="num">13</span><span class="term">Initiative</span><span class="gloss">Memberi ruang karyawan untuk berinisiatif menyusun &amp; menjalankan rencana.</span></div>
+        <div class="item"><span class="num">14</span><span class="term">Esprit de Corps</span><span class="gloss">Semangat kerja sama &amp; kekompakan tim dalam organisasi.</span></div>
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../public/assets/vendor/katex/katex.min.js"></script>
+<script>
+  katex.render(
+    "SHU_a = \\left(\\dfrac{S_a}{S_{total}} \\times p \\times T\\right) + \\left(\\dfrac{B_a}{B_{total}} \\times (1-p) \\times T\\right)",
+    document.getElementById('formula-shu-p4'),
+    { displayMode:true }
+  );
+</script>
+</body>
+</html>
