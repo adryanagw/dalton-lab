@@ -11,7 +11,8 @@ this PDF is the "further detail" companion (some content below used to also live
 and has since been trimmed there — this file is now the sole canonical source for it).
 
 This spec matches the actual rendered PDF in `bab1-badan-usaha.pdf-pages.html` exactly —
-same headings, same content, same page boundaries. 7 pages: 1 chapter-opener + 6 content pages.
+same headings, same content, same page boundaries. 12 pages: 1 chapter-opener + 11 content
+pages.
 
 ## Page 1 — Chapter opener
 
@@ -29,9 +30,13 @@ ul.learn-list:
     (jasa modal + jasa usaha) sekaligus
   - Referensi cepat: badan hukum, tanggung jawab & modal tiap bentuk badan
     usaha (termasuk pecahan BUMN/BUMD: Perum, Persero, Perumda, Perseroda)
+  - Klasifikasi badan usaha berdasarkan sektor (ekstraktif, agraris,
+    manufaktur, dagang, jasa) — referensi lengkap
   - 7 Peran BUMN dalam perekonomian nasional — referensi lengkap
-  - 14 Prinsip Manajemen Henry Fayol lengkap, satu per satu, untuk dihafal
-    & dipahami di luar sesi belajar interaktif
+  - Prinsip-prinsip koperasi, unsur manajemen (6M), dan bidang-bidang
+    manajemen — referensi lengkap di luar sesi belajar interaktif
+  - 5 Fungsi Manajemen (POAC) dengan penjelasan & analogi lengkap, plus 14
+    Prinsip Manajemen Henry Fayol satu per satu
   - 2 studi kasus SHU lanjutan: membandingkan dua anggota koperasi dengan
     proporsi simpanan/transaksi berbeda, dan efek perubahan persentase jasa
     modal antar tahun
@@ -71,7 +76,53 @@ callout.mistake — Kesalahan Umum
   usaha, tanggung jawabnya otomatis berubah jadi tidak terbatas juga.
 ```
 
-## Page 3 — Referensi: 7 Peran BUMN dalam Perekonomian
+## Page 3 — Referensi: Badan Usaha Berdasarkan Sektornya
+
+This content previously lived in the HTML right after the Badan Usaha vs
+Perusahaan intro, under a dedicated "02 · Klasifikasi" section (`#sectorGrid` /
+`.sector-card`, 5-card grid) — removed there as static, non-interactive content
+and moved here in full as the canonical reference.
+
+```
+chapter-tag: Bab 1 · Klasifikasi Badan Usaha
+subject-chip: Ekonomi
+
+h2.section-title: Badan Usaha Berdasarkan Sektornya
+p.lead: Lima sektor utama tempat badan usaha di Indonesia beroperasi —
+  dibedakan dari jenis kegiatan ekonominya, bukan dari bentuk hukumnya (yang
+  dibahas di Halaman 2).
+
+ref-list, full text:
+  01. Ekstraktif — badan usaha yang mengambil atau mengolah hasil alam
+      secara langsung dari sumbernya, tanpa proses pengolahan awal oleh
+      pihak lain. Contoh: Pertamina (minyak & gas), Freeport (tambang),
+      PTBA (batu bara).
+  02. Agraris — badan usaha yang mengolah hasil pertanian, perkebunan, dan
+      peternakan. Contoh: perusahaan perkebunan, badan usaha pertanian,
+      Charoen Pokphand (peternakan & pakan).
+  03. Manufaktur / Industri — badan usaha yang mengolah bahan mentah atau
+      bahan setengah jadi menjadi barang jadi/setengah jadi bernilai tambah
+      lebih tinggi. Contoh: Astra (otomotif), ICBP (makanan olahan), Semen
+      Indonesia.
+  04. Dagang — badan usaha yang membeli barang lalu menjualnya kembali tanpa
+      mengubah bentuk atau fungsinya — nilai tambahnya ada di distribusi,
+      bukan produksi. Contoh: Alfamart, Matahari, Ace Hardware.
+  05. Jasa — badan usaha yang menyediakan layanan/pelayanan, bukan barang
+      fisik. Outputnya tetap dihitung sebagai nilai ekonomi meski tidak
+      berwujud. Contoh: Telkom (telekomunikasi), RS Siloam (kesehatan),
+      bank, perhotelan.
+
+callout.mistake — Kesalahan Umum
+❌ Salah: mengira sektor ekstraktif cuma soal tambang, dan sektor jasa
+  "tidak menghasilkan apa-apa" karena tidak ada barang fisiknya.
+✅ Benar: ekstraktif mencakup semua pengambilan sumber daya alam mentah
+  (termasuk hasil laut & hutan), bukan cuma tambang — syaratnya diambil
+  langsung dari alam tanpa diolah dulu. Sektor jasa tetap dihitung sebagai
+  output ekonomi (nilai tambah) meski bentuknya bukan barang; nilainya
+  justru sering lebih besar dari sektor barang di ekonomi modern.
+```
+
+## Page 4 — Referensi: 7 Peran BUMN dalam Perekonomian
 
 This content previously lived in the HTML under #bumn as a `.role-cards`
 list — removed there as supplementary depth not needed to grasp the core
@@ -111,7 +162,7 @@ callout.mistake — Kesalahan Umum
   laba seperti perusahaan pada umumnya (lihat Halaman 2).
 ```
 
-## Page 4 — Menghitung Pembagian SHU (formula + contoh lanjutan #1)
+## Page 5 — Menghitung Pembagian SHU (formula + contoh lanjutan #1)
 
 ```
 chapter-tag: Bab 1 · Koperasi
@@ -140,7 +191,7 @@ example-box — Contoh Soal · Tingkat Lanjut (Perbandingan Dua Anggota)
      kecil, karena porsi belanjanya jauh lebih dominan.
 ```
 
-## Page 5 — Studi Kasus: Perubahan Porsi Jasa Modal Antar Tahun
+## Page 6 — Studi Kasus: Perubahan Porsi Jasa Modal Antar Tahun
 
 ```
 chapter-tag: Bab 1 · Koperasi
@@ -162,15 +213,182 @@ callout.mistake — Kesalahan Umum
 ✅ Benar: SHU dibagi proporsional lewat dua komponen (jasa modal + jasa
   usaha) — bukan rata, dan bukan murni berdasar kepemilikan seperti
   dividen saham. Anggota aktif bertransaksi tetap kebagian besar meski
-  simpanannya kecil (lihat Anggota B, halaman sebelumnya).
+  simpanannya kecil (lihat Anggota B, Halaman 5).
 ```
 
-## Page 6 — Referensi: Fungsi Manajemen
+## Page 7 — Referensi: Prinsip-Prinsip Koperasi
+
+This content previously lived in the HTML under #koperasi as a `.principle-grid`
+6-card grid — removed there as static, non-interactive content (the org chart
+and the "Jenis-Jenis Koperasi" `.jenis-box` list next to it stayed in the HTML,
+since the org chart is interactive/clickable and the jenis-box list is a
+different, denser lookup table students use while exploring) — moved here in
+full as the canonical reference, placed near the SHU pages since it's the same
+Koperasi topic.
+
+```
+chapter-tag: Bab 1 · Koperasi
+subject-chip: Ekonomi
+
+h2.section-title: Prinsip-Prinsip Koperasi
+p.lead: Koperasi dijalankan berdasarkan seperangkat prinsip yang
+  membedakannya dari badan usaha lain — bukan cuma soal struktur
+  organisasi, tapi juga nilai yang dipegang.
+
+ref-list, full text:
+  01. Mandiri — anggota didorong aktif berpartisipasi dan koperasi
+      berupaya memenuhi kebutuhannya sendiri tanpa terlalu bergantung pada
+      pihak luar.
+  02. Sukarela & Terbuka — keanggotaan tidak dipaksakan dan terbuka untuk
+      siapa saja yang ingin bergabung, tanpa diskriminasi.
+  03. Demokratis — pengelolaan dan pengambilan keputusan mengikuti suara
+      mayoritas anggota lewat Rapat Anggota, bukan ditentukan sepihak oleh
+      Pengurus.
+  04. Pendidikan Perkoperasian — koperasi berkewajiban mendidik anggotanya
+      soal prinsip & praktik perkoperasian, serta membangun kerja sama
+      antarkoperasi (baik sesama koperasi primer maupun dengan koperasi
+      sekunder).
+  05. Concern for Community — koperasi peduli terhadap dampak kegiatannya
+      dan berupaya memberi manfaat bagi komunitas di sekitarnya, tidak
+      semata mengejar keuntungan anggota sendiri.
+  06. Pembagian SHU Adil — Sisa Hasil Usaha dibagi sesuai kontribusi
+      masing-masing anggota (jasa modal & jasa usaha), bukan dibagi rata
+      per kepala. Rumus & contoh perhitungannya ada di Halaman 5.
+
+callout.mistake — Kesalahan Umum
+❌ Salah: menganggap koperasi "harus" selalu untung kecil/nirlaba karena
+  prinsipnya kekeluargaan, atau menyamakan "demokratis" dengan "semua
+  keputusan harus bulat/disepakati semua orang".
+✅ Benar: koperasi tetap bisa besar dan menghasilkan SHU signifikan selama
+  prinsip pembagian hasilnya tetap adil & proporsional. "Demokratis"
+  berarti keputusan diambil lewat mekanisme suara mayoritas di Rapat
+  Anggota — bukan berarti harus selalu bulat.
+```
+
+## Page 8 — Referensi: Unsur Manajemen (6M)
+
+This content previously lived in the HTML under #manajemen as a static
+card grid (`.six-m-grid` / `.m-card`) — removed there as non-interactive
+content. Originally combined with the Bidang-Bidang Manajemen page below
+onto one page, but the real render clipped: the two 2-column lists plus
+the mistake callout didn't fit one page together, so this is now split
+into two standalone pages (8 and 9), same pattern as the Fungsi/Fayol
+split earlier in this chapter's history.
+
+```
+chapter-tag: Bab 1 · Manajemen
+subject-chip: Ekonomi
+
+h2.section-title: Unsur Manajemen — 6M
+p.lead: Enam sumber daya yang dikelola manajemen di semua bidang — jangan
+  tertukar dengan 4P (lihat kesalahan umum di halaman berikutnya).
+
+ref-list-2col, full text:
+  01. Man — orang-orang yang benar-benar mengerjakan pekerjaan. Tanpa
+      manusia, semua rencana cuma di atas kertas — unsur paling
+      fundamental dari 6M.
+  02. Money — uang/anggaran yang membiayai seluruh kegiatan, dari gaji
+      karyawan sampai pembelian bahan baku.
+  03. Material — bahan baku yang akan diolah jadi produk jadi; kualitas
+      bahan menentukan kualitas hasil akhir.
+  04. Machine — mesin & peralatan yang membantu pekerjaan jadi lebih
+      cepat, mudah, dan efisien dibanding dikerjakan manual.
+  05. Method — cara atau langkah kerja yang dipakai; metode yang tepat
+      menghasilkan output lebih maksimal dengan usaha lebih sedikit.
+  06. Market — pasar tempat produk akan dijual; tanpa riset pasar yang
+      matang, produk sebagus apa pun bisa gagal terjual.
+```
+
+## Page 9 — Referensi: Bidang-Bidang Manajemen
+
+This content previously lived in the HTML under #manajemen as a static
+card grid (`.bidang-grid` / `.bidang-card`) — removed there as
+non-interactive content.
+
+```
+chapter-tag: Bab 1 · Manajemen
+subject-chip: Ekonomi
+
+h2.section-title: Bidang-Bidang Manajemen
+p.lead: Manajemen diterapkan berbeda-beda tergantung bidang fungsionalnya
+  di dalam organisasi.
+
+ref-list-2col, full text:
+  01. Produksi — mengelola faktor produksi barang & jasa agar efisien:
+      rancangan produk, volume produksi, proses, lokasi & tata letak
+      pabrik, hingga quality control.
+  02. Marketing — membangun branding agar produk dikenal & dipercaya
+      pasar, dijalankan lewat kerangka 4P: Product, Price, Promotion,
+      Place.
+  03. Finance — mengatur cara memperoleh, menggunakan, dan mengelola uang
+      serta aset perusahaan secara keseluruhan.
+  04. Personalia (HRD) — mencari & mengelola SDM berkualitas: menyusun
+      job desc, rekrutmen, pelatihan, hingga promosi/mutasi karyawan.
+  05. Administrasi — mengelola administrasi kegiatan, pemakaian
+      alat/perlengkapan kantor, hingga pemeliharaan gedung & fasilitas.
+
+callout.mistake — Kesalahan Umum
+❌ Salah: menyamakan 6M (unsur manajemen) dengan 4P (strategi pemasaran).
+✅ Benar: 6M adalah sumber daya yang dikelola manajemen secara umum di
+  semua bidang (termasuk bidang non-marketing seperti Produksi & Finance);
+  4P (Product, Price, Promotion, Place) adalah strategi khusus di bidang
+  Marketing saja — satu bagian kecil dari cakupan 6M.
+```
+
+## Page 10 — 5 Fungsi Manajemen (POAC) — Penjelasan Lengkap
+
+This content previously lived in the HTML under #manajemen as a `.poac-grid`
+card grid with fuller analogy-based explanations — removed there as a static
+card grid and migrated here in full. Different from Page 10: this page has the
+complete analogy-based explanations; Page 10 keeps a terser table-only
+reference for quick lookup.
+
+```
+chapter-tag: Bab 1 · Manajemen
+subject-chip: Ekonomi
+
+h2.section-title: 5 Fungsi Manajemen
+p.lead: Lima fungsi yang dijalankan manajer dalam mengelola organisasi —
+  biasa disingkat POAC/POACE. Referensi tabel singkatnya ada di halaman
+  berikutnya.
+
+ref-list, full text:
+  01. Perencanaan (Planning) — ibarat menyusun peta sebelum jalan-jalan:
+      menentukan mau ke mana (tujuan), lewat jalur mana (strategi), dan
+      berapa bekal yang dibutuhkan (anggaran) sebelum benar-benar mulai
+      bergerak.
+  02. Pengorganisasian (Organizing) — setelah ada rencana, siapa
+      mengerjakan apa? Fungsi ini membagi tugas ke orang yang tepat,
+      lengkap dengan kewenangan & tanggung jawabnya masing-masing, supaya
+      kerja jadi rapi dan tidak tumpang tindih.
+  03. Pengarahan (Directing / Actuating) — rencana & pembagian tugas saja
+      tidak cukup kalau timnya tidak semangat. Di sinilah pemimpin turun
+      tangan membimbing dan memotivasi timnya supaya benar-benar bergerak
+      sesuai rencana.
+  04. Pengoordinasian (Coordinating) — bayangkan orkestra: tiap pemain
+      hebat sendiri-sendiri percuma kalau tidak main bersama. Fungsi ini
+      menyelaraskan semua unit & sumber daya supaya bergerak kompak, satu
+      arah, tanpa saling tabrakan kerja.
+  05. Pengendalian (Controlling) — layaknya cek kesehatan rutin: memantau
+      apakah semua berjalan sesuai rencana & SOP, menemukan yang meleset,
+      lalu memperbaikinya sebelum jadi masalah besar.
+
+callout.mistake — Kesalahan Umum
+❌ Salah: menganggap "Directing" dan "Actuating" adalah dua fungsi
+  manajemen yang berbeda.
+✅ Benar: keduanya istilah yang sama, cuma beda sumber/buku — maksudnya
+  sama: menggerakkan & membimbing SDM supaya benar-benar menjalankan
+  rencana. Soal ujian bisa memakai istilah manapun.
+```
+
+## Page 11 — Referensi: Fungsi Manajemen
 
 The 5 fungsi manajemen table + mistake callout. Kept as its own page (split
 off from the 14 Prinsip content below) because the full 2-column 14-item
 list didn't fit on one page alongside the functions table and the mistake
-callout — 14 Prinsip now gets its own standalone page (Page 7).
+callout — 14 Prinsip gets its own standalone page (Page 11). This table is a
+terse quick-reference version; Page 9 has the fuller analogy-based
+explanations.
 
 | Fungsi | Istilah lain | Inti |
 |---|---|---|
@@ -198,7 +416,7 @@ callout.mistake — Kesalahan Umum
   khusus bidang pemasaran saja.
 ```
 
-## Page 7 — 14 Prinsip Manajemen (Henry Fayol)
+## Page 12 — 14 Prinsip Manajemen (Henry Fayol)
 
 Standalone page, full 2-column reference list of all 14 principles. The
 HTML lesson only names what the 14 principles are (with a couple named as
