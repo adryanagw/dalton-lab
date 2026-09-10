@@ -88,5 +88,44 @@
     "opts": ["Pembagian kerja yang jelas", "Semangat kerja sama & kekompakan tim", "Sistem penggajian yang adil", "Rantai komando dari atas ke bawah"],
     "correct": 1,
     "explain": "Esprit de corps berarti semangat kerja sama / kekompakan tim — menumbuhkan rasa persatuan agar organisasi berjalan harmonis."
+  },
+  {
+    "q": "Koperasi X membagi SHU Rp45.000.000, dengan porsi 55% untuk jasa modal. Total simpanan seluruh anggota Rp450.000.000, dan simpanan Ibu Tuti Rp45.000.000. Berapa SHU jasa modal yang diterima Ibu Tuti?",
+    "opts": ["Rp2.475.000", "Rp4.500.000", "Rp24.750.000", "Rp2.250.000"],
+    "correct": 0,
+    "explain": "SHU jasa modal = (simpanan pribadi ÷ total simpanan) × % jasa modal × total SHU = (45.000.000/450.000.000) × 55% × 45.000.000 = 10% × 55% × 45.000.000 = Rp2.475.000. Rp4.500.000 keliru karena lupa mengalikan persentase jasa modal (cuma proporsi simpanan × total SHU); Rp24.750.000 keliru karena lupa mengalikan proporsi simpanan Ibu Tuti (cuma % jasa modal × total SHU); Rp2.250.000 keliru karena persentase jasa modal dibulatkan jadi 50%."
+  },
+  {
+    "q": "PT dan Koperasi sama-sama berstatus badan hukum. Dari pernyataan berikut, mana yang BUKAN perbedaan antara keduanya?",
+    "opts": [
+      "PT membagi laba (dividen) berdasarkan jumlah saham, Koperasi membagi SHU berdasarkan simpanan & transaksi anggota",
+      "Tanggung jawab pemilik PT terbatas pada modal disetor, sedangkan tanggung jawab anggota Koperasi tidak terbatas sampai harta pribadi",
+      "PT dimiliki pemegang saham, Koperasi dimiliki & dikelola oleh anggotanya sendiri",
+      "Pengambilan keputusan PT umumnya mengikuti besar kepemilikan saham, Koperasi menganut satu anggota satu suara"
+    ],
+    "correct": 1,
+    "explain": "Justru di sinilah PT dan Koperasi mirip, bukan beda: keduanya berstatus badan hukum, jadi tanggung jawab pemiliknya sama-sama terbatas — PT terbatas pada modal disetor, Koperasi terbatas pada modal/simpanan. Bukan tanggung jawab tak terbatas seperti Firma atau Perseorangan. Tiga opsi lain (cara bagi laba, kepemilikan, cara ambil keputusan) memang benar-benar berbeda antara PT & Koperasi."
+  },
+  {
+    "q": "Sebuah Persero BUMN melepas sebagian sahamnya ke publik lewat IPO (mis. jadi perusahaan Tbk). Selama saham yang dilepas tidak melebihi batas maksimal, badan usaha tersebut…",
+    "opts": [
+      "Otomatis berubah jadi PT swasta biasa karena sudah ada pemilik selain negara",
+      "Tetap berstatus BUMN (Persero), karena syarat minimal kepemilikan negara untuk Persero hanya 51%, bukan 100%",
+      "Berubah jadi BUMD karena sahamnya sudah beredar di publik",
+      "Harus diubah menjadi Perum supaya tetap dimiliki negara"
+    ],
+    "correct": 1,
+    "explain": "Persero cuma wajib punya minimal 51% saham milik negara — sisanya (maksimal 49%) memang boleh dimiliki publik/swasta lewat bursa saham. Makanya BNI & Telkom bisa jadi perusahaan Tbk tanpa kehilangan status BUMN-nya, selama porsi negara nggak turun di bawah 51%."
+  },
+  {
+    "q": "Manakah pasangan fungsi manajemen & contoh penerapannya di kepengurusan OSIS berikut yang paling tepat?",
+    "opts": [
+      "Pengorganisasian — Ketua OSIS menyusun visi & program kerja untuk satu tahun ke depan",
+      "Pengarahan — Pengurus OSIS membagi seksi-seksi (acara, humas, dokumentasi) sesuai keahlian masing-masing anggota",
+      "Pengendalian — Ketua OSIS mengevaluasi laporan panitia setelah acara selesai, mengecek apakah sesuai rencana & anggaran",
+      "Perencanaan — Pembina OSIS memotivasi pengurus yang mulai kendor semangatnya menjelang hari acara"
+    ],
+    "correct": 2,
+    "explain": "Mengevaluasi hasil kerja & mengecek kesesuaiannya dengan rencana/anggaran adalah ciri khas Pengendalian (Controlling). Tiga opsi lain salah pasangan: menyusun visi & program kerja itu Perencanaan (bukan Pengorganisasian), membagi seksi sesuai keahlian itu Pengorganisasian (bukan Pengarahan), dan memotivasi pengurus yang kendor semangat itu Pengarahan (bukan Perencanaan)."
   }
 ]
