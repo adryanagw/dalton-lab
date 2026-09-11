@@ -10,7 +10,9 @@ A distilled, Dalton-Lab-specific operating guide for the agent that writes chapt
 
 Those docs assume a presentation-independent JSON schema rendered by a generic engine. **This project doesn't do that, and this pass doesn't change it.** Chapters are hand-authored HTML files (`content-private/{subject}/babN-slug.html`) plus sibling JSON files for quiz and exercises, served only through authenticated `/api/content` calls — never as static files. The web-shell (`public/`, `api/*`) is built and maintained in a separate session; this guide and the local chapter-builder agent never touch it.
 
-**What's new:** every chapter also gets a PDF companion, generated from the same content spec, focused on formulas/advanced concepts/worked examples — not a dump of the HTML page. See §5.
+**What's new:** every chapter also gets a PDF companion, generated from the same content spec. See §5 — its scope has grown since this guide was first written (originally "extra formulas/worked examples", now "the sole home for entire non-interactive reference content"), so read §5 in full even if you've built a PDF companion before.
+
+**Division of labor, precisely:** the chapter-builder agent owns the HTML lesson, quiz/exercise JSON, the PDF spec (`.pdf-spec.md`), and the *filled* PDF page source (`.pdf-pages.html`) — all of it is chapter *content*. Turning that `.pdf-pages.html` into the actual served PNG page images (headless-Chromium rendering, overflow-checking, committing the images) is a mechanical, deterministic step with no content judgment left in it — it can be done by either side, but if the chapter-builder agent has the means to run a headless-Chromium screenshot script, doing it itself (see §5) avoids a round-trip. What the chapter-builder never does is touch the *serving/display* layer — `api/pdf-content.js`, `initPdfViewers()`/watermark logic in `app.js`, `.pdf-viewer*` CSS — that's web-shell, already built, and stable.
 
 ## 1. Audience and voice
 
@@ -68,6 +70,28 @@ Ground every new chapter in these exact patterns (see `content-private/matematik
 
 **Do not invent new generic engines.** If a chapter seems to need one (e.g. a new interaction type), that's a web-shell change — flag it for the other session rather than hacking it into chapter HTML.
 
+**Layout discipline — learned the hard way on Ekonomi/Biologi bab1, verify every new chapter against these:**
+
+- **Box width must match the text column above it.** `.section-head` (the eyebrow+h2+intro-`<p>` block) is capped at `max-width:640px` by the site's global CSS. Any standalone content box that follows it directly at full section width — `.jenis-box`, `.law-strip` used *outside* a grid — must carry `style="max-width:640px;"` too, or its edges visibly overshoot the paragraph above it (real bug, shipped, had to be patched with inline `max-width:640px` on every offending box after the fact). Boxes that already sit inside a `.two-col`/`.compare-grid`/`.organel-grid` grid are naturally narrower than 640px and don't need this — only add it to standalone, full-width boxes.
+- **Diagrams and embeds get their own width cap, wider than text but not full-bleed.** `.diagram-card` (used for both static images and 3D-model iframes, see below) carries `max-width:760px` site-wide. Without it, a large or square source image (e.g. a 1159×1159 diagram) renders at the full `.wrap` width (~1120px) and towers over the page — also a real bug, shipped, had to be patched. 760px is deliberate: a visible "breakout" wider than the 640px reading column (the classic editorial convention — figures get more room than prose) without going full-width. Don't override this per-image; if a diagram genuinely needs to be larger, that's a `.diagram-card` CSS discussion with the web-shell session, not a per-chapter inline style.
+- **Section spacing:** the default `section{padding:86px 0}` (global CSS) assumes a section with real content weight — a card grid, a table, a multi-paragraph explanation. After the "move static content to PDF" restructuring (see §5), a section that's down to one intro paragraph plus a short box reads as excessive empty space above/below it at that padding. Add `tight` to the section's class list (`class="notebook-bg tight"` etc. — it's an existing global modifier, `section.tight{padding:60px 0}`) for any section you expect to be short. Don't touch the global `section{padding}` value itself — that's shared by every chapter on every subject.
+- **Never ship functional/informational text under 11px** (`0.6875rem` at the default 16px root) — sub-labels, tags, captions included. The bundled Impeccable detector (`impeccable detect --json <file>`) flags this as `undersized-ui-text`; a real instance (`font-size:.62rem` on organel "khusus tumbuhan/hewan" tags = 9.92px) shipped and had to be bumped to `.7rem`. Run the detector before calling a chapter done — see §7.
+
+**3D / external interactive embeds:** when a real, working embed URL is supplied for a chapter (e.g. the user pastes a specific Sketchfab model link — never invent or guess one), follow this exact pattern rather than inventing new markup:
+
+```html
+<div class="jenis-box diagram-card">
+  <p class="diagram-eyebrow">Model 3D Interaktif · <!-- what it shows --></p>
+  <div class="model3d-frame">
+    <iframe title="<!-- model title -->" src="<!-- embed URL, ends in /embed -->" allow="autoplay; fullscreen; xr-spatial-tracking" loading="lazy" allowfullscreen></iframe>
+  </div>
+  <p class="model3d-credit">Model 3D: <a href="<!-- model page URL -->" target="_blank" rel="nofollow noopener"><!-- title --></a> oleh <a href="<!-- creator profile URL -->" target="_blank" rel="nofollow noopener"><!-- creator --></a>, via <a href="https://sketchfab.com" target="_blank" rel="nofollow noopener">Sketchfab</a>.</p>
+  <p class="diagram-caption"><!-- one line: what to look for / how it connects to the surrounding content --></p>
+</div>
+```
+
+`.model3d-frame`/`.model3d-credit` are existing global CSS (aspect-ratio 4:3 responsive frame + small attribution line) — reuse them, don't reinvent. The credit line with working links back to the model page, creator profile, and Sketchfab is not optional — it's the attribution the model's CC-BY license requires. Place the embed physically next to the HTML content it illustrates (after the matching diagram, or after the interactive element it complements), not bundled all together at the end of a section.
+
 ## 4. Quiz and exercise JSON — exact schema
 
 **Quiz** (`babN-slug.quiz.json`) — flat array, single difficulty, covers the whole chapter:
@@ -98,17 +122,44 @@ Existing chapters use ~4 questions per tier as a rough baseline, not a hard rule
 
 ## 5. PDF companion — what actually goes in it
 
-The PDF is not a export-to-PDF of the HTML page. It's a separate, curated document: **formulas, advanced concepts, and worked exercise examples** — the material that benefits from print/offline/dense reference, not the intuition-building prose that already lives on the page. Read-only, rendered as images (not a native embed) per the earlier decision in this thread, with a student-identity watermark once that viewer exists.
+**This section supersedes its original, narrower framing.** The PDF is not an export of the HTML page, and it is *not* merely "extra" formulas/worked examples anymore either. Established practice across Ekonomi bab1 and Biologi bab1 (both restructured this way, at explicit user direction, after the chapter was first built the old/narrower way and needed a follow-up pass): **entire static, non-interactive reference content — dense card grids, comparison tables, itemized lists, historical/biographical narrative, anything with no click/toggle/filter behavior — gets removed from the HTML lesson *entirely* and rewritten in full, elaborated prose in the PDF.** Not terse labels or a "see PDF for details" stub: PDF pages must stand alone without the HTML page's visual context, so a table that was two words per cell in HTML becomes a real explanatory paragraph in the PDF.
 
-**Page template:** every PDF page is built as one `.pdf-page[data-subject="..."]` block from `public/assets/pdf-template/page-template.html` — bright per-subject accent frame around a white reading sheet, branded header (logo + wordmark + subject/chapter meta), diagonal student-identity watermark, footer with license text. Reuse its classes (`.formula-box`, `.example-box`, `.callout.mistake`, etc.) rather than inventing new page markup per chapter. Only `ekonomi` has an `--accent` color defined so far — other subjects get theirs added there once decided, not invented per-chapter.
+What **stays** in HTML: genuinely interactive elements (toggle filters, click-to-expand/accordion, tab-switch, calculators, the leveled-exercise/quiz engines), diagrams and 3D embeds together with their direct explanatory paragraph, and short foundational/definitional content a reader needs to follow the rest of the chapter. Everything else — if it's just sitting there to be read, not explored — is a PDF candidate. When restructuring an existing chapter, go section by section and ask "does clicking/toggling/filtering anything on this do something, or is it just static text/cards/a table?" — the latter moves.
 
-**Spec file:** write the page-by-page PDF content spec to `content-private/{subject}/babN-slug.pdf-spec.md`, a sibling of the chapter's HTML/JSON — see `content-private/ekonomi/bab1-badan-usaha.pdf-spec.md` for the format. This is the spec a future render pipeline consumes; it is not the rendered PDF itself.
+Read-only, rendered as images (not a native embed), with a student-identity watermark drawn live by the viewer.
+
+**Page template:** every PDF page is built as one `.pdf-page[data-subject="..."]` block from `public/assets/pdf-template/page-template.html` — bright per-subject accent frame around a white reading sheet, branded header (logo + wordmark + subject/chapter meta), diagonal student-identity watermark placeholder (see the critical warning below), footer with license text. Reuse its content-block classes rather than inventing new page markup per chapter:
+
+| Class | Use for |
+|---|---|
+| `h1.page-title` / `p.dek` / `h2.section-title` / `p.lead` / `p.body-text` | Page title, one-line deck, section headings, intro/lead paragraph, regular elaborated prose paragraphs |
+| `ul.learn-list` | The chapter-opener's "yang akan kamu pelajari" bullet list |
+| `.formula-box` (`.label`, `.var-def`) | A stated formula (KaTeX) with every variable defined |
+| `.example-box` (`.label`, `ol`/`li`, optional `p.setup`) | A worked example, numbered steps |
+| `.callout.mistake` (`.label`, `.wrong`, `.right`) | ❌/✅ misconception callout — reuse this exact pattern, don't invent a new one |
+| `.ref-table` (with `<thead>`/`<tbody>`, no inline colors) | A full reference table moved from HTML — every row/column reproduced, not summarized |
+| `ol.ref-list` | A numbered reference list (e.g. sector classifications) |
+| `.ref-list-2col` (`.item > .num`/`.term`/`.gloss`) | A dense 2-column glossary-style list (e.g. 14 named principles) — `columns:2` CSS, keeps a long enumerated list compact without a table |
+
+`ref-table`/`ol.ref-list`/`.ref-list-2col` aren't defined in `page-template.html` itself (that file only shows the two page types it was first built with) — they were added directly in each chapter's `.pdf-pages.html` `<style>` block. Copy the block wholesale from an existing chapter's `.pdf-pages.html` (`content-private/ekonomi/bab1-badan-usaha.pdf-pages.html` or `content-private/biologi/bab1-sel.pdf-pages.html`) rather than retyping it — it's the same ~150-line CSS block in both, only the `--accent` value and a couple of size tweaks differ.
+
+**Per-subject `--accent` colors** (add new ones here when a subject's color is decided, never invent one per-chapter): `ekonomi` → `#ee7d31` (site's orange). `biologi` → `#3fa15c` (matches `subjectsData.biologi.color: 'green'` in `app.js`). `matematika`/`fisika`/`kimia` not yet decided.
+
+**Do NOT bake a watermark or "downloaded by" footer line into the rendered page.** This was a real, shipped bug: an earlier version of `page-template.html`/`.pdf-pages.html` included a `<div class="watermark">` with placeholder name/date text (meant as "a future per-student pipeline will stamp this dynamically") plus a `<div class="watermark-meta">Adryan Gerald<br>Diunduh ...</div>` footer line. Neither is per-student — the images are rendered *once* and served identically to every student — so every student saw the founder's name baked into their page, *underneath* the real, correct, live per-student watermark the viewer draws client-side (`initPdfViewers()`/`renderWatermark()` in `app.js`, `.pdf-viewer-watermark`). Two watermarks stacked, one of them wrong. **Current `page-template.html` and both existing `.pdf-pages.html` files have neither element — don't reintroduce them.** The `.sheet`/`.page-head`/`.page-body`/`.page-foot` structure stays; just the watermark div and the watermark-meta footer div are gone.
+
+**Spec file:** write the page-by-page PDF content spec to `content-private/{subject}/babN-slug.pdf-spec.md`, a sibling of the chapter's HTML/JSON — see `content-private/ekonomi/bab1-badan-usaha.pdf-spec.md` or `content-private/biologi/bab1-sel.pdf-spec.md` for the format (page-by-page, each with the source table/list reproduced in full plus a written-out version, a one-line note on exactly what HTML section/element it replaced and what stayed behind). This is the spec the filled `.pdf-pages.html` is built from; it is not the rendered PDF itself.
+
+**Filling the template and rendering — mechanical, but do it, don't stop at the spec:**
+1. Copy an existing chapter's `.pdf-pages.html` as a starting structure (same reasons as the CSS block above — don't rebuild the `<head>`/watermark-free page shell from scratch).
+2. Fill in each page's content from the spec, using only the classes from the table above.
+3. Render to page images with a headless-Chromium screenshot pass — the reusable script pattern is: for each `.pdf-page` block, build a standalone temp HTML doc (template head + that one block), then `chrome --headless=new --window-size=794,1123 --force-device-scale-factor=1.5 --screenshot=<subject>/<babN-slug>.pdf.<N>.png file://<temp>.html`. Output filenames must be exactly `{bab-slug}.pdf.{page number, 1-based}.png` in `content-private/{subject}/`, matching what `api/pdf-content.js` looks up.
+4. **Verify every page by actually reading the rendered image, not by estimating whether the content fits.** This is the single most repeated failure across both chapters built this way: dense content (a 2-column list + a table + a callout, or two medium tables stacked) reliably looks like it should fit on one `210mm×297mm` page and then silently clips at the bottom when actually rendered — the cut-off content is invisible in a quick glance, only visible if you open the image and read to the bottom. When in doubt, split into two pages rather than cramming; a 12-page PDF that's fully readable beats a 9-page one with two silently truncated pages.
 
 **By subject:**
 - **Matematika, Fisika, Kimia** — equation-dense. Typeset via **LaTeX**, not plain text: proper fraction bars, aligned derivation steps, subscripts/superscripts, summation/integral notation. This is the actual reason the PDF path exists — the HTML page's inline KaTeX is fine for a formula or two, not for a full derivation or a page of worked problems.
-- **Biologi, Ekonomi** — prose-first, same as the HTML page's voice. Use LaTeX only where an actual formula shows up (Hardy-Weinberg, reaction stoichiometry, SHU/break-even calculations) — don't typeset the whole document in LaTeX just because the tool is available.
+- **Biologi, Ekonomi** — prose-first, same as the HTML page's voice. Use LaTeX only where an actual formula shows up (Hardy-Weinberg, reaction stoichiometry, SHU/break-even calculations) — don't typeset the whole document in LaTeX just because the tool is available. In practice, neither existing Biologi/Ekonomi chapter needed any LaTeX in its PDF at all once restructured this way — most of what moved to the PDF was tables/lists/narrative, not calculation.
 
-**Content to include** (curated, not everything):
+**Content to include** (curated, not everything, but broader than the original "just extras" framing):
 ```
 Chapter/topic summary
 Definitions
@@ -117,9 +168,11 @@ Formulas (with every variable defined, units stated)
   (exam-style, multi-step — the PDF is where the harder ones live)
 Common mistakes
 A short additional practice set (can overlap with the exercise JSON, doesn't have to)
+Everything static/non-interactive that used to be a card grid, table, or
+  list in the HTML lesson — reproduced in full, not summarized
 ```
 
-If a topic has nothing formula/advanced-example-worthy (e.g. a purely conceptual biology topic), it's fine for the PDF to be thin or skipped — PDF value is evaluated per topic, not mandatory for every one.
+If a topic has nothing formula/advanced-example/reference-table-worthy at all, it's fine for the PDF to be thin — PDF value is evaluated per topic, not mandatory for every one. In practice this has not come up yet: both real chapters ended up with 9-12 pages once the static-content-migration above is applied honestly.
 
 ## 6. Subject-specific content rules
 
@@ -161,8 +214,27 @@ If a topic has nothing formula/advanced-example-worthy (e.g. a purely conceptual
     (correct is a valid 0-based index, HTML entities render correctly)
 [ ] New HTML reuses existing section/card/accordion/tabswitch conventions —
     no new one-off classes without a reason
-[ ] PDF content is genuinely curated (formulas/advanced/exercises), not a
-    dump of the HTML page
+[ ] Static/non-interactive HTML content (card grids, tables, lists with no
+    click/toggle behavior) moved to the PDF in full, not summarized in
+    place — see §5's expanded framing before treating "PDF = just extras"
+[ ] Standalone full-width note boxes (.jenis-box/.law-strip outside a grid)
+    carry style="max-width:640px" to match the .section-head text column
+[ ] Diagrams/3D embeds use .diagram-card (max-width:760px already handles
+    sizing) — never inline a wider/narrower override per image
+[ ] Sections that ended up short after PDF migration use class="... tight"
+[ ] No functional/informational text under 11px — run
+    `impeccable detect --json <changed file>` and fix any
+    undersized-ui-text finding before calling it done
+[ ] PDF content is genuinely curated and complete (formulas/advanced/
+    exercises/full reference material), not a dump of the HTML page and
+    not a thin stub that just says "see the HTML page"
+[ ] Every .pdf-pages.html page actually rendered and visually read
+    top-to-bottom for overflow/clipping — never shipped on estimation
+[ ] .pdf-pages.html has no <div class="watermark"> or watermark-meta
+    footer text — the real per-student watermark is drawn live by the
+    viewer, baking one in duplicates it with wrong/placeholder identity
+[ ] Any 3D/external embed uses a real, user-supplied URL (never invented)
+    and includes full working attribution links (.model3d-credit)
 [ ] No fabricated facts, stats, or sources
 [ ] Chapter reviewed against the two existing same-subject chapters (if any)
     for consistent depth and terminology

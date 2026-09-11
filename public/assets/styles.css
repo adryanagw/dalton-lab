@@ -885,7 +885,7 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 .katex-display>.katex{white-space:normal;}
 
 /* structure diagrams (labeled SVG figures) */
-.diagram-card{margin:28px 0 44px;}
+.diagram-card{margin:28px 0 44px;max-width:760px;}
 .diagram-eyebrow{font-family:'Space Grotesk';font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--orange-dark);margin:0 0 14px;}
 .diagram-card svg{width:100%;height:auto;display:block;}
 .diagram-card img{width:100%;height:auto;display:block;border-radius:12px;background:#fff;padding:14px;box-sizing:border-box;border:1px solid var(--line);}
