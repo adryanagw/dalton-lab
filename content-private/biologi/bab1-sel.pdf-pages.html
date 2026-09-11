@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<!-- Rendered PDF companion content for Bab 1 Biologi (Sel — Unit Dasar Kehidupan),
+     built from bab1-sel.pdf-spec.md on public/assets/pdf-template/page-template.html.
+     This is the actual filled source — a future per-student rendering pipeline reads this
+     (or its equivalent) rather than a fresh hand-authored file per request. The watermark
+     name/timestamp below is a placeholder until that pipeline stamps it dynamically. -->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dalton Lab — PDF Bab 1 Biologi</title>
+<link rel="stylesheet" href="../../public/assets/vendor/fonts/pdf-fonts.css">
+<style>
+  @page{ size:210mm 297mm; margin:0; }
+
+  :root{
+    --navy:#0d1b2e;
+    --navy-2:#16304f;
+    --orange:#ee7d31;
+    --orange-dark:#d4631a;
+    --paper:#faf6ee;
+    --card:#ffffff;
+    --slate:#4f6376;
+    --success:#2f9e6a;
+    --danger:#d64545;
+    --accent:#3fa15c;
+    --orange-ink:#bb4d0e;
+  }
+  .pdf-page[data-subject="biologi"]{ --accent:#3fa15c; }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#fff;font-family:'Literata',serif;}
+
+  /* ---- the reusable page shell — print version: no floating-card chrome,
+       the page IS the physical page, so no radius/shadow/desk background ---- */
+  .pdf-page{
+    position:relative;
+    width:210mm;
+    height:297mm;
+    padding:26px;
+    background:var(--accent);
+    overflow:hidden;
+    break-after:page;
+    page-break-after:always;
+  }
+  .pdf-page:last-child{break-after:auto;page-break-after:avoid;}
+  .pdf-page .sheet{
+    position:relative;
+    width:100%;
+    height:100%;
+    background:var(--card);
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  .watermark{
+    position:absolute;
+    inset:-20% -30%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transform:rotate(-28deg);
+    pointer-events:none;
+    z-index:1;
+    opacity:.055;
+  }
+  .watermark span{
+    font:italic 600 15px/1 'Fraunces',serif;
+    letter-spacing:.03em;
+    color:var(--navy);
+    white-space:nowrap;
+  }
+
+  .page-head{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 40px 18px;
+    border-bottom:1px solid #eef0f2;
+  }
+  .page-head .brand{display:flex;align-items:center;gap:2px;}
+  .page-head .brand img{height:34px;width:auto;display:block;}
+  .page-head .brand-word{font:600 15px/1 'Fraunces',serif;color:var(--navy);letter-spacing:.01em;}
+  .page-head .brand-word span{color:var(--accent);}
+  .page-head .meta{display:flex;align-items:baseline;gap:8px;}
+  .subject-chip{font:italic 600 14px/1 'Fraunces',serif;color:var(--orange-ink);}
+  .chapter-tag{font:italic 400 13.5px/1 'Literata',serif;color:var(--slate);}
+
+  .page-body{
+    position:relative;
+    z-index:2;
+    flex:1;
+    padding:30px 40px 0;
+    overflow:hidden;
+  }
+
+  h1.page-title{font:700 34px/1.15 'Fraunces',serif;color:var(--navy);margin:0 0 6px;}
+  p.dek{font:italic 400 14.5px/1.4 'Literata',serif;color:var(--orange-ink);margin:0 0 18px;}
+  h2.section-title{font:600 21px/1.25 'Fraunces',serif;color:var(--navy);margin:0 0 10px;}
+  p.lead{font:400 15px/1.6 'Literata',serif;color:var(--slate);margin:0 0 18px;max-width:600px;}
+  p.body-text{font:400 13.5px/1.6 'Literata',serif;color:#22303f;margin:0 0 14px;}
+  ul.learn-list{margin:0 0 20px;padding-left:20px;}
+  ul.learn-list li{font:400 14.5px/1.65 'Literata',serif;color:#22303f;margin-bottom:6px;}
+
+  .callout{padding:16px 18px;margin:0 0 20px;font:400 13px/1.55 'Literata',serif;}
+  .callout.mistake{background:#fbf0ed;}
+  .callout.mistake .label{color:var(--danger);}
+  .callout .label{display:block;font:italic 600 13px/1 'Literata',serif;margin-bottom:7px;}
+  .callout .wrong{color:var(--danger);font-weight:600;}
+  .callout .right{color:var(--success);font-weight:600;}
+
+  .ref-table{width:100%;border-collapse:collapse;margin:0 0 18px;}
+  .ref-table caption{caption-side:top;text-align:left;font:italic 500 13.5px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;}
+  .ref-table th,.ref-table td{
+    text-align:left;
+    padding:6px 10px;
+    font:400 12px/1.4 'Literata',serif;
+    color:#22303f;
+    border-bottom:1px solid #eee7d8;
+    vertical-align:top;
+  }
+  .ref-table thead th{
+    font:600 11px/1.2 'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--slate);
+    border-bottom:1.5px solid var(--navy);
+    padding-bottom:8px;
+  }
+  .ref-table tbody tr:first-child td{padding-top:10px;}
+
+  .page-foot{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 40px 22px;
+    border-top:1px solid #eef0f2;
+  }
+  .page-foot .license{font:italic 400 12px/1.4 'Literata',serif;color:#5c6670;max-width:380px;}
+  .page-foot .watermark-meta{font:500 12px/1.4 'IBM Plex Mono',monospace;color:#5c6670;text-align:right;}
+</style>
+</head>
+<body>
+
+<!-- ===== Page 1 — Chapter opener ===== -->
+<div class="pdf-page" data-subject="biologi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1</span><span class="subject-chip">Biologi</span></div>
+    </div>
+    <div class="page-body">
+      <h1 class="page-title">Sel — Unit Dasar Kehidupan</h1>
+      <p class="dek">Materi PDF — pelengkap Bab 1</p>
+      <p class="lead">Materi tambahan ini fokus ke sejarah penemuan sel secara lengkap, tabel-tabel perbandingan, dan penjelasan detail mekanisme transpor membran — pelengkap materi interaktif (diagram, filter organel, pemilih fase mitosis) di halaman utama, bukan salinannya.</p>
+      <h2 class="section-title">Yang akan kamu pelajari</h2>
+      <ul class="learn-list">
+        <li>Kisah lengkap 4 ilmuwan penemu teori sel — Robert Hooke, Antonie van Leeuwenhoek, Schleiden &amp; Schwann, dan Rudolf Virchow — beserta tahun dan temuan masing-masing</li>
+        <li>Tabel lengkap makromolekul organik (karbohidrat, protein, lipid, asam nukleat) dengan monomer penyusun, contoh, dan fungsi utamanya</li>
+        <li>Tabel perbandingan DNA vs RNA (gula penyusun, basa nitrogen, bentuk, lokasi, fungsi)</li>
+        <li>Tabel perbandingan sel hewan vs tumbuhan (7 aspek) dan sel prokariotik vs eukariotik (6 aspek) — referensi lengkap</li>
+        <li>Penjelasan detail tiga kelompok transpor membran: transpor pasif (difusi, difusi terfasilitasi, osmosis), tabel efek tonisitas (hipotonis/isotonis/hipertonis) pada sel hewan &amp; tumbuhan, siklus lengkap pompa Na&#8314;/K&#8314;, dan transpor vesikuler (fagositosis, pinositosis, endositosis diperantarai reseptor, eksositosis)</li>
+        <li>Tabel perbandingan lengkap Mitosis vs Meiosis (6 aspek)</li>
+        <li>Bukti-bukti pendukung Teori Endosimbiotik, dijelaskan satu per satu</li>
+      </ul>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 2 — Sejarah Penemuan Sel (Lengkap) ===== -->
+<div class="pdf-page" data-subject="biologi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Sejarah Sel</span><span class="subject-chip">Biologi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Sejarah Penemuan Sel</h2>
+      <p class="lead">Empat ilmuwan, tersebar di rentang hampir 200 tahun, yang perlahan-lahan menyusun apa yang sekarang kita kenal sebagai Teori Sel.</p>
+      <p class="body-text"><b>Robert Hooke (1665)</b> adalah orang pertama yang mengamati sel, meski ia sendiri tidak sadar sedang melihat unit dasar kehidupan. Menggunakan mikroskop sederhana rancangannya sendiri, ia mengintip sayatan tipis gabus (kulit kayu ek yang sudah mati) dan melihat deretan ruang-ruang kosong berdinding, seperti kamar-kamar kecil berjejer. Ia menamainya "cellula", bahasa Latin untuk "kamar kecil" — dari sinilah istilah "sel" berasal. Penting dicatat: yang sebenarnya dilihat Hooke bukan sel hidup, melainkan dinding sel gabus yang sudah mati, jadi ia hanya melihat "kerangka kosong"-nya saja.</p>
+      <p class="body-text"><b>Antonie van Leeuwenhoek (1674)</b>, seorang pedagang kain asal Belanda yang hobi mengasah lensa, membangun mikroskop rancangannya sendiri dengan kemampuan perbesaran hingga sekitar 270 kali — jauh melampaui mikroskop Hooke. Dengan alat ini, ia menjadi orang pertama yang mengamati sel-sel yang masih hidup dan bergerak: bakteri, protozoa, hingga sel darah. Ia menjuluki makhluk-makhluk mikroskopis itu "animalcules". Karena kontribusinya membuka dunia mikroorganisme, ia dijuluki Bapak Mikrobiologi.</p>
+      <p class="body-text"><b>Matthias Schleiden &amp; Theodor Schwann (1838&ndash;1839)</b> — ahli botani dan ahli zoologi — bekerja terpisah lalu menggabungkan temuan mereka. Schleiden mengamati bahwa seluruh jaringan tumbuhan tersusun dari sel, sementara Schwann menemukan pola serupa pada jaringan hewan. Gabungan pengamatan keduanya melahirkan Teori Sel modern yang pertama: semua makhluk hidup, baik tumbuhan maupun hewan, tersusun atas sel — generalisasi besar yang untuk pertama kalinya menyatukan dunia tumbuhan dan hewan di bawah satu prinsip struktural yang sama.</p>
+      <p class="body-text"><b>Rudolf Virchow (1855&ndash;1858)</b> melengkapi teori sel dengan menjawab pertanyaan yang belum terjawab: dari mana sel baru berasal? Jawabannya ia rangkum dalam prinsip Latin "Omnis cellula e cellula" — setiap sel hanya bisa terbentuk dari pembelahan sel yang sudah ada sebelumnya, bukan muncul begitu saja dari materi tak hidup (membantah teori generatio spontanea/abiogenesis yang saat itu masih dipercaya banyak orang). Prinsip inilah yang menjadi postulat keempat Teori Sel.</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira Robert Hooke adalah orang yang menemukan sel hidup pertama kali.<br>
+        <span class="right">✅ Benar:</span> Hooke hanya melihat dinding sel gabus yang sudah mati (1665) — yang pertama kali mengamati sel hidup yang bergerak adalah Antonie van Leeuwenhoek, hampir satu dekade kemudian (1674).
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 3 — Referensi: Makromolekul Organik ===== -->
+<div class="pdf-page" data-subject="biologi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Komponen Kimiawi</span><span class="subject-chip">Biologi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Referensi: Makromolekul Organik</h2>
+      <p class="lead">Empat kelompok besar makromolekul berbasis karbon yang menyusun sel, dengan monomer, contoh konkret, dan fungsi utamanya.</p>
+      <table class="ref-table">
+        <thead><tr><th>Makromolekul</th><th>Monomer Penyusun</th><th>Contoh</th><th>Fungsi Utama</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="3" style="vertical-align:top;">Karbohidrat</td><td>Monosakarida</td><td>Glukosa, Fruktosa, Galaktosa</td><td rowspan="3" style="vertical-align:top;">Sumber &amp; cadangan energi</td></tr>
+          <tr><td>Disakarida</td><td>Sukrosa, Laktosa, Maltosa</td></tr>
+          <tr><td>Polisakarida</td><td>Selulosa (dinding sel tumbuhan), Pati/Amilum (cadangan energi tumbuhan), Glikogen (cadangan energi hewan), Kitin</td></tr>
+          <tr><td>Protein</td><td>Asam amino</td><td>Enzim, kolagen, hemoglobin</td><td>Struktural, enzim (katalis), transportasi, pertahanan (antibodi), pergerakan</td></tr>
+          <tr><td>Lipid</td><td>Asam lemak + gliserol</td><td>Fosfolipid (penyusun membran), trigliserida, steroid (kolesterol)</td><td>Penyusun membran sel, cadangan energi, hormon</td></tr>
+          <tr><td>Asam Nukleat</td><td>Nukleotida</td><td>DNA, RNA</td><td>Menyimpan &amp; menyalurkan informasi genetik</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Karbohidrat dibedakan menjadi tiga tingkatan berdasarkan jumlah monomernya: monosakarida (satu unit gula), disakarida (dua unit gula tersambung), dan polisakarida (rantai panjang banyak unit gula, mis. selulosa penyusun dinding sel tumbuhan atau glikogen cadangan energi hewan). Protein tersusun dari rangkaian asam amino dan punya fungsi paling beragam — struktural (kolagen), katalis (enzim), transportasi (hemoglobin), hingga pertahanan tubuh (antibodi). Lipid, meski bukan polimer sejati, tetap dikelompokkan di sini karena juga makromolekul organik — fosfolipid khususnya penting sebagai bahan dasar seluruh membran sel. Asam nukleat (DNA &amp; RNA) tersusun dari nukleotida dan bertugas menyimpan serta menyalurkan informasi genetik.</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira semua karbohidrat berfungsi sama.<br>
+        <span class="right">✅ Benar:</span> selulosa (polisakarida struktural pada tumbuhan) tidak bisa dicerna manusia dan berfungsi sebagai penyusun dinding sel, sementara pati/amilum dan glikogen (polisakarida cadangan) memang disimpan tubuh sebagai sumber energi.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 4 — Referensi: DNA vs RNA ===== -->
+<div class="pdf-page" data-subject="biologi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Komponen Kimiawi</span><span class="subject-chip">Biologi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Referensi: DNA vs RNA</h2>
+      <p class="lead">Dua jenis asam nukleat yang sering tertukar karena namanya mirip — meski keduanya menyimpan informasi genetik, strukturnya cukup berbeda.</p>
+      <table class="ref-table">
+        <thead><tr><th>Aspek</th><th>DNA</th><th>RNA</th></tr></thead>
+        <tbody>
+          <tr><td>Gula penyusun</td><td>Deoksiribosa</td><td>Ribosa</td></tr>
+          <tr><td>Basa nitrogen</td><td>Adenin, Timin, Guanin, Sitosin</td><td>Adenin, Urasil, Guanin, Sitosin</td></tr>
+          <tr><td>Bentuk</td><td>Untai ganda (double helix)</td><td>Umumnya untai tunggal</td></tr>
+          <tr><td>Lokasi</td><td>Inti sel, mitokondria, kloroplas</td><td>Inti sel &amp; sitoplasma (ribosom)</td></tr>
+          <tr><td>Fungsi</td><td>Menyimpan informasi genetik</td><td>Menyalurkan &amp; menerjemahkan informasi genetik</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Perbedaan paling gampang diingat ada pada gula penyusun dan basa nitrogennya: DNA memakai gula deoksiribosa (kekurangan satu atom oksigen dibanding ribosa) dan salah satu dari empat basa nitrogennya adalah Timin; RNA memakai gula ribosa penuh dan menukar Timin dengan Urasil. Dari segi bentuk, DNA umumnya berupa untai ganda yang saling berpilin (double helix) sehingga informasinya lebih stabil dan tahan lama — cocok untuk perannya sebagai "arsip induk" informasi genetik. RNA umumnya berupa untai tunggal, lebih fleksibel tapi kurang stabil, sesuai perannya yang lebih sementara: menyalin instruksi dari DNA lalu membawanya ke ribosom untuk diterjemahkan menjadi protein.</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira DNA hanya ada di inti sel.<br>
+        <span class="right">✅ Benar:</span> DNA juga ditemukan di mitokondria &amp; kloroplas (DNA sirkular, mirip DNA bakteri) — salah satu bukti pendukung Teori Endosimbiotik (lihat Halaman 9).
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 5 — Referensi: Perbandingan Sel Hewan vs Tumbuhan ===== -->
+<div class="pdf-page" data-subject="biologi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Perbandingan Sel</span><span class="subject-chip">Biologi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Referensi: Sel Hewan vs Sel Tumbuhan</h2>
+      <p class="lead">Coba bayangkan rumah tanpa pagar tembok (sel hewan) vs rumah dengan pagar tembok kokoh (sel tumbuhan) — itulah kira-kira bedanya, dijabarkan dalam tujuh aspek berikut.</p>
+      <table class="ref-table">
+        <thead><tr><th>Aspek</th><th>Sel Hewan</th><th>Sel Tumbuhan</th></tr></thead>
+        <tbody>
+          <tr><td>Dinding sel</td><td>Tidak ada</td><td>Ada (selulosa)</td></tr>
+          <tr><td>Bentuk sel</td><td>Tidak tetap (fleksibel)</td><td>Tetap, kaku</td></tr>
+          <tr><td>Vakuola</td><td>Kecil, jumlah banyak (jika ada)</td><td>Besar, tunggal, dominan</td></tr>
+          <tr><td>Kloroplas</td><td>Tidak ada</td><td>Ada</td></tr>
+          <tr><td>Sentriol</td><td>Ada</td><td>Umumnya tidak ada</td></tr>
+          <tr><td>Cadangan makanan</td><td>Glikogen</td><td>Amilum (pati)</td></tr>
+          <tr><td>Cara memperoleh energi</td><td>Heterotrof (dari makanan)</td><td>Autotrof (fotosintesis)</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Dinding sel (selulosa) adalah pembeda paling mendasar — kehadirannya pada sel tumbuhan membuat bentuk sel jadi tetap/kaku, sekaligus memungkinkan sel tumbuhan menahan tekanan air masuk tanpa pecah (lihat efek turgid pada tabel tonisitas, Halaman 7). Vakuola pada tumbuhan berukuran besar dan tunggal, berperan besar menjaga tekanan turgor tersebut; pada hewan vakuola kecil dan jumlahnya bisa banyak. Kloroplas, tempat berlangsungnya fotosintesis, murni eksklusif milik sel tumbuhan — inilah yang memungkinkan tumbuhan bersifat autotrof, sementara sel hewan bersifat heterotrof. Sebaliknya, sentriol (berperan menarik kromosom saat pembelahan sel) umumnya hanya ditemukan pada sel hewan.</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira sel tumbuhan sama sekali tidak punya mitokondria karena sudah punya kloroplas.<br>
+        <span class="right">✅ Benar:</span> sel tumbuhan tetap punya mitokondria (untuk respirasi seluler) di samping kloroplas (untuk fotosintesis) — keduanya bekerja untuk tujuan berbeda dan sama-sama dibutuhkan.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 6 — Referensi: Sel Prokariotik vs Eukariotik ===== -->
+<div class="pdf-page" data-subject="biologi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Perbandingan Sel</span><span class="subject-chip">Biologi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Referensi: Sel Prokariotik vs Eukariotik</h2>
+      <p class="lead">Bandingkan "rumah studio" super sederhana (prokariotik, seperti bakteri) dengan "rumah bertingkat lengkap dengan ruangan khusus" (eukariotik, seperti sel manusia) — enam aspek pembedanya berikut ini.</p>
+      <table class="ref-table">
+        <thead><tr><th>Aspek</th><th>Prokariotik</th><th>Eukariotik</th></tr></thead>
+        <tbody>
+          <tr><td>Membran inti</td><td>Tidak ada (nukleoid)</td><td>Ada</td></tr>
+          <tr><td>Organel bermembran</td><td>Tidak ada</td><td>Ada (mitokondria, RE, Golgi)</td></tr>
+          <tr><td>Ukuran sel</td><td>Lebih kecil (&plusmn;1&ndash;10 &micro;m)</td><td>Lebih besar (&plusmn;10&ndash;100 &micro;m)</td></tr>
+          <tr><td>Ribosom</td><td>Tipe 70S</td><td>Tipe 80S</td></tr>
+          <tr><td>Contoh organisme</td><td>Bakteri, Archaea</td><td>Hewan, tumbuhan, fungi, protista</td></tr>
+          <tr><td>Pembelahan sel</td><td>Pembelahan biner</td><td>Mitosis / meiosis</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Ciri paling mendasar ada pada membran inti: sel prokariotik tidak memilikinya sama sekali, sehingga materi genetiknya hanya mengambang bebas di sitoplasma dalam wilayah yang disebut nukleoid — bukan nukleus sungguhan. Sel eukariotik membungkus DNA-nya rapi di dalam nukleus bermembran ganda. Konsekuensinya, sel prokariotik juga tidak punya organel bermembran lain dan ukurannya jauh lebih kecil. Ribosom keduanya juga berbeda tipe: 70S pada prokariotik, 80S pada eukariotik — perbedaan ini jadi salah satu bukti kuat Teori Endosimbiotik (lihat Halaman 9), karena mitokondria &amp; kloroplas justru memakai ribosom tipe 70S seperti bakteri, bukan 80S seperti sel eukariotik yang menampungnya.</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira "prokariotik" berarti organisme yang lebih sederhana/primitif dalam segala hal.<br>
+        <span class="right">✅ Benar:</span> prokariotik memang lebih sederhana secara struktural, tapi tetap sangat sukses secara evolusioner — bakteri &amp; Archaea justru organisme paling banyak jumlahnya &amp; paling beragam habitatnya di Bumi.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 7 — Transpor Membran: Pasif & Tonisitas ===== -->
+<div class="pdf-page" data-subject="biologi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Transpor Membran</span><span class="subject-chip">Biologi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Transpor Pasif &amp; Dampak Osmosis (Tonisitas)</h2>
+      <p class="lead">Tiga mekanisme yang sama-sama tidak butuh energi sel, plus efek osmosis pada sel yang direndam larutan dengan kepekatan berbeda-beda.</p>
+      <p class="body-text">Difusi adalah yang paling sederhana — sama seperti aroma parfum yang perlahan menyebar memenuhi ruangan tanpa ada yang mendorongnya, molekul di sini bergerak sendiri dari area padat (konsentrasi tinggi) ke area lebih sepi (konsentrasi rendah), sampai akhirnya merata di semua tempat. Difusi terfasilitasi bekerja dengan prinsip arah yang sama, tapi untuk molekul yang "terlalu besar" atau bermuatan listrik untuk menembus lapisan lemak membran begitu saja — molekul ini tetap bisa lewat asal dibantu dibukakan "pintu" oleh protein channel atau protein carrier di membran. Osmosis adalah versi khusus difusi untuk air: air berpindah melewati membran semipermeabel, dari larutan yang lebih encer menuju larutan yang lebih pekat, sampai kepekatan di kedua sisi membran setara.</p>
+      <p class="body-text">Dampak osmosis pada sel dikenal sebagai tonisitas, dan efeknya berbeda antara sel hewan (tanpa dinding sel) dan sel tumbuhan (punya dinding sel yang kokoh) — mirip percobaan klasik kentang direndam air garam vs air biasa.</p>
+      <table class="ref-table">
+        <thead><tr><th>Kondisi Larutan</th><th>Efek pada Sel Hewan</th><th>Efek pada Sel Tumbuhan</th></tr></thead>
+        <tbody>
+          <tr><td>Hipotonis (encer, air masuk ke sel)</td><td>Lisis — sel kemasukan air terus, membengkak, lalu pecah</td><td>Turgid — sel menggembung tapi tetap aman berkat dinding sel yang kokoh</td></tr>
+          <tr><td>Isotonis (konsentrasi sama)</td><td>Sel tetap normal, tidak ada perpindahan air bersih</td><td>Sel tetap normal, tidak ada perpindahan air bersih</td></tr>
+          <tr><td>Hipertonis (pekat, air keluar dari sel)</td><td>Krenasi — sel kehilangan air dan mengerut/keriput</td><td>Plasmolisis — isi sel menyusut, membrannya lepas dari dinding sel</td></tr>
+        </tbody>
+      </table>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> menganggap krenasi dan plasmolisis adalah istilah yang bisa dipertukarkan begitu saja.<br>
+        <span class="right">✅ Benar:</span> krenasi khusus istilah untuk sel hewan mengerut dalam larutan hipertonis; plasmolisis khusus istilah untuk sel tumbuhan, di mana membran plasmanya lepas/menyusut dari dinding sel yang tetap kaku di tempatnya.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 8 — Transpor Aktif & Vesikuler ===== -->
+<div class="pdf-page" data-subject="biologi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Transpor Membran</span><span class="subject-chip">Biologi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Transpor Aktif &amp; Transpor Vesikuler</h2>
+      <p class="lead">Dua mekanisme yang butuh usaha ekstra dari sel — satu memompa ion satu per satu lewat protein, satu lagi mengangkut partikel besar dalam "kardus" gelembung membran.</p>
+      <p class="body-text">Transpor aktif dibutuhkan ketika sel perlu memindahkan zat ke arah yang "berlawanan arus" — dari area sepi ke area padat, melawan gradien konsentrasi alami. Ini butuh usaha ekstra, seperti mendorong mobil menanjak: perlu bahan bakar berupa ATP. Contoh klasiknya adalah pompa Na&#8314;/K&#8314; (sodium-potassium pump), yang bekerja dalam siklus berulang empat langkah. Pertama, protein carrier di membran menjemput 3 ion Na&#8314; dari dalam sel. Kedua, satu molekul ATP dipakai — diubah jadi ADP + fosfat — untuk mengubah bentuk protein carrier tersebut. Ketiga, perubahan bentuk ini membuat protein melepas 3 ion Na&#8314; ke luar sel, lalu langsung menjemput 2 ion K&#8314; dari luar sel. Keempat, protein kembali ke bentuk semula dan melepas 2 ion K&#8314; ke dalam sel — siklus pun berulang dari awal. Perlu dibedakan dua jenis "petugas transportasi" di membran: protein channel (jalur pasif, tidak butuh energi) dan protein carrier/pump (aktif, memompa ion melawan arus dengan bantuan energi ATP seperti pada contoh di atas).</p>
+      <p class="body-text">Transpor vesikuler dipakai untuk partikel yang terlalu besar untuk lewat "pintu" protein biasa — sel membungkusnya dalam gelembung membran (vesikel), seperti mengemas barang dalam kardus sebelum diangkut. Ada empat bentuknya. Fagositosis adalah ketika sel "memakan" partikel padat, seperti sel darah putih yang menelan bakteri untuk melawan infeksi. Pinositosis adalah versi cairnya — sel "meneguk" cairan atau zat terlarut di sekitarnya sebagai cara menyerap nutrisi cair. Endositosis diperantarai reseptor lebih presisi: molekul tertentu harus "mengetuk pintu" dulu (menempel ke reseptor spesifik) sebelum ditelan sel — contohnya penyerapan kolesterol (LDL) dari darah. Eksositosis adalah kebalikan dari ketiganya — sel mengeluarkan atau mensekresikan isinya ke luar, misalnya melepaskan hormon, enzim, atau neurotransmitter.</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira transpor vesikuler termasuk transpor pasif karena "zat cuma dibungkus dan dibawa saja".<br>
+        <span class="right">✅ Benar:</span> transpor vesikuler tetap termasuk kategori yang butuh energi ATP — sel harus aktif membentuk &amp; menggerakkan vesikelnya, bukan proses yang berjalan sendiri seperti difusi.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 9 — Referensi: Mitosis vs Meiosis ===== -->
+<div class="pdf-page" data-subject="biologi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Reproduksi Sel</span><span class="subject-chip">Biologi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Referensi: Mitosis vs Meiosis</h2>
+      <p class="lead">Perbandingan langsung dua jenis pembelahan sel dalam enam aspek — detail tiap fase mitosis &amp; tiap tahap meiosis ada di materi interaktif halaman utama.</p>
+      <table class="ref-table">
+        <thead><tr><th>Aspek</th><th>Mitosis</th><th>Meiosis</th></tr></thead>
+        <tbody>
+          <tr><td>Jumlah pembelahan</td><td>1 kali</td><td>2 kali (Meiosis I &amp; II)</td></tr>
+          <tr><td>Jumlah sel anak</td><td>2</td><td>4</td></tr>
+          <tr><td>Sifat genetik anak</td><td>Identik dengan induk (diploid)</td><td>Setengah dari induk (haploid), bervariasi</td></tr>
+          <tr><td>Terjadi pada</td><td>Sel somatik (sel tubuh)</td><td>Sel gonad (pembentuk gamet)</td></tr>
+          <tr><td>Fungsi</td><td>Pertumbuhan, regenerasi, perbaikan</td><td>Reproduksi seksual, variasi genetik</td></tr>
+          <tr><td>Pindah silang</td><td>Tidak terjadi</td><td>Terjadi pada profase I</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Perbedaan paling mendasar ada pada jumlah pembelahan dan hasil akhirnya: mitosis membelah satu kali menghasilkan 2 sel anak yang identik secara genetik dengan induknya (tetap diploid/2n) — cocok untuk pertumbuhan &amp; perbaikan jaringan tubuh. Meiosis membelah dua kali berurutan (Meiosis I lalu Meiosis II) menghasilkan 4 sel anak yang jumlah kromosomnya separuh dari induk (haploid/n) dan bervariasi secara genetik satu sama lain, karena terjadi pindah silang (crossing over) pada profase I. Mitosis berlangsung pada sel somatik, sedangkan meiosis khusus terjadi pada sel gonad untuk membentuk sel gamet.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 10 — Bukti Pendukung Teori Endosimbiotik ===== -->
+<div class="pdf-page" data-subject="biologi">
+  <div class="sheet">
+    <div class="watermark">
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
+      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
+    </div>
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Teori Endosimbiotik</span><span class="subject-chip">Biologi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Bukti Pendukung Teori Endosimbiotik</h2>
+      <p class="lead">Lima bukti yang menguatkan dugaan bahwa mitokondria &amp; kloroplas dulunya adalah sel prokariotik bebas yang hidup bersimbiosis dengan sel eukariotik purba.</p>
+      <p class="body-text"><b>Pertama, DNA sendiri</b> — mitokondria &amp; kloroplas punya DNA sirkular sendiri, terpisah dari DNA inti sel, dan bentuknya mirip DNA bakteri (bukan DNA linear seperti di nukleus). <b>Kedua, membran ganda</b> — membran luarnya berasal dari vesikel endositosis sel inang saat "menelan" bakteri purba, sementara membran dalamnya adalah membran bakteri asli yang tertelan. <b>Ketiga, ribosom tipe 70S</b> — sama persis seperti ribosom bakteri, berbeda dari ribosom sel eukariotik di sekitarnya yang bertipe 80S (lihat juga Halaman 6). <b>Keempat, reproduksi independen</b> — mitokondria &amp; kloroplas bisa membelah diri sendiri di dalam sel, mirip pembelahan biner bakteri, tidak menunggu sel induknya membelah. <b>Kelima, ukuran</b> — keduanya berukuran serupa dengan bakteri pada umumnya.</p>
+      <p class="body-text">Kelima bukti ini bersama-sama menunjuk pada dugaan bahwa mitokondria berasal dari bakteri aerobik (alfa-proteobacteria), sedangkan kloroplas dari bakteri fotosintetik (cyanobacteria).</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira mitokondria/kloroplas "dimakan" lalu dicerna oleh sel eukariotik purba.<br>
+        <span class="right">✅ Benar:</span> keduanya tidak dicerna — mereka bertahan hidup di dalam sel inang dan membentuk hubungan simbiosis mutualisme hingga akhirnya menyatu secara evolusioner menjadi organel permanen.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
