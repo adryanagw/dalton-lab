@@ -886,6 +886,14 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 
 /* structure diagrams (labeled SVG figures) */
 .diagram-card{margin:28px 0 44px;max-width:760px;}
+.diagram-legend-grid{display:grid;grid-template-columns:760px 1fr;gap:24px;align-items:start;margin-bottom:50px;}
+.diagram-legend-grid .diagram-card{max-width:none;margin:0 0 24px;}
+.diagram-legend-grid .diagram-card:last-child{margin-bottom:0;}
+.diagram-legend-list{display:flex;flex-direction:column;gap:16px;}
+@media(max-width:1000px){
+  .diagram-legend-grid{grid-template-columns:1fr;}
+  .diagram-legend-grid .diagram-card{max-width:760px;}
+}
 .diagram-eyebrow{font-family:'Space Grotesk';font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--orange-dark);margin:0 0 14px;}
 .diagram-card svg{width:100%;height:auto;display:block;}
 .diagram-card img{width:100%;height:auto;display:block;border-radius:12px;background:#fff;padding:14px;box-sizing:border-box;border:1px solid var(--line);}
