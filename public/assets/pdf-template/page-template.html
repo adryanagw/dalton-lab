@@ -33,10 +33,10 @@
     --accent:var(--orange);
     --orange-ink:#bb4d0e; /* orange-dark fails 4.5:1 as text on white; this passes ~5:1, kept separate from the accent-frame/graphic orange tokens */
   }
-  /* Per-subject accent — only Ekonomi is decided so far (this is the chapter
-     being rebuilt). Add matematika/biologi/kimia/fisika here once those
-     bright accents are picked, rather than inventing them speculatively. */
+  /* Per-subject accent. Add matematika/kimia/fisika here once those bright
+     accents are picked, rather than inventing them speculatively. */
   .pdf-page[data-subject="ekonomi"]{ --accent:#ee7d31; }
+  .pdf-page[data-subject="biologi"]{ --accent:#3fa15c; } /* matches the site's biologi brand color (--green) */
 
   *{box-sizing:border-box;}
   body{
