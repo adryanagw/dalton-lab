@@ -1621,8 +1621,8 @@ function initPdfViewers(root){
     function renderWatermark(){
       const name = (session.nama || session.username || '').toUpperCase();
       const stamp = new Date().toLocaleString('id-ID', { dateStyle:'medium', timeStyle:'short' });
-      const line = (name + ' · ' + stamp + '   ').repeat(3);
-      watermarkEl.innerHTML = Array.from({length:8}, ()=> `<span>${line}</span>`).join('');
+      const line = (name + ' · ' + stamp + '   ').repeat(2);
+      watermarkEl.innerHTML = Array.from({length:5}, ()=> `<span>${line}</span>`).join('');
     }
 
     async function loadPage(n){
