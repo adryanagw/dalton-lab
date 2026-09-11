@@ -21,6 +21,7 @@ Indonesian SMA (senior high) students prepping for UTBK/Ujian Sekolah. Not curio
 - **Language:** casual, informal Bahasa Indonesia ("santai, nggak kaku"), same register as the existing chapters (`bab1-eksponen-logaritma.html`, `bab1-sel.html`, `bab1-badan-usaha.html` are the voice reference — read one before writing).
 - **Depth over breadth.** Advanced-level leveled exercises per bab is the actual differentiator (see PRODUCT.md) — don't write a shallow summary chapter to cover more ground faster.
 - Never invent statistics, testimonials, or citations. If a claim needs a source, say so instead of fabricating one.
+- **Use an analogy once, not as a running metaphor.** One orienting analogy per section (e.g. "sel = kota kecil" as a one-time framing sentence) helps intuition. Carrying it literally into every following sentence doesn't — a real bug from this session: a membrane section said "pagar" instead of "membran," "pos satpam" instead of "protein," "penghuni pagar," "papan pengumuman," "KTP sel," "udara & jalanan kota," in nearly every card, which read as over-styled rather than informative and forced the reader to keep translating metaphor back to the real term. State the analogy once for intuition, then describe the actual structure/process directly using its real name.
 
 ## 2. Content structure per topic
 
@@ -206,6 +207,10 @@ If a topic has nothing formula/advanced-example/reference-table-worthy at all, i
 
 ```
 [ ] Voice matches the existing chapters (casual, informal Bahasa Indonesia)
+[ ] Any analogy is stated once for orientation, not carried literally into
+    every following sentence/card as a running metaphor (see §1) — reread
+    each section and check real terms (membran, protein, dst.) aren't
+    replaced by the analogy's own vocabulary throughout
 [ ] Every formula/equation: variables defined, units stated
 [ ] Worked examples progress in difficulty, not just repeat the same step
 [ ] At least one common-mistake/misconception called out where students
