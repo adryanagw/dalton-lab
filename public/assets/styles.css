@@ -1072,6 +1072,16 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 .organel-card.oc-amber{border-top-color:var(--amber);} .organel-card.oc-amber .oc-icon{background:var(--amber-soft);}
 .organel-card.oc-green{border-top-color:var(--green);} .organel-card.oc-green .oc-icon{background:var(--green-soft);}
 
+/* === Numbered sub-heading badge (e.g. "1/2/3 komponen" within a section) —
+   solid navy circle so it stays legible on any background, unlike the
+   pastel .oc-icon variants which are tuned for white card surfaces. === */
+.struct-num{
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  width:30px;height:30px;border-radius:50%;
+  background:var(--navy);border:2px solid var(--orange);color:#fff;
+  font-family:'Space Grotesk';font-weight:700;font-size:.95rem;
+}
+
 /* === Step row (mitosis phases, Biologi) === */
 .step-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;}
 .step-pill{
