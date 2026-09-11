@@ -481,7 +481,7 @@ modified as part of this restructuring pass.
 ## Note on the interactive 3D cell models (HTML, not PDF)
 
 Not part of this spec, but added to `bab1-sel.html` alongside this
-restructuring pass — six embedded Sketchfab 3D models, all CC-BY 4.0:
+restructuring pass — seven embedded Sketchfab 3D models, all CC-BY 4.0:
 
 - `#komponen-struktural`: one model ("Cell Membrane" by Virtual Reality /
   simulanis), placed right after the existing membran-sel.webp diagram
@@ -497,9 +497,11 @@ restructuring pass — six embedded Sketchfab 3D models, all CC-BY 4.0:
   placed right after the Transpor Pasif summary box — the full tonisitas
   table (turgid/lisis/krenasi/plasmolisis) it illustrates lives in the
   PDF (Page 7).
-- `#reproduksi-sel`: one model ("Mitosis 3d animation" by Naveen Manja),
-  placed right after the interactive mitosis phase-picker/detail panel —
-  a visual walkthrough to pair with picking through the phase buttons.
+- `#reproduksi-sel`: two models — "Mitosis 3d animation" by Naveen Manja,
+  placed right after the interactive mitosis phase-picker/detail panel,
+  and "Meiosis Cell division Vector diagram" by arloopa, placed right
+  after the Meiosis I/II split-cards — visual walkthroughs to pair with
+  the phase-picker and the two split-cards respectively.
 
 These are genuinely interactive (rotate/zoom) and stay in the HTML per the
 established keep-interactive-elements-in-HTML rule — no PDF equivalent
