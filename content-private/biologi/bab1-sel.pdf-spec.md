@@ -481,7 +481,7 @@ modified as part of this restructuring pass.
 ## Note on the interactive 3D cell models (HTML, not PDF)
 
 Not part of this spec, but added to `bab1-sel.html` alongside this
-restructuring pass — four embedded Sketchfab 3D models, all CC-BY 4.0:
+restructuring pass — five embedded Sketchfab 3D models, all CC-BY 4.0:
 
 - `#komponen-struktural`: one model ("Cell Membrane" by Virtual Reality /
   simulanis), placed right after the existing membran-sel.webp diagram
@@ -493,6 +493,10 @@ restructuring pass — four embedded Sketchfab 3D models, all CC-BY 4.0:
   Nima), placed after the animal/plant-vs-prokaryotic teaser paragraph —
   gives the prokaryotic/eukaryotic comparison a hands-on counterpart now
   that its comparison table lives only in the PDF (Page 6).
+- `#transpor-membran`: one model ("Osmosis in a plant cell" by arloopa),
+  placed right after the Transpor Pasif summary box — the full tonisitas
+  table (turgid/lisis/krenasi/plasmolisis) it illustrates lives in the
+  PDF (Page 7).
 
 These are genuinely interactive (rotate/zoom) and stay in the HTML per the
 established keep-interactive-elements-in-HTML rule — no PDF equivalent
