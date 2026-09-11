@@ -1103,6 +1103,38 @@ function initFilterToggles(root){
   });
 }
 
+/** Collapsible card grid: [data-collapsible-cards] wrapper around .organel-card
+ *  children — each card toggles its own description independently on click
+ *  (not a single-open accordion). Opt-in per grid via the wrapper attribute,
+ *  so plain always-expanded .organel-grid usages elsewhere are untouched.
+ *  Whichever cards already carry class="open" in the markup start expanded
+ *  (e.g. Nukleus in the Biologi organel grid) — no JS-side default needed. */
+function initCollapsibleCards(root){
+  root.querySelectorAll('[data-collapsible-cards]').forEach(grid=>{
+    grid.querySelectorAll('.organel-card').forEach(card=>{
+      card.tabIndex = 0;
+      card.setAttribute('role','button');
+      card.setAttribute('aria-expanded', card.classList.contains('open') ? 'true' : 'false');
+    });
+    function toggle(card){
+      const isOpen = card.classList.toggle('open');
+      card.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+    grid.addEventListener('click', e=>{
+      const card = e.target.closest('.organel-card');
+      if(!card || !grid.contains(card)) return;
+      toggle(card);
+    });
+    grid.addEventListener('keydown', e=>{
+      if(e.key !== 'Enter' && e.key !== ' ') return;
+      const card = e.target.closest('.organel-card');
+      if(!card || !grid.contains(card)) return;
+      e.preventDefault();
+      toggle(card);
+    });
+  });
+}
+
 /** Click-detail group: [data-clickgroup][data-clickgroup-target] wrapper with
  *  buttons carrying [data-title]/[data-body], writing into a target element.
  *  Used for the management pyramid, koperasi org chart, and mitosis stepper —
@@ -1665,6 +1697,7 @@ function initAllComponents(root){
   initTabSwitches(root);
   initFilterToggles(root);
   initClickGroups(root);
+  initCollapsibleCards(root);
   initShuCalculator(root);
   initQuizzes(root);
   initExercises(root);
