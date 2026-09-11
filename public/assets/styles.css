@@ -1038,6 +1038,25 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 }
 .organel-card p{font-size:.82rem;color:var(--slate);margin:0;line-height:1.6;}
 .organel-card.hide{display:none;}
+
+/* === Collapsible card grid — opt-in via [data-collapsible-cards] on the
+   grid wrapper, so plain (always-expanded) .organel-grid usages elsewhere
+   (e.g. Matematika) are unaffected. Cards toggle independently — no
+   single-open-at-a-time accordion behavior, since browsing several
+   organelle descriptions side by side is the point. === */
+[data-collapsible-cards] .organel-card{cursor:pointer;position:relative;padding-right:42px;}
+[data-collapsible-cards] .organel-card::after{
+  content:"+";
+  position:absolute;top:18px;right:16px;
+  width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Grotesk';font-weight:700;font-size:1rem;color:var(--slate);line-height:1;
+  transition:border-color .15s,color .15s;
+}
+[data-collapsible-cards] .organel-card:hover::after{border-color:var(--orange);color:var(--orange-dark);}
+[data-collapsible-cards] .organel-card.open::after{content:"\2013";}
+[data-collapsible-cards] .organel-card p{display:none;margin-top:10px;}
+[data-collapsible-cards] .organel-card.open p{display:block;}
 .organel-card.oc-blue{border-top-color:var(--blue);} .organel-card.oc-blue .oc-icon{background:var(--blue-soft);}
 .organel-card.oc-teal{border-top-color:var(--teal);} .organel-card.oc-teal .oc-icon{background:var(--teal-soft);}
 .organel-card.oc-purple{border-top-color:var(--purple);} .organel-card.oc-purple .oc-icon{background:var(--purple-soft);}
