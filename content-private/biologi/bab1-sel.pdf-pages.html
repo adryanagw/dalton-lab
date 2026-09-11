@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <!-- Rendered PDF companion content for Bab 1 Biologi (Sel — Unit Dasar Kehidupan),
      built from bab1-sel.pdf-spec.md on public/assets/pdf-template/page-template.html.
-     This is the actual filled source — a future per-student rendering pipeline reads this
-     (or its equivalent) rather than a fresh hand-authored file per request. The watermark
-     name/timestamp below is a placeholder until that pipeline stamps it dynamically. -->
+     This is the actual filled source, rendered once and shared by every student —
+     no per-page watermark markup here on purpose: the real student-identity
+     watermark is drawn live, per viewer, by initPdfViewers() in app.js
+     (.pdf-viewer-watermark), stamped with that viewer's actual session name and
+     timestamp. Baking a placeholder name into the shared image here would just
+     show every student a second, fake watermark underneath the real one. -->
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -52,24 +55,6 @@
     display:flex;
     flex-direction:column;
     overflow:hidden;
-  }
-
-  .watermark{
-    position:absolute;
-    inset:-20% -30%;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    transform:rotate(-28deg);
-    pointer-events:none;
-    z-index:1;
-    opacity:.055;
-  }
-  .watermark span{
-    font:italic 600 15px/1 'Fraunces',serif;
-    letter-spacing:.03em;
-    color:var(--navy);
-    white-space:nowrap;
   }
 
   .page-head{
@@ -142,7 +127,6 @@
     border-top:1px solid #eef0f2;
   }
   .page-foot .license{font:italic 400 12px/1.4 'Literata',serif;color:#5c6670;max-width:380px;}
-  .page-foot .watermark-meta{font:500 12px/1.4 'IBM Plex Mono',monospace;color:#5c6670;text-align:right;}
 </style>
 </head>
 <body>
@@ -150,16 +134,6 @@
 <!-- ===== Page 1 — Chapter opener ===== -->
 <div class="pdf-page" data-subject="biologi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1</span><span class="subject-chip">Biologi</span></div>
@@ -181,7 +155,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
     </div>
   </div>
 </div>
@@ -189,16 +162,6 @@
 <!-- ===== Page 2 — Sejarah Penemuan Sel (Lengkap) ===== -->
 <div class="pdf-page" data-subject="biologi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Sejarah Sel</span><span class="subject-chip">Biologi</span></div>
@@ -218,7 +181,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
     </div>
   </div>
 </div>
@@ -226,16 +188,6 @@
 <!-- ===== Page 3 — Referensi: Makromolekul Organik ===== -->
 <div class="pdf-page" data-subject="biologi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Komponen Kimiawi</span><span class="subject-chip">Biologi</span></div>
@@ -263,7 +215,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
     </div>
   </div>
 </div>
@@ -271,16 +222,6 @@
 <!-- ===== Page 4 — Referensi: DNA vs RNA ===== -->
 <div class="pdf-page" data-subject="biologi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Komponen Kimiawi</span><span class="subject-chip">Biologi</span></div>
@@ -307,7 +248,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
     </div>
   </div>
 </div>
@@ -315,16 +255,6 @@
 <!-- ===== Page 5 — Referensi: Perbandingan Sel Hewan vs Tumbuhan ===== -->
 <div class="pdf-page" data-subject="biologi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Perbandingan Sel</span><span class="subject-chip">Biologi</span></div>
@@ -353,7 +283,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
     </div>
   </div>
 </div>
@@ -361,16 +290,6 @@
 <!-- ===== Page 6 — Referensi: Sel Prokariotik vs Eukariotik ===== -->
 <div class="pdf-page" data-subject="biologi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Perbandingan Sel</span><span class="subject-chip">Biologi</span></div>
@@ -398,7 +317,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
     </div>
   </div>
 </div>
@@ -406,16 +324,6 @@
 <!-- ===== Page 7 — Transpor Membran: Pasif & Tonisitas ===== -->
 <div class="pdf-page" data-subject="biologi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Transpor Membran</span><span class="subject-chip">Biologi</span></div>
@@ -441,7 +349,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
     </div>
   </div>
 </div>
@@ -449,16 +356,6 @@
 <!-- ===== Page 8 — Transpor Aktif & Vesikuler ===== -->
 <div class="pdf-page" data-subject="biologi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Transpor Membran</span><span class="subject-chip">Biologi</span></div>
@@ -476,7 +373,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
     </div>
   </div>
 </div>
@@ -484,16 +380,6 @@
 <!-- ===== Page 9 — Referensi: Mitosis vs Meiosis ===== -->
 <div class="pdf-page" data-subject="biologi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Reproduksi Sel</span><span class="subject-chip">Biologi</span></div>
@@ -516,7 +402,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
     </div>
   </div>
 </div>
@@ -524,16 +409,6 @@
 <!-- ===== Page 10 — Bukti Pendukung Teori Endosimbiotik ===== -->
 <div class="pdf-page" data-subject="biologi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-      <span>Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald</span>
-      <span>11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep 2026, 09:00 &nbsp; Adryan Gerald &middot; 11 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Teori Endosimbiotik</span><span class="subject-chip">Biologi</span></div>
@@ -551,7 +426,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 11 Sep 2026, 09:00</div>
     </div>
   </div>
 </div>

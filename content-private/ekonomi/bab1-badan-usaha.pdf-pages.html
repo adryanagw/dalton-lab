@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <!-- Rendered PDF companion content for Bab 1 Ekonomi (Badan Usaha, Koperasi & Manajemen),
      built from bab1-badan-usaha.pdf-spec.md on public/assets/pdf-template/page-template.html.
-     This is the actual filled source — a future per-student rendering pipeline reads this
-     (or its equivalent) rather than a fresh hand-authored file per request. The watermark
-     name/timestamp below is a placeholder until that pipeline stamps it dynamically. -->
+     This is the actual filled source, rendered once and shared by every student —
+     no per-page watermark markup here on purpose: the real student-identity
+     watermark is drawn live, per viewer, by initPdfViewers() in app.js
+     (.pdf-viewer-watermark), stamped with that viewer's actual session name and
+     timestamp. Baking a placeholder name into the shared image here would just
+     show every student a second, fake watermark underneath the real one. -->
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -53,24 +56,6 @@
     display:flex;
     flex-direction:column;
     overflow:hidden;
-  }
-
-  .watermark{
-    position:absolute;
-    inset:-20% -30%;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    transform:rotate(-28deg);
-    pointer-events:none;
-    z-index:1;
-    opacity:.055;
-  }
-  .watermark span{
-    font:italic 600 15px/1 'Fraunces',serif;
-    letter-spacing:.03em;
-    color:var(--navy);
-    white-space:nowrap;
   }
 
   .page-head{
@@ -163,7 +148,6 @@
     border-top:1px solid #eef0f2;
   }
   .page-foot .license{font:italic 400 12px/1.4 'Literata',serif;color:#5c6670;max-width:380px;}
-  .page-foot .watermark-meta{font:500 12px/1.4 'IBM Plex Mono',monospace;color:#5c6670;text-align:right;}
 </style>
 </head>
 <body>
@@ -171,16 +155,6 @@
 <!-- ===== Page 1 — Chapter opener ===== -->
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1</span><span class="subject-chip">Ekonomi</span></div>
@@ -202,7 +176,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
     </div>
   </div>
 </div>
@@ -210,16 +183,6 @@
 <!-- ===== Page 2 — Referensi Cepat: Bentuk Badan Usaha ===== -->
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Bentuk Badan Usaha</span><span class="subject-chip">Ekonomi</span></div>
@@ -249,7 +212,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
     </div>
   </div>
 </div>
@@ -257,16 +219,6 @@
 <!-- ===== Page 3 — Referensi: Badan Usaha Berdasarkan Sektornya ===== -->
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Klasifikasi Badan Usaha</span><span class="subject-chip">Ekonomi</span></div>
@@ -289,7 +241,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
     </div>
   </div>
 </div>
@@ -297,16 +248,6 @@
 <!-- ===== Page 4 — Referensi: 7 Peran BUMN ===== -->
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; BUMN &amp; BUMD</span><span class="subject-chip">Ekonomi</span></div>
@@ -330,7 +271,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
     </div>
   </div>
 </div>
@@ -338,16 +278,6 @@
 <!-- ===== Page 5 — Menghitung Pembagian SHU ===== -->
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Koperasi</span><span class="subject-chip">Ekonomi</span></div>
@@ -377,7 +307,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
     </div>
   </div>
 </div>
@@ -385,16 +314,6 @@
 <!-- ===== Page 6 — Studi Kasus: Perubahan Porsi Jasa Modal Antar Tahun ===== -->
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Koperasi</span><span class="subject-chip">Ekonomi</span></div>
@@ -418,7 +337,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
     </div>
   </div>
 </div>
@@ -426,16 +344,6 @@
 <!-- ===== Page 7 — Referensi: Prinsip-Prinsip Koperasi ===== -->
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Koperasi</span><span class="subject-chip">Ekonomi</span></div>
@@ -459,7 +367,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
     </div>
   </div>
 </div>
@@ -467,16 +374,6 @@
 <!-- ===== Page 8 — Referensi: Unsur Manajemen (6M) ===== -->
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Manajemen</span><span class="subject-chip">Ekonomi</span></div>
@@ -495,7 +392,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
     </div>
   </div>
 </div>
@@ -503,16 +399,6 @@
 <!-- ===== Page 9 — Referensi: Bidang-Bidang Manajemen ===== -->
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Manajemen</span><span class="subject-chip">Ekonomi</span></div>
@@ -535,7 +421,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
     </div>
   </div>
 </div>
@@ -543,16 +428,6 @@
 <!-- ===== Page 10 — 5 Fungsi Manajemen (POAC) — Penjelasan Lengkap ===== -->
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Manajemen</span><span class="subject-chip">Ekonomi</span></div>
@@ -575,7 +450,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
     </div>
   </div>
 </div>
@@ -583,16 +457,6 @@
 <!-- ===== Page 11 — Referensi: Fungsi Manajemen ===== -->
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Manajemen</span><span class="subject-chip">Ekonomi</span></div>
@@ -618,7 +482,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
     </div>
   </div>
 </div>
@@ -626,16 +489,6 @@
 <!-- ===== Page 12 — Referensi Lengkap: 14 Prinsip Manajemen (Henry Fayol) ===== -->
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
-    <div class="watermark">
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-      <span>Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald</span>
-      <span>10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep 2026, 14:32 &nbsp; Adryan Gerald &middot; 10 Sep</span>
-    </div>
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Manajemen</span><span class="subject-chip">Ekonomi</span></div>
@@ -662,7 +515,6 @@
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-      <div class="watermark-meta">Adryan Gerald<br>Diunduh 10 Sep 2026, 14:32</div>
     </div>
   </div>
 </div>
