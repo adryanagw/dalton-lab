@@ -7,8 +7,8 @@
  * POST /api/login — verifies username/password against the users table in
  * Postgres, then mints a signed session token carrying the student's
  * subscription expiry. That token — not the password — is what every
- * method below, plus /api/content, /api/quiz, /api/exercise, and
- * /api/progress, require on every request.
+ * method below, plus /api/content, /api/quiz, and /api/progress, require
+ * on every request.
  *
  * Single active device per account: logging in on a new device
  * automatically signs out every other device on that account (their

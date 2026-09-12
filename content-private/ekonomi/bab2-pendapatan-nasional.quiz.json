@@ -1,104 +1,717 @@
 [
   {
     "q": "Pendapatan nasional paling tepat didefinisikan sebagai…",
-    "opts": ["Jumlah uang kas yang dimiliki pemerintah suatu negara", "Total nilai akhir barang & jasa yang dihasilkan suatu negara dalam periode tertentu, atau total balas jasa yang diterima seluruh pemilik faktor produksi", "Total penerimaan negara dari pajak & retribusi", "Total ekspor dikurangi total impor suatu negara"],
+    "opts": [
+      "Jumlah uang kas yang dimiliki pemerintah suatu negara",
+      "Total nilai akhir barang & jasa yang dihasilkan suatu negara dalam periode tertentu, atau total balas jasa yang diterima seluruh pemilik faktor produksi",
+      "Total penerimaan negara dari pajak & retribusi",
+      "Total ekspor dikurangi total impor suatu negara"
+    ],
     "correct": 1,
     "explain": "Pendapatan nasional bisa dilihat dari dua sisi yang sama nilainya: total nilai akhir produksi barang/jasa, ATAU total balas jasa (sewa, upah, bunga, laba) yang diterima seluruh pemilik faktor produksi. Bukan sekadar kas negara atau penerimaan pajak."
   },
   {
     "q": "Dalam Circular Flow Diagram 3 sektor (dibanding 2 sektor), pelaku baru yang ditambahkan adalah…",
-    "opts": ["Masyarakat Luar Negeri (RTLN)", "Rumah Tangga Negara/Pemerintah (RTN)", "Bank Sentral", "Pasar Modal"],
+    "opts": [
+      "Masyarakat Luar Negeri (RTLN)",
+      "Rumah Tangga Negara/Pemerintah (RTN)",
+      "Bank Sentral",
+      "Pasar Modal"
+    ],
     "correct": 1,
     "explain": "Model 3 sektor menambahkan Rumah Tangga Negara/Pemerintah (RTN) — memungut pajak dari RTK & RTP, lalu menyalurkannya lewat subsidi, bantuan sosial, dan belanja pemerintah (G). RTLN baru masuk di model 4 sektor."
   },
   {
     "q": "Perekonomian 4 sektor disebut \"terbuka\" karena…",
-    "opts": ["Pemerintah sudah mulai memungut pajak", "Sudah ada hubungan dagang (ekspor & impor) dengan Masyarakat Luar Negeri", "Semua rumah tangga bebas memilih pekerjaan", "Bank boleh beroperasi tanpa izin"],
+    "opts": [
+      "Pemerintah sudah mulai memungut pajak",
+      "Sudah ada hubungan dagang (ekspor & impor) dengan Masyarakat Luar Negeri",
+      "Semua rumah tangga bebas memilih pekerjaan",
+      "Bank boleh beroperasi tanpa izin"
+    ],
     "correct": 1,
     "explain": "\"Terbuka\" merujuk pada keterbukaan ekonomi terhadap pihak luar negeri — ditandai aliran ekspor (X) dan impor (M) antara RTP dan Masyarakat Luar Negeri (RTLN), pelaku keempat dalam model ini."
-    },
+  },
   {
     "q": "Pendekatan produksi menghitung GDP dengan cara…",
-    "opts": ["Menjumlahkan seluruh nilai output tiap sektor tanpa pengurangan apa pun", "Menjumlahkan nilai tambah (value added) tiap sektor agar tidak terjadi perhitungan ganda", "Menjumlahkan upah seluruh pekerja di semua sektor", "Menjumlahkan seluruh pengeluaran rumah tangga"],
+    "opts": [
+      "Menjumlahkan seluruh nilai output tiap sektor tanpa pengurangan apa pun",
+      "Menjumlahkan nilai tambah (value added) tiap sektor agar tidak terjadi perhitungan ganda",
+      "Menjumlahkan upah seluruh pekerja di semua sektor",
+      "Menjumlahkan seluruh pengeluaran rumah tangga"
+    ],
     "correct": 1,
     "explain": "Pendekatan produksi menjumlahkan nilai tambah (Nilai Output − Nilai Input Antara) tiap sektor, bukan nilai output mentahnya — supaya nilai bahan baku/setengah jadi tidak terhitung berkali-kali (double counting)."
   },
   {
     "q": "Rumus \\(Y = r + w + i + p\\) adalah rumus GDP dengan pendekatan…",
-    "opts": ["Produksi", "Pendapatan", "Pengeluaran", "Regional"],
+    "opts": [
+      "Produksi",
+      "Pendapatan",
+      "Pengeluaran",
+      "Regional"
+    ],
     "correct": 1,
     "explain": "r (sewa) + w (upah) + i (bunga) + p (laba) adalah penjumlahan balas jasa faktor produksi — ciri khas pendekatan pendapatan (income approach)."
   },
   {
     "q": "Data suatu negara (miliar Rupiah): Konsumsi = 800, Investasi = 300, Belanja Pemerintah = 200, Ekspor = 150, Impor = 100. Besar GDP dengan pendekatan pengeluaran adalah…",
-    "opts": ["Rp1.250 miliar", "Rp1.300 miliar", "Rp1.350 miliar", "Rp1.450 miliar"],
+    "opts": [
+      "Rp1.250 miliar",
+      "Rp1.300 miliar",
+      "Rp1.350 miliar",
+      "Rp1.450 miliar"
+    ],
     "correct": 2,
     "explain": "Y = C + I + G + (X − M) = 800 + 300 + 200 + (150 − 100) = 800 + 300 + 200 + 50 = Rp1.350 miliar."
   },
   {
     "q": "Perbedaan mendasar GDP dan GNP adalah…",
-    "opts": ["GDP dihitung tahunan, GNP dihitung bulanan", "GDP menghitung produksi di DALAM wilayah negara (WNI+WNA), GNP menghitung produksi oleh WARGA NEGARA (dalam+luar negeri)", "GDP untuk negara berkembang, GNP untuk negara maju", "Keduanya sebenarnya rumus yang identik"],
+    "opts": [
+      "GDP dihitung tahunan, GNP dihitung bulanan",
+      "GDP menghitung produksi di DALAM wilayah negara (WNI+WNA), GNP menghitung produksi oleh WARGA NEGARA (dalam+luar negeri)",
+      "GDP untuk negara berkembang, GNP untuk negara maju",
+      "Keduanya sebenarnya rumus yang identik"
+    ],
     "correct": 1,
     "explain": "GDP fokus ke LOKASI produksi (di dalam batas wilayah negara, termasuk WNA yang berproduksi di sana). GNP fokus ke KEWARGANEGARAAN pelaku produksi (WNI, baik yang berproduksi di dalam maupun luar negeri)."
   },
   {
     "q": "PDRB (Produk Domestik Regional Bruto) digunakan untuk…",
-    "opts": ["Mengukur total produksi seluruh negara dalam setahun", "Mengukur struktur & perkembangan ekonomi di tingkat provinsi/kabupaten", "Mengukur pendapatan seluruh WNI di luar negeri", "Menggantikan fungsi GNP sepenuhnya"],
+    "opts": [
+      "Mengukur total produksi seluruh negara dalam setahun",
+      "Mengukur struktur & perkembangan ekonomi di tingkat provinsi/kabupaten",
+      "Mengukur pendapatan seluruh WNI di luar negeri",
+      "Menggantikan fungsi GNP sepenuhnya"
+    ],
     "correct": 1,
     "explain": "PDRB adalah versi GDP untuk wilayah sub-nasional (provinsi/kabupaten) — dipakai sebagai alat ukur struktur & perkembangan pembangunan ekonomi daerah, bukan negara secara keseluruhan."
   },
   {
     "q": "NNP (Net National Product) diperoleh dengan cara…",
-    "opts": ["GNP ditambah penyusutan", "GNP dikurangi penyusutan (depresiasi) barang modal", "GDP dikurangi pajak tidak langsung", "GNP dikalikan tingkat inflasi"],
+    "opts": [
+      "GNP ditambah penyusutan",
+      "GNP dikurangi penyusutan (depresiasi) barang modal",
+      "GDP dikurangi pajak tidak langsung",
+      "GNP dikalikan tingkat inflasi"
+    ],
     "correct": 1,
     "explain": "NNP = GNP − Penyusutan. Penyusutan (depresiasi) barang modal harus dikurangkan karena sebagian dari GNP sebenarnya \"habis\" untuk mengganti/merawat barang modal yang aus, bukan benar-benar pendapatan bersih baru."
   },
   {
     "q": "Dalam transisi NNP → NNI, mengapa pajak tidak langsung harus dikurangkan?",
-    "opts": ["Karena pajak tidak langsung bukan balas jasa yang diterima pemilik faktor produksi", "Karena pajak tidak langsung selalu bernilai negatif", "Karena pemerintah tidak boleh memungut pajak tidak langsung", "Karena NNI hanya berlaku untuk barang ekspor"],
+    "opts": [
+      "Karena pajak tidak langsung bukan balas jasa yang diterima pemilik faktor produksi",
+      "Karena pajak tidak langsung selalu bernilai negatif",
+      "Karena pemerintah tidak boleh memungut pajak tidak langsung",
+      "Karena NNI hanya berlaku untuk barang ekspor"
+    ],
     "correct": 0,
     "explain": "Pajak tidak langsung (PPN, cukai, dll.) sudah termasuk dalam harga jual barang/jasa, tapi bukan bagian dari balas jasa (sewa/upah/bunga/laba) yang benar-benar diterima pemilik faktor produksi — makanya harus dikeluarkan dari NNP untuk mendapat NNI (balas jasa murni). Subsidi sebaliknya ditambahkan kembali."
   },
   {
     "q": "Komponen yang DIKURANGKAN dari NNI untuk mendapatkan Personal Income (PI) adalah…",
-    "opts": ["Transfer payment", "Pajak langsung (PPh)", "Laba ditahan, pajak perseroan, dan iuran asuransi", "Ekspor neto"],
+    "opts": [
+      "Transfer payment",
+      "Pajak langsung (PPh)",
+      "Laba ditahan, pajak perseroan, dan iuran asuransi",
+      "Ekspor neto"
+    ],
     "correct": 2,
     "explain": "PI = NNI + Transfer Payment − (Laba Ditahan + Pajak Perseroan + Iuran Asuransi). Tiga komponen ini dikurangkan karena tidak sampai ke tangan individu perorangan. Transfer payment justru ditambahkan karena diterima individu meski bukan hasil bekerja. Pajak langsung baru dikurangkan satu tahap setelahnya, dari PI ke DI."
   },
   {
     "q": "Disposable Income (DI) dihitung dengan…",
-    "opts": ["DI = PI + Pajak Langsung", "DI = PI − Pajak Langsung (PPh)", "DI = NNI − Pajak Tidak Langsung", "DI = GNP − Penyusutan"],
+    "opts": [
+      "DI = PI + Pajak Langsung",
+      "DI = PI − Pajak Langsung (PPh)",
+      "DI = NNI − Pajak Tidak Langsung",
+      "DI = GNP − Penyusutan"
+    ],
     "correct": 1,
     "explain": "DI = PI − Pajak Langsung (PPh). Setelah pajak penghasilan dipotong langsung dari Personal Income, sisanya itulah yang benar-benar siap dibelanjakan atau ditabung individu."
   },
   {
     "q": "Data suatu negara (miliar Rupiah): GDP = 90.000, Pendapatan WNI di Luar Negeri = 4.000, Pendapatan WNA di Dalam Negeri = 7.000, Penyusutan = 3.000, Pajak Tidak Langsung = 2.000, Subsidi = 1.000. Besar NNI adalah…",
-    "opts": ["Rp81.000 miliar", "Rp83.000 miliar", "Rp84.000 miliar", "Rp85.000 miliar"],
+    "opts": [
+      "Rp81.000 miliar",
+      "Rp83.000 miliar",
+      "Rp84.000 miliar",
+      "Rp85.000 miliar"
+    ],
     "correct": 1,
     "explain": "GNP = GDP + (Pendapatan WNI di LN − Pendapatan WNA di DN) = 90.000 + (4.000 − 7.000) = 87.000. NNP = GNP − Penyusutan = 87.000 − 3.000 = 84.000. NNI = NNP − Pajak Tidak Langsung + Subsidi = 84.000 − 2.000 + 1.000 = Rp83.000 miliar."
   },
   {
     "q": "Kurva Lorenz yang berimpit sempurna dengan garis diagonal menunjukkan…",
-    "opts": ["Ketimpangan pendapatan yang sangat tinggi", "Distribusi pendapatan merata sempurna (Indeks Gini = 0)", "Data yang tidak valid untuk dianalisis", "Negara tersebut tidak punya pendapatan nasional"],
+    "opts": [
+      "Ketimpangan pendapatan yang sangat tinggi",
+      "Distribusi pendapatan merata sempurna (Indeks Gini = 0)",
+      "Data yang tidak valid untuk dianalisis",
+      "Negara tersebut tidak punya pendapatan nasional"
+    ],
     "correct": 1,
     "explain": "Garis diagonal adalah garis pemerataan sempurna — kalau Kurva Lorenz berimpit dengannya, artinya distribusi pendapatan benar-benar merata di semua kelompok penduduk, dan Indeks Gini-nya = 0."
   },
   {
     "q": "Suatu negara punya Indeks Gini = 0,55. Berdasarkan klasifikasi standar, tingkat ketimpangannya termasuk…",
-    "opts": ["Rendah", "Sedang", "Tinggi", "Tidak bisa ditentukan dari Gini saja"],
+    "opts": [
+      "Rendah",
+      "Sedang",
+      "Tinggi",
+      "Tidak bisa ditentukan dari Gini saja"
+    ],
     "correct": 2,
     "explain": "Klasifikasi standar: Gini < 0,30 = Rendah, 0,30–0,50 = Sedang, > 0,50 = Tinggi. Nilai 0,55 berada di atas 0,50, jadi termasuk kategori Tinggi."
   },
   {
     "q": "Ketika ekonomi sedang lesu/resesi, kebijakan fiskal yang tepat adalah…",
-    "opts": ["Kontraktif — menaikkan pajak & menurunkan belanja pemerintah", "Ekspansif — menaikkan belanja pemerintah & menurunkan pajak", "Membekukan seluruh APBN", "Menaikkan suku bunga acuan"],
+    "opts": [
+      "Kontraktif — menaikkan pajak & menurunkan belanja pemerintah",
+      "Ekspansif — menaikkan belanja pemerintah & menurunkan pajak",
+      "Membekukan seluruh APBN",
+      "Menaikkan suku bunga acuan"
+    ],
     "correct": 1,
     "explain": "Saat ekonomi lesu, pemerintah butuh kebijakan fiskal ekspansif (\"gas\"): menaikkan belanja negara (G) & menurunkan pajak, supaya daya beli & konsumsi (C) naik, mendorong Y = C+I+G+(X−M) naik. Kontraktif dipakai kebalikannya, saat ekonomi terlalu panas/inflasi tinggi."
   },
   {
     "q": "Data (miliar Rupiah): Upah = 50, Sewa = 30, Bunga = 20, Laba = 40, Konsumsi = 300, Investasi = 150, Belanja Pemerintah = 100, Ekspor = 80, Impor = 60. Besar pendapatan nasional dengan pendekatan PENGELUARAN adalah…",
-    "opts": ["Rp140 miliar (dari Upah+Sewa+Bunga+Laba)", "Rp570 miliar", "Rp630 miliar", "Rp710 miliar"],
+    "opts": [
+      "Rp140 miliar (dari Upah+Sewa+Bunga+Laba)",
+      "Rp570 miliar",
+      "Rp630 miliar",
+      "Rp710 miliar"
+    ],
     "correct": 1,
     "explain": "Pendekatan pengeluaran cuma pakai Y = C+I+G+(X−M) = 300+150+100+(80−60) = 300+150+100+20 = Rp570 miliar. Opsi Rp140 miliar itu jebakan — itu hasil dari pendekatan PENDAPATAN (Upah+Sewa+Bunga+Laba = 50+30+20+40 = 140), variabel yang berbeda rumus dan tidak boleh ikut dijumlah di pendekatan pengeluaran."
+  },
+  {
+    "q": "Menjumlahkan seluruh balas jasa (sewa, upah, bunga, laba) yang diterima pemilik faktor produksi adalah ciri pendekatan…",
+    "opts": [
+      "Produksi",
+      "Pendapatan",
+      "Pengeluaran",
+      "Regional"
+    ],
+    "correct": 1,
+    "explain": "Y = r + w + i + p (sewa + upah + bunga + laba) adalah rumus pendekatan pendapatan (income approach)."
+  },
+  {
+    "q": "Data (miliar Rupiah): Konsumsi = 500, Investasi = 200, Belanja Pemerintah = 150, Ekspor = 100, Impor = 80. Besar GDP dengan pendekatan pengeluaran adalah…",
+    "opts": [
+      "Rp770 miliar",
+      "Rp850 miliar",
+      "Rp870 miliar",
+      "Rp950 miliar"
+    ],
+    "correct": 2,
+    "explain": "Y = C + I + G + (X − M) = 500 + 200 + 150 + (100 − 80) = 500 + 200 + 150 + 20 = Rp870 miliar."
+  },
+  {
+    "q": "Perhatikan komponen berikut: (1) Laba usaha, (2) Hasil sewa, (3) Konsumsi rumah tangga, (4) Investasi, (5) Bunga modal, (6) Belanja pemerintah. Komponen yang dipakai dalam pendekatan PENDAPATAN adalah nomor…",
+    "opts": [
+      "1, 2 dan 3",
+      "1, 2 dan 5",
+      "2, 4 dan 6",
+      "3, 4 dan 6"
+    ],
+    "correct": 1,
+    "explain": "Pendekatan pendapatan hanya memakai balas jasa faktor produksi: laba usaha (1), hasil sewa (2), dan bunga modal (5) — bukan konsumsi/investasi/belanja pemerintah yang justru komponen pendekatan pengeluaran."
+  },
+  {
+    "q": "NNP (Net National Product) diperoleh dari…",
+    "opts": [
+      "GNP dikurangi penyusutan barang modal",
+      "GNP ditambah penyusutan barang modal",
+      "GDP dikurangi pajak tidak langsung",
+      "GDP ditambah subsidi"
+    ],
+    "correct": 0,
+    "explain": "NNP = GNP − Penyusutan. Penyusutan/depresiasi barang modal harus dikurangkan karena sebagian dari GNP sebenarnya terpakai untuk mengganti barang modal yang aus, bukan pendapatan bersih baru."
+  },
+  {
+    "q": "Rangkaian produksi kain: Kapas dijual Rp1.500, diolah jadi Benang dijual Rp4.000, diolah jadi Kain dijual Rp9.000, diolah jadi Pakaian Jadi dijual Rp15.000 (harga jual kumulatif tiap tahap). Besar pendapatan nasional dengan pendekatan nilai tambah dari rangkaian ini adalah…",
+    "opts": [
+      "Rp6.000",
+      "Rp13.500",
+      "Rp15.000",
+      "Rp29.500"
+    ],
+    "correct": 2,
+    "explain": "Nilai tambah tiap tahap: Kapas 1.500−0=1.500, Benang 4.000−1.500=2.500, Kain 9.000−4.000=5.000, Pakaian Jadi 15.000−9.000=6.000. Total nilai tambah = 1.500+2.500+5.000+6.000 = Rp15.000 — sama dengan harga jual akhir barang jadi, karena rumus nilai tambah menghindari perhitungan ganda. Rp29.500 keliru karena menjumlah semua harga kumulatif langsung (double counting); Rp6.000 keliru karena cuma menghitung nilai tambah tahap terakhir saja."
+  },
+  {
+    "q": "Data suatu negara (miliar Rupiah): GDP = 40.000, Pendapatan WNI di Luar Negeri = 2.000, Pendapatan WNA di Dalam Negeri = 3.000, Penyusutan = 1.500, Pajak Tidak Langsung = 1.000, Subsidi = 200. Besar NNI adalah…",
+    "opts": [
+      "Rp36.500 miliar",
+      "Rp36.700 miliar",
+      "Rp38.200 miliar",
+      "Rp38.700 miliar"
+    ],
+    "correct": 1,
+    "explain": "GNP = 40.000 + (2.000−3.000) = 39.000. NNP = 39.000 − 1.500 = 37.500. NNI = 37.500 − 1.000 + 200 = Rp36.700 miliar. Rp36.500 keliru karena lupa menambahkan subsidi kembali; Rp38.200 keliru karena memakai GNP langsung (lupa mengurangi penyusutan dulu); Rp38.700 keliru karena pajak tidak langsung malah ditambahkan, bukan dikurangkan."
+  },
+  {
+    "q": "Tabel pendapatan nasional & penduduk 2020: Intan (95 juta jiwa, GDP 120.000 juta US$), Swadikap (100 juta, 125.000 juta US$), Sejahtera (90 juta, 111.000 juta US$), Balada (85 juta, 110.000 juta US$), Juara (97 juta, 115.000 juta US$). Negara dengan pendapatan per kapita PALING TINGGI adalah…",
+    "opts": [
+      "Intan",
+      "Swadikap",
+      "Balada",
+      "Juara"
+    ],
+    "correct": 2,
+    "explain": "Pendapatan per kapita = GDP ÷ penduduk. Intan≈1.263, Swadikap=1.250, Sejahtera≈1.233, Balada≈1.294, Juara≈1.186 (ribu US$/jiwa). Balada tertinggi meski GDP totalnya bukan yang terbesar — karena jumlah penduduknya juga paling sedikit."
+  },
+  {
+    "q": "Komponen pendapatan nasional: (1) Gaji/upah, (2) Investasi, (3) Konsumsi rumah tangga, (4) Bunga modal, (5) Hasil sewa, (6) Konsumsi pemerintah. Komponen yang dipakai pendekatan PENGELUARAN ditunjukkan nomor…",
+    "opts": [
+      "1, 2 dan 3",
+      "1, 2 dan 4",
+      "1, 2 dan 5",
+      "2, 3 dan 6"
+    ],
+    "correct": 3,
+    "explain": "Pendekatan pengeluaran memakai Investasi (2), Konsumsi rumah tangga (3), dan Konsumsi/belanja pemerintah (6) — gaji/upah, bunga modal, dan hasil sewa (1,4,5) itu komponen pendekatan pendapatan, bukan pengeluaran."
+  },
+  {
+    "q": "Data pendapatan nasional (miliar Rupiah): GDP = 25.000, Pendapatan Neto Luar Negeri = −800, Penyusutan = 1.200, Pajak Tidak Langsung = 900, Subsidi = 300, Transfer Payment = 500, Laba Ditahan = 200, Pajak Perseroan = 150, Iuran Asuransi = 250, Pajak Langsung = 600. Besar Disposable Income (DI) adalah…",
+    "opts": [
+      "Rp21.400 miliar",
+      "Rp21.700 miliar",
+      "Rp22.300 miliar",
+      "Rp22.900 miliar"
+    ],
+    "correct": 1,
+    "explain": "GNP = 25.000+(−800) = 24.200. NNP = 24.200−1.200 = 23.000. NNI = 23.000−900+300 = 22.400. PI = 22.400+500−(200+150+250) = 22.900−600 = 22.300. DI = 22.300−600 = Rp21.700 miliar. Rp22.300 keliru karena berhenti di angka PI (lupa mengurangi pajak langsung); Rp21.400 keliru karena lupa menambahkan subsidi di tahap NNI; Rp22.900 keliru karena berhenti sebelum dikurangi komponen laba ditahan/pajak perseroan/iuran asuransi."
+  },
+  {
+    "q": "Data (miliar Rupiah): Upah = 40, Sewa = 25, Bunga = 15, Laba = 30, Konsumsi = 250, Investasi = 120, Belanja Pemerintah = 90, Ekspor = 70, Impor = 55. Besar pendapatan nasional dengan pendekatan PENGELUARAN adalah…",
+    "opts": [
+      "Rp110 miliar",
+      "Rp475 miliar",
+      "Rp530 miliar",
+      "Rp585 miliar"
+    ],
+    "correct": 1,
+    "explain": "Y = C+I+G+(X−M) = 250+120+90+(70−55) = 250+120+90+15 = Rp475 miliar. Rp110 miliar itu hasil pendekatan pendapatan (Upah+Sewa+Bunga+Laba = 40+25+15+30 = 110), jebakan klasik campur pendekatan. Rp530 miliar keliru karena lupa mengurangi impor (250+120+90+70). Rp585 miliar keliru karena impor malah ditambahkan, bukan dikurangkan."
+  },
+  {
+    "q": "Suatu negara memiliki Indeks Gini 0,55 dan 40% penduduk termiskin hanya menikmati 10% dari total pendapatan nasional. Kesimpulan yang paling tepat adalah…",
+    "opts": [
+      "Kedua kriteria saling bertentangan, jadi ketimpangan tidak bisa disimpulkan",
+      "Kriteria Gini menunjukkan Sedang, kriteria Bank Dunia menunjukkan Tinggi — hasil berbeda",
+      "Kedua kriteria konsisten menunjukkan ketimpangan Tinggi",
+      "Kedua kriteria konsisten menunjukkan ketimpangan Rendah"
+    ],
+    "correct": 2,
+    "explain": "Gini 0,55 > 0,50 → Tinggi. Porsi 40% termiskin 10% < 12% → juga Tinggi menurut kriteria Bank Dunia. Dua kriteria yang berbeda ini kebetulan konsisten mengarah ke kesimpulan yang sama: ketimpangan Tinggi."
+  },
+  {
+    "q": "Tabel GNP & penduduk: Amerika Serikat (GNP 1.680.000, 40 juta jiwa), Belanda (579.000, 15 juta), Norwegia (1.027.000, 16 juta), Luksemburg (643.456, 12 juta), Swiss (757.980, 15 juta), Swedia (793.880, 20 juta). Negara dengan pendapatan per kapita TERTINGGI dan TERENDAH secara berurutan adalah…",
+    "opts": [
+      "Amerika Serikat dan Belanda",
+      "Swiss dan Swedia",
+      "Norwegia dan Belanda",
+      "Luksemburg dan Swedia"
+    ],
+    "correct": 2,
+    "explain": "Pendapatan per kapita (GNP÷penduduk): AS=42.000, Belanda=38.600, Norwegia≈64.188 (tertinggi), Luksemburg≈53.621, Swiss≈50.532, Swedia≈39.694. Norwegia paling tinggi, Belanda paling rendah — meski GNP totalnya bukan yang paling ekstrem, karena jumlah penduduknya juga berperan besar."
+  },
+  {
+    "q": "Rasio Gini sebesar 0 menunjukkan…",
+    "opts": [
+      "Ketimpangan pendapatan tinggi, kurva Lorenz melengkung jauh dari diagonal",
+      "Ketimpangan pendapatan merata sempurna, kurva Lorenz berbentuk diagonal",
+      "Ketimpangan pendapatan tidak merata sempurna, kurva Lorenz berbentuk segitiga",
+      "Data tidak cukup untuk disimpulkan"
+    ],
+    "correct": 1,
+    "explain": "Gini = 0 berarti pemerataan sempurna — setiap kelompok penduduk menerima porsi pendapatan yang proporsional dengan porsi jumlahnya, sehingga Kurva Lorenz berimpit dengan garis diagonal (garis pemerataan sempurna)."
+  },
+  {
+    "q": "Rasio Gini sebesar 1 menunjukkan…",
+    "opts": [
+      "Ketimpangan sempurna — satu kelompok kecil menguasai (hampir) seluruh pendapatan",
+      "Pemerataan sempurna, sama seperti Gini = 0",
+      "Angka yang mustahil terjadi di dunia nyata",
+      "Ketimpangan rendah"
+    ],
+    "correct": 0,
+    "explain": "Gini = 1 adalah titik ekstrem ketimpangan sempurna — seolah satu kelompok/individu menguasai seluruh pendapatan nasional sementara kelompok lain menerima nyaris nol. Kurva Lorenz-nya nyaris berimpit sumbu horizontal sebelum melonjak tajam di ujung kanan."
+  },
+  {
+    "q": "Sebuah negara memiliki Indeks Gini 0,25. Berdasarkan klasifikasi standar, tingkat ketimpangannya adalah…",
+    "opts": [
+      "Rendah",
+      "Sedang",
+      "Tinggi",
+      "Ekstrem"
+    ],
+    "correct": 0,
+    "explain": "Gini < 0,30 termasuk kategori Rendah. 0,25 berada di bawah 0,30, sehingga masuk kategori ketimpangan Rendah."
+  },
+  {
+    "q": "Menurut kriteria Bank Dunia, jika 40% penduduk termiskin menikmati 20% dari total pendapatan nasional, tingkat ketimpangannya adalah…",
+    "opts": [
+      "Rendah",
+      "Sedang",
+      "Tinggi",
+      "Tidak bisa ditentukan"
+    ],
+    "correct": 0,
+    "explain": "Kriteria Bank Dunia: porsi pendapatan 40% termiskin > 17% = Ketimpangan Rendah. Karena 20% > 17%, negara ini masuk kategori Rendah."
+  },
+  {
+    "q": "Tabel koefisien Gini beberapa provinsi (BPS, 2020): Kep. Bangka Belitung 0,262; DI Yogyakarta 0,434; Jawa Tengah 0,362; Kalimantan Utara 0,292; Nusa Tenggara Timur 0,354; Sumatera Barat 0,305. Provinsi dengan ketimpangan pendapatan PALING RENDAH adalah…",
+    "opts": [
+      "Kepulauan Bangka Belitung",
+      "D. I. Yogyakarta",
+      "Jawa Tengah",
+      "Kalimantan Utara"
+    ],
+    "correct": 0,
+    "explain": "Ketimpangan paling rendah = nilai Gini paling kecil. Dari keenam provinsi, Kepulauan Bangka Belitung punya Gini terkecil (0,262), jadi ketimpangannya paling rendah dibanding provinsi lain di tabel."
+  },
+  {
+    "q": "Sebuah negara memiliki Indeks Gini TEPAT 0,30. Berdasarkan klasifikasi standar (Gini < 0,30 Rendah, 0,30–0,50 Sedang, > 0,50 Tinggi), negara ini termasuk kategori…",
+    "opts": [
+      "Rendah, karena mendekati batas bawah",
+      "Sedang, karena rentang Sedang dimulai dari 0,30",
+      "Tinggi",
+      "Tidak termasuk kategori manapun"
+    ],
+    "correct": 1,
+    "explain": "Batas kategori Rendah adalah \"< 0,30\" (kurang dari, tidak termasuk 0,30), sedangkan kategori Sedang adalah \"0,30–0,50\" (termasuk 0,30). Jadi nilai persis 0,30 masuk ke kategori Sedang, bukan Rendah."
+  },
+  {
+    "q": "Nilai koefisien Gini yang menunjukkan tingkat ketimpangan moderat (sedang) paling tepat berada pada rentang…",
+    "opts": [
+      "0,4 – 0,5",
+      "< 0,4",
+      "> 0,5",
+      "0,5 – 0,6"
+    ],
+    "correct": 0,
+    "explain": "Rentang 0,4–0,5 sepenuhnya berada di dalam kategori Sedang (0,30–0,50) tanpa menyerempet kategori Rendah maupun Tinggi. Opsi \"< 0,4\" salah karena ikut mencakup wilayah Rendah (< 0,30); opsi \"> 0,5\" dan \"0,5–0,6\" sudah masuk wilayah Tinggi."
+  },
+  {
+    "q": "Menurut kriteria Bank Dunia, jika 40% penduduk termiskin menikmati 15% dari total pendapatan nasional, tingkat ketimpangannya adalah…",
+    "opts": [
+      "Rendah",
+      "Sedang",
+      "Tinggi",
+      "Sempurna"
+    ],
+    "correct": 1,
+    "explain": "Kriteria Bank Dunia: porsi 12%–17% = Ketimpangan Sedang. Karena 15% berada di rentang tersebut, negara ini masuk kategori Sedang."
+  },
+  {
+    "q": "Suatu negara memiliki Indeks Gini 0,28 (kategori Rendah), tapi 40% penduduk termiskinnya hanya menikmati 10% dari total pendapatan nasional (kategori Tinggi menurut Bank Dunia). Kesimpulan paling tepat dari dua hasil yang berbeda ini adalah…",
+    "opts": [
+      "Salah satu kriteria pasti keliru dihitung",
+      "Data ini mustahil terjadi di dunia nyata",
+      "Dua kriteria ini mengukur aspek berbeda — Gini melihat sebaran di SELURUH populasi, sedangkan kriteria Bank Dunia fokus khusus ke kelompok termiskin — jadi wajar bisa memberi kesimpulan berbeda",
+      "Negara tersebut harus memakai kriteria Gini saja dan mengabaikan Bank Dunia"
+    ],
+    "correct": 2,
+    "explain": "Gini mengukur ketimpangan distribusi pendapatan secara keseluruhan (semua kelompok), sedangkan kriteria Bank Dunia menyorot spesifik porsi yang diterima 40% penduduk termiskin. Keduanya sah dan bisa saling melengkapi — hasil berbeda menunjukkan ketimpangan \"tersembunyi\" di kelompok bawah yang tidak selalu tertangkap angka Gini agregat."
+  },
+  {
+    "q": "Suatu negara memiliki Indeks Gini 0,42 dan 40% penduduk termiskin menikmati 14% dari total pendapatan nasional. Berdasarkan kedua kriteria (Gini dan Bank Dunia), tingkat ketimpangan negara ini adalah…",
+    "opts": [
+      "Rendah menurut kedua kriteria",
+      "Sedang menurut kedua kriteria",
+      "Gini menunjukkan Sedang, Bank Dunia menunjukkan Tinggi",
+      "Gini menunjukkan Tinggi, Bank Dunia menunjukkan Rendah"
+    ],
+    "correct": 1,
+    "explain": "Gini 0,42 berada di rentang 0,30–0,50 → Sedang. Porsi 40% termiskin 14% berada di rentang 12%–17% → juga Sedang. Kedua kriteria ini konsisten menunjukkan ketimpangan Sedang."
+  },
+  {
+    "q": "Kurva Lorenz suatu negara bergerak semakin mendekati garis diagonal dari tahun ke tahun. Artinya…",
+    "opts": [
+      "Ketimpangan pendapatan semakin tinggi",
+      "Distribusi pendapatan semakin merata (ketimpangan menurun)",
+      "Jumlah penduduk semakin banyak",
+      "GDP negara tersebut pasti menurun"
+    ],
+    "correct": 1,
+    "explain": "Makin dekat Kurva Lorenz ke garis diagonal (garis pemerataan sempurna), makin merata distribusi pendapatannya — berarti ketimpangan sedang menurun, terlepas dari naik-turunnya angka GDP itu sendiri."
+  },
+  {
+    "q": "Negara P punya Indeks Gini 0,48 dan Negara Q punya Indeks Gini 0,33 — keduanya sama-sama masuk kategori \"Sedang\". Pernyataan paling tepat adalah…",
+    "opts": [
+      "Karena kategorinya sama, distribusi pendapatan P dan Q pasti identik",
+      "Negara Q tetap lebih merata distribusi pendapatannya dibanding P, meski keduanya sama-sama berkategori Sedang",
+      "Negara P pasti lebih makmur daripada Q",
+      "Kategori \"Sedang\" berarti kedua negara tidak punya masalah ketimpangan"
+    ],
+    "correct": 1,
+    "explain": "Kategori Gini itu rentang, bukan satu titik — dua negara bisa sama-sama \"Sedang\" tapi tetap berbeda tingkat ketimpangannya. Semakin kecil nilai Gini, semakin merata distribusinya, jadi Negara Q (0,33) tetap lebih merata dibanding Negara P (0,48) walau keduanya masuk kategori yang sama."
+  },
+  {
+    "q": "Pendapatan nasional adalah ....",
+    "opts": [
+      "Pendapatan yang diterima pada kas suatu negara",
+      "Jumlah hasil produksi berdasarkan nilai moneternya",
+      "Penerimaan negara dari pungutan berupa pajak",
+      "Jumlah hasil produksi yang dihitung berdasarkan barang mentahnya",
+      "Penerimaan negara dari berbagai macam sumber"
+    ],
+    "correct": 1,
+    "explain": "Pendapatan nasional adalah nilai total hasil produksi barang & jasa suatu negara yang diukur berdasarkan nilai uangnya (moneter) — bukan kas negara, bukan penerimaan pajak, dan bukan dihitung dari barang mentah (harus barang/jasa akhir)."
+  },
+  {
+    "q": "Data perekonomian negara Zen (miliar US$): GNP=25.700, Iuran asuransi=50, Penyusutan=3.200, Personal Income (PI)=20.250, Pajak tidak langsung=1.200, Pajak perseroan=850, Laba ditahan=2.000, Pajak langsung=500. Besar transfer payment adalah ….",
+    "opts": [
+      "US$2.750 miliar",
+      "US$2.350 miliar",
+      "US$1.350 miliar",
+      "US$1.750 miliar",
+      "US$1.850 miliar"
+    ],
+    "correct": 4,
+    "explain": "NNP = GNP−Penyusutan = 25.700−3.200 = 22.500. NNI = NNP−Pajak Tidak Langsung = 22.500−1.200 = 21.300 (subsidi tidak diketahui, dianggap 0). PI = NNI+Transfer Payment−(Laba Ditahan+Pajak Perseroan+Iuran Asuransi) → 20.250 = 21.300+TP−(2.000+850+50) → 20.250 = 21.300+TP−2.900 → 20.250 = 18.400+TP → TP = US$1.850 miliar."
+  },
+  {
+    "q": "Empat sektor produksi keripik apel dengan nilai input & output (juta Rupiah): Pertanian Apel (input 0, output 100), Industri Pengolahan Keripik (input 100, output 120), Logistik/Transportasi (input 120, output 150), Perdagangan Keripik Apel (input 150, output 180). Nilai produksi domestik bruto perekonomian ini adalah ....",
+    "opts": [
+      "100",
+      "150",
+      "180",
+      "370",
+      "550"
+    ],
+    "correct": 2,
+    "explain": "GDP dihitung dari total nilai tambah tiap sektor: (100−0)+(120−100)+(150−120)+(180−150) = 100+20+30+30 = 180. Bukan total output (550) karena itu double counting, bukan juga total input (370)."
+  },
+  {
+    "q": "Tabel pendapatan nasional & penduduk 2020: Intan (95 juta jiwa, GDP 120.000 juta US$), Swadikap (100 juta, 125.000 juta US$), Sejahtera (90 juta, 111.000 juta US$), Balada (85 juta, 110.000 juta US$), Juara (97 juta, 115.000 juta US$). Negara dengan pendapatan per kapita PALING TINGGI adalah …",
+    "opts": [
+      "Intan",
+      "Balada",
+      "Swadikap",
+      "Juara",
+      "Sejahtera"
+    ],
+    "correct": 1,
+    "explain": "Pendapatan per kapita = GDP÷penduduk: Intan≈1.263, Swadikap=1.250, Sejahtera≈1.233, Balada≈1.294 (tertinggi), Juara≈1.186 (ribu US$/jiwa). Balada unggul karena penduduknya paling sedikit meski GDP totalnya bukan yang terbesar."
+  },
+  {
+    "q": "Data negara Zenzen 2021 (ribuan dolar): PDB=13.400, Pendapatan netto faktor luar negeri=400, Pajak langsung=800, Pajak tidak langsung=1.500, Penyusutan barang modal=240, Iuran asuransi=450, Laba ditahan=250, Pajak perseroan=100, Transfer payment=250. Besar Disposable Income (DI) adalah ….",
+    "opts": [
+      "10.450",
+      "10.710",
+      "9.910",
+      "11.200",
+      "10.300"
+    ],
+    "correct": 1,
+    "explain": "GNP=13.400+400=13.800. NNP=13.800−240=13.560. NNI=13.560−1.500=12.060 (subsidi 0). PI=12.060+250−(250+100+450)=12.310−800=11.510. DI=11.510−800=10.710."
+  },
+  {
+    "q": "Data: Upah Rp12.000.000, Pengeluaran rumah tangga Rp36.000.000, Laba Rp9.000.000, Pengeluaran pemerintah Rp10.000.000, Konsumsi Rp25.000.000, Pendapatan bunga Rp6.000.000, Pendapatan sewa Rp8.000.000, Impor Rp5.000.000, Ekspor Rp7.000.000. Besarnya pendapatan nasional dengan metode PENGELUARAN adalah ....",
+    "opts": [
+      "Rp35.000.000",
+      "Rp45.000.000",
+      "Rp63.000.000",
+      "Rp67.000.000",
+      "Rp73.000.000"
+    ],
+    "correct": 4,
+    "explain": "Data ini sengaja mencampur item pendekatan pendapatan dengan pengeluaran. Item pendekatan pendapatan (Upah, Laba, Pendapatan bunga, Pendapatan sewa) harus DIABAIKAN — jumlahnya 12.000.000+9.000.000+6.000.000+8.000.000 = Rp35.000.000 (itu jebakan opsi A, hasil kalau salah pendekatan). Untuk metode pengeluaran, jumlahkan lima item sisanya: Pengeluaran rumah tangga (36 juta) + Konsumsi (25 juta) + Pengeluaran pemerintah (10 juta) + Ekspor (7 juta) − Impor (5 juta) = 36.000.000+25.000.000+10.000.000+7.000.000−5.000.000 = Rp73.000.000."
+  },
+  {
+    "q": "Rasio Gini sebesar 0 menunjukkan ....",
+    "opts": [
+      "Ketimpangan pendapatan rendah dan kurva Lorenz lebih melengkung",
+      "Ketimpangan pendapatan merata sempurna dan kurva Lorenz berbentuk diagonal",
+      "Ketimpangan pendapatan tidak merata sempurna dan kurva Lorenz berbentuk segitiga",
+      "Ketimpangan pendapatan merata sempurna dan kurva Lorenz lebih melengkung",
+      "Ketimpangan pendapatan tinggi dengan kurva Lorenz lebih melengkung"
+    ],
+    "correct": 1,
+    "explain": "Gini = 0 berarti pemerataan sempurna, digambarkan sebagai Kurva Lorenz yang berimpit dengan garis diagonal (garis pemerataan sempurna) — bukan melengkung."
+  },
+  {
+    "q": "Koefisien Gini beberapa provinsi (BPS, 2020 Maret): Kep. Bangka Belitung 0,262; DI Yogyakarta 0,434; Jawa Tengah 0,362; Kalimantan Utara 0,292; Nusa Tenggara Timur 0,354; Sumatera Barat 0,305. Provinsi dengan ketimpangan pendapatan PALING RENDAH adalah ....",
+    "opts": [
+      "Kepulauan Bangka Belitung",
+      "D. I. Yogyakarta",
+      "Jawa Tengah",
+      "Kalimantan Utara",
+      "Nusa Tenggara Timur"
+    ],
+    "correct": 0,
+    "explain": "Ketimpangan paling rendah = Gini paling kecil. Kepulauan Bangka Belitung punya Gini terendah di tabel (0,262)."
+  },
+  {
+    "q": "Pada metode pendapatan, besar pendapatan nasional suatu negara akan sama dengan ….",
+    "opts": [
+      "Jumlah produksi ditambah upah",
+      "Jumlah investasi masyarakat",
+      "Jumlah konsumsi dan investasi",
+      "Jumlah nilai tambah produksi dari barang dan jasa",
+      "Penjumlahan sewa, bunga, upah dan laba"
+    ],
+    "correct": 4,
+    "explain": "Pendekatan pendapatan (income approach): Y = r+w+i+p = sewa+upah+bunga+laba. \"Jumlah nilai tambah\" (opsi D) itu ciri pendekatan produksi, bukan pendapatan."
+  },
+  {
+    "q": "Salah satu indikator ekonomi makro yang dapat digunakan sebagai alat ukur perkembangan dan struktur pada pembangunan suatu daerah adalah ….",
+    "opts": [
+      "Pendapatan nasional harga konstan",
+      "Anggaran pendapatan dan belanja daerah",
+      "Produk domestik regional bruto",
+      "Pendapatan domestik bruto",
+      "Pendapatan per kapita"
+    ],
+    "correct": 2,
+    "explain": "PDRB (Produk Domestik Regional Bruto) adalah versi GDP untuk wilayah sub-nasional (provinsi/kabupaten) — dipakai khusus untuk mengukur struktur & perkembangan pembangunan ekonomi daerah."
+  },
+  {
+    "q": "Nilai koefisien Gini yang menunjukkan tingkat ketimpangan moderat pada distribusi pendapatan adalah ….",
+    "opts": [
+      "0,4–0,5",
+      "<0,4",
+      ">0,5",
+      "0,5–0,6",
+      ">0,6"
+    ],
+    "correct": 0,
+    "explain": "Rentang 0,4–0,5 sepenuhnya berada di dalam kategori Sedang (0,30–0,50) tanpa menyerempet kategori Rendah (<0,30) atau Tinggi (>0,50) seperti opsi lainnya."
+  },
+  {
+    "q": "Nilai barang dan jasa yang dihasilkan daerah tertentu, seperti kabupaten atau provinsi dalam satu tahun disebut ….",
+    "opts": [
+      "Produk domestik bruto",
+      "Produk nasional bruto",
+      "Produk domestik regional bruto",
+      "PDB harga berlaku",
+      "PDB harga konstan"
+    ],
+    "correct": 2,
+    "explain": "Definisi ini persis PDRB — GDP yang dihitung khusus untuk wilayah sub-nasional (provinsi/kabupaten), bukan negara secara keseluruhan."
+  },
+  {
+    "q": "Data pendapatan nasional (miliar): Konsumsi=Rp37.500, Investasi=Rp46.400, Pengeluaran pemerintah=Rp21.500, Ekspor=Rp14.500, Impor=Rp6.400. Besar pendapatan nasional dengan pendekatan pengeluaran adalah ….",
+    "opts": [
+      "Rp109.000,00 miliar",
+      "Rp110.500,00 miliar",
+      "Rp111.500,00 miliar",
+      "Rp112.500,00 miliar",
+      "Rp113.500,00 miliar"
+    ],
+    "correct": 4,
+    "explain": "Y = C+I+G+(X−M) = 37.500+46.400+21.500+(14.500−6.400) = 37.500+46.400+21.500+8.100 = Rp113.500 miliar."
+  },
+  {
+    "q": "Konsep tentang pendapatan nasional yang menggambarkan pendapatan siap dibelanjakan adalah ….",
+    "opts": [
+      "Produk domestik bruto (PDB)",
+      "Pendapatan nasional neto",
+      "Pendapatan perorangan",
+      "Pendapatan per kapita",
+      "Pendapatan disposabel"
+    ],
+    "correct": 4,
+    "explain": "Pendapatan disposabel (Disposable Income/DI) adalah pendapatan yang sudah dipotong pajak langsung dan benar-benar siap dibelanjakan atau ditabung individu."
+  },
+  {
+    "q": "Produk Domestik Bruto (PDB) merupakan ukuran kuantitatif dari kemajuan ekonomi suatu negara. Dalam hal ini PDB hanya menggambarkan ….",
+    "opts": [
+      "Tingkat kualitas hidup",
+      "Jumlah pengangguran",
+      "Distribusi pendapatan",
+      "Faktor-faktor produksi",
+      "Jumlah dan harga output"
+    ],
+    "correct": 4,
+    "explain": "PDB murni mengukur jumlah & harga output yang dihasilkan (nilai produksi) — bukan kualitas hidup, pemerataan pendapatan, atau tingkat pengangguran, yang butuh indikator lain untuk diukur."
+  },
+  {
+    "q": "Keadaan berikut yang menggambarkan peningkatan suatu standar hidup negara tertentu adalah …",
+    "opts": [
+      "Naiknya GDP riil",
+      "Naiknya GDP riil lebih cepat daripada tingkat harga",
+      "Naiknya GDP riil lebih cepat daripada populasi",
+      "Naiknya GDP riil lebih cepat daripada jumlah pemberi kerja",
+      "Naiknya GDP riil lebih cepat daripada laju pertambahan output"
+    ],
+    "correct": 2,
+    "explain": "Standar hidup per orang naik kalau GDP riil tumbuh LEBIH CEPAT dari pertumbuhan penduduk — supaya \"kue\" ekonomi yang harus dibagi ke tiap kepala benar-benar bertambah, bukan sekadar GDP total naik (yang bisa saja habis terserap pertambahan penduduk)."
+  },
+  {
+    "q": "Komponen: 1) Gaji/upah, 2) Investasi, 3) Konsumsi rumah tangga, 4) Bunga modal, 5) Hasil sewa, 6) Konsumsi pemerintah. Komponen yang dipakai dalam pendekatan PENGELUARAN ditunjukkan nomor ….",
+    "opts": [
+      "1, 2 dan 3",
+      "1, 2 dan 4",
+      "1, 2 dan 5",
+      "2, 3 dan 6",
+      "2, 4 dan 6"
+    ],
+    "correct": 3,
+    "explain": "Pendekatan pengeluaran memakai Investasi (2), Konsumsi rumah tangga (3), dan Konsumsi pemerintah (6). Gaji/upah, bunga modal, hasil sewa (1,4,5) itu komponen pendekatan pendapatan — jebakan klasik campur pendekatan."
+  },
+  {
+    "q": "Perhitungan pendapatan nasional dengan pendekatan produksi harus menghindari perhitungan ganda. Oleh karena itu, unsur yang dihitung adalah ….",
+    "opts": [
+      "Nilai tambah barang dan jasa",
+      "Harga barang sebelum produksi",
+      "Harga faktor-faktor produksi",
+      "Nilai bahan mentah atau baku",
+      "Output dari setiap sektor produksi"
+    ],
+    "correct": 0,
+    "explain": "Untuk menghindari double counting, pendekatan produksi menghitung NILAI TAMBAH (output dikurangi input antara) tiap sektor — bukan output kotor, bukan pula nilai bahan mentahnya saja."
+  },
+  {
+    "q": "Tabel: Amerika Serikat (GNP 1.680.000, 40 juta jiwa), Belanda (579.000, 15 juta), Norwegia (1.027.000, 16 juta), Luksemburg (643.456, 12 juta), Swiss (757.980, 15 juta), Swedia (793.880, 20 juta). Negara dengan pendapatan per kapita TERTINGGI dan TERENDAH adalah ….",
+    "opts": [
+      "Amerika Serikat dan Belanda",
+      "Swiss dan Swedia",
+      "Norwegia dan Amerika Serikat",
+      "Norwegia dan Belanda",
+      "Luksemburg dan Swedia"
+    ],
+    "correct": 3,
+    "explain": "Pendapatan per kapita (GNP÷penduduk): AS=42.000, Belanda=38.600 (terendah), Norwegia≈64.188 (tertinggi), Luksemburg≈53.621, Swiss≈50.532, Swedia≈39.694. Norwegia tertinggi, Belanda terendah."
+  },
+  {
+    "q": "Komponen: (1) Laba usaha, (2) Hasil sewa, (3) Konsumsi rumah tangga, (4) Investasi, (5) Bunga modal, (6) Belanja pemerintah. Komponen yang dipakai dalam pendekatan PENDAPATAN adalah ….",
+    "opts": [
+      "1, 2 dan 3",
+      "1, 2 dan 5",
+      "2, 4 dan 6",
+      "3, 4 dan 6",
+      "4, 5 dan 6"
+    ],
+    "correct": 1,
+    "explain": "Pendekatan pendapatan hanya memakai balas jasa faktor produksi: laba usaha (1), hasil sewa (2), dan bunga modal (5). Konsumsi rumah tangga, investasi, dan belanja pemerintah (3,4,6) itu komponen pendekatan pengeluaran."
+  },
+  {
+    "q": "Harga benang Rp6.000, kain Rp12.000, pakaian jadi Rp20.000, kapas Rp2.000, dan penyusutan aktiva Rp500. Besar pendapatan nasional (metode nilai tambah) adalah ….",
+    "opts": [
+      "Rp10.000,00",
+      "Rp14.000,00",
+      "Rp18.000,00",
+      "Rp20.000,00",
+      "Rp40.000,00"
+    ],
+    "correct": 3,
+    "explain": "Rangkaian produksi: kapas→benang→kain→pakaian jadi. Nilai tambah tiap tahap: kapas 2.000−0=2.000, benang 6.000−2.000=4.000, kain 12.000−6.000=6.000, pakaian jadi 20.000−12.000=8.000. Total = 2.000+4.000+6.000+8.000 = Rp20.000 — sama dengan harga jual akhir barang jadi (metode nilai tambah menghindari double counting). Rp40.000 keliru karena menjumlah semua harga langsung (double counting); penyusutan Rp500 tidak relevan untuk pendekatan produksi/nilai tambah ini."
+  },
+  {
+    "q": "Pendapatan nasional suatu negara bertambah lebih besar dibandingkan tingkat pertambahan penduduknya. Keadaan ini menunjukkan ….",
+    "opts": [
+      "Menurunnya pendapatan per kapita",
+      "Naiknya pendapatan per kapita",
+      "Lambatnya laju pertambahan penduduk",
+      "Turunnya tingkat kesejahteraan penduduk",
+      "Meratanya distribusi pendapatan masyarakat"
+    ],
+    "correct": 1,
+    "explain": "Pendapatan per kapita = pendapatan nasional ÷ jumlah penduduk. Kalau pembilang (pendapatan nasional) tumbuh lebih cepat dari penyebut (jumlah penduduk), hasil baginya (pendapatan per kapita) pasti naik."
   }
 ]
