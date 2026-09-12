@@ -85,15 +85,22 @@
   h1.page-title{font:700 34px/1.15 'Fraunces',serif;color:var(--navy);margin:0 0 6px;}
   p.dek{font:italic 400 14.5px/1.4 'Literata',serif;color:var(--orange-ink);margin:0 0 18px;}
   h2.section-title{font:600 21px/1.25 'Fraunces',serif;color:var(--navy);margin:0 0 10px;}
-  p.lead{font:400 15px/1.6 'Literata',serif;color:var(--slate);margin:0 0 18px;max-width:600px;}
-  p.body-text{font:400 13.5px/1.6 'Literata',serif;color:#22303f;margin:0 0 14px;}
+  p.lead{font:400 16.5px/1.6 'Literata',serif;color:var(--slate);margin:0 0 18px;max-width:600px;}
+  p.body-text{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 14px;}
   ul.learn-list{margin:0 0 20px;padding-left:20px;}
-  ul.learn-list li{font:400 14.5px/1.65 'Literata',serif;color:#22303f;margin-bottom:6px;}
+  ul.learn-list li{font:400 16px/1.65 'Literata',serif;color:#22303f;margin-bottom:6px;}
 
-  .callout{padding:16px 18px;margin:0 0 20px;font:400 13px/1.55 'Literata',serif;}
+  /* .dense — page-body modifier for pages whose text volume needs slightly
+     tighter spacing to fit one page at the standard font size (see Page 2). */
+  .page-body.dense h2.section-title{margin-bottom:6px;}
+  .page-body.dense p.lead{margin-bottom:10px;}
+  .page-body.dense p.body-text{margin-bottom:8px;line-height:1.5;}
+  .page-body.dense .callout{padding-top:12px;padding-bottom:12px;}
+
+  .callout{padding:16px 18px;margin:0 0 20px;font:400 14.5px/1.55 'Literata',serif;}
   .callout.mistake{background:#fbf0ed;}
   .callout.mistake .label{color:var(--danger);}
-  .callout .label{display:block;font:italic 600 13px/1 'Literata',serif;margin-bottom:7px;}
+  .callout .label{display:block;font:italic 600 14px/1 'Literata',serif;margin-bottom:7px;}
   .callout .wrong{color:var(--danger);font-weight:600;}
   .callout .right{color:var(--success);font-weight:600;}
 
@@ -166,7 +173,7 @@
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 1 &middot; Sejarah Sel</span><span class="subject-chip">Biologi</span></div>
     </div>
-    <div class="page-body">
+    <div class="page-body dense">
       <h2 class="section-title">Sejarah Penemuan Sel</h2>
       <p class="lead">Empat ilmuwan, tersebar di rentang hampir 200 tahun, yang perlahan-lahan menyusun apa yang sekarang kita kenal sebagai Teori Sel.</p>
       <p class="body-text"><b>Robert Hooke (1665)</b> adalah orang pertama yang mengamati sel, meski ia sendiri tidak sadar sedang melihat unit dasar kehidupan. Menggunakan mikroskop sederhana rancangannya sendiri, ia mengintip sayatan tipis gabus (kulit kayu ek yang sudah mati) dan melihat deretan ruang-ruang kosong berdinding, seperti kamar-kamar kecil berjejer. Ia menamainya "cellula", bahasa Latin untuk "kamar kecil" — dari sinilah istilah "sel" berasal. Penting dicatat: yang sebenarnya dilihat Hooke bukan sel hidup, melainkan dinding sel gabus yang sudah mati, jadi ia hanya melihat "kerangka kosong"-nya saja.</p>

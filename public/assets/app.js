@@ -1638,8 +1638,17 @@ function initPdfViewers(root){
         const blob = await res.blob();
         if(currentObjectUrl) URL.revokeObjectURL(currentObjectUrl);
         currentObjectUrl = URL.createObjectURL(blob);
-        imgEl.onload = ()=>{ imgEl.style.opacity = '1'; };
         imgEl.src = currentObjectUrl;
+        // Decode fully off-screen (opacity still 0) before revealing, then force
+        // a reflow — some browsers can otherwise paint a scaled-down page image
+        // with the bottom portion missing on first paint (a real, if rare, bug
+        // seen in production). decode() + a forced reflow is the standard
+        // mitigation; if it still happens for a student, reloading the page
+        // fixes it immediately since it's a one-time paint glitch, not bad data.
+        (imgEl.decode ? imgEl.decode().catch(()=>{}) : Promise.resolve()).then(()=>{
+          void imgEl.offsetHeight;
+          requestAnimationFrame(()=>{ imgEl.style.opacity = '1'; });
+        });
         currentPage = n;
         pageNumEl.textContent = `Halaman ${currentPage} / ${pageCount}`;
         loadingEl.hidden = true;
