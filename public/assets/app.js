@@ -1769,3 +1769,22 @@ function observeReveal(sections){
   sections.forEach(el=>revealObserver.observe(el));
 }
 observeReveal(document.querySelectorAll('body > section, #view-home section, #view-babs section, #view-signin section'));
+
+/* ===== Shareable entry-point routes =====
+   The rest of this app has no URL routing at all — every view is a JS-
+   toggled <div>, home is just whatever the shipped HTML defaults to
+   visible. /signup and /login are the one exception: real paths (see
+   the rewrites in vercel.json, which point both at this same
+   index.html) so a link like dalton-lab.vercel.app/signup can be
+   shared directly, landing a new visitor straight on the registration
+   panel instead of the login form goToSignIn() shows by default. */
+(function bootstrapEntryRoute(){
+  const path = window.location.pathname.replace(/\/+$/, '') || '/';
+  if(path === '/signup'){
+    goToSignIn();
+    const toggleBtn = document.getElementById('togglePackagesBtn');
+    if(toggleBtn && toggleBtn.style.display !== 'none') toggleBtn.click();
+  } else if(path === '/login'){
+    goToSignIn();
+  }
+})();
