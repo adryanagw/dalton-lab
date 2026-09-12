@@ -163,6 +163,15 @@ Everything static/non-interactive that used to be a card grid, table, or
 
 If a topic has nothing formula/advanced-example/reference-table-worthy at all, it's fine for the PDF to be thin — PDF value is evaluated per topic, not mandatory for every one. In practice this has not come up yet: both real chapters ended up with 9-12 pages once the static-content-migration above is applied honestly.
 
+## 5b. Extra Bank Soal — raw PDF passthrough (different from the PDF companion above)
+
+A separate, simpler case from the authored PDF companion in §5: sometimes the user supplies a ready-made practice-question PDF for a chapter (e.g. a Zenius-style bank soal) and explicitly wants it delivered **unmodified** — no rewriting into `.pdf-pages.html`, no page-template styling, no HTML authoring at all, and not wired into the quiz engine. Treat it as pure passthrough:
+
+- **No new folder or repo section needed.** Reuse the exact flat per-chapter file convention `api/pdf-content.js` already requires, just with a distinct `bab` value so it doesn't collide with the chapter's own PDF companion pages: `{bab}-extra-bank-soal.pdf.{page}.png` in `content-private/{subject}/` — e.g. `content-private/ekonomi/bab1-badan-usaha-extra-bank-soal.pdf.1.png`. Same flat directory the chapter's `{bab}.pdf.N.png` pages already live in; the API needs zero changes since it keys purely off the `bab` string, not chapter identity.
+- **Rendering:** rasterize the user's original PDF pages directly (e.g. PyMuPDF `page.get_pixmap(matrix=fitz.Matrix(2,2))` for ~2x scale, matching the sharpness of the site's other rendered pages) — do **not** run it through the `.pdf-pages.html`/Playwright pipeline, since that pipeline is for content *authored* into the page-template. This content must stay exactly as given.
+- **HTML section:** one `.pdf-viewer[data-pdf-download="true"][data-pdf-filename="..."]` block per chapter, same markup as any other PDF viewer (see §5's live examples). Deliberately **not** a `.quiz-root` — this is view + download only.
+- Keep the user's original uploaded file too, e.g. `content-private/{subject}/{bab}-extra-bank-soal-source.pdf`, alongside the rendered pages, in case they need to be re-rendered later. This is the one exception to "everything in content-private is either delivered or generated" — safe to keep since content-private is never served statically, only through the same authenticated API as everything else in that directory.
+
 ## 6. Subject-specific content rules
 
 ### Matematika
