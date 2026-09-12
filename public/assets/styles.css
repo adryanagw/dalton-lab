@@ -226,6 +226,7 @@ section.tight{padding:60px 0;}
 .sidebar{
   width:248px;flex-shrink:0;
   position:sticky;top:0;align-self:flex-start;height:100vh;
+  transition:width .18s ease, padding .18s ease;
   /* iOS Safari's address bar/toolbar chrome can collapse on scroll, so
      100vh — the "large viewport," as if that chrome were already hidden —
      is often taller than what's actually visible on screen right now. On
@@ -263,6 +264,42 @@ section.tight{padding:60px 0;}
   display:flex;align-items:center;justify-content:space-between;gap:10px;
   padding-top:16px;margin-top:12px;border-top:1px solid var(--line);
 }
+
+/* === Collapsible sidebar (desktop only -- below 900px .sidebar is
+   already an off-canvas drawer via the hamburger, so a second collapse
+   affordance on top of that would just be confusing) ===
+   .collapsed shrinks the sidebar to an icon-only rail: text labels,
+   the section label, and the session-badge details all hide, leaving
+   just each nav item's icon so it reads as a slim button column. State
+   persists via localStorage (see app.js) so it survives reloads. */
+.sidebar-collapse-btn{
+  position:absolute;top:26px;right:-13px;z-index:5;
+  width:26px;height:26px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--card);border:1px solid var(--line);color:var(--slate);
+  cursor:pointer;transition:color .15s,border-color .15s,transform .18s ease;
+}
+.sidebar-collapse-btn:hover{color:var(--heading);border-color:var(--orange);}
+.sidebar-collapse-btn .icon{width:14px;height:14px;}
+.sidebar.collapsed .sidebar-collapse-btn{transform:rotate(180deg);}
+
+.sidebar.collapsed{width:76px;padding-left:10px;padding-right:10px;}
+.sidebar.collapsed .sidebar-brand{justify-content:center;padding:4px 0 20px;}
+.sidebar.collapsed .sidebar-brand > div,
+.sidebar.collapsed .sidebar-section-label,
+.sidebar.collapsed .sidebar-link span{
+  display:none;
+}
+/* !important: renderSessionBadge() (app.js) sets style="display:flex"
+   directly on this element -- an inline style beats any class selector
+   short of !important, so without it the badge (Masuk button, or
+   name+status+Pengaturan/Keluar when logged in) kept rendering
+   squeezed into the 76px rail instead of hiding. */
+.sidebar.collapsed .session-badge{
+  display:none !important;
+}
+.sidebar.collapsed .sidebar-link{justify-content:center;padding:10px;}
+.sidebar.collapsed .sidebar-footer{justify-content:center;}
 
 /* Sticky footer lives at this level now: the view divs and .site-footer
    are app-main's direct children (see body/#view-* rule above, which
@@ -1190,6 +1227,7 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 @media(max-width:900px){
   .app-shell{flex-direction:column;}
   .mobile-topbar{display:flex;}
+  .sidebar-collapse-btn{display:none;}
   .sidebar{
     position:fixed;top:0;left:0;z-index:220;
     transform:translateX(-100%);transition:transform .25s ease;
@@ -1206,6 +1244,13 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
     background:var(--paper);
   }
   .sidebar.open{transform:translateX(0);}
+  .sidebar.collapsed{width:248px;padding-left:16px;padding-right:16px;}
+  .sidebar.collapsed .sidebar-brand > div{display:block;}
+  .sidebar.collapsed .sidebar-section-label{display:block;}
+  .sidebar.collapsed .sidebar-link span{display:inline;}
+  .sidebar.collapsed .session-badge{display:flex;}
+  .sidebar.collapsed .sidebar-brand{justify-content:flex-start;}
+  .sidebar.collapsed .sidebar-link{justify-content:flex-start;}
   .sidebar-backdrop.open{display:block;opacity:1;pointer-events:auto;}
   .hamburger{display:flex;}
   .lesson-subnav{top:58px;}
