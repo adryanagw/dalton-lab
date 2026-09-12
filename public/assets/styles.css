@@ -643,7 +643,16 @@ section.tight{padding:60px 0;}
   background:var(--paper);
 }
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;}
-.hero-grid.single{grid-template-columns:1fr;max-width:720px;}
+/* No max-width on .hero-grid.single itself -- it's the same element as
+   .wrap (max-width:1120px; margin:0 auto), so capping width HERE just
+   re-centers a narrower box instead of keeping it flush with every other
+   section's .wrap (a real, shipped bug: title sat ~200px right of every
+   heading below it, since single-column heroes were centered inside the
+   already-centered .wrap instead of matching its left edge). The reading-
+   width cap belongs on the inner content div instead, which stays
+   left-aligned within the full-width grid column. */
+.hero-grid.single{grid-template-columns:1fr;}
+.hero-grid.single > div{max-width:720px;}
 .hero h1{font-size:clamp(2.3rem,4.6vw,3.6rem);line-height:1.05;}
 .hero h1 em{font-style:normal;color:var(--orange);}
 .hero p.lead{font-size:1.15rem;color:var(--slate);max-width:520px;margin:18px 0 30px;}
@@ -1224,7 +1233,7 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
    behind /api/pdf-content the same way lesson content is gated behind
    /api/content. No download affordance by design (deterrent, not true
    prevention — see the watermark overlay below). ===== */
-.pdf-viewer{max-width:600px;margin:0 auto;}
+.pdf-viewer{max-width:760px;margin:0 auto;}
 .pdf-viewer-stage{
   position:relative;
   aspect-ratio:210/297;
