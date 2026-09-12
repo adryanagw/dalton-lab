@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<!-- Rendered PDF companion content for Bab 1 Matematika (Eksponen & Logaritma),
+     built from bab1-eksponen-logaritma.pdf-spec.md on
+     public/assets/pdf-template/page-template.html. This is the actual filled source,
+     rendered once and shared by every student — no per-page watermark markup here on
+     purpose: the real student-identity watermark is drawn live, per viewer, by
+     initPdfViewers() in app.js (.pdf-viewer-watermark), stamped with that viewer's
+     actual session name and timestamp. Baking a placeholder name into the shared
+     image here would just show every student a second, fake watermark underneath
+     the real one. -->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dalton Lab — PDF Bab 1 Matematika</title>
+<link rel="stylesheet" href="../../public/assets/vendor/fonts/pdf-fonts.css">
+<link rel="stylesheet" href="../../public/assets/vendor/katex/katex.min.css">
+<style>
+  @page{ size:210mm 297mm; margin:0; }
+
+  :root{
+    --navy:#0d1b2e;
+    --navy-2:#16304f;
+    --orange:#ee7d31;
+    --orange-dark:#d4631a;
+    --paper:#faf6ee;
+    --card:#ffffff;
+    --slate:#4f6376;
+    --success:#2f9e6a;
+    --danger:#d64545;
+    --accent:#2f7edb;
+    --orange-ink:#bb4d0e;
+  }
+  .pdf-page[data-subject="matematika"]{ --accent:#2f7edb; }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#fff;font-family:'Literata',serif;}
+
+  /* ---- the reusable page shell — print version: no floating-card chrome,
+       the page IS the physical page, so no radius/shadow/desk background ---- */
+  .pdf-page{
+    position:relative;
+    width:210mm;
+    height:297mm;
+    padding:26px;
+    background:var(--accent);
+    overflow:hidden;
+    break-after:page;
+    page-break-after:always;
+  }
+  .pdf-page:last-child{break-after:auto;page-break-after:avoid;}
+  .pdf-page .sheet{
+    position:relative;
+    width:100%;
+    height:100%;
+    background:var(--card);
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  .page-head{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 40px 18px;
+    border-bottom:1px solid #eef0f2;
+  }
+  .page-head .brand{display:flex;align-items:center;gap:2px;}
+  .page-head .brand img{height:34px;width:auto;display:block;}
+  .page-head .brand-word{font:600 15px/1 'Fraunces',serif;color:var(--navy);letter-spacing:.01em;}
+  .page-head .brand-word span{color:var(--accent);}
+  .page-head .meta{display:flex;align-items:baseline;gap:8px;}
+  .subject-chip{font:italic 600 14px/1 'Fraunces',serif;color:var(--orange-ink);}
+  .chapter-tag{font:italic 400 13.5px/1 'Literata',serif;color:var(--slate);}
+
+  .page-body{
+    position:relative;
+    z-index:2;
+    flex:1;
+    padding:30px 40px 0;
+    overflow:hidden;
+  }
+
+  h1.page-title{font:700 34px/1.15 'Fraunces',serif;color:var(--navy);margin:0 0 6px;}
+  p.dek{font:italic 400 14.5px/1.4 'Literata',serif;color:var(--orange-ink);margin:0 0 18px;}
+  h2.section-title{font:600 21px/1.25 'Fraunces',serif;color:var(--navy);margin:0 0 10px;}
+  p.lead{font:400 16.5px/1.6 'Literata',serif;color:var(--slate);margin:0 0 18px;max-width:600px;}
+  p.body-text{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 14px;}
+  ul.learn-list{margin:0 0 20px;padding-left:20px;}
+  ul.learn-list li{font:400 16px/1.65 'Literata',serif;color:#22303f;margin-bottom:6px;}
+
+  /* .dense — page-body modifier for pages whose text volume needs slightly
+     tighter spacing to fit one page at the standard font size (see
+     content-private/biologi/bab1-sel.pdf-pages.html Page 2 for the same pattern). */
+  .page-body.dense h2.section-title{margin-bottom:6px;}
+  .page-body.dense p.lead{margin-bottom:10px;}
+  .page-body.dense p.body-text{margin-bottom:8px;line-height:1.5;}
+  .page-body.dense .callout{padding-top:12px;padding-bottom:12px;margin-bottom:14px;}
+  .page-body.dense .example-box{margin-bottom:10px;padding-top:12px;}
+  .page-body.dense .example-box .label{margin-bottom:6px;}
+  .page-body.dense .example-box li{margin-bottom:4px;font-size:14px;line-height:1.45;}
+  .page-body.dense .formula-box{margin-bottom:16px;padding:14px 2px;}
+
+  .formula-box{border-top:1px solid #e6dfd0;border-bottom:1px solid #e6dfd0;padding:20px 2px;margin:0 0 22px;}
+  .formula-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;display:block;}
+  .formula-box .katex{font-size:1.05em;}
+  .formula-box .var-def{font:400 13.5px/1.55 'Literata',serif;color:var(--slate);margin-top:10px;}
+  .formula-box .var-def b{font-family:'IBM Plex Mono',monospace;font-weight:500;color:#22303f;}
+
+  .example-box{border-top:1px solid #e6dfd0;padding:18px 2px 4px;margin:0 0 22px;}
+  .example-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--navy);margin-bottom:12px;display:block;}
+  .example-box p.setup{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 10px;}
+  .example-box ol{margin:0;padding-left:18px;}
+  .example-box li{font:400 15px/1.6 'Literata',serif;color:#22303f;margin-bottom:8px;}
+
+  .callout{padding:16px 18px;margin:0 0 20px;font:400 14.5px/1.55 'Literata',serif;}
+  .callout.mistake{background:#fbf0ed;}
+  .callout.mistake .label{color:var(--danger);}
+  .callout .label{display:block;font:italic 600 14px/1 'Literata',serif;margin-bottom:7px;}
+  .callout .wrong{color:var(--danger);font-weight:600;}
+  .callout .right{color:var(--success);font-weight:600;}
+
+  .ref-table{width:100%;border-collapse:collapse;margin:0 0 20px;}
+  .ref-table caption{caption-side:top;text-align:left;font:italic 500 13.5px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;}
+  .ref-table th,.ref-table td{
+    text-align:left;
+    padding:7px 10px;
+    font:400 12px/1.4 'Literata',serif;
+    color:#22303f;
+    border-bottom:1px solid #eee7d8;
+    vertical-align:top;
+  }
+  .ref-table thead th{
+    font:600 11px/1.2 'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--slate);
+    border-bottom:1.5px solid var(--navy);
+    padding-bottom:8px;
+  }
+  .ref-table tbody tr:first-child td{padding-top:10px;}
+  .ref-table .katex{font-size:.95em;}
+
+  ol.ref-list{margin:0 0 20px;padding-left:20px;}
+  ol.ref-list li{font:400 13.5px/1.6 'Literata',serif;color:#22303f;margin-bottom:12px;}
+  ol.ref-list li i{color:var(--slate);font-style:italic;}
+
+  .ref-list-2col{columns:2;column-gap:26px;margin:0 0 18px;}
+  .ref-list-2col .item{break-inside:avoid;margin-bottom:11px;}
+  .ref-list-2col .item .num{font:600 11px/1 'IBM Plex Mono',monospace;color:var(--orange-ink);}
+  .ref-list-2col .item .term{font:600 13px/1.3 'Literata',serif;color:var(--navy);display:block;margin:3px 0 2px;}
+  .ref-list-2col .item .gloss{font:400 12px/1.45 'Literata',serif;color:#4a5560;}
+
+  .page-foot{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 40px 22px;
+    border-top:1px solid #eef0f2;
+  }
+  .page-foot .license{font:italic 400 12px/1.4 'Literata',serif;color:#5c6670;max-width:380px;}
+</style>
+</head>
+<body>
+
+<!-- ===== Page 1 — Chapter opener ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body">
+      <h1 class="page-title">Eksponen &amp; Logaritma</h1>
+      <p class="dek">Materi PDF — pelengkap Bab 1</p>
+      <p class="lead">Materi tambahan ini fokus ke tabel referensi lengkap tiap sifat, pembuktian (derivasi) rumus eksponen &amp; logaritma, dan contoh soal tambahan tingkat lanjut — pelengkap materi &amp; latihan interaktif di halaman utama, bukan salinannya.</p>
+      <h2 class="section-title">Yang akan kamu pelajari</h2>
+      <ul class="learn-list">
+        <li>Tabel lengkap 4 bentuk pangkat (positif, nol, negatif, pecahan) dengan syarat &amp; contoh masing-masing</li>
+        <li>Tabel lengkap 8 sifat eksponen beserta contohnya</li>
+        <li>Pembuktian (derivasi) rumus sifat eksponen — kenapa a⁰=1 dan a⁻ⁿ=1/aⁿ bisa benar, bukan cuma dihafal</li>
+        <li>Tabel lengkap operasi bentuk akar &amp; cara merasionalkan penyebut, plus contoh soal tambahan tingkat lanjut</li>
+        <li>Tabel lengkap 9 sifat logaritma beserta contohnya</li>
+        <li>Pembuktian (derivasi) 3 sifat logaritma yang paling sering bikin bingung</li>
+        <li>Contoh soal tambahan persamaan eksponen &amp; logaritma gaya ujian (multi-langkah)</li>
+        <li>Latihan tambahan singkat dengan kunci jawaban</li>
+      </ul>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 2 — Referensi: Bentuk-Bentuk Pangkat ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Bilangan Berpangkat</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Referensi: Bentuk-Bentuk Pangkat</h2>
+      <p class="lead">Empat bentuk khusus pangkat yang wajib dikenali di pandangan pertama, lengkap dengan syarat berlakunya masing-masing.</p>
+      <table class="ref-table">
+        <thead><tr><th>Bentuk</th><th>Rumus</th><th>Syarat</th><th>Contoh</th></tr></thead>
+        <tbody>
+          <tr><td>Pangkat Positif</td><td>\(a^n = a\times a\times\cdots\times a\) (n faktor)</td><td>n bilangan bulat positif</td><td>\(5^3=5\times5\times5=125\)</td></tr>
+          <tr><td>Pangkat Nol</td><td>\(a^0=1\)</td><td>\(a\neq0\)</td><td>\(123^0=1\)</td></tr>
+          <tr><td>Pangkat Negatif</td><td>\(a^{-n}=\dfrac{1}{a^n}\)</td><td>\(a\neq0\)</td><td>\(2^{-3}=\dfrac{1}{8}\)</td></tr>
+          <tr><td>Pangkat Pecahan (Rasional)</td><td>\(a^{m/n}=\sqrt[n]{a^m}\)</td><td>\(a>0\) (atau \(a\geq0\) bila n genap); m, n bilangan bulat, \(n\neq0\)</td><td>\(8^{1/3}=\sqrt[3]{8}=2\)</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Pangkat positif ya cuma perkalian berulang biasa. Pangkat nol selalu bernilai 1 — asal basisnya bukan nol (pembuktian lengkap kenapa bisa begitu ada di Halaman 4). Pangkat negatif bukan berarti hasilnya jadi bilangan negatif — dia cuma kebalikan (invers) dari pangkat positifnya, hasilnya tetap pecahan positif. Pangkat pecahan adalah bentuk akar yang "disamarkan" — pembilangnya (m) jadi pangkat di dalam akar, penyebutnya (n) jadi indeks akarnya.</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira \(0^0\) bisa dihitung seperti \(a^0\) biasa (dianggap = 1), dan mengira \(a^{-n}\) selalu menghasilkan bilangan negatif.<br>
+        <span class="right">✅ Benar:</span> \(0^0\) dianggap tidak terdefinisi di jenjang SMA — beda dengan \(a^0\) untuk \(a\neq0\) yang selalu 1. Sementara \(2^{-3}=\dfrac{1}{8}\) — positif, cuma pecahan kecil, bukan -8.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 3 — Referensi: 8 Sifat Eksponen ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Sifat Eksponen</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Referensi: 8 Sifat Eksponen</h2>
+      <p class="lead">Delapan sifat yang jadi dasar hampir seluruh soal eksponen — tabel lengkap rumus &amp; contohnya, jebakan paling umum ada di bawah.</p>
+      <table class="ref-table">
+        <thead><tr><th>#</th><th>Sifat</th><th>Rumus</th><th>Contoh</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Perkalian basis sama</td><td>\(a^m \cdot a^n = a^{m+n}\)</td><td>\(2^3 \cdot 2^2 = 2^5 = 32\)</td></tr>
+          <tr><td>2</td><td>Pembagian basis sama</td><td>\(a^m \div a^n = a^{m-n}\)</td><td>\(3^5 \div 3^2 = 3^3 = 27\)</td></tr>
+          <tr><td>3</td><td>Pangkat dari pangkat</td><td>\((a^m)^n = a^{m\times n}\)</td><td>\((2^2)^3=2^6=64\)</td></tr>
+          <tr><td>4</td><td>Pangkat dari perkalian</td><td>\((a\cdot b)^m = a^m\cdot b^m\)</td><td>\((2\cdot3)^2=2^2\cdot3^2=36\)</td></tr>
+          <tr><td>5</td><td>Pangkat dari pembagian</td><td>\(\left(\dfrac{a}{b}\right)^m=\dfrac{a^m}{b^m}\)</td><td>\(\left(\dfrac{4}{2}\right)^3=\dfrac{4^3}{2^3}=8\)</td></tr>
+          <tr><td>6</td><td>Pangkat nol</td><td>\(a^0=1\ (a\neq0)\)</td><td>\(123^0=1\)</td></tr>
+          <tr><td>7</td><td>Pangkat negatif</td><td>\(a^{-n}=\dfrac{1}{a^n}\)</td><td>\(5^{-2}=\dfrac{1}{25}\)</td></tr>
+          <tr><td>8</td><td>Pangkat pecahan (akar)</td><td>\(a^{m/n}=\sqrt[n]{a^m}\)</td><td>\(4^{3/2}=\sqrt{4^3}=8\)</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Sifat 1–5 mengatur bagaimana pangkat berperilaku saat basisnya sama atau saat ada operasi perkalian/pembagian/pemangkatan berulang. Sifat 6–8 adalah tiga bentuk khusus (nol, negatif, pecahan) yang juga muncul di tabel bentuk-bentuk pangkat (Halaman 2) — di sini posisinya sebagai bagian dari satu keluarga sifat yang sama, karena semuanya bisa saling diturunkan satu sama lain (lihat pembuktiannya di Halaman 4).</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> menggabungkan langsung \(2^3 \cdot 3^2\) menjadi \(6^5\).<br>
+        <span class="right">✅ Benar:</span> sifat 1 &amp; 2 hanya berlaku kalau basisnya sama — \(2^3\cdot3^2 = 8\times9 = 72\), bukan \(6^5\). Basis beda tidak bisa langsung digabung pangkatnya.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 4 — Pembuktian (Derivasi) Sifat Eksponen ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Pembuktian</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Kenapa Sifat-Sifat Itu Bisa Benar?</h2>
+      <p class="lead">Empat sifat eksponen paling dasar dibuktikan langsung dari definisi pangkat sebagai perkalian berulang — bukan cuma buat dihafal.</p>
+
+      <div class="example-box">
+        <span class="label">Pembuktian: \(a^m \cdot a^n = a^{m+n}\)</span>
+        <ol>
+          <li>Dari definisi, \(a^m\) artinya a dikalikan dirinya sendiri m kali, dan \(a^n\) artinya a dikalikan dirinya sendiri n kali.</li>
+          <li>\(a^m \cdot a^n = (\underbrace{a\times\cdots\times a}_{m\text{ faktor}}) \times (\underbrace{a\times\cdots\times a}_{n\text{ faktor}})\)</li>
+          <li>Digabung, totalnya ada \((m+n)\) faktor a yang dikalikan berurutan, sehingga \(a^m \cdot a^n = \underbrace{a\times\cdots\times a}_{(m+n)\text{ faktor}} = a^{m+n}\) — terbukti.</li>
+        </ol>
+      </div>
+
+      <div class="example-box">
+        <span class="label">Pembuktian: \(a^0 = 1\) (untuk \(a\neq0\))</span>
+        <ol>
+          <li>Mulai dari \(a^n \div a^n\) untuk n bilangan bulat positif sembarang.</li>
+          <li>Secara aljabar biasa, bilangan apa pun (asal bukan nol) dibagi dirinya sendiri selalu = 1: \(a^n \div a^n = 1\).</li>
+          <li>Tapi dipandang sebagai sifat pembagian basis sama: \(a^n \div a^n = a^{n-n} = a^0\).</li>
+          <li>Menyamakan hasil langkah 2 &amp; 3: \(a^0 = 1\) — terbukti.</li>
+        </ol>
+      </div>
+
+      <div class="example-box">
+        <span class="label">Pembuktian: \(a^{-n} = \dfrac{1}{a^n}\)</span>
+        <ol>
+          <li>Tulis 0 sebagai \(n + (-n)\), lalu pakai sifat 1: \(a^0 = a^{n+(-n)} = a^n \cdot a^{-n}\).</li>
+          <li>Dari pembuktian sebelumnya, ruas kiri \(a^0 = 1\), jadi \(a^n \cdot a^{-n} = 1\).</li>
+          <li>Bagi kedua ruas dengan \(a^n\) (boleh, karena \(a\neq0\) sehingga \(a^n\neq0\)): \(a^{-n} = \dfrac{1}{a^n}\) — terbukti.</li>
+        </ol>
+      </div>
+
+      <div class="example-box">
+        <span class="label">Pembuktian: \((a^m)^n = a^{mn}\)</span>
+        <ol>
+          <li>\((a^m)^n\) artinya \(a^m\) dikalikan dirinya sendiri n kali: \((a^m)^n = \underbrace{a^m \times \cdots \times a^m}_{n\text{ faktor}}\).</li>
+          <li>Pakai sifat 1 berulang kali untuk menggabungkan semua faktor \(a^m\) — total pangkatnya jadi \(m+m+\cdots+m\) (n suku), yang sama dengan \(m\times n\).</li>
+          <li>\((a^m)^n = a^{mn}\) — terbukti.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 5 — Referensi: Bentuk Akar & Contoh Soal Tambahan ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Bentuk Akar</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Referensi: Operasi Bentuk Akar &amp; Merasionalkan Penyebut</h2>
+      <p class="lead">Aturan lengkap menjumlah, mengalikan, membagi bentuk akar, dan cara menghilangkan akar yang nyangkut di penyebut pecahan.</p>
+      <p class="body-text">Penjumlahan/pengurangan bentuk akar hanya bisa digabung kalau akarnya "sejenis" alias isinya sama persis — \(3\sqrt2 + 5\sqrt2 = 8\sqrt2\), tapi \(\sqrt2+\sqrt3\) tidak bisa disederhanakan lagi. Perkalian &amp; pembagian ikuti \(\sqrt a \cdot \sqrt b = \sqrt{ab}\) dan \(\sqrt a \div \sqrt b = \sqrt{a/b}\) — contoh: \(\sqrt3 \cdot \sqrt{12} = \sqrt{36} = 6\), dan \(\sqrt{50}\div\sqrt2 = \sqrt{25}=5\).</p>
+      <p class="body-text">Kalau ada akar di penyebut pecahan, hilangkan dengan mengalikan pembilang &amp; penyebut dengan "sekawan"-nya: untuk bentuk \(\dfrac{1}{\sqrt a}\), kalikan dengan \(\dfrac{\sqrt a}{\sqrt a}\) sehingga hasilnya \(\dfrac{\sqrt a}{a}\). Untuk bentuk \(\dfrac{1}{\sqrt a+\sqrt b}\), kalikan dengan sekawannya \(\dfrac{\sqrt a-\sqrt b}{\sqrt a-\sqrt b}\) — sekawan dari \((\sqrt a+\sqrt b)\) adalah \((\sqrt a-\sqrt b)\), karena \((x+y)(x-y)=x^2-y^2\) akan menghilangkan akarnya dari penyebut.</p>
+
+      <div class="example-box">
+        <span class="label">Contoh Soal Tambahan: Merasionalkan &amp; Menyederhanakan Bentuk Akar</span>
+        <p class="setup">Sederhanakan \(\dfrac{4}{3-\sqrt5}\), lalu sederhanakan \(\sqrt{12}+\sqrt{27}-\sqrt{75}\).</p>
+        <ol>
+          <li>Untuk soal pertama, kalikan pembilang &amp; penyebut dengan sekawan penyebutnya, \((3+\sqrt5)\): \(\dfrac{4}{3-\sqrt5}\times\dfrac{3+\sqrt5}{3+\sqrt5} = \dfrac{4(3+\sqrt5)}{3^2-(\sqrt5)^2} = \dfrac{12+4\sqrt5}{4} = 3+\sqrt5\).</li>
+          <li>Untuk soal kedua, tiap akar harus disederhanakan ke bentuk akar sejenis dulu: \(\sqrt{12}=2\sqrt3\), \(\sqrt{27}=3\sqrt3\), \(\sqrt{75}=5\sqrt3\).</li>
+          <li>Setelah semuanya sejenis (\(\sqrt3\)), jumlah/kurangkan koefisiennya: \(2\sqrt3+3\sqrt3-5\sqrt3 = (2+3-5)\sqrt3 = 0\).</li>
+        </ol>
+      </div>
+
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> langsung bilang \(\sqrt{12}\), \(\sqrt{27}\), \(\sqrt{75}\) "tidak sejenis" dan tidak bisa dijumlahkan sama sekali.<br>
+        <span class="right">✅ Benar:</span> sederhanakan dulu tiap akar ke bentuk akar terkecilnya — banyak soal ujian sengaja menyamarkan akar sejenis dalam bentuk yang kelihatannya beda.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 6 — Referensi: 9 Sifat Logaritma ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Sifat Logaritma</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Referensi: 9 Sifat Logaritma</h2>
+      <p class="lead">Pola pikirnya mirip sifat eksponen — wajar, karena logaritma memang kebalikan (invers) dari eksponen. Tabel lengkap rumus &amp; contohnya berikut ini.</p>
+      <table class="ref-table">
+        <thead><tr><th>#</th><th>Sifat</th><th>Rumus</th><th>Contoh</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Logaritma dari 1</td><td>\({}^{a}\log 1 = 0\)</td><td>\({}^{5}\log 1 = 0\)</td></tr>
+          <tr><td>2</td><td>Logaritma basis sendiri</td><td>\({}^{a}\log a = 1\)</td><td>\({}^{7}\log 7 = 1\)</td></tr>
+          <tr><td>3</td><td>Perkalian → penjumlahan</td><td>\({}^{a}\log(x\cdot y) = {}^{a}\log x + {}^{a}\log y\)</td><td>\({}^{2}\log(4\cdot8)={}^{2}\log4+{}^{2}\log8=2+3=5\)</td></tr>
+          <tr><td>4</td><td>Pembagian → pengurangan</td><td>\({}^{a}\log\left(\dfrac{x}{y}\right) = {}^{a}\log x - {}^{a}\log y\)</td><td>\({}^{2}\log\left(\dfrac{32}{4}\right)={}^{2}\log32-{}^{2}\log4=5-2=3\)</td></tr>
+          <tr><td>5</td><td>Pangkat numerus</td><td>\({}^{a}\log x^n = n\cdot{}^{a}\log x\)</td><td>\({}^{2}\log4^3=3\cdot{}^{2}\log4=3\cdot2=6\)</td></tr>
+          <tr><td>6</td><td>Pangkat basis</td><td>\({}^{a^m}\log x = \dfrac{1}{m}\cdot{}^{a}\log x\)</td><td>\({}^{4}\log8=\dfrac{1}{2}\cdot{}^{2}\log8=1{,}5\)</td></tr>
+          <tr><td>7</td><td>Kebalikan basis &amp; numerus</td><td>\({}^{a}\log b = \dfrac{1}{{}^{b}\log a}\)</td><td>\({}^{2}\log8=\dfrac{1}{{}^{8}\log2}=\dfrac{1}{1/3}=3\)</td></tr>
+          <tr><td>8</td><td>Rantai (basis berbeda)</td><td>\({}^{a}\log b \cdot {}^{b}\log c = {}^{a}\log c\)</td><td>\({}^{2}\log3\cdot{}^{3}\log4={}^{2}\log4=2\)</td></tr>
+          <tr><td>9</td><td>a dipangkatkan logaritmanya sendiri</td><td>\(a^{({}^{a}\log b)}=b\)</td><td>\(2^{({}^{2}\log5)}=5\)</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Sifat 1 &amp; 2 adalah kasus dasar yang langsung dari definisi. Sifat 3–5 mengubah operasi perkalian/pembagian/pemangkatan di dalam logaritma jadi operasi penjumlahan/pengurangan/perkalian biasa di luar logaritma — inilah alasan logaritma dulu dipakai untuk mempercepat perhitungan manual sebelum ada kalkulator. Sifat 6–9 lebih jarang dipakai langsung tapi sering muncul tersembunyi di soal ujian — pembuktian sifat 6, 7, dan 8 ada di Halaman 7.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 7 — Pembuktian (Derivasi) Sifat Logaritma ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Pembuktian</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Membuktikan 3 Sifat Logaritma yang Sering Bikin Bingung</h2>
+      <p class="lead">Sifat pangkat basis, kebalikan basis &amp; numerus, dan sifat rantai — dibuktikan langsung dari definisi logaritma &amp; sifat eksponen, bukan cuma dihafal.</p>
+
+      <div class="example-box">
+        <span class="label">Pembuktian: \({}^{a}\log b \cdot {}^{b}\log c = {}^{a}\log c\) (sifat rantai)</span>
+        <ol>
+          <li>Misalkan \({}^{a}\log b = m\) (artinya \(a^m = b\)) dan \({}^{b}\log c = n\) (artinya \(b^n = c\)).</li>
+          <li>Substitusikan \(b=a^m\) ke persamaan kedua: \(c = b^n = (a^m)^n\).</li>
+          <li>Pakai sifat eksponen "pangkat dari pangkat": \((a^m)^n = a^{mn}\), jadi \(c = a^{mn}\).</li>
+          <li>Menurut definisi logaritma, \(c=a^{mn}\) artinya \({}^{a}\log c = mn\). Karena \(m={}^{a}\log b\) dan \(n={}^{b}\log c\), maka \({}^{a}\log c = {}^{a}\log b \cdot {}^{b}\log c\) — terbukti.</li>
+        </ol>
+      </div>
+
+      <div class="example-box">
+        <span class="label">Pembuktian: \({}^{a}\log b = \dfrac{1}{{}^{b}\log a}\) (kebalikan basis &amp; numerus)</span>
+        <ol>
+          <li>Misalkan \({}^{a}\log b = c\), artinya \(a^c=b\).</li>
+          <li>Ambil akar pangkat c dari kedua ruas (pangkatkan \(1/c\)): \(a = b^{1/c}\).</li>
+          <li>Menurut definisi logaritma, \(a=b^{1/c}\) artinya \({}^{b}\log a = 1/c\).</li>
+          <li>Karena \(c = {}^{a}\log b\), diperoleh \({}^{b}\log a = \dfrac{1}{{}^{a}\log b}\), yang jika dibalik jadi \({}^{a}\log b = \dfrac{1}{{}^{b}\log a}\) — terbukti.</li>
+        </ol>
+      </div>
+
+      <div class="example-box">
+        <span class="label">Pembuktian: \({}^{a^m}\log x = \dfrac{1}{m}\cdot{}^{a}\log x\) (pangkat basis)</span>
+        <ol>
+          <li>Misalkan \({}^{a^m}\log x = n\), artinya \((a^m)^n = x\).</li>
+          <li>Pakai sifat "pangkat dari pangkat": \((a^m)^n = a^{mn}\), sehingga \(a^{mn}=x\).</li>
+          <li>Menurut definisi logaritma, \(a^{mn}=x\) artinya \({}^{a}\log x = mn\). Bagi kedua ruas dengan m: \(n = \dfrac{1}{m}\cdot{}^{a}\log x\).</li>
+          <li>Karena \(n={}^{a^m}\log x\), terbukti \({}^{a^m}\log x = \dfrac{1}{m}\cdot{}^{a}\log x\).</li>
+        </ol>
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 8 — Contoh Soal Tambahan: Persamaan Eksponen ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Persamaan Eksponen</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Contoh Soal Tambahan: Persamaan Eksponen Berbentuk Kuadrat</h2>
+      <p class="lead">Gaya soal ujian yang sering muncul — persamaan eksponen yang, dengan permisalan yang tepat, ternyata "menyamar" jadi persamaan kuadrat biasa.</p>
+      <div class="example-box">
+        <span class="label">Contoh Soal</span>
+        <p class="setup">Tentukan nilai x yang memenuhi \(4^{x} - 6\cdot2^{x} + 8 = 0\).</p>
+        <ol>
+          <li>Perhatikan bahwa \(4^x = (2^2)^x = (2^x)^2\). Jadi seluruh persamaan bisa ditulis ulang hanya dalam bentuk \(2^x\).</li>
+          <li>Misalkan \(y = 2^x\) (ingat: y harus selalu positif, karena hasil pemangkatan tidak pernah negatif atau nol). Persamaan menjadi \(y^2 - 6y + 8 = 0\).</li>
+          <li>Faktorkan persamaan kuadrat ini: \(y^2-6y+8 = (y-2)(y-4) = 0\), sehingga \(y=2\) atau \(y=4\).</li>
+          <li>Kembalikan permisalan: untuk \(y=2\), \(2^x=2^1\) sehingga \(x=1\). Untuk \(y=4\), \(2^x=2^2\) sehingga \(x=2\).</li>
+          <li>Kedua nilai valid (tidak perlu dibuang) karena keduanya menghasilkan \(y>0\). Jadi himpunan penyelesaiannya \(x=1\) atau \(x=2\).</li>
+        </ol>
+      </div>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> setelah dapat nilai y dari persamaan kuadrat, langsung menjawab \(x=y\) tanpa mengembalikan ke permisalan awal.<br>
+        <span class="right">✅ Benar:</span> y hanyalah variabel bantu (\(y=2^x\)) — jawaban akhir soal selalu dalam bentuk x, jadi permisalannya wajib dikembalikan di langkah terakhir. Cek juga kalau ada nilai y yang negatif atau nol, nilai itu harus dibuang karena \(2^x\) tidak pernah bisa negatif/nol.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 9 — Contoh Soal Tambahan: Persamaan Logaritma ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Persamaan Logaritma</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Contoh Soal Tambahan: Persamaan Logaritma &amp; Akar Asing</h2>
+      <p class="lead">Contoh lengkap kenapa mengecek syarat numerus itu wajib, bukan cuma formalitas — salah satu jawaban aljabarnya di soal ini justru harus dibuang.</p>
+      <div class="example-box">
+        <span class="label">Contoh Soal</span>
+        <p class="setup">Tentukan nilai x yang memenuhi \({}^{2}\log(x-1) + {}^{2}\log(x+2) = 2\).</p>
+        <ol>
+          <li>Gabungkan kedua suku ruas kiri pakai sifat perkalian logaritma: \({}^{2}\log[(x-1)(x+2)] = 2\).</li>
+          <li>Ubah ke bentuk eksponen (definisi logaritma): \((x-1)(x+2) = 2^2 = 4\).</li>
+          <li>Jabarkan &amp; sederhanakan: \(x^2+x-2 = 4\), sehingga \(x^2+x-6=0\).</li>
+          <li>Faktorkan: \((x+3)(x-2)=0\), sehingga \(x=-3\) atau \(x=2\).</li>
+          <li>Cek syarat numerus (wajib!): numerus harus \(x-1>0\) dan \(x+2>0\), artinya \(x>1\). Untuk \(x=-3\): jelas \(x-1=-4<0\), jadi nilai ini adalah <b>akar asing</b> dan harus dibuang. Untuk \(x=2\): \(x-1=1>0\) dan \(x+2=4>0\), memenuhi syarat. Jadi satu-satunya penyelesaian adalah \(x=2\).</li>
+        </ol>
+      </div>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> langsung menjawab "x=-3 atau x=2" begitu selesai memfaktorkan, tanpa mengecek ulang ke syarat numerus.<br>
+        <span class="right">✅ Benar:</span> hasil aljabar (memfaktorkan persamaan kuadrat) bisa saja benar secara matematis tapi tetap harus disubstitusi balik ke syarat numerus asli sebelum jadi jawaban final — nilai yang gagal disebut akar asing dan wajib dibuang.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 10 — Latihan Tambahan (dengan Kunci Jawaban) ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Latihan Tambahan</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Latihan Tambahan</h2>
+      <p class="lead">Lima soal campuran eksponen &amp; logaritma buat pemanasan sebelum masuk ke latihan bertingkat &amp; kuis interaktif di halaman utama — kunci jawaban ada di bawah tiap soal.</p>
+      <ol class="ref-list">
+        <li>Sederhanakan \(\dfrac{3^{5}\cdot3^{-2}}{3^{0}}\).<br><i>Jawaban: \(3^{5-2-0}=3^3=27\).</i></li>
+        <li>Tentukan nilai x jika \(9^{x+1}=27^{x}\).<br><i>Jawaban: samakan basis ke 3 → \(3^{2(x+1)}=3^{3x}\) → \(2x+2=3x\) → \(x=2\).</i></li>
+        <li>Sederhanakan \(\sqrt{45}-\sqrt{20}+\sqrt{5}\).<br><i>Jawaban: \(3\sqrt5-2\sqrt5+\sqrt5=2\sqrt5\).</i></li>
+        <li>Tentukan nilai dari \({}^{3}\log5\cdot{}^{5}\log27\).<br><i>Jawaban: sifat rantai → \({}^{3}\log27=3\) (karena \(3^3=27\)).</i></li>
+        <li>Jika \(2^{x}=3\), tentukan nilai dari \(8^{x}\).<br><i>Jawaban: \(8^x=(2^3)^x=(2^x)^3=3^3=27\).</i></li>
+      </ol>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<script src="../../public/assets/vendor/katex/katex.min.js"></script>
+<script src="../../public/assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left:'$$', right:'$$', display:true},
+      {left:'\\[', right:'\\]', display:true},
+      {left:'\\(', right:'\\)', display:false}
+    ],
+    throwOnError:false
+  });
+</script>
+</body>
+</html>

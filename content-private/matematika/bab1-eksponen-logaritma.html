@@ -18,7 +18,29 @@
   </div>
 </section>
 
-<section id="pengertian-eksponen" class="notebook-bg" data-nav="Pengertian">
+<section id="pdf-materi" class="notebook-bg tight" data-nav="Materi PDF">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Materi PDF</div>
+      <h2>Referensi Lengkap &amp; Pembuktian Rumus</h2>
+      <p>Tabel lengkap semua sifat eksponen &amp; logaritma, pembuktian (derivasi) rumusnya, dan contoh soal tambahan tingkat lanjut ada di sini — buka dulu atau simpan buat dibaca sambil belajar di bawah, nggak perlu diunduh.</p>
+    </div>
+    <div class="pdf-viewer" data-pdf-subject="matematika" data-pdf-bab="bab1-eksponen-logaritma">
+      <div class="pdf-viewer-stage">
+        <div class="pdf-viewer-loading">Memuat…</div>
+        <img class="pdf-viewer-img" alt="Halaman materi PDF" decoding="sync" draggable="false" oncontextmenu="return false;">
+        <div class="pdf-viewer-watermark"></div>
+      </div>
+      <div class="pdf-viewer-controls">
+        <button type="button" class="pdf-viewer-prev" aria-label="Halaman sebelumnya">‹</button>
+        <span class="pdf-viewer-pagenum">Halaman 1 / 1</span>
+        <button type="button" class="pdf-viewer-next" aria-label="Halaman berikutnya">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pengertian-eksponen" class="notebook-bg tight" data-nav="Pengertian">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">01 · Bilangan Berpangkat</div>
@@ -26,20 +48,15 @@
       <p>Eksponen (bilangan berpangkat) itu cuma "singkatan" dari perkalian berulang. <b style="color:var(--heading);">a<sup>n</sup></b> artinya <b>a</b> dikalikan dirinya sendiri sebanyak <b>n</b> kali — <b>a</b> disebut <b>basis</b>, <b>n</b> disebut <b>pangkat/eksponen</b>.</p>
     </div>
 
-    <div class="law-strip" style="margin-bottom:30px;">
+    <div class="law-strip" style="max-width:640px;">
       <b>💡 Contoh Cepat:</b> 2<sup>4</sup> = 2 × 2 × 2 × 2 = 16. Basisnya 2, pangkatnya 4, hasilnya (disebut <i>nilai eksponen</i>) 16.
     </div>
 
-    <div class="organel-grid grid-4">
-      <div class="organel-card oc-blue"><span class="oc-icon">🔢</span><h4>Pangkat Positif</h4><p>a<sup>n</sup> = a × a × … × a (sebanyak n kali), untuk n bilangan bulat positif. Contoh: 5³ = 5×5×5 = 125.</p></div>
-      <div class="organel-card oc-teal"><span class="oc-icon">1️⃣</span><h4>Pangkat Nol</h4><p>a⁰ = 1, untuk a ≠ 0. Berapapun basisnya (asal bukan 0), dipangkatkan nol selalu jadi 1. Contoh: 99⁰ = 1.</p></div>
-      <div class="organel-card oc-purple"><span class="oc-icon">↩️</span><h4>Pangkat Negatif</h4><p>a<sup>-n</sup> = 1/a<sup>n</sup>, untuk a ≠ 0. Pangkat negatif = kebalikan (invers) dari pangkat positifnya. Contoh: 2<sup>-3</sup> = 1/2³ = 1/8.</p></div>
-      <div class="organel-card oc-pink"><span class="oc-icon">🔀</span><h4>Pangkat Pecahan</h4><p>a<sup>m/n</sup> = ⁿ√(a<sup>m</sup>) — pangkat pecahan itu sebenarnya bentuk akar yang "disamarkan". Contoh: 8<sup>1/3</sup> = ³√8 = 2.</p></div>
-    </div>
+    <p class="mini-note" style="max-width:640px;">Ada 4 bentuk khusus pangkat yang sering muncul di soal — pangkat positif, nol, negatif, dan pecahan — dengan definisi &amp; syarat lengkapnya ada di <b>materi PDF pelengkap</b> di atas.</p>
   </div>
 </section>
 
-<section id="sifat-eksponen" data-nav="Sifat">
+<section id="sifat-eksponen" class="tight" data-nav="Sifat">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">02 · Aturan Main</div>
@@ -47,35 +64,13 @@
       <p>Ini dia inti dari seluruh bab eksponen — kalau 8 sifat ini udah lancar, hampir semua soal eksponen (sesulit apapun kelihatannya) tinggal "dibongkar" pakai salah satu (atau kombinasi) dari sifat-sifat di bawah.</p>
     </div>
 
-    <div class="table-scroll">
-      <table class="compare-table">
-        <thead><tr><th>#</th><th>Sifat</th><th>Rumus</th><th>Contoh</th></tr></thead>
-        <tbody>
-          <tr><th>1</th><td>Perkalian basis sama</td><td>\(a^m \cdot a^n = a^{m+n}\)</td><td>\(2^3 \cdot 2^2 = 2^5 = 32\)</td></tr>
-          <tr><th>2</th><td>Pembagian basis sama</td><td>\(a^m \div a^n = a^{m-n}\)</td><td>\(3^5 \div 3^2 = 3^3 = 27\)</td></tr>
-          <tr><th>3</th><td>Pangkat dari pangkat</td><td>\((a^m)^n = a^{m \times n}\)</td><td>\((2^2)^3 = 2^6 = 64\)</td></tr>
-          <tr><th>4</th><td>Pangkat dari perkalian</td><td>\((a \cdot b)^m = a^m \cdot b^m\)</td><td>\((2 \cdot 3)^2 = 2^2 \cdot 3^2 = 36\)</td></tr>
-          <tr><th>5</th><td>Pangkat dari pembagian</td><td>\(\left(\dfrac{a}{b}\right)^m = \dfrac{a^m}{b^m}\)</td><td>\(\left(\dfrac{4}{2}\right)^3 = \dfrac{4^3}{2^3} = 8\)</td></tr>
-          <tr><th>6</th><td>Pangkat nol</td><td>\(a^0 = 1\ (a \neq 0)\)</td><td>\(123^0 = 1\)</td></tr>
-          <tr><th>7</th><td>Pangkat negatif</td><td>\(a^{-n} = \dfrac{1}{a^n}\)</td><td>\(5^{-2} = \dfrac{1}{25}\)</td></tr>
-          <tr><th>8</th><td>Pangkat pecahan (akar)</td><td>\(a^{m/n} = \sqrt[n]{a^m}\)</td><td>\(4^{3/2} = \sqrt{4^3} = 8\)</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="table-hint">→ Geser ke samping untuk melihat kolom lainnya di layar kecil.</p>
-
-    <div class="jenis-box" style="margin-top:36px;">
-      <h3 style="font-size:1.1rem;">⚠️ Jebakan yang Sering Kejadian</h3>
-      <ul class="check-list" style="margin-top:14px;">
-        <li>Sifat 1 &amp; 2 <b>hanya berlaku kalau basisnya sama</b>. 2³ · 3² ≠ 6⁵ — nggak bisa langsung digabung begitu saja.</li>
-        <li>a<sup>-n</sup> itu <b>bukan berarti hasilnya negatif</b> — 2<sup>-3</sup> = 1/8 (positif, cuma pecahan kecil), bukan -8.</li>
-        <li>0⁰ dianggap <b>tidak terdefinisi</b> di jenjang SMA — beda dengan a⁰ untuk a ≠ 0 yang selalu 1.</li>
-      </ul>
+    <div class="law-strip" style="max-width:640px;">
+      <b>💡 Dua yang Paling Sering Dipakai:</b> \(a^m \cdot a^n = a^{m+n}\) dan \(a^m \div a^n = a^{m-n}\) — cuma berlaku kalau basisnya sama. Tabel lengkap 8 sifat (rumus, contoh, dan jebakan yang sering kejadian) ada di <b>materi PDF pelengkap</b> di atas.
     </div>
   </div>
 </section>
 
-<section id="bentuk-akar" class="notebook-bg" data-nav="Akar">
+<section id="bentuk-akar" class="notebook-bg tight" data-nav="Akar">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">03 · Sepupu Dekat Eksponen</div>
@@ -83,28 +78,8 @@
       <p>Ingat sifat ke-8 tadi? <b style="color:var(--heading);">Bentuk akar dan pangkat pecahan itu dua wajah dari hal yang sama</b>. √a itu sama dengan a<sup>1/2</sup>, ³√a sama dengan a<sup>1/3</sup>, dan seterusnya.</p>
     </div>
 
-    <div class="two-col">
-      <div class="jenis-box">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
-          <span class="oc-icon" style="background:var(--blue-soft);">➕</span>
-          <h3 style="font-size:1.15rem;margin:0;">Operasi Bentuk Akar</h3>
-        </div>
-        <div class="jenis-item"><b>Penjumlahan/pengurangan</b><span>Hanya bisa digabung kalau akarnya "sejenis" (sama isinya): 3√2 + 5√2 = 8√2. Beda isi, nggak bisa digabung.</span></div>
-        <div class="jenis-item"><b>Perkalian</b><span>√a · √b = √(ab). Contoh: √3 · √12 = √36 = 6.</span></div>
-        <div class="jenis-item"><b>Pembagian</b><span>√a ÷ √b = √(a/b). Contoh: √50 ÷ √2 = √25 = 5.</span></div>
-      </div>
-      <div class="jenis-box">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
-          <span class="oc-icon" style="background:var(--green-soft);">🧮</span>
-          <h3 style="font-size:1.15rem;margin:0;">Merasionalkan Penyebut</h3>
-        </div>
-        <p style="color:var(--slate);font-size:.87rem;margin:8px 0 12px;">Kalau ada akar di penyebut pecahan, kaidahnya: hilangkan akarnya dengan mengalikan pembilang &amp; penyebut dengan "sekawan"-nya.</p>
-        <div class="role-cards">
-          <div class="role-card"><span class="role-n">01</span>Bentuk 1/√a → kalikan dengan √a/√a, hasil: √a/a</div>
-          <div class="role-card"><span class="role-n">02</span>Bentuk 1/(√a+√b) → kalikan dengan sekawannya (√a-√b)/(√a-√b)</div>
-          <div class="role-card"><span class="role-n">03</span>Sekawan dari (√a+√b) adalah (√a-√b), karena (x+y)(x-y)=x²-y² akan menghilangkan akarnya</div>
-        </div>
-      </div>
+    <div class="jenis-box" style="max-width:640px;">
+      <p style="margin:0;">Akar cuma bisa dijumlah/dikurangkan kalau "sejenis" (isinya sama persis) — misalnya 3√2 + 5√2 = 8√2, tapi √2 + √3 nggak bisa disederhanakan lagi. Aturan lengkap perkalian, pembagian, dan cara merasionalkan penyebut yang mengandung akar — termasuk contoh soal tambahan tingkat lanjut — ada di <b>materi PDF pelengkap</b> bab ini.</p>
     </div>
   </div>
 </section>
@@ -182,7 +157,7 @@
   </div>
 </section>
 
-<section id="sifat-logaritma" data-nav="Sifat Log">
+<section id="sifat-logaritma" class="tight" data-nav="Sifat Log">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">07 · Aturan Main (Lagi)</div>
@@ -190,23 +165,9 @@
       <p>Pola pikirnya mirip banget sama sifat eksponen — wajar, karena memang saling berkebalikan. Begitu kamu lihat polanya, sifat-sifat ini jadi jauh lebih gampang diinget.</p>
     </div>
 
-    <div class="table-scroll">
-      <table class="compare-table">
-        <thead><tr><th>#</th><th>Sifat</th><th>Rumus</th><th>Contoh</th></tr></thead>
-        <tbody>
-          <tr><th>1</th><td>Logaritma dari 1</td><td>\({}^{a}\log 1 = 0\)</td><td>\({}^{5}\log 1 = 0\)</td></tr>
-          <tr><th>2</th><td>Logaritma basis sendiri</td><td>\({}^{a}\log a = 1\)</td><td>\({}^{7}\log 7 = 1\)</td></tr>
-          <tr><th>3</th><td>Perkalian → penjumlahan</td><td>\({}^{a}\log (x \cdot y) = {}^{a}\log x + {}^{a}\log y\)</td><td>\({}^{2}\log(4 \cdot 8) = {}^{2}\log 4 + {}^{2}\log 8 = 2+3 = 5\)</td></tr>
-          <tr><th>4</th><td>Pembagian → pengurangan</td><td>\({}^{a}\log \left(\dfrac{x}{y}\right) = {}^{a}\log x - {}^{a}\log y\)</td><td>\({}^{2}\log\left(\dfrac{32}{4}\right) = {}^{2}\log 32 - {}^{2}\log 4 = 5-2 = 3\)</td></tr>
-          <tr><th>5</th><td>Pangkat numerus</td><td>\({}^{a}\log x^n = n \cdot {}^{a}\log x\)</td><td>\({}^{2}\log 4^3 = 3 \cdot {}^{2}\log 4 = 3 \cdot 2 = 6\)</td></tr>
-          <tr><th>6</th><td>Pangkat basis</td><td>\({}^{a^m}\log x = \dfrac{1}{m} \cdot {}^{a}\log x\)</td><td>\({}^{4}\log 8 = \dfrac{1}{2} \cdot {}^{2}\log 8 = 1{,}5\)</td></tr>
-          <tr><th>7</th><td>Kebalikan basis &amp; numerus</td><td>\({}^{a}\log b = \dfrac{1}{{}^{b}\log a}\)</td><td>\({}^{2}\log 8 = \dfrac{1}{{}^{8}\log 2} = \dfrac{1}{1/3} = 3\)</td></tr>
-          <tr><th>8</th><td>Rantai (basis berbeda)</td><td>\({}^{a}\log b \cdot {}^{b}\log c = {}^{a}\log c\)</td><td>\({}^{2}\log 3 \cdot {}^{3}\log 4 = {}^{2}\log 4 = 2\)</td></tr>
-          <tr><th>9</th><td>a dipangkatkan logaritmanya sendiri</td><td>\(a^{({}^{a}\log b)} = b\)</td><td>\(2^{({}^{2}\log 5)} = 5\)</td></tr>
-        </tbody>
-      </table>
+    <div class="law-strip" style="max-width:640px;">
+      <b>💡 Contoh Cepat:</b> \({}^{2}\log 8 + {}^{2}\log 4 = {}^{2}\log 32 = 5\) — sifat penjumlahan pas dipakai kalau basisnya sama. Tabel lengkap 9 sifat &amp; pembuktiannya ada di <b>materi PDF pelengkap</b> di atas.
     </div>
-    <p class="table-hint">→ Geser ke samping untuk melihat kolom lainnya di layar kecil.</p>
   </div>
 </section>
 
@@ -222,7 +183,7 @@
   </div>
 </section>
 
-<section id="persamaan" class="notebook-bg" data-nav="Persamaan">
+<section id="persamaan" class="notebook-bg tight" data-nav="Persamaan">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">09 · Menggabungkan Semuanya</div>
@@ -243,9 +204,9 @@
       </div>
     </div>
 
-    <div class="jenis-box" style="margin-top:30px;">
+    <div class="jenis-box" style="margin-top:30px;max-width:640px;">
       <h3 style="font-size:1.1rem;">⚠️ Jangan Lupa Cek Syarat!</h3>
-      <p style="color:var(--slate);font-size:.88rem;margin-top:8px;">Untuk soal logaritma, <b>selalu cek ulang jawabanmu ke syarat numerus &gt; 0</b>. Kadang hasil hitungan aljabarnya benar, tapi kalau disubstitusi balik bikin numerusnya jadi negatif atau nol, jawaban itu harus dibuang (disebut <i>akar asing</i>).</p>
+      <p style="color:var(--slate);font-size:.88rem;margin-top:8px;">Untuk soal logaritma, <b>selalu cek ulang jawabanmu ke syarat numerus &gt; 0</b>. Kadang hasil hitungan aljabarnya benar, tapi kalau disubstitusi balik bikin numerusnya jadi negatif atau nol, jawaban itu harus dibuang (disebut <i>akar asing</i>). Contoh soal lengkap kenapa ini penting — plus contoh soal eksponen tingkat lanjut lainnya — ada di <b>materi PDF pelengkap</b> bab ini.</p>
     </div>
   </div>
 </section>
