@@ -618,15 +618,25 @@ function updateHomeHero(){
   const session = getSession();
   const homeGreeting = document.getElementById('homeGreeting');
   const homeSubtext = document.getElementById('homeSubtext');
+  const signinCta = document.getElementById('homeSigninCta');
   if(session && !hasAccess()){
     homeGreeting.textContent = `Halo, ${session.nama || session.username}! Paketmu udah habis.`;
     homeSubtext.innerHTML = `Progress belajarmu masih kesimpan — perpanjang buat lanjut. <a href="#" id="homeRenewLink" class="home-renew-link">Perpanjang paket →</a>`;
     document.getElementById('homeRenewLink').addEventListener('click', e=>{ e.preventDefault(); goToSignIn(); });
-  } else {
-    homeGreeting.textContent = session
-      ? `Halo, ${session.nama || session.username}! Mau belajar apa hari ini?`
-      : 'Mau belajar apa hari ini?';
+    signinCta.style.display = 'none';
+  } else if(session){
+    homeGreeting.textContent = `Halo, ${session.nama || session.username}! Mau belajar apa hari ini?`;
     homeSubtext.textContent = 'Rangkuman tiap bab, latihan bertingkat, dan kuis interaktif untuk bantu kamu paham lebih cepat.';
+    signinCta.style.display = 'none';
+  } else {
+    // Logged out: a subject click already redirects to sign-in (enterSubject
+    // -> goToSignIn), but nothing on the page told a first-time visitor that
+    // *before* they clicked — this CTA in the hero, the first thing anyone
+    // scans, makes it explicit instead of relying on trial-and-error.
+    homeGreeting.textContent = 'Mau belajar apa hari ini?';
+    homeSubtext.textContent = 'Rangkuman tiap bab, latihan bertingkat, dan kuis interaktif untuk bantu kamu paham lebih cepat.';
+    signinCta.style.display = '';
+    signinCta.onclick = (e)=>{ e.preventDefault(); goToSignIn(); };
   }
 }
 
