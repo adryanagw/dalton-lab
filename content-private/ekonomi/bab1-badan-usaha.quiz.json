@@ -1,97 +1,177 @@
 [
   {
     "q": "Perbedaan mendasar antara \"badan usaha\" dan \"perusahaan\" adalah…",
-    "opts": ["Badan usaha adalah tempat fisik, perusahaan adalah kesatuan hukum", "Badan usaha adalah kesatuan yuridis-ekonomis yang mencari laba, perusahaan adalah tempat/wadah fisik kegiatannya", "Keduanya adalah istilah yang persis sama", "Badan usaha selalu berbentuk PT, perusahaan berbentuk apa saja"],
+    "opts": [
+      "Badan usaha adalah tempat fisik, perusahaan adalah kesatuan hukum",
+      "Badan usaha adalah kesatuan yuridis-ekonomis yang mencari laba, perusahaan adalah tempat/wadah fisik kegiatannya",
+      "Keduanya adalah istilah yang persis sama",
+      "Badan usaha selalu berbentuk PT, perusahaan berbentuk apa saja"
+    ],
     "correct": 1,
     "explain": "Badan usaha = kesatuan hukum & ekonomi (yuridis) yang bertujuan mencari laba & memberi pelayanan. Perusahaan = wadah/tempat fisik tempat kegiatan produksi berlangsung, sebagai alat mencapai tujuan badan usaha."
   },
   {
     "q": "PT Indofood Sukses Makmur Tbk adalah badan usaha, sedangkan pabrik & merek Indofood adalah…",
-    "opts": ["Badan usaha juga", "Perusahaannya", "Koperasinya", "BUMN-nya"],
+    "opts": [
+      "Badan usaha juga",
+      "Perusahaannya",
+      "Koperasinya",
+      "BUMN-nya"
+    ],
     "correct": 1,
     "explain": "Pabrik & merek yang beroperasi (mis. Indofood, GraPARI untuk Telkom) berperan sebagai \"perusahaan\" — wadah fisik dari badan usaha induknya."
   },
   {
     "q": "Pertamina, Freeport, dan PTBA adalah contoh badan usaha di sektor…",
-    "opts": ["Agraris", "Dagang", "Ekstraktif", "Jasa"],
+    "opts": [
+      "Agraris",
+      "Dagang",
+      "Ekstraktif",
+      "Jasa"
+    ],
     "correct": 2,
     "explain": "Ketiganya mengambil/mengolah hasil alam (minyak, mineral, batu bara) secara langsung — ini ciri sektor ekstraktif."
   },
   {
     "q": "Dalam CV, sekutu pasif (komanditer) memiliki tanggung jawab yang…",
-    "opts": ["Tidak terbatas, sama seperti sekutu aktif", "Terbatas hanya pada modal yang disetorkan", "Tidak ada tanggung jawab sama sekali", "Ditanggung penuh oleh sekutu aktif"],
+    "opts": [
+      "Tidak terbatas, sama seperti sekutu aktif",
+      "Terbatas hanya pada modal yang disetorkan",
+      "Tidak ada tanggung jawab sama sekali",
+      "Ditanggung penuh oleh sekutu aktif"
+    ],
     "correct": 1,
     "explain": "Sekutu pasif (komanditer) hanya menanamkan modal dan tidak ikut mengelola usaha, sehingga tanggung jawabnya terbatas pada modal yang disetorkannya."
   },
   {
     "q": "Ciri khas Perseroan Terbatas (PT) dibanding bentuk usaha lain adalah…",
-    "opts": ["Modal berupa simpanan anggota", "Tanggung jawab pemilik tidak terbatas", "Kepemilikan berbentuk saham dan berstatus badan hukum", "Tidak boleh memiliki lebih dari satu pemilik"],
+    "opts": [
+      "Modal berupa simpanan anggota",
+      "Tanggung jawab pemilik tidak terbatas",
+      "Kepemilikan berbentuk saham dan berstatus badan hukum",
+      "Tidak boleh memiliki lebih dari satu pemilik"
+    ],
     "correct": 2,
     "explain": "PT adalah badan hukum resmi dengan kepemilikan berupa lembar saham, dan tanggung jawab pemilik terbatas pada modal yang disetor."
   },
   {
     "q": "Perbedaan utama antara Perum dan Persero dalam BUMN adalah…",
-    "opts": ["Perum modalnya 100% negara & fokus pelayanan, Persero minimal 51% negara & fokus laba", "Perum dan Persero sama-sama 100% milik negara", "Persero tidak boleh mencari laba", "Perum hanya beroperasi di luar negeri"],
+    "opts": [
+      "Perum modalnya 100% negara & fokus pelayanan, Persero minimal 51% negara & fokus laba",
+      "Perum dan Persero sama-sama 100% milik negara",
+      "Persero tidak boleh mencari laba",
+      "Perum hanya beroperasi di luar negeri"
+    ],
     "correct": 0,
     "explain": "Perum: modal 100% negara, orientasi pelayanan publik penuh. Persero: minimal 51% saham negara, berorientasi mencari laba (contoh: BNI, PLN, Pertamina, KAI)."
   },
   {
     "q": "Dasar hukum yang mengatur BUMD adalah…",
-    "opts": ["UU No. 19 Tahun 2003", "UU No. 25 Tahun 1992", "PP No. 54 Tahun 2017", "UUD 1945 Pasal 33"],
+    "opts": [
+      "UU No. 19 Tahun 2003",
+      "UU No. 25 Tahun 1992",
+      "PP No. 54 Tahun 2017",
+      "UUD 1945 Pasal 33"
+    ],
     "correct": 2,
     "explain": "BUMD diatur dalam PP No. 54 Tahun 2017, dan hanya beroperasi di wilayah otoritas pemerintah daerah masing-masing — berbeda dengan BUMN (UU No. 19/2003) yang beroperasi skala nasional."
   },
   {
     "q": "Prinsip koperasi yang menyatakan bahwa keanggotaan bersifat terbuka dan tanpa paksaan disebut prinsip…",
-    "opts": ["Mandiri", "Sukarela & Terbuka", "Demokratis", "Concern for Community"],
+    "opts": [
+      "Mandiri",
+      "Sukarela & Terbuka",
+      "Demokratis",
+      "Concern for Community"
+    ],
     "correct": 1,
     "explain": "Prinsip sukarela & terbuka berarti siapa pun boleh bergabung sebagai anggota koperasi tanpa ada paksaan dari pihak manapun."
   },
   {
     "q": "Sebuah koperasi memiliki total SHU Rp40.000.000, dialokasikan 60% untuk jasa modal. Jika total simpanan seluruh anggota Rp200.000.000 dan simpanan Bu Sari Rp10.000.000, berapa SHU jasa modal yang diterima Bu Sari?",
-    "opts": ["Rp1.000.000", "Rp1.200.000", "Rp2.000.000", "Rp2.400.000"],
+    "opts": [
+      "Rp1.000.000",
+      "Rp1.200.000",
+      "Rp2.000.000",
+      "Rp2.400.000"
+    ],
     "correct": 1,
     "explain": "SHU modal = (simpanan pribadi ÷ total simpanan) × %modal × SHU total = (10.000.000/200.000.000) × 60% × 40.000.000 = 0,05 × 0,6 × 40.000.000 = Rp1.200.000."
   },
   {
     "q": "SHU koperasi dan dividen PT sama-sama merupakan bentuk pembagian keuntungan, tapi dasar perhitungannya berbeda. Perbedaan utamanya adalah…",
-    "opts": ["SHU dibagi rata ke semua anggota, dividen berdasarkan jumlah saham", "SHU dipengaruhi simpanan & transaksi anggota (jasa modal + jasa usaha), sedangkan dividen PT murni berdasarkan jumlah saham yang dimiliki", "Keduanya dihitung dengan rumus yang sama persis", "Dividen PT wajib dibagi meski perusahaan rugi, SHU koperasi tidak"],
+    "opts": [
+      "SHU dibagi rata ke semua anggota, dividen berdasarkan jumlah saham",
+      "SHU dipengaruhi simpanan & transaksi anggota (jasa modal + jasa usaha), sedangkan dividen PT murni berdasarkan jumlah saham yang dimiliki",
+      "Keduanya dihitung dengan rumus yang sama persis",
+      "Dividen PT wajib dibagi meski perusahaan rugi, SHU koperasi tidak"
+    ],
     "correct": 1,
     "explain": "SHU koperasi punya dua komponen (jasa modal dari simpanan & jasa usaha dari transaksi), sedangkan dividen PT dibagi murni proporsional terhadap jumlah saham yang dimiliki pemegang saham — mencerminkan filosofi koperasi yang menghargai partisipasi aktif, bukan cuma besar modal."
   },
   {
     "q": "Jika seorang sekutu pasif (komanditer) dalam CV ikut turun tangan mengelola operasional usaha sehari-hari, maka…",
-    "opts": ["Statusnya tetap sekutu pasif dengan tanggung jawab tetap terbatas", "Statusnya berubah seperti sekutu aktif, sehingga tanggung jawabnya bisa jadi tidak terbatas", "CV tersebut otomatis berubah bentuk jadi PT", "Tidak ada konsekuensi apa pun karena CV bukan badan hukum"],
+    "opts": [
+      "Statusnya tetap sekutu pasif dengan tanggung jawab tetap terbatas",
+      "Statusnya berubah seperti sekutu aktif, sehingga tanggung jawabnya bisa jadi tidak terbatas",
+      "CV tersebut otomatis berubah bentuk jadi PT",
+      "Tidak ada konsekuensi apa pun karena CV bukan badan hukum"
+    ],
     "correct": 1,
     "explain": "Batasan tanggung jawab sekutu pasif berlaku selama ia benar-benar tidak ikut campur mengelola usaha. Begitu ia aktif mengurus operasional, ia dianggap bertindak seperti sekutu aktif, dan tanggung jawabnya bisa meluas jadi tidak terbatas sampai harta pribadi."
   },
   {
     "q": "Fungsi manajemen yang bertugas mengarahkan & membimbing sumber daya manusia agar melaksanakan tugasnya sesuai rencana disebut…",
-    "opts": ["Perencanaan (Planning)", "Pengorganisasian (Organizing)", "Pengarahan (Directing/Actuating)", "Pengendalian (Controlling)"],
+    "opts": [
+      "Perencanaan (Planning)",
+      "Pengorganisasian (Organizing)",
+      "Pengarahan (Directing/Actuating)",
+      "Pengendalian (Controlling)"
+    ],
     "correct": 2,
     "explain": "Pengarahan — kadang ditulis Directing, kadang Actuating tergantung sumbernya, maksudnya sama — adalah fungsi manajemen yang mengarahkan & membimbing SDM agar benar-benar menjalankan tugas sesuai rencana yang telah disusun."
   },
   {
     "q": "Tokoh yang mendefinisikan manajemen sebagai \"seni menyelesaikan pekerjaan melalui orang lain\" adalah…",
-    "opts": ["James A.F. Stoner", "Luther Gulick", "Henry Fayol", "Mary Parker Follet"],
+    "opts": [
+      "James A.F. Stoner",
+      "Luther Gulick",
+      "Henry Fayol",
+      "Mary Parker Follet"
+    ],
     "correct": 3,
     "explain": "Mary Parker Follet mendefinisikan manajemen sebagai seni (art) menyelesaikan pekerjaan melalui orang lain — menekankan aspek kepemimpinan & koordinasi manusia."
   },
   {
     "q": "Man, Money, Material, Machine, Method, dan Market (6M) berbeda dengan 4P (Product, Price, Promotion, Place) karena…",
-    "opts": ["6M dan 4P sebenarnya istilah yang sama, cuma disingkat berbeda", "6M adalah sumber daya yang dikelola manajemen secara umum, sedangkan 4P adalah strategi khusus di bidang pemasaran", "4P hanya berlaku untuk BUMN, 6M hanya untuk PT", "6M dipakai di tingkat top management, 4P di tingkat lower management"],
+    "opts": [
+      "6M dan 4P sebenarnya istilah yang sama, cuma disingkat berbeda",
+      "6M adalah sumber daya yang dikelola manajemen secara umum, sedangkan 4P adalah strategi khusus di bidang pemasaran",
+      "4P hanya berlaku untuk BUMN, 6M hanya untuk PT",
+      "6M dipakai di tingkat top management, 4P di tingkat lower management"
+    ],
     "correct": 1,
     "explain": "6M adalah unsur-unsur dasar yang dikelola manajemen di seluruh bidang (produksi, keuangan, dst), sedangkan 4P adalah kerangka strategi yang spesifik dipakai di bidang manajemen pemasaran (marketing) saja."
   },
   {
     "q": "Prinsip manajemen Fayol \"Esprit de Corps\" menekankan pentingnya…",
-    "opts": ["Pembagian kerja yang jelas", "Semangat kerja sama & kekompakan tim", "Sistem penggajian yang adil", "Rantai komando dari atas ke bawah"],
+    "opts": [
+      "Pembagian kerja yang jelas",
+      "Semangat kerja sama & kekompakan tim",
+      "Sistem penggajian yang adil",
+      "Rantai komando dari atas ke bawah"
+    ],
     "correct": 1,
     "explain": "Esprit de corps berarti semangat kerja sama / kekompakan tim — menumbuhkan rasa persatuan agar organisasi berjalan harmonis."
   },
   {
     "q": "Koperasi X membagi SHU Rp45.000.000, dengan porsi 55% untuk jasa modal. Total simpanan seluruh anggota Rp450.000.000, dan simpanan Ibu Tuti Rp45.000.000. Berapa SHU jasa modal yang diterima Ibu Tuti?",
-    "opts": ["Rp2.475.000", "Rp4.500.000", "Rp24.750.000", "Rp2.250.000"],
+    "opts": [
+      "Rp2.475.000",
+      "Rp4.500.000",
+      "Rp24.750.000",
+      "Rp2.250.000"
+    ],
     "correct": 0,
     "explain": "SHU jasa modal = (simpanan pribadi ÷ total simpanan) × % jasa modal × total SHU = (45.000.000/450.000.000) × 55% × 45.000.000 = 10% × 55% × 45.000.000 = Rp2.475.000. Rp4.500.000 keliru karena lupa mengalikan persentase jasa modal (cuma proporsi simpanan × total SHU); Rp24.750.000 keliru karena lupa mengalikan proporsi simpanan Ibu Tuti (cuma % jasa modal × total SHU); Rp2.250.000 keliru karena persentase jasa modal dibulatkan jadi 50%."
   },
@@ -127,5 +207,269 @@
     ],
     "correct": 2,
     "explain": "Mengevaluasi hasil kerja & mengecek kesesuaiannya dengan rencana/anggaran adalah ciri khas Pengendalian (Controlling). Tiga opsi lain salah pasangan: menyusun visi & program kerja itu Perencanaan (bukan Pengorganisasian), membagi seksi sesuai keahlian itu Pengorganisasian (bukan Pengarahan), dan memotivasi pengurus yang kendor semangat itu Pengarahan (bukan Perencanaan)."
+  },
+  {
+    "q": "Badan usaha yang didirikan dan dimiliki oleh satu orang, dengan tanggung jawab tidak terbatas hingga ke harta pribadi, disebut…",
+    "opts": [
+      "Firma",
+      "Perseorangan",
+      "CV",
+      "PT"
+    ],
+    "correct": 1,
+    "explain": "Perseorangan dimiliki 1 orang, modalnya pribadi, dan tanggung jawabnya tidak terbatas — harta pribadi ikut menanggung kalau usaha rugi."
+  },
+  {
+    "q": "Dari pasangan berikut, yang keduanya sudah berstatus badan hukum adalah…",
+    "opts": [
+      "Perseorangan dan Firma",
+      "Firma dan CV",
+      "PT dan Koperasi",
+      "CV dan Perseorangan"
+    ],
+    "correct": 2,
+    "explain": "Hanya PT dan Koperasi yang berstatus badan hukum resmi — Perseorangan, Firma, dan CV bukan badan hukum."
+  },
+  {
+    "q": "Modal PT (Perseroan Terbatas) terbagi dalam bentuk…",
+    "opts": [
+      "Simpanan anggota",
+      "Saham",
+      "Modal pribadi pemilik",
+      "Gabungan modal sekutu"
+    ],
+    "correct": 1,
+    "explain": "Kepemilikan PT diwujudkan dalam bentuk lembar saham — siapa yang pegang saham, dialah pemilik sebagian PT tersebut."
+  },
+  {
+    "q": "Syarat minimal jumlah anggota untuk mendirikan sebuah Koperasi (primer) adalah…",
+    "opts": [
+      "5 orang",
+      "10 orang",
+      "20 orang",
+      "50 orang"
+    ],
+    "correct": 2,
+    "explain": "Koperasi primer mensyaratkan minimal 20 anggota — beda dengan bentuk usaha lain yang bisa didirikan 1 orang (Perseorangan) atau lebih dari 1 orang (Firma, CV, PT)."
+  },
+  {
+    "q": "Pada badan usaha Firma, seluruh sekutu (anggota) memiliki tanggung jawab hukum berupa…",
+    "opts": [
+      "Terbatas pada modal yang disetor",
+      "Tidak terbatas dan bersifat tanggung renteng bersama",
+      "Tidak ada tanggung jawab karena bukan badan hukum",
+      "Terbatas hanya pada modal pribadi masing-masing"
+    ],
+    "correct": 1,
+    "explain": "Semua sekutu Firma aktif mengelola dan menanggung risiko bersama secara tidak terbatas (tanggung renteng) — beda dari CV yang membedakan sekutu aktif & pasif."
+  },
+  {
+    "q": "Dalam sebuah CV (Persekutuan Komanditer), sekutu pasif (komanditer) hanya menyetor modal berupa uang, dan tanggung jawabnya…",
+    "opts": [
+      "Tidak terbatas sampai harta pribadi",
+      "Terbatas hanya sebesar modal yang disetorkan",
+      "Sama besar dengan sekutu aktif",
+      "Tidak ada tanggung jawab sama sekali"
+    ],
+    "correct": 1,
+    "explain": "Sekutu pasif (komanditer) di CV cuma menyetor uang tanpa ikut mengelola, jadi risikonya juga dibatasi sebesar modal yang ia setorkan saja."
+  },
+  {
+    "q": "Salah satu kelebihan utama badan usaha Perseorangan dibanding PT adalah…",
+    "opts": [
+      "Modalnya jauh lebih besar",
+      "Keputusan bisa diambil dengan cepat karena tidak perlu koordinasi dengan pihak lain",
+      "Tanggung jawabnya terbatas",
+      "Lebih mudah mendapatkan kredit bank"
+    ],
+    "correct": 1,
+    "explain": "Karena dikelola sendiri oleh satu pemilik, Perseorangan bisa mengambil keputusan jauh lebih cepat dibanding PT yang butuh koordinasi pemegang saham/direksi."
+  },
+  {
+    "q": "Perbedaan utama sekutu aktif (komplementer) dan sekutu pasif (komanditer) pada CV terletak pada…",
+    "opts": [
+      "Sekutu aktif hanya menyetor uang, sekutu pasif ikut mengelola",
+      "Sekutu aktif ikut mengelola usaha dengan modal skill+uang, sekutu pasif hanya menyetor uang tanpa ikut mengelola",
+      "Keduanya punya peran dan tanggung jawab yang sama persis",
+      "Sekutu pasif justru punya tanggung jawab tidak terbatas"
+    ],
+    "correct": 1,
+    "explain": "Sekutu aktif turun tangan mengelola usaha (modalnya skill & uang), sedangkan sekutu pasif cuma menanam modal uang tanpa ikut mengelola operasional."
+  },
+  {
+    "q": "Sebuah usaha kelontong milik satu orang bangkrut dengan utang melebihi aset usahanya. Berdasarkan sifat tanggung jawab badan usaha Perseorangan, konsekuensi bagi pemiliknya adalah…",
+    "opts": [
+      "Pemilik tidak menanggung apa pun karena usaha sudah tutup",
+      "Harta pribadi pemilik ikut disita untuk melunasi utang, karena tanggung jawabnya tidak terbatas",
+      "Hanya modal awal yang hilang, harta pribadi aman",
+      "Utang otomatis dihapuskan oleh pemerintah"
+    ],
+    "correct": 1,
+    "explain": "Karena Perseorangan punya tanggung jawab tidak terbatas, kalau aset usaha tidak cukup melunasi utang, harta pribadi pemilik ikut jadi jaminan."
+  },
+  {
+    "q": "Sebuah CV memiliki 2 sekutu aktif dan 3 sekutu pasif. Jika usaha merugi besar hingga melebihi seluruh modal yang disetor, pihak yang harus menanggung kerugian sampai ke harta pribadi adalah…",
+    "opts": [
+      "Seluruh sekutu, aktif maupun pasif",
+      "Hanya sekutu pasif (komanditer)",
+      "Hanya sekutu aktif (komplementer)",
+      "Tidak ada yang menanggung karena CV bukan badan hukum"
+    ],
+    "correct": 2,
+    "explain": "Sekutu aktif punya tanggung jawab tidak terbatas (karena ikut mengelola), sedangkan sekutu pasif tanggung jawabnya tetap dibatasi sebesar modal yang disetor — jadi kerugian lebih lanjut jadi beban sekutu aktif."
+  },
+  {
+    "q": "Seorang investor ingin menanamkan modal ke sebuah usaha tapi hanya bersedia menanggung risiko sebesar modal yang ia setorkan, tanpa ikut mengelola operasional sehari-hari. Pilihan paling sesuai untuknya adalah menjadi…",
+    "opts": [
+      "Pemilik tunggal Perseorangan",
+      "Sekutu aktif di Firma",
+      "Sekutu pasif (komanditer) di CV atau pemegang saham di PT",
+      "Sekutu aktif di CV"
+    ],
+    "correct": 2,
+    "explain": "Sekutu pasif di CV dan pemegang saham di PT sama-sama menawarkan tanggung jawab terbatas sebesar modal yang disetor tanpa harus ikut mengelola langsung — cocok untuk investor pasif."
+  },
+  {
+    "q": "Mengapa PT dan Koperasi umumnya lebih mudah memperoleh kepercayaan kreditor/bank dibanding Perseorangan atau Firma?",
+    "opts": [
+      "Karena keduanya berstatus badan hukum resmi dengan tanggung jawab yang jelas terbatas dan aturan yang lebih formal",
+      "Karena keduanya tidak pernah mengalami kerugian",
+      "Karena keduanya tidak membutuhkan modal sama sekali",
+      "Karena keduanya otomatis dikelola langsung oleh pemerintah"
+    ],
+    "correct": 0,
+    "explain": "Status badan hukum membuat PT dan Koperasi punya kejelasan hukum, struktur, dan pertanggungjawaban yang lebih formal — ini yang bikin kreditor lebih percaya dibanding badan usaha yang belum berbadan hukum."
+  },
+  {
+    "q": "Sisa Hasil Usaha (SHU) koperasi adalah…",
+    "opts": [
+      "Gaji tetap yang diterima pengurus koperasi tiap bulan",
+      "Selisih pendapatan koperasi dikurangi seluruh biaya & kewajiban dalam satu tahun buku, yang dibagikan ke anggota",
+      "Uang simpanan wajib yang harus disetor tiap anggota",
+      "Dana bantuan dari pemerintah untuk koperasi"
+    ],
+    "correct": 1,
+    "explain": "SHU adalah sisa dari pendapatan koperasi setelah dikurangi seluruh biaya operasional & kewajiban dalam satu tahun buku, dan menjadi hak anggota untuk dibagikan sesuai kontribusinya."
+  },
+  {
+    "q": "Dalam rumus pembagian SHU, komponen \"jasa modal\" dihitung berdasarkan…",
+    "opts": [
+      "Besar simpanan anggota dibanding total simpanan seluruh anggota",
+      "Besar belanja/transaksi anggota di koperasi",
+      "Lama keanggotaan seseorang di koperasi",
+      "Jabatan anggota dalam struktur organisasi"
+    ],
+    "correct": 0,
+    "explain": "Jasa modal dihitung dari proporsi simpanan pribadi anggota terhadap total simpanan seluruh anggota — makin besar tabunganmu di koperasi, makin besar bagian jasa modal yang kamu terima."
+  },
+  {
+    "q": "Siapa yang berwenang menetapkan persentase pembagian SHU antara jasa modal & jasa usaha?",
+    "opts": [
+      "Pengurus koperasi sendiri, tanpa perlu persetujuan",
+      "Rapat Anggota, sebagai forum kekuasaan tertinggi koperasi",
+      "Pemerintah pusat",
+      "Manajer operasional koperasi"
+    ],
+    "correct": 1,
+    "explain": "Rapat Anggota adalah kekuasaan tertinggi koperasi, dan berwenang menetapkan kebijakan seperti persentase pembagian SHU tiap tahunnya."
+  },
+  {
+    "q": "Koperasi \"Makmur\" mengalokasikan Rp20.000.000 untuk jasa modal. Total simpanan seluruh anggota Rp100.000.000, dan simpanan Pak Joko Rp5.000.000. Berapa SHU jasa modal yang diterima Pak Joko?",
+    "opts": [
+      "Rp500.000",
+      "Rp1.000.000",
+      "Rp2.000.000",
+      "Rp5.000.000"
+    ],
+    "correct": 1,
+    "explain": "Rasio simpanan Pak Joko = 5.000.000 / 100.000.000 = 5%. SHU jasa modal = 5% × Rp20.000.000 = Rp1.000.000."
+  },
+  {
+    "q": "Koperasi \"Sejahtera\" mengalokasikan Rp15.000.000 untuk jasa usaha. Total belanja seluruh anggota di koperasi Rp300.000.000, sedangkan Bu Rina berbelanja Rp30.000.000 sepanjang tahun. Berapa SHU jasa usaha Bu Rina?",
+    "opts": [
+      "Rp1.000.000",
+      "Rp1.500.000",
+      "Rp2.000.000",
+      "Rp3.000.000"
+    ],
+    "correct": 1,
+    "explain": "Rasio belanja Bu Rina = 30.000.000 / 300.000.000 = 10%. SHU jasa usaha = 10% × Rp15.000.000 = Rp1.500.000."
+  },
+  {
+    "q": "Koperasi \"Bahagia\" punya total SHU Rp60.000.000, dibagi 50% jasa modal & 50% jasa usaha. Total simpanan anggota Rp400.000.000, total belanja anggota Rp200.000.000. Pak Andi punya simpanan Rp20.000.000 dan belanja Rp10.000.000. Berapa total SHU yang diterima Pak Andi?",
+    "opts": [
+      "Rp1.500.000",
+      "Rp2.000.000",
+      "Rp3.000.000",
+      "Rp4.500.000"
+    ],
+    "correct": 2,
+    "explain": "Jasa modal: (20.000.000/400.000.000) × 50% × 60.000.000 = 5% × 50% × 60.000.000 = Rp1.500.000. Jasa usaha: (10.000.000/200.000.000) × 50% × 60.000.000 = 5% × 50% × 60.000.000 = Rp1.500.000. Total = Rp1.500.000 + Rp1.500.000 = Rp3.000.000."
+  },
+  {
+    "q": "Dua anggota koperasi: Bu Wati (simpanan besar, jarang belanja di koperasi) dan Pak Rudi (simpanan kecil, sering belanja di koperasi). Jika Rapat Anggota menaikkan persentase jasa usaha dan menurunkan persentase jasa modal, siapa yang diuntungkan?",
+    "opts": [
+      "Bu Wati, karena simpanannya besar",
+      "Pak Rudi, karena porsi jasa usaha yang lebih besar akan lebih menguntungkan anggota yang sering bertransaksi",
+      "Keduanya dirugikan",
+      "Tidak ada pengaruh sama sekali"
+    ],
+    "correct": 1,
+    "explain": "Menaikkan persentase jasa usaha berarti komponen berdasarkan transaksi (belanja) makin besar porsinya dari total SHU, jadi anggota yang aktif berbelanja seperti Pak Rudi diuntungkan, sementara porsi jasa modal (yang menguntungkan Bu Wati) justru mengecil."
+  },
+  {
+    "q": "Total SHU sebuah koperasi Rp25.000.000, dengan 40% dialokasikan untuk jasa modal. Dedi menerima SHU jasa modal Rp500.000 dari simpanan Rp10.000.000. Berapa perkiraan total simpanan seluruh anggota koperasi tersebut?",
+    "opts": [
+      "Rp100.000.000",
+      "Rp150.000.000",
+      "Rp200.000.000",
+      "Rp250.000.000"
+    ],
+    "correct": 2,
+    "explain": "500.000 = (10.000.000/Total) × 40% × 25.000.000 → 500.000 = (10.000.000/Total) × 10.000.000 → 10.000.000/Total = 0,05 → Total = 10.000.000/0,05 = Rp200.000.000."
+  },
+  {
+    "q": "Koperasi \"Karya Mandiri\" mencatat total SHU Rp80.000.000. Rapat Anggota menetapkan 45% untuk jasa modal, sisanya jasa usaha. Total simpanan seluruh anggota Rp500.000.000, total belanja anggota Rp250.000.000. Bu Maya punya simpanan Rp25.000.000 dan belanja Rp12.500.000. Berapa total SHU yang diterima Bu Maya?",
+    "opts": [
+      "Rp3.200.000",
+      "Rp3.600.000",
+      "Rp4.000.000",
+      "Rp4.400.000"
+    ],
+    "correct": 2,
+    "explain": "Jasa modal: (25.000.000/500.000.000) × 45% × 80.000.000 = 5% × 45% × 80.000.000 = Rp1.800.000. Jasa usaha: (12.500.000/250.000.000) × 55% × 80.000.000 = 5% × 55% × 80.000.000 = Rp2.200.000. Total = Rp1.800.000 + Rp2.200.000 = Rp4.000.000."
+  },
+  {
+    "q": "Koperasi \"Sentosa\" membagi SHU Rp36.000.000 dengan porsi 60% jasa modal : 40% jasa usaha. Total simpanan anggota Rp360.000.000, total belanja anggota Rp180.000.000. Anggota A: simpanan Rp36.000.000, belanja Rp9.000.000. Anggota B: simpanan Rp9.000.000, belanja Rp36.000.000. Siapa yang menerima total SHU lebih besar, dan berapa selisihnya?",
+    "opts": [
+      "Anggota A lebih besar, selisih Rp540.000",
+      "Anggota B lebih besar, selisih Rp540.000",
+      "Anggota A lebih besar, selisih Rp2.160.000",
+      "Sama besar"
+    ],
+    "correct": 1,
+    "explain": "Anggota A — jasa modal: (36/360)×60%×36.000.000 = 10%×60%×36.000.000 = Rp2.160.000; jasa usaha: (9/180)×40%×36.000.000 = 5%×40%×36.000.000 = Rp720.000; total = Rp2.880.000. Anggota B — jasa modal: (9/360)×60%×36.000.000 = 2,5%×60%×36.000.000 = Rp540.000; jasa usaha: (36/180)×40%×36.000.000 = 20%×40%×36.000.000 = Rp2.880.000; total = Rp3.420.000. Selisih = Rp3.420.000 − Rp2.880.000 = Rp540.000, Anggota B lebih besar karena porsi belanjanya jauh lebih dominan meski simpanannya kecil."
+  },
+  {
+    "q": "Tahun lalu, koperasi \"Untung Bersama\" menetapkan porsi jasa modal 70% dari SHU Rp50.000.000. Tahun ini porsi jasa modal diubah jadi 40% dari SHU yang besarnya sama (Rp50.000.000). Made punya simpanan tetap 10% dari total simpanan di kedua tahun. Berapa selisih SHU jasa modal yang diterima Made antara tahun lalu dan tahun ini?",
+    "opts": [
+      "Turun Rp1.000.000",
+      "Turun Rp1.500.000",
+      "Naik Rp1.500.000",
+      "Tetap sama"
+    ],
+    "correct": 1,
+    "explain": "Tahun lalu: 10% × 70% × 50.000.000 = Rp3.500.000. Tahun ini: 10% × 40% × 50.000.000 = Rp2.000.000. Selisih = Rp3.500.000 − Rp2.000.000 = turun Rp1.500.000 — menurunkan porsi jasa modal langsung mengurangi bagian SHU anggota yang mengandalkan simpanan besar."
+  },
+  {
+    "q": "Bu Sinta punya pilihan: (1) jadi pemegang saham kecil di sebuah PT, atau (2) jadi anggota aktif sebuah koperasi yang rutin ia belanjai kebutuhannya. Dari sisi cara pembagian keuntungan, pernyataan paling tepat adalah…",
+    "opts": [
+      "Sebagai pemegang saham, dividen yang diterima murni berdasarkan jumlah saham yang dimiliki; sebagai anggota koperasi, SHU yang diterima juga dipengaruhi seberapa aktif ia bertransaksi — bukan cuma simpanannya",
+      "Keduanya menerima pembagian keuntungan dengan cara yang identik",
+      "Sebagai anggota koperasi, keuntungan hanya ditentukan oleh besar simpanan, sama seperti saham di PT",
+      "Pemegang saham PT tidak pernah menerima pembagian keuntungan apa pun"
+    ],
+    "correct": 0,
+    "explain": "Dividen PT dibagi murni proporsional terhadap kepemilikan saham. SHU koperasi punya dua komponen — jasa modal (simpanan) dan jasa usaha (transaksi) — sehingga anggota yang rajin bertransaksi tetap mendapat bagian besar meski simpanannya kecil, mencerminkan filosofi koperasi yang menghargai partisipasi aktif, bukan cuma besar modal."
   }
 ]

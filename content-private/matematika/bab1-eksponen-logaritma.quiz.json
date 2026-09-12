@@ -1,74 +1,398 @@
 [
   {
     "q": "Bentuk sederhana dari 5³ × 5² ÷ 5⁴ adalah…",
-    "opts": ["5", "25", "125", "1"],
+    "opts": [
+      "5",
+      "25",
+      "125",
+      "1"
+    ],
     "correct": 0,
     "explain": "Gabungkan semua pangkat karena basisnya sama: 3+2-4 = 1. Jadi hasilnya 5¹ = 5."
   },
   {
     "q": "Nilai dari (3²)<sup>-1</sup> adalah…",
-    "opts": ["1/9", "-9", "9", "1/6"],
+    "opts": [
+      "1/9",
+      "-9",
+      "9",
+      "1/6"
+    ],
     "correct": 0,
     "explain": "(3²)<sup>-1</sup> = 3<sup>-2</sup> = 1/3² = 1/9."
   },
   {
     "q": "Bentuk akar dari 2<sup>1/2</sup> adalah…",
-    "opts": ["√2", "2", "√4", "1/2"],
+    "opts": [
+      "√2",
+      "2",
+      "√4",
+      "1/2"
+    ],
     "correct": 0,
     "explain": "a<sup>1/2</sup> = √a, jadi 2<sup>1/2</sup> = √2."
   },
   {
     "q": "Hasil dari √8 × √2 adalah…",
-    "opts": ["4", "16", "10", "√10"],
+    "opts": [
+      "4",
+      "16",
+      "10",
+      "√10"
+    ],
     "correct": 0,
     "explain": "√a · √b = √(ab). Jadi √8 × √2 = √16 = 4."
   },
   {
     "q": "Bentuk rasional (tanpa akar di penyebut) dari 1/√5 adalah…",
-    "opts": ["√5/5", "1/5", "5/√5", "√5"],
+    "opts": [
+      "√5/5",
+      "1/5",
+      "5/√5",
+      "√5"
+    ],
     "correct": 0,
     "explain": "Kalikan pembilang & penyebut dengan √5: (1/√5)×(√5/√5) = √5/5."
   },
   {
     "q": "Grafik fungsi f(x) = (1/2)ˣ selalu…",
-    "opts": ["Turun (monoton turun)", "Naik (monoton naik)", "Naik lalu turun", "Berbentuk garis lurus"],
+    "opts": [
+      "Turun (monoton turun)",
+      "Naik (monoton naik)",
+      "Naik lalu turun",
+      "Berbentuk garis lurus"
+    ],
     "correct": 0,
     "explain": "Untuk basis 0 &lt; a &lt; 1 (di sini a=1/2), grafik fungsi eksponen selalu monoton turun."
   },
   {
     "q": "Bentuk logaritma dari 5³ = 125 adalah…",
-    "opts": ["<sup>5</sup>log 125 = 3", "<sup>125</sup>log 5 = 3", "<sup>3</sup>log 125 = 5", "<sup>5</sup>log 3 = 125"],
+    "opts": [
+      "<sup>5</sup>log 125 = 3",
+      "<sup>125</sup>log 5 = 3",
+      "<sup>3</sup>log 125 = 5",
+      "<sup>5</sup>log 3 = 125"
+    ],
     "correct": 0,
     "explain": "a<sup>c</sup>=b ⟺ <sup>a</sup>log b = c. Jadi 5³=125 ⟺ <sup>5</sup>log 125 = 3."
   },
   {
     "q": "Nilai dari <sup>3</sup>log 9 + <sup>3</sup>log 3 adalah…",
-    "opts": ["3", "27", "12", "6"],
+    "opts": [
+      "3",
+      "27",
+      "12",
+      "6"
+    ],
     "correct": 0,
     "explain": "<sup>3</sup>log 9 + <sup>3</sup>log 3 = <sup>3</sup>log(9×3) = <sup>3</sup>log 27 = 3."
   },
   {
     "q": "Nilai dari <sup>2</sup>log 6 − <sup>2</sup>log 3 + <sup>2</sup>log 4 adalah…",
-    "opts": ["3", "8", "2", "24"],
+    "opts": [
+      "3",
+      "8",
+      "2",
+      "24"
+    ],
     "correct": 0,
     "explain": "<sup>2</sup>log 6 − <sup>2</sup>log 3 = <sup>2</sup>log 2 = 1, lalu 1 + <sup>2</sup>log 4 = 1 + 2 = 3."
   },
   {
     "q": "Nilai x yang memenuhi persamaan 3<sup>x+1</sup> = 27 adalah…",
-    "opts": ["2", "3", "4", "1"],
+    "opts": [
+      "2",
+      "3",
+      "4",
+      "1"
+    ],
     "correct": 0,
     "explain": "27 = 3³, samakan pangkatnya: x+1 = 3, sehingga x = 2."
   },
   {
     "q": "Nilai x yang memenuhi persamaan <sup>2</sup>log(2x−1) = 3 adalah…",
-    "opts": ["4,5", "3,5", "8", "4"],
+    "opts": [
+      "4,5",
+      "3,5",
+      "8",
+      "4"
+    ],
     "correct": 0,
     "explain": "Ubah ke bentuk eksponen: 2x−1 = 2³ = 8, sehingga x = 4,5. Syarat numerus 2x−1 &gt; 0 (8 &gt; 0) terpenuhi."
   },
   {
     "q": "Sebuah investasi tumbuh mengikuti rumus M = 2.000.000 × (1,1)ᵗ, dengan t dalam tahun. Nilai investasi setelah 2 tahun adalah…",
-    "opts": ["Rp2.420.000", "Rp2.200.000", "Rp2.440.000", "Rp2.000.000"],
+    "opts": [
+      "Rp2.420.000",
+      "Rp2.200.000",
+      "Rp2.440.000",
+      "Rp2.000.000"
+    ],
     "correct": 0,
     "explain": "M = 2.000.000 × (1,1)² = 2.000.000 × 1,21 = Rp2.420.000."
+  },
+  {
+    "q": "Hasil dari 2<sup>3</sup> × 2<sup>4</sup> adalah…",
+    "opts": [
+      "2<sup>7</sup>",
+      "2<sup>12</sup>",
+      "4<sup>7</sup>",
+      "2<sup>1</sup>"
+    ],
+    "correct": 0,
+    "explain": "Sifat perkalian basis sama: a<sup>m</sup>·a<sup>n</sup>=a<sup>m+n</sup>. Jadi 2<sup>3</sup>×2<sup>4</sup>=2<sup>3+4</sup>=2<sup>7</sup>."
+  },
+  {
+    "q": "Nilai dari 5<sup>0</sup> + 3<sup>0</sup> adalah…",
+    "opts": [
+      "0",
+      "1",
+      "2",
+      "8"
+    ],
+    "correct": 2,
+    "explain": "Bilangan bukan nol yang dipangkatkan nol selalu bernilai 1. Jadi 5<sup>0</sup>+3<sup>0</sup> = 1+1 = 2."
+  },
+  {
+    "q": "Bentuk sederhana dari 4<sup>-2</sup> adalah…",
+    "opts": [
+      "-16",
+      "-8",
+      "1/16",
+      "16"
+    ],
+    "correct": 2,
+    "explain": "Pangkat negatif: a<sup>-n</sup>=1/a<sup>n</sup>. Jadi 4<sup>-2</sup>=1/4²=1/16 — hasilnya pecahan positif, bukan negatif."
+  },
+  {
+    "q": "Hasil dari 9<sup>1/2</sup> adalah…",
+    "opts": [
+      "3",
+      "4,5",
+      "81",
+      "1/3"
+    ],
+    "correct": 0,
+    "explain": "Pangkat pecahan a<sup>1/n</sup> sama dengan akar pangkat n dari a. Jadi 9<sup>1/2</sup>=√9=3."
+  },
+  {
+    "q": "Bentuk sederhana dari (2<sup>3</sup>)<sup>2</sup> ÷ 2<sup>4</sup> adalah…",
+    "opts": [
+      "4",
+      "2",
+      "8",
+      "16"
+    ],
+    "correct": 0,
+    "explain": "(2<sup>3</sup>)<sup>2</sup>=2<sup>6</sup> (pangkat dari pangkat), lalu 2<sup>6</sup>÷2<sup>4</sup>=2<sup>2</sup>=4."
+  },
+  {
+    "q": "Nilai dari (2 × 3)<sup>2</sup> ÷ 3<sup>2</sup> adalah…",
+    "opts": [
+      "4",
+      "6",
+      "36",
+      "9"
+    ],
+    "correct": 0,
+    "explain": "(2×3)<sup>2</sup>=2<sup>2</sup>·3<sup>2</sup> (pangkat dari perkalian). Dibagi 3<sup>2</sup>, yang tersisa 2<sup>2</sup>=4."
+  },
+  {
+    "q": "Bentuk sederhana dari x<sup>5</sup> · x<sup>-2</sup> ÷ x (untuk x ≠ 0) adalah…",
+    "opts": [
+      "x²",
+      "x⁶",
+      "x⁸",
+      "x<sup>-8</sup>"
+    ],
+    "correct": 0,
+    "explain": "Gabungkan semua pangkat: 5 + (-2) - 1 = 2. Jadi hasilnya x²."
+  },
+  {
+    "q": "Nilai dari 8<sup>2/3</sup> adalah…",
+    "opts": [
+      "4",
+      "6",
+      "64",
+      "2"
+    ],
+    "correct": 0,
+    "explain": "8<sup>2/3</sup> = (³√8)² = 2² = 4."
+  },
+  {
+    "q": "Jika 3<sup>x</sup> = 81, maka nilai dari 3<sup>x-2</sup> adalah…",
+    "opts": [
+      "9",
+      "27",
+      "3",
+      "1"
+    ],
+    "correct": 0,
+    "explain": "81 = 3⁴, jadi x = 4. Maka 3<sup>x-2</sup> = 3² = 9. (Cara cepat: 3<sup>x-2</sup> = 3<sup>x</sup> ÷ 3² = 81 ÷ 9 = 9.)"
+  },
+  {
+    "q": "Sejenis bakteri membelah menjadi 2 kali lipat setiap 3 jam. Jika mula-mula ada 5 bakteri, banyak bakteri setelah 12 jam adalah…",
+    "opts": [
+      "80",
+      "40",
+      "160",
+      "20"
+    ],
+    "correct": 0,
+    "explain": "Banyak periode pembelahan = 12 ÷ 3 = 4 kali. Populasi akhir = 5 × 2⁴ = 5 × 16 = 80 bakteri."
+  },
+  {
+    "q": "Jika 2<sup>a</sup> = 5, maka nilai dari 4<sup>a</sup> adalah…",
+    "opts": [
+      "25",
+      "10",
+      "20",
+      "625"
+    ],
+    "correct": 0,
+    "explain": "4 = 2², sehingga 4<sup>a</sup> = (2²)<sup>a</sup> = (2<sup>a</sup>)² = 5² = 25."
+  },
+  {
+    "q": "Nilai x yang memenuhi persamaan 2<sup>2x-1</sup> = 32 adalah…",
+    "opts": [
+      "3",
+      "2,5",
+      "5",
+      "2"
+    ],
+    "correct": 0,
+    "explain": "32 = 2⁵, maka samakan pangkatnya: 2x - 1 = 5 → 2x = 6 → x = 3."
+  },
+  {
+    "q": "Nilai dari <sup>3</sup>log 27 adalah…",
+    "opts": [
+      "3",
+      "9",
+      "27",
+      "1"
+    ],
+    "correct": 0,
+    "explain": "Karena 3³ = 27, maka menurut definisi logaritma <sup>3</sup>log 27 = 3."
+  },
+  {
+    "q": "Nilai dari <sup>5</sup>log 1 adalah…",
+    "opts": [
+      "0",
+      "1",
+      "5",
+      "-1"
+    ],
+    "correct": 0,
+    "explain": "Sifat logaritma: <sup>a</sup>log 1 = 0 untuk basis a berapa pun (a &gt; 0, a ≠ 1)."
+  },
+  {
+    "q": "Nilai dari <sup>7</sup>log 7 adalah…",
+    "opts": [
+      "1",
+      "0",
+      "7",
+      "49"
+    ],
+    "correct": 0,
+    "explain": "Sifat logaritma: <sup>a</sup>log a = 1 — logaritma dari basis itu sendiri selalu 1."
+  },
+  {
+    "q": "Bentuk eksponen dari <sup>2</sup>log 16 = 4 adalah…",
+    "opts": [
+      "2⁴ = 16",
+      "4² = 16",
+      "16² = 4",
+      "2¹⁶ = 4"
+    ],
+    "correct": 0,
+    "explain": "Definisi: <sup>a</sup>log b = c ⟺ a<sup>c</sup> = b. Jadi <sup>2</sup>log 16 = 4 ⟺ 2⁴ = 16."
+  },
+  {
+    "q": "Nilai dari <sup>2</sup>log 8 + <sup>2</sup>log 4 adalah…",
+    "opts": [
+      "5",
+      "32",
+      "12",
+      "2"
+    ],
+    "correct": 0,
+    "explain": "Sifat penjumlahan: <sup>2</sup>log 8 + <sup>2</sup>log 4 = <sup>2</sup>log(8×4) = <sup>2</sup>log 32 = 5 (karena 2⁵=32)."
+  },
+  {
+    "q": "Nilai dari <sup>2</sup>log 48 − <sup>2</sup>log 3 adalah…",
+    "opts": [
+      "4",
+      "16",
+      "45",
+      "144"
+    ],
+    "correct": 0,
+    "explain": "Sifat pengurangan: <sup>2</sup>log 48 − <sup>2</sup>log 3 = <sup>2</sup>log(48÷3) = <sup>2</sup>log 16 = 4."
+  },
+  {
+    "q": "Nilai dari <sup>2</sup>log 8³ adalah…",
+    "opts": [
+      "9",
+      "24",
+      "512",
+      "6"
+    ],
+    "correct": 0,
+    "explain": "Sifat pangkat numerus: <sup>a</sup>log x<sup>n</sup> = n·<sup>a</sup>log x. Jadi <sup>2</sup>log 8³ = 3·<sup>2</sup>log 8 = 3×3 = 9."
+  },
+  {
+    "q": "Nilai dari <sup>3</sup>log 5 · <sup>5</sup>log 9 adalah…",
+    "opts": [
+      "2",
+      "3",
+      "5",
+      "9"
+    ],
+    "correct": 0,
+    "explain": "Sifat rantai: <sup>a</sup>log b · <sup>b</sup>log c = <sup>a</sup>log c. Jadi <sup>3</sup>log 5 · <sup>5</sup>log 9 = <sup>3</sup>log 9 = 2 (karena 3²=9)."
+  },
+  {
+    "q": "Diketahui <sup>2</sup>log 3 = p. Nilai dari <sup>2</sup>log 12 dinyatakan dalam p adalah…",
+    "opts": [
+      "2 + p",
+      "p + 1",
+      "2p",
+      "p²"
+    ],
+    "correct": 0,
+    "explain": "12 = 2² × 3, sehingga <sup>2</sup>log 12 = <sup>2</sup>log 2² + <sup>2</sup>log 3 = 2 + p."
+  },
+  {
+    "q": "Nilai x yang memenuhi persamaan <sup>2</sup>log(x+3) = 4 adalah…",
+    "opts": [
+      "13",
+      "16",
+      "4",
+      "19"
+    ],
+    "correct": 0,
+    "explain": "Ubah ke bentuk eksponen: x+3 = 2⁴ = 16, sehingga x = 13. Syarat numerus x+3 &gt; 0 (16 &gt; 0) terpenuhi."
+  },
+  {
+    "q": "Jika <sup>2</sup>log 5 = a dan <sup>2</sup>log 3 = b, maka nilai dari <sup>2</sup>log 45 adalah…",
+    "opts": [
+      "2b + a",
+      "a + b",
+      "2a + b",
+      "ab"
+    ],
+    "correct": 0,
+    "explain": "45 = 3² × 5, sehingga <sup>2</sup>log 45 = <sup>2</sup>log 3² + <sup>2</sup>log 5 = 2b + a."
+  },
+  {
+    "q": "Tingkat keasaman dihitung dengan pH = −log[H⁺]. Jika konsentrasi ion H⁺ suatu larutan adalah 10<sup>-5</sup> mol/L, maka pH larutan tersebut adalah…",
+    "opts": [
+      "5",
+      "-5",
+      "10",
+      "1/5"
+    ],
+    "correct": 0,
+    "explain": "log tanpa basis artinya basis 10. pH = −log(10<sup>-5</sup>) = −(−5) = 5."
   }
 ]

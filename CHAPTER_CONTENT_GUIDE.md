@@ -8,18 +8,18 @@ A distilled, Dalton-Lab-specific operating guide for the agent that writes chapt
 
 ## The one thing that's different from the uploaded docs
 
-Those docs assume a presentation-independent JSON schema rendered by a generic engine. **This project doesn't do that, and this pass doesn't change it.** Chapters are hand-authored HTML files (`content-private/{subject}/babN-slug.html`) plus sibling JSON files for quiz and exercises, served only through authenticated `/api/content` calls — never as static files. The web-shell (`public/`, `api/*`) is built and maintained in a separate session; this guide and the local chapter-builder agent never touch it.
+Those docs assume a presentation-independent JSON schema rendered by a generic engine. **This project doesn't do that, and this pass doesn't change it.** Chapters are hand-authored HTML files (`content-private/{subject}/babN-slug.html`) plus a sibling quiz JSON file, served only through authenticated `/api/content` calls — never as static files. The web-shell (`public/`, `api/*`) is built and maintained in a separate session; this guide and the local chapter-builder agent never touch it.
 
 **What's new:** every chapter also gets a PDF companion, generated from the same content spec. See §5 — its scope has grown since this guide was first written (originally "extra formulas/worked examples", now "the sole home for entire non-interactive reference content"), so read §5 in full even if you've built a PDF companion before.
 
-**Division of labor, precisely:** the chapter-builder agent owns the HTML lesson, quiz/exercise JSON, the PDF spec (`.pdf-spec.md`), and the *filled* PDF page source (`.pdf-pages.html`) — all of it is chapter *content*. Turning that `.pdf-pages.html` into the actual served PNG page images (headless-Chromium rendering, overflow-checking, committing the images) is a mechanical, deterministic step with no content judgment left in it — it can be done by either side, but if the chapter-builder agent has the means to run a headless-Chromium screenshot script, doing it itself (see §5) avoids a round-trip. What the chapter-builder never does is touch the *serving/display* layer — `api/pdf-content.js`, `initPdfViewers()`/watermark logic in `app.js`, `.pdf-viewer*` CSS — that's web-shell, already built, and stable.
+**Division of labor, precisely:** the chapter-builder agent owns the HTML lesson, quiz JSON, the PDF spec (`.pdf-spec.md`), and the *filled* PDF page source (`.pdf-pages.html`) — all of it is chapter *content*. Turning that `.pdf-pages.html` into the actual served PNG page images (headless-Chromium rendering, overflow-checking, committing the images) is a mechanical, deterministic step with no content judgment left in it — it can be done by either side, but if the chapter-builder agent has the means to run a headless-Chromium screenshot script, doing it itself (see §5) avoids a round-trip. What the chapter-builder never does is touch the *serving/display* layer — `api/pdf-content.js`, `initPdfViewers()`/watermark logic in `app.js`, `.pdf-viewer*` CSS — that's web-shell, already built, and stable.
 
 ## 1. Audience and voice
 
 Indonesian SMA (senior high) students prepping for UTBK/Ujian Sekolah. Not curious hobbyists — they came for a specific test.
 
 - **Language:** casual, informal Bahasa Indonesia ("santai, nggak kaku"), same register as the existing chapters (`bab1-eksponen-logaritma.html`, `bab1-sel.html`, `bab1-badan-usaha.html` are the voice reference — read one before writing).
-- **Depth over breadth.** Advanced-level leveled exercises per bab is the actual differentiator (see PRODUCT.md) — don't write a shallow summary chapter to cover more ground faster.
+- **Depth over breadth.** One deep, comprehensive practice-question bank per bab is the actual differentiator (see PRODUCT.md) — don't write a shallow summary chapter to cover more ground faster.
 - Never invent statistics, testimonials, or citations. If a claim needs a source, say so instead of fabricating one.
 - **Use an analogy once, not as a running metaphor.** One orienting analogy per section (e.g. "sel = kota kecil" as a one-time framing sentence) helps intuition. Carrying it literally into every following sentence doesn't — a real bug from this session: a membrane section said "pagar" instead of "membran," "pos satpam" instead of "protein," "penghuni pagar," "papan pengumuman," "KTP sel," "udara & jalanan kota," in nearly every card, which read as over-styled rather than informative and forced the reader to keep translating metaphor back to the real term. State the analogy once for intuition, then describe the actual structure/process directly using its real name.
 
@@ -33,8 +33,8 @@ Not a rigid template — sections below are typical, not mandatory. Skip what a 
 3. Formal definition / formula      (LaTeX where applicable — see §4)
 4. Worked example(s)                (progressing basic → exam-style)
 5. Common mistakes / misconceptions (❌ salah paham → ✅ paham yang benar)
-6. Leveled exercises                (basic / intermediate / advanced — see §3)
-7. Quiz                             (single set, mixed difficulty)
+6. Quiz                             (one flat set per chapter — see §3/§4;
+                                      no separate leveled-exercise sections)
 ```
 
 For every topic, before writing prose, sketch a short spec — this is the planning step, keep it to a few lines, not a document:
@@ -60,14 +60,11 @@ Ground every new chapter in these exact patterns (see `content-private/matematik
 - **Cards:** reuse existing card classes for content boxes (`.organel-card`, `.jenis-box`, `.law-strip`, `.role-cards`, `.compare-table` for tabular comparisons). Don't invent a new card class per chapter — check what's already used across the three existing chapters first.
 - **Accordion** (for FAQ-style or collapsible detail): `[data-accordion]` wrapper > `.acc-item` > `.acc-q` + `.acc-a`.
 - **Tab-switch** (for toggling between representations, e.g. two solution methods): `[data-tabswitch][data-tabswitch-group="name"]` wrapper, trigger buttons `[data-tab]`, panels `[data-tabpanel][data-tabswitch-group="name"]`.
-- **Leveled exercises mount point:**
+- **Quiz mount point — exactly one per chapter now:**
   ```html
-  <div class="exercise-root"
-       data-exercise-subject="matematika"
-       data-exercise-bab="bab1-eksponen-logaritma"
-       data-exercise-topic="eksponen"></div>
+  <div class="quiz-root" data-quiz-subject="matematika" data-quiz-bab="bab1-eksponen-logaritma"></div>
   ```
-  One mount point per exercise topic; the JS engine loads the matching `.{topic}.exercise.json` file.
+  There used to be a separate chapter quiz plus one `exercise-root`/`.{topic}.exercise.json` pair per topic (basic/intermediate/advanced tiers) — that split was retired in favor of one flat, mixed-difficulty `.quiz.json` per chapter covering everything (foundational through exam-style, no difficulty labels). Do not add `exercise-root` mounts or `.exercise.json` files to a new chapter — the engine that read them (`initExercises`/`/api/exercise`) no longer exists. Every quiz automatically gets a "Unduh Soal (PDF)" button (`downloadQuizAsPdf()` in `app.js`) that generates a blank practice worksheet + answer key live from the quiz JSON — no extra markup needed for that, it's baked into the quiz mount.
 
 **Do not invent new generic engines.** If a chapter seems to need one (e.g. a new interaction type), that's a web-shell change — flag it for the other session rather than hacking it into chapter HTML.
 
@@ -93,9 +90,9 @@ Ground every new chapter in these exact patterns (see `content-private/matematik
 
 `.model3d-frame`/`.model3d-credit` are existing global CSS (aspect-ratio 4:3 responsive frame + small attribution line) — reuse them, don't reinvent. The credit line with working links back to the model page, creator profile, and Sketchfab is not optional — it's the attribution the model's CC-BY license requires. Place the embed physically next to the HTML content it illustrates (after the matching diagram, or after the interactive element it complements), not bundled all together at the end of a section.
 
-## 4. Quiz and exercise JSON — exact schema
+## 4. Quiz JSON — exact schema
 
-**Quiz** (`babN-slug.quiz.json`) — flat array, single difficulty, covers the whole chapter:
+**Quiz** (`babN-slug.quiz.json`) — the ONLY interactive question format now, flat array, mixed difficulty (foundational through exam-style, no tier labels), covers the whole chapter — this replaces what used to be a separate chapter quiz plus per-topic leveled-exercise files (`.{topic}.exercise.json`, basic/intermediate/advanced) and, for one chapter, a separate practice-question-bank book; all of that is now one file:
 
 ```json
 [
@@ -108,24 +105,13 @@ Ground every new chapter in these exact patterns (see `content-private/matematik
 ]
 ```
 
-**Leveled exercise** (`babN-slug.{topic}.exercise.json`) — one file per topic within the chapter, three tiers, same question shape as above nested under each:
-
-```json
-{
-  "topic": "Eksponen",
-  "basic": [ { "q": "...", "opts": [...], "correct": 0, "explain": "..." } ],
-  "intermediate": [ ... ],
-  "advanced": [ ... ]
-}
-```
-
-Existing chapters use ~4 questions per tier as a rough baseline, not a hard rule. `correct` is a 0-based index into `opts`. `explain` should teach the reasoning, not just restate the answer — a student getting it wrong should understand why after reading it.
+`opts` doesn't have to be exactly 4 — the quiz engine renders up to 5 (A-E); use whatever option count the source material actually has, don't pad or trim to fit. `correct` is a 0-based index into `opts`. `explain` should teach the reasoning, not just restate the answer — a student getting it wrong should understand why after reading it. Aim for real depth here (see PRODUCT.md) — existing merged chapters run 24-63 questions; don't write a thin 10-question set just because the schema allows it.
 
 ## 5. PDF companion — what actually goes in it
 
 **This section supersedes its original, narrower framing.** The PDF is not an export of the HTML page, and it is *not* merely "extra" formulas/worked examples anymore either. Established practice across Ekonomi bab1 and Biologi bab1 (both restructured this way, at explicit user direction, after the chapter was first built the old/narrower way and needed a follow-up pass): **entire static, non-interactive reference content — dense card grids, comparison tables, itemized lists, historical/biographical narrative, anything with no click/toggle/filter behavior — gets removed from the HTML lesson *entirely* and rewritten in full, elaborated prose in the PDF.** Not terse labels or a "see PDF for details" stub: PDF pages must stand alone without the HTML page's visual context, so a table that was two words per cell in HTML becomes a real explanatory paragraph in the PDF.
 
-What **stays** in HTML: genuinely interactive elements (toggle filters, click-to-expand/accordion, tab-switch, calculators, the leveled-exercise/quiz engines), diagrams and 3D embeds together with their direct explanatory paragraph, and short foundational/definitional content a reader needs to follow the rest of the chapter. Everything else — if it's just sitting there to be read, not explored — is a PDF candidate. When restructuring an existing chapter, go section by section and ask "does clicking/toggling/filtering anything on this do something, or is it just static text/cards/a table?" — the latter moves.
+What **stays** in HTML: genuinely interactive elements (toggle filters, click-to-expand/accordion, tab-switch, calculators, the quiz engine), diagrams and 3D embeds together with their direct explanatory paragraph, and short foundational/definitional content a reader needs to follow the rest of the chapter. Everything else — if it's just sitting there to be read, not explored — is a PDF candidate. When restructuring an existing chapter, go section by section and ask "does clicking/toggling/filtering anything on this do something, or is it just static text/cards/a table?" — the latter moves.
 
 Read-only, rendered as images (not a native embed), with a student-identity watermark drawn live by the viewer.
 
@@ -168,7 +154,7 @@ Formulas (with every variable defined, units stated)
 1-2 additional worked examples beyond what's on the HTML page
   (exam-style, multi-step — the PDF is where the harder ones live)
 Common mistakes
-A short additional practice set (can overlap with the exercise JSON, doesn't have to)
+A short additional practice set (can overlap with the quiz JSON, doesn't have to)
 Everything static/non-interactive that used to be a card grid, table, or
   list in the HTML lesson — reproduced in full, not summarized
 ```
@@ -215,8 +201,11 @@ If a topic has nothing formula/advanced-example/reference-table-worthy at all, i
 [ ] Worked examples progress in difficulty, not just repeat the same step
 [ ] At least one common-mistake/misconception called out where students
     actually get tripped up (not a generic "be careful")
-[ ] Quiz + exercise JSON validated against the exact schema in §4
-    (correct is a valid 0-based index, HTML entities render correctly)
+[ ] Quiz JSON validated against the exact schema in §4 (correct is a
+    valid 0-based index into that question's actual opts length, HTML
+    entities render correctly) — one file, no exercise-root/.exercise.json
+[ ] Quiz has real depth (see §4) — not a thin set just because the
+    schema technically allows it
 [ ] New HTML reuses existing section/card/accordion/tabswitch conventions —
     no new one-off classes without a reason
 [ ] Static/non-interactive HTML content (card grids, tables, lists with no

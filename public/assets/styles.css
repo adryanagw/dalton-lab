@@ -1144,32 +1144,15 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 .submit-status.pending{color:#c3ccd9;}
 .submit-status.err{color:#f0a597;}
 
-/* Quiz gate */
-.quiz-gate{
-  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);
-  border-radius:18px;padding:32px;max-width:560px;margin:0 auto;
+.quiz-download-btn{
+  display:flex;align-items:center;gap:8px;margin:0 0 18px;
+  font:600 .82rem/1 'Space Grotesk',sans-serif;color:#c3ccd9;
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);
+  border-radius:20px;padding:8px 16px;cursor:pointer;transition:background .15s,opacity .15s;
 }
-.gate-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:6px;}
-.gate-hint{color:#9fb0c2;font-size:.82rem;margin:10px 0 20px;}
-.gate-hint.warn{color:var(--orange);}
-@media(max-width:560px){.gate-row{grid-template-columns:1fr;}}
-
-/* === 3-level exercises ("Latihan Bertingkat") === */
-.exercise-root{max-width:640px;margin:0 auto;}
-.level-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 4px;}
-.level-tab{
-  flex:1;min-width:120px;font-family:'Space Grotesk';font-weight:600;font-size:.84rem;
-  padding:12px 14px;border-radius:12px;cursor:pointer;text-align:center;
-  background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.16);color:#c3ccd9;
-  transition:all .15s;
-}
-.level-tab:hover{border-color:var(--orange);}
-.level-tab.active{background:var(--orange);border-color:var(--orange);color:#241505;}
-.level-tab .level-badge{display:block;font-size:.68rem;font-weight:500;opacity:.85;margin-top:3px;}
-.level-hint{margin-top:6px !important;}
-.ex-result-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px;}
-.btn-outline-light{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.4);}
-.btn-outline-light:hover{background:rgba(255,255,255,0.1);border-color:#fff;transform:translateY(-2px);}
+.quiz-download-btn:hover:not(:disabled){background:rgba(255,255,255,0.12);color:#fff;}
+.quiz-download-btn:disabled{opacity:.6;cursor:default;}
+.quiz-download-btn .icon{width:16px;height:16px;}
 
 /* === Footer === */
 .site-footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.1);padding:36px 0;}

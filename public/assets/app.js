@@ -2,19 +2,28 @@
    DALTON LAB — app.js
    Shared shell logic: theme, auth, routing, WhatsApp links, and a small
    set of GENERIC interactive engines (accordion, tab-switch, filter,
-   click-detail, quiz, leveled exercises) that any chapter content file
-   can plug into just by using the right data-attributes. No
-   chapter-specific JS needed.
+   click-detail, quiz) that any chapter content file can plug into just
+   by using the right data-attributes. No chapter-specific JS needed.
 
-   Chapter HTML, quiz JSON, and exercise JSON are NOT static files — they
-   live in /content-private (outside the public/ output dir Vercel
-   serves) and are only ever returned by the /api/content, /api/quiz,
-   and /api/exercise serverless functions, which require a valid,
-   unexpired session token (see /api/_auth.js). Login, orders, progress,
-   and quiz/exercise results all go through /api/* functions backed by
-   Postgres (Neon) — see /api/_db.js and db/schema.sql. Google Sheets /
-   Apps Script (gas/Code.gs) is no longer used anywhere; that file is
-   kept only as historical reference.
+   One quiz per chapter, not several: what used to be a chapter quiz plus
+   separate per-topic leveled-exercise sets (basic/intermediate/advanced)
+   and, for one chapter, a separate practice-question-bank book, are all
+   merged into a single flat .quiz.json per chapter now (see
+   CHAPTER_CONTENT_GUIDE.md) -- one quiz-root per chapter, no difficulty
+   labels. The old 3-tier exercise engine (exercise-root/.exercise.json/
+   /api/exercise) was removed entirely rather than left as unused
+   capability. Every quiz can be downloaded as a blank practice worksheet
+   PDF, generated client-side from the same quiz JSON (see
+   downloadQuizAsPdf()) -- not a screenshot of anything pre-rendered.
+
+   Chapter HTML and quiz JSON are NOT static files — they live in
+   /content-private (outside the public/ output dir Vercel serves) and
+   are only ever returned by the /api/content and /api/quiz serverless
+   functions, which require a valid, unexpired session token (see
+   /api/_auth.js). Login, orders, progress, and quiz results all go
+   through /api/* functions backed by Postgres (Neon) — see /api/_db.js
+   and db/schema.sql. Google Sheets / Apps Script (gas/Code.gs) is no
+   longer used anywhere; that file is kept only as historical reference.
    ===================================================================== */
 
 /* =====================================================================
@@ -45,7 +54,8 @@ const ICON_PATHS = {
   'arrow-right': '<path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>',
   'arrow-left': '<path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/>',
   sparkle: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2 2M16 16l2 2M6 18l2-2M16 8l2-2"/>',
-  'log-in': '<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/>'
+  'log-in': '<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/>',
+  download: '<path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/>'
 };
 function icon(name, extraClass){
   const path = ICON_PATHS[name];
@@ -1235,6 +1245,7 @@ function initQuizzes(root){
             <span data-quiz-score class="mono">Skor: 0</span>
           </div>
         </div>
+        <button type="button" class="quiz-download-btn" data-quiz-download>${icon('download')}<span>Unduh Soal (PDF)</span></button>
         <div data-quiz-question-area></div>
       </div>
 
@@ -1246,6 +1257,9 @@ function initQuizzes(root){
         <button class="btn btn-primary" data-quiz-restart>Ulangi Kuis</button>
       </div>
     `;
+
+    const downloadBtn = mount.querySelector('[data-quiz-download]');
+    downloadBtn.addEventListener('click', ()=> downloadQuizAsPdf(quiz, subject, bab, downloadBtn));
 
     const box = mount.querySelector('[data-quiz-box]');
     const resultEl = mount.querySelector('[data-quiz-result]');
@@ -1271,7 +1285,7 @@ function initQuizzes(root){
       scoreEl.textContent = `Skor: ${score}`;
       progressFill.style.transform = `scaleX(${currentQ/quiz.length})`;
 
-      const letters = ['A','B','C','D'];
+      const letters = ['A','B','C','D','E'];
       questionArea.innerHTML = `
         <div class="q-title">${item.q}</div>
         <div class="q-options">
@@ -1340,222 +1354,165 @@ function initQuizzes(root){
   });
 }
 
-/* =====================================================================
-   GENERIC 3-LEVEL EXERCISE ENGINE ("Latihan Bertingkat")
-   Any topic within a chapter just needs:
-   <div class="exercise-root" data-exercise-subject="…" data-exercise-bab="…"
-        data-exercise-topic="…"></div>
-   (topic is the filename segment: {bab}.{topic}.exercise.json)
+/* Per-subject accent, matching public/assets/pdf-template/page-template.html
+   (kimia/fisika not decided yet there either — fall back to navy). */
+const QUIZ_PDF_ACCENTS = { ekonomi:'#ee7d31', biologi:'#3fa15c', matematika:'#2f7edb' };
 
-   The JSON shape is: { "topic": "Nama Topik", "basic":[...], "intermediate":[...], "advanced":[...] }
-   — each level array uses the exact same question shape as quiz JSON
-   ({ q, opts, correct, explain }).
+/** Generates a blank practice-worksheet PDF from the already-fetched quiz
+ *  array (all questions + options, no answers), with a Kunci Jawaban
+ *  section on the final page(s) — built live with jsPDF, not a screenshot
+ *  of anything pre-rendered. Layout verified (no overlapping text, no
+ *  out-of-bounds runs) via pdfjs-dist text-layer inspection against real
+ *  chapter data (43 and 63-question sets, mixed 4/5-option questions)
+ *  before shipping. */
+async function downloadQuizAsPdf(quiz, subject, bab, btn){
+  if(btn.disabled) return;
+  if(!window.jspdf || !window.jspdf.jsPDF){
+    const label = btn.querySelector('span');
+    label.textContent = 'Gagal menyiapkan PDF';
+    setTimeout(()=>{ label.textContent = 'Unduh Soal (PDF)'; }, 2500);
+    return;
+  }
+  btn.disabled = true;
+  const label = btn.querySelector('span');
+  const defaultLabel = label.textContent;
+  label.textContent = 'Menyiapkan…';
 
-   Students fill the gate (name/class) ONCE, then can freely switch between
-   Dasar / Menengah / Lanjutan. Every submission is tagged with topik+level
-   (in addition to skor/total/persentase) so a future performance dashboard
-   can tell, per student per topic, which level they've cleared — this is
-   the data plumbing the "automatic performance analysis" concept depends on.
-   Reuses the same .quiz-box/.quiz-gate/.q-* visual language as the chapter
-   quiz so it needs no new CSS beyond the level-tab pills.
-   ===================================================================== */
-const EXERCISE_LEVELS = {
-  basic:        { label: 'Dasar',     hint: 'Pemanasan — konsep inti, langsung kepake.' },
-  intermediate: { label: 'Menengah',  hint: 'Butuh 2 langkah atau gabungan beberapa konsep.' },
-  advanced:     { label: 'Lanjutan',  hint: 'Soal non-rutin / cerita, mirip level olimpiade ringan.' }
-};
+  try{
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ unit:'mm', format:'a4' });
+    const accent = QUIZ_PDF_ACCENTS[subject] || '#0d1b2e';
+    const subjectData = subjectsData[subject];
+    const babData = subjectData ? subjectData.babs.find(b=>b.id===bab) : null;
+    const subjectLabel = subjectData ? subjectData.name : subject;
+    const babTitle = (babData ? babData.title : bab) || bab;
 
-function initExercises(root){
-  root.querySelectorAll('.exercise-root').forEach(async (mount)=>{
-    const subject = mount.dataset.exerciseSubject;
-    const bab = mount.dataset.exerciseBab;
-    const topic = mount.dataset.exerciseTopic;
-    if(!subject || !bab || !topic) return;
-
-    mount.innerHTML = `<p style="color:#c3ccd9;text-align:center;">Memuat latihan…</p>`;
-    const session = getSession();
-    if(!session || !session.token){
-      mount.innerHTML = `<p style="color:#f0a597;text-align:center;">${icon('alert-triangle')} Sesi kamu habis — refresh halaman & login ulang ya.</p>`;
-      return;
-    }
-    let data;
+    let logoData = null;
     try{
-      const res = await fetch(`/api/exercise?subject=${encodeURIComponent(subject)}&bab=${encodeURIComponent(bab)}&topic=${encodeURIComponent(topic)}`, {
-        headers: { 'Authorization': 'Bearer ' + session.token }
+      const res = await fetch('assets/img/logo.png');
+      const blob = await res.blob();
+      logoData = await new Promise((resolve, reject)=>{
+        const reader = new FileReader();
+        reader.onload = ()=>resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
       });
-      if(!res.ok) throw new Error('fetch failed');
-      data = await res.json();
-    }catch(err){
-      mount.innerHTML = `<p style="color:#f0a597;text-align:center;">${icon('alert-triangle')} Gagal memuat latihan. Coba refresh halaman ya.</p>`;
-      return;
+    }catch(e){ /* logo is a nice-to-have, not fetch-critical */ }
+
+    const pageW = 210, pageH = 297;
+    const marginX = 20, contentW = pageW - marginX*2;
+    const headerH = 22, footerH = 14;
+    const topY = headerH + 8;
+    const bottomLimit = pageH - footerH - 4;
+    let y = topY;
+
+    function drawHeader(){
+      doc.setFillColor(accent);
+      doc.rect(0, 0, pageW, 3, 'F');
+      if(logoData){
+        try{ doc.addImage(logoData, 'PNG', marginX, 7, 9, 9); }catch(e){}
+      }
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(12);
+      doc.setTextColor(13, 27, 46);
+      doc.text('DALTON LAB', marginX + (logoData ? 12 : 0), 13.5);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(9.5);
+      doc.setTextColor(90, 100, 112);
+      doc.text(`${subjectLabel} · ${babTitle}`, pageW - marginX, 13.5, { align:'right' });
+      doc.setDrawColor(230,230,230);
+      doc.line(marginX, headerH, pageW - marginX, headerH);
+    }
+    function drawFooter(){
+      doc.setFont('helvetica', 'italic');
+      doc.setFontSize(8);
+      doc.setTextColor(120,128,138);
+      doc.text('Dalton Lab · materi berlisensi untuk pemegang akses — dilarang disebarluaskan.', marginX, pageH - 8);
+    }
+    function newPage(){
+      drawFooter();
+      doc.addPage();
+      drawHeader();
+      y = topY;
+    }
+    function ensureSpace(h){
+      if(y + h > bottomLimit) newPage();
     }
 
-    const levelKeys = Object.keys(EXERCISE_LEVELS).filter(lv=>Array.isArray(data[lv]) && data[lv].length);
-    if(!levelKeys.length){
-      mount.innerHTML = `<p style="color:#c3ccd9;text-align:center;">Latihan untuk topik ini belum tersedia.</p>`;
-      return;
-    }
+    drawHeader();
 
-    mount.innerHTML = `
-      <div class="quiz-gate" data-ex-gate>
-        <p class="gate-hint" data-gate-hint>Pilih mau mulai dari level mana.</p>
-        <div class="level-tabs" data-level-tabs>
-          ${levelKeys.map((lv,i)=>`<button type="button" class="level-tab${i===0?' active':''}" data-level="${lv}">${EXERCISE_LEVELS[lv].label}<span class="level-badge">${data[lv].length} soal</span></button>`).join('')}
-        </div>
-        <p class="gate-hint level-hint" data-level-hint>${EXERCISE_LEVELS[levelKeys[0]].hint}</p>
-        <button class="btn btn-primary" data-ex-start>Mulai Latihan →</button>
-      </div>
-      <div data-ex-session></div>
-    `;
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(18);
+    doc.setTextColor(13,27,46);
+    const titleLines = doc.splitTextToSize(babTitle, contentW);
+    doc.text(titleLines, marginX, y + 6);
+    y += 6 + titleLines.length * 7;
+    doc.setFont('helvetica', 'italic');
+    doc.setFontSize(10.5);
+    doc.setTextColor(200,100,40);
+    doc.text(`${quiz.length} soal pilihan ganda — dijawab & dijelaskan oleh tim Dalton Lab`, marginX, y);
+    y += 10;
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(10);
+    doc.setTextColor(80,90,100);
+    const introLines = doc.splitTextToSize('Coba jawab dulu semua soal di bawah, baru cocokkan dengan Kunci Jawaban di halaman paling akhir.', contentW);
+    doc.text(introLines, marginX, y);
+    y += introLines.length * 5 + 10;
 
-    const gate = mount.querySelector('[data-ex-gate]');
-    const sessionMount = mount.querySelector('[data-ex-session]');
-    const levelHint = mount.querySelector('[data-level-hint]');
-    let activeLevel = levelKeys[0];
-    const studentName = session.nama || session.username || '';
-    const studentClass = '';
+    const letters = ['A','B','C','D','E'];
+    doc.setFont('helvetica','normal');
+    doc.setFontSize(10.5);
 
-    mount.querySelectorAll('[data-level-tabs] [data-level]').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        mount.querySelectorAll('[data-level-tabs] [data-level]').forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
-        activeLevel = btn.dataset.level;
-        levelHint.textContent = EXERCISE_LEVELS[activeLevel].hint;
+    quiz.forEach((item, idx)=>{
+      const stemLines = doc.splitTextToSize(`${idx+1}. ${String(item.q).replace(/<[^>]+>/g,'')}`, contentW);
+      const optLines = item.opts.map((o,i)=> doc.splitTextToSize(`${letters[i]}. ${String(o).replace(/<[^>]+>/g,'')}`, contentW - 4));
+      const blockH = stemLines.length*5.2 + optLines.reduce((s,l)=>s+l.length*5.2,0) + 6;
+      ensureSpace(blockH);
+      doc.setFont('helvetica','bold');
+      doc.setTextColor(13,27,46);
+      doc.text(stemLines, marginX, y);
+      y += stemLines.length * 5.2 + 1.5;
+      doc.setFont('helvetica','normal');
+      doc.setTextColor(34,48,63);
+      optLines.forEach(ol=>{
+        doc.text(ol, marginX + 4, y);
+        y += ol.length * 5.2;
       });
+      y += 4.5;
+      doc.setDrawColor(230,223,208);
+      doc.line(marginX, y - 2.5, pageW - marginX, y - 2.5);
     });
 
-    mount.querySelector('[data-ex-start]').addEventListener('click', ()=>{
-      gate.style.display = 'none';
-      runExerciseLevel(sessionMount, data[activeLevel], {
-        subject, babId: bab,
-        token: session.token,
-        studentName,
-        studentClass,
-        topik: data.topic || '',
-        levelLabel: EXERCISE_LEVELS[activeLevel].label,
-        onBack: ()=>{ sessionMount.innerHTML = ''; gate.style.display = ''; }
-      });
+    newPage();
+    doc.setFont('helvetica','bold');
+    doc.setFontSize(15);
+    doc.setTextColor(13,27,46);
+    doc.text('Kunci Jawaban', marginX, y + 4);
+    y += 12;
+    doc.setFont('helvetica','normal');
+    doc.setFontSize(9.5);
+
+    quiz.forEach((item, idx)=>{
+      const letter = letters[item.correct];
+      const explainText = `${idx+1}. Jawaban: ${letter} — ${String(item.explain).replace(/<[^>]+>/g,'')}`;
+      const lines = doc.splitTextToSize(explainText, contentW);
+      ensureSpace(lines.length*4.6 + 3);
+      doc.setTextColor(13,27,46);
+      doc.text(lines, marginX, y);
+      y += lines.length*4.6 + 3;
     });
-  });
-}
 
-/** Runs one level's question set inside `mount` (a fresh scratch container),
- *  then reports back to `onBack` so the student can pick another level.
- *  Mirrors the chapter-quiz question/scoring flow in initQuizzes(), but
- *  tags its /api/quiz-result submission with topik + level for per-topic
- *  tracking. */
-function runExerciseLevel(mount, questions, meta){
-  mount.innerHTML = `
-    <div class="quiz-box" data-quiz-box>
-      <div class="quiz-top">
-        <div class="quiz-progress-track"><div class="quiz-progress-fill" data-quiz-progress></div></div>
-        <div class="quiz-meta">
-          <span data-quiz-counter class="mono">Soal 1 / ${questions.length}</span>
-          <span data-quiz-score class="mono">Skor: 0</span>
-        </div>
-      </div>
-      <div data-quiz-question-area></div>
-    </div>
-    <div class="quiz-result" data-quiz-result style="display:none;">
-      <div class="result-ring"><span data-quiz-pct>0%</span></div>
-      <h3 style="color:#fff;">Level ${meta.levelLabel} Selesai!</h3>
-      <p data-quiz-resultmsg style="color:#c3ccd9;"></p>
-      <p class="submit-status" data-quiz-submitstatus></p>
-      <div class="ex-result-actions">
-        <button class="btn btn-primary" data-quiz-restart>Ulangi Level Ini</button>
-        <button class="btn btn-outline-light" data-ex-backbtn>← Pilih Level Lain</button>
-      </div>
-    </div>
-  `;
+    drawFooter();
 
-  const box = mount.querySelector('[data-quiz-box]');
-  const resultEl = mount.querySelector('[data-quiz-result]');
-  const questionArea = mount.querySelector('[data-quiz-question-area]');
-  const progressFill = mount.querySelector('[data-quiz-progress]');
-  const counterEl = mount.querySelector('[data-quiz-counter]');
-  const scoreEl = mount.querySelector('[data-quiz-score]');
-  let currentQ = 0, score = 0, answered = false;
-
-  function renderQuestion(){
-    answered = false;
-    const item = questions[currentQ];
-    counterEl.textContent = `Soal ${currentQ+1} / ${questions.length}`;
-    scoreEl.textContent = `Skor: ${score}`;
-    progressFill.style.transform = `scaleX(${currentQ/questions.length})`;
-
-    const letters = ['A','B','C','D'];
-    questionArea.innerHTML = `
-      <div class="q-title">${item.q}</div>
-      <div class="q-options">
-        ${item.opts.map((o,i)=>`<div class="q-opt" data-i="${i}"><span class="opt-letter">${letters[i]}</span>${o}</div>`).join('')}
-      </div>
-      <div class="q-explain" data-explain><b>Penjelasan:</b> ${item.explain}</div>
-      <button class="btn btn-primary q-nextbtn" data-next>${currentQ===questions.length-1?'Lihat Hasil':'Soal Berikutnya →'}</button>
-    `;
-    initMath(questionArea);
-
-    questionArea.querySelectorAll('.q-opt').forEach(opt=>{
-      opt.addEventListener('click', ()=>{
-        if(answered) return;
-        answered = true;
-        const chosen = parseInt(opt.dataset.i);
-        questionArea.querySelectorAll('.q-opt').forEach(o=>{
-          o.classList.add('disabled');
-          const idx = parseInt(o.dataset.i);
-          if(idx===item.correct) o.classList.add('correct');
-          else if(idx===chosen) o.classList.add('wrong');
-        });
-        if(chosen===item.correct) score++;
-        scoreEl.textContent = `Skor: ${score}`;
-        questionArea.querySelector('[data-explain]').style.display = 'block';
-        const nextBtn = questionArea.querySelector('[data-next]');
-        nextBtn.style.display = 'inline-flex';
-        nextBtn.addEventListener('click', ()=>{
-          currentQ++;
-          if(currentQ >= questions.length){ showResult(); }
-          else { renderQuestion(); }
-        });
-      });
-    });
+    const filenameSafe = babTitle.replace(/[^a-z0-9]+/gi,'-').replace(/(^-|-$)/g,'');
+    doc.save(`Latihan-${filenameSafe}.pdf`);
+    label.textContent = defaultLabel;
+  }catch(err){
+    label.textContent = 'Gagal menyiapkan PDF';
+    setTimeout(()=>{ label.textContent = defaultLabel; }, 2500);
+  }finally{
+    btn.disabled = false;
   }
-
-  function showResult(){
-    box.style.display = 'none';
-    resultEl.style.display = 'block';
-    const pct = Math.round(score/questions.length*100);
-    resultEl.querySelector('[data-quiz-pct]').textContent = pct+'%';
-    progressFill.style.transform = 'scaleX(1)';
-    let msg = '';
-    if(pct>=85) msg = `Mantap! Level ${meta.levelLabel} udah kamu kuasin.`;
-    else if(pct>=60) msg = 'Lumayan — sebagian besar udah nyantol, cek lagi yang masih meleset.';
-    else msg = 'Santai, coba baca ulang materinya terus balik lagi ke level ini — atau mulai dari level yang lebih ringan dulu.';
-    resultEl.querySelector('[data-quiz-resultmsg]').textContent = `Kamu menjawab benar ${score} dari ${questions.length} soal. ${msg}`;
-
-    markProgress(meta.babId, 'started');
-
-    submitQuizResult({
-      subject: meta.subject, babId: meta.babId,
-      nama: meta.studentName,
-      kelas: meta.studentClass,
-      skor: score,
-      total: questions.length,
-      persentase: pct,
-      topik: meta.topik,
-      level: meta.levelLabel
-    }, resultEl.querySelector('[data-quiz-submitstatus]'), meta.token);
-  }
-
-  resultEl.querySelector('[data-quiz-restart]').addEventListener('click', ()=>{
-    currentQ = 0; score = 0;
-    resultEl.style.display = 'none';
-    box.style.display = '';
-    renderQuestion();
-  });
-  resultEl.querySelector('[data-ex-backbtn]').addEventListener('click', ()=>{
-    if(meta.onBack) meta.onBack();
-  });
-
-  renderQuestion();
 }
 
 function submitQuizResult(payload, statusEl, token){
@@ -1788,7 +1745,6 @@ function initAllComponents(root){
   initCollapsibleCards(root);
   initShuCalculator(root);
   initQuizzes(root);
-  initExercises(root);
   initPdfViewers(root);
   initMath(root);
 }

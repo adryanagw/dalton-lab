@@ -1,74 +1,266 @@
 [
   {
     "q": "Ilmuwan yang pertama kali mengamati sel hidup (bakteri, protozoa) dan menyebutnya \"animalcules\" adalah…",
-    "opts": ["Robert Hooke", "Antonie van Leeuwenhoek", "Theodor Schwann", "Rudolf Virchow"],
+    "opts": [
+      "Robert Hooke",
+      "Antonie van Leeuwenhoek",
+      "Theodor Schwann",
+      "Rudolf Virchow"
+    ],
     "correct": 1,
     "explain": "Antonie van Leeuwenhoek, Bapak Mikrobiologi, menggunakan mikroskop rancangannya sendiri untuk pertama kali mengamati sel hidup, menyebutnya \"animalcules\"."
   },
   {
     "q": "Prinsip \"Omnis cellula e cellula\" yang menyatakan setiap sel berasal dari sel sebelumnya dikemukakan oleh…",
-    "opts": ["Matthias Schleiden", "Robert Hooke", "Rudolf Virchow", "Theodor Schwann"],
+    "opts": [
+      "Matthias Schleiden",
+      "Robert Hooke",
+      "Rudolf Virchow",
+      "Theodor Schwann"
+    ],
     "correct": 2,
     "explain": "Rudolf Virchow (1855–1858) melengkapi teori sel dengan prinsip \"Omnis cellula e cellula\" — sel tidak muncul secara spontan, melainkan dari pembelahan sel yang sudah ada."
   },
   {
     "q": "Makromolekul organik yang berfungsi menyimpan & menyalurkan informasi genetik, dengan monomer nukleotida, adalah…",
-    "opts": ["Karbohidrat", "Protein", "Lipid", "Asam Nukleat"],
+    "opts": [
+      "Karbohidrat",
+      "Protein",
+      "Lipid",
+      "Asam Nukleat"
+    ],
     "correct": 3,
     "explain": "Asam nukleat (DNA & RNA), tersusun dari monomer nukleotida, berfungsi menyimpan & menyalurkan informasi genetik sel."
   },
   {
     "q": "Perbedaan basa nitrogen yang membedakan RNA dari DNA adalah…",
-    "opts": ["RNA memiliki Urasil menggantikan Timin", "RNA memiliki Timin menggantikan Urasil", "RNA tidak memiliki basa nitrogen", "RNA memiliki basa nitrogen ekstra"],
+    "opts": [
+      "RNA memiliki Urasil menggantikan Timin",
+      "RNA memiliki Timin menggantikan Urasil",
+      "RNA tidak memiliki basa nitrogen",
+      "RNA memiliki basa nitrogen ekstra"
+    ],
     "correct": 0,
     "explain": "DNA memiliki basa Adenin, Timin, Guanin, Sitosin — sedangkan RNA memiliki Urasil sebagai pengganti Timin."
   },
   {
     "q": "Model struktur membran sel yang menjelaskan susunan fosfolipid bilayer dengan protein yang \"mengapung\" di dalamnya disebut…",
-    "opts": ["Model Sel Terbuka", "Model Mozaik Cair (Fluid Mosaic Model)", "Model Membran Statis", "Model Bilayer Tunggal"],
+    "opts": [
+      "Model Sel Terbuka",
+      "Model Mozaik Cair (Fluid Mosaic Model)",
+      "Model Membran Statis",
+      "Model Bilayer Tunggal"
+    ],
     "correct": 1,
     "explain": "Model Mozaik Cair (Fluid Mosaic Model), dikemukakan Singer & Nicolson (1972), menjelaskan membran sebagai fosfolipid bilayer dengan protein yang dapat bergerak di dalamnya."
   },
   {
     "q": "Organel berikut yang TIDAK memiliki membran pembungkus adalah…",
-    "opts": ["Mitokondria", "Ribosom", "Retikulum Endoplasma", "Badan Golgi"],
+    "opts": [
+      "Mitokondria",
+      "Ribosom",
+      "Retikulum Endoplasma",
+      "Badan Golgi"
+    ],
     "correct": 1,
     "explain": "Ribosom (bersama sentriol & sitoskeleton) tidak memiliki membran pembungkus — berbeda dari mitokondria, RE, dan Golgi yang bermembran."
   },
   {
     "q": "Fungsi utama mitokondria, yang dijuluki \"the powerhouse of the cell\", adalah…",
-    "opts": ["Sintesis protein", "Fotosintesis", "Respirasi seluler (produksi ATP)", "Pencernaan intraseluler"],
+    "opts": [
+      "Sintesis protein",
+      "Fotosintesis",
+      "Respirasi seluler (produksi ATP)",
+      "Pencernaan intraseluler"
+    ],
     "correct": 2,
     "explain": "Mitokondria adalah pusat respirasi seluler tempat produksi energi (ATP) — karenanya dijuluki \"the powerhouse of the cell\"."
   },
   {
     "q": "Ciri khas yang dimiliki sel tumbuhan tetapi TIDAK dimiliki sel hewan adalah…",
-    "opts": ["Membran sel", "Sentriol", "Dinding sel dari selulosa & kloroplas", "Ribosom"],
+    "opts": [
+      "Membran sel",
+      "Sentriol",
+      "Dinding sel dari selulosa & kloroplas",
+      "Ribosom"
+    ],
     "correct": 2,
     "explain": "Sel tumbuhan memiliki dinding sel dari selulosa dan kloroplas untuk fotosintesis — dua hal yang tidak dimiliki sel hewan."
   },
   {
     "q": "Sel prokariotik dicirikan dengan…",
-    "opts": ["Memiliki membran inti", "Tidak memiliki membran inti (materi genetik di nukleoid)", "Memiliki banyak organel bermembran", "Ukuran sel lebih besar dari eukariotik"],
+    "opts": [
+      "Memiliki membran inti",
+      "Tidak memiliki membran inti (materi genetik di nukleoid)",
+      "Memiliki banyak organel bermembran",
+      "Ukuran sel lebih besar dari eukariotik"
+    ],
     "correct": 1,
     "explain": "Sel prokariotik tidak memiliki membran inti — materi genetiknya berada bebas di sitoplasma pada daerah yang disebut nukleoid."
   },
   {
     "q": "Sel darah putih yang menelan bakteri untuk melawan infeksi merupakan contoh proses…",
-    "opts": ["Pinositosis", "Eksositosis", "Fagositosis", "Osmosis"],
+    "opts": [
+      "Pinositosis",
+      "Eksositosis",
+      "Fagositosis",
+      "Osmosis"
+    ],
     "correct": 2,
     "explain": "Fagositosis adalah proses \"menelan\" partikel padat oleh sel — contohnya sel darah putih (leukosit) yang memakan bakteri."
   },
   {
     "q": "Ketika sel hewan diletakkan pada larutan hipertonis (pekat), sel akan mengalami…",
-    "opts": ["Lisis (membengkak & pecah)", "Turgid", "Krenasi (mengerut)", "Plasmolisis"],
+    "opts": [
+      "Lisis (membengkak & pecah)",
+      "Turgid",
+      "Krenasi (mengerut)",
+      "Plasmolisis"
+    ],
     "correct": 2,
     "explain": "Pada larutan hipertonis, air keluar dari sel hewan sehingga sel mengerut — kondisi ini disebut krenasi. (Plasmolisis adalah istilah khusus untuk sel tumbuhan.)"
   },
   {
     "q": "Bukti yang mendukung Teori Endosimbiotik tentang asal-usul mitokondria & kloroplas adalah…",
-    "opts": ["Keduanya tidak memiliki membran", "Keduanya memiliki DNA sirkular sendiri & ribosom tipe 70S mirip bakteri", "Keduanya hanya ditemukan pada sel hewan", "Keduanya berukuran jauh lebih besar dari bakteri"],
+    "opts": [
+      "Keduanya tidak memiliki membran",
+      "Keduanya memiliki DNA sirkular sendiri & ribosom tipe 70S mirip bakteri",
+      "Keduanya hanya ditemukan pada sel hewan",
+      "Keduanya berukuran jauh lebih besar dari bakteri"
+    ],
     "correct": 1,
     "explain": "Mitokondria & kloroplas memiliki DNA sirkular sendiri dan ribosom tipe 70S (mirip bakteri) — bukti kuat bahwa keduanya berasal dari sel prokariotik bebas yang bersimbiosis (Teori Endosimbiotik, Lynn Margulis 1967)."
+  },
+  {
+    "q": "Peristiwa berpindahnya molekul dari daerah berkonsentrasi tinggi ke daerah berkonsentrasi rendah tanpa memerlukan energi disebut…",
+    "opts": [
+      "Difusi",
+      "Endositosis",
+      "Transpor aktif",
+      "Eksositosis"
+    ],
+    "correct": 0,
+    "explain": "Difusi adalah transpor pasif — molekul bergerak sendiri mengikuti arus alami dari konsentrasi tinggi ke rendah, tanpa butuh energi sel."
+  },
+  {
+    "q": "Sel darah merah (sel hewan) yang direndam dalam larutan hipotonis akan mengalami…",
+    "opts": [
+      "Krenasi",
+      "Lisis",
+      "Plasmolisis",
+      "Turgid"
+    ],
+    "correct": 1,
+    "explain": "Larutan hipotonis (lebih encer dari cairan sel) membuat air terus masuk ke sel. Sel hewan tidak punya dinding sel penahan, jadi sel membengkak terus dan akhirnya pecah (lisis)."
+  },
+  {
+    "q": "Proses masuknya zat ke dalam sel dengan cara membran sel 'menelan' partikel padat disebut…",
+    "opts": [
+      "Pinositosis",
+      "Eksositosis",
+      "Fagositosis",
+      "Osmosis"
+    ],
+    "correct": 2,
+    "explain": "Fagositosis = sel 'memakan' partikel padat, contohnya sel darah putih menelan bakteri. Pinositosis adalah versi cairnya, bukan partikel padat."
+  },
+  {
+    "q": "Transpor yang memerlukan energi (ATP) untuk memindahkan zat melawan arah gradien konsentrasinya disebut…",
+    "opts": [
+      "Difusi terfasilitasi",
+      "Transpor aktif",
+      "Osmosis",
+      "Difusi sederhana"
+    ],
+    "correct": 1,
+    "explain": "Transpor aktif itu seperti mendorong mobil menanjak — memindahkan zat dari area sepi ke area padat butuh 'bahan bakar' ATP karena melawan arus alami."
+  },
+  {
+    "q": "Sel tumbuhan yang direndam dalam larutan hipertonis (lebih pekat dari cairan sel) akan mengalami…",
+    "opts": [
+      "Turgid",
+      "Lisis",
+      "Plasmolisis",
+      "Tidak ada perubahan"
+    ],
+    "correct": 2,
+    "explain": "Larutan hipertonis membuat air keluar dari sel. Pada sel tumbuhan, isi selnya menyusut dan membrannya lepas dari dinding sel — inilah plasmolisis."
+  },
+  {
+    "q": "Apa perbedaan utama difusi terfasilitasi dengan difusi sederhana?",
+    "opts": [
+      "Difusi terfasilitasi memerlukan protein channel/carrier untuk membantu molekul lewat",
+      "Difusi terfasilitasi melawan arah gradien konsentrasi",
+      "Difusi terfasilitasi memerlukan ATP",
+      "Difusi terfasilitasi hanya terjadi pada sel tumbuhan"
+    ],
+    "correct": 0,
+    "explain": "Keduanya sama-sama pasif (searah gradien, tanpa energi) — bedanya, molekul yang 'terlalu besar' pada difusi terfasilitasi butuh dibantu protein channel/carrier untuk membuka jalan."
+  },
+  {
+    "q": "Air berpindah melalui membran semipermeabel dari larutan yang lebih encer menuju larutan yang lebih pekat. Peristiwa khusus ini disebut…",
+    "opts": [
+      "Difusi",
+      "Osmosis",
+      "Transpor aktif",
+      "Pinositosis"
+    ],
+    "correct": 1,
+    "explain": "Osmosis adalah 'versi khusus difusi' yang berlaku hanya untuk perpindahan air melewati membran semipermeabel."
+  },
+  {
+    "q": "Molekul LDL (kolesterol) yang harus menempel dulu ke reseptor spesifik di membran sebelum ditelan oleh sel merupakan contoh dari…",
+    "opts": [
+      "Fagositosis biasa",
+      "Pinositosis",
+      "Endositosis diperantarai reseptor",
+      "Eksositosis"
+    ],
+    "correct": 2,
+    "explain": "Endositosis diperantarai reseptor lebih presisi — molekul tertentu harus 'mengetuk pintu' (menempel reseptor) dulu sebelum ditelan sel, seperti penyerapan LDL."
+  },
+  {
+    "q": "Pada satu siklus pompa Na⁺/K⁺, sel melepas 3 ion Na⁺ ke luar dan mengikat 2 ion K⁺ dari luar. Efek bersih satu siklus ini terhadap muatan di bagian dalam sel adalah…",
+    "opts": [
+      "Bagian dalam sel menjadi relatif lebih negatif karena kehilangan 1 muatan positif bersih",
+      "Bagian dalam sel menjadi relatif lebih positif karena kehilangan 1 muatan positif bersih",
+      "Tidak ada perubahan muatan karena jumlah ion yang berpindah sama-sama ada",
+      "Bagian dalam sel kehilangan 5 muatan positif sekaligus"
+    ],
+    "correct": 0,
+    "explain": "3 muatan positif keluar tapi hanya 2 yang masuk kembali, jadi ada selisih bersih 1 muatan positif yang meninggalkan sel — inilah kenapa pompa ini disebut elektrogenik, bagian dalam sel jadi relatif lebih negatif."
+  },
+  {
+    "q": "Sel darah merah dan sel tumbuhan sama-sama direndam dalam air suling murni (sangat hipotonis). Sel darah merah pecah (lisis), sedangkan sel tumbuhan hanya menjadi turgid dan tidak pecah. Penyebab utama perbedaan ini adalah…",
+    "opts": [
+      "Sel tumbuhan sama sekali tidak menyerap air",
+      "Sel tumbuhan punya dinding sel kaku yang menahan tekanan, sehingga sel tetap utuh meski membrannya juga meregang menyerap air",
+      "Sel darah merah punya membran yang jauh lebih tebal",
+      "Sel tumbuhan melakukan transpor aktif untuk membuang kelebihan air"
+    ],
+    "correct": 1,
+    "explain": "Keduanya sama-sama menyerap air lewat osmosis. Bedanya, dinding sel tumbuhan yang kokoh menahan tekanan dari dalam sehingga sel cuma menggembung jadi turgid, tidak sampai pecah seperti sel hewan yang tanpa dinding sel."
+  },
+  {
+    "q": "Ketika larutan di luar sel isotonis terhadap cairan sel, pernyataan paling tepat adalah…",
+    "opts": [
+      "Sel hewan akan krenasi sedangkan sel tumbuhan tetap normal",
+      "Baik sel hewan maupun sel tumbuhan tidak mengalami perpindahan air bersih dan tetap dalam kondisi normal",
+      "Air akan terus berosmosis masuk ke kedua jenis sel",
+      "Hanya sel tumbuhan yang tetap normal karena punya dinding sel"
+    ],
+    "correct": 1,
+    "explain": "Isotonis artinya konsentrasi di dalam dan luar sel sama, sehingga tidak ada perpindahan air bersih (air tetap keluar-masuk, tapi jumlahnya seimbang) — kedua jenis sel tetap normal, bukan cuma salah satunya."
+  },
+  {
+    "q": "Seorang siswa mengamati sel darah putih menelan bakteri utuh sebagai partikel padat di bawah mikroskop. Mekanisme transpor vesikuler yang paling tepat menjelaskan peristiwa ini adalah…",
+    "opts": [
+      "Pinositosis",
+      "Fagositosis",
+      "Eksositosis",
+      "Difusi terfasilitasi"
+    ],
+    "correct": 1,
+    "explain": "Menelan partikel padat (bukan cairan) adalah ciri khas fagositosis — sel darah putih memakan bakteri untuk melawan infeksi."
   }
 ]

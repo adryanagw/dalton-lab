@@ -47,6 +47,69 @@
         ],
         "createdAt": "2026-09-12T07:25:20.842Z",
         "reason": "Same inherited .example-box CSS block as bab1-badan-usaha.pdf-pages.html, already shipped; not new."
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "content-private/ekonomi/bab1-badan-usaha.html"
+        ],
+        "createdAt": "2026-09-12T08:26:22.953Z",
+        "reason": "Intentional: .pdf-viewer-img ships with no src by design — filled at runtime via authenticated blob + object URL (app.js initPdfViewers/loadPage). Same pattern already ignored for bab2-pendapatan-nasional.html."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "content-private/ekonomi/bab1-badan-usaha.html"
+        ],
+        "createdAt": "2026-09-12T08:26:22.969Z",
+        "reason": "False positive from scanning the content fragment without the site's real styles.css loaded (section{padding:86px 0} etc. defined globally, not zero). Same pattern already ignored for bab2-pendapatan-nasional.html."
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "content-private/biologi/bab1-sel.html"
+        ],
+        "createdAt": "2026-09-12T08:26:22.985Z",
+        "reason": "Intentional: .pdf-viewer-img ships with no src by design — filled at runtime via authenticated blob + object URL (app.js initPdfViewers/loadPage). Same pattern already ignored for bab2-pendapatan-nasional.html."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "content-private/biologi/bab1-sel.html"
+        ],
+        "createdAt": "2026-09-12T08:26:23.000Z",
+        "reason": "False positive from scanning the content fragment without the site's real styles.css loaded (section{padding:86px 0} etc. defined globally, not zero). Same pattern already ignored for bab2-pendapatan-nasional.html."
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "content-private/matematika/bab1-eksponen-logaritma.html"
+        ],
+        "createdAt": "2026-09-12T08:26:23.014Z",
+        "reason": "Intentional: .pdf-viewer-img ships with no src by design — filled at runtime via authenticated blob + object URL (app.js initPdfViewers/loadPage). Same pattern already ignored for bab2-pendapatan-nasional.html."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "content-private/matematika/bab1-eksponen-logaritma.html"
+        ],
+        "createdAt": "2026-09-12T08:26:23.029Z",
+        "reason": "False positive from scanning the content fragment without the site's real styles.css loaded (section{padding:86px 0} etc. defined globally, not zero). Same pattern already ignored for bab2-pendapatan-nasional.html."
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "content-private/ekonomi/bab1-badan-usaha.html"
+        ],
+        "createdAt": "2026-09-12T08:26:23.047Z",
+        "reason": "False positive: content-only fragment scanned without the site's global styles.css :root variables / navy section background resolving; text sits inside sections using inline style=background:var(--navy) or similar, same as bab2-pendapatan-nasional.html's already-ignored instance."
       }
     ]
   }
