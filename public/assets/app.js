@@ -1495,18 +1495,29 @@ async function downloadQuizAsPdf(quiz, subject, bab, btn){
     doc.setFontSize(10.5);
 
     quiz.forEach((item, idx)=>{
+      // Wrap each piece of text with the SAME font it will render in --
+      // bold glyphs run wider than normal ones, so a stem wrapped while
+      // the font was still "normal" can overflow contentW once actually
+      // drawn bold. With align:'justify' + maxWidth, jsPDF re-validates
+      // each line against maxWidth and silently inserts an extra line if
+      // it doesn't fit, desyncing the manual y-position bookkeeping below
+      // and overlapping the next block (a real bug, caught by comparing
+      // pdfjs-dist text-run positions against a naive line-count
+      // assumption on real 60+ question chapter data before shipping).
+      doc.setFont('helvetica','bold');
       const stemLines = doc.splitTextToSize(`${idx+1}. ${String(item.q).replace(/<[^>]+>/g,'')}`, contentW);
+      doc.setFont('helvetica','normal');
       const optLines = item.opts.map((o,i)=> doc.splitTextToSize(`${letters[i]}. ${String(o).replace(/<[^>]+>/g,'')}`, contentW - 4));
       const blockH = stemLines.length*5.2 + optLines.reduce((s,l)=>s+l.length*5.2,0) + 6;
       ensureSpace(blockH);
       doc.setFont('helvetica','bold');
       doc.setTextColor(13,27,46);
-      doc.text(stemLines, marginX, y);
+      doc.text(stemLines, marginX, y, { maxWidth: contentW, align: 'justify' });
       y += stemLines.length * 5.2 + 1.5;
       doc.setFont('helvetica','normal');
       doc.setTextColor(34,48,63);
       optLines.forEach(ol=>{
-        doc.text(ol, marginX + 4, y);
+        doc.text(ol, marginX + 4, y, { maxWidth: contentW - 4, align: 'justify' });
         y += ol.length * 5.2;
       });
       y += 4.5;
@@ -1519,18 +1530,24 @@ async function downloadQuizAsPdf(quiz, subject, bab, btn){
     doc.setFontSize(15);
     doc.setTextColor(13,27,46);
     doc.text('Kunci Jawaban', marginX, y + 4);
-    y += 12;
-    doc.setFont('helvetica','normal');
-    doc.setFontSize(9.5);
+    y += 14;
 
+    // Answers only, no explanations -- a compact multi-column grid (not
+    // one line per question) since "1. A" needs far less room than the
+    // wrapped explanation text this used to carry.
+    doc.setFont('helvetica','normal');
+    doc.setFontSize(11);
+    doc.setTextColor(13,27,46);
+    const cols = 6;
+    const colW = contentW / cols;
+    const rowH = 9;
+    let col = 0;
     quiz.forEach((item, idx)=>{
+      if(col === 0) ensureSpace(rowH);
       const letter = letters[item.correct];
-      const explainText = `${idx+1}. Jawaban: ${letter} — ${String(item.explain).replace(/<[^>]+>/g,'')}`;
-      const lines = doc.splitTextToSize(explainText, contentW);
-      ensureSpace(lines.length*4.6 + 3);
-      doc.setTextColor(13,27,46);
-      doc.text(lines, marginX, y);
-      y += lines.length*4.6 + 3;
+      doc.text(`${idx+1}. ${letter}`, marginX + col*colW, y);
+      col++;
+      if(col >= cols){ col = 0; y += rowH; }
     });
 
     drawFooter();
