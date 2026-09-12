@@ -228,6 +228,25 @@ document.getElementById('logoHomeMobile').addEventListener('click', e=>{
   e.preventDefault(); closeSidebar(); goToHome();
 });
 
+/* ===== Desktop sidebar collapse (icon-only rail) =====
+   Separate from the mobile drawer above -- this only matters >900px,
+   where .sidebar is always visible and "collapsed" just narrows it to
+   show icons only (CSS in styles.css hides the text/labels). Persisted
+   so it survives reloads/navigation instead of resetting every time. */
+const sidebarCollapseBtn = document.getElementById('sidebarCollapseBtn');
+function setSidebarCollapsed(collapsed){
+  sidebarEl.classList.toggle('collapsed', collapsed);
+  sidebarCollapseBtn.setAttribute('aria-label', collapsed ? 'Perluas sidebar' : 'Ciutkan sidebar');
+  sidebarCollapseBtn.title = collapsed ? 'Perluas sidebar' : 'Ciutkan sidebar';
+  try{ localStorage.setItem('daltonlab_sidebar_collapsed', collapsed ? '1' : '0'); }catch(e){}
+}
+sidebarCollapseBtn.addEventListener('click', ()=>{
+  setSidebarCollapsed(!sidebarEl.classList.contains('collapsed'));
+});
+try{
+  if(localStorage.getItem('daltonlab_sidebar_collapsed') === '1') setSidebarCollapsed(true);
+}catch(e){}
+
 /* =====================================================================
    CATALOG — the ONE place you touch to add a new subject or chapter.
    Each bab just points at a content file (pure HTML, no JS) and an
