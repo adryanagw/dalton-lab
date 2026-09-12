@@ -229,6 +229,7 @@ const subjectsData = {
     desc:'Badan usaha, koperasi, manajemen, dan seluk-beluk ekonomi lainnya.',
     babs:[
       {id:'bab1-badan-usaha', num:'Bab 1', title:'Badan Usaha, Koperasi & Manajemen', desc:'Bentuk-bentuk badan usaha, BUMN/BUMD, koperasi & kalkulator SHU, dasar manajemen.', ready:true, estMinutes:18, subbabCount:6},
+      {id:'bab2-pendapatan-nasional', num:'Bab 2', title:'Pendapatan Nasional & Ketimpangan Ekonomi', desc:'Circular flow diagram, tiga pendekatan GDP, konsep berantai GDP→DI, Kurva Lorenz & Indeks Gini, kebijakan fiskal, plus bank soal 22 latihan.', ready:true, estMinutes:26, subbabCount:6},
     ]
   },
   biologi: {
@@ -1590,11 +1591,20 @@ function submitQuizResult(payload, statusEl, token){
    HTML. <img> can't carry an Authorization header, so each page is
    fetched as a blob and shown via an object URL (same reasoning as any
    other authenticated-fetch content on this site, just binary).
-   No download affordance anywhere here by design: images render at
-   pointer-events:none, and a faint diagonal watermark (student name +
-   view timestamp, from the logged-in session) is drawn over every page —
-   a deterrent, not real prevention, consistent with how this project has
-   always treated the "can this be saved" question for paid content. */
+   No download affordance by default: images render at pointer-events:none,
+   and a faint diagonal watermark (student name + view timestamp, from the
+   logged-in session) is drawn over every page — a deterrent, not real
+   prevention, consistent with how this project has always treated the
+   "can this be saved" question for paid content.
+   A viewer can opt into a "Unduh PDF" button with data-pdf-download="true"
+   (see the Bab 2 Ekonomi "Latihan Soal" viewer for the first use) — this
+   does NOT relax the anti-copy stance, it extends it: the button compiles
+   the already-fetched page images into a real PDF client-side (jsPDF, no
+   new server endpoint) and re-stamps the same per-student watermark onto
+   every page of the generated file via canvas, so a downloaded copy still
+   traces back to the student who downloaded it. Only enable this per
+   viewer where the content is meant to be taken offline (e.g. a practice
+   set), not as a blanket toggle for every PDF companion. */
 function initPdfViewers(root){
   root.querySelectorAll('.pdf-viewer').forEach((viewer)=>{
     const subject = viewer.dataset.pdfSubject;
@@ -1607,6 +1617,7 @@ function initPdfViewers(root){
     const pageNumEl = viewer.querySelector('.pdf-viewer-pagenum');
     const prevBtn = viewer.querySelector('.pdf-viewer-prev');
     const nextBtn = viewer.querySelector('.pdf-viewer-next');
+    const downloadBtn = viewer.dataset.pdfDownload === 'true' ? viewer.querySelector('.pdf-viewer-download') : null;
 
     const session = getSession();
     if(!session || !session.token){
@@ -1677,7 +1688,75 @@ function initPdfViewers(root){
 
     prevBtn.addEventListener('click', ()=>{ if(currentPage > 1) loadPage(currentPage - 1); });
     nextBtn.addEventListener('click', ()=>{ if(currentPage < pageCount) loadPage(currentPage + 1); });
+
+    if(downloadBtn){
+      const defaultLabel = downloadBtn.textContent;
+      downloadBtn.addEventListener('click', async ()=>{
+        if(downloadBtn.disabled) return;
+        if(!pageCount || !window.jspdf || !window.jspdf.jsPDF){
+          downloadBtn.textContent = 'Gagal menyiapkan PDF';
+          setTimeout(()=>{ downloadBtn.textContent = defaultLabel; }, 2500);
+          return;
+        }
+        downloadBtn.disabled = true;
+        try{
+          if(document.fonts && document.fonts.ready) await document.fonts.ready.catch(()=>{});
+          const { jsPDF } = window.jspdf;
+          const doc = new jsPDF({ unit:'mm', format:'a4' });
+          for(let n = 1; n <= pageCount; n++){
+            downloadBtn.textContent = `Menyiapkan… (${n}/${pageCount})`;
+            const res = await fetch(`/api/pdf-content?subject=${encodeURIComponent(subject)}&bab=${encodeURIComponent(bab)}&page=${n}`, {
+              headers: { 'Authorization': 'Bearer ' + session.token }
+            });
+            if(!res.ok) throw new Error('page fetch failed');
+            const blob = await res.blob();
+            const bitmap = await createImageBitmap(blob);
+            const canvas = document.createElement('canvas');
+            canvas.width = bitmap.width;
+            canvas.height = bitmap.height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(bitmap, 0, 0);
+            stampWatermarkOnCanvas(ctx, canvas.width, canvas.height, session);
+            const dataUrl = canvas.toDataURL('image/jpeg', 0.92);
+            if(n > 1) doc.addPage();
+            doc.addImage(dataUrl, 'JPEG', 0, 0, 210, 297);
+          }
+          const filename = viewer.dataset.pdfFilename || `${bab}.pdf`;
+          doc.save(filename);
+          downloadBtn.textContent = defaultLabel;
+        }catch(err){
+          downloadBtn.textContent = 'Gagal menyiapkan PDF';
+          setTimeout(()=>{ downloadBtn.textContent = defaultLabel; }, 2500);
+        }finally{
+          downloadBtn.disabled = false;
+        }
+      });
+    }
   });
+}
+
+/* Re-stamps the same diagonal, low-opacity student watermark the on-screen
+   viewer draws in CSS (name + view timestamp, ~5% opacity, rotated) directly
+   onto a page canvas, so a client-compiled downloaded PDF (see the
+   data-pdf-download opt-in above) still carries a per-student trace. */
+function stampWatermarkOnCanvas(ctx, w, h, session){
+  const name = (session.nama || session.username || '').toUpperCase();
+  const stamp = new Date().toLocaleString('id-ID', { dateStyle:'medium', timeStyle:'short' });
+  const line = (name + ' · ' + stamp + '   ').repeat(6);
+  ctx.save();
+  ctx.globalAlpha = 0.05;
+  ctx.fillStyle = '#0d1b2e';
+  ctx.font = `600 ${Math.round(w * 0.024)}px 'Space Grotesk', sans-serif`;
+  ctx.textBaseline = 'middle';
+  ctx.translate(w / 2, h / 2);
+  ctx.rotate(-28 * Math.PI / 180);
+  const lineHeight = h * 0.11;
+  const lines = 9;
+  for(let i = 0; i < lines; i++){
+    const y = -h * 0.7 + i * lineHeight;
+    ctx.fillText(line, -w * 0.9, y);
+  }
+  ctx.restore();
 }
 
 /* ===== LaTeX rendering (KaTeX) =====

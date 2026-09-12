@@ -1,0 +1,134 @@
+[
+  {
+    "q": "(Zenius cgc-4406 No.1) Pendapatan nasional adalah ....",
+    "opts": ["Pendapatan yang diterima pada kas suatu negara", "Jumlah hasil produksi berdasarkan nilai moneternya", "Penerimaan negara dari pungutan berupa pajak", "Jumlah hasil produksi yang dihitung berdasarkan barang mentahnya", "Penerimaan negara dari berbagai macam sumber"],
+    "correct": 1,
+    "explain": "Pendapatan nasional adalah nilai total hasil produksi barang & jasa suatu negara yang diukur berdasarkan nilai uangnya (moneter) — bukan kas negara, bukan penerimaan pajak, dan bukan dihitung dari barang mentah (harus barang/jasa akhir)."
+  },
+  {
+    "q": "(Zenius cgc-4406 No.2) Data perekonomian negara Zen (miliar US$): GNP=25.700, Iuran asuransi=50, Penyusutan=3.200, Personal Income (PI)=20.250, Pajak tidak langsung=1.200, Pajak perseroan=850, Laba ditahan=2.000, Pajak langsung=500. Besar transfer payment adalah ….",
+    "opts": ["US$2.750 miliar", "US$2.350 miliar", "US$1.350 miliar", "US$1.750 miliar", "US$1.850 miliar"],
+    "correct": 4,
+    "explain": "NNP = GNP−Penyusutan = 25.700−3.200 = 22.500. NNI = NNP−Pajak Tidak Langsung = 22.500−1.200 = 21.300 (subsidi tidak diketahui, dianggap 0). PI = NNI+Transfer Payment−(Laba Ditahan+Pajak Perseroan+Iuran Asuransi) → 20.250 = 21.300+TP−(2.000+850+50) → 20.250 = 21.300+TP−2.900 → 20.250 = 18.400+TP → TP = US$1.850 miliar."
+  },
+  {
+    "q": "(Zenius cgc-4406 No.5) Empat sektor produksi keripik apel dengan nilai input & output (juta Rupiah): Pertanian Apel (input 0, output 100), Industri Pengolahan Keripik (input 100, output 120), Logistik/Transportasi (input 120, output 150), Perdagangan Keripik Apel (input 150, output 180). Nilai produksi domestik bruto perekonomian ini adalah ....",
+    "opts": ["100", "150", "180", "370", "550"],
+    "correct": 2,
+    "explain": "GDP dihitung dari total nilai tambah tiap sektor: (100−0)+(120−100)+(150−120)+(180−150) = 100+20+30+30 = 180. Bukan total output (550) karena itu double counting, bukan juga total input (370)."
+  },
+  {
+    "q": "(Zenius cgc-4406 No.6) Tabel pendapatan nasional & penduduk 2020: Intan (95 juta jiwa, GDP 120.000 juta US$), Swadikap (100 juta, 125.000 juta US$), Sejahtera (90 juta, 111.000 juta US$), Balada (85 juta, 110.000 juta US$), Juara (97 juta, 115.000 juta US$). Negara dengan pendapatan per kapita PALING TINGGI adalah …",
+    "opts": ["Intan", "Balada", "Swadikap", "Juara", "Sejahtera"],
+    "correct": 1,
+    "explain": "Pendapatan per kapita = GDP÷penduduk: Intan≈1.263, Swadikap=1.250, Sejahtera≈1.233, Balada≈1.294 (tertinggi), Juara≈1.186 (ribu US$/jiwa). Balada unggul karena penduduknya paling sedikit meski GDP totalnya bukan yang terbesar."
+  },
+  {
+    "q": "(Zenius cgc-4406 No.7) Data negara Zenzen 2021 (ribuan dolar): PDB=13.400, Pendapatan netto faktor luar negeri=400, Pajak langsung=800, Pajak tidak langsung=1.500, Penyusutan barang modal=240, Iuran asuransi=450, Laba ditahan=250, Pajak perseroan=100, Transfer payment=250. Besar Disposable Income (DI) adalah ….",
+    "opts": ["10.450", "10.710", "9.910", "11.200", "10.300"],
+    "correct": 1,
+    "explain": "GNP=13.400+400=13.800. NNP=13.800−240=13.560. NNI=13.560−1.500=12.060 (subsidi 0). PI=12.060+250−(250+100+450)=12.310−800=11.510. DI=11.510−800=10.710."
+  },
+  {
+    "q": "(Zenius cgc-4406 No.8) Data: Upah Rp12.000.000, Pengeluaran rumah tangga Rp36.000.000, Laba Rp9.000.000, Pengeluaran pemerintah Rp10.000.000, Konsumsi Rp25.000.000, Pendapatan bunga Rp6.000.000, Pendapatan sewa Rp8.000.000, Impor Rp5.000.000, Ekspor Rp7.000.000. Besarnya pendapatan nasional dengan metode PENGELUARAN adalah ....",
+    "opts": ["Rp35.000.000", "Rp45.000.000", "Rp63.000.000", "Rp67.000.000", "Rp73.000.000"],
+    "correct": 4,
+    "explain": "Data ini sengaja mencampur item pendekatan pendapatan dengan pengeluaran. Item pendekatan pendapatan (Upah, Laba, Pendapatan bunga, Pendapatan sewa) harus DIABAIKAN — jumlahnya 12.000.000+9.000.000+6.000.000+8.000.000 = Rp35.000.000 (itu jebakan opsi A, hasil kalau salah pendekatan). Untuk metode pengeluaran, jumlahkan lima item sisanya: Pengeluaran rumah tangga (36 juta) + Konsumsi (25 juta) + Pengeluaran pemerintah (10 juta) + Ekspor (7 juta) − Impor (5 juta) = 36.000.000+25.000.000+10.000.000+7.000.000−5.000.000 = Rp73.000.000."
+  },
+  {
+    "q": "(Zenius cgc-4406 No.9) Rasio Gini sebesar 0 menunjukkan ....",
+    "opts": ["Ketimpangan pendapatan rendah dan kurva Lorenz lebih melengkung", "Ketimpangan pendapatan merata sempurna dan kurva Lorenz berbentuk diagonal", "Ketimpangan pendapatan tidak merata sempurna dan kurva Lorenz berbentuk segitiga", "Ketimpangan pendapatan merata sempurna dan kurva Lorenz lebih melengkung", "Ketimpangan pendapatan tinggi dengan kurva Lorenz lebih melengkung"],
+    "correct": 1,
+    "explain": "Gini = 0 berarti pemerataan sempurna, digambarkan sebagai Kurva Lorenz yang berimpit dengan garis diagonal (garis pemerataan sempurna) — bukan melengkung."
+  },
+  {
+    "q": "(Zenius cgc-4406 No.10) Koefisien Gini beberapa provinsi (BPS, 2020 Maret): Kep. Bangka Belitung 0,262; DI Yogyakarta 0,434; Jawa Tengah 0,362; Kalimantan Utara 0,292; Nusa Tenggara Timur 0,354; Sumatera Barat 0,305. Provinsi dengan ketimpangan pendapatan PALING RENDAH adalah ....",
+    "opts": ["Kepulauan Bangka Belitung", "D. I. Yogyakarta", "Jawa Tengah", "Kalimantan Utara", "Nusa Tenggara Timur"],
+    "correct": 0,
+    "explain": "Ketimpangan paling rendah = Gini paling kecil. Kepulauan Bangka Belitung punya Gini terendah di tabel (0,262)."
+  },
+  {
+    "q": "(Zenius cgc-5589 No.1) Pada metode pendapatan, besar pendapatan nasional suatu negara akan sama dengan ….",
+    "opts": ["Jumlah produksi ditambah upah", "Jumlah investasi masyarakat", "Jumlah konsumsi dan investasi", "Jumlah nilai tambah produksi dari barang dan jasa", "Penjumlahan sewa, bunga, upah dan laba"],
+    "correct": 4,
+    "explain": "Pendekatan pendapatan (income approach): Y = r+w+i+p = sewa+upah+bunga+laba. \"Jumlah nilai tambah\" (opsi D) itu ciri pendekatan produksi, bukan pendapatan."
+  },
+  {
+    "q": "(Zenius cgc-5589 No.2) Salah satu indikator ekonomi makro yang dapat digunakan sebagai alat ukur perkembangan dan struktur pada pembangunan suatu daerah adalah ….",
+    "opts": ["Pendapatan nasional harga konstan", "Anggaran pendapatan dan belanja daerah", "Produk domestik regional bruto", "Pendapatan domestik bruto", "Pendapatan per kapita"],
+    "correct": 2,
+    "explain": "PDRB (Produk Domestik Regional Bruto) adalah versi GDP untuk wilayah sub-nasional (provinsi/kabupaten) — dipakai khusus untuk mengukur struktur & perkembangan pembangunan ekonomi daerah."
+  },
+  {
+    "q": "(Zenius cgc-5589 No.3) Nilai koefisien Gini yang menunjukkan tingkat ketimpangan moderat pada distribusi pendapatan adalah ….",
+    "opts": ["0,4–0,5", "<0,4", ">0,5", "0,5–0,6", ">0,6"],
+    "correct": 0,
+    "explain": "Rentang 0,4–0,5 sepenuhnya berada di dalam kategori Sedang (0,30–0,50) tanpa menyerempet kategori Rendah (<0,30) atau Tinggi (>0,50) seperti opsi lainnya."
+  },
+  {
+    "q": "(Zenius cgc-5589 No.4) Nilai barang dan jasa yang dihasilkan daerah tertentu, seperti kabupaten atau provinsi dalam satu tahun disebut ….",
+    "opts": ["Produk domestik bruto", "Produk nasional bruto", "Produk domestik regional bruto", "PDB harga berlaku", "PDB harga konstan"],
+    "correct": 2,
+    "explain": "Definisi ini persis PDRB — GDP yang dihitung khusus untuk wilayah sub-nasional (provinsi/kabupaten), bukan negara secara keseluruhan."
+  },
+  {
+    "q": "(Zenius cgc-5589 No.5) Data pendapatan nasional (miliar): Konsumsi=Rp37.500, Investasi=Rp46.400, Pengeluaran pemerintah=Rp21.500, Ekspor=Rp14.500, Impor=Rp6.400. Besar pendapatan nasional dengan pendekatan pengeluaran adalah ….",
+    "opts": ["Rp109.000,00 miliar", "Rp110.500,00 miliar", "Rp111.500,00 miliar", "Rp112.500,00 miliar", "Rp113.500,00 miliar"],
+    "correct": 4,
+    "explain": "Y = C+I+G+(X−M) = 37.500+46.400+21.500+(14.500−6.400) = 37.500+46.400+21.500+8.100 = Rp113.500 miliar."
+  },
+  {
+    "q": "(Zenius cgc-5589 No.6) Konsep tentang pendapatan nasional yang menggambarkan pendapatan siap dibelanjakan adalah ….",
+    "opts": ["Produk domestik bruto (PDB)", "Pendapatan nasional neto", "Pendapatan perorangan", "Pendapatan per kapita", "Pendapatan disposabel"],
+    "correct": 4,
+    "explain": "Pendapatan disposabel (Disposable Income/DI) adalah pendapatan yang sudah dipotong pajak langsung dan benar-benar siap dibelanjakan atau ditabung individu."
+  },
+  {
+    "q": "(Zenius cgc-5589 No.7) Produk Domestik Bruto (PDB) merupakan ukuran kuantitatif dari kemajuan ekonomi suatu negara. Dalam hal ini PDB hanya menggambarkan ….",
+    "opts": ["Tingkat kualitas hidup", "Jumlah pengangguran", "Distribusi pendapatan", "Faktor-faktor produksi", "Jumlah dan harga output"],
+    "correct": 4,
+    "explain": "PDB murni mengukur jumlah & harga output yang dihasilkan (nilai produksi) — bukan kualitas hidup, pemerataan pendapatan, atau tingkat pengangguran, yang butuh indikator lain untuk diukur."
+  },
+  {
+    "q": "(Zenius cgc-5589 No.8) Keadaan berikut yang menggambarkan peningkatan suatu standar hidup negara tertentu adalah …",
+    "opts": ["Naiknya GDP riil", "Naiknya GDP riil lebih cepat daripada tingkat harga", "Naiknya GDP riil lebih cepat daripada populasi", "Naiknya GDP riil lebih cepat daripada jumlah pemberi kerja", "Naiknya GDP riil lebih cepat daripada laju pertambahan output"],
+    "correct": 2,
+    "explain": "Standar hidup per orang naik kalau GDP riil tumbuh LEBIH CEPAT dari pertumbuhan penduduk — supaya \"kue\" ekonomi yang harus dibagi ke tiap kepala benar-benar bertambah, bukan sekadar GDP total naik (yang bisa saja habis terserap pertambahan penduduk)."
+  },
+  {
+    "q": "(Zenius cgc-5589 No.9) Komponen: 1) Gaji/upah, 2) Investasi, 3) Konsumsi rumah tangga, 4) Bunga modal, 5) Hasil sewa, 6) Konsumsi pemerintah. Komponen yang dipakai dalam pendekatan PENGELUARAN ditunjukkan nomor ….",
+    "opts": ["1, 2 dan 3", "1, 2 dan 4", "1, 2 dan 5", "2, 3 dan 6", "2, 4 dan 6"],
+    "correct": 3,
+    "explain": "Pendekatan pengeluaran memakai Investasi (2), Konsumsi rumah tangga (3), dan Konsumsi pemerintah (6). Gaji/upah, bunga modal, hasil sewa (1,4,5) itu komponen pendekatan pendapatan — jebakan klasik campur pendekatan."
+  },
+  {
+    "q": "(Zenius cgc-5589 No.10) Perhitungan pendapatan nasional dengan pendekatan produksi harus menghindari perhitungan ganda. Oleh karena itu, unsur yang dihitung adalah ….",
+    "opts": ["Nilai tambah barang dan jasa", "Harga barang sebelum produksi", "Harga faktor-faktor produksi", "Nilai bahan mentah atau baku", "Output dari setiap sektor produksi"],
+    "correct": 0,
+    "explain": "Untuk menghindari double counting, pendekatan produksi menghitung NILAI TAMBAH (output dikurangi input antara) tiap sektor — bukan output kotor, bukan pula nilai bahan mentahnya saja."
+  },
+  {
+    "q": "(Zenius cgc-5589 No.11) Tabel: Amerika Serikat (GNP 1.680.000, 40 juta jiwa), Belanda (579.000, 15 juta), Norwegia (1.027.000, 16 juta), Luksemburg (643.456, 12 juta), Swiss (757.980, 15 juta), Swedia (793.880, 20 juta). Negara dengan pendapatan per kapita TERTINGGI dan TERENDAH adalah ….",
+    "opts": ["Amerika Serikat dan Belanda", "Swiss dan Swedia", "Norwegia dan Amerika Serikat", "Norwegia dan Belanda", "Luksemburg dan Swedia"],
+    "correct": 3,
+    "explain": "Pendapatan per kapita (GNP÷penduduk): AS=42.000, Belanda=38.600 (terendah), Norwegia≈64.188 (tertinggi), Luksemburg≈53.621, Swiss≈50.532, Swedia≈39.694. Norwegia tertinggi, Belanda terendah."
+  },
+  {
+    "q": "(Zenius cgc-5589 No.13) Komponen: (1) Laba usaha, (2) Hasil sewa, (3) Konsumsi rumah tangga, (4) Investasi, (5) Bunga modal, (6) Belanja pemerintah. Komponen yang dipakai dalam pendekatan PENDAPATAN adalah ….",
+    "opts": ["1, 2 dan 3", "1, 2 dan 5", "2, 4 dan 6", "3, 4 dan 6", "4, 5 dan 6"],
+    "correct": 1,
+    "explain": "Pendekatan pendapatan hanya memakai balas jasa faktor produksi: laba usaha (1), hasil sewa (2), dan bunga modal (5). Konsumsi rumah tangga, investasi, dan belanja pemerintah (3,4,6) itu komponen pendekatan pengeluaran."
+  },
+  {
+    "q": "(Zenius cgc-5589 No.14) Harga benang Rp6.000, kain Rp12.000, pakaian jadi Rp20.000, kapas Rp2.000, dan penyusutan aktiva Rp500. Besar pendapatan nasional (metode nilai tambah) adalah ….",
+    "opts": ["Rp10.000,00", "Rp14.000,00", "Rp18.000,00", "Rp20.000,00", "Rp40.000,00"],
+    "correct": 3,
+    "explain": "Rangkaian produksi: kapas→benang→kain→pakaian jadi. Nilai tambah tiap tahap: kapas 2.000−0=2.000, benang 6.000−2.000=4.000, kain 12.000−6.000=6.000, pakaian jadi 20.000−12.000=8.000. Total = 2.000+4.000+6.000+8.000 = Rp20.000 — sama dengan harga jual akhir barang jadi (metode nilai tambah menghindari double counting). Rp40.000 keliru karena menjumlah semua harga langsung (double counting); penyusutan Rp500 tidak relevan untuk pendekatan produksi/nilai tambah ini."
+  },
+  {
+    "q": "(Zenius cgc-5589 No.15) Pendapatan nasional suatu negara bertambah lebih besar dibandingkan tingkat pertambahan penduduknya. Keadaan ini menunjukkan ….",
+    "opts": ["Menurunnya pendapatan per kapita", "Naiknya pendapatan per kapita", "Lambatnya laju pertambahan penduduk", "Turunnya tingkat kesejahteraan penduduk", "Meratanya distribusi pendapatan masyarakat"],
+    "correct": 1,
+    "explain": "Pendapatan per kapita = pendapatan nasional ÷ jumlah penduduk. Kalau pembilang (pendapatan nasional) tumbuh lebih cepat dari penyebut (jumlah penduduk), hasil baginya (pendapatan per kapita) pasti naik."
+  }
+]
