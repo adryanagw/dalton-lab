@@ -1194,7 +1194,7 @@ function initShuCalculator(root){
   function calc(){
     const total = parseFloat(root.querySelector('#shuTotal').value)||0;
     const pctModal = parseFloat(root.querySelector('#pctModal').value)||0;
-    const pctUsaha = 100-pctModal;
+    const pctUsaha = parseFloat(root.querySelector('#pctUsaha').value)||0;
     const totalSimpanan = parseFloat(root.querySelector('#totalSimpanan').value)||0;
     const totalBelanja = parseFloat(root.querySelector('#totalBelanja').value)||0;
     const mySimpanan = parseFloat(root.querySelector('#myAnggotaSimpanan').value)||0;
@@ -1204,11 +1204,32 @@ function initShuCalculator(root){
     const shuUsaha = totalBelanja>0 ? (myBelanja/totalBelanja) * (pctUsaha/100) * total : 0;
 
     root.querySelector('#pctModalLabel').textContent = pctModal + '%';
+    root.querySelector('#pctUsahaLabel').textContent = pctUsaha + '%';
     root.querySelector('#outModal').textContent = fmtRp(shuModal);
     root.querySelector('#outUsaha').textContent = fmtRp(shuUsaha);
     root.querySelector('#outTotal').textContent = fmtRp(shuModal+shuUsaha);
+
+    // Jasa modal + jasa usaha don't have to add up to 100% of SHU -- an
+    // AD/ART typically also carves out cadangan/dana pengurus/dana
+    // pendidikan/dst. from the same pool. Show that remainder explicitly
+    // (or flag it if the two portions someone entered overshoot 100%)
+    // instead of silently assuming pctUsaha = 100 - pctModal.
+    const remainderVal = root.querySelector('#pctRemainderVal');
+    const normalEl = root.querySelector('#pctRemainderNormal');
+    const warnEl = root.querySelector('#pctRemainderWarn');
+    if(remainderVal && normalEl && warnEl){
+      const remainder = 100 - pctModal - pctUsaha;
+      const overshoot = remainder < 0;
+      normalEl.style.display = overshoot ? 'none' : '';
+      warnEl.style.display = overshoot ? '' : 'none';
+      if(overshoot){
+        root.querySelector('#pctOverVal').textContent = Math.abs(remainder) + '%';
+      } else {
+        remainderVal.textContent = remainder + '%';
+      }
+    }
   }
-  ['shuTotal','pctModal','totalSimpanan','totalBelanja','myAnggotaSimpanan','myAnggotaBelanja'].forEach(id=>{
+  ['shuTotal','pctModal','pctUsaha','totalSimpanan','totalBelanja','myAnggotaSimpanan','myAnggotaBelanja'].forEach(id=>{
     root.querySelector('#'+id).addEventListener('input', calc);
   });
   calc();
@@ -1769,3 +1790,22 @@ function observeReveal(sections){
   sections.forEach(el=>revealObserver.observe(el));
 }
 observeReveal(document.querySelectorAll('body > section, #view-home section, #view-babs section, #view-signin section'));
+
+/* ===== Shareable entry-point routes =====
+   The rest of this app has no URL routing at all — every view is a JS-
+   toggled <div>, home is just whatever the shipped HTML defaults to
+   visible. /signup and /login are the one exception: real paths (see
+   the rewrites in vercel.json, which point both at this same
+   index.html) so a link like dalton-lab.vercel.app/signup can be
+   shared directly, landing a new visitor straight on the registration
+   panel instead of the login form goToSignIn() shows by default. */
+(function bootstrapEntryRoute(){
+  const path = window.location.pathname.replace(/\/+$/, '') || '/';
+  if(path === '/signup'){
+    goToSignIn();
+    const toggleBtn = document.getElementById('togglePackagesBtn');
+    if(toggleBtn && toggleBtn.style.display !== 'none') toggleBtn.click();
+  } else if(path === '/login'){
+    goToSignIn();
+  }
+})();

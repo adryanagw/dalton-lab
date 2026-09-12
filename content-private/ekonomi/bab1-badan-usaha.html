@@ -373,7 +373,7 @@
         <div class="eyebrow" style="color:var(--orange);">🧮 Kalkulator Lab</div>
         <h3 style="color:#fff;">Yuk Coba Hitung SHU Kamu Sendiri!</h3>
         <p style="color:#c3ccd9;font-size:.92rem;max-width:560px;">
-          Anggap kamu jadi anggota koperasi. Setiap tahun, koperasi punya sisa untung (SHU) yang dibagi ke anggota — sebagian berdasarkan <b>seberapa besar tabunganmu</b> (jasa modal), sebagian lagi berdasarkan <b>seberapa sering kamu belanja</b> di koperasi (jasa usaha). Coba ubah-ubah angka di bawah dan lihat berapa SHU yang kamu dapat!
+          Anggap kamu jadi anggota koperasi. Setiap tahun, koperasi punya sisa untung (SHU) yang dibagi ke anggota — sebagian berdasarkan <b>seberapa besar tabunganmu</b> (jasa modal), sebagian lagi berdasarkan <b>seberapa sering kamu belanja</b> di koperasi (jasa usaha). Dua porsi ini diatur sendiri-sendiri di AD/ART koperasi dan <b>nggak harus habis 100%</b> — sisanya biasanya dialokasikan ke dana cadangan, dana pengurus, dana pendidikan, dst. Coba ubah-ubah angka di bawah dan lihat berapa SHU yang kamu dapat!
         </p>
       </div>
 
@@ -384,8 +384,12 @@
             <input type="number" id="shuTotal" value="32000000" class="mono">
           </div>
           <div class="input-row">
-            <label>% Jasa Modal <span id="pctModalLabel">55%</span></label>
-            <input type="range" id="pctModal" min="0" max="100" value="55">
+            <label>% Jasa Modal <span id="pctModalLabel">40%</span></label>
+            <input type="range" id="pctModal" min="0" max="100" value="40">
+          </div>
+          <div class="input-row">
+            <label>% Jasa Usaha <span id="pctUsahaLabel">25%</span></label>
+            <input type="range" id="pctUsaha" min="0" max="100" value="25">
           </div>
           <div class="input-row">
             <label>Total Simpanan Seluruh Anggota (Rp)</label>
@@ -419,7 +423,8 @@
             <b id="outTotal" class="mono">Rp 0</b>
           </div>
           <div class="formula-box">
-            💡 <b>Cara hitungnya:</b> makin besar porsi tabunganmu dibanding total tabungan semua anggota, makin besar SHU jasa modal yang kamu dapat. Begitu juga porsi belanjamu dibanding total belanja koperasi — makin sering &amp; makin banyak kamu belanja, makin besar SHU jasa usahamu.
+            <span id="pctRemainderNormal">💡 <b>Cara hitungnya:</b> makin besar porsi tabunganmu dibanding total tabungan semua anggota, makin besar SHU jasa modal yang kamu dapat. Begitu juga porsi belanjamu dibanding total belanja koperasi — makin sering &amp; makin banyak kamu belanja, makin besar SHU jasa usahamu. Sisa <b id="pctRemainderVal">35%</b> dari SHU koperasi ini dipakai buat dana cadangan/pengurus/pendidikan &amp; lainnya, bukan dibagi ke anggota.</span>
+            <span id="pctRemainderWarn" style="display:none;">⚠️ Total % Jasa Modal + Jasa Usaha udah lebih dari 100% (kelebihan <b id="pctOverVal">0%</b>) — nggak valid, dua-duanya sama-sama porsi dari SHU yang sama.</span>
           </div>
         </div>
       </div>
@@ -477,7 +482,7 @@
     <div class="section-head">
       <div class="eyebrow" style="color:var(--orange);">06 · Uji Pemahaman</div>
       <h2 style="color:#fff;">Kuis: Badan Usaha, Koperasi &amp; Manajemen</h2>
-      <p style="color:#c3ccd9;">Sudah coba dua latihan bertingkat di atas? Waktunya uji pemahaman akhir — 19 soal pilihan ganda mencakup semua materi bab ini. Jawab satu-satu, dapatkan penjelasan langsung setelah menjawab.</p>
+      <p style="color:#c3ccd9;">Waktunya uji pemahaman akhir — soal pilihan ganda mencakup semua materi bab ini. Jawab satu-satu, dapatkan penjelasan langsung setelah menjawab.</p>
     </div>
 
     <div class="quiz-root" data-quiz-subject="ekonomi" data-quiz-bab="bab1-badan-usaha"></div>
