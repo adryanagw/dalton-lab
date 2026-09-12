@@ -1,0 +1,104 @@
+[
+  {
+    "q": "Pendapatan nasional paling tepat didefinisikan sebagai…",
+    "opts": ["Jumlah uang kas yang dimiliki pemerintah suatu negara", "Total nilai akhir barang & jasa yang dihasilkan suatu negara dalam periode tertentu, atau total balas jasa yang diterima seluruh pemilik faktor produksi", "Total penerimaan negara dari pajak & retribusi", "Total ekspor dikurangi total impor suatu negara"],
+    "correct": 1,
+    "explain": "Pendapatan nasional bisa dilihat dari dua sisi yang sama nilainya: total nilai akhir produksi barang/jasa, ATAU total balas jasa (sewa, upah, bunga, laba) yang diterima seluruh pemilik faktor produksi. Bukan sekadar kas negara atau penerimaan pajak."
+  },
+  {
+    "q": "Dalam Circular Flow Diagram 3 sektor (dibanding 2 sektor), pelaku baru yang ditambahkan adalah…",
+    "opts": ["Masyarakat Luar Negeri (RTLN)", "Rumah Tangga Negara/Pemerintah (RTN)", "Bank Sentral", "Pasar Modal"],
+    "correct": 1,
+    "explain": "Model 3 sektor menambahkan Rumah Tangga Negara/Pemerintah (RTN) — memungut pajak dari RTK & RTP, lalu menyalurkannya lewat subsidi, bantuan sosial, dan belanja pemerintah (G). RTLN baru masuk di model 4 sektor."
+  },
+  {
+    "q": "Perekonomian 4 sektor disebut \"terbuka\" karena…",
+    "opts": ["Pemerintah sudah mulai memungut pajak", "Sudah ada hubungan dagang (ekspor & impor) dengan Masyarakat Luar Negeri", "Semua rumah tangga bebas memilih pekerjaan", "Bank boleh beroperasi tanpa izin"],
+    "correct": 1,
+    "explain": "\"Terbuka\" merujuk pada keterbukaan ekonomi terhadap pihak luar negeri — ditandai aliran ekspor (X) dan impor (M) antara RTP dan Masyarakat Luar Negeri (RTLN), pelaku keempat dalam model ini."
+    },
+  {
+    "q": "Pendekatan produksi menghitung GDP dengan cara…",
+    "opts": ["Menjumlahkan seluruh nilai output tiap sektor tanpa pengurangan apa pun", "Menjumlahkan nilai tambah (value added) tiap sektor agar tidak terjadi perhitungan ganda", "Menjumlahkan upah seluruh pekerja di semua sektor", "Menjumlahkan seluruh pengeluaran rumah tangga"],
+    "correct": 1,
+    "explain": "Pendekatan produksi menjumlahkan nilai tambah (Nilai Output − Nilai Input Antara) tiap sektor, bukan nilai output mentahnya — supaya nilai bahan baku/setengah jadi tidak terhitung berkali-kali (double counting)."
+  },
+  {
+    "q": "Rumus \\(Y = r + w + i + p\\) adalah rumus GDP dengan pendekatan…",
+    "opts": ["Produksi", "Pendapatan", "Pengeluaran", "Regional"],
+    "correct": 1,
+    "explain": "r (sewa) + w (upah) + i (bunga) + p (laba) adalah penjumlahan balas jasa faktor produksi — ciri khas pendekatan pendapatan (income approach)."
+  },
+  {
+    "q": "Data suatu negara (miliar Rupiah): Konsumsi = 800, Investasi = 300, Belanja Pemerintah = 200, Ekspor = 150, Impor = 100. Besar GDP dengan pendekatan pengeluaran adalah…",
+    "opts": ["Rp1.250 miliar", "Rp1.300 miliar", "Rp1.350 miliar", "Rp1.450 miliar"],
+    "correct": 2,
+    "explain": "Y = C + I + G + (X − M) = 800 + 300 + 200 + (150 − 100) = 800 + 300 + 200 + 50 = Rp1.350 miliar."
+  },
+  {
+    "q": "Perbedaan mendasar GDP dan GNP adalah…",
+    "opts": ["GDP dihitung tahunan, GNP dihitung bulanan", "GDP menghitung produksi di DALAM wilayah negara (WNI+WNA), GNP menghitung produksi oleh WARGA NEGARA (dalam+luar negeri)", "GDP untuk negara berkembang, GNP untuk negara maju", "Keduanya sebenarnya rumus yang identik"],
+    "correct": 1,
+    "explain": "GDP fokus ke LOKASI produksi (di dalam batas wilayah negara, termasuk WNA yang berproduksi di sana). GNP fokus ke KEWARGANEGARAAN pelaku produksi (WNI, baik yang berproduksi di dalam maupun luar negeri)."
+  },
+  {
+    "q": "PDRB (Produk Domestik Regional Bruto) digunakan untuk…",
+    "opts": ["Mengukur total produksi seluruh negara dalam setahun", "Mengukur struktur & perkembangan ekonomi di tingkat provinsi/kabupaten", "Mengukur pendapatan seluruh WNI di luar negeri", "Menggantikan fungsi GNP sepenuhnya"],
+    "correct": 1,
+    "explain": "PDRB adalah versi GDP untuk wilayah sub-nasional (provinsi/kabupaten) — dipakai sebagai alat ukur struktur & perkembangan pembangunan ekonomi daerah, bukan negara secara keseluruhan."
+  },
+  {
+    "q": "NNP (Net National Product) diperoleh dengan cara…",
+    "opts": ["GNP ditambah penyusutan", "GNP dikurangi penyusutan (depresiasi) barang modal", "GDP dikurangi pajak tidak langsung", "GNP dikalikan tingkat inflasi"],
+    "correct": 1,
+    "explain": "NNP = GNP − Penyusutan. Penyusutan (depresiasi) barang modal harus dikurangkan karena sebagian dari GNP sebenarnya \"habis\" untuk mengganti/merawat barang modal yang aus, bukan benar-benar pendapatan bersih baru."
+  },
+  {
+    "q": "Dalam transisi NNP → NNI, mengapa pajak tidak langsung harus dikurangkan?",
+    "opts": ["Karena pajak tidak langsung bukan balas jasa yang diterima pemilik faktor produksi", "Karena pajak tidak langsung selalu bernilai negatif", "Karena pemerintah tidak boleh memungut pajak tidak langsung", "Karena NNI hanya berlaku untuk barang ekspor"],
+    "correct": 0,
+    "explain": "Pajak tidak langsung (PPN, cukai, dll.) sudah termasuk dalam harga jual barang/jasa, tapi bukan bagian dari balas jasa (sewa/upah/bunga/laba) yang benar-benar diterima pemilik faktor produksi — makanya harus dikeluarkan dari NNP untuk mendapat NNI (balas jasa murni). Subsidi sebaliknya ditambahkan kembali."
+  },
+  {
+    "q": "Komponen yang DIKURANGKAN dari NNI untuk mendapatkan Personal Income (PI) adalah…",
+    "opts": ["Transfer payment", "Pajak langsung (PPh)", "Laba ditahan, pajak perseroan, dan iuran asuransi", "Ekspor neto"],
+    "correct": 2,
+    "explain": "PI = NNI + Transfer Payment − (Laba Ditahan + Pajak Perseroan + Iuran Asuransi). Tiga komponen ini dikurangkan karena tidak sampai ke tangan individu perorangan. Transfer payment justru ditambahkan karena diterima individu meski bukan hasil bekerja. Pajak langsung baru dikurangkan satu tahap setelahnya, dari PI ke DI."
+  },
+  {
+    "q": "Disposable Income (DI) dihitung dengan…",
+    "opts": ["DI = PI + Pajak Langsung", "DI = PI − Pajak Langsung (PPh)", "DI = NNI − Pajak Tidak Langsung", "DI = GNP − Penyusutan"],
+    "correct": 1,
+    "explain": "DI = PI − Pajak Langsung (PPh). Setelah pajak penghasilan dipotong langsung dari Personal Income, sisanya itulah yang benar-benar siap dibelanjakan atau ditabung individu."
+  },
+  {
+    "q": "Data suatu negara (miliar Rupiah): GDP = 90.000, Pendapatan WNI di Luar Negeri = 4.000, Pendapatan WNA di Dalam Negeri = 7.000, Penyusutan = 3.000, Pajak Tidak Langsung = 2.000, Subsidi = 1.000. Besar NNI adalah…",
+    "opts": ["Rp81.000 miliar", "Rp83.000 miliar", "Rp84.000 miliar", "Rp85.000 miliar"],
+    "correct": 1,
+    "explain": "GNP = GDP + (Pendapatan WNI di LN − Pendapatan WNA di DN) = 90.000 + (4.000 − 7.000) = 87.000. NNP = GNP − Penyusutan = 87.000 − 3.000 = 84.000. NNI = NNP − Pajak Tidak Langsung + Subsidi = 84.000 − 2.000 + 1.000 = Rp83.000 miliar."
+  },
+  {
+    "q": "Kurva Lorenz yang berimpit sempurna dengan garis diagonal menunjukkan…",
+    "opts": ["Ketimpangan pendapatan yang sangat tinggi", "Distribusi pendapatan merata sempurna (Indeks Gini = 0)", "Data yang tidak valid untuk dianalisis", "Negara tersebut tidak punya pendapatan nasional"],
+    "correct": 1,
+    "explain": "Garis diagonal adalah garis pemerataan sempurna — kalau Kurva Lorenz berimpit dengannya, artinya distribusi pendapatan benar-benar merata di semua kelompok penduduk, dan Indeks Gini-nya = 0."
+  },
+  {
+    "q": "Suatu negara punya Indeks Gini = 0,55. Berdasarkan klasifikasi standar, tingkat ketimpangannya termasuk…",
+    "opts": ["Rendah", "Sedang", "Tinggi", "Tidak bisa ditentukan dari Gini saja"],
+    "correct": 2,
+    "explain": "Klasifikasi standar: Gini < 0,30 = Rendah, 0,30–0,50 = Sedang, > 0,50 = Tinggi. Nilai 0,55 berada di atas 0,50, jadi termasuk kategori Tinggi."
+  },
+  {
+    "q": "Ketika ekonomi sedang lesu/resesi, kebijakan fiskal yang tepat adalah…",
+    "opts": ["Kontraktif — menaikkan pajak & menurunkan belanja pemerintah", "Ekspansif — menaikkan belanja pemerintah & menurunkan pajak", "Membekukan seluruh APBN", "Menaikkan suku bunga acuan"],
+    "correct": 1,
+    "explain": "Saat ekonomi lesu, pemerintah butuh kebijakan fiskal ekspansif (\"gas\"): menaikkan belanja negara (G) & menurunkan pajak, supaya daya beli & konsumsi (C) naik, mendorong Y = C+I+G+(X−M) naik. Kontraktif dipakai kebalikannya, saat ekonomi terlalu panas/inflasi tinggi."
+  },
+  {
+    "q": "Data (miliar Rupiah): Upah = 50, Sewa = 30, Bunga = 20, Laba = 40, Konsumsi = 300, Investasi = 150, Belanja Pemerintah = 100, Ekspor = 80, Impor = 60. Besar pendapatan nasional dengan pendekatan PENGELUARAN adalah…",
+    "opts": ["Rp140 miliar (dari Upah+Sewa+Bunga+Laba)", "Rp570 miliar", "Rp630 miliar", "Rp710 miliar"],
+    "correct": 1,
+    "explain": "Pendekatan pengeluaran cuma pakai Y = C+I+G+(X−M) = 300+150+100+(80−60) = 300+150+100+20 = Rp570 miliar. Opsi Rp140 miliar itu jebakan — itu hasil dari pendekatan PENDAPATAN (Upah+Sewa+Bunga+Laba = 50+30+20+40 = 140), variabel yang berbeda rumus dan tidak boleh ikut dijumlah di pendekatan pengeluaran."
+  }
+]

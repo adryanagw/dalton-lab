@@ -1311,6 +1311,19 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 }
 .pdf-viewer-prev:hover:not(:disabled),.pdf-viewer-next:hover:not(:disabled){background:var(--paper);}
 .pdf-viewer-prev:disabled,.pdf-viewer-next:disabled{opacity:.35;cursor:default;}
+.pdf-viewer-download{
+  font:600 .8rem/1 'Space Grotesk',sans-serif;
+  padding:9px 16px;
+  border-radius:20px;
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--navy);
+  cursor:pointer;
+  transition:background .15s, opacity .15s;
+  white-space:nowrap;
+}
+.pdf-viewer-download:hover:not(:disabled){background:var(--paper);}
+.pdf-viewer-download:disabled{opacity:.6;cursor:default;}
 .pdf-viewer-pagenum{
   font:500 .85rem/1 'Space Grotesk',sans-serif;
   color:var(--slate);

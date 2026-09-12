@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<!-- Rendered PDF companion content for Bab 2 Ekonomi (Pendapatan Nasional & Ketimpangan
+     Ekonomi), built from bab2-pendapatan-nasional.pdf-spec.md on
+     public/assets/pdf-template/page-template.html. This is the actual filled source,
+     rendered once and shared by every student — no per-page watermark markup here on
+     purpose: the real student-identity watermark is drawn live, per viewer, by
+     initPdfViewers() in app.js (.pdf-viewer-watermark), stamped with that viewer's
+     actual session name and timestamp. Baking a placeholder name into the shared
+     image here would just show every student a second, fake watermark underneath
+     the real one. -->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dalton Lab — PDF Bab 2 Ekonomi</title>
+<link rel="stylesheet" href="../../public/assets/vendor/fonts/pdf-fonts.css">
+<link rel="stylesheet" href="../../public/assets/vendor/katex/katex.min.css">
+<style>
+  @page{ size:210mm 297mm; margin:0; }
+
+  :root{
+    --navy:#0d1b2e;
+    --navy-2:#16304f;
+    --orange:#ee7d31;
+    --orange-dark:#d4631a;
+    --paper:#faf6ee;
+    --card:#ffffff;
+    --slate:#4f6376;
+    --success:#2f9e6a;
+    --danger:#d64545;
+    --accent:var(--orange);
+    --orange-ink:#bb4d0e;
+  }
+  .pdf-page[data-subject="ekonomi"]{ --accent:#ee7d31; }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#fff;font-family:'Literata',serif;}
+
+  .pdf-page{
+    position:relative;
+    width:210mm;
+    height:297mm;
+    padding:26px;
+    background:var(--accent);
+    overflow:hidden;
+    break-after:page;
+    page-break-after:always;
+  }
+  .pdf-page:last-child{break-after:auto;page-break-after:avoid;}
+  .pdf-page .sheet{
+    position:relative;
+    width:100%;
+    height:100%;
+    background:var(--card);
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  .page-head{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 40px 18px;
+    border-bottom:1px solid #eef0f2;
+  }
+  .page-head .brand{display:flex;align-items:center;gap:2px;}
+  .page-head .brand img{height:34px;width:auto;display:block;}
+  .page-head .brand-word{font:600 15px/1 'Fraunces',serif;color:var(--navy);letter-spacing:.01em;}
+  .page-head .brand-word span{color:var(--accent);}
+  .page-head .meta{display:flex;align-items:baseline;gap:8px;}
+  .subject-chip{font:italic 600 14px/1 'Fraunces',serif;color:var(--orange-ink);}
+  .chapter-tag{font:italic 400 13.5px/1 'Literata',serif;color:var(--slate);}
+
+  .page-body{
+    position:relative;
+    z-index:2;
+    flex:1;
+    padding:28px 40px 0;
+    overflow:hidden;
+  }
+  .page-body.dense{padding-top:20px;}
+  .page-body.dense h2.section-title{margin-bottom:8px;}
+  .page-body.dense p.lead,.page-body.dense p.body-text{margin-bottom:10px;line-height:1.55;}
+  .page-body.dense .formula-box,.page-body.dense .example-box,.page-body.dense .callout{margin-bottom:14px;}
+  .page-body.dense ol.ref-list li,.page-body.dense .example-box li{margin-bottom:6px;}
+
+  h1.page-title{font:700 34px/1.15 'Fraunces',serif;color:var(--navy);margin:0 0 6px;}
+  p.dek{font:italic 400 14.5px/1.4 'Literata',serif;color:var(--orange-ink);margin:0 0 18px;}
+  h2.section-title{font:600 21px/1.25 'Fraunces',serif;color:var(--navy);margin:0 0 10px;}
+  p.lead{font:400 16.5px/1.6 'Literata',serif;color:var(--slate);margin:0 0 18px;max-width:600px;}
+  p.body-text{font:400 15px/1.65 'Literata',serif;color:#22303f;margin:0 0 14px;}
+  ul.learn-list{margin:0 0 20px;padding-left:20px;}
+  ul.learn-list li{font:400 16px/1.65 'Literata',serif;color:#22303f;margin-bottom:6px;}
+
+  .formula-box{border-top:1px solid #e6dfd0;border-bottom:1px solid #e6dfd0;padding:20px 2px;margin:0 0 22px;}
+  .formula-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;display:block;}
+  .formula-box .katex{font-size:1.05em;}
+  .formula-box .var-def{font:400 13.5px/1.55 'Literata',serif;color:var(--slate);margin-top:10px;}
+  .formula-box .var-def b{font-family:'IBM Plex Mono',monospace;font-weight:500;color:#22303f;}
+
+  .example-box{border-top:1px solid #e6dfd0;padding:18px 2px 4px;margin:0 0 22px;}
+  .example-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--navy);margin-bottom:12px;display:block;}
+  .example-box p.setup{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 10px;}
+  .example-box ol{margin:0;padding-left:18px;}
+  .example-box li{font:400 15px/1.6 'Literata',serif;color:#22303f;margin-bottom:8px;}
+
+  .callout{padding:16px 18px;margin:0 0 20px;font:400 14.5px/1.55 'Literata',serif;}
+  .callout.mistake{background:#fbf0ed;}
+  .callout.mistake .label{color:var(--danger);}
+  .callout .label{display:block;font:italic 600 14px/1 'Literata',serif;margin-bottom:7px;}
+  .callout .wrong{color:var(--danger);font-weight:600;}
+  .callout .right{color:var(--success);font-weight:600;}
+
+  .ref-table{width:100%;border-collapse:collapse;margin:0 0 20px;}
+  .ref-table caption{caption-side:top;text-align:left;font:italic 500 13.5px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;}
+  .ref-table th,.ref-table td{
+    text-align:left;
+    padding:7px 10px;
+    font:400 12px/1.4 'Literata',serif;
+    color:#22303f;
+    border-bottom:1px solid #eee7d8;
+    vertical-align:top;
+  }
+  .ref-table thead th{
+    font:600 11px/1.2 'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--slate);
+    border-bottom:1.5px solid var(--navy);
+    padding-bottom:8px;
+  }
+  .ref-table tbody tr:first-child td{padding-top:10px;}
+
+  ol.ref-list{margin:0 0 20px;padding-left:20px;}
+  ol.ref-list li{font:400 12.5px/1.55 'Literata',serif;color:#22303f;margin-bottom:9px;}
+
+  .ref-list-2col{columns:2;column-gap:26px;margin:0 0 18px;}
+  .ref-list-2col .item{break-inside:avoid;margin-bottom:11px;}
+  .ref-list-2col .item .num{font:600 11px/1 'IBM Plex Mono',monospace;color:var(--orange-ink);}
+  .ref-list-2col .item .term{font:600 13px/1.3 'Literata',serif;color:var(--navy);display:block;margin:3px 0 2px;}
+  .ref-list-2col .item .gloss{font:400 12px/1.45 'Literata',serif;color:#4a5560;}
+
+  .page-foot{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 40px 22px;
+    border-top:1px solid #eef0f2;
+  }
+  .page-foot .license{font:italic 400 12px/1.4 'Literata',serif;color:#5c6670;max-width:380px;}
+</style>
+</head>
+<body>
+
+<!-- ===== Page 1 — Chapter opener ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body">
+      <h1 class="page-title">Pendapatan Nasional &amp; Ketimpangan Ekonomi</h1>
+      <p class="dek">Materi PDF — pelengkap Bab 2</p>
+      <p class="lead">Materi tambahan ini fokus ke definisi lengkap, referensi cepat, dan contoh soal lanjutan yang butuh perhitungan bertingkat — pelengkap materi interaktif di halaman utama, bukan salinannya.</p>
+      <h2 class="section-title">Yang akan kamu pelajari</h2>
+      <ul class="learn-list">
+        <li>Definisi pendapatan nasional menurut 3 ahli ekonomi, dan 4 manfaat utama menghitungnya — referensi lengkap</li>
+        <li>Circular Flow Diagram 2/3/4 sektor dijelaskan penuh: siapa berinteraksi dengan siapa, dan apa yang mengalir di tiap panah</li>
+        <li>Tabel referensi lengkap 6 konsep berantai (GDP → GNP → NNP → NNI → PI → DI) dengan rumus &amp; definisi tiap konsep</li>
+        <li>2 contoh soal lanjutan: perhitungan GNP/NNP/NNI dan GDP pendekatan produksi, plus jebakan klasik campur pendekatan pendapatan vs pengeluaran</li>
+        <li>Kurva Lorenz &amp; Indeks Gini dijelaskan penuh, plus tabel klasifikasi lengkap (Indeks Gini &amp; kriteria Bank Dunia)</li>
+        <li>Kebijakan fiskal ekspansif &amp; kontraktif — rantai mekanismenya sampai ke PDB</li>
+        <li>Pengayaan: perspektif ekonomi Islam (ZISWAF) dan glosarium cepat istilah bab ini</li>
+      </ul>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 2 — Pengertian & Manfaat ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Konsep Dasar</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Pengertian Pendapatan Nasional Menurut Para Ahli</h2>
+      <p class="lead">Tiga definisi klasik yang sering dikutip di soal ujian — beda kata-kata, inti yang sama: nilai total produksi atau balas jasa faktor produksi dalam satu periode.</p>
+      <ol class="ref-list">
+        <li><b>Soediyono Reksoprayitno</b> — pendapatan nasional adalah jumlah nilai barang dan jasa yang dihasilkan oleh perekonomian suatu negara dalam kurun waktu tertentu. Definisi ini menekankan sisi PRODUKSI: seberapa banyak &amp; seberapa bernilai barang/jasa yang benar-benar dihasilkan.</li>
+        <li><b>Sadono Sukirno</b> — pendapatan nasional adalah total jumlah pendapatan yang diterima dari faktor-faktor produksi yang digunakan untuk memproduksi barang dan jasa dalam satu tahun tertentu. Definisi ini menekankan sisi PENDAPATAN: siapa menerima berapa dari proses produksi tersebut.</li>
+        <li><b>Alfred Marshall</b> — pendapatan nasional adalah hasil bersih yang diperoleh dari pengolahan sumber daya alam suatu negara oleh tenaga kerja dan modal, baik berwujud benda maupun jasa. Definisi klasik ini menegaskan bahwa sumber daya alam saja tidak cukup — harus diolah lebih dulu oleh tenaga kerja &amp; modal supaya bernilai ekonomi.</li>
+      </ol>
+      <h2 class="section-title">Manfaat Menghitung Pendapatan Nasional</h2>
+      <ol class="ref-list">
+        <li><b>Mengukur Tingkat Kemakmuran</b> — memberi gambaran kuantitatif mengenai taraf hidup &amp; kesejahteraan masyarakat suatu negara. Angka pendapatan nasional per kapita sering dipakai sebagai proksi kemakmuran rata-rata penduduk, meski tidak menggambarkan pemerataannya (lihat Halaman 7-8).</li>
+        <li><b>Menelaah Struktur Perekonomian</b> — dari komposisi pendapatan nasional, pemerintah &amp; ekonom bisa tahu ke arah mana perekonomian sebuah negara condong, dan sektor mana yang perlu didorong lebih jauh.</li>
+        <li><b>Perbandingan Ekonomi Antarwaktu dan Antarnegara</b> — laju pertumbuhan ekonomi bisa dipantau dari waktu ke waktu, dan posisi relatif kekuatan ekonomi suatu negara bisa dipetakan dibanding negara lain.</li>
+        <li><b>Pedoman Kebijakan Pemerintah</b> — data pendapatan nasional menjadi dasar penyusunan APBN, perencanaan pembangunan jangka panjang, dan evaluasi efektivitas program-program ekonomi yang sudah berjalan.</li>
+      </ol>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 3 — Circular Flow Lengkap ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Circular Flow</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Circular Flow Diagram — Penjelasan Lengkap</h2>
+      <p class="lead">Tiga model bertingkat yang menggambarkan bagaimana uang, barang, dan faktor produksi berputar di antara pelaku-pelaku ekonomi.</p>
+      <h2 class="section-title" style="font-size:16px;margin-top:4px;">Model 2 Sektor (Perekonomian Sederhana)</h2>
+      <p class="body-text">Melibatkan dua pelaku saja: Rumah Tangga Konsumen (RTK) dan Rumah Tangga Produsen (RTP). RTK berperan ganda — sebagai pemilik faktor produksi (tanah, tenaga kerja, modal, kewirausahaan) yang disewakan ke RTP, sekaligus sebagai konsumen yang membeli barang/jasa hasil produksi RTP. Ada dua arus berlawanan arah: arus riil (faktor produksi dari RTK ke RTP, barang/jasa dari RTP ke RTK) dan arus uang (balas jasa dari RTP ke RTK; uang konsumsi/C dari RTK ke RTP). Belum ada pemerintah maupun luar negeri.</p>
+      <h2 class="section-title" style="font-size:16px;margin-top:4px;">Model 3 Sektor (Perekonomian Tertutup)</h2>
+      <p class="body-text">Menambahkan Rumah Tangga Negara/Pemerintah (RTN). Pemerintah memungut pajak dari RTK &amp; RTP, lalu menyalurkannya kembali dalam tiga bentuk: subsidi, bantuan sosial, dan belanja pemerintah/G (membeli barang &amp; jasa dari RTP). Disebut "tertutup" karena belum ada hubungan ekonomi dengan luar negeri.</p>
+      <h2 class="section-title" style="font-size:16px;margin-top:4px;">Model 4 Sektor (Perekonomian Terbuka)</h2>
+      <p class="body-text">Menambahkan Masyarakat Luar Negeri (RTLN). RTP menjual sebagian hasil produksinya ke luar negeri (ekspor/X) dan membeli barang/jasa dari luar negeri (impor/M). Inilah model paling realistis — keempat pelakunya (RTK, RTP, RTN, RTLN) persis jadi dasar rumus pendekatan pengeluaran: Y = C + I + G + (X − M).</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira model 3 &amp; 4 sektor cuma beda "jumlah kotak" di diagram tanpa makna ekonomi yang berbeda.<br>
+        <span class="right">✅ Benar:</span> tiap sektor tambahan mewakili komponen baru dalam rumus GDP — RTN melahirkan komponen G, RTLN melahirkan komponen (X−M). Model 2 sektor kalau dihitung GDP-nya cuma menghasilkan Y = C (+I), jauh lebih sederhana dari realita ekonomi.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 4 — Referensi Lengkap: Konsep Berantai ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Konsep Berantai</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Dari GDP ke Disposable Income — Referensi Lengkap</h2>
+      <p class="lead">Enam konsep pendapatan nasional yang terhubung berantai, dari total produksi wilayah (GDP) sampai uang yang benar-benar siap dibelanjakan perseorangan (DI).</p>
+      <table class="ref-table">
+        <thead><tr><th>Konsep</th><th>Penjelasan</th><th>Rumus</th></tr></thead>
+        <tbody>
+          <tr><td><b>GDP</b></td><td>Total produksi barang &amp; jasa oleh siapa pun (WNI/WNA) yang berproduksi DI DALAM batas wilayah negara.</td><td>GDP = Produksi Dalam Negeri (WNI+WNA)</td></tr>
+          <tr><td><b>GNP</b></td><td>Total nilai produk oleh seluruh WARGA NEGARA, baik di dalam maupun luar negeri.</td><td>GNP = GDP + Pendapatan Neto Luar Negeri</td></tr>
+          <tr><td><b>NNP</b></td><td>Produk nasional bersih setelah dikurangi penyusutan barang modal yang aus.</td><td>NNP = GNP &minus; Penyusutan</td></tr>
+          <tr><td><b>NNI</b></td><td>Pendapatan bersih nasional berupa balas jasa murni faktor produksi.</td><td>NNI = NNP &minus; Pajak Tidak Langsung + Subsidi</td></tr>
+          <tr><td><b>PI</b></td><td>Total pendapatan yang benar-benar diterima tiap individu masyarakat.</td><td>PI = NNI + Transfer Payment &minus; (Laba Ditahan + Pajak Perseroan + Iuran Asuransi)</td></tr>
+          <tr><td><b>DI</b></td><td>Pendapatan siap dibelanjakan/ditabung setelah pajak langsung dipotong.</td><td>DI = PI &minus; Pajak Langsung (PPh)</td></tr>
+        </tbody>
+      </table>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> menghafal arah penyesuaian secara acak, atau mengira semua tahap sama-sama "dikurangi".<br>
+        <span class="right">✅ Benar:</span> NNP selalu DIKURANGI penyusutan (barang modal aus, bukan pendapatan baru). NNI dikurangi pajak tidak langsung tapi DITAMBAH subsidi. PI dikurangi tiga komponen yang tidak sampai ke individu, tapi DITAMBAH transfer payment yang sampai ke individu. DI dikurangi pajak langsung karena benar-benar dipotong dari kantong individu.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 5 — Contoh Soal Lanjutan 1: GNP, NNP, NNI ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Konsep Berantai</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Contoh Soal Lanjutan — GNP, NNP &amp; NNI</h2>
+      <div class="example-box" style="border-top:none;padding-top:0;">
+        <span class="label">Contoh Soal &middot; Tingkat Lanjut</span>
+        <p class="setup">Diketahui data ekonomi suatu negara (miliar Rupiah): GDP = 50.000, Pendapatan WNI di Luar Negeri = 3.500, Pendapatan WNA di Dalam Negeri = 6.000, Penyusutan = 2.000, Pajak Tidak Langsung = 1.500, dan Subsidi = 500. Hitunglah GNP, NNP, dan NNI!</p>
+        <ol>
+          <li>GNP = GDP + (Pendapatan WNI di LN &minus; Pendapatan WNA di DN) = 50.000 + (3.500 &minus; 6.000) = 50.000 &minus; 2.500 = <b>Rp47.500 miliar</b></li>
+          <li>NNP = GNP &minus; Penyusutan = 47.500 &minus; 2.000 = <b>Rp45.500 miliar</b></li>
+          <li>NNI = NNP &minus; Pajak Tidak Langsung + Subsidi = 45.500 &minus; 1.500 + 500 = <b>Rp44.500 miliar</b></li>
+        </ol>
+        <p style="font:400 14px/1.6 'Literata',serif;color:var(--slate);margin-top:14px;">Perhatikan: pendapatan WNA di dalam negeri (6.000) LEBIH BESAR dari pendapatan WNI di luar negeri (3.500) — makanya GNP negara ini justru lebih kecil dari GDP-nya. Situasi umum di negara yang banyak menerima investasi asing: produksi domestik tinggi, tapi sebagian keuntungannya mengalir keluar sebagai pendapatan WNA.</p>
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 6 — Contoh Soal Lanjutan 2: Pendekatan Produksi & Jebakan ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Tiga Pendekatan GDP</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Contoh Soal Lanjutan — Pendekatan Produksi</h2>
+      <div class="example-box" style="border-top:none;padding-top:0;">
+        <span class="label">Contoh Soal &middot; Nilai Tambah</span>
+        <p class="setup">Empat sektor produksi (juta Rupiah): Pertanian Apel (input 0, output 100), Industri Pengolahan Keripik (input 100, output 120), Logistik/Transportasi (input 120, output 150), Perdagangan Keripik Apel (input 150, output 180).</p>
+        <ol>
+          <li>Nilai tambah tiap sektor = Output &minus; Input: 100, 20, 30, 30.</li>
+          <li>GDP (pendekatan produksi) = jumlah nilai tambah = 100+20+30+30 = <b>180 juta</b>.</li>
+          <li>BUKAN total nilai output (550 juta) — itu sudah menghitung bahan baku/setengah jadi berkali-kali (double counting).</li>
+        </ol>
+      </div>
+      <div class="example-box">
+        <span class="label">Contoh Soal &middot; Jebakan Campur Pendekatan</span>
+        <p class="setup">Data (miliar Rupiah): Upah=45, Sewa=20, Bunga=10, Laba=35, Konsumsi=400, Investasi=180, Belanja Pemerintah=130, Ekspor=95, Impor=70. Hitung pendapatan nasional dengan pendekatan PENGELUARAN.</p>
+        <ol>
+          <li>Pisahkan dulu: Upah, Sewa, Bunga, Laba adalah komponen pendekatan PENDAPATAN (20+45+10+35=110) — abaikan untuk soal ini.</li>
+          <li>Komponen pengeluaran yang benar: C=400, I=180, G=130, X=95, M=70.</li>
+          <li>Y = C+I+G+(X&minus;M) = 400+180+130+(95&minus;70) = <b>Rp735 miliar</b>.</li>
+        </ol>
+      </div>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> soal sengaja mencantumkan data pendekatan pendapatan &amp; pengeluaran sekaligus, berharap semuanya dijumlah jadi satu angka besar.<br>
+        <span class="right">✅ Benar:</span> dua pendekatan itu dua rumus TERPISAH untuk angka Y yang sama — ambil hanya variabel sesuai pendekatan yang diminta soal, abaikan sisanya.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 7 — Referensi Lengkap: Kurva Lorenz & Klasifikasi ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Ketimpangan Ekonomi</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Kurva Lorenz &amp; Indeks Gini — Penjelasan Lengkap</h2>
+      <p class="body-text">Kurva Lorenz menggambarkan hubungan antara persentase kumulatif penduduk (diurutkan dari termiskin) dengan persentase kumulatif pendapatan yang mereka terima. Garis diagonal dari (0,0) ke (100,100) adalah "garis pemerataan sempurna". Pada kenyataannya, kurva realitas selalu melengkung di bawah garis diagonal ini — kelompok termiskin selalu menerima porsi lebih kecil dari porsi jumlah mereka. Makin jauh &amp; melengkung kurva dari diagonal, makin timpang distribusinya.</p>
+      <p class="body-text">Indeks Gini mengubah kelengkungan itu jadi satu angka 0–1: Indeks Gini = Luas Area A &divide; (Luas Area A + Luas Area B), Area A = luas antara diagonal &amp; Kurva Lorenz, Area B = luas di bawah Kurva Lorenz. Makin besar Area A relatif terhadap total, makin besar Indeks Gini &amp; makin timpang distribusinya.</p>
+      <h2 class="section-title" style="font-size:16px;">Standar Klasifikasi Ketimpangan</h2>
+      <table class="ref-table">
+        <thead><tr><th>Indikator</th><th>Rentang / Kategori</th><th>Tingkat Ketimpangan</th></tr></thead>
+        <tbody>
+          <tr><td>Indeks Gini</td><td>Nilai Gini &lt; 0,30</td><td>Rendah</td></tr>
+          <tr><td>Indeks Gini</td><td>Nilai Gini 0,30 &ndash; 0,50</td><td>Sedang</td></tr>
+          <tr><td>Indeks Gini</td><td>Nilai Gini &gt; 0,50</td><td>Tinggi</td></tr>
+          <tr><td>Bank Dunia (40% Termiskin)</td><td>Porsi Pendapatan &gt; 17%</td><td>Rendah</td></tr>
+          <tr><td>Bank Dunia (40% Termiskin)</td><td>Porsi Pendapatan 12% &ndash; 17%</td><td>Sedang</td></tr>
+          <tr><td>Bank Dunia (40% Termiskin)</td><td>Porsi Pendapatan &lt; 12%</td><td>Tinggi</td></tr>
+        </tbody>
+      </table>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira Indeks Gini &amp; kriteria Bank Dunia harus selalu memberi kesimpulan yang sama persis.<br>
+        <span class="right">✅ Benar:</span> Gini melihat sebaran di SELURUH populasi, Bank Dunia fokus ke porsi 40% termiskin saja — keduanya saling melengkapi, sesekali beda kesimpulan tanpa berarti salah satu keliru.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 8 — Contoh Soal Lanjutan 3: Klasifikasi Ganda ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Ketimpangan Ekonomi</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Contoh Soal Lanjutan — Kombinasi Dua Kriteria</h2>
+      <div class="example-box" style="border-top:none;padding-top:0;">
+        <span class="label">Contoh Soal &middot; Tingkat Lanjut</span>
+        <p class="setup">Suatu negara memiliki Indeks Gini 0,42 dan 40% penduduk termiskin menikmati 14% dari total pendapatan nasional. Kategorikan tingkat ketimpangannya berdasarkan kedua kriteria!</p>
+        <ol>
+          <li>Kriteria Indeks Gini: 0,42 berada di rentang 0,30&ndash;0,50 &rarr; <b>Ketimpangan Sedang</b>.</li>
+          <li>Kriteria Bank Dunia: porsi 14% berada di rentang 12%&ndash;17% &rarr; <b>Ketimpangan Sedang</b>.</li>
+          <li>Kesimpulan: kedua kriteria konsisten &rarr; negara ini berada pada tingkat <b>Ketimpangan Sedang</b>.</li>
+        </ol>
+      </div>
+      <div class="example-box">
+        <span class="label">Contoh Soal &middot; Membaca Tabel Gini Antarwilayah</span>
+        <p class="setup">Koefisien Gini beberapa provinsi (bps.go.id, Maret 2020): Kep. Bangka Belitung 0,262; DI Yogyakarta 0,434; Jawa Tengah 0,362; Kalimantan Utara 0,292; Nusa Tenggara Timur 0,354; Sumatera Barat 0,305. Provinsi mana yang ketimpangannya paling rendah?</p>
+        <ol>
+          <li>Ketimpangan paling rendah = nilai Gini paling kecil di antara semua provinsi.</li>
+          <li>Bandingkan keenamnya: 0,262 (Bangka Belitung) adalah yang terkecil.</li>
+          <li>Jawaban: <b>Kepulauan Bangka Belitung</b> (Gini 0,262) — bahkan sudah masuk kategori Rendah, sementara lima provinsi lain semuanya di kategori Sedang.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 9 — Referensi Lengkap: Kebijakan Fiskal ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Kebijakan Fiskal</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Kebijakan Fiskal Ekspansif &amp; Kontraktif</h2>
+      <p class="body-text">Kebijakan fiskal adalah tindakan pemerintah mengatur belanja negara (G) dan pajak untuk memengaruhi jalannya perekonomian — dua variabel yang keduanya ada dalam rumus Y = C+I+G+(X&minus;M): G masuk langsung sebagai komponen penjumlah, pajak memengaruhi Y lewat daya beli &amp; konsumsi (C).</p>
+      <h2 class="section-title" style="font-size:16px;">Ekspansif ("Menginjak Gas")</h2>
+      <p class="body-text">Dipakai saat ekonomi lesu/resesi. Rantai mekanisme: pemerintah MENAIKKAN belanja negara (G) dan/atau MENURUNKAN pajak &rarr; uang beredar bertambah &amp; beban pajak berkurang &rarr; daya beli &amp; konsumsi (C) naik &rarr; permintaan agregat naik &rarr; dunia usaha berproduksi lebih banyak (PDB naik) &amp; menyerap lebih banyak tenaga kerja.</p>
+      <h2 class="section-title" style="font-size:16px;">Kontraktif ("Menginjak Rem")</h2>
+      <p class="body-text">Dipakai saat ekonomi terlalu "panas"/inflasi tinggi. Rantai mekanisme kebalikannya: pemerintah MENURUNKAN belanja negara (G) dan/atau MENAIKKAN pajak &rarr; uang beredar &amp; daya beli berkurang &rarr; konsumsi (C) &amp; permintaan agregat mereda &rarr; tekanan inflasi terkendali, meski pertumbuhan ekonomi ikut melambat jangka pendek.</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> menganggap ekspansif selalu "lebih baik" (mendorong PDB naik), kontraktif selalu "buruk" (menekan pertumbuhan).<br>
+        <span class="right">✅ Benar:</span> keduanya alat yang tepat untuk situasi berbeda — ekspansif tepat saat lesu (kalau dipakai saat sudah panas malah memperparah inflasi), kontraktif tepat saat inflasi tinggi (kalau dipakai saat lesu malah memperdalam resesi).
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 10 — Pengayaan: Perspektif Ekonomi Islam ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Pengayaan</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Pengayaan: Perspektif Ekonomi Islam</h2>
+      <p class="lead" style="max-width:none;">Bukan materi inti UTBK/Ujian Sekolah — pengayaan wawasan saja.</p>
+      <p class="body-text">Ekonomi konvensional mengukur keberhasilan negara terutama lewat angka GDP/GNP — makin tinggi angkanya, makin dianggap makmur. Ekonomi Islam memperluas ukuran itu mencakup pencapaian <i>falah</i> (kesejahteraan dunia sekaligus akhirat), bukan semata angka produksi atau pendapatan.</p>
+      <p class="body-text">Salah satu instrumen khasnya: Zakat, Infak, Sedekah, dan Wakaf (disingkat ZISWAF) — bentuk redistribusi kekayaan yang berjalan di LUAR mekanisme pasar biasa (bukan lewat jual-beli atau upah kerja). Dana ZISWAF disalurkan langsung dari pihak yang mampu ke pihak yang berhak menerima, dan secara langsung berdampak menaikkan Personal Income (PI) kelompok penerima serta mendorong pemerataan kesejahteraan di masyarakat — melengkapi mekanisme redistribusi konvensional seperti pajak &amp; subsidi yang sudah dibahas di bagian kebijakan fiskal (Halaman 9).</p>
+      <p class="body-text">Penting dicatat: ZISWAF bukan pengganti perhitungan GDP/GNP, dan bukan bagian dari materi inti UTBK/Ujian Sekolah untuk bab ini — bagian ini murni pengayaan wawasan bahwa ada cara pandang lain dalam mengukur kesejahteraan sebuah perekonomian selain angka produksi semata.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 11 — Glosarium Cepat ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Referensi</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Glosarium Cepat</h2>
+      <p class="lead">Semua istilah &amp; singkatan penting bab ini dalam satu halaman, buat direview cepat sebelum ujian.</p>
+      <div class="ref-list-2col">
+        <div class="item"><span class="num">01</span><span class="term">GDP</span><span class="gloss">Total produksi di dalam batas wilayah negara (WNI+WNA), per periode.</span></div>
+        <div class="item"><span class="num">02</span><span class="term">GNP</span><span class="gloss">Total produksi oleh seluruh warga negara (dalam+luar negeri).</span></div>
+        <div class="item"><span class="num">03</span><span class="term">PDRB</span><span class="gloss">Versi GDP untuk wilayah sub-nasional (provinsi/kabupaten).</span></div>
+        <div class="item"><span class="num">04</span><span class="term">NNP</span><span class="gloss">Produk nasional bersih setelah dikurangi penyusutan modal.</span></div>
+        <div class="item"><span class="num">05</span><span class="term">NNI</span><span class="gloss">Pendapatan bersih nasional berupa balas jasa murni faktor produksi.</span></div>
+        <div class="item"><span class="num">06</span><span class="term">PI</span><span class="gloss">Total pendapatan yang benar-benar diterima tiap individu.</span></div>
+        <div class="item"><span class="num">07</span><span class="term">DI</span><span class="gloss">Pendapatan siap dibelanjakan/ditabung setelah pajak langsung.</span></div>
+        <div class="item"><span class="num">08</span><span class="term">Kurva Lorenz</span><span class="gloss">Grafik hubungan persentase kumulatif penduduk &amp; pendapatan.</span></div>
+        <div class="item"><span class="num">09</span><span class="term">Indeks Gini</span><span class="gloss">Angka 0&ndash;1 yang meringkas kelengkungan Kurva Lorenz.</span></div>
+        <div class="item"><span class="num">10</span><span class="term">Kebijakan Fiskal</span><span class="gloss">Pengaturan belanja negara &amp; pajak oleh pemerintah.</span></div>
+        <div class="item"><span class="num">11</span><span class="term">ZISWAF</span><span class="gloss">Zakat, Infak, Sedekah, Wakaf — instrumen redistribusi non-pasar.</span></div>
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
