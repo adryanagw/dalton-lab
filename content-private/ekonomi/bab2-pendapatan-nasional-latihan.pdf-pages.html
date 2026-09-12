@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <!-- Rendered PDF companion content for the Bab 2 Ekonomi "Latihan Soal" book — a second,
      separate PDF book (bab id: bab2-pendapatan-nasional-latihan) distinct from the main
-     content companion (bab2-pendapatan-nasional.pdf-pages.html). Reproduces all 22 present
-     questions from the two Zenius Education practice sheets supplied for this chapter, each
-     independently solved & verified here (source PDFs' answer key is behind an inaccessible
-     URL/QR code) — see bab2-pendapatan-nasional-latihan.pdf-spec.md for the full spec.
+     content companion (bab2-pendapatan-nasional.pdf-pages.html). 22 original practice
+     questions written & solved by the Dalton Lab team (see
+     bab2-pendapatan-nasional-latihan.pdf-spec.md for the full spec) — questions-only pages
+     first, all answers + explanations collected on the final Kunci Jawaban page(s) so
+     students can attempt every question before checking any answer.
      No per-page watermark markup here on purpose: the real student-identity watermark is
      drawn live, per viewer, by initPdfViewers() in app.js (.pdf-viewer-watermark) — including
      when this book's pages are re-compiled client-side into a downloadable PDF via the
@@ -82,32 +83,29 @@
     padding:26px 40px 0;
     overflow:hidden;
   }
-  .page-body.dense{padding-top:18px;}
-  .page-body.dense .example-box{margin-bottom:12px;padding-top:12px;}
-  .page-body.dense .example-box p.setup{margin-bottom:6px;font-size:13.5px;line-height:1.5;}
-  .page-body.dense .example-box li{margin-bottom:0;font-size:13.5px;line-height:1.5;}
 
   h1.page-title{font:700 34px/1.15 'Fraunces',serif;color:var(--navy);margin:0 0 6px;}
   p.dek{font:italic 400 14.5px/1.4 'Literata',serif;color:var(--orange-ink);margin:0 0 18px;}
   h2.section-title{font:600 21px/1.25 'Fraunces',serif;color:var(--navy);margin:0 0 10px;}
   p.lead{font:400 16.5px/1.6 'Literata',serif;color:var(--slate);margin:0 0 18px;max-width:600px;}
-  p.body-text{font:400 15px/1.65 'Literata',serif;color:#22303f;margin:0 0 14px;}
-  ul.learn-list{margin:0 0 20px;padding-left:20px;}
-  ul.learn-list li{font:400 16px/1.65 'Literata',serif;color:#22303f;margin-bottom:6px;}
 
-  .example-box{border-top:1px solid #e6dfd0;padding:16px 2px 2px;margin:0 0 18px;}
-  .example-box .label{font:italic 600 13px/1 'Literata',serif;color:var(--navy);margin-bottom:8px;display:block;}
-  .example-box p.setup{font:400 13.5px/1.55 'Literata',serif;color:#22303f;margin:0 0 8px;}
-  .example-box ol{margin:0;padding-left:18px;}
-  .example-box li{font:400 13.5px/1.55 'Literata',serif;color:#22303f;margin-bottom:6px;}
-  .example-box li b{color:#1c7a4c;}
+  /* Question-only card: stem + each option on its own line, no answer here —
+     answers live together on the Kunci Jawaban page at the end. */
+  .q-item{border-top:1px solid #e6dfd0;padding:12px 2px 2px;margin:0 0 12px;}
+  .q-item:first-child{margin-top:0;padding-top:0;border-top:none;}
+  .q-item .label{font:italic 600 13px/1 'Literata',serif;color:var(--navy);margin-bottom:7px;display:block;}
+  .q-item p.setup{font:400 13.5px/1.5 'Literata',serif;color:#22303f;margin:0 0 7px;}
+  .q-item ul.opts{margin:0;padding:0;list-style:none;}
+  .q-item ul.opts li{font:400 13.5px/1.5 'Literata',serif;color:#22303f;margin-bottom:2px;}
+  .q-item ul.opts li b{color:var(--navy);margin-right:5px;}
 
-  .callout{padding:16px 18px;margin:0 0 20px;font:400 14.5px/1.55 'Literata',serif;}
-  .callout.mistake{background:#fbf0ed;}
-  .callout.mistake .label{color:var(--danger);}
-  .callout .label{display:block;font:italic 600 14px/1 'Literata',serif;margin-bottom:7px;}
-  .callout .wrong{color:var(--danger);font-weight:600;}
-  .callout .right{color:var(--success);font-weight:600;}
+  /* Kunci Jawaban — compact 2-column reference list, same pattern as the main
+     PDF companion's glossary page (bab2-pendapatan-nasional.pdf-pages.html). */
+  .ref-list-2col{columns:2;column-gap:26px;margin:0 0 18px;}
+  .ref-list-2col .item{break-inside:avoid;margin-bottom:11px;}
+  .ref-list-2col .item .num{font:600 11px/1 'IBM Plex Mono',monospace;color:var(--orange-ink);}
+  .ref-list-2col .item .term{font:600 13px/1.3 'Literata',serif;color:var(--navy);display:block;margin:3px 0 2px;}
+  .ref-list-2col .item .gloss{font:400 12px/1.45 'Literata',serif;color:#4a5560;}
 
   .page-foot{
     position:relative;
@@ -133,7 +131,7 @@
     <div class="page-body">
       <h1 class="page-title">Latihan Soal Pendapatan Nasional</h1>
       <p class="dek">22 soal pilihan ganda — dijawab &amp; dijelaskan oleh tim Dalton Lab</p>
-      <p class="lead">22 soal disusun &amp; diselesaikan langsung oleh tim Dalton Lab, lengkap dengan pembahasan tiap butir — buat asah pemahaman kamu sebelum ujian.</p>
+      <p class="lead">22 soal disusun &amp; diselesaikan langsung oleh tim Dalton Lab, lengkap dengan pembahasan tiap butir. Coba jawab dulu semua soal di halaman berikut, baru cocokkan dengan Kunci Jawaban di halaman paling akhir.</p>
     </div>
     <div class="page-foot">
       <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
@@ -141,33 +139,57 @@
   </div>
 </div>
 
-<!-- ===== Page 2 — cgc-4406 No. 1,2,5,6 ===== -->
+<!-- ===== Questions 1-4 ===== -->
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 2 &middot; Latihan Soal</span><span class="subject-chip">Ekonomi</span></div>
     </div>
-    <div class="page-body dense">
-      <div class="example-box" style="margin-top:0;padding-top:0;border-top:none;">
+    <div class="page-body">
+      <div class="q-item">
         <span class="label">No. 1</span>
-        <p class="setup">Pendapatan nasional adalah .... A. pendapatan yang diterima pada kas suatu negara &nbsp; B. jumlah hasil produksi berdasarkan nilai moneternya &nbsp; C. penerimaan negara dari pungutan berupa pajak &nbsp; D. jumlah hasil produksi yang dihitung berdasarkan barang mentahnya &nbsp; E. penerimaan negara dari berbagai macam sumber</p>
-        <ol><li><b>Jawaban: B.</b> Nilai total hasil produksi barang &amp; jasa diukur berdasarkan nilai uangnya (moneter) — bukan kas negara, bukan penerimaan pajak, dan harus barang/jasa akhir (bukan barang mentah).</li></ol>
+        <p class="setup">Pendapatan nasional adalah ....</p>
+        <ul class="opts">
+        <li><b>A.</b> pendapatan yang diterima pada kas suatu negara</li>
+        <li><b>B.</b> jumlah hasil produksi berdasarkan nilai moneternya</li>
+        <li><b>C.</b> penerimaan negara dari pungutan berupa pajak</li>
+        <li><b>D.</b> jumlah hasil produksi yang dihitung berdasarkan barang mentahnya</li>
+        <li><b>E.</b> penerimaan negara dari berbagai macam sumber</li>
+        </ul>
       </div>
-      <div class="example-box">
+      <div class="q-item">
         <span class="label">No. 2</span>
-        <p class="setup">Data negara Zen (miliar US$): GNP=25.700, Iuran asuransi=50, Penyusutan=3.200, Personal Income (PI)=20.250, Pajak tidak langsung=1.200, Pajak perseroan=850, Laba ditahan=2.000, Pajak langsung=500. Besar transfer payment adalah .... A. 2.750 &nbsp; B. 2.350 &nbsp; C. 1.350 &nbsp; D. 1.750 &nbsp; E. 1.850</p>
-        <ol><li><b>Jawaban: E (1.850).</b> NNP=25.700&minus;3.200=22.500. NNI=22.500&minus;1.200=21.300. PI=NNI+TP&minus;(Laba Ditahan+Pajak Perseroan+Iuran Asuransi) &rarr; 20.250=21.300+TP&minus;2.900 &rarr; TP=1.850.</li></ol>
+        <p class="setup">Data negara Zen (miliar US$): GNP=25.700, Iuran asuransi=50, Penyusutan=3.200, Personal Income (PI)=20.250, Pajak tidak langsung=1.200, Pajak perseroan=850, Laba ditahan=2.000, Pajak langsung=500. Besar transfer payment adalah ....</p>
+        <ul class="opts">
+        <li><b>A.</b> 2.750</li>
+        <li><b>B.</b> 2.350</li>
+        <li><b>C.</b> 1.350</li>
+        <li><b>D.</b> 1.750</li>
+        <li><b>E.</b> 1.850</li>
+        </ul>
       </div>
-      <div class="example-box">
+      <div class="q-item">
         <span class="label">No. 3</span>
-        <p class="setup">Empat sektor produksi keripik apel (juta Rupiah, input/output): Pertanian Apel (0/100), Industri Pengolahan Keripik (100/120), Logistik/Transportasi (120/150), Perdagangan Keripik Apel (150/180). Nilai produksi domestik bruto adalah .... A. 100 &nbsp; B. 150 &nbsp; C. 180 &nbsp; D. 370 &nbsp; E. 550</p>
-        <ol><li><b>Jawaban: C (180).</b> Jumlah nilai tambah tiap sektor: 100+20+30+30=180, bukan total output (550, double counting) atau total input (370).</li></ol>
+        <p class="setup">Empat sektor produksi keripik apel (juta Rupiah, input/output): Pertanian Apel (0/100), Industri Pengolahan Keripik (100/120), Logistik/Transportasi (120/150), Perdagangan Keripik Apel (150/180). Nilai produksi domestik bruto adalah ....</p>
+        <ul class="opts">
+        <li><b>A.</b> 100</li>
+        <li><b>B.</b> 150</li>
+        <li><b>C.</b> 180</li>
+        <li><b>D.</b> 370</li>
+        <li><b>E.</b> 550</li>
+        </ul>
       </div>
-      <div class="example-box">
+      <div class="q-item">
         <span class="label">No. 4</span>
-        <p class="setup">Tabel 2020 — Intan (95 juta jiwa, GDP 120.000 juta US$), Swadikap (100 juta, 125.000), Sejahtera (90 juta, 111.000), Balada (85 juta, 110.000), Juara (97 juta, 115.000). Negara pendapatan per kapita PALING TINGGI: A. Intan &nbsp; B. Balada &nbsp; C. Swadikap &nbsp; D. Juara &nbsp; E. Sejahtera</p>
-        <ol><li><b>Jawaban: B (Balada).</b> Per kapita: Intan&asymp;1.263, Swadikap=1.250, Sejahtera&asymp;1.233, Balada&asymp;1.294 (tertinggi), Juara&asymp;1.186 (ribu US$/jiwa).</li></ol>
+        <p class="setup">Tabel 2020 — Intan (95 juta jiwa, GDP 120.000 juta US$), Swadikap (100 juta, 125.000), Sejahtera (90 juta, 111.000), Balada (85 juta, 110.000), Juara (97 juta, 115.000). Negara pendapatan per kapita PALING TINGGI:</p>
+        <ul class="opts">
+        <li><b>A.</b> Intan</li>
+        <li><b>B.</b> Balada</li>
+        <li><b>C.</b> Swadikap</li>
+        <li><b>D.</b> Juara</li>
+        <li><b>E.</b> Sejahtera</li>
+        </ul>
       </div>
     </div>
     <div class="page-foot">
@@ -176,33 +198,57 @@
   </div>
 </div>
 
-<!-- ===== Page 3 — cgc-4406 No. 7,8,9,10 ===== -->
+<!-- ===== Questions 5-8 ===== -->
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 2 &middot; Latihan Soal</span><span class="subject-chip">Ekonomi</span></div>
     </div>
-    <div class="page-body dense">
-      <div class="example-box" style="margin-top:0;padding-top:0;border-top:none;">
+    <div class="page-body">
+      <div class="q-item">
         <span class="label">No. 5</span>
-        <p class="setup">Negara Zenzen 2021 (ribuan dolar): PDB=13.400, Pendapatan netto faktor luar negeri=400, Pajak langsung=800, Pajak tidak langsung=1.500, Penyusutan=240, Iuran asuransi=450, Laba ditahan=250, Pajak perseroan=100, Transfer payment=250. Besar Disposable Income (DI): A. 10.450 &nbsp; B. 10.710 &nbsp; C. 9.910 &nbsp; D. 11.200 &nbsp; E. 10.300</p>
-        <ol><li><b>Jawaban: B (10.710).</b> GNP=13.800, NNP=13.560, NNI=12.060, PI=11.510, DI=10.710 (langkah lengkap ada di materi PDF utama, Halaman 5).</li></ol>
+        <p class="setup">Negara Zenzen 2021 (ribuan dolar): PDB=13.400, Pendapatan netto faktor luar negeri=400, Pajak langsung=800, Pajak tidak langsung=1.500, Penyusutan=240, Iuran asuransi=450, Laba ditahan=250, Pajak perseroan=100, Transfer payment=250. Besar Disposable Income (DI):</p>
+        <ul class="opts">
+        <li><b>A.</b> 10.450</li>
+        <li><b>B.</b> 10.710</li>
+        <li><b>C.</b> 9.910</li>
+        <li><b>D.</b> 11.200</li>
+        <li><b>E.</b> 10.300</li>
+        </ul>
       </div>
-      <div class="example-box">
+      <div class="q-item">
         <span class="label">No. 6</span>
-        <p class="setup">Upah Rp12.000.000, Pengeluaran rumah tangga Rp36.000.000, Laba Rp9.000.000, Pengeluaran pemerintah Rp10.000.000, Konsumsi Rp25.000.000, Pendapatan bunga Rp6.000.000, Pendapatan sewa Rp8.000.000, Impor Rp5.000.000, Ekspor Rp7.000.000. Pendapatan nasional metode PENGELUARAN: A. 35jt &nbsp; B. 45jt &nbsp; C. 63jt &nbsp; D. 67jt &nbsp; E. 73jt</p>
-        <ol><li><b>Jawaban: E (73jt).</b> Abaikan 4 item pendekatan pendapatan (Upah+Laba+Bunga+Sewa=35jt, itu jebakan opsi A). Jumlahkan 5 item sisanya: Pengeluaran RT(36jt)+Konsumsi(25jt)+Pengeluaran pemerintah(10jt)+Ekspor(7jt)&minus;Impor(5jt)=Rp73.000.000.</li></ol>
+        <p class="setup">Upah Rp12.000.000, Pengeluaran rumah tangga Rp36.000.000, Laba Rp9.000.000, Pengeluaran pemerintah Rp10.000.000, Konsumsi Rp25.000.000, Pendapatan bunga Rp6.000.000, Pendapatan sewa Rp8.000.000, Impor Rp5.000.000, Ekspor Rp7.000.000. Pendapatan nasional metode PENGELUARAN:</p>
+        <ul class="opts">
+        <li><b>A.</b> 35jt</li>
+        <li><b>B.</b> 45jt</li>
+        <li><b>C.</b> 63jt</li>
+        <li><b>D.</b> 67jt</li>
+        <li><b>E.</b> 73jt</li>
+        </ul>
       </div>
-      <div class="example-box">
+      <div class="q-item">
         <span class="label">No. 7</span>
-        <p class="setup">Rasio Gini sebesar 0 menunjukkan .... A. ketimpangan rendah, kurva melengkung &nbsp; B. merata sempurna, kurva diagonal &nbsp; C. tidak merata sempurna, kurva segitiga &nbsp; D. merata sempurna, kurva melengkung &nbsp; E. ketimpangan tinggi, kurva melengkung</p>
-        <ol><li><b>Jawaban: B.</b> Gini 0 = pemerataan sempurna, Kurva Lorenz berimpit garis diagonal.</li></ol>
+        <p class="setup">Rasio Gini sebesar 0 menunjukkan ....</p>
+        <ul class="opts">
+        <li><b>A.</b> ketimpangan rendah, kurva melengkung</li>
+        <li><b>B.</b> merata sempurna, kurva diagonal</li>
+        <li><b>C.</b> tidak merata sempurna, kurva segitiga</li>
+        <li><b>D.</b> merata sempurna, kurva melengkung</li>
+        <li><b>E.</b> ketimpangan tinggi, kurva melengkung</li>
+        </ul>
       </div>
-      <div class="example-box">
+      <div class="q-item">
         <span class="label">No. 8</span>
-        <p class="setup">Gini provinsi (BPS 2020): Kep. Bangka Belitung 0,262; DI Yogyakarta 0,434; Jawa Tengah 0,362; Kalimantan Utara 0,292; NTT 0,354; Sumatera Barat 0,305. Provinsi ketimpangan PALING RENDAH: A. Bangka Belitung &nbsp; B. DIY &nbsp; C. Jateng &nbsp; D. Kaltara &nbsp; E. NTT</p>
-        <ol><li><b>Jawaban: A (Kep. Bangka Belitung).</b> Gini terkecil (0,262) di antara keenamnya.</li></ol>
+        <p class="setup">Gini provinsi (BPS 2020): Kep. Bangka Belitung 0,262; DI Yogyakarta 0,434; Jawa Tengah 0,362; Kalimantan Utara 0,292; NTT 0,354; Sumatera Barat 0,305. Provinsi ketimpangan PALING RENDAH:</p>
+        <ul class="opts">
+        <li><b>A.</b> Bangka Belitung</li>
+        <li><b>B.</b> DIY</li>
+        <li><b>C.</b> Jateng</li>
+        <li><b>D.</b> Kaltara</li>
+        <li><b>E.</b> NTT</li>
+        </ul>
       </div>
     </div>
     <div class="page-foot">
@@ -211,78 +257,116 @@
   </div>
 </div>
 
-<!-- ===== Page 4 — cgc-5589 No. 1-5 ===== -->
+<!-- ===== Questions 9-12 ===== -->
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 2 &middot; Latihan Soal</span><span class="subject-chip">Ekonomi</span></div>
     </div>
-    <div class="page-body dense">
-      <div class="example-box" style="margin-top:0;padding-top:0;border-top:none;">
+    <div class="page-body">
+      <div class="q-item">
         <span class="label">No. 9</span>
-        <p class="setup">Pada metode pendapatan, pendapatan nasional sama dengan .... A. produksi+upah &nbsp; B. jumlah investasi masyarakat &nbsp; C. konsumsi dan investasi &nbsp; D. jumlah nilai tambah produksi &nbsp; E. penjumlahan sewa, bunga, upah dan laba</p>
-        <ol><li><b>Jawaban: E.</b> Y=r+w+i+p. "Nilai tambah" (D) itu ciri pendekatan produksi, bukan pendapatan.</li></ol>
+        <p class="setup">Pada metode pendapatan, pendapatan nasional sama dengan ....</p>
+        <ul class="opts">
+        <li><b>A.</b> produksi+upah</li>
+        <li><b>B.</b> jumlah investasi masyarakat</li>
+        <li><b>C.</b> konsumsi dan investasi</li>
+        <li><b>D.</b> jumlah nilai tambah produksi</li>
+        <li><b>E.</b> penjumlahan sewa, bunga, upah dan laba</li>
+        </ul>
       </div>
-      <div class="example-box">
+      <div class="q-item">
         <span class="label">No. 10</span>
-        <p class="setup">Indikator alat ukur perkembangan &amp; struktur pembangunan suatu daerah adalah .... A. PN harga konstan &nbsp; B. APBD &nbsp; C. produk domestik regional bruto &nbsp; D. PDB &nbsp; E. pendapatan per kapita</p>
-        <ol><li><b>Jawaban: C.</b> PDRB adalah versi GDP khusus wilayah sub-nasional (provinsi/kabupaten).</li></ol>
+        <p class="setup">Indikator alat ukur perkembangan &amp; struktur pembangunan suatu daerah adalah ....</p>
+        <ul class="opts">
+        <li><b>A.</b> PN harga konstan</li>
+        <li><b>B.</b> APBD</li>
+        <li><b>C.</b> produk domestik regional bruto</li>
+        <li><b>D.</b> PDB</li>
+        <li><b>E.</b> pendapatan per kapita</li>
+        </ul>
       </div>
-      <div class="example-box">
+      <div class="q-item">
         <span class="label">No. 11</span>
-        <p class="setup">Nilai koefisien Gini yang menunjukkan ketimpangan moderat adalah .... A. 0,4&ndash;0,5 &nbsp; B. &lt;0,4 &nbsp; C. &gt;0,5 &nbsp; D. 0,5&ndash;0,6 &nbsp; E. &gt;0,6</p>
-        <ol><li><b>Jawaban: A (0,4&ndash;0,5).</b> Sepenuhnya di dalam kategori Sedang (0,30&ndash;0,50), tidak menyerempet Rendah/Tinggi seperti opsi lain.</li></ol>
+        <p class="setup">Nilai koefisien Gini yang menunjukkan ketimpangan moderat adalah ....</p>
+        <ul class="opts">
+        <li><b>A.</b> 0,4&ndash;0,5</li>
+        <li><b>B.</b> &lt;0,4</li>
+        <li><b>C.</b> &gt;0,5</li>
+        <li><b>D.</b> 0,5&ndash;0,6</li>
+        <li><b>E.</b> &gt;0,6</li>
+        </ul>
       </div>
-      <div class="example-box">
+      <div class="q-item">
         <span class="label">No. 12</span>
-        <p class="setup">Nilai barang &amp; jasa yang dihasilkan daerah tertentu (kabupaten/provinsi) dalam satu tahun disebut .... A. PDB &nbsp; B. PNB &nbsp; C. PDRB &nbsp; D. PDB harga berlaku &nbsp; E. PDB harga konstan</p>
-        <ol><li><b>Jawaban: C (PDRB).</b> Definisi PDRB persis ini.</li></ol>
+        <p class="setup">Nilai barang &amp; jasa yang dihasilkan daerah tertentu (kabupaten/provinsi) dalam satu tahun disebut ....</p>
+        <ul class="opts">
+        <li><b>A.</b> PDB</li>
+        <li><b>B.</b> PNB</li>
+        <li><b>C.</b> PDRB</li>
+        <li><b>D.</b> PDB harga berlaku</li>
+        <li><b>E.</b> PDB harga konstan</li>
+        </ul>
       </div>
-      <div class="example-box">
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Questions 13-16 ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Latihan Soal</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body">
+      <div class="q-item">
         <span class="label">No. 13</span>
-        <p class="setup">Data (miliar): Konsumsi=37.500, Investasi=46.400, Pengeluaran pemerintah=21.500, Ekspor=14.500, Impor=6.400. PN pendekatan pengeluaran: A. 109.000 &nbsp; B. 110.500 &nbsp; C. 111.500 &nbsp; D. 112.500 &nbsp; E. 113.500</p>
-        <ol><li><b>Jawaban: E (113.500).</b> Y=37.500+46.400+21.500+(14.500&minus;6.400)=113.500.</li></ol>
+        <p class="setup">Data (miliar): Konsumsi=37.500, Investasi=46.400, Pengeluaran pemerintah=21.500, Ekspor=14.500, Impor=6.400. PN pendekatan pengeluaran:</p>
+        <ul class="opts">
+        <li><b>A.</b> 109.000</li>
+        <li><b>B.</b> 110.500</li>
+        <li><b>C.</b> 111.500</li>
+        <li><b>D.</b> 112.500</li>
+        <li><b>E.</b> 113.500</li>
+        </ul>
       </div>
-    </div>
-    <div class="page-foot">
-      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
-    </div>
-  </div>
-</div>
-
-<!-- ===== Page 5 — cgc-5589 No. 6-10 ===== -->
-<div class="pdf-page" data-subject="ekonomi">
-  <div class="sheet">
-    <div class="page-head">
-      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
-      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Latihan Soal</span><span class="subject-chip">Ekonomi</span></div>
-    </div>
-    <div class="page-body dense">
-      <div class="example-box" style="margin-top:0;padding-top:0;border-top:none;">
+      <div class="q-item">
         <span class="label">No. 14</span>
-        <p class="setup">Konsep pendapatan nasional yang menggambarkan pendapatan siap dibelanjakan adalah .... A. PDB &nbsp; B. PN neto &nbsp; C. pendapatan perorangan &nbsp; D. pendapatan per kapita &nbsp; E. pendapatan disposabel</p>
-        <ol><li><b>Jawaban: E.</b> Disposable Income = pendapatan siap dibelanjakan/ditabung.</li></ol>
+        <p class="setup">Konsep pendapatan nasional yang menggambarkan pendapatan siap dibelanjakan adalah ....</p>
+        <ul class="opts">
+        <li><b>A.</b> PDB</li>
+        <li><b>B.</b> PN neto</li>
+        <li><b>C.</b> pendapatan perorangan</li>
+        <li><b>D.</b> pendapatan per kapita</li>
+        <li><b>E.</b> pendapatan disposabel</li>
+        </ul>
       </div>
-      <div class="example-box">
+      <div class="q-item">
         <span class="label">No. 15</span>
-        <p class="setup">PDB adalah ukuran kuantitatif kemajuan ekonomi, dan hanya menggambarkan .... A. kualitas hidup &nbsp; B. jumlah pengangguran &nbsp; C. distribusi pendapatan &nbsp; D. faktor produksi &nbsp; E. jumlah dan harga output</p>
-        <ol><li><b>Jawaban: E.</b> PDB murni mengukur jumlah &amp; harga output, bukan pemerataan/kualitas hidup.</li></ol>
+        <p class="setup">PDB adalah ukuran kuantitatif kemajuan ekonomi, dan hanya menggambarkan ....</p>
+        <ul class="opts">
+        <li><b>A.</b> kualitas hidup</li>
+        <li><b>B.</b> jumlah pengangguran</li>
+        <li><b>C.</b> distribusi pendapatan</li>
+        <li><b>D.</b> faktor produksi</li>
+        <li><b>E.</b> jumlah dan harga output</li>
+        </ul>
       </div>
-      <div class="example-box">
+      <div class="q-item">
         <span class="label">No. 16</span>
-        <p class="setup">Keadaan yang menggambarkan peningkatan standar hidup: A. GDP riil naik &nbsp; B. GDP riil naik lebih cepat dari harga &nbsp; C. GDP riil naik lebih cepat dari populasi &nbsp; D. GDP riil naik lebih cepat dari jumlah pemberi kerja &nbsp; E. GDP riil naik lebih cepat dari laju pertambahan output</p>
-        <ol><li><b>Jawaban: C.</b> Standar hidup per kepala naik kalau GDP riil tumbuh lebih cepat dari penduduk, supaya "kue" ekonomi yang dibagi tiap kepala benar-benar bertambah.</li></ol>
-      </div>
-      <div class="example-box">
-        <span class="label">No. 17</span>
-        <p class="setup">Komponen: 1) Gaji/upah 2) Investasi 3) Konsumsi RT 4) Bunga modal 5) Hasil sewa 6) Konsumsi pemerintah. Pendekatan PENGELUARAN: A. 1,2,3 &nbsp; B. 1,2,4 &nbsp; C. 1,2,5 &nbsp; D. 2,3,6 &nbsp; E. 2,4,6</p>
-        <ol><li><b>Jawaban: D (2,3,6).</b> Investasi, Konsumsi RT, Konsumsi pemerintah. 1,4,5 itu pendekatan pendapatan.</li></ol>
-      </div>
-      <div class="example-box">
-        <span class="label">No. 18</span>
-        <p class="setup">Pendekatan produksi harus menghindari perhitungan ganda — unsur yang dihitung adalah .... A. nilai tambah barang &amp; jasa &nbsp; B. harga barang sebelum produksi &nbsp; C. harga faktor produksi &nbsp; D. nilai bahan mentah &nbsp; E. output tiap sektor</p>
-        <ol><li><b>Jawaban: A.</b> Nilai tambah (output&minus;input antara), bukan output kotor/bahan mentah.</li></ol>
+        <p class="setup">Keadaan yang menggambarkan peningkatan standar hidup:</p>
+        <ul class="opts">
+        <li><b>A.</b> GDP riil naik</li>
+        <li><b>B.</b> GDP riil naik lebih cepat dari harga</li>
+        <li><b>C.</b> GDP riil naik lebih cepat dari populasi</li>
+        <li><b>D.</b> GDP riil naik lebih cepat dari jumlah pemberi kerja</li>
+        <li><b>E.</b> GDP riil naik lebih cepat dari laju pertambahan output</li>
+        </ul>
       </div>
     </div>
     <div class="page-foot">
@@ -291,33 +375,153 @@
   </div>
 </div>
 
-<!-- ===== Page 6 — cgc-5589 No. 11,13,14,15 ===== -->
+<!-- ===== Questions 17-20 ===== -->
 <div class="pdf-page" data-subject="ekonomi">
   <div class="sheet">
     <div class="page-head">
       <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
       <div class="meta"><span class="chapter-tag">Bab 2 &middot; Latihan Soal</span><span class="subject-chip">Ekonomi</span></div>
     </div>
-    <div class="page-body dense">
-      <div class="example-box" style="margin-top:0;padding-top:0;border-top:none;">
+    <div class="page-body">
+      <div class="q-item">
+        <span class="label">No. 17</span>
+        <p class="setup">Komponen: 1) Gaji/upah 2) Investasi 3) Konsumsi RT 4) Bunga modal 5) Hasil sewa 6) Konsumsi pemerintah. Pendekatan PENGELUARAN:</p>
+        <ul class="opts">
+        <li><b>A.</b> 1,2,3</li>
+        <li><b>B.</b> 1,2,4</li>
+        <li><b>C.</b> 1,2,5</li>
+        <li><b>D.</b> 2,3,6</li>
+        <li><b>E.</b> 2,4,6</li>
+        </ul>
+      </div>
+      <div class="q-item">
+        <span class="label">No. 18</span>
+        <p class="setup">Pendekatan produksi harus menghindari perhitungan ganda — unsur yang dihitung adalah ....</p>
+        <ul class="opts">
+        <li><b>A.</b> nilai tambah barang &amp; jasa</li>
+        <li><b>B.</b> harga barang sebelum produksi</li>
+        <li><b>C.</b> harga faktor produksi</li>
+        <li><b>D.</b> nilai bahan mentah</li>
+        <li><b>E.</b> output tiap sektor</li>
+        </ul>
+      </div>
+      <div class="q-item">
         <span class="label">No. 19</span>
-        <p class="setup">GNP &amp; penduduk: AS (1.680.000, 40jt jiwa), Belanda (579.000, 15jt), Norwegia (1.027.000, 16jt), Luksemburg (643.456, 12jt), Swiss (757.980, 15jt), Swedia (793.880, 20jt). Per kapita TERTINGGI &amp; TERENDAH: A. AS &amp; Belanda &nbsp; B. Swiss &amp; Swedia &nbsp; C. Norwegia &amp; AS &nbsp; D. Norwegia &amp; Belanda &nbsp; E. Luksemburg &amp; Swedia</p>
-        <ol><li><b>Jawaban: D.</b> Per kapita: AS=42.000, Belanda=38.600 (terendah), Norwegia&asymp;64.188 (tertinggi), Luksemburg&asymp;53.621, Swiss&asymp;50.532, Swedia&asymp;39.694.</li></ol>
+        <p class="setup">GNP &amp; penduduk: AS (1.680.000, 40jt jiwa), Belanda (579.000, 15jt), Norwegia (1.027.000, 16jt), Luksemburg (643.456, 12jt), Swiss (757.980, 15jt), Swedia (793.880, 20jt). Per kapita TERTINGGI &amp; TERENDAH:</p>
+        <ul class="opts">
+        <li><b>A.</b> AS &amp; Belanda</li>
+        <li><b>B.</b> Swiss &amp; Swedia</li>
+        <li><b>C.</b> Norwegia &amp; AS</li>
+        <li><b>D.</b> Norwegia &amp; Belanda</li>
+        <li><b>E.</b> Luksemburg &amp; Swedia</li>
+        </ul>
       </div>
-      <div class="example-box">
+      <div class="q-item">
         <span class="label">No. 20</span>
-        <p class="setup">Komponen: (1) Laba usaha (2) Hasil sewa (3) Konsumsi RT (4) Investasi (5) Bunga modal (6) Belanja pemerintah. Pendekatan PENDAPATAN: A. 1,2,3 &nbsp; B. 1,2,5 &nbsp; C. 2,4,6 &nbsp; D. 3,4,6 &nbsp; E. 4,5,6</p>
-        <ol><li><b>Jawaban: B (1,2,5).</b> Laba usaha, hasil sewa, bunga modal. 3,4,6 itu pendekatan pengeluaran.</li></ol>
+        <p class="setup">Komponen: (1) Laba usaha (2) Hasil sewa (3) Konsumsi RT (4) Investasi (5) Bunga modal (6) Belanja pemerintah. Pendekatan PENDAPATAN:</p>
+        <ul class="opts">
+        <li><b>A.</b> 1,2,3</li>
+        <li><b>B.</b> 1,2,5</li>
+        <li><b>C.</b> 2,4,6</li>
+        <li><b>D.</b> 3,4,6</li>
+        <li><b>E.</b> 4,5,6</li>
+        </ul>
       </div>
-      <div class="example-box">
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Questions 21-22 ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Latihan Soal</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body">
+      <div class="q-item">
         <span class="label">No. 21</span>
-        <p class="setup">Harga benang Rp6.000, kain Rp12.000, pakaian jadi Rp20.000, kapas Rp2.000, penyusutan aktiva Rp500. Pendapatan nasional (nilai tambah): A. 10.000 &nbsp; B. 14.000 &nbsp; C. 18.000 &nbsp; D. 20.000 &nbsp; E. 40.000</p>
-        <ol><li><b>Jawaban: D (20.000).</b> Nilai tambah tiap tahap (kapas&rarr;benang&rarr;kain&rarr;pakaian jadi): 2.000+4.000+6.000+8.000=20.000, sama dengan harga jual akhir. 40.000 keliru (double counting); penyusutan tidak relevan untuk pendekatan produksi ini.</li></ol>
+        <p class="setup">Harga benang Rp6.000, kain Rp12.000, pakaian jadi Rp20.000, kapas Rp2.000, penyusutan aktiva Rp500. Pendapatan nasional (nilai tambah):</p>
+        <ul class="opts">
+        <li><b>A.</b> 10.000</li>
+        <li><b>B.</b> 14.000</li>
+        <li><b>C.</b> 18.000</li>
+        <li><b>D.</b> 20.000</li>
+        <li><b>E.</b> 40.000</li>
+        </ul>
       </div>
-      <div class="example-box">
+      <div class="q-item">
         <span class="label">No. 22</span>
-        <p class="setup">Pendapatan nasional bertambah lebih besar dari pertambahan penduduk. Artinya: A. pendapatan per kapita turun &nbsp; B. pendapatan per kapita naik &nbsp; C. penduduk melambat &nbsp; D. kesejahteraan turun &nbsp; E. distribusi pendapatan merata</p>
-        <ol><li><b>Jawaban: B.</b> Pendapatan per kapita = PN&divide;penduduk; kalau pembilang tumbuh lebih cepat dari penyebut, hasil baginya pasti naik.</li></ol>
+        <p class="setup">Pendapatan nasional bertambah lebih besar dari pertambahan penduduk. Artinya:</p>
+        <ul class="opts">
+        <li><b>A.</b> pendapatan per kapita turun</li>
+        <li><b>B.</b> pendapatan per kapita naik</li>
+        <li><b>C.</b> penduduk melambat</li>
+        <li><b>D.</b> kesejahteraan turun</li>
+        <li><b>E.</b> distribusi pendapatan merata</li>
+        </ul>
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Kunci Jawaban 1 ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Latihan Soal</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Kunci Jawaban</h2>
+      <p class="lead">Cocokkan jawabanmu, lalu baca pembahasan singkat tiap butir kalau masih ragu.</p>
+      <div class="ref-list-2col">
+        <div class="item"><span class="num">01</span><span class="term">Jawaban: B</span><span class="gloss">Nilai total hasil produksi barang &amp; jasa diukur berdasarkan nilai uangnya (moneter) — bukan kas negara, bukan penerimaan pajak, dan harus barang/jasa akhir (bukan barang mentah).</span></div>
+        <div class="item"><span class="num">02</span><span class="term">Jawaban: E (1.850)</span><span class="gloss">NNP=25.700&minus;3.200=22.500. NNI=22.500&minus;1.200=21.300. PI=NNI+TP&minus;(Laba Ditahan+Pajak Perseroan+Iuran Asuransi) &rarr; 20.250=21.300+TP&minus;2.900 &rarr; TP=1.850.</span></div>
+        <div class="item"><span class="num">03</span><span class="term">Jawaban: C (180)</span><span class="gloss">Jumlah nilai tambah tiap sektor: 100+20+30+30=180, bukan total output (550, double counting) atau total input (370).</span></div>
+        <div class="item"><span class="num">04</span><span class="term">Jawaban: B (Balada)</span><span class="gloss">Per kapita: Intan&asymp;1.263, Swadikap=1.250, Sejahtera&asymp;1.233, Balada&asymp;1.294 (tertinggi), Juara&asymp;1.186 (ribu US$/jiwa).</span></div>
+        <div class="item"><span class="num">05</span><span class="term">Jawaban: B (10.710)</span><span class="gloss">GNP=13.800, NNP=13.560, NNI=12.060, PI=11.510, DI=10.710 (langkah lengkap ada di materi PDF utama, Halaman 5).</span></div>
+        <div class="item"><span class="num">06</span><span class="term">Jawaban: E (73jt)</span><span class="gloss">Abaikan 4 item pendekatan pendapatan (Upah+Laba+Bunga+Sewa=35jt, itu jebakan opsi A). Jumlahkan 5 item sisanya: Pengeluaran RT(36jt)+Konsumsi(25jt)+Pengeluaran pemerintah(10jt)+Ekspor(7jt)&minus;Impor(5jt)=Rp73.000.000.</span></div>
+        <div class="item"><span class="num">07</span><span class="term">Jawaban: B</span><span class="gloss">Gini 0 = pemerataan sempurna, Kurva Lorenz berimpit garis diagonal.</span></div>
+        <div class="item"><span class="num">08</span><span class="term">Jawaban: A (Kep. Bangka Belitung)</span><span class="gloss">Gini terkecil (0,262) di antara keenamnya.</span></div>
+        <div class="item"><span class="num">09</span><span class="term">Jawaban: E</span><span class="gloss">Y=r+w+i+p. "Nilai tambah" (D) itu ciri pendekatan produksi, bukan pendapatan.</span></div>
+        <div class="item"><span class="num">10</span><span class="term">Jawaban: C</span><span class="gloss">PDRB adalah versi GDP khusus wilayah sub-nasional (provinsi/kabupaten).</span></div>
+        <div class="item"><span class="num">11</span><span class="term">Jawaban: A (0,4&ndash;0,5)</span><span class="gloss">Sepenuhnya di dalam kategori Sedang (0,30&ndash;0,50), tidak menyerempet Rendah/Tinggi seperti opsi lain.</span></div>
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Kunci Jawaban 2 ===== -->
+<div class="pdf-page" data-subject="ekonomi">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Latihan Soal</span><span class="subject-chip">Ekonomi</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Kunci Jawaban (lanjutan)</h2>
+      <div class="ref-list-2col">
+        <div class="item"><span class="num">12</span><span class="term">Jawaban: C (PDRB)</span><span class="gloss">Definisi PDRB persis ini.</span></div>
+        <div class="item"><span class="num">13</span><span class="term">Jawaban: E (113.500)</span><span class="gloss">Y=37.500+46.400+21.500+(14.500&minus;6.400)=113.500.</span></div>
+        <div class="item"><span class="num">14</span><span class="term">Jawaban: E</span><span class="gloss">Disposable Income = pendapatan siap dibelanjakan/ditabung.</span></div>
+        <div class="item"><span class="num">15</span><span class="term">Jawaban: E</span><span class="gloss">PDB murni mengukur jumlah &amp; harga output, bukan pemerataan/kualitas hidup.</span></div>
+        <div class="item"><span class="num">16</span><span class="term">Jawaban: C</span><span class="gloss">Standar hidup per kepala naik kalau GDP riil tumbuh lebih cepat dari penduduk, supaya "kue" ekonomi yang dibagi tiap kepala benar-benar bertambah.</span></div>
+        <div class="item"><span class="num">17</span><span class="term">Jawaban: D (2,3,6)</span><span class="gloss">Investasi, Konsumsi RT, Konsumsi pemerintah. 1,4,5 itu pendekatan pendapatan.</span></div>
+        <div class="item"><span class="num">18</span><span class="term">Jawaban: A</span><span class="gloss">Nilai tambah (output&minus;input antara), bukan output kotor/bahan mentah.</span></div>
+        <div class="item"><span class="num">19</span><span class="term">Jawaban: D</span><span class="gloss">Per kapita: AS=42.000, Belanda=38.600 (terendah), Norwegia&asymp;64.188 (tertinggi), Luksemburg&asymp;53.621, Swiss&asymp;50.532, Swedia&asymp;39.694.</span></div>
+        <div class="item"><span class="num">20</span><span class="term">Jawaban: B (1,2,5)</span><span class="gloss">Laba usaha, hasil sewa, bunga modal. 3,4,6 itu pendekatan pengeluaran.</span></div>
+        <div class="item"><span class="num">21</span><span class="term">Jawaban: D (20.000)</span><span class="gloss">Nilai tambah tiap tahap (kapas&rarr;benang&rarr;kain&rarr;pakaian jadi): 2.000+4.000+6.000+8.000=20.000, sama dengan harga jual akhir. 40.000 keliru (double counting); penyusutan tidak relevan untuk pendekatan produksi ini.</span></div>
+        <div class="item"><span class="num">22</span><span class="term">Jawaban: B</span><span class="gloss">Pendapatan per kapita = PN&divide;penduduk; kalau pembilang tumbuh lebih cepat dari penyebut, hasil baginya pasti naik.</span></div>
       </div>
     </div>
     <div class="page-foot">
