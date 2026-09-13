@@ -1651,6 +1651,24 @@ function initPdfViewers(root){
     const nextBtn = viewer.querySelector('.pdf-viewer-next');
     const downloadBtn = viewer.dataset.pdfDownload === 'true' ? viewer.querySelector('.pdf-viewer-download') : null;
 
+    // Jump 5 pages at once — inserted here rather than hand-added to every
+    // chapter's markup, so every .pdf-viewer (present and future) gets it
+    // for free from this one shared component.
+    const SKIP = 5;
+    const skipBackBtn = document.createElement('button');
+    skipBackBtn.type = 'button';
+    skipBackBtn.className = 'pdf-viewer-skip pdf-viewer-skip-back';
+    skipBackBtn.setAttribute('aria-label', `Mundur ${SKIP} halaman`);
+    skipBackBtn.textContent = '«';
+    prevBtn.insertAdjacentElement('beforebegin', skipBackBtn);
+
+    const skipFwdBtn = document.createElement('button');
+    skipFwdBtn.type = 'button';
+    skipFwdBtn.className = 'pdf-viewer-skip pdf-viewer-skip-fwd';
+    skipFwdBtn.setAttribute('aria-label', `Maju ${SKIP} halaman`);
+    skipFwdBtn.textContent = '»';
+    nextBtn.insertAdjacentElement('afterend', skipFwdBtn);
+
     const session = getSession();
     if(!session || !session.token){
       loadingEl.textContent = 'Login dulu buat lihat materi PDF.';
@@ -1700,6 +1718,8 @@ function initPdfViewers(root){
       }finally{
         prevBtn.disabled = currentPage <= 1;
         nextBtn.disabled = currentPage >= pageCount;
+        skipBackBtn.disabled = currentPage <= 1;
+        skipFwdBtn.disabled = currentPage >= pageCount;
       }
     }
 
@@ -1720,6 +1740,8 @@ function initPdfViewers(root){
 
     prevBtn.addEventListener('click', ()=>{ if(currentPage > 1) loadPage(currentPage - 1); });
     nextBtn.addEventListener('click', ()=>{ if(currentPage < pageCount) loadPage(currentPage + 1); });
+    skipBackBtn.addEventListener('click', ()=>{ if(currentPage > 1) loadPage(Math.max(1, currentPage - SKIP)); });
+    skipFwdBtn.addEventListener('click', ()=>{ if(currentPage < pageCount) loadPage(Math.min(pageCount, currentPage + SKIP)); });
 
     if(downloadBtn){
       const defaultLabel = downloadBtn.textContent;
