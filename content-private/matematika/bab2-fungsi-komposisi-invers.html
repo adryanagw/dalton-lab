@@ -1,0 +1,328 @@
+<section class="hero">
+  <div class="hero-decor"></div>
+  <div class="wrap hero-grid single">
+    <div>
+      <div class="eyebrow">Materi Kelas XI · Matematika</div>
+      <h1 style="max-width:640px;">Fungsi, Komposisi &amp; <em>Fungsi Invers</em>.</h1>
+      <div class="hero-btns">
+        <a href="#kuis-matematika-b2" class="btn btn-primary">Langsung ke Drill Soal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pdf-materi" class="notebook-bg tight" data-nav="Materi PDF">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Materi PDF</div>
+      <h2>Referensi Lengkap, Pembuktian &amp; Contoh Soal Tambahan</h2>
+    </div>
+    <div class="pdf-viewer" data-pdf-subject="matematika" data-pdf-bab="bab2-fungsi-komposisi-invers">
+      <div class="pdf-viewer-stage">
+        <div class="pdf-viewer-loading">Memuat…</div>
+        <img class="pdf-viewer-img" alt="Halaman materi PDF" decoding="sync" draggable="false" oncontextmenu="return false;">
+        <div class="pdf-viewer-watermark"></div>
+      </div>
+      <div class="pdf-viewer-controls">
+        <button type="button" class="pdf-viewer-prev" aria-label="Halaman sebelumnya">‹</button>
+        <span class="pdf-viewer-pagenum">Halaman 1 / 1</span>
+        <button type="button" class="pdf-viewer-next" aria-label="Halaman berikutnya">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="konsep-dasar" class="tight" data-nav="Konsep Dasar">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">01 · Relasi &amp; Fungsi</div>
+      <h2>Relasi vs Fungsi: Bedanya di Mana?</h2>
+      <p><b style="color:var(--heading);">Relasi</b> itu cuma hubungan biasa antar dua himpunan. <b style="color:var(--heading);">Fungsi (pemetaan)</b> lebih "disiplin" — tiap elemen di himpunan asal (<b>domain</b>) wajib punya <b>tepat satu</b> pasangan di himpunan kawan (<b>kodomain</b>). Boleh "bercabang" (satu elemen domain punya dua pasangan) atau ada elemen domain yang nggak kebagian pasangan sama sekali? Itu bukan fungsi.</p>
+    </div>
+
+    <div class="jenis-box diagram-card">
+      <p class="diagram-eyebrow">Diagram Panah · Relasi Bukan Fungsi vs Fungsi</p>
+      <img src="assets/images/matematika/relasi-vs-fungsi.webp" alt="Diagram panah dua himpunan A dan B: kiri menunjukkan relasi bukan fungsi karena elemen 1 punya dua pasangan dan elemen 3 tidak punya pasangan, kanan menunjukkan fungsi karena tiap elemen A tepat punya satu pasangan di B" loading="lazy" decoding="async" width="2584" height="1153">
+      <p class="diagram-caption">Kiri: elemen 1 "bercabang" ke dua pasangan (a dan b), elemen 3 nggak dapat pasangan sama sekali — bukan fungsi. Kanan: tiap elemen di A (1, 2, 3) tepat punya satu panah keluar — ini baru fungsi, meskipun boleh dua elemen domain menuju elemen kodomain yang sama (1 dan 3 sama-sama menuju b).</p>
+    </div>
+
+    <div class="jenis-box" style="max-width:640px;">
+      <h3 style="font-size:1.1rem;">📐 Tiga Unsur Utama Fungsi</h3>
+      <ul class="check-list">
+        <li><b>Domain (\(D_f\)):</b> daerah asal — himpunan semua nilai input x yang bikin fungsi terdefinisi.</li>
+        <li><b>Kodomain (\(K_f\)):</b> daerah kawan — himpunan target/wadah penampung output.</li>
+        <li><b>Range (\(R_f\)):</b> daerah hasil — himpunan bagian dari kodomain yang <i>benar-benar</i> kepakai (punya pasangan dari domain). Range selalu bagian dari (subset) kodomain, bisa saja sama persis, bisa saja lebih kecil.</li>
+      </ul>
+    </div>
+
+    <div class="section-head" style="margin-top:34px;margin-bottom:10px;">
+      <h3 style="font-size:1.2rem;">Konsep "Mesin Fungsi"</h3>
+      <p>Cara termudah membayangkan fungsi: anggap sebagai <b style="color:var(--heading);">mesin</b>. Nilai input x dimasukkan, diproses sesuai aturan aljabar f, lalu keluar sebagai output y = f(x). Satu input yang sama akan selalu menghasilkan output yang sama setiap kali dimasukkan.</p>
+    </div>
+
+    <div class="jenis-box diagram-card">
+      <p class="diagram-eyebrow">Ilustrasi · Mesin Fungsi f(x) = 2x + 3</p>
+      <img src="assets/images/matematika/mesin-fungsi.webp" alt="Ilustrasi mesin fungsi f(x)=2x+3: input x=4 masuk ke mesin fungsi, diproses, menghasilkan output y=f(4)=11" loading="lazy" decoding="async" width="1746" height="580">
+      <p class="diagram-caption">Input x = 4 masuk ke "mesin" f(x) = 2x + 3, diproses jadi 2(4)+3 = 11, keluar sebagai output y = f(4) = 11.</p>
+    </div>
+  </div>
+</section>
+
+<section id="domain-alami" class="notebook-bg tight" data-nav="Domain Alami">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">02 · Domain Alami (Natural Domain)</div>
+      <h2>Kapan Suatu Fungsi "Berhenti Berlaku"?</h2>
+      <p>Standarnya, domain fungsi real itu semua bilangan real (\(\mathbb{R}\)). Tapi ada <b style="color:var(--heading);">3 bentuk khusus</b> yang bikin sebagian nilai x harus dicoret dari domain, karena hasilnya jadi nggak masuk akal secara matematis kalau dipaksakan.</p>
+    </div>
+
+    <div class="jenis-box" style="max-width:640px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+        <span class="struct-num">1</span>
+        <h3 style="font-size:1.05rem;margin:0;">Bentuk Pecahan</h3>
+      </div>
+      <p style="color:var(--slate);font-size:.88rem;margin:8px 0 20px;">\(f(x)=\dfrac{g(x)}{h(x)}\) — penyebut nggak boleh nol: <b style="color:var(--heading);">\(h(x)\neq0\)</b>.</p>
+
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+        <span class="struct-num">2</span>
+        <h3 style="font-size:1.05rem;margin:0;">Bentuk Akar (Genap)</h3>
+      </div>
+      <p style="color:var(--slate);font-size:.88rem;margin:8px 0 20px;">\(f(x)=\sqrt{g(x)}\) — nilai di dalam akar nggak boleh negatif: <b style="color:var(--heading);">\(g(x)\geq0\)</b>.</p>
+
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+        <span class="struct-num">3</span>
+        <h3 style="font-size:1.05rem;margin:0;">Bentuk Logaritma</h3>
+      </div>
+      <p style="color:var(--slate);font-size:.88rem;margin:8px 0 0;">\(f(x)={}^{a}\log(g(x))\) — numerus harus positif: <b style="color:var(--heading);">\(g(x)>0\)</b>, dengan syarat basis \(a>0, a\neq1\).</p>
+    </div>
+
+    <div class="law-strip" style="max-width:640px;margin-top:26px;">
+      <b>💡 Contoh Cepat:</b> domain dari \(f(x)=\dfrac{\sqrt{x^2-9}}{x-5}\) harus penuhi <b>dua</b> syarat sekaligus: syarat akar (\(x^2-9\geq0 \Rightarrow x\leq-3\) atau \(x\geq3\)) DAN syarat pecahan (\(x-5\neq0 \Rightarrow x\neq5\)). Gabungkan (irisan) keduanya: \(D_f=\{x\in\mathbb{R}\mid(x\leq-3\text{ atau }x\geq3)\text{ dan }x\neq5\}\). Pembahasan step demi step ada di <b>materi PDF pelengkap</b> di atas.
+    </div>
+
+    <div class="jenis-box" style="margin-top:22px;max-width:640px;">
+      <h3 style="font-size:1.05rem;">⚠️ Perhatikan Jebakan Umum</h3>
+      <p style="color:var(--slate);font-size:.87rem;margin-top:8px;"><b>❌ Salah:</b> begitu ketemu bentuk akar, langsung berhenti dan anggap syaratnya sudah "beres". <b>✅ Benar:</b> kalau dalam satu fungsi ada <i>lebih dari satu</i> bentuk pembatas (misalnya akar sekaligus pecahan, seperti contoh di atas), semua syarat itu wajib digabung dengan irisan (∩) — bukan dipilih salah satu, dan bukan digabung dengan gabungan (∪).</p>
+    </div>
+  </div>
+</section>
+
+<section id="sifat-pemetaan" data-nav="Sifat Pemetaan">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">03 · Klasifikasi Fungsi</div>
+      <h2>Injektif, Surjektif &amp; Bijektif</h2>
+      <p>Berdasarkan pola pemetaan dari domain ke kodomain, fungsi dibedakan jadi tiga jenis. Salah satu dari ketiganya adalah <b style="color:var(--heading);">syarat mutlak</b> supaya fungsi punya invers.</p>
+    </div>
+
+    <div class="jenis-box diagram-card">
+      <p class="diagram-eyebrow">Diagram Panah · Injektif, Surjektif, Bijektif</p>
+      <img src="assets/images/matematika/klasifikasi-pemetaan.webp" alt="Tiga diagram panah membandingkan fungsi injektif (satu-satu), surjektif (onto/pada), dan bijektif (korespondensi satu-satu) dari domain A ke kodomain B" loading="lazy" decoding="async" width="3332" height="1028">
+      <p class="diagram-caption">Injektif: tiap elemen B dipasangkan paling banyak 1 dari A (c di kodomain boleh nggak kebagian pasangan). Surjektif: semua elemen B habis berpasangan (range = kodomain), meski ada elemen A yang berbagi pasangan sama. Bijektif: injektif dan surjektif sekaligus — korespondensi satu-satu murni.</p>
+    </div>
+
+    <div class="jenis-box" style="max-width:640px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+        <span class="struct-num">1</span>
+        <h3 style="font-size:1.05rem;margin:0;">Injektif (Satu-Satu)</h3>
+      </div>
+      <p style="color:var(--slate);font-size:.87rem;margin:8px 0 20px;">Kalau \(x_1\neq x_2\), maka \(f(x_1)\neq f(x_2)\). Nggak ada dua elemen domain berbeda yang dipetakan ke elemen kodomain yang sama.</p>
+
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+        <span class="struct-num">2</span>
+        <h3 style="font-size:1.05rem;margin:0;">Surjektif (Onto / Pada)</h3>
+      </div>
+      <p style="color:var(--slate);font-size:.87rem;margin:8px 0 20px;">Daerah hasil sama dengan daerah kawan (\(R_f=K_f\)). Seluruh anggota kodomain minimal punya satu pasangan di domain — nggak ada yang "nganggur".</p>
+
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+        <span class="struct-num">3</span>
+        <h3 style="font-size:1.05rem;margin:0;">Bijektif (Korespondensi Satu-Satu)</h3>
+      </div>
+      <p style="color:var(--slate);font-size:.87rem;margin:8px 0 0;">Injektif <b>dan</b> surjektif sekaligus. Tiap anggota domain berpasangan tepat satu dengan anggota kodomain, dan sebaliknya juga berlaku.</p>
+    </div>
+
+    <div class="law-strip" style="max-width:640px;margin-top:26px;">
+      <b>💡 Kenapa Ini Penting:</b> fungsi f hanya punya fungsi invers \(f^{-1}\) kalau f <b>bijektif</b>. Kalau f cuma injektif tapi nggak surjektif (atau sebaliknya), "kebalikannya" nggak bisa jadi fungsi yang sah — cara menguji injektif/surjektif secara aljabar (bukan cuma dari diagram panah) ada di <b>materi PDF pelengkap</b>.
+    </div>
+  </div>
+</section>
+
+<section id="fungsi-komposisi" class="notebook-bg tight" data-nav="Komposisi">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">04 · Menggabungkan Dua Fungsi</div>
+      <h2>Fungsi Komposisi (f ∘ g)(x)</h2>
+      <p>Fungsi komposisi menggabungkan dua fungsi secara berurutan — hasil dari fungsi pertama jadi masukan buat fungsi kedua. Notasinya: <b style="color:var(--heading);">\((f\circ g)(x)=f(g(x))\)</b>, dibaca "f bundaran g", artinya <b>g dikerjakan dulu</b>, baru hasilnya dimasukkan ke f.</p>
+    </div>
+
+    <div class="jenis-box diagram-card">
+      <p class="diagram-eyebrow">Diagram Pemetaan · Fungsi Komposisi (f ∘ g)(x)</p>
+      <img src="assets/images/matematika/diagram-komposisi-fungsi.webp" alt="Diagram pemetaan fungsi komposisi (f komposisi g)(x): elemen x di himpunan A dipetakan oleh g ke g(x) di himpunan B, lalu dipetakan oleh f ke f(g(x)) di himpunan C" loading="lazy" decoding="async" width="2138" height="1039">
+      <p class="diagram-caption">Elemen x ∈ A dipetakan g ke g(x) ∈ B (proses g), lalu g(x) dipetakan f ke f(g(x)) ∈ C (proses f). Panah oranye di atas adalah jalan pintasnya: langsung dari x ke f(g(x)).</p>
+    </div>
+
+    <div class="two-col">
+      <div class="split-card">
+        <div class="split-tag">Operasi Aljabar Fungsi</div>
+        <div class="jenis-item"><b>Penjumlahan</b><span>\((f+g)(x)=f(x)+g(x)\)</span></div>
+        <div class="jenis-item"><b>Pengurangan</b><span>\((f-g)(x)=f(x)-g(x)\)</span></div>
+        <div class="jenis-item"><b>Perkalian</b><span>\((f\cdot g)(x)=f(x)\cdot g(x)\)</span></div>
+        <div class="jenis-item"><b>Pembagian</b><span>\(\left(\frac{f}{g}\right)(x)=\frac{f(x)}{g(x)}\), syarat \(g(x)\neq0\)</span></div>
+      </div>
+      <div class="split-card">
+        <div class="split-tag">Sifat Operasi Komposisi</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+          <span class="struct-num" style="width:24px;height:24px;font-size:.8rem;">1</span>
+          <b style="font-size:.88rem;color:var(--heading);">Tidak Komutatif</b>
+        </div>
+        <p style="font-size:.83rem;color:var(--slate);margin:0 0 12px 34px;">Umumnya \((f\circ g)(x)\neq(g\circ f)(x)\) — urutan pengerjaan menentukan hasil.</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+          <span class="struct-num" style="width:24px;height:24px;font-size:.8rem;">2</span>
+          <b style="font-size:.88rem;color:var(--heading);">Asosiatif</b>
+        </div>
+        <p style="font-size:.83rem;color:var(--slate);margin:0 0 12px 34px;">\((f\circ(g\circ h))(x)=((f\circ g)\circ h)(x)\).</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+          <span class="struct-num" style="width:24px;height:24px;font-size:.8rem;">3</span>
+          <b style="font-size:.88rem;color:var(--heading);">Punya Elemen Identitas</b>
+        </div>
+        <p style="font-size:.83rem;color:var(--slate);margin:0 0 0 34px;">\(I(x)=x\), sehingga \((f\circ I)(x)=(I\circ f)(x)=f(x)\).</p>
+      </div>
+    </div>
+
+    <div class="law-strip" style="margin-top:26px;max-width:640px;">
+      <b>💡 Contoh Cepat:</b> jika \(f(x)=2x^2-3x+1\) dan \(g(x)=x+4\), maka \((f\circ g)(2)\) dihitung dari dalam ke luar: \(g(2)=6\), lalu \(f(6)=2(36)-18+1=55\). Contoh soal lengkap (termasuk cara mencari komponen g(x) kalau yang diketahui hasil komposisinya) ada di <b>materi PDF pelengkap</b>.
+    </div>
+
+    <div class="jenis-box" style="margin-top:22px;max-width:640px;">
+      <h3 style="font-size:1.05rem;">⚠️ Perhatikan Jebakan Umum</h3>
+      <p style="color:var(--slate);font-size:.87rem;margin-top:8px;"><b>❌ Salah:</b> mengira \((f\circ g)(x)\) sama dengan \((g\circ f)(x)\), atau mengerjakan f dulu baru g saat diminta \((f\circ g)(x)\). <b>✅ Benar:</b> notasi \((f\circ g)(x)\) selalu berarti g dikerjakan <i>lebih dulu</i> (paling dekat ke x), baru hasilnya dimasukkan ke f — kebalikan urutan penulisannya.</p>
+    </div>
+  </div>
+</section>
+
+<section id="fungsi-invers" class="tight" data-nav="Fungsi Invers">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">05 · Kebalikan Fungsi</div>
+      <h2>Fungsi Invers f<sup>-1</sup>(x)</h2>
+      <p>Fungsi invers (\(f^{-1}\)) adalah kebalikan dari fungsi f. Kalau f memetakan \(x\to y\), maka \(f^{-1}\) memetakan balik \(y\to x\): <b style="color:var(--heading);">\(y=f(x)\iff x=f^{-1}(y)\)</b>. Ingat dari bagian sebelumnya — ini cuma bisa dilakukan kalau f <b>bijektif</b>.</p>
+    </div>
+
+    <div class="jenis-box diagram-card">
+      <p class="diagram-eyebrow">Grafik · Simetri f(x) dan f<sup>-1</sup>(x)</p>
+      <img src="assets/images/matematika/simetri-fungsi-invers.webp" alt="Grafik yang menunjukkan simetri fungsi f(x)=2x+1 dan inversnya f invers(x)=(x-1)/2 terhadap garis y=x, dengan titik (1,3) pada f dan titik cerminnya (3,1) pada f invers" loading="lazy" decoding="async" width="1599" height="1289">
+      <p class="diagram-caption">Grafik \(f^{-1}(x)\) selalu merupakan hasil pencerminan grafik \(f(x)\) terhadap garis \(y=x\) — titik (1, 3) di f punya cermin di titik (3, 1) di \(f^{-1}\) (koordinatnya tertukar).</p>
+    </div>
+
+    <div class="jenis-box" style="max-width:640px;">
+      <h3 style="font-size:1.1rem;">📐 Langkah Baku Mencari Fungsi Invers</h3>
+      <div style="display:flex;align-items:center;gap:12px;margin:14px 0 6px;">
+        <span class="struct-num">1</span>
+        <p style="margin:0;font-size:.88rem;color:var(--ink);">Misalkan persamaan fungsi f(x) sebagai y: <b>y = f(x)</b>.</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;margin:14px 0 6px;">
+        <span class="struct-num">2</span>
+        <p style="margin:0;font-size:.88rem;color:var(--ink);">Manipulasi aljabar untuk nyatakan x dalam bentuk y: <b>x = g(y)</b>.</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;margin:14px 0 6px;">
+        <span class="struct-num">3</span>
+        <p style="margin:0;font-size:.88rem;color:var(--ink);">Ganti x menjadi <b>f<sup>-1</sup>(x)</b> dan ganti y menjadi <b>x</b>.</p>
+      </div>
+    </div>
+
+    <div class="law-strip" style="max-width:640px;margin-top:26px;">
+      <b>💡 Dua Rumus Cepat yang Paling Sering Dipakai:</b> untuk \(f(x)=ax+b\), \(f^{-1}(x)=\dfrac{x-b}{a}\). Untuk pecahan rasional \(f(x)=\dfrac{ax+b}{cx+d}\), \(f^{-1}(x)=\dfrac{-dx+b}{cx-a}\) (posisi a &amp; d ditukar, tandanya dibalik). Tabel lengkap 5 bentuk (linear, pecahan rasional, akar, kuadrat, eksponen) beserta syaratnya ada di <b>materi PDF pelengkap</b> di atas, lengkap dengan pembuktian kenapa rumusnya bisa begitu.
+    </div>
+  </div>
+</section>
+
+<section id="invers-komposisi" class="notebook-bg tight" data-nav="Invers Komposisi">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">06 · Menggabungkan Invers &amp; Komposisi</div>
+      <h2>Invers dari Fungsi Komposisi</h2>
+      <p>Kalau fungsi f dan g masing-masing punya invers, maka invers dari fungsi komposisinya adalah:</p>
+    </div>
+
+    <div class="jenis-box" style="max-width:640px;">
+      <p style="text-align:center;font-size:1.05rem;color:var(--heading);margin:6px 0 16px;">\((f\circ g)^{-1}(x)=(g^{-1}\circ f^{-1})(x)\)</p>
+      <p style="text-align:center;font-size:1.05rem;color:var(--heading);margin:0 0 6px;">\((g\circ f)^{-1}(x)=(f^{-1}\circ g^{-1})(x)\)</p>
+      <p style="text-align:center;font-size:.85rem;color:var(--slate);font-style:italic;margin-top:14px;">Urutan fungsi dibalik saat melakukan invers komposisi!</p>
+    </div>
+
+    <div class="law-strip" style="max-width:640px;margin-top:26px;">
+      <b>💡 Contoh Cepat:</b> jika \(f^{-1}(x)=\dfrac{x+1}{2}\) dan \(g^{-1}(x)=3x-4\), maka \((f\circ g)^{-1}(3)=(g^{-1}\circ f^{-1})(3)\): hitung \(f^{-1}(3)=2\) dulu, baru masukkan ke \(g^{-1}\): \(g^{-1}(2)=2\). Jadi hasilnya 2. Contoh soal berantai yang lebih panjang ada di <b>materi PDF pelengkap</b>.
+    </div>
+
+    <div class="jenis-box" style="margin-top:22px;max-width:640px;">
+      <h3 style="font-size:1.05rem;">⚠️ Perhatikan Jebakan Umum</h3>
+      <p style="color:var(--slate);font-size:.87rem;margin-top:8px;"><b>❌ Salah:</b> menulis \((f\circ g)^{-1}(x)=(f^{-1}\circ g^{-1})(x)\) — urutannya dibiarkan sama seperti komposisi aslinya. <b>✅ Benar:</b> urutannya wajib <i>dibalik</i> jadi \((g^{-1}\circ f^{-1})(x)\), persis seperti aturan invers pada perkalian matriks atau memakai-melepas sepatu &amp; kaus kaki — yang dipakai terakhir harus dilepas duluan.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pengayaan-tangga" data-nav="Pengayaan">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">07 · Pengayaan</div>
+      <h2>Fungsi Tangga: Floor &amp; Ceiling</h2>
+      <p>Di luar fungsi-fungsi aljabar biasa, ada fungsi khusus yang sering muncul di soal olimpiade &amp; tingkat lanjut — <b style="color:var(--heading);">fungsi tangga (step function)</b>. Grafiknya kelihatan seperti anak tangga karena outputnya "meloncat" di titik-titik bilangan bulat.</p>
+    </div>
+
+    <div class="jenis-box diagram-card">
+      <p class="diagram-eyebrow">Grafik · Fungsi Floor &amp; Ceiling</p>
+      <img src="assets/images/matematika/fungsi-floor-ceiling.webp" alt="Grafik fungsi floor y=floor(x) yang membulatkan ke bawah dan fungsi ceiling y=ceiling(x) yang membulatkan ke atas, keduanya berbentuk anak tangga dengan titik bulat penuh menandakan nilai terdefinisi" loading="lazy" decoding="async" width="2649" height="1139">
+      <p class="diagram-caption">Titik bulat penuh (●) menandakan nilai yang benar-benar terdefinisi di interval itu, titik lingkaran kosong (○) menandakan batas yang tidak termasuk.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="split-card">
+        <div class="split-tag">Fungsi Floor ⌊x⌋</div>
+        <p style="font-size:.9rem;color:var(--ink);">Membulatkan x ke bilangan bulat <b>terbesar</b> yang kurang dari atau sama dengan x (pembulatan ke bawah).</p>
+        <p style="font-size:.84rem;color:var(--slate);margin-top:8px;">⌊3.7⌋ = 3, ⌊5⌋ = 5, ⌊−2.3⌋ = −3</p>
+      </div>
+      <div class="split-card">
+        <div class="split-tag">Fungsi Ceiling ⌈x⌉</div>
+        <p style="font-size:.9rem;color:var(--ink);">Membulatkan x ke bilangan bulat <b>terkecil</b> yang lebih dari atau sama dengan x (pembulatan ke atas).</p>
+        <p style="font-size:.84rem;color:var(--slate);margin-top:8px;">⌈3.1⌉ = 4, ⌈5⌉ = 5, ⌈−2.7⌉ = −2</p>
+      </div>
+    </div>
+
+    <p class="mini-note" style="max-width:640px;margin-top:22px;">Perhatikan ⌊5⌋ = 5 dan ⌈5⌉ = 5 — kalau x sudah bilangan bulat, floor dan ceiling-nya sama persis dengan x itu sendiri. Latihan tambahan menyelesaikan persamaan yang melibatkan floor/ceiling ada di <b>materi PDF pelengkap</b> di atas.</p>
+  </div>
+</section>
+
+<section id="kuis-matematika-b2" style="background:var(--navy);" data-nav="Drill Soal" data-nav-cta>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="color:var(--orange);">08 · Uji Pemahaman</div>
+      <h2 style="color:#fff;">Drill Soal: Fungsi, Komposisi &amp; Invers</h2>
+      <p style="color:#c3ccd9;">Soal pilihan ganda mencakup semua materi di atas — dari domain alami sampai invers fungsi komposisi. Jawab satu-satu, dapatkan pembahasan langsung setelah menjawab.</p>
+    </div>
+
+    <div class="quiz-root" data-quiz-subject="matematika" data-quiz-bab="bab2-fungsi-komposisi-invers"></div>
+  </div>
+</section>
+
+<section id="extra-bank-soal" class="notebook-bg" data-nav="Extra Bank Soal">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">09 · Latihan Tambahan</div>
+      <h2>Extra Bank Soal</h2>
+      <p>Kumpulan soal tambahan di luar Drill Soal utama — buat latihan ekstra di luar sesi belajar. Baca langsung di sini atau unduh sebagai PDF.</p>
+    </div>
+    <div class="pdf-viewer" data-pdf-subject="matematika" data-pdf-bab="bab2-fungsi-komposisi-invers-extra-bank-soal" data-pdf-download="true" data-pdf-filename="Extra-Bank-Soal-Matematika-Bab2.pdf">
+      <div class="pdf-viewer-stage">
+        <div class="pdf-viewer-loading">Memuat…</div>
+        <img class="pdf-viewer-img" alt="Halaman extra bank soal" decoding="sync" draggable="false" oncontextmenu="return false;">
+        <div class="pdf-viewer-watermark"></div>
+      </div>
+      <div class="pdf-viewer-controls">
+        <button type="button" class="pdf-viewer-prev" aria-label="Halaman sebelumnya">‹</button>
+        <span class="pdf-viewer-pagenum">Halaman 1 / 1</span>
+        <button type="button" class="pdf-viewer-next" aria-label="Halaman berikutnya">›</button>
+        <button type="button" class="pdf-viewer-download">Unduh PDF</button>
+      </div>
+    </div>
+  </div>
+</section>

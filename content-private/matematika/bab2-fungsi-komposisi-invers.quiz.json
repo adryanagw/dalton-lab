@@ -1,0 +1,662 @@
+[
+  {
+    "q": "Berikut ini yang membuat suatu relasi dari himpunan A ke himpunan B disebut fungsi adalah…",
+    "opts": [
+      "Setiap elemen A dipasangkan ke tepat satu elemen B",
+      "Setiap elemen B dipasangkan ke tepat satu elemen A",
+      "Ada elemen A yang punya dua pasangan di B",
+      "Ada elemen A yang tidak punya pasangan di B"
+    ],
+    "correct": 0,
+    "explain": "Definisi fungsi (pemetaan): setiap anggota domain (A) wajib punya tepat satu pasangan di kodomain (B) — tidak boleh bercabang, dan tidak boleh ada yang tidak kebagian pasangan."
+  },
+  {
+    "q": "Diketahui himpunan A = {1, 2, 3} dan setiap elemen A dipasangkan dengan tepat satu elemen di himpunan B. Bagian dari B yang benar-benar punya pasangan dari A disebut…",
+    "opts": [
+      "Range",
+      "Domain",
+      "Kodomain",
+      "Relasi"
+    ],
+    "correct": 0,
+    "explain": "Range (Rf) adalah daerah hasil — himpunan bagian dari kodomain yang benar-benar terpakai (punya pasangan dari domain). Kodomain adalah seluruh himpunan target, belum tentu semuanya terpakai."
+  },
+  {
+    "q": "Range suatu fungsi selalu…",
+    "opts": [
+      "Himpunan bagian dari kodomain (bisa sama, bisa lebih kecil)",
+      "Selalu sama persis dengan kodomain",
+      "Selalu lebih besar dari kodomain",
+      "Tidak ada hubungannya dengan kodomain"
+    ],
+    "correct": 0,
+    "explain": "Range adalah subset dari kodomain — nilainya bisa sama persis dengan kodomain (kalau fungsinya surjektif) atau lebih kecil (kalau ada anggota kodomain yang tidak kebagian pasangan)."
+  },
+  {
+    "q": "Jika f(x) = 3x − 2 dianalogikan sebagai mesin fungsi, maka output dari input x = 5 adalah…",
+    "opts": [
+      "13",
+      "15",
+      "10",
+      "17"
+    ],
+    "correct": 0,
+    "explain": "f(5) = 3(5) − 2 = 15 − 2 = 13."
+  },
+  {
+    "q": "Domain alami dari f(x) = 1/(x − 3) adalah…",
+    "opts": [
+      "Semua bilangan real kecuali x = 3",
+      "Semua bilangan real",
+      "x ≥ 3",
+      "x > 3"
+    ],
+    "correct": 0,
+    "explain": "Bentuk pecahan mengharuskan penyebut tidak nol: x − 3 ≠ 0, sehingga x ≠ 3."
+  },
+  {
+    "q": "Domain alami dari f(x) = √(x − 4) adalah…",
+    "opts": [
+      "x ≥ 4",
+      "x > 4",
+      "x ≤ 4",
+      "Semua bilangan real"
+    ],
+    "correct": 0,
+    "explain": "Bentuk akar genap mengharuskan nilai di dalam akar tidak negatif: x − 4 ≥ 0, sehingga x ≥ 4."
+  },
+  {
+    "q": "Domain alami dari f(x) = <sup>2</sup>log(x + 1) adalah…",
+    "opts": [
+      "x > −1",
+      "x ≥ −1",
+      "x > 1",
+      "x < −1"
+    ],
+    "correct": 0,
+    "explain": "Numerus logaritma harus positif (bukan nol atau negatif): x + 1 > 0, sehingga x > −1."
+  },
+  {
+    "q": "Domain alami dari f(x) = √(x + 2) / (x − 1) adalah…",
+    "opts": [
+      "x ≥ −2 dan x ≠ 1",
+      "x ≥ −2 saja",
+      "x ≠ 1 saja",
+      "x ≤ −2 atau x ≥ 1"
+    ],
+    "correct": 0,
+    "explain": "Ada dua syarat yang harus digabung (irisan): syarat akar x + 2 ≥ 0 → x ≥ −2, dan syarat pecahan x − 1 ≠ 0 → x ≠ 1. Gabungannya: x ≥ −2 dan x ≠ 1."
+  },
+  {
+    "q": "Domain alami dari f(x) = √(x² − 16) adalah…",
+    "opts": [
+      "x ≤ −4 atau x ≥ 4",
+      "−4 ≤ x ≤ 4",
+      "x ≥ 4 saja",
+      "x ≤ −4 saja"
+    ],
+    "correct": 0,
+    "explain": "x² − 16 ≥ 0 ⟺ (x−4)(x+4) ≥ 0. Uji tanda pada garis bilangan dengan pembuat nol x=4 dan x=−4 menghasilkan x ≤ −4 atau x ≥ 4."
+  },
+  {
+    "q": "Domain alami dari f(x) = √(x² − 9) / (x − 5) adalah…",
+    "opts": [
+      "(x ≤ −3 atau x ≥ 3) dan x ≠ 5",
+      "(x ≤ −3 atau x ≥ 3) saja",
+      "−3 ≤ x ≤ 3 dan x ≠ 5",
+      "x ≠ 5 saja"
+    ],
+    "correct": 0,
+    "explain": "Syarat akar: x² − 9 ≥ 0 → x ≤ −3 atau x ≥ 3. Syarat pecahan: x − 5 ≠ 0 → x ≠ 5. Kedua syarat digabung dengan irisan."
+  },
+  {
+    "q": "Domain alami dari f(x) = <sup>3</sup>log(9 − x²) adalah…",
+    "opts": [
+      "−3 < x < 3",
+      "x < 3",
+      "x > −3",
+      "x ≤ −3 atau x ≥ 3"
+    ],
+    "correct": 0,
+    "explain": "Numerus harus positif: 9 − x² > 0 ⟺ x² < 9 ⟺ −3 < x < 3."
+  },
+  {
+    "q": "Fungsi f dikatakan injektif (satu-satu) jika…",
+    "opts": [
+      "Untuk setiap x₁ ≠ x₂, berlaku f(x₁) ≠ f(x₂)",
+      "Range fungsi sama dengan kodomain",
+      "Fungsi tersebut sekaligus surjektif",
+      "Setiap elemen kodomain punya lebih dari satu pasangan"
+    ],
+    "correct": 0,
+    "explain": "Injektif berarti tidak ada dua elemen domain berbeda yang dipetakan ke elemen kodomain yang sama — kalau x₁≠x₂ maka hasilnya juga harus berbeda."
+  },
+  {
+    "q": "Fungsi f dikatakan surjektif (onto) jika…",
+    "opts": [
+      "Range fungsi sama dengan kodomain (Rf = Kf)",
+      "Setiap elemen domain punya pasangan yang berbeda",
+      "Fungsinya berbentuk linear",
+      "Domain fungsi sama dengan kodomain"
+    ],
+    "correct": 0,
+    "explain": "Surjektif (onto/pada) berarti seluruh anggota kodomain minimal punya satu pasangan di domain, sehingga daerah hasil (range) persis sama dengan kodomain."
+  },
+  {
+    "q": "Syarat mutlak agar suatu fungsi memiliki fungsi invers adalah fungsi tersebut harus…",
+    "opts": [
+      "Bijektif",
+      "Injektif saja",
+      "Surjektif saja",
+      "Kuadrat"
+    ],
+    "correct": 0,
+    "explain": "Fungsi harus bijektif (injektif dan surjektif sekaligus) supaya setiap output punya tepat satu input yang bisa dikembalikan — itulah syarat fungsi invers sah sebagai fungsi."
+  },
+  {
+    "q": "Fungsi f(x) = x² dengan domain semua bilangan real BUKAN merupakan fungsi injektif karena…",
+    "opts": [
+      "f(−2) = f(2) = 4, padahal −2 ≠ 2",
+      "f(x) selalu bernilai positif",
+      "Grafiknya berbentuk parabola",
+      "Domainnya semua bilangan real"
+    ],
+    "correct": 0,
+    "explain": "Injektif mensyaratkan x₁≠x₂ harus menghasilkan f(x₁)≠f(x₂). Di sini x=−2 dan x=2 berbeda tapi menghasilkan output yang sama (4), jadi f(x)=x² pada domain semua real bukan injektif."
+  },
+  {
+    "q": "Fungsi bijektif adalah fungsi yang…",
+    "opts": [
+      "Sekaligus injektif dan surjektif",
+      "Injektif tapi tidak surjektif",
+      "Surjektif tapi tidak injektif",
+      "Tidak injektif maupun surjektif"
+    ],
+    "correct": 0,
+    "explain": "Bijektif (korespondensi satu-satu) adalah fungsi yang memenuhi kedua sifat sekaligus: injektif dan surjektif."
+  },
+  {
+    "q": "Fungsi linear f(x) = ax + b dengan a ≠ 0, dengan domain dan kodomain semua bilangan real, selalu bersifat…",
+    "opts": [
+      "Bijektif",
+      "Hanya injektif, tidak surjektif",
+      "Hanya surjektif, tidak injektif",
+      "Bukan keduanya"
+    ],
+    "correct": 0,
+    "explain": "Fungsi linear dengan a≠0 pada domain-kodomain semua bilangan real selalu satu-satu (grafiknya garis lurus miring, tidak pernah mendatar) sekaligus onto (bisa mencapai semua nilai real) — jadi bijektif, itulah sebabnya fungsi linear selalu punya invers."
+  },
+  {
+    "q": "Diketahui f(x) = x + 2 dan g(x) = x². Nilai dari (f∘g)(3) adalah…",
+    "opts": [
+      "11",
+      "25",
+      "9",
+      "5"
+    ],
+    "correct": 0,
+    "explain": "(f∘g)(3) = f(g(3)) = f(9) = 9 + 2 = 11. Kerjakan g dulu (fungsi yang paling dekat dengan x), baru masukkan hasilnya ke f."
+  },
+  {
+    "q": "Diketahui f(x) = 2x + 1 dan g(x) = x − 3. Nilai dari (g∘f)(2) adalah…",
+    "opts": [
+      "2",
+      "6",
+      "−1",
+      "8"
+    ],
+    "correct": 0,
+    "explain": "(g∘f)(2) = g(f(2)) = g(5) = 5 − 3 = 2. Perhatikan urutannya: f dulu (karena f ditulis paling dekat dengan x di dalam notasi g∘f), baru g."
+  },
+  {
+    "q": "Diketahui f(x) = 2x² − 3x + 1 dan g(x) = x + 4. Nilai dari (f∘g)(2) adalah…",
+    "opts": [
+      "55",
+      "45",
+      "36",
+      "63"
+    ],
+    "correct": 0,
+    "explain": "Hitung g(2) = 2+4 = 6 dulu, lalu f(6) = 2(36) − 3(6) + 1 = 72 − 18 + 1 = 55."
+  },
+  {
+    "q": "Jika f(x) = 3x − 2 dan (f∘g)(x) = 6x² + 9x + 7, maka rumus g(x) adalah…",
+    "opts": [
+      "2x² + 3x + 3",
+      "2x² + 3x + 1",
+      "3x² + 3x + 3",
+      "2x² + 9x + 7"
+    ],
+    "correct": 0,
+    "explain": "(f∘g)(x) = 3·g(x) − 2 = 6x²+9x+7, sehingga 3·g(x) = 6x²+9x+9, dibagi 3: g(x) = 2x²+3x+3."
+  },
+  {
+    "q": "Jika g(x) = x + 1 dan (f∘g)(x) = 2x² + 4x + 5, maka rumus f(x) adalah…",
+    "opts": [
+      "2x² + 3",
+      "2x² + 4x + 5",
+      "2(x−1)² + 4(x−1) + 5",
+      "2x² + 4x + 4"
+    ],
+    "correct": 0,
+    "explain": "(f∘g)(x) = f(x+1) = 2x²+4x+5. Misalkan u = x+1 sehingga x = u−1, substitusikan: f(u) = 2(u−1)²+4(u−1)+5 = 2(u²−2u+1)+4u−4+5 = 2u²−4u+2+4u+1 = 2u²+3. Jadi f(x) = 2x²+3."
+  },
+  {
+    "q": "Manakah pernyataan yang BENAR tentang sifat operasi komposisi fungsi?",
+    "opts": [
+      "(f∘g)(x) secara umum tidak sama dengan (g∘f)(x)",
+      "(f∘g)(x) selalu sama dengan (g∘f)(x)",
+      "Komposisi fungsi selalu komutatif",
+      "Komposisi fungsi tidak pernah asosiatif"
+    ],
+    "correct": 0,
+    "explain": "Komposisi fungsi bersifat tidak komutatif secara umum — urutan pengerjaan (fungsi mana dulu) menentukan hasil akhir, meskipun untuk fungsi identitas hasilnya bisa kebetulan sama."
+  },
+  {
+    "q": "Fungsi identitas I(x) = x memenuhi sifat…",
+    "opts": [
+      "(f∘I)(x) = (I∘f)(x) = f(x)",
+      "(f∘I)(x) = 0 untuk semua f",
+      "(I∘f)(x) selalu berbeda dari f(x)",
+      "I(x) hanya berlaku untuk fungsi linear"
+    ],
+    "correct": 0,
+    "explain": "Fungsi identitas adalah elemen netral pada operasi komposisi — dikomposisikan dengan fungsi apa pun (di kiri atau kanan) hasilnya tetap fungsi itu sendiri."
+  },
+  {
+    "q": "Sifat asosiatif pada komposisi fungsi dinyatakan sebagai…",
+    "opts": [
+      "(f∘(g∘h))(x) = ((f∘g)∘h)(x)",
+      "(f∘g)(x) = (g∘f)(x)",
+      "(f∘g∘h)(x) = f(x)+g(x)+h(x)",
+      "f∘I = 0"
+    ],
+    "correct": 0,
+    "explain": "Asosiatif berarti pengelompokan komposisi tiga fungsi atau lebih tidak mengubah hasil akhirnya, selama urutan pengerjaannya tetap sama."
+  },
+  {
+    "q": "Diketahui f(x) = x² dan g(x) = 2x − 1. Bentuk (f∘g)(x) adalah…",
+    "opts": [
+      "4x² − 4x + 1",
+      "2x² − 1",
+      "4x² − 1",
+      "2x² − 4x + 1"
+    ],
+    "correct": 0,
+    "explain": "(f∘g)(x) = f(g(x)) = f(2x−1) = (2x−1)² = 4x² − 4x + 1."
+  },
+  {
+    "q": "Diketahui f(x) = x² dan g(x) = 2x − 1 (fungsi yang sama seperti soal sebelumnya). Bentuk (g∘f)(x) adalah…",
+    "opts": [
+      "2x² − 1",
+      "4x² − 4x + 1",
+      "x² − 1",
+      "2x − 1"
+    ],
+    "correct": 0,
+    "explain": "(g∘f)(x) = g(f(x)) = g(x²) = 2(x²) − 1 = 2x² − 1 — berbeda dari (f∘g)(x) di soal sebelumnya, membuktikan komposisi tidak komutatif."
+  },
+  {
+    "q": "Jika f(x) = √x dan g(x) = x + 5, maka domain dari (f∘g)(x) adalah…",
+    "opts": [
+      "x ≥ −5",
+      "x ≥ 0",
+      "x ≥ 5",
+      "Semua bilangan real"
+    ],
+    "correct": 0,
+    "explain": "(f∘g)(x) = √(x+5), butuh syarat akar: x+5 ≥ 0, sehingga x ≥ −5."
+  },
+  {
+    "q": "Diketahui f(x) = x + 3 dan g(x) = x². Nilai dari (f+g)(2) adalah…",
+    "opts": [
+      "9",
+      "5",
+      "4",
+      "10"
+    ],
+    "correct": 0,
+    "explain": "(f+g)(2) = f(2)+g(2) = 5 + 4 = 9. Ini operasi penjumlahan fungsi, bukan komposisi — dihitung terpisah lalu dijumlahkan."
+  },
+  {
+    "q": "Diketahui f(x) = 3x dan g(x) = x − 1. Nilai dari (f·g)(4) adalah…",
+    "opts": [
+      "36",
+      "12",
+      "9",
+      "48"
+    ],
+    "correct": 0,
+    "explain": "(f·g)(4) = f(4)·g(4) = 12 · 3 = 36."
+  },
+  {
+    "q": "Diketahui f(x) = x² − 1 dan g(x) = x + 1. Bentuk (f/g)(x) yang paling sederhana, untuk x ≠ −1, adalah…",
+    "opts": [
+      "x − 1",
+      "x + 1",
+      "x² − 1",
+      "1/(x+1)"
+    ],
+    "correct": 0,
+    "explain": "(f/g)(x) = (x²−1)/(x+1) = (x−1)(x+1)/(x+1) = x−1, dengan syarat g(x)≠0 yaitu x≠−1."
+  },
+  {
+    "q": "Fungsi invers f<sup>-1</sup> dari fungsi f didefinisikan dengan hubungan…",
+    "opts": [
+      "y = f(x) ⟺ x = f<sup>-1</sup>(y)",
+      "f<sup>-1</sup>(x) = 1/f(x)",
+      "f<sup>-1</sup>(x) = −f(x)",
+      "f<sup>-1</sup>(x) selalu sama dengan f(x)"
+    ],
+    "correct": 0,
+    "explain": "Fungsi invers memetakan balik output ke input asalnya: kalau f memetakan x menjadi y, maka f<sup>-1</sup> memetakan y kembali menjadi x."
+  },
+  {
+    "q": "1/f(x) disebut juga sebagai…",
+    "opts": [
+      "Kebalikan (resiprokal) dari f(x), BUKAN fungsi invers f<sup>-1</sup>(x)",
+      "Fungsi invers f<sup>-1</sup>(x)",
+      "Fungsi identitas dari f(x)",
+      "Fungsi komposisi dari f(x)"
+    ],
+    "correct": 0,
+    "explain": "Jebakan notasi klasik: f<sup>-1</sup>(x) BUKAN berarti 1/f(x). Pangkat −1 di sini adalah notasi fungsi invers, bukan pangkat aljabar biasa."
+  },
+  {
+    "q": "Grafik fungsi invers f<sup>-1</sup>(x) selalu merupakan hasil pencerminan grafik f(x) terhadap…",
+    "opts": [
+      "Garis y = x",
+      "Sumbu x",
+      "Sumbu y",
+      "Garis y = −x"
+    ],
+    "correct": 0,
+    "explain": "Karena f<sup>-1</sup> menukar peran x dan y dari f, secara geometris grafiknya adalah cerminan grafik f terhadap garis y=x (garis di mana koordinat x dan y sama)."
+  },
+  {
+    "q": "Langkah pertama dalam langkah baku mencari fungsi invers dari f(x) adalah…",
+    "opts": [
+      "Misalkan y = f(x)",
+      "Langsung ganti x dengan f<sup>-1</sup>(x)",
+      "Kalikan f(x) dengan −1",
+      "Cari turunan dari f(x)"
+    ],
+    "correct": 0,
+    "explain": "Langkah baku: (1) misalkan y=f(x), (2) manipulasi aljabar untuk menyatakan x dalam bentuk y, (3) ganti x menjadi f<sup>-1</sup>(x) dan y menjadi x."
+  },
+  {
+    "q": "Fungsi invers dari f(x) = 4x − 7 adalah…",
+    "opts": [
+      "f<sup>-1</sup>(x) = (x+7)/4",
+      "f<sup>-1</sup>(x) = (x−7)/4",
+      "f<sup>-1</sup>(x) = 4x+7",
+      "f<sup>-1</sup>(x) = (x+4)/7"
+    ],
+    "correct": 0,
+    "explain": "Rumus cepat linear ax+b: f<sup>-1</sup>(x) = (x−b)/a. Di sini a=4, b=−7, sehingga f<sup>-1</sup>(x) = (x−(−7))/4 = (x+7)/4."
+  },
+  {
+    "q": "Fungsi invers dari f(x) = (2x+3)/(x−1), untuk x≠1, adalah…",
+    "opts": [
+      "f<sup>-1</sup>(x) = (x+3)/(x−2)",
+      "f<sup>-1</sup>(x) = (x−3)/(x+2)",
+      "f<sup>-1</sup>(x) = (−x+3)/(x−2)",
+      "f<sup>-1</sup>(x) = (2x+1)/(x−3)"
+    ],
+    "correct": 0,
+    "explain": "Rumus cepat pecahan rasional (ax+b)/(cx+d): f<sup>-1</sup>(x) = (−dx+b)/(cx−a). Di sini a=2,b=3,c=1,d=−1, sehingga f<sup>-1</sup>(x) = (−(−1)x+3)/(1·x−2) = (x+3)/(x−2)."
+  },
+  {
+    "q": "Fungsi invers dari f(x) = (4x−5)/(2x+3), untuk x≠−3/2, adalah…",
+    "opts": [
+      "f<sup>-1</sup>(x) = (3x+5)/(4−2x)",
+      "f<sup>-1</sup>(x) = (4x+5)/(3−2x)",
+      "f<sup>-1</sup>(x) = (−3x+5)/(2x+4)",
+      "f<sup>-1</sup>(x) = (3x−5)/(4+2x)"
+    ],
+    "correct": 0,
+    "explain": "Dengan a=4,b=−5,c=2,d=3: f<sup>-1</sup>(x) = (−dx+b)/(cx−a) = (−3x−5)/(2x−4), yang bisa ditulis ulang jadi bentuk ekuivalen (3x+5)/(4−2x) (kalikan pembilang & penyebut dengan −1)."
+  },
+  {
+    "q": "Fungsi invers dari f(x) = ∛(2x − 1) adalah…",
+    "opts": [
+      "f<sup>-1</sup>(x) = (x³+1)/2",
+      "f<sup>-1</sup>(x) = (x³−1)/2",
+      "f<sup>-1</sup>(x) = 2x³+1",
+      "f<sup>-1</sup>(x) = (x+1)³/2"
+    ],
+    "correct": 0,
+    "explain": "Misalkan y=∛(2x−1), maka y³=2x−1, sehingga x=(y³+1)/2. Ganti y menjadi x: f<sup>-1</sup>(x) = (x³+1)/2."
+  },
+  {
+    "q": "Domain hasil invers f<sup>-1</sup>(x) dari fungsi pecahan rasional f(x) = (ax+b)/(cx+d) dibatasi oleh syarat…",
+    "opts": [
+      "x ≠ a/c (dari penyebut hasil invers cx−a)",
+      "x ≠ d/c saja",
+      "x ≠ 0",
+      "Tidak ada pembatasan sama sekali"
+    ],
+    "correct": 0,
+    "explain": "Karena penyebut hasil invers berbentuk cx−a, syaratnya cx−a≠0 sehingga x≠a/c. Ini konsisten dengan range asli dari f(x) yang tidak pernah mencapai nilai a/c."
+  },
+  {
+    "q": "Diketahui f(x) = 5x + 2. Nilai dari f<sup>-1</sup>(12) adalah…",
+    "opts": [
+      "2",
+      "62",
+      "10",
+      "1,4"
+    ],
+    "correct": 0,
+    "explain": "f<sup>-1</sup>(x) = (x−2)/5, sehingga f<sup>-1</sup>(12) = (12−2)/5 = 10/5 = 2. (Cek: f(2) = 5(2)+2 = 12, cocok.)"
+  },
+  {
+    "q": "Invers dari fungsi komposisi (f∘g)(x), dengan f dan g masing-masing punya invers, dirumuskan sebagai…",
+    "opts": [
+      "(f∘g)<sup>-1</sup>(x) = (g<sup>-1</sup>∘f<sup>-1</sup>)(x)",
+      "(f∘g)<sup>-1</sup>(x) = (f<sup>-1</sup>∘g<sup>-1</sup>)(x)",
+      "(f∘g)<sup>-1</sup>(x) = f<sup>-1</sup>(x) + g<sup>-1</sup>(x)",
+      "(f∘g)<sup>-1</sup>(x) = f<sup>-1</sup>(x)·g<sup>-1</sup>(x)"
+    ],
+    "correct": 0,
+    "explain": "Urutan fungsi dibalik saat invers komposisi: (f∘g)<sup>-1</sup>(x) = (g<sup>-1</sup>∘f<sup>-1</sup>)(x) — sama seperti melepas sepatu & kaus kaki, yang dipakai terakhir dilepas duluan."
+  },
+  {
+    "q": "Jika f<sup>-1</sup>(x) = (x+1)/2 dan g<sup>-1</sup>(x) = 3x−4, maka nilai dari (f∘g)<sup>-1</sup>(3) adalah…",
+    "opts": [
+      "2",
+      "5",
+      "3",
+      "8"
+    ],
+    "correct": 0,
+    "explain": "(f∘g)<sup>-1</sup>(x) = (g<sup>-1</sup>∘f<sup>-1</sup>)(x). Hitung f<sup>-1</sup>(3) = (3+1)/2 = 2 dulu, lalu g<sup>-1</sup>(2) = 3(2)−4 = 2. Jadi hasilnya 2."
+  },
+  {
+    "q": "Diketahui f(x) = 2x + 1 dan g(x) = x − 3. Nilai dari (f∘g)<sup>-1</sup>(5) adalah…",
+    "opts": [
+      "5",
+      "2",
+      "9",
+      "1"
+    ],
+    "correct": 0,
+    "explain": "(f∘g)(x) = f(g(x)) = 2(x−3)+1 = 2x−5. Invers dari 2x−5 adalah (x+5)/2. Maka (f∘g)<sup>-1</sup>(5) = (5+5)/2 = 5."
+  },
+  {
+    "q": "Jika f<sup>-1</sup>(x) = 2x − 3 dan (g∘f)<sup>-1</sup>(x) = x + 5, maka g<sup>-1</sup>(x) adalah…",
+    "opts": [
+      "(x + 8)/2",
+      "2x + 7",
+      "(x − 8)/2",
+      "2x − 7"
+    ],
+    "correct": 0,
+    "explain": "(g∘f)<sup>-1</sup>(x) = (f<sup>-1</sup>∘g<sup>-1</sup>)(x) = f<sup>-1</sup>(g<sup>-1</sup>(x)). Karena f<sup>-1</sup>(x)=2x−3, maka f<sup>-1</sup>(g<sup>-1</sup>(x)) = 2·g<sup>-1</sup>(x) − 3. Samakan dengan x+5: 2·g<sup>-1</sup>(x) − 3 = x+5 → 2·g<sup>-1</sup>(x) = x+8 → g<sup>-1</sup>(x) = (x+8)/2."
+  },
+  {
+    "q": "Manakah langkah yang PALING TEPAT untuk menghitung (g∘f)<sup>-1</sup>(2) jika diketahui f<sup>-1</sup>(x) = x² (untuk x≥0) dan g<sup>-1</sup>(x) = x−1?",
+    "opts": [
+      "Hitung f<sup>-1</sup>(g<sup>-1</sup>(2)) — g<sup>-1</sup> dulu, baru f<sup>-1</sup>",
+      "Hitung g<sup>-1</sup>(f<sup>-1</sup>(2)) — f<sup>-1</sup> dulu, baru g<sup>-1</sup>",
+      "Hitung f<sup>-1</sup>(2) dan g<sup>-1</sup>(2) lalu dijumlahkan",
+      "Hitung f<sup>-1</sup>(2) dan g<sup>-1</sup>(2) lalu dikalikan"
+    ],
+    "correct": 0,
+    "explain": "(g∘f)<sup>-1</sup>(x) = (f<sup>-1</sup>∘g<sup>-1</sup>)(x), artinya g<sup>-1</sup> dikerjakan dulu (paling dekat ke x), baru hasilnya dimasukkan ke f<sup>-1</sup>."
+  },
+  {
+    "q": "Fungsi floor ⌊x⌋ membulatkan bilangan real x ke…",
+    "opts": [
+      "Bilangan bulat terbesar yang kurang dari atau sama dengan x",
+      "Bilangan bulat terkecil yang lebih dari atau sama dengan x",
+      "Bilangan bulat terdekat dengan x",
+      "Bilangan bulat ganjil terdekat"
+    ],
+    "correct": 0,
+    "explain": "Fungsi floor (lantai) selalu membulatkan ke bawah — ke bilangan bulat terbesar yang tidak melebihi x."
+  },
+  {
+    "q": "Nilai dari ⌊7.9⌋ adalah…",
+    "opts": [
+      "7",
+      "8",
+      "7,9",
+      "0"
+    ],
+    "correct": 0,
+    "explain": "Floor membulatkan ke bawah: bilangan bulat terbesar yang ≤ 7,9 adalah 7."
+  },
+  {
+    "q": "Nilai dari ⌈4.2⌉ adalah…",
+    "opts": [
+      "5",
+      "4",
+      "4,2",
+      "3"
+    ],
+    "correct": 0,
+    "explain": "Ceiling membulatkan ke atas: bilangan bulat terkecil yang ≥ 4,2 adalah 5."
+  },
+  {
+    "q": "Nilai dari ⌊−3.5⌋ adalah…",
+    "opts": [
+      "−4",
+      "−3",
+      "3",
+      "4"
+    ],
+    "correct": 0,
+    "explain": "Untuk bilangan negatif, floor tetap membulatkan ke bilangan bulat yang lebih kecil (ke arah negatif tak hingga): bilangan bulat terbesar yang ≤ −3,5 adalah −4, bukan −3."
+  },
+  {
+    "q": "Nilai dari ⌈−2.1⌉ adalah…",
+    "opts": [
+      "−2",
+      "−3",
+      "2",
+      "−2,1"
+    ],
+    "correct": 0,
+    "explain": "Ceiling membulatkan ke atas (ke arah positif): bilangan bulat terkecil yang ≥ −2,1 adalah −2."
+  },
+  {
+    "q": "Jika x sudah berupa bilangan bulat, misalnya x = 6, maka…",
+    "opts": [
+      "⌊x⌋ = ⌈x⌉ = 6",
+      "⌊x⌋ = 5 dan ⌈x⌉ = 7",
+      "⌊x⌋ dan ⌈x⌉ tidak terdefinisi",
+      "⌊x⌋ = 7 dan ⌈x⌉ = 5"
+    ],
+    "correct": 0,
+    "explain": "Kalau x sudah bilangan bulat, floor dan ceiling-nya sama persis dengan x itu sendiri — tidak ada pembulatan yang terjadi."
+  },
+  {
+    "q": "Diketahui f(x) = x² + 2x dan g(x) = x − 1. Bentuk (f∘g)(x) yang paling sederhana adalah…",
+    "opts": [
+      "x² − 1",
+      "x² + 2x − 1",
+      "x² − 2x + 1",
+      "x² + 1"
+    ],
+    "correct": 0,
+    "explain": "(f∘g)(x) = f(x−1) = (x−1)² + 2(x−1) = x²−2x+1+2x−2 = x² − 1."
+  },
+  {
+    "q": "Suatu perusahaan menetapkan f(x) = 0,9x sebagai fungsi diskon 10% dan g(x) = x − 20000 sebagai fungsi potongan voucher Rp20.000. Jika diskon diterapkan dulu baru voucher, total harga akhir untuk harga awal x dinyatakan sebagai…",
+    "opts": [
+      "(g∘f)(x) = 0,9x − 20000",
+      "(f∘g)(x) = 0,9x − 18000",
+      "(g∘f)(x) = 0,9(x − 20000)",
+      "(f∘g)(x) = 0,9x − 20000"
+    ],
+    "correct": 0,
+    "explain": "Diskon (f) diterapkan dulu, hasilnya dimasukkan ke voucher (g): (g∘f)(x) = g(f(x)) = g(0,9x) = 0,9x − 20000."
+  },
+  {
+    "q": "Dari soal sebelumnya, jika urutannya dibalik (voucher dulu, baru diskon), maka totalnya adalah…",
+    "opts": [
+      "(f∘g)(x) = 0,9x − 18000",
+      "(g∘f)(x) = 0,9x − 20000",
+      "(f∘g)(x) = 0,9x − 20000",
+      "(f∘g)(x) = 0,9(x + 20000)"
+    ],
+    "correct": 0,
+    "explain": "Voucher (g) dulu, baru diskon (f): (f∘g)(x) = f(g(x)) = f(x−20000) = 0,9(x−20000) = 0,9x − 18000. Hasilnya beda dari soal sebelumnya (0,9x−20000) — bukti nyata bahwa urutan komposisi memengaruhi hasil akhir, bukan cuma latihan aljabar abstrak."
+  },
+  {
+    "q": "Fungsi invers dari f(x) = x² + 3, untuk x ≥ 0, adalah…",
+    "opts": [
+      "f<sup>-1</sup>(x) = √(x−3), untuk x ≥ 3",
+      "f<sup>-1</sup>(x) = √x − 3",
+      "f<sup>-1</sup>(x) = (x−3)²",
+      "f<sup>-1</sup>(x) = √(x+3)"
+    ],
+    "correct": 0,
+    "explain": "Misalkan y=x²+3, maka x²=y−3, sehingga x=√(y−3) (diambil akar positif karena domain asal dibatasi x≥0). Ganti y menjadi x: f<sup>-1</sup>(x)=√(x−3), dengan domain x≥3 (karena range asli f dimulai dari 3)."
+  },
+  {
+    "q": "Kenapa domain fungsi kuadrat f(x) = ax²+bx+c harus dibatasi (misalnya x≥0 saja) sebelum bisa dicari inversnya?",
+    "opts": [
+      "Supaya f menjadi injektif (fungsi kuadrat penuh tidak satu-satu)",
+      "Supaya f menjadi fungsi linear",
+      "Karena fungsi kuadrat tidak punya domain alami",
+      "Supaya hasilnya selalu bilangan bulat"
+    ],
+    "correct": 0,
+    "explain": "Fungsi kuadrat pada domain semua bilangan real tidak injektif (contoh: f(−2)=f(2)) sehingga tidak bijektif dan tidak punya invers yang sah. Membatasi domain (misalnya hanya x≥0, yaitu separuh parabola) membuat fungsi jadi satu-satu sehingga inversnya valid."
+  },
+  {
+    "q": "Diketahui f<sup>-1</sup>(x) = 3x + 6. Fungsi asal f(x) adalah…",
+    "opts": [
+      "f(x) = (x−6)/3",
+      "f(x) = (x+6)/3",
+      "f(x) = 3x − 6",
+      "f(x) = (x−3)/6"
+    ],
+    "correct": 0,
+    "explain": "Invers dari invers adalah fungsi asalnya. Karena f<sup>-1</sup>(x)=3x+6 berbentuk linear ax+b dengan a=3,b=6, maka f(x) adalah invers dari f<sup>-1</sup>, yaitu f(x)=(x−b)/a=(x−6)/3."
+  },
+  {
+    "q": "Diketahui f(x) = 2x − 1 dan g(x) = (x+1)/2. Hubungan antara f dan g adalah…",
+    "opts": [
+      "g = f<sup>-1</sup> (g adalah invers dari f)",
+      "f = g (fungsi yang identik)",
+      "f dan g tidak berhubungan",
+      "g(x) = 1/f(x)"
+    ],
+    "correct": 0,
+    "explain": "Cek dengan rumus cepat: invers dari f(x)=2x−1 adalah f<sup>-1</sup>(x)=(x−(−1))/2=(x+1)/2, persis sama dengan g(x). Jadi g adalah invers dari f (dan sebaliknya)."
+  },
+  {
+    "q": "Untuk memverifikasi bahwa g(x) benar-benar merupakan invers dari f(x), cara yang paling meyakinkan adalah…",
+    "opts": [
+      "Buktikan (f∘g)(x) = (g∘f)(x) = x",
+      "Buktikan f(x) = g(x) untuk semua x",
+      "Buktikan f(0) = g(0) saja",
+      "Buktikan grafik keduanya sejajar"
+    ],
+    "correct": 0,
+    "explain": "Definisi invers menjamin bahwa mengomposisikan fungsi dengan inversnya (di kedua urutan) selalu menghasilkan fungsi identitas x — ini adalah uji pembuktian invers yang paling kuat, bukan sekadar mencocokkan rumus."
+  }
+]

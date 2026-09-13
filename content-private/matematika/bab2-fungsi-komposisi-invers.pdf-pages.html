@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<!-- Rendered PDF companion content for Bab 2 Matematika (Fungsi, Komposisi & Invers),
+     built from bab2-fungsi-komposisi-invers.pdf-spec.md on
+     public/assets/pdf-template/page-template.html. This is the actual filled source,
+     rendered once and shared by every student — no per-page watermark markup here on
+     purpose: the real student-identity watermark is drawn live, per viewer, by
+     initPdfViewers() in app.js (.pdf-viewer-watermark), stamped with that viewer's
+     actual session name and timestamp. Baking a placeholder name into the shared
+     image here would just show every student a second, fake watermark underneath
+     the real one. -->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dalton Lab — PDF Bab 2 Matematika</title>
+<link rel="stylesheet" href="../../public/assets/vendor/fonts/pdf-fonts.css">
+<link rel="stylesheet" href="../../public/assets/vendor/katex/katex.min.css">
+<style>
+  @page{ size:210mm 297mm; margin:0; }
+
+  :root{
+    --navy:#0d1b2e;
+    --navy-2:#16304f;
+    --orange:#ee7d31;
+    --orange-dark:#d4631a;
+    --paper:#faf6ee;
+    --card:#ffffff;
+    --slate:#4f6376;
+    --success:#2f9e6a;
+    --danger:#d64545;
+    --accent:#2f7edb;
+    --orange-ink:#bb4d0e;
+  }
+  .pdf-page[data-subject="matematika"]{ --accent:#2f7edb; }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#fff;font-family:'Literata',serif;}
+
+  /* ---- the reusable page shell — print version: no floating-card chrome,
+       the page IS the physical page, so no radius/shadow/desk background ---- */
+  .pdf-page{
+    position:relative;
+    width:210mm;
+    height:297mm;
+    padding:26px;
+    background:var(--accent);
+    overflow:hidden;
+    break-after:page;
+    page-break-after:always;
+  }
+  .pdf-page:last-child{break-after:auto;page-break-after:avoid;}
+  .pdf-page .sheet{
+    position:relative;
+    width:100%;
+    height:100%;
+    background:var(--card);
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  .page-head{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 40px 18px;
+    border-bottom:1px solid #eef0f2;
+  }
+  .page-head .brand{display:flex;align-items:center;gap:2px;}
+  .page-head .brand img{height:34px;width:auto;display:block;}
+  .page-head .brand-word{font:600 15px/1 'Fraunces',serif;color:var(--navy);letter-spacing:.01em;}
+  .page-head .brand-word span{color:var(--accent);}
+  .page-head .meta{display:flex;align-items:baseline;gap:8px;}
+  .subject-chip{font:italic 600 14px/1 'Fraunces',serif;color:var(--orange-ink);}
+  .chapter-tag{font:italic 400 13.5px/1 'Literata',serif;color:var(--slate);}
+
+  .page-body{
+    position:relative;
+    z-index:2;
+    flex:1;
+    padding:30px 40px 0;
+    overflow:hidden;
+  }
+
+  h1.page-title{font:700 34px/1.15 'Fraunces',serif;color:var(--navy);margin:0 0 6px;}
+  p.dek{font:italic 400 14.5px/1.4 'Literata',serif;color:var(--orange-ink);margin:0 0 18px;}
+  h2.section-title{font:600 21px/1.25 'Fraunces',serif;color:var(--navy);margin:0 0 10px;}
+  p.lead{font:400 16.5px/1.6 'Literata',serif;color:var(--slate);margin:0 0 18px;max-width:600px;}
+  p.body-text{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 14px;}
+  ul.learn-list{margin:0 0 20px;padding-left:20px;}
+  ul.learn-list li{font:400 16px/1.65 'Literata',serif;color:#22303f;margin-bottom:6px;}
+
+  /* .dense — page-body modifier for pages whose text volume needs slightly
+     tighter spacing to fit one page at the standard font size (see
+     content-private/biologi/bab1-sel.pdf-pages.html Page 2 for the same pattern). */
+  .page-body.dense h2.section-title{margin-bottom:6px;}
+  .page-body.dense p.lead{margin-bottom:10px;}
+  .page-body.dense p.body-text{margin-bottom:8px;line-height:1.5;}
+  .page-body.dense .callout{padding-top:12px;padding-bottom:12px;margin-bottom:14px;}
+  .page-body.dense .example-box{margin-bottom:10px;padding-top:12px;}
+  .page-body.dense .example-box .label{margin-bottom:6px;}
+  .page-body.dense .example-box li{margin-bottom:4px;font-size:14px;line-height:1.45;}
+  .page-body.dense .formula-box{margin-bottom:16px;padding:14px 2px;}
+  .page-body.dense .ref-table td,.page-body.dense .ref-table th{padding:5px 8px;}
+
+  .formula-box{border-top:1px solid #e6dfd0;border-bottom:1px solid #e6dfd0;padding:20px 2px;margin:0 0 22px;}
+  .formula-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;display:block;}
+  .formula-box .katex{font-size:1.05em;}
+  .formula-box .var-def{font:400 13.5px/1.55 'Literata',serif;color:var(--slate);margin-top:10px;}
+  .formula-box .var-def b{font-family:'IBM Plex Mono',monospace;font-weight:500;color:#22303f;}
+
+  .example-box{border-top:1px solid #e6dfd0;padding:18px 2px 4px;margin:0 0 22px;}
+  .example-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--navy);margin-bottom:12px;display:block;}
+  .example-box p.setup{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 10px;}
+  .example-box ol{margin:0;padding-left:18px;}
+  .example-box li{font:400 15px/1.6 'Literata',serif;color:#22303f;margin-bottom:8px;}
+
+  .callout{padding:16px 18px;margin:0 0 20px;font:400 14.5px/1.55 'Literata',serif;}
+  .callout.mistake{background:#fbf0ed;}
+  .callout.mistake .label{color:var(--danger);}
+  .callout .label{display:block;font:italic 600 14px/1 'Literata',serif;margin-bottom:7px;}
+  .callout .wrong{color:var(--danger);font-weight:600;}
+  .callout .right{color:var(--success);font-weight:600;}
+
+  .ref-table{width:100%;border-collapse:collapse;margin:0 0 20px;}
+  .ref-table caption{caption-side:top;text-align:left;font:italic 500 13.5px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;}
+  .ref-table th,.ref-table td{
+    text-align:left;
+    padding:7px 10px;
+    font:400 12px/1.4 'Literata',serif;
+    color:#22303f;
+    border-bottom:1px solid #eee7d8;
+    vertical-align:top;
+  }
+  .ref-table thead th{
+    font:600 11px/1.2 'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--slate);
+    border-bottom:1.5px solid var(--navy);
+    padding-bottom:8px;
+  }
+  .ref-table tbody tr:first-child td{padding-top:10px;}
+  .ref-table .katex{font-size:.95em;}
+
+  ol.ref-list{margin:0 0 20px;padding-left:20px;}
+  ol.ref-list li{font:400 13.5px/1.6 'Literata',serif;color:#22303f;margin-bottom:12px;}
+  ol.ref-list li i{color:var(--slate);font-style:italic;}
+
+  .ref-list-2col{columns:2;column-gap:26px;margin:0 0 18px;}
+  .ref-list-2col .item{break-inside:avoid;margin-bottom:11px;}
+  .ref-list-2col .item .num{font:600 11px/1 'IBM Plex Mono',monospace;color:var(--orange-ink);}
+  .ref-list-2col .item .term{font:600 13px/1.3 'Literata',serif;color:var(--navy);display:block;margin:3px 0 2px;}
+  .ref-list-2col .item .gloss{font:400 12px/1.45 'Literata',serif;color:#4a5560;}
+
+  .page-foot{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 40px 22px;
+    border-top:1px solid #eef0f2;
+  }
+  .page-foot .license{font:italic 400 12px/1.4 'Literata',serif;color:#5c6670;max-width:380px;}
+</style>
+</head>
+<body>
+
+<!-- ===== Page 1 — Chapter opener ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body">
+      <h1 class="page-title">Fungsi, Komposisi &amp; Fungsi Invers</h1>
+      <p class="dek">Materi PDF — pelengkap Bab 2</p>
+      <p class="lead">Materi tambahan ini fokus ke tabel rumus cepat invers lengkap, cara menguji injektif/surjektif secara aljabar, pembuktian kenapa rumus cepatnya bisa begitu, dan 5+ contoh soal tambahan tingkat lanjut — pelengkap materi &amp; Drill Soal di halaman utama, bukan salinannya.</p>
+      <h2 class="section-title">Yang akan kamu pelajari</h2>
+      <ul class="learn-list">
+        <li>Tabel lengkap 3 syarat domain alami plus contoh soal domain gabungan tingkat lanjut</li>
+        <li>Cara menguji injektif &amp; surjektif secara aljabar (bukan cuma dari diagram panah)</li>
+        <li>Tabel lengkap operasi aljabar fungsi &amp; sifat operasi komposisi, plus contoh soal evaluasi komposisi dan mencari komponen fungsi g(x)</li>
+        <li>Tabel rumus cepat lengkap invers fungsi aljabar (linear, pecahan rasional, akar, kuadrat, eksponen) dengan syarat masing-masing</li>
+        <li>Pembuktian (derivasi) rumus cepat invers linear &amp; pecahan rasional</li>
+        <li>Contoh soal tambahan invers pecahan rasional &amp; invers fungsi komposisi berantai</li>
+        <li>Pengayaan lanjutan fungsi floor &amp; ceiling plus latihan menyelesaikan persamaannya</li>
+        <li>Latihan tambahan singkat dengan kunci jawaban</li>
+      </ul>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 2 — Referensi: Domain Alami & Contoh Soal Gabungan ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Domain Alami</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Referensi: Domain Alami &amp; Contoh Soal Gabungan</h2>
+      <p class="lead">Tiga bentuk pembatas domain, lengkap dengan dua contoh soal yang menggabungkan lebih dari satu syarat sekaligus — gaya soal yang paling sering bikin salah.</p>
+      <table class="ref-table">
+        <thead><tr><th>#</th><th>Bentuk</th><th>Syarat</th><th>Contoh</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Pecahan \(f(x)=\dfrac{g(x)}{h(x)}\)</td><td>\(h(x)\neq0\)</td><td>\(f(x)=\dfrac1{x-3}\Rightarrow x\neq3\)</td></tr>
+          <tr><td>2</td><td>Akar Genap \(f(x)=\sqrt{g(x)}\)</td><td>\(g(x)\geq0\)</td><td>\(f(x)=\sqrt{x-4}\Rightarrow x\geq4\)</td></tr>
+          <tr><td>3</td><td>Logaritma \(f(x)={}^{a}\log(g(x))\)</td><td>\(g(x)>0\), \(a>0, a\neq1\)</td><td>\(f(x)={}^{2}\log(x+1)\Rightarrow x>-1\)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="example-box">
+        <span class="label">Contoh Soal 1: Domain Gabungan Akar &amp; Pecahan</span>
+        <p class="setup">Tentukan daerah asal (domain) alami dari \(f(x)=\dfrac{\sqrt{x^2-9}}{x-5}\).</p>
+        <ol>
+          <li>Syarat akar: \(x^2-9\geq0 \iff (x-3)(x+3)\geq0\). Dengan pembuat nol \(x=3\) dan \(x=-3\), uji tanda menghasilkan \(x\leq-3\) atau \(x\geq3\).</li>
+          <li>Syarat pecahan: penyebut tidak boleh nol — \(x-5\neq0 \iff x\neq5\).</li>
+          <li>Domain akhir adalah irisan kedua syarat: \(D_f=\{x\in\mathbb{R}\mid(x\leq-3\text{ atau } x\geq3)\text{ dan } x\neq5\}\). Perhatikan 5 memang sudah ada di rentang \(x\geq3\), makanya harus dicoret eksplisit.</li>
+        </ol>
+      </div>
+
+      <div class="example-box">
+        <span class="label">Contoh Soal 2: Domain Gabungan Logaritma &amp; Akar</span>
+        <p class="setup">Tentukan domain alami dari \(f(x)={}^{3}\log\left(\sqrt{x+2}\right)\).</p>
+        <ol>
+          <li>Syarat akar (di dalam log): \(x+2\geq0 \iff x\geq-2\).</li>
+          <li>Syarat numerus log: numerus \(\sqrt{x+2}\) harus &gt; 0 (tegas positif, bukan hanya ≥0): \(\sqrt{x+2}>0 \iff x>-2\).</li>
+          <li>Syarat kedua lebih ketat &amp; mencakup syarat pertama, sehingga \(D_f=\{x\in\mathbb{R}\mid x>-2\}\).</li>
+        </ol>
+      </div>
+
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> pada Contoh Soal 2, menyamakan syarat akar (\(x\geq-2\)) dengan syarat numerus log dan berhenti di \(x\geq-2\) — lupa numerus log tidak boleh nol.<br>
+        <span class="right">✅ Benar:</span> kalau bentuk akar berada di dalam logaritma, syarat numerus log (&gt;0, bukan ≥0) selalu lebih ketat — cek keduanya terpisah, jangan asumsikan salah satu otomatis mencakup yang lain.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 3 — Menguji Injektif & Surjektif Secara Aljabar ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Sifat Pemetaan</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Menguji Injektif &amp; Surjektif Secara Aljabar</h2>
+      <p class="lead">Diagram panah cuma praktis untuk himpunan kecil &amp; diskret. Untuk fungsi aljabar (domain tak hingga), pakai dua uji berikut.</p>
+
+      <p class="body-text"><b>Uji Injektif — Metode f(x₁) = f(x₂):</b> andaikan \(f(x_1)=f(x_2)\), lalu selesaikan secara aljabar. Kalau hasil akhirnya memaksa \(x_1=x_2\), fungsi itu injektif.</p>
+
+      <div class="example-box">
+        <span class="label">Contoh: Uji Injektif f(x) = 3x + 5</span>
+        <ol>
+          <li>Andaikan \(f(x_1)=f(x_2)\): \(3x_1+5=3x_2+5\).</li>
+          <li>Kurangi 5: \(3x_1=3x_2\), bagi 3: \(x_1=x_2\).</li>
+          <li>Karena selalu memaksa \(x_1=x_2\), f(x)=3x+5 terbukti injektif.</li>
+        </ol>
+      </div>
+
+      <div class="example-box">
+        <span class="label">Contoh: Uji Injektif f(x) = x² (domain semua real)</span>
+        <ol>
+          <li>Andaikan \(f(x_1)=f(x_2)\): \(x_1^2=x_2^2\) — ini tidak memaksa \(x_1=x_2\), bisa juga \(x_1=-x_2\).</li>
+          <li>Contoh konkret: \(x_1=-2, x_2=2\), keduanya berbeda tapi \(f(-2)=f(2)=4\).</li>
+          <li>Jadi f(x)=x² pada domain semua real <b>tidak injektif</b>.</li>
+        </ol>
+      </div>
+
+      <p class="body-text"><b>Uji Surjektif — Metode Menyelesaikan x dalam y:</b> misalkan \(y=f(x)\), selesaikan x dalam y. Kalau setiap y di kodomain selalu ada x real yang memenuhi, fungsi itu surjektif.</p>
+
+      <div class="example-box">
+        <span class="label">Contoh: Uji Surjektif f(x) = 2x − 1 (kodomain ℝ)</span>
+        <ol>
+          <li>Misalkan \(y=2x-1\), selesaikan x: \(x=\dfrac{y+1}{2}\).</li>
+          <li>Untuk sembarang y real, x selalu berupa bilangan real yang sah.</li>
+          <li>Setiap y di kodomain punya pasangan x — f(x)=2x−1 terbukti surjektif terhadap ℝ.</li>
+        </ol>
+      </div>
+
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> menyimpulkan f(x)=x² TIDAK PERNAH bijektif dalam kondisi apa pun.<br>
+        <span class="right">✅ Benar:</span> f(x)=x² tidak injektif kalau domainnya semua real, TAPI kalau dibatasi (misalnya \(x\geq0\)), fungsi itu jadi injektif — begitulah cara fungsi kuadrat dibuat bijektif dan akhirnya punya invers (lihat Halaman 8).
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 4 — Referensi: Operasi Aljabar Fungsi & Sifat Komposisi ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Komposisi Fungsi</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Referensi: Operasi Aljabar Fungsi &amp; Sifat Komposisi</h2>
+      <p class="lead">Domain hasil operasi aljabar fungsi selalu irisan domain kedua fungsi asal — detail yang sering dilewatkan siswa karena fokus cuma ke rumusnya saja.</p>
+      <table class="ref-table">
+        <thead><tr><th>Operasi</th><th>Rumus</th><th>Syarat Domain</th></tr></thead>
+        <tbody>
+          <tr><td>Penjumlahan</td><td>\((f+g)(x)=f(x)+g(x)\)</td><td>\(D_f \cap D_g\)</td></tr>
+          <tr><td>Pengurangan</td><td>\((f-g)(x)=f(x)-g(x)\)</td><td>\(D_f \cap D_g\)</td></tr>
+          <tr><td>Perkalian</td><td>\((f\cdot g)(x)=f(x)\cdot g(x)\)</td><td>\(D_f \cap D_g\)</td></tr>
+          <tr><td>Pembagian</td><td>\(\left(\dfrac{f}{g}\right)(x)=\dfrac{f(x)}{g(x)}\)</td><td>\(D_f \cap D_g\), dan \(g(x)\neq0\)</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Domain hasil penjumlahan/pengurangan/perkalian dua fungsi selalu irisan (∩) domain masing-masing fungsi asal — kalau f hanya terdefinisi untuk \(x\geq0\) dan g untuk semua real, maka \(f+g\) hanya terdefinisi untuk \(x\geq0\) juga. Untuk pembagian, nilai x yang membuat penyebut \(g(x)=0\) harus dicoret juga dari irisan itu.</p>
+
+      <div class="example-box">
+        <span class="label">Pembuktian: Sifat Asosiatif Komposisi</span>
+        <p class="setup">Buktikan \((f\circ(g\circ h))(x) = ((f\circ g)\circ h)(x)\).</p>
+        <ol>
+          <li>Ruas kiri: \((f\circ(g\circ h))(x) = f((g\circ h)(x)) = f(g(h(x)))\) — h dulu, hasilnya masuk g, hasilnya masuk f.</li>
+          <li>Ruas kanan: \(((f\circ g)\circ h)(x) = (f\circ g)(h(x)) = f(g(h(x)))\) — h dulu, hasilnya masuk \((f\circ g)\), berarti g dulu baru f.</li>
+          <li>Kedua ruas sama-sama berakhir di \(f(g(h(x)))\) — urutan pengerjaan identik (h→g→f) di kedua cara pengelompokan. Terbukti asosiatif.</li>
+        </ol>
+      </div>
+
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira sifat asosiatif berarti \((f\circ g)(x)\) boleh ditukar jadi \((g\circ f)(x)\) selama ada h di soal.<br>
+        <span class="right">✅ Benar:</span> asosiatif cuma soal <i>pengelompokan tanda kurung</i> — urutan f, g, h dari dalam ke luar (h→g→f) tetap sama. Ini beda dari sifat komutatif (yang memang TIDAK berlaku pada komposisi).
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 5 — Contoh Soal Tambahan: Evaluasi & Komponen Komposisi ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Komposisi Fungsi</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Contoh Soal Tambahan: Evaluasi &amp; Mencari Komponen Fungsi</h2>
+      <p class="lead">Dua gaya soal komposisi yang paling sering keluar ujian — menghitung nilai komposisi di satu titik, dan membalik proses untuk mencari komponen fungsi yang belum diketahui.</p>
+
+      <div class="example-box">
+        <span class="label">Contoh Soal: Evaluasi Nilai Komposisi Fungsi</span>
+        <p class="setup">Diketahui f(x) = 2x² − 3x + 1 dan g(x) = x + 4. Hitung (f∘g)(2).</p>
+        <ol>
+          <li>Hitung g(2) dulu: \(g(2)=2+4=6\).</li>
+          <li>Substitusikan ke f(x): \(f(6)=2(36)-18+1=55\).</li>
+          <li>Jadi, \((f\circ g)(2)=55\).</li>
+        </ol>
+      </div>
+
+      <div class="example-box">
+        <span class="label">Contoh Soal: Menentukan Komponen Fungsi g(x)</span>
+        <p class="setup">Diketahui f(x) = 3x − 2 dan (f∘g)(x) = 6x² + 9x + 7. Tentukan g(x).</p>
+        <ol>
+          <li>\((f\circ g)(x)=f(g(x))=3\cdot g(x)-2\).</li>
+          <li>Samakan: \(3\cdot g(x)-2 = 6x^2+9x+7 \Rightarrow 3\cdot g(x) = 6x^2+9x+9\).</li>
+          <li>Bagi 3: \(g(x) = 2x^2+3x+3\).</li>
+        </ol>
+      </div>
+
+      <div class="example-box">
+        <span class="label">Contoh Soal: Menentukan Komponen Fungsi f(x) (Variasi Terbalik)</span>
+        <p class="setup">Diketahui g(x) = x + 1 dan (f∘g)(x) = 2x² + 4x + 5. Tentukan f(x).</p>
+        <ol>
+          <li>\((f\circ g)(x) = f(x+1) = 2x^2+4x+5\) — "isi" f adalah \(x+1\), perlu permisalan.</li>
+          <li>Misalkan \(u=x+1\), sehingga \(x=u-1\): \(f(u) = 2(u-1)^2+4(u-1)+5\).</li>
+          <li>Jabarkan: \(2u^2-4u+2+4u+1 = 2u^2+3\).</li>
+          <li>Ganti u menjadi x: \(f(x)=2x^2+3\).</li>
+        </ol>
+      </div>
+
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> pada contoh ketiga, langsung mengganti \(x+1\) menjadi x tanpa permisalan, sehingga menjawab \(f(x)=2x^2+4x+5\).<br>
+        <span class="right">✅ Benar:</span> karena yang diketahui adalah f(g(x)) bukan f(x) langsung, wajib memisalkan \(u=g(x)=x+1\), nyatakan x dalam u (\(x=u-1\)), baru substitusi — kembalikan u jadi x di jawaban akhir.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 6 — Referensi: Tabel Rumus Cepat Invers Fungsi Aljabar ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Rumus Cepat Invers</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Referensi: Tabel Rumus Cepat Invers Fungsi Aljabar</h2>
+      <p class="lead">Lima bentuk fungsi aljabar yang paling sering muncul, dengan rumus invers siap pakai — tetap ingat ini jalan pintas dari langkah baku, bukan pengganti pemahamannya.</p>
+      <table class="ref-table">
+        <thead><tr><th>Bentuk Fungsi f(x)</th><th>Bentuk Invers \(f^{-1}(x)\)</th><th>Catatan / Syarat</th></tr></thead>
+        <tbody>
+          <tr><td>Linear: \(ax+b\)</td><td>\(\dfrac{x-b}{a}\)</td><td>\(a\neq0\)</td></tr>
+          <tr><td>Pecahan Rasional: \(\dfrac{ax+b}{cx+d}\)</td><td>\(\dfrac{-dx+b}{cx-a}\)</td><td>\(x\neq\dfrac{a}{c}, c\neq0\)</td></tr>
+          <tr><td>Bentuk Akar: \(\sqrt[n]{ax+b}\)</td><td>\(\dfrac{x^n-b}{a}\)</td><td>\(a\neq0\)</td></tr>
+          <tr><td>Kuadrat: \(ax^2+bx+c\)</td><td>\(\dfrac{-b\pm\sqrt{b^2-4a(c-x)}}{2a}\)</td><td>Dibatasi pada domainnya</td></tr>
+          <tr><td>Eksponen: \(a^{cx}\)</td><td>\(\dfrac1c\cdot{}^{a}\log(x)\)</td><td>\(x>0, a>0, a\neq1\)</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Untuk bentuk kuadrat, tanda ± di rumus cepatnya HARUS dipilih salah satu sesuai domain yang dibatasi pada soal (lihat Halaman 8) — kalau domain asal dibatasi \(x\geq -b/2a\) (setengah parabola kanan), ambil tanda +; kalau dibatasi \(x\leq -b/2a\) (setengah parabola kiri), ambil tanda −. Untuk bentuk eksponen, hasil inversnya berbentuk logaritma — konsisten dengan hubungan eksponen &amp; logaritma di Bab 1.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 7 — Pembuktian (Derivasi) Rumus Cepat Invers ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Pembuktian</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Dari Mana Rumus Cepat Invers Itu Berasal?</h2>
+      <p class="lead">Dua rumus cepat yang paling sering dipakai (linear &amp; pecahan rasional) diturunkan langsung dari langkah baku mencari invers — bukan rumus hafalan lepas.</p>
+
+      <div class="example-box">
+        <span class="label">Derivasi: Invers Fungsi Linear f(x) = ax + b</span>
+        <ol>
+          <li>Misalkan \(y=f(x)=ax+b\).</li>
+          <li>Selesaikan x dalam y: \(y-b=ax\), bagi a (\(a\neq0\)): \(x=\dfrac{y-b}{a}\).</li>
+          <li>Ganti x menjadi \(f^{-1}(x)\) dan y menjadi x: \(f^{-1}(x)=\dfrac{x-b}{a}\) — persis rumus cepat di tabel Halaman 6.</li>
+        </ol>
+      </div>
+
+      <div class="example-box">
+        <span class="label">Derivasi: Invers Fungsi Pecahan Rasional f(x) = (ax+b)/(cx+d)</span>
+        <ol>
+          <li>Misalkan \(y=\dfrac{ax+b}{cx+d}\), dengan \(cx+d\neq0\).</li>
+          <li>Kalikan silang: \(y(cx+d) = ax+b \Rightarrow cxy+dy = ax+b\).</li>
+          <li>Kumpulkan suku berisi x: \(cxy - ax = b - dy\).</li>
+          <li>Faktorkan x: \(x(cy-a) = b-dy\), bagi \((cy-a)\) (syarat \(\neq0\)): \(x = \dfrac{-dy+b}{cy-a}\).</li>
+          <li>Ganti x menjadi \(f^{-1}(x)\) dan y menjadi x: \(f^{-1}(x)=\dfrac{-dx+b}{cx-a}\) — persis rumus cepat di Halaman 6. Syarat \(x\neq\dfrac{a}{c}\) muncul dari syarat pembagi \(cx-a\neq0\).</li>
+        </ol>
+      </div>
+
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> menghafal rumus cepat pecahan rasional sebagai "tukar posisi a dan b, lalu d dan c" secara sembarangan tanpa tahu tanda mana yang berubah.<br>
+        <span class="right">✅ Benar:</span> dari derivasi di atas, a dan d bertukar posisi DAN keduanya berganti tanda relatif terhadap posisi awal — b dan c tetap di tempatnya. Kalau ragu, turunkan ulang dari langkah baku.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 8 — Contoh Soal Tambahan: Invers Pecahan Rasional & Invers Kuadrat ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Fungsi Invers</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Contoh Soal Tambahan: Invers Pecahan Rasional &amp; Invers Kuadrat</h2>
+      <p class="lead">Satu contoh langsung pakai rumus cepat, satu lagi contoh kenapa domain harus dibatasi dulu sebelum fungsi kuadrat bisa dicari inversnya.</p>
+
+      <div class="example-box">
+        <span class="label">Contoh Soal: Menentukan Invers Pecahan Rasional</span>
+        <p class="setup">Tentukan fungsi invers dari f(x) = (4x−5)/(2x+3), untuk x ≠ −3/2.</p>
+        <ol>
+          <li>Rumus cepat: untuk \(f(x)=\dfrac{ax+b}{cx+d} \Rightarrow f^{-1}(x)=\dfrac{-dx+b}{cx-a}\).</li>
+          <li>Dari soal: \(a=4, b=-5, c=2, d=3\).</li>
+          <li>Substitusikan: \(f^{-1}(x)=\dfrac{-3x-5}{2x-4}\), ekuivalen \(\dfrac{3x+5}{4-2x}\), syarat \(x\neq2\) (dari \(x\neq a/c=4/2\)).</li>
+        </ol>
+      </div>
+
+      <div class="example-box">
+        <span class="label">Contoh Soal: Invers Fungsi Kuadrat dengan Domain Dibatasi</span>
+        <p class="setup">Tentukan fungsi invers dari f(x) = x² − 4x + 7, untuk domain dibatasi x ≥ 2.</p>
+        <ol>
+          <li>Sumbu simetri di \(x=2\) (dari \(-b/2a=4/2=2\)); tanpa pembatasan, f tidak injektif (lihat Halaman 3). Domain \(x\geq2\) mengambil cabang kanan yang injektif.</li>
+          <li>Misalkan \(y=x^2-4x+7\). Lengkapkan kuadrat: \(y=(x-2)^2+3\), sehingga \((x-2)^2=y-3\).</li>
+          <li>Akarkan: \(x-2=\pm\sqrt{y-3}\). Karena \(x\geq2\), ambil tanda +: \(x=2+\sqrt{y-3}\).</li>
+          <li>Ganti x menjadi \(f^{-1}(x)\), y menjadi x: \(f^{-1}(x)=2+\sqrt{x-3}\), domain \(x\geq3\).</li>
+        </ol>
+      </div>
+
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> pada contoh kuadrat, menuliskan \(f^{-1}(x)=2\pm\sqrt{x-3}\) (tetap menyertakan kedua tanda ± di jawaban akhir).<br>
+        <span class="right">✅ Benar:</span> begitu domain fungsi asal sudah dibatasi (\(x\geq2\)), invers-nya WAJIB memilih satu tanda yang konsisten — hasil akhir fungsi invers harus tetap satu output per input.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 9 — Invers dari Fungsi Komposisi: Pembuktian & Contoh Berantai ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Invers Komposisi</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Invers dari Fungsi Komposisi: Kenapa Urutannya Dibalik?</h2>
+      <p class="lead">Pembuktian singkat kenapa \((f\circ g)^{-1}(x)=(g^{-1}\circ f^{-1})(x)\), lalu dua contoh soal — satu dari source, satu contoh rantai 3 fungsi.</p>
+
+      <div class="example-box">
+        <span class="label">Pembuktian: \((f\circ g)^{-1}(x) = (g^{-1}\circ f^{-1})(x)\)</span>
+        <ol>
+          <li>Misalkan \(z=(f\circ g)(x)=f(g(x))\) — tujuannya menyatakan x kembali dalam z.</li>
+          <li>Terapkan \(f^{-1}\) di kedua ruas: \(f^{-1}(z)=f^{-1}(f(g(x)))=g(x)\) (\(f^{-1}\circ f\) saling meniadakan).</li>
+          <li>Terapkan \(g^{-1}\): \(g^{-1}(f^{-1}(z))=g^{-1}(g(x))=x\) (\(g^{-1}\circ g\) saling meniadakan).</li>
+          <li>Jadi \(x=(g^{-1}\circ f^{-1})(z)\) — terbukti \((f\circ g)^{-1}=g^{-1}\circ f^{-1}\), urutannya dibalik karena "membongkar" komposisi harus mulai dari fungsi paling luar (f) dulu.</li>
+        </ol>
+      </div>
+
+      <div class="example-box">
+        <span class="label">Contoh Soal: Aplikasi Invers Fungsi Komposisi</span>
+        <p class="setup">Jika \(f^{-1}(x) = \dfrac{x+1}{2}\) dan \(g^{-1}(x) = 3x-4\), tentukan \((f\circ g)^{-1}(3)\).</p>
+        <ol>
+          <li>Gunakan \((f\circ g)^{-1}(x) = (g^{-1}\circ f^{-1})(x)\).</li>
+          <li>Hitung \(f^{-1}(3)=\dfrac{3+1}{2}=2\).</li>
+          <li>Masukkan ke \(g^{-1}\): \(g^{-1}(2)=3(2)-4=2\). Jadi hasilnya 2.</li>
+        </ol>
+      </div>
+
+      <div class="example-box">
+        <span class="label">Contoh Soal: Invers Komposisi 3 Fungsi Berantai</span>
+        <p class="setup">Jika \(f^{-1}(x) = x+2\), \(g^{-1}(x) = 2x\), dan \(h^{-1}(x) = x-1\), tentukan \((f\circ g\circ h)^{-1}(5)\).</p>
+        <ol>
+          <li>Perluasan sifat: \((f\circ g\circ h)^{-1}(x) = (h^{-1}\circ g^{-1}\circ f^{-1})(x)\) — dibalik total.</li>
+          <li>\(f^{-1}(5) = 7\).</li>
+          <li>\(g^{-1}(7) = 14\).</li>
+          <li>\(h^{-1}(14) = 13\). Jadi \((f\circ g\circ h)^{-1}(5) = 13\).</li>
+        </ol>
+      </div>
+
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> pada soal rantai 3 fungsi, membongkar dengan urutan asli (\(f^{-1}\), \(g^{-1}\), \(h^{-1}\)) karena "kelihatan lebih natural".<br>
+        <span class="right">✅ Benar:</span> makin banyak fungsi yang dirantai, aturan pembalikan urutan berlaku untuk SEMUANYA — urutan invers selalu persis kebalikan dari urutan komposisi aslinya.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 10 — Pengayaan Lanjutan: Fungsi Floor & Ceiling ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Pengayaan</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Pengayaan Lanjutan: Fungsi Floor &amp; Ceiling</h2>
+      <p class="lead">Beberapa sifat tambahan fungsi tangga, plus cara menyelesaikan persamaan sederhana yang melibatkan floor/ceiling — gaya soal yang muncul di olimpiade &amp; soal HOTS.</p>
+      <p class="body-text">Untuk x bilangan bulat, \(\lfloor x\rfloor = \lceil x\rceil = x\) (tidak ada pembulatan). Untuk x bukan bilangan bulat, selalu berlaku \(\lceil x\rceil = \lfloor x\rfloor + 1\) (ceiling selalu satu lebih besar dari floor). Kedua fungsi ini bersifat non-turun (semakin besar x, nilainya tidak pernah mengecil) tapi TIDAK injektif — banyak x berbeda (misalnya semua x di interval [3, 4)) menghasilkan \(\lfloor x\rfloor\) yang sama, yaitu 3.</p>
+
+      <div class="example-box">
+        <span class="label">Contoh Soal: Menyelesaikan Persamaan Floor</span>
+        <p class="setup">Tentukan semua nilai x yang memenuhi ⌊2x⌋ = 5.</p>
+        <ol>
+          <li>\(\lfloor2x\rfloor=5\) berarti 5 adalah bilangan bulat terbesar yang ≤ 2x, sehingga \(5 \leq 2x < 6\).</li>
+          <li>Bagi 2: \(2.5 \leq x < 3\).</li>
+          <li>Penyelesaiannya adalah interval \([2.5, 3)\) — bukan satu nilai tunggal, karena floor bukan fungsi injektif.</li>
+        </ol>
+      </div>
+
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> menjawab persamaan floor/ceiling dengan satu nilai x tunggal, seperti menyelesaikan persamaan aljabar biasa.<br>
+        <span class="right">✅ Benar:</span> karena floor &amp; ceiling bukan fungsi injektif, penyelesaiannya hampir selalu berupa <i>interval</i> nilai x — selalu ubah dulu jadi pertidaksamaan ganda sebelum menjawab.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 11 — Latihan Tambahan (dengan Kunci Jawaban) ===== -->
+<div class="pdf-page" data-subject="matematika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Latihan Tambahan</span><span class="subject-chip">Matematika</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Latihan Tambahan</h2>
+      <p class="lead">Tujuh soal campuran domain, komposisi, invers, dan floor/ceiling untuk pemanasan sebelum masuk ke Drill Soal interaktif di halaman utama — kunci jawaban ada di bawah tiap soal.</p>
+      <ol class="ref-list">
+        <li>Tentukan domain alami dari \(f(x)=\sqrt{5-x}\big/(x+1)\).<br><i>Jawaban: syarat akar \(5-x\geq0\Rightarrow x\leq5\); syarat pecahan \(x\neq-1\). Gabungan: \(x\leq5\) dan \(x\neq-1\).</i></li>
+        <li>Diketahui f(x) = x−2 dan g(x) = x². Tentukan (g∘f)(3).<br><i>Jawaban: \(f(3)=1\), \(g(1)=1\). Jadi \((g\circ f)(3)=1\).</i></li>
+        <li>Diketahui f(x) = 2x+3 dan (f∘g)(x) = 4x²+6. Tentukan g(x).<br><i>Jawaban: \(2\cdot g(x)+3=4x^2+6 \Rightarrow g(x) = 2x^2+1{,}5\).</i></li>
+        <li>Tentukan invers dari f(x) = (3x−1)/(x+2), x≠−2.<br><i>Jawaban: a=3,b=−1,c=1,d=2 → \(f^{-1}(x)=\dfrac{-2x-1}{x-3}\), \(x\neq3\).</i></li>
+        <li>Jika \(f^{-1}(x) = x-4\) dan \(g^{-1}(x) = 2x+1\), tentukan \((g\circ f)^{-1}(6)\).<br><i>Jawaban: \((g\circ f)^{-1}=f^{-1}\circ g^{-1}\). \(g^{-1}(6)=13\), lalu \(f^{-1}(13)=9\). Hasilnya 9.</i></li>
+        <li>Tentukan nilai dari ⌊−4.2⌋ + ⌈4.2⌉.<br><i>Jawaban: \(\lfloor-4.2\rfloor=-5\), \(\lceil4.2\rceil=5\). Jumlahnya \(0\).</i></li>
+        <li>Selidiki apakah f(x) = 5 (fungsi konstan) merupakan fungsi injektif.<br><i>Jawaban: Tidak — semua x berbeda menghasilkan output yang sama (5), melanggar definisi injektif.</i></li>
+      </ol>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<script src="../../public/assets/vendor/katex/katex.min.js"></script>
+<script src="../../public/assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left:'$$', right:'$$', display:true},
+      {left:'\\[', right:'\\]', display:true},
+      {left:'\\(', right:'\\)', display:false}
+    ],
+    throwOnError:false
+  });
+</script>
+</body>
+</html>
