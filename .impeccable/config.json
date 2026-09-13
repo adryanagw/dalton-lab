@@ -149,6 +149,33 @@
         "value": "space grotesk",
         "createdAt": "2026-09-13T06:34:53.433Z",
         "reason": "pre-existing sitewide typography choice, established before this session, unrelated to header polish task"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "content-private/sejarah/bab1-kolonialisme-imperialisme.html"
+        ],
+        "createdAt": "2026-09-13T13:05:02.917Z",
+        "reason": "Intentional: .pdf-viewer-img ships with no src by design — filled at runtime via authenticated blob + object URL (app.js initPdfViewers/loadPage). Same pattern already ignored for bab1-badan-usaha.html/bab1-sel.html."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "content-private/sejarah/bab1-kolonialisme-imperialisme.html"
+        ],
+        "createdAt": "2026-09-13T13:05:02.934Z",
+        "reason": "False positive from scanning the content fragment without the site's real styles.css loaded (section{padding:86px 0} etc. defined globally, not zero). Same pattern already ignored for bab1-badan-usaha.html/bab1-sel.html."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "content-private/sejarah/bab1-kolonialisme-imperialisme.pdf-pages.html"
+        ],
+        "createdAt": "2026-09-13T13:12:45.393Z",
+        "reason": "Same .example-box CSS (border-top:1px solid #e6dfd0; padding:18px 2px 4px) copied verbatim from bab1-badan-usaha.pdf-pages.html per CHAPTER_CONTENT_GUIDE.md's copy-the-CSS-block-wholesale instruction; already shipped/ignored there, not new."
       }
     ]
   }

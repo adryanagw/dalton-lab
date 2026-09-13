@@ -1,0 +1,403 @@
+[
+  {
+    "q": "Kolonialisme berasal dari kata Latin <i>colonia/colonus</i> yang berarti…",
+    "opts": ["Memerintah atau kekuasaan tertinggi", "Pemukim atau tanah jajahan", "Persaingan dagang antarbangsa", "Kejayaan dinasti"],
+    "correct": 1,
+    "explain": "Colonia/colonus berarti pemukim atau tanah jajahan — kolonialisme adalah praktik fisik menguasai wilayah, SDA, dan penduduk di luar negeri demi keuntungan negara induk (metropolis)."
+  },
+  {
+    "q": "Perbedaan paling mendasar antara kolonialisme dan imperialisme adalah…",
+    "opts": [
+      "Kolonialisme selalu terjadi sebelum imperialisme",
+      "Kolonialisme adalah praktik fisik menguasai wilayah, sedangkan imperialisme adalah kebijakan/ideologi menanam pengaruh yang tidak harus lewat penjajahan fisik",
+      "Imperialisme hanya dilakukan oleh Portugis dan Spanyol",
+      "Kolonialisme dan imperialisme adalah dua istilah untuk hal yang sama"
+    ],
+    "correct": 1,
+    "explain": "Kolonialisme adalah praktik konkret menguasai wilayah & penduduk secara fisik. Imperialisme lebih luas: kebijakan/ideologi menanamkan dominasi/pengaruh, yang bisa diwujudkan lewat kolonialisme tapi tidak harus selalu begitu (bisa lewat pengaruh ekonomi/politik saja)."
+  },
+  {
+    "q": "Semboyan 3G yang menjadi ciri Imperialisme Kuno adalah…",
+    "opts": ["Gold, Glory, Gospel", "Gold, Gospel, Glory", "Glory, Gold, Government", "Gospel, Government, Gold"],
+    "correct": 1,
+    "explain": "Urutan semboyannya Gold (mencari kekayaan lewat rempah), Gospel (menyebarkan agama Kristen), Glory (meraih kejayaan dinasti/tanah air) — dipelopori Portugis & Spanyol sebelum Revolusi Industri."
+  },
+  {
+    "q": "Imperialisme Modern, berbeda dengan Imperialisme Kuno, berfokus pada…",
+    "opts": [
+      "Penyebaran agama dan kejayaan dinasti",
+      "Kepentingan ekonomi industri: bahan mentah, pasar barang jadi, dan penanaman modal surplus",
+      "Perluasan wilayah tanpa tujuan ekonomi",
+      "Penaklukan kerajaan-kerajaan kecil di Eropa"
+    ],
+    "correct": 1,
+    "explain": "Imperialisme Modern berlangsung pasca-Revolusi Industri dan berfokus murni kepentingan ekonomi industri — bukan lagi agama atau kejayaan dinasti seperti Imperialisme Kuno."
+  },
+  {
+    "q": "Peristiwa yang memicu rantai sebab-akibat menuju penjelajahan samudra Eropa adalah…",
+    "opts": [
+      "Penemuan kompas magnetik",
+      "Jatuhnya Konstantinopel ke tangan Turki Usmani (1453)",
+      "Diterbitkannya buku Marco Polo",
+      "Perjanjian Tordesillas"
+    ],
+    "correct": 1,
+    "explain": "Jatuhnya Konstantinopel (1453) ke Sultan Mehmed II menutup jalur dagang Laut Tengah lewat Selat Bosporus, membuat rempah langka & mahal di Eropa — inilah pemicu awal rantai sebab-akibatnya."
+  },
+  {
+    "q": "Kenapa rempah-rempah begitu berharga bagi Eropa pada masa itu?",
+    "opts": [
+      "Untuk bahan bakar kapal",
+      "Sebagai pengawet makanan musim dingin, bahan obat, dan wewangian",
+      "Untuk dijadikan mata uang",
+      "Sebagai bahan baku kain"
+    ],
+    "correct": 1,
+    "explain": "Rempah tropis Nusantara (cengkih, pala, lada) vital sebagai pengawet makanan musim dingin, bahan obat-obatan, dan wewangian bernilai tinggi — makanya jadi komoditas paling diburu."
+  },
+  {
+    "q": "Buku yang menginspirasi para pelaut Eropa mengenai kekayaan Dunia Timur adalah…",
+    "opts": ["History of Java", "Il Milione (Imago Mundi) karya Marco Polo", "Max Havelaar", "Imago Mundi karya Copernicus"],
+    "correct": 1,
+    "explain": "Il Milione (juga dikenal sebagai Imago Mundi) karya Marco Polo menggambarkan kekayaan melimpah di Asia, membakar rasa penasaran pelaut-pelaut Eropa untuk mencari jalur ke sana."
+  },
+  {
+    "q": "Teori heliosentrisme yang mendukung kemajuan navigasi penjelajahan samudra dikemukakan oleh…",
+    "opts": ["Marco Polo & Vasco da Gama", "Nicolaus Copernicus & Galileo Galilei", "Bartolomeu Dias & Columbus", "Magelhaens & Del Cano"],
+    "correct": 1,
+    "explain": "Copernicus dan Galileo Galilei mengembangkan teori heliosentrisme dan pemahaman bahwa bumi itu bulat, mendukung kepercayaan diri pelaut untuk berlayar mencari rute baru."
+  },
+  {
+    "q": "Pelaut Portugis yang pertama kali mencapai Tanjung Harapan (1488) adalah…",
+    "opts": ["Vasco da Gama", "Bartolomeu Dias", "Afonso de Albuquerque", "Francisco Serrão"],
+    "correct": 1,
+    "explain": "Bartolomeu Dias mencapai Tanjung Harapan di ujung selatan Afrika pada 1488, membuka jalan bagi Vasco da Gama untuk meneruskan rute ke India sepuluh tahun kemudian."
+  },
+  {
+    "q": "Afonso de Albuquerque dikenal karena…",
+    "opts": [
+      "Menaklukkan Selat Malaka pada 1511",
+      "Pertama kali mengelilingi dunia",
+      "Mendirikan VOC",
+      "Menemukan Kepulauan Salvador"
+    ],
+    "correct": 0,
+    "explain": "Afonso de Albuquerque menaklukkan Selat Malaka pada 10 Agustus 1511, membuka jalan bagi Portugis untuk melanjutkan ekspansi ke Maluku (Francisco Serrão tiba di Ternate pada 1512)."
+  },
+  {
+    "q": "Rute pelayaran Spanyol menuju Nusantara ditempuh dengan cara…",
+    "opts": [
+      "Menyusuri pantai barat Afrika ke timur",
+      "Menyeberangi Samudra Atlantik ke barat, lalu Samudra Pasifik",
+      "Langsung menyeberangi Samudra Hindia",
+      "Mengikuti rute darat lewat Timur Tengah"
+    ],
+    "correct": 1,
+    "explain": "Spanyol menempuh arah berlawanan dari Portugis: menyeberangi Atlantik ke barat (Columbus, 1492) lalu diteruskan Magelhaens & Del Cano lewat Pasifik (1519–1521) hingga tiba di Tidore, Maluku."
+  },
+  {
+    "q": "Ekspedisi Ferdinand Magelhaens dan Juan Sebastian del Cano (1519–1521) penting karena…",
+    "opts": [
+      "Menjadi ekspedisi pertama yang menaklukkan Malaka",
+      "Berhasil menyeberangi Samudra Pasifik dan mendarat di Tidore, Maluku",
+      "Mendirikan pos dagang pertama Spanyol di Banten",
+      "Menandatangani Perjanjian Saragosa"
+    ],
+    "correct": 1,
+    "explain": "Ekspedisi ini menyeberangi Samudra Pasifik dan mendarat di Tidore, Maluku pada 1521 — bagian dari rute Spanyol ke arah barat, berlawanan arah dengan rute Portugis yang mengitari Afrika."
+  },
+  {
+    "q": "Ekspedisi Belanda pertama yang mendarat di Banten (1596) dipimpin oleh…",
+    "opts": ["Jacob van Neck", "Cornelis de Houtman", "Johan van Oldenbarnevelt", "Sir Henry Middleton"],
+    "correct": 1,
+    "explain": "Cornelis de Houtman memimpin ekspedisi Belanda pertama yang mendarat di Pelabuhan Banten via Selat Sunda pada 1596. Jacob van Neck menyusul dua tahun kemudian (1598–1599) dengan hasil dagang jauh lebih menguntungkan."
+  },
+  {
+    "q": "Sir Henry Middleton (1604) mewakili bangsa…",
+    "opts": ["Belanda", "Spanyol", "Inggris", "Portugis"],
+    "correct": 2,
+    "explain": "Sir Henry Middleton adalah pelaut Inggris yang mencapai Sumatra, Banten, dan Ambon pada 1604 — Inggris datang paling belakangan dan tidak pernah sekuat tiga bangsa lain di Nusantara."
+  },
+  {
+    "q": "Perjanjian Tordesillas (1494) membagi dunia di luar Eropa berdasarkan…",
+    "opts": [
+      "Garis khatulistiwa",
+      "Garis meridian 46° Bujur Barat",
+      "Batas wilayah kerajaan lokal",
+      "Kesepakatan dagang rempah"
+    ],
+    "correct": 1,
+    "explain": "Tordesillas membagi dunia lewat garis meridian 46° Bujur Barat: Spanyol menguasai wilayah barat garis itu, Portugis menguasai wilayah timurnya."
+  },
+  {
+    "q": "Perjanjian Tordesillas diprakarsai oleh…",
+    "opts": ["Raja Spanyol", "Paus Alexander VI", "Raja Portugis", "Sultan Ternate"],
+    "correct": 1,
+    "explain": "Paus Alexander VI memprakarsai Tordesillas (1494) untuk mencegah bentrokan militer antara Spanyol dan Portugis yang sama-sama berlayar mencari jalur ke Dunia Timur."
+  },
+  {
+    "q": "Perjanjian Saragosa (1529) muncul karena…",
+    "opts": [
+      "Spanyol dan Portugis bertemu dan berebut wilayah yang sama di Maluku",
+      "VOC ingin memonopoli rempah",
+      "Inggris menuntut bagian wilayah Nusantara",
+      "Konstantinopel jatuh ke Turki Usmani"
+    ],
+    "correct": 0,
+    "explain": "Ketika Spanyol mendarat di Tidore (1521) dan Portugis sudah ada di Ternate, kedua bangsa berebut wilayah yang sama meski menurut Tordesillas mestinya jalan ke arah berlawanan — Saragosa menyelesaikan sengketa nyata ini."
+  },
+  {
+    "q": "Hasil dari Perjanjian Saragosa (1529) adalah…",
+    "opts": [
+      "Spanyol dan Portugis berbagi wilayah Maluku sama rata",
+      "Spanyol mundur ke Filipina, Portugis memonopoli penuh rempah Maluku",
+      "Portugis mundur ke Filipina, Spanyol menguasai Maluku",
+      "Kedua bangsa meninggalkan Nusantara sepenuhnya"
+    ],
+    "correct": 1,
+    "explain": "Saragosa menetapkan Spanyol harus meninggalkan Maluku dan berfokus di Filipina, sementara Portugis memperoleh monopoli penuh atas perdagangan rempah-rempah di Maluku."
+  },
+  {
+    "q": "VOC (Vereenigde Oostindische Compagnie) didirikan pada 20 Maret 1602 atas inisiatif…",
+    "opts": ["Johannes van den Bosch", "Johan van Oldenbarnevelt", "Herman Willem Daendels", "Thomas Stamford Raffles"],
+    "correct": 1,
+    "explain": "Johan van Oldenbarnevelt memprakarsai pembentukan VOC untuk menyatukan kongsi-kongsi dagang Belanda yang sebelumnya saling bersaing, supaya bisa menang bersaing melawan Inggris (EIC) dan Portugis."
+  },
+  {
+    "q": "VOC pada dasarnya adalah…",
+    "opts": [
+      "Nama lain pemerintah Belanda",
+      "Perusahaan dagang swasta yang dikasih kewenangan setingkat negara (hak octrooi)",
+      "Nama koloni Belanda di Jawa",
+      "Kerajaan lokal yang tunduk pada Belanda"
+    ],
+    "correct": 1,
+    "explain": "VOC bukan negara/pemerintah, melainkan kongsi dagang swasta yang diberi hak octrooi oleh pemerintah Belanda — kewenangan setingkat negara meski statusnya perusahaan."
+  },
+  {
+    "q": "Berikut yang BUKAN bagian dari Hak Octrooi VOC adalah…",
+    "opts": ["Mencetak uang sendiri", "Merekrut tentara", "Menyelenggarakan pemilu", "Memaklumkan perang"],
+    "correct": 2,
+    "explain": "Hak Octrooi VOC meliputi monopoli dagang, merekrut tentara, memaklumkan perang, membangun benteng, mencetak uang, dan mengangkat pegawai — tidak ada urusan pemilu, karena VOC bukan pemerintahan demokratis."
+  },
+  {
+    "q": "Kebijakan VOC yang mewajibkan rakyat menyerahkan hasil bumi sebagai pajak disebut…",
+    "opts": ["Verplichte Leverantie", "Contingenten", "Ekstirpasi", "Pelayaran Hongi"],
+    "correct": 1,
+    "explain": "Contingenten adalah kewajiban menyerahkan hasil bumi sebagai bentuk pajak kepada VOC — berbeda dari Verplichte Leverantie yang merupakan penyerahan wajib komoditas rempah dengan harga sepihak VOC."
+  },
+  {
+    "q": "Verplichte Leverantie adalah kebijakan VOC berupa…",
+    "opts": [
+      "Patroli laut mengawasi penyelundupan",
+      "Penebangan pohon rempah berlebih",
+      "Penyerahan wajib komoditas rempah dengan harga ditetapkan sepihak oleh VOC",
+      "Pajak hasil bumi rakyat"
+    ],
+    "correct": 2,
+    "explain": "Verplichte Leverantie mewajibkan rakyat menyerahkan komoditas rempah dengan harga yang ditetapkan sepihak oleh VOC — jauh di bawah harga pasar sebenarnya."
+  },
+  {
+    "q": "Hak VOC menebang pohon rempah-rempah berlebih untuk menjaga harga tetap tinggi di pasar dunia disebut…",
+    "opts": ["Ekstirpasi", "Contingenten", "Pelayaran Hongi", "Landrent System"],
+    "correct": 0,
+    "explain": "Ekstirpasi adalah hak menebang pohon rempah-rempah yang dianggap berlebih, menjaga kelangkaan buatan supaya harga rempah tetap tinggi di pasar dunia."
+  },
+  {
+    "q": "Pelayaran Hongi adalah…",
+    "opts": [
+      "Ekspedisi Belanda pertama ke Banten",
+      "Patroli perahu kora-kora bersenjata untuk mengawasi & melarang penyelundupan rempah",
+      "Nama kapal VOC yang membawa hasil rempah ke Eropa",
+      "Perjanjian dagang antara VOC dan Kesultanan Ternate"
+    ],
+    "correct": 1,
+    "explain": "Pelayaran Hongi adalah patroli perahu kora-kora bersenjata VOC untuk mengawasi perdagangan gelap dan melarang penyelundupan rempah di luar jalur resmi VOC."
+  },
+  {
+    "q": "VOC resmi dibubarkan pada 31 Desember 1799 karena…",
+    "opts": [
+      "Diserang oleh Inggris secara militer",
+      "Korupsi massal pejabat, biaya perang yang besar, dan persaingan dagang internasional",
+      "Diusir oleh Sultan Ternate",
+      "Digantikan oleh EIC secara sukarela"
+    ],
+    "correct": 1,
+    "explain": "Tiga faktor bertumpuk: korupsi massal pejabat VOC menggerogoti kas, biaya perang membengkak, dan persaingan dagang internasional (terutama Inggris) merebut pasar VOC — hingga akhirnya bangkrut."
+  },
+  {
+    "q": "Setelah VOC dibubarkan, seluruh asetnya diambil alih oleh…",
+    "opts": ["Kesultanan Ternate", "Pemerintah Inggris", "Pemerintah Belanda", "Kongsi dagang baru bernama EIC"],
+    "correct": 2,
+    "explain": "Setelah bangkrut, seluruh wilayah & aset VOC resmi diambil alih langsung oleh pemerintah Belanda (menjadi Hindia Belanda) — bukan lagi dikelola sebagai perusahaan swasta."
+  },
+  {
+    "q": "Herman Willem Daendels diutus ke Jawa untuk…",
+    "opts": [
+      "Mempertahankan Pulau Jawa dari serangan Inggris",
+      "Menegosiasikan Perjanjian Saragosa",
+      "Membubarkan VOC",
+      "Menjalankan Tanam Paksa"
+    ],
+    "correct": 0,
+    "explain": "Daendels (Republik Bataaf/Prancis) diutus mempertahankan Jawa dari kemungkinan serangan Inggris, sekaligus membangun Jalan Raya Pos Anyer–Panarukan dan mereorganisasi birokrasi kolonial."
+  },
+  {
+    "q": "Jalan Raya Pos (Grote Postweg) sepanjang ±1.000 km dari Anyer hingga Panarukan dibangun oleh Daendels menggunakan…",
+    "opts": ["Tenaga sewaan berbayar", "Sistem kerja rodi", "Tenaga kerja dari Eropa", "Tenaga kerja VOC"],
+    "correct": 1,
+    "explain": "Jalan Raya Pos dibangun dengan sistem kerja rodi (kerja paksa tanpa upah layak) — kebijakan yang justru kelak dihapuskan oleh Raffles."
+  },
+  {
+    "q": "Thomas Stamford Raffles berkuasa di Jawa setelah…",
+    "opts": ["Perjanjian Saragosa", "Kapitulasi Tuntang (1811)", "Konvensi London (1816)", "VOC dibubarkan (1799)"],
+    "correct": 1,
+    "explain": "Lewat Kapitulasi Tuntang (1811), Belanda menyerahkan kekuasaan atas Jawa kepada Inggris, mengantarkan masa pemerintahan Raffles (1811–1816)."
+  },
+  {
+    "q": "Landrent System yang diterapkan Raffles didasarkan pada prinsip bahwa…",
+    "opts": [
+      "Tanah adalah milik rakyat sepenuhnya",
+      "Seluruh tanah adalah milik pemerintah",
+      "Tanah dibagi rata ke semua petani",
+      "Tanah hanya boleh dimiliki bangsawan"
+    ],
+    "correct": 1,
+    "explain": "Landrent System (sistem sewa tanah) Raffles berprinsip bahwa seluruh tanah adalah milik pemerintah, sehingga petani harus membayar sewa/pajak tanah kepada pemerintah kolonial."
+  },
+  {
+    "q": "Selain menerapkan Landrent System, kebijakan Raffles yang berlawanan dengan era Daendels adalah…",
+    "opts": [
+      "Memperkuat sistem kerja rodi",
+      "Menghapuskan penyerahan wajib dan kerja rodi",
+      "Membangun Jalan Raya Pos",
+      "Mendirikan VOC baru"
+    ],
+    "correct": 1,
+    "explain": "Raffles menghapuskan penyerahan wajib & kerja rodi peninggalan VOC/Daendels — berlawanan arah dengan gaya kerja paksa Daendels, meski keduanya memerintah dalam periode berdekatan."
+  },
+  {
+    "q": "Konvensi London (1816) berisi kesepakatan bahwa…",
+    "opts": [
+      "Inggris mengambil alih seluruh Nusantara",
+      "Wilayah kekuasaan Nusantara dikembalikan dari Inggris kepada Belanda",
+      "VOC dihidupkan kembali",
+      "Spanyol dan Portugis membagi ulang Nusantara"
+    ],
+    "correct": 1,
+    "explain": "Konvensi London (1816) mengembalikan seluruh wilayah kekuasaan Nusantara dari Inggris kepada pemerintah Hindia Belanda, mengakhiri masa pemerintahan Raffles."
+  },
+  {
+    "q": "Sistem Tanam Paksa (Cultuurstelsel, 1830–1870) diberlakukan oleh…",
+    "opts": ["Herman Willem Daendels", "Thomas Stamford Raffles", "Johannes van den Bosch", "Johan van Oldenbarnevelt"],
+    "correct": 2,
+    "explain": "Gubernur Jenderal Johannes van den Bosch memberlakukan Cultuurstelsel, diatur resmi dalam Staatblad 1834 No. 22."
+  },
+  {
+    "q": "Cultuurstelsel diberlakukan terutama untuk…",
+    "opts": [
+      "Menyebarkan agama Kristen di Jawa",
+      "Menutup defisit kas Belanda akibat Perang Diponegoro dan Perang Kemerdekaan Belgia",
+      "Membalas kekalahan dari Inggris",
+      "Mendukung kemerdekaan Indonesia"
+    ],
+    "correct": 1,
+    "explain": "Kas Belanda nyaris habis setelah menanggung biaya Perang Diponegoro (1825–1830) dan Perang Kemerdekaan Belgia — van den Bosch memberlakukan Tanam Paksa untuk menutup defisit itu."
+  },
+  {
+    "q": "Menurut aturan resmi Staatblad 1834 No. 22, luas tanah yang harus disediakan petani untuk tanaman ekspor adalah…",
+    "opts": ["1/2 dari total tanah", "1/5 (20%) dari total tanah", "Seluruh tanah petani", "1/10 dari total tanah"],
+    "correct": 1,
+    "explain": "Aturan resmi menyebut petani hanya wajib menyediakan 1/5 (20%) tanahnya — dalam praktiknya, luas yang dipakai sering melebihi 1/2 bahkan seluruh tanah petani."
+  },
+  {
+    "q": "Sesuai aturan resmi, kegagalan panen dalam Tanam Paksa seharusnya ditanggung oleh…",
+    "opts": ["Petani sepenuhnya", "Pemerintah kolonial", "Dibagi rata petani dan pemerintah", "Pedagang perantara"],
+    "correct": 1,
+    "explain": "Staatblad 1834 No. 22 menyatakan kegagalan panen ditanggung pemerintah kolonial — realitanya, kegagalan panen justru sepenuhnya dibebankan ke petani, bertolak belakang dari aturan resmi."
+  },
+  {
+    "q": "Penyimpangan nyata dari aturan \"tanah wajib tanam dibebaskan dari pajak tanah\" di lapangan adalah…",
+    "opts": [
+      "Aturan itu benar-benar dijalankan tanpa masalah",
+      "Tanah wajib tanam tetap dikenakan pajak tanah oleh pejabat kolonial",
+      "Pajak tanah malah dihapuskan sepenuhnya",
+      "Petani dibebaskan dari semua jenis pajak"
+    ],
+    "correct": 1,
+    "explain": "Meski resminya tanah wajib tanam dibebaskan dari pajak (landrent), pejabat kolonial di lapangan tetap mengenakan pajak tanah — salah satu bentuk penyimpangan paling merugikan petani."
+  },
+  {
+    "q": "Salah satu alasan kenapa penyimpangan Tanam Paksa di lapangan bisa sebesar itu adalah…",
+    "opts": [
+      "Tidak ada pejabat lokal yang terlibat",
+      "Pejabat lokal diberi bonus (cultuurprocenten) jika setoran hasil panen melebihi target",
+      "Aturan resminya memang tidak jelas ditulis",
+      "Petani sendiri yang meminta aturan diperberat"
+    ],
+    "correct": 1,
+    "explain": "Pejabat lokal (bupati dsb.) diberi bonus cultuurprocenten kalau setoran hasil panen melebihi target — insentif langsung inilah yang mendorong mereka melanggar batas resmi demi keuntungan pribadi."
+  },
+  {
+    "q": "Kritik terhadap kecurangan Tanam Paksa paling terkenal disuarakan lewat novel Max Havelaar, ditulis oleh…",
+    "opts": ["Baron van Hoevell", "Eduard Douwes Dekker (Multatuli)", "Johannes van den Bosch", "Thomas Stamford Raffles"],
+    "correct": 1,
+    "explain": "Eduard Douwes Dekker, dengan nama pena Multatuli, menulis novel Max Havelaar yang mengkritik keras kecurangan pelaksanaan Tanam Paksa di lapangan."
+  },
+  {
+    "q": "Politik Pintu Terbuka (1870) diwujudkan lewat diundangkannya…",
+    "opts": [
+      "Staatblad 1834 No. 22",
+      "UU Agraria 1870 dan UU Gula 1870",
+      "Konvensi London 1816",
+      "Kapitulasi Tuntang 1811"
+    ],
+    "correct": 1,
+    "explain": "UU Agraria (Agrarische Wet) 1870 dan UU Gula (Suiker Wet) 1870 membuka akses modal swasta asing untuk menyewa tanah dan mendirikan perkebunan besar di Nusantara, mengakhiri era Cultuurstelsel."
+  },
+  {
+    "q": "Politik Pintu Terbuka membuka peluang bagi…",
+    "opts": [
+      "Rakyat pribumi memiliki tanah secara bebas",
+      "Modal swasta asing (Belanda, Inggris, Amerika) menyewa tanah dan mendirikan perkebunan besar",
+      "Pembubaran seluruh perkebunan di Nusantara",
+      "Kembalinya sistem VOC"
+    ],
+    "correct": 1,
+    "explain": "Politik Pintu Terbuka membuka akses modal swasta asing untuk menyewa tanah dan mendirikan perkebunan besar (kopi, teh, tembakau, tebu, karet) serta tambang — bukan untuk kepemilikan tanah pribumi."
+  },
+  {
+    "q": "Dampak kolonialisme di bidang politik yang paling mendasar adalah…",
+    "opts": [
+      "Pembangunan rel kereta api",
+      "Runtuhnya kedaulatan kerajaan lokal lewat politik adu domba (devide et impera)",
+      "Munculnya golongan terpelajar",
+      "Terbentuknya pelapisan sosial baru"
+    ],
+    "correct": 1,
+    "explain": "Politik adu domba (devide et impera) meruntuhkan kedaulatan kerajaan-kerajaan lokal — para raja/adipati yang dulu berdaulat berubah jadi pegawai bergaji dalam birokrasi kolonial terpusat."
+  },
+  {
+    "q": "Dampak sosial-budaya kolonialisme yang justru menjadi cikal bakal pergerakan nasional adalah…",
+    "opts": [
+      "Pembangunan pelabuhan besar",
+      "Masuknya pendidikan modern yang melahirkan golongan terpelajar/nasionalis",
+      "Monopoli dagang oleh VOC",
+      "Sistem tanam paksa"
+    ],
+    "correct": 1,
+    "explain": "Pendidikan modern yang dibawa kolonial justru melahirkan golongan terpelajar yang kemudian menjadi pelopor kesadaran integrasi kebangsaan Indonesia — dampak yang tidak sengaja dan berlawanan dengan tujuan awal kolonial."
+  },
+  {
+    "q": "Perang yang dipimpin Tuanku Imam Bonjol melawan Belanda (1821–1837) dikenal sebagai…",
+    "opts": ["Perang Aceh", "Perang Diponegoro", "Perang Padri", "Perang Bongaya"],
+    "correct": 2,
+    "explain": "Perang Padri (1821–1837) adalah perlawanan rakyat Minangkabau yang dipimpin Tuanku Imam Bonjol melawan Belanda."
+  },
+  {
+    "q": "Perang Aceh (1873–1904) melibatkan tokoh perlawanan…",
+    "opts": ["Tuanku Imam Bonjol", "Pangeran Diponegoro", "Teuku Umar dan Cut Nyak Dien", "Sultan Hasanuddin"],
+    "correct": 2,
+    "explain": "Perang Aceh adalah perlawanan gerilya rakyat Aceh yang dipimpin antara lain oleh Teuku Umar dan Cut Nyak Dien, berlangsung dari 1873 hingga 1904."
+  }
+]
