@@ -137,6 +137,18 @@
         ],
         "createdAt": "2026-09-13T00:00:00.000Z",
         "reason": "Intentional: .page-body.dense .example-box li uses line-height:1.45 (vs the 1.5 threshold) as part of the documented 'dense' page modifier (CHAPTER_CONTENT_GUIDE.md §5) that reclaims vertical space on text-heavy pages for short worked-example steps, not long-form paragraphs. Identical CSS block already shipped in bab1-eksponen-logaritma.pdf-pages.html."
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-09-13T06:34:53.408Z",
+        "reason": "pre-existing sitewide typography choice, established before this session, unrelated to header polish task"
+      },
+      {
+        "rule": "overused-font",
+        "value": "space grotesk",
+        "createdAt": "2026-09-13T06:34:53.433Z",
+        "reason": "pre-existing sitewide typography choice, established before this session, unrelated to header polish task"
       }
     ]
   }
