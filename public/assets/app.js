@@ -930,7 +930,7 @@ async function goToLesson(babId){
   document.querySelectorAll('.subject-link').forEach(l=>l.classList.toggle('active', l.dataset.subject===activeSubjectKey));
   window.scrollTo({top:0,behavior:'instant'});
 
-  document.getElementById('backToBabsBtn').textContent = '← ' + subjectsData[activeSubjectKey].name;
+  document.getElementById('backToBabsBtn').innerHTML = icon('arrow-left') + subjectsData[activeSubjectKey].name;
   const lessonContent = document.getElementById('lessonContent');
   const lessonLinks = document.getElementById('lessonLinks');
   lessonLinks.innerHTML = '';

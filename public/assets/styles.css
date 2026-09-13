@@ -338,11 +338,17 @@ section.tight{padding:60px 0;}
 /* === Bab picker === */
 .breadcrumb-back{
   background:none;border:none;cursor:pointer;color:var(--slate);
-  font-family:'Space Grotesk';font-size:.78rem;padding:0;margin-bottom:18px;
-  display:inline-flex;align-items:center;gap:6px;transition:color .15s;
+  font-family:'Space Grotesk';font-weight:600;font-size:.78rem;
+  padding:6px 10px 6px 8px;margin:-6px 0 12px -8px;border-radius:8px;
+  display:inline-flex;align-items:center;gap:6px;
+  transition:color .15s,background-color .15s,transform .15s;
 }
-.breadcrumb-back:hover{color:var(--orange-dark);}
-.breadcrumb-back.small{margin-bottom:0;font-size:.76rem;}
+.breadcrumb-back:hover{color:var(--ink);background:var(--paper-2);}
+.breadcrumb-back:active{transform:scale(.96);}
+.breadcrumb-back:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+.breadcrumb-back .icon{width:15px;height:15px;flex-shrink:0;transition:transform .18s ease;}
+.breadcrumb-back:hover .icon{transform:translateX(-3px);}
+.breadcrumb-back.small{margin:0 0 0 -8px;font-size:.76rem;padding:5px 9px 5px 7px;}
 /* Subject progress summary bar (bab picker) */
 .subject-progress{display:flex;align-items:center;gap:12px;margin-bottom:36px;}
 .subject-progress-track{flex:1;max-width:280px;height:6px;border-radius:4px;background:var(--paper-2);overflow:hidden;}
@@ -386,11 +392,15 @@ section.tight{padding:60px 0;}
 .lesson-links{display:flex;gap:2px;flex-wrap:wrap;}
 .lesson-links a{
   font-size:.82rem;font-weight:600;color:var(--heading-soft);text-decoration:none;
-  padding:7px 11px;border-radius:8px;transition:background .15s;white-space:nowrap;
+  padding:7px 11px;border-radius:8px;white-space:nowrap;
+  transition:background-color .15s,color .15s,transform .12s;
 }
 .lesson-links a:hover{background:var(--paper-2);}
+.lesson-links a:active{transform:scale(.96);}
+.lesson-links a:focus-visible{outline:2px solid var(--orange);outline-offset:1px;}
 .lesson-links a.cta{background:var(--navy);color:#fff;}
 .lesson-links a.cta:hover{background:var(--accent-hover);}
+.lesson-links a.cta:active{transform:scale(.96);}
 
 @media(max-width:760px){
   .lesson-subnav-inner{gap:10px;}
