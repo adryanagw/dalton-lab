@@ -286,6 +286,13 @@ const subjectsData = {
     desc:'Mekanika, listrik-magnet, gelombang, dan lainnya.',
     babs:[]
   },
+  sejarah: {
+    name:'Sejarah', icon:'book-open', ready:true, color:'red',
+    desc:'Kolonialisme, pergerakan nasional, kemerdekaan, dan sejarah Indonesia lainnya.',
+    babs:[
+      {id:'bab1-kolonialisme-imperialisme', num:'Bab 1', title:'Kolonialisme & Imperialisme Barat', desc:'Rute penjelajahan samudra bangsa Eropa, VOC, sistem tanam paksa, hingga dampak kolonialisme di Nusantara.', ready:true, estMinutes:20, subbabCount:11},
+    ]
+  },
 };
 
 /* =====================================================================
