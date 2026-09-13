@@ -1651,6 +1651,24 @@ function initPdfViewers(root){
     const nextBtn = viewer.querySelector('.pdf-viewer-next');
     const downloadBtn = viewer.dataset.pdfDownload === 'true' ? viewer.querySelector('.pdf-viewer-download') : null;
 
+    // Jump 5 pages at once — inserted here rather than hand-added to every
+    // chapter's markup, so every .pdf-viewer (present and future) gets it
+    // for free from this one shared component.
+    const SKIP = 5;
+    const skipBackBtn = document.createElement('button');
+    skipBackBtn.type = 'button';
+    skipBackBtn.className = 'pdf-viewer-skip pdf-viewer-skip-back';
+    skipBackBtn.setAttribute('aria-label', `Mundur ${SKIP} halaman`);
+    skipBackBtn.textContent = '«';
+    prevBtn.insertAdjacentElement('beforebegin', skipBackBtn);
+
+    const skipFwdBtn = document.createElement('button');
+    skipFwdBtn.type = 'button';
+    skipFwdBtn.className = 'pdf-viewer-skip pdf-viewer-skip-fwd';
+    skipFwdBtn.setAttribute('aria-label', `Maju ${SKIP} halaman`);
+    skipFwdBtn.textContent = '»';
+    nextBtn.insertAdjacentElement('afterend', skipFwdBtn);
+
     const session = getSession();
     if(!session || !session.token){
       loadingEl.textContent = 'Login dulu buat lihat materi PDF.';
@@ -1700,6 +1718,8 @@ function initPdfViewers(root){
       }finally{
         prevBtn.disabled = currentPage <= 1;
         nextBtn.disabled = currentPage >= pageCount;
+        skipBackBtn.disabled = currentPage <= 1;
+        skipFwdBtn.disabled = currentPage >= pageCount;
       }
     }
 
@@ -1720,6 +1740,8 @@ function initPdfViewers(root){
 
     prevBtn.addEventListener('click', ()=>{ if(currentPage > 1) loadPage(currentPage - 1); });
     nextBtn.addEventListener('click', ()=>{ if(currentPage < pageCount) loadPage(currentPage + 1); });
+    skipBackBtn.addEventListener('click', ()=>{ if(currentPage > 1) loadPage(Math.max(1, currentPage - SKIP)); });
+    skipFwdBtn.addEventListener('click', ()=>{ if(currentPage < pageCount) loadPage(Math.min(pageCount, currentPage + SKIP)); });
 
     if(downloadBtn){
       const defaultLabel = downloadBtn.textContent;
@@ -1791,6 +1813,53 @@ function stampWatermarkOnCanvas(ctx, w, h, session){
   ctx.restore();
 }
 
+/* ===== Plain PDF download link (no preview) =====
+   For a supplementary PDF that should only ever be downloaded — e.g. an
+   answer key — never shown page-by-page like .pdf-viewer. Fetches the raw
+   file from /api/pdf-download (auth-gated, same as every other piece of
+   content-private) as a blob, then triggers a normal browser save via a
+   throwaway <a download>. No watermarking: unlike the paginated viewer,
+   this is meant to leave the site as a real file, not a screen you're
+   discouraged from screenshotting. */
+function initPdfDownloadLinks(root){
+  root.querySelectorAll('.pdf-download-link').forEach((el)=>{
+    const subject = el.dataset.pdfSubject;
+    const bab = el.dataset.pdfBab;
+    const filename = el.dataset.pdfFilename || 'materi.pdf';
+    const btn = el.querySelector('.pdf-download-link-btn');
+    if(!subject || !bab || !btn) return;
+
+    btn.addEventListener('click', async ()=>{
+      const session = getSession();
+      if(!session || !session.token){ goToSignIn(activeSubjectKey); return; }
+      const originalText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Menyiapkan…';
+      try{
+        const res = await fetch(`/api/pdf-download?subject=${encodeURIComponent(subject)}&bab=${encodeURIComponent(bab)}`, {
+          headers: { 'Authorization': 'Bearer ' + session.token }
+        });
+        if(!res.ok) throw new Error('fetch failed');
+        const blob = await res.blob();
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      }catch(err){
+        btn.textContent = 'Gagal, coba lagi';
+        setTimeout(()=>{ btn.textContent = originalText; btn.disabled = false; }, 2000);
+        return;
+      }
+      btn.textContent = originalText;
+      btn.disabled = false;
+    });
+  });
+}
+
 /* ===== LaTeX rendering (KaTeX) =====
    Convention for chapter-content authors:
      - Inline math:   \( ... \)
@@ -1821,6 +1890,7 @@ function initAllComponents(root){
   initShuCalculator(root);
   initQuizzes(root);
   initPdfViewers(root);
+  initPdfDownloadLinks(root);
   initMath(root);
 }
 

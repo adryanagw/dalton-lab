@@ -1358,6 +1358,18 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 }
 .pdf-viewer-prev:hover:not(:disabled),.pdf-viewer-next:hover:not(:disabled){background:var(--paper);}
 .pdf-viewer-prev:disabled,.pdf-viewer-next:disabled{opacity:.35;cursor:default;}
+.pdf-viewer-skip{
+  width:34px;height:34px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--slate);
+  font-size:.95rem;
+  cursor:pointer;
+  transition:background .15s, opacity .15s;
+}
+.pdf-viewer-skip:hover:not(:disabled){background:var(--paper);color:var(--navy);}
+.pdf-viewer-skip:disabled{opacity:.35;cursor:default;}
 .pdf-viewer-download{
   font:600 .8rem/1 'Space Grotesk',sans-serif;
   padding:9px 16px;
@@ -1377,6 +1389,15 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
   min-width:120px;
   text-align:center;
 }
+.pdf-download-link{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  margin-top:16px;padding:18px 22px;border-radius:12px;
+  background:var(--card);border:1px solid var(--line);
+}
+.pdf-download-link-text{display:flex;flex-direction:column;gap:2px;}
+.pdf-download-link-title{font-family:'Space Grotesk';font-weight:600;font-size:.94rem;color:var(--heading);}
+.pdf-download-link-sub{font-size:.82rem;color:var(--slate);}
+.pdf-download-link-btn{flex-shrink:0;white-space:nowrap;}
 @media(max-width:680px){
   .pdf-viewer{max-width:100%;}
 }
