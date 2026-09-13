@@ -272,7 +272,8 @@ const subjectsData = {
     name:'Matematika', icon:'function', ready:true, color:'blue',
     desc:'Eksponen, logaritma, aljabar, geometri, statistika, dan lainnya.',
     babs:[
-      {id:'bab1-eksponen-logaritma', num:'Bab 1', title:'Eksponen & Logaritma', desc:'Sifat-sifat bilangan berpangkat, bentuk akar, fungsi eksponensial, sifat-sifat logaritma, hingga persamaan sederhana keduanya — plus latihan bertingkat per topik.', ready:true, estMinutes:22, subbabCount:8},
+      {id:'bab1-eksponen-logaritma', num:'Bab 1', title:'Eksponen & Logaritma', desc:'Sifat-sifat bilangan berpangkat, bentuk akar, fungsi eksponensial, sifat-sifat logaritma, hingga persamaan sederhana keduanya.', ready:true, estMinutes:22, subbabCount:8},
+      {id:'bab2-fungsi-komposisi-invers', num:'Bab 2', title:'Fungsi, Komposisi & Fungsi Invers', desc:'Konsep dasar relasi & domain alami, klasifikasi pemetaan (injektif/surjektif/bijektif), fungsi komposisi, fungsi invers & tabel rumus cepat, invers komposisi, hingga pengayaan fungsi floor/ceiling.', ready:true, estMinutes:28, subbabCount:8},
     ]
   },
   kimia: {

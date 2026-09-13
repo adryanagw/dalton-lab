@@ -110,6 +110,24 @@
         ],
         "createdAt": "2026-09-12T08:26:23.047Z",
         "reason": "False positive: content-only fragment scanned without the site's global styles.css :root variables / navy section background resolving; text sits inside sections using inline style=background:var(--navy) or similar, same as bab2-pendapatan-nasional.html's already-ignored instance."
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "content-private/matematika/bab2-fungsi-komposisi-invers.html"
+        ],
+        "createdAt": "2026-09-12T15:51:11.466Z",
+        "reason": "Intentional: .pdf-viewer-img ships with no src by design — filled at runtime via authenticated blob + object URL (app.js initPdfViewers/loadPage), identical to bab1-eksponen-logaritma.html's shipped pdf-viewer instances."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "content-private/matematika/bab2-fungsi-komposisi-invers.html"
+        ],
+        "createdAt": "2026-09-12T15:51:24.815Z",
+        "reason": "False positive from scanning the content fragment without the site's real styles.css loaded (section{padding:86px 0} etc. defined globally, not zero). Same pattern already ignored for bab1-eksponen-logaritma.html."
       }
     ]
   }
