@@ -1791,6 +1791,53 @@ function stampWatermarkOnCanvas(ctx, w, h, session){
   ctx.restore();
 }
 
+/* ===== Plain PDF download link (no preview) =====
+   For a supplementary PDF that should only ever be downloaded — e.g. an
+   answer key — never shown page-by-page like .pdf-viewer. Fetches the raw
+   file from /api/pdf-download (auth-gated, same as every other piece of
+   content-private) as a blob, then triggers a normal browser save via a
+   throwaway <a download>. No watermarking: unlike the paginated viewer,
+   this is meant to leave the site as a real file, not a screen you're
+   discouraged from screenshotting. */
+function initPdfDownloadLinks(root){
+  root.querySelectorAll('.pdf-download-link').forEach((el)=>{
+    const subject = el.dataset.pdfSubject;
+    const bab = el.dataset.pdfBab;
+    const filename = el.dataset.pdfFilename || 'materi.pdf';
+    const btn = el.querySelector('.pdf-download-link-btn');
+    if(!subject || !bab || !btn) return;
+
+    btn.addEventListener('click', async ()=>{
+      const session = getSession();
+      if(!session || !session.token){ goToSignIn(activeSubjectKey); return; }
+      const originalText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Menyiapkan…';
+      try{
+        const res = await fetch(`/api/pdf-download?subject=${encodeURIComponent(subject)}&bab=${encodeURIComponent(bab)}`, {
+          headers: { 'Authorization': 'Bearer ' + session.token }
+        });
+        if(!res.ok) throw new Error('fetch failed');
+        const blob = await res.blob();
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      }catch(err){
+        btn.textContent = 'Gagal, coba lagi';
+        setTimeout(()=>{ btn.textContent = originalText; btn.disabled = false; }, 2000);
+        return;
+      }
+      btn.textContent = originalText;
+      btn.disabled = false;
+    });
+  });
+}
+
 /* ===== LaTeX rendering (KaTeX) =====
    Convention for chapter-content authors:
      - Inline math:   \( ... \)
@@ -1821,6 +1868,7 @@ function initAllComponents(root){
   initShuCalculator(root);
   initQuizzes(root);
   initPdfViewers(root);
+  initPdfDownloadLinks(root);
   initMath(root);
 }
 
