@@ -1,0 +1,248 @@
+[
+  {
+    "q": "Ilmuwan mana yang membuktikan lewat eksperimen penembakan lempeng emas (1911) bahwa muatan positif dan hampir seluruh massa atom terpusat pada inti atom yang sangat kecil?",
+    "opts": ["J.J. Thomson", "Ernest Rutherford", "James Chadwick", "John Dalton"],
+    "correct": 1,
+    "explain": "Ernest Rutherford (1911) menembakkan partikel alfa pada lempeng emas tipis — sebagian besar diteruskan (atom = ruang kosong), sebagian kecil dipantulkan tajam (membuktikan ada inti padat bermuatan positif di tengah atom)."
+  },
+  {
+    "q": "J.J. Thomson (1897) menemukan partikel apa lewat eksperimen tabung sinar katode?",
+    "opts": ["Proton", "Neutron", "Elektron", "Inti atom"],
+    "correct": 2,
+    "explain": "Thomson menemukan elektron dan menentukan rasio muatan/massanya lewat eksperimen tabung sinar katode; massanya kemudian dipastikan lewat percobaan tetes minyak Millikan (9,109 × 10⁻²⁸ g)."
+  },
+  {
+    "q": "James Chadwick (1932) melengkapi model atom Rutherford dengan menemukan partikel apa?",
+    "opts": ["Proton", "Neutron", "Elektron", "Positron"],
+    "correct": 1,
+    "explain": "Chadwick menemukan neutron — partikel netral (tanpa muatan) yang berada di dalam inti bersama proton, melengkapi gambaran struktur inti atom."
+  },
+  {
+    "q": "Manakah urutan muatan relatif yang benar untuk proton, neutron, dan elektron?",
+    "opts": ["Proton = 0, Neutron = +1, Elektron = −1", "Proton = +1, Neutron = 0, Elektron = −1", "Proton = −1, Neutron = 0, Elektron = +1", "Proton = +1, Neutron = −1, Elektron = 0"],
+    "correct": 1,
+    "explain": "Proton bermuatan +1, neutron netral (0), elektron bermuatan −1. Proton & neutron berada di inti, elektron mengelilingi inti."
+  },
+  {
+    "q": "Notasi nuklida ditulis sebagai ᴬZX. Apa arti Z dan A dalam notasi tersebut?",
+    "opts": ["Z = nomor massa, A = nomor atom", "Z = jumlah neutron, A = jumlah proton", "Z = nomor atom (jumlah proton), A = nomor massa (proton + neutron)", "Z = jumlah elektron, A = jumlah proton"],
+    "correct": 2,
+    "explain": "Z (nomor atom) = jumlah proton — identitas unik unsur. A (nomor massa) = jumlah proton + neutron. Neutron dihitung dari N = A − Z."
+  },
+  {
+    "q": "Tentukan jumlah proton, neutron, dan elektron untuk atom netral ⁵⁶₂₆Fe!",
+    "opts": ["26 proton, 26 neutron, 30 elektron", "26 proton, 30 neutron, 26 elektron", "30 proton, 26 neutron, 26 elektron", "56 proton, 26 neutron, 26 elektron"],
+    "correct": 1,
+    "explain": "Atom netral: Proton = Z = 26, Elektron = Z = 26. Neutron = A − Z = 56 − 26 = 30."
+  },
+  {
+    "q": "Ion ⁵⁶₂₆Fe³⁺ terbentuk dari atom Fe yang melepas 3 elektron. Berapa jumlah elektronnya sekarang?",
+    "opts": ["26", "29", "23", "3"],
+    "correct": 2,
+    "explain": "Kation Fe³⁺ melepas 3 elektron dari atom netralnya (26 e⁻), sehingga elektronnya jadi 26 − 3 = 23. Jumlah proton (26) dan neutron (30) tidak berubah saat atom jadi ion."
+  },
+  {
+    "q": "Ion ³⁵₁₇Cl⁻ terbentuk dari atom Cl yang menangkap 1 elektron. Berapa jumlah proton, neutron, dan elektronnya?",
+    "opts": ["17 proton, 18 neutron, 16 elektron", "17 proton, 18 neutron, 18 elektron", "18 proton, 17 neutron, 18 elektron", "17 proton, 17 neutron, 18 elektron"],
+    "correct": 1,
+    "explain": "Proton = Z = 17 (tetap). Neutron = A − Z = 35 − 17 = 18 (tetap). Anion Cl⁻ menangkap 1 elektron: Elektron = 17 + 1 = 18."
+  },
+  {
+    "q": "Apa perbedaan mendasar antara jumlah elektron pada atom netral dan pada ion menurut atom yang sama?",
+    "opts": ["Jumlah proton berubah, elektron tetap", "Jumlah elektron berubah sesuai muatan ion, sedangkan jumlah proton & neutron tetap", "Jumlah neutron berubah mengikuti muatan ion", "Ketiganya (proton, neutron, elektron) berubah sama besar"],
+    "correct": 1,
+    "explain": "Saat atom netral berubah jadi ion, yang berubah cuma jumlah elektronnya (kation melepas elektron, anion menangkap elektron) — jumlah proton (identitas unsur) dan neutron tetap sama."
+  },
+  {
+    "q": "Dua atom disebut Isotop jika keduanya memiliki...",
+    "opts": ["Nomor atom (Z) sama, nomor massa (A) berbeda", "Nomor massa (A) sama, nomor atom (Z) berbeda", "Jumlah neutron sama, unsur berbeda", "Jumlah elektron total sama"],
+    "correct": 0,
+    "explain": "Isotop = unsur sama (Z/jumlah proton sama), tapi jumlah neutron & nomor massanya berbeda. Contoh: ¹²₆C dan ¹⁴₆C — sama-sama Karbon (Z=6), massa beda."
+  },
+  {
+    "q": "Dua nuklida ¹⁴₆C dan ¹⁶₈O keduanya sama-sama memiliki 8 neutron (N = A − Z). Hubungan seperti ini disebut...",
+    "opts": ["Isotop", "Isoton", "Isobar", "Isoelektron"],
+    "correct": 1,
+    "explain": "Isoton = jumlah neutron sama, meski unsurnya berbeda. ¹⁴₆C: N = 14−6 = 8. ¹⁶₈O: N = 16−8 = 8. Keduanya isoton karena N sama = 8."
+  },
+  {
+    "q": "¹⁴₆C dan ¹⁴₇N sama-sama punya nomor massa A = 14, meski jumlah protonnya berbeda (unsur berbeda). Hubungan ini disebut...",
+    "opts": ["Isotop", "Isoton", "Isobar", "Isoelektron"],
+    "correct": 2,
+    "explain": "Isobar = nomor massa (A) sama, unsur (Z) berbeda. ¹⁴₆C dan ¹⁴₇N sama-sama A=14, tapi Z-nya beda (6 vs 7), jadi keduanya isobar."
+  },
+  {
+    "q": "₁₁Na⁺, ₁₀Ne, dan ₉F⁻ semuanya memiliki jumlah elektron total yang sama (10 elektron), meski unsur & nomor atomnya berbeda-beda. Hubungan ini disebut...",
+    "opts": ["Isotop", "Isoton", "Isobar", "Isoelektron"],
+    "correct": 3,
+    "explain": "Isoelektron = jumlah elektron total sama. Na⁺ (11−1=10 e⁻), Ne (10 e⁻), F⁻ (9+1=10 e⁻) — ketiganya punya 10 elektron meski unsurnya beda, jadi isoelektron."
+  },
+  {
+    "q": "Diberikan spesi A (¹⁴₆C) dan D (¹²₆C). Keduanya tergolong pasangan apa?",
+    "opts": ["Isoton, karena N sama", "Isotop, karena Z sama (sama-sama Z=6)", "Isobar, karena A sama", "Isoelektron, karena e⁻ sama"],
+    "correct": 1,
+    "explain": "A dan D sama-sama unsur Karbon dengan Z=6 (proton sama), tapi nomor massanya beda (14 vs 12) — jadi isotop, bukan isoton/isobar."
+  },
+  {
+    "q": "Seorang siswa mengira Isoton berarti 'jumlah proton sama' karena namanya mirip Isotop. Apa koreksi yang tepat?",
+    "opts": ["Benar, isoton memang soal jumlah proton yang sama", "Salah — Isoton soal jumlah neutron (N = A − Z) yang sama, dan unsurnya justru pasti berbeda", "Isoton dan Isotop sebenarnya istilah yang sama persis", "Isoton soal jumlah elektron yang sama"],
+    "correct": 1,
+    "explain": "Isoton itu soal neutron (N) yang sama, bukan proton — dan karena protonnya (Z) berbeda, unsurnya pasti berbeda. Kalau protonnya sama itu namanya Isotop, bukan Isoton. Trik hafalan: Isoton mirip kata 'neTron'."
+  },
+  {
+    "q": "Apa isi Prinsip Aufbau dalam pengisian elektron?",
+    "opts": ["Elektron mengisi orbital dengan spin sejajar sebelum berpasangan", "Pengisian elektron dimulai dari subkulit berenergi terendah ke tertinggi", "Tidak boleh ada 2 elektron dengan 4 bilangan kuantum sama", "Elektron valensi selalu berjumlah 8"],
+    "correct": 1,
+    "explain": "Prinsip Aufbau: elektron mengisi subkulit mulai dari yang energinya paling rendah dulu, baru naik ke yang lebih tinggi (1s → 2s → 2p → 3s → 3p → 4s → 3d → ...)."
+  },
+  {
+    "q": "Apa isi Kaidah Hund dalam pengisian elektron pada orbital-orbital setara (misalnya 3 orbital p)?",
+    "opts": ["Elektron langsung berpasangan di satu orbital dulu sebelum mengisi orbital lain", "Elektron mengisi satu-satu dengan spin sejajar (↑) dulu di tiap orbital sebelum ada yang berpasangan (↑↓)", "Elektron hanya boleh mengisi orbital s", "Elektron valensi harus genap jumlahnya"],
+    "correct": 1,
+    "explain": "Kaidah Hund: pada orbital setingkat (misalnya 3 orbital p), elektron mengisi satu-satu dulu dengan spin sejajar sebelum ada yang berpasangan — memaksimalkan jumlah elektron tak berpasangan."
+  },
+  {
+    "q": "Larangan Pauli menyatakan bahwa...",
+    "opts": ["Setiap orbital maksimal diisi 1 elektron", "Tidak boleh ada 2 elektron dalam satu atom dengan 4 bilangan kuantum yang sama persis — akibatnya satu orbital maksimal 2 elektron dengan spin berlawanan", "Elektron tidak boleh berpindah subkulit", "Elektron valensi maksimal 6"],
+    "correct": 1,
+    "explain": "Larangan Pauli: tidak ada 2 elektron dengan 4 bilangan kuantum identik. Konsekuensi praktisnya: satu orbital maksimal diisi 2 elektron, dan keduanya wajib punya spin berlawanan (↑↓)."
+  },
+  {
+    "q": "Berapa kapasitas maksimal elektron pada subkulit d?",
+    "opts": ["2 elektron (1 orbital)", "6 elektron (3 orbital)", "10 elektron (5 orbital)", "14 elektron (7 orbital)"],
+    "correct": 2,
+    "explain": "Subkulit d punya 5 orbital, masing-masing maksimal 2 elektron (Larangan Pauli) → kapasitas total 5 × 2 = 10 elektron (d¹⁰)."
+  },
+  {
+    "q": "Tuliskan konfigurasi elektron unsur ₃₅Br mengikuti urutan Aufbau!",
+    "opts": ["1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁵", "1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁵", "1s² 2s² 2p⁶ 3s² 3p⁵", "1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 4p⁵ 3d¹⁰"],
+    "correct": 0,
+    "explain": "Mengikuti urutan energi Aufbau (4s diisi sebelum 3d): 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁵, total 2+2+6+2+6+2+10+5 = 35 elektron."
+  },
+  {
+    "q": "Dari konfigurasi elektron ₃₅Br (1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁵), berapa jumlah elektron valensinya?",
+    "opts": ["5", "7", "10", "17"],
+    "correct": 1,
+    "explain": "Elektron valensi Br ada di subkulit terluar blok s & p: 4s² 4p⁵ → jumlah elektron valensi = 2 + 5 = 7 (unsur golongan utama, elektron valensi = nsᵃ npᵇ, jumlahnya a+b)."
+  },
+  {
+    "q": "₂₆Fe (besi) punya konfigurasi elektron [Ar] 4s² 3d⁶. Karena berakhir di blok d, bagaimana cara menghitung elektron valensinya?",
+    "opts": ["Elektron valensi = (n−1)dᵃ nsᵇ, jumlahnya a+b = 6+2 = 8", "Elektron valensi hanya dihitung dari 4s² saja, jadi 2", "Elektron valensi hanya dihitung dari 3d⁶ saja, jadi 6", "Unsur blok d tidak punya elektron valensi"],
+    "correct": 0,
+    "explain": "Untuk unsur transisi (blok d), elektron valensi = (n−1)dᵃ nsᵇ, dihitung dari total kedua subkulit itu: 3d⁶ + 4s² = 6 + 2 = 8 elektron valensi — beda dari unsur golongan utama (blok s/p) yang cuma dihitung dari kulit terluar saja."
+  },
+  {
+    "q": "Bagaimana cara menentukan Periode suatu unsur dari konfigurasi elektronnya?",
+    "opts": ["Dari jumlah total elektron", "Dari nilai kulit utama (n) terbesar yang terisi elektron", "Dari jumlah neutron dalam inti", "Dari jumlah orbital yang kosong"],
+    "correct": 1,
+    "explain": "Periode ditunjukkan oleh nilai n (kulit utama) terbesar yang terisi elektron. Br punya elektron terluar di kulit n=4 (4s²4p⁵), jadi Br ada di Periode 4."
+  },
+  {
+    "q": "Unsur ₃₅Br punya elektron valensi 7 pada blok p (4s² 4p⁵). Golongan berapa Br dalam tabel periodik?",
+    "opts": ["Golongan 4A", "Golongan 5A", "Golongan 7A (Halogen)", "Golongan 7B"],
+    "correct": 2,
+    "explain": "Karena berakhir di blok p dengan elektron valensi 7, Br masuk Golongan Utama (A) nomor 7A — golongan Halogen, sama seperti Cl dan F."
+  },
+  {
+    "q": "Golongan 1A dalam tabel periodik (kecuali Hidrogen) dikenal dengan nama khusus...",
+    "opts": ["Halogen", "Gas Mulia", "Alkali", "Alkali Tanah"],
+    "correct": 2,
+    "explain": "Golongan 1A (konfigurasi valensi ns¹, kecuali H) disebut golongan Alkali — logam sangat reaktif, lunak, mudah membentuk kation +1."
+  },
+  {
+    "q": "Golongan 8A dengan konfigurasi valensi ns² np⁶ (He: 1s²) dikenal sebagai golongan...",
+    "opts": ["Halogen", "Gas Mulia", "Alkali Tanah", "Logam Transisi"],
+    "correct": 1,
+    "explain": "Golongan 8A = Gas Mulia — konfigurasi elektronnya sudah penuh (duplet untuk He, oktet untuk yang lain), sehingga sangat stabil dan sukar bereaksi dengan unsur lain."
+  },
+  {
+    "q": "Golongan 7A dengan konfigurasi valensi ns² np⁵ dikenal sebagai golongan Halogen. Apa sifat kimia utamanya?",
+    "opts": ["Logam sangat reaktif membentuk kation +2", "Non-logam sangat reaktif, cenderung menangkap 1 elektron membentuk anion −1", "Sangat stabil dan sukar bereaksi", "Logam transisi pembentuk senyawa kompleks"],
+    "correct": 1,
+    "explain": "Halogen (7A) butuh 1 elektron lagi untuk mencapai konfigurasi oktet stabil seperti gas mulia, sehingga sangat reaktif menangkap elektron dan membentuk anion bermuatan −1 (mis. Cl⁻, F⁻)."
+  },
+  {
+    "q": "Bagaimana arah perubahan jari-jari atom dalam satu golongan, dari atas ke bawah?",
+    "opts": ["Makin kecil, karena Zeff makin besar", "Makin besar, karena jumlah kulit elektron (n) bertambah", "Tetap sama, tidak berubah", "Berubah acak tanpa pola"],
+    "correct": 1,
+    "explain": "Dalam satu golongan (atas ke bawah), jumlah kulit elektron (n) bertambah setiap turun satu baris, sehingga jarak elektron terluar ke inti (jari-jari atom) makin besar."
+  },
+  {
+    "q": "Bagaimana arah perubahan jari-jari atom dalam satu periode, dari kiri ke kanan?",
+    "opts": ["Makin besar, karena jumlah proton bertambah", "Makin kecil, karena muatan inti efektif (Zeff) makin kuat menarik elektron ke dalam", "Tetap sama karena jumlah kulit (n) tidak berubah, sehingga jari-jarinya konstan", "Berubah tergantung golongan, tidak ada pola tetap"],
+    "correct": 1,
+    "explain": "Dalam satu periode, jumlah kulit (n) tetap sama, tapi jumlah proton (muatan inti) bertambah tiap kolom ke kanan — Zeff makin kuat menarik elektron terluar lebih dekat ke inti, sehingga jari-jari atom makin kecil."
+  },
+  {
+    "q": "Apa definisi Energi Ionisasi?",
+    "opts": ["Energi yang dilepas saat atom menangkap 1 elektron", "Energi minimal yang dibutuhkan untuk melepas 1 elektron terluar dari atom fasa gas", "Energi total yang dimiliki inti atom", "Energi ikatan antar dua atom dalam molekul"],
+    "correct": 1,
+    "explain": "Energi Ionisasi = energi minimal untuk melepas 1 elektron terluar dari atom netral dalam fasa gas — makin besar energi ionisasi, makin sulit atom itu melepas elektronnya."
+  },
+  {
+    "q": "Bagaimana arah perubahan energi ionisasi dalam satu periode, dari kiri ke kanan?",
+    "opts": ["Makin kecil", "Makin besar, karena elektron terluar makin kuat terikat inti", "Tidak berubah", "Naik-turun tanpa pola sama sekali"],
+    "correct": 1,
+    "explain": "Dalam satu periode (kiri ke kanan), Zeff makin besar sehingga elektron terluar makin kuat terikat inti — dibutuhkan energi makin besar untuk melepasnya, jadi energi ionisasi makin besar."
+  },
+  {
+    "q": "Golongan mana yang memiliki afinitas elektron paling eksotermik/terendah (paling 'getol' menangkap elektron)?",
+    "opts": ["Golongan 1A (Alkali)", "Golongan 2A (Alkali Tanah)", "Golongan 7A (Halogen)", "Golongan 8A (Gas Mulia)"],
+    "correct": 2,
+    "explain": "Halogen (7A) hanya butuh 1 elektron lagi untuk mencapai konfigurasi oktet stabil, sehingga sangat 'getol' menangkap elektron — afinitas elektronnya paling eksotermik/terendah di antara semua golongan."
+  },
+  {
+    "q": "Unsur apa yang memiliki nilai keelektronegatifan tertinggi di seluruh tabel periodik (4,0)?",
+    "opts": ["Klorin (Cl)", "Oksigen (O)", "Fluorin (F)", "Nitrogen (N)"],
+    "correct": 2,
+    "explain": "Fluorin (F) memiliki keelektronegatifan tertinggi di seluruh tabel periodik (4,0 pada skala Pauling) — atom paling kuat menarik pasangan elektron ikatan."
+  },
+  {
+    "q": "Tiga unsur ₁₁Na, ₁₄Si, dan ₁₇Cl berada pada periode yang sama (Periode 3). Urutkan jari-jari atomnya dari yang TERKECIL ke yang TERBESAR!",
+    "opts": ["Na < Si < Cl", "Cl < Si < Na", "Si < Na < Cl", "Cl < Na < Si"],
+    "correct": 1,
+    "explain": "Dalam satu periode, makin ke kanan (Na → Si → Cl) jari-jari makin kecil karena Zeff makin besar. Urutan terkecil ke terbesar: Cl < Si < Na (Na di paling kiri, jari-jarinya paling besar)."
+  },
+  {
+    "q": "Melanjutkan soal ₁₁Na, ₁₄Si, dan ₁₇Cl di Periode 3, urutkan energi ionisasinya dari yang TERKECIL ke yang TERBESAR!",
+    "opts": ["Cl < Si < Na", "Na < Si < Cl", "Si < Cl < Na", "Na < Cl < Si"],
+    "correct": 1,
+    "explain": "Energi ionisasi berbanding terbalik dengan jari-jari atom dalam satu periode: makin ke kanan (Na → Si → Cl) makin besar energi ionisasinya, karena elektron terluar makin kuat terikat inti. Urutan terkecil ke terbesar: Na < Si < Cl."
+  },
+  {
+    "q": "Seorang siswa mengira unsur dengan jari-jari atom lebih besar otomatis punya energi ionisasi yang lebih besar juga. Apa yang salah dari anggapan ini?",
+    "opts": ["Anggapan ini benar, keduanya searah", "Salah — dalam satu periode, jari-jari atom dan energi ionisasi justru berbanding TERBALIK: makin kecil jari-jarinya, makin besar energi ionisasinya", "Jari-jari atom dan energi ionisasi tidak ada hubungannya sama sekali", "Energi ionisasi hanya berlaku untuk unsur logam"],
+    "correct": 1,
+    "explain": "Jari-jari atom dan energi ionisasi berbanding terbalik dalam satu periode: atom dengan jari-jari lebih kecil berarti elektron terluarnya lebih dekat & lebih kuat ditarik inti, sehingga butuh energi LEBIH BESAR untuk melepasnya (energi ionisasi lebih besar), bukan lebih kecil."
+  },
+  {
+    "q": "Manakah dari pilihan berikut yang menunjukkan arah tren sifat keperiodikan yang BENAR dalam satu golongan (dari atas ke bawah)?",
+    "opts": ["Jari-jari atom makin kecil, energi ionisasi makin besar", "Jari-jari atom makin besar, energi ionisasi makin kecil", "Jari-jari atom dan energi ionisasi sama-sama makin besar", "Jari-jari atom dan energi ionisasi sama-sama makin kecil"],
+    "correct": 1,
+    "explain": "Dalam satu golongan (atas ke bawah): jari-jari atom makin besar (jumlah kulit n bertambah), sedangkan energi ionisasi makin kecil (elektron terluar makin jauh dari inti, makin mudah dilepas)."
+  },
+  {
+    "q": "Diketahui spesi A (¹⁴₆C, N=8), B (¹⁴₇N), C (¹⁶₈O, N=8), dan D (¹²₆C). Manakah pasangan yang tergolong Isobar?",
+    "opts": ["A dan D", "A dan C", "A dan B", "B dan C"],
+    "correct": 2,
+    "explain": "Isobar = nomor massa (A) sama. A (¹⁴₆C) dan B (¹⁴₇N) sama-sama punya nomor massa 14, meski unsurnya beda (C vs N) — jadi keduanya isobar."
+  },
+  {
+    "q": "Kenapa jumlah proton TIDAK PERNAH berubah saat sebuah atom netral menjadi ion (kation maupun anion)?",
+    "opts": ["Karena proton terlalu berat untuk berpindah", "Karena jumlah proton (Z) adalah identitas unik unsur itu sendiri — kalau protonnya berubah, unsurnya juga berubah jadi unsur lain", "Karena proton selalu berjumlah sama dengan neutron", "Karena aturan itu hanya berlaku untuk unsur golongan utama"],
+    "correct": 1,
+    "explain": "Nomor atom (Z = jumlah proton) adalah identitas unik tiap unsur — mengubah jumlah proton berarti mengubah unsurnya jadi unsur lain sama sekali (itu reaksi inti/transmutasi, bukan pembentukan ion biasa). Pembentukan ion cuma soal transfer elektron di kulit terluar, proton & neutron di inti tetap."
+  },
+  {
+    "q": "Manakah pernyataan yang PALING tepat menjelaskan kenapa urutan pengisian Aufbau menempatkan 4s SEBELUM 3d, meski angka kulit 3d lebih kecil dari 4s?",
+    "opts": ["Karena aturan abjad, s sebelum d", "Karena urutan Aufbau mengikuti urutan tingkat ENERGI subkulit, bukan urutan nomor kulit (n) — pada titik ini, energi 4s lebih rendah dari 3d", "Karena 3d belum ditemukan saat aturan Aufbau dibuat", "Karena 4s selalu kosong sehingga harus diisi lebih dulu"],
+    "correct": 1,
+    "explain": "Prinsip Aufbau soal urutan energi terendah ke tertinggi, bukan urutan nomor kulit. Pada rentang tertentu, energi subkulit 4s ternyata lebih rendah daripada 3d, jadi diisi lebih dulu — inilah kenapa diagram diagonal Aufbau perlu dihafal polanya, bukan cuma diurutkan angka n-nya."
+  },
+  {
+    "q": "Sebuah unsur X punya konfigurasi elektron berakhir di 3d³ 4s². Termasuk blok apa unsur ini, dan bagaimana golongan/elektron valensinya dihitung?",
+    "opts": ["Blok s, elektron valensi cuma dari 4s² = 2", "Blok d (unsur transisi), elektron valensi = 3d³ + 4s² = 3+2 = 5, tergolong golongan transisi", "Blok p, elektron valensi dari 3d³ saja", "Blok f, karena mengandung subkulit d"],
+    "correct": 1,
+    "explain": "Subkulit terakhir yang diisi adalah 3d, jadi unsur ini masuk blok d (transisi). Elektron valensinya dihitung dari (n−1)d + ns = 3d³ + 4s² = 3+2 = 5, bukan cuma dari 4s² seperti aturan golongan utama."
+  }
+]

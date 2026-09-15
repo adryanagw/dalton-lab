@@ -281,6 +281,7 @@ const subjectsData = {
     desc:'Struktur atom, ikatan kimia, stoikiometri, dan lainnya.',
     babs:[
       {id:'bab1-hakikat-kimia-hijau-k3lab', num:'Bab 1', title:'Hakikat Ilmu Kimia, Kimia Hijau & Keselamatan Laboratorium', desc:'Metode ilmiah, simbol & prosedur K3 lab, hingga 12 prinsip kimia hijau dan ekonomi atom.', ready:true, estMinutes:20, subbabCount:10},
+      {id:'bab2-struktur-atom-sistem-periodik', num:'Bab 2', title:'Struktur Atom & Sistem Periodik Unsur', desc:'Partikel sub-atomik, notasi nuklida, konfigurasi elektron kuantum, hingga tabel periodik dan tren keperiodikan.', ready:true, estMinutes:20, subbabCount:7},
     ]
   },
   fisika: {
