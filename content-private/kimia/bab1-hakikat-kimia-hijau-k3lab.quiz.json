@@ -1,0 +1,206 @@
+[
+  {
+    "q": "Ilmu kimia dijuluki sebagai <i>\"Central Science\"</i> (pusat ilmu pengetahuan). Kenapa julukan ini tepat?",
+    "opts": ["Karena kimia adalah pelajaran wajib di semua jurusan sekolah", "Karena prinsip-prinsip kimia jadi fondasi bagi ilmu lain seperti biologi, kedokteran, pertanian, geologi, hingga teknik bahan", "Karena kimia ditemukan lebih dulu daripada ilmu pengetahuan alam lainnya", "Karena laboratorium kimia selalu berada di tengah gedung sekolah"],
+    "correct": 1,
+    "explain": "Kimia disebut Central Science karena hampir semua bidang IPA/terapan lain bergantung pada prinsip kimia untuk menjelaskan fenomenanya — biologi butuh biokimia sel, kedokteran butuh farmakologi, pertanian butuh kimia tanah & pupuk, dst. Bukan soal urutan penemuan atau posisi ruangan."
+  },
+  {
+    "q": "Pemutih pakaian cair mengandung Natrium Hipoklorit (NaClO) sebagai bahan aktif. Bagaimana cara kerja NaClO menghilangkan noda &amp; membunuh kuman?",
+    "opts": ["NaClO bertindak sebagai pewangi yang menutupi bau noda", "NaClO bertindak sebagai zat pengoksidasi (oksidator) yang memutus ikatan rangkap pigmen noda sekaligus merusak dinding sel bakteri/virus", "NaClO melarutkan noda secara fisik tanpa reaksi kimia sama sekali", "NaClO bekerja sebagai pelembut kain yang melapisi serat"],
+    "correct": 1,
+    "explain": "NaClO adalah oksidator — ia melepaskan oksigen aktif yang memutus ikatan rangkap pada molekul pigmen noda (kromofor) sehingga warna noda hilang, sekaligus merusak dinding sel bakteri/virus lewat oksidasi (efek disinfektan)."
+  },
+  {
+    "q": "Manakah pasangan bidang-kehidupan dan contoh penerapan kimia berikut yang PALING tepat?",
+    "opts": ["Tekstil — pembuatan serat sintetis seperti poliester dan nilon", "Pertanian — pembuatan baterai lithium-ion", "Kesehatan — semikonduktor silikon untuk layar OLED", "Teknologi — sintesis pupuk urea dan NPK"],
+    "correct": 0,
+    "explain": "Serat sintetis (poliester, nilon, akrilik) adalah produk kimia tekstil. Baterai lithium-ion/semikonduktor/OLED adalah produk bidang teknologi & gadget, sementara pupuk urea/NPK adalah produk bidang pertanian — pasangan lain di opsi tertukar bidangnya."
+  },
+  {
+    "q": "Apa perbedaan paling mendasar antara pendekatan Kimia Tradisional dan Kimia Hijau (Green Chemistry)?",
+    "opts": ["Kimia Hijau hanya menggunakan bahan-bahan alami tanpa proses sintesis apapun", "Kimia Tradisional fokus mengelola limbah setelah terbentuk (di ujung pipa buangan), sedangkan Kimia Hijau mencegah racun sejak dari tahap perancangan produk", "Kimia Hijau tidak menggunakan reaksi kimia sama sekali", "Kimia Tradisional hanya dipakai di laboratorium sekolah, Kimia Hijau di industri"],
+    "correct": 1,
+    "explain": "Beda paling mendasar ada pada KAPAN tindakan diambil: kimia tradisional bersifat reaktif (mengelola limbah setelah terbentuk), kimia hijau bersifat preventif (mencegah pembentukan zat berbahaya sejak perancangan reaksi/produk). Kimia Hijau tetap memakai sintesis kimia sepenuhnya, bukan cuma bahan alami."
+  },
+  {
+    "q": "Siapakah dua ilmuwan yang merumuskan 12 Prinsip Kimia Hijau bersama US EPA pada rentang 1991-1998?",
+    "opts": ["Antoine Lavoisier & John Dalton", "Paul Anastas & John C. Warner", "Dmitri Mendeleev & Robert Boyle", "Marie Curie & Linus Pauling"],
+    "correct": 1,
+    "explain": "Paul Anastas & John C. Warner merumuskan 12 Prinsip Kimia Hijau bersama US EPA (Environmental Protection Agency), dirintis sejak Pollution Prevention Act 1990 dan dirumuskan resmi 1991-1998."
+  },
+  {
+    "q": "Kimia Hijau mendukung langsung Sustainable Development Goals (SDGs) PBB nomor berapa?",
+    "opts": ["Nomor 1 (Tanpa Kemiskinan) dan Nomor 2 (Tanpa Kelaparan)", "Nomor 4 (Pendidikan Berkualitas) dan Nomor 5 (Kesetaraan Gender)", "Nomor 12 (Konsumsi & Produksi Bertanggung Jawab) dan Nomor 13 (Penanganan Perubahan Iklim)", "Nomor 16 (Perdamaian, Keadilan, dan Kelembagaan yang Tangguh)"],
+    "correct": 2,
+    "explain": "Kimia Hijau menekan emisi gas rumah kaca & mengganti CFC perusak ozon, sehingga mendukung langsung SDGs nomor 12 (Konsumsi & Produksi Bertanggung Jawab) dan nomor 13 (Penanganan Perubahan Iklim)."
+  },
+  {
+    "q": "Sebuah pabrik mengganti bahan baku minyak bumi dengan pati singkong untuk membuat kantong belanja yang mudah terurai di alam. Prinsip Kimia Hijau nomor berapa saja yang paling tepat diterapkan?",
+    "opts": ["Prinsip 5 (Pelarut Aman) dan Prinsip 9 (Katalis)", "Prinsip 7 (Bahan Baku Terbarukan) dan Prinsip 10 (Desain untuk Degradasi)", "Prinsip 4 (Merancang Bahan Aman) saja", "Prinsip 11 (Analisis Real-Time) dan Prinsip 12 (Pencegahan Kecelakaan)"],
+    "correct": 1,
+    "explain": "Pati singkong = bahan baku biomassa terbarukan (Prinsip 7), dan kantong yang mudah terurai = produk dirancang untuk bisa terdegradasi alami (Prinsip 10). Secara tidak langsung ini juga mencegah limbah plastik abadi (Prinsip 1)."
+  },
+  {
+    "q": "Prinsip Kimia Hijau nomor berapa yang secara khusus mendorong penggunaan katalis dibanding reagen stoikiometri biasa?",
+    "opts": ["Prinsip 2 (Ekonomi Atom)", "Prinsip 6 (Efisiensi Energi)", "Prinsip 9 (Penggunaan Katalis)", "Prinsip 10 (Desain untuk Degradasi)"],
+    "correct": 2,
+    "explain": "Prinsip 9 secara eksplisit mendorong penggunaan katalis selektif yang bisa dipakai berulang kali (mis. katalis enzim/zeolit), dibanding reagen stoikiometri yang habis terpakai sekali reaksi."
+  },
+  {
+    "q": "Dalam struktur 3 pilar Kimia Hijau, prinsip mana yang termasuk Pilar 'Pencegahan' (Preventing)?",
+    "opts": ["Prinsip 2, 6, 7, 9, 10", "Prinsip 3, 4, 5, 8", "Prinsip 1, 11, 12", "Prinsip 1, 2, 3, 4"],
+    "correct": 2,
+    "explain": "Pilar Pencegahan mencakup Prinsip 1 (Pencegahan Limbah), Prinsip 11 (Analisis Real-Time), dan Prinsip 12 (Pencegahan Kecelakaan) — ketiganya soal mencegah masalah sebelum terjadi, bukan merancang reaksi (Pilar Desain Cerdas) atau soal efisiensi sumber daya (Pilar Sirkularitas)."
+  },
+  {
+    "q": "Prinsip 'Sintesis Kurang Berbahaya' dan 'Merancang Bahan Lebih Aman' termasuk dalam pilar Kimia Hijau yang mana?",
+    "opts": ["Pilar Pencegahan", "Pilar Desain Cerdas (Smart Design)", "Pilar Sirkularitas", "Bukan bagian dari ketiga pilar"],
+    "correct": 1,
+    "explain": "Pilar Desain Cerdas fokus merekayasa sintesis reaksi dengan risiko seminimal mungkin — mencakup Prinsip 3 (Sintesis Kurang Berbahaya), Prinsip 4 (Merancang Bahan Lebih Aman), Prinsip 5 (Pelarut Aman), dan Prinsip 8 (Mengurangi Derivatif)."
+  },
+  {
+    "q": "Manakah rumus % Ekonomi Atom (Atom Economy) yang benar?",
+    "opts": ["% Ekonomi Atom = (Massa Molar Produk Target ÷ Total Massa Molar Seluruh Reaktan) × 100%", "% Ekonomi Atom = (Massa Molar Seluruh Produk ÷ Massa Molar Produk Target) × 100%", "% Ekonomi Atom = (Jumlah Mol Reaktan ÷ Jumlah Mol Produk) × 100%", "% Ekonomi Atom = (Massa Total Reaktan − Massa Total Produk) × 100%"],
+    "correct": 0,
+    "explain": "Ekonomi atom membandingkan massa molar produk yang benar-benar diinginkan terhadap total massa molar seluruh reaktan yang dipakai — mengukur seberapa efisien reaksi 'merakit' reaktan jadi produk target, bukan produk sampingan lain."
+  },
+  {
+    "q": "Reaksi sintesis gas hidrogen: CaH₂ + 2H₂O → Ca(OH)₂ + 2H₂. Massa molar CaH₂=42, H₂O=18, Ca(OH)₂=74, H₂=2 g/mol. Jika target produk yang diinginkan hanya H₂, berapa total massa molar seluruh reaktan?",
+    "opts": ["42 g/mol", "60 g/mol", "78 g/mol", "116 g/mol"],
+    "correct": 2,
+    "explain": "Total massa reaktan = massa CaH₂ + massa 2H₂O = 42 + (2 × 18) = 42 + 36 = 78 g/mol. Ingat, 2H₂O berarti 2 mol air, jadi massanya dikali 2 dulu sebelum dijumlah."
+  },
+  {
+    "q": "Melanjutkan soal reaksi CaH₂ + 2H₂O → Ca(OH)₂ + 2H₂ di atas, berapa % Ekonomi Atom-nya jika target produk adalah gas H₂?",
+    "opts": ["2,56%", "5,13%", "51,3%", "94,87%"],
+    "correct": 1,
+    "explain": "Massa produk target (2 mol H₂) = 2 × 2 = 4 g/mol. Total massa reaktan = 78 g/mol. % Ekonomi Atom = (4 ÷ 78) × 100% = 5,13% — rendah karena mayoritas massa reaktan (94,87%) justru terbuang jadi Ca(OH)₂, bukan H₂ yang diinginkan."
+  },
+  {
+    "q": "Reaksi Zn(s) + 2HCl(aq) → ZnCl₂(aq) + H₂(g) dipakai untuk sintesis gas hidrogen di laboratorium. Massa molar Zn=65,4; H=1,0; Cl=35,5 g/mol. Jika target produk adalah H₂, berapa total massa molar seluruh reaktan?",
+    "opts": ["65,4 g/mol", "73 g/mol", "136,5 g/mol", "138,4 g/mol"],
+    "correct": 3,
+    "explain": "Massa molar HCl = 1,0 + 35,5 = 36,5 g/mol, sehingga massa 2HCl = 2 × 36,5 = 73 g/mol. Total massa reaktan = massa Zn + massa 2HCl = 65,4 + 73 = 138,4 g/mol."
+  },
+  {
+    "q": "Melanjutkan soal Zn(s) + 2HCl(aq) → ZnCl₂(aq) + H₂(g) di atas (total massa reaktan = 138,4 g/mol), berapa % Ekonomi Atom-nya jika target produk adalah H₂ (massa molar 2 g/mol)?",
+    "opts": ["Sekitar 1,45%", "Sekitar 14,5%", "Sekitar 47,3%", "Sekitar 94,3%"],
+    "correct": 0,
+    "explain": "% Ekonomi Atom = (2 ÷ 138,4) × 100% ≈ 1,45% — bahkan lebih rendah dari contoh CaH₂ sebelumnya, karena massa molar Zn & Cl jauh lebih besar dibanding H₂ yang jadi target, sehingga proporsi massa yang 'terpakai' jadi produk target makin kecil."
+  },
+  {
+    "q": "Sebuah reaksi punya % Ekonomi Atom mendekati 100%. Apa artinya, dan jenis reaksi apa yang biasanya menghasilkan nilai setinggi ini?",
+    "opts": ["Reaksi itu berjalan sangat cepat — biasanya reaksi dengan katalis logam berat", "Hampir semua massa reaktan berubah jadi produk target tanpa banyak terbuang — biasanya reaksi adisi atau penataan ulang (rearrangement)", "Reaksi itu tidak menghasilkan panas sama sekali — biasanya reaksi netralisasi asam-basa", "Reaksi itu tidak melibatkan reaktan sama sekali"],
+    "correct": 1,
+    "explain": "Ekonomi atom mendekati 100% berarti nyaris seluruh massa reaktan 'nyangkut' jadi produk yang diinginkan, hampir tanpa produk sampingan terbuang. Reaksi adisi (atom-atom reaktan langsung bergabung) atau penataan ulang (rearrangement, tanpa kehilangan atom) secara alami punya ekonomi atom tinggi karena tidak ada fragmen molekul yang lepas jadi limbah."
+  },
+  {
+    "q": "Manakah dari berikut ini yang BUKAN termasuk 4 Alat Pelindung Diri (APD) wajib di laboratorium kimia sekolah?",
+    "opts": ["Jas laboratorium lengan panjang", "Kacamata pengaman (safety goggles)", "Sarung tangan nitril/karet", "Masker kain biasa untuk debu rumahan"],
+    "correct": 3,
+    "explain": "4 APD wajib: jas lab lengan panjang, safety goggles, sarung tangan nitril/karet, dan sepatu tertutup. Masker kain biasa bukan APD standar lab kimia — perlindungan pernapasan di lab butuh masker sesuai jenis bahaya (mis. masker partikulat khusus), bukan masker kain harian."
+  },
+  {
+    "q": "Kenapa siswa dilarang memakai lensa kontak saat praktikum yang melibatkan uap bahan kimia, meski sudah memakai safety goggles?",
+    "opts": ["Karena lensa kontak bisa menjebak uap kimia di antara lensa dan mata, memperparah iritasi/kerusakan", "Karena lensa kontak membuat penglihatan jadi kabur di dalam lab", "Karena lensa kontak melanggar aturan berpakaian sekolah", "Karena tidak ada alasan khusus, hanya kebiasaan lab saja"],
+    "correct": 0,
+    "explain": "Uap bahan kimia bisa terperangkap di ruang antara lensa kontak dan permukaan mata, sehingga kontak zat berbahaya dengan mata jadi lebih lama & sulit dibilas cepat saat terjadi kecelakaan — karena itu goggles dipakai langsung di atas mata telanjang, bukan di atas lensa kontak."
+  },
+  {
+    "q": "Sebelum memulai eksperimen (Fase 'Sebelum' dalam protokol K3), apa dua hal utama yang wajib dipahami siswa?",
+    "opts": ["Jadwal ujian dan nilai KKM mata pelajaran kimia", "MSDS (lembar data keselamatan bahan) dan jalur evakuasi menuju titik kumpul", "Nomor telepon orang tua dan alamat rumah teman sekelompok", "Harga bahan kimia dan cara membelinya"],
+    "correct": 1,
+    "explain": "Fase 'Sebelum' protokol K3 mewajibkan siswa memahami MSDS (Material Safety Data Sheet, berisi sifat & bahaya tiap bahan kimia yang akan dipakai) dan memetakan jalur evakuasi menuju titik kumpul (assembly point) sebagai antisipasi keadaan darurat."
+  },
+  {
+    "q": "Saat eksperimen berlangsung (Fase 'Selama'), kapan siswa WAJIB menggunakan lemari asam?",
+    "opts": ["Setiap kali mengukur suhu ruangan", "Saat menangani reaksi yang menghasilkan gas beracun/berbahaya", "Hanya saat ujian praktik dinilai guru", "Tidak pernah, lemari asam hanya untuk penyimpanan alat"],
+    "correct": 1,
+    "explain": "Lemari asam (fume hood) dirancang menyedot & membuang gas berbahaya keluar ruangan lewat sistem ventilasi khusus, sehingga wajib dipakai untuk reaksi yang menghasilkan gas beracun agar tidak terhirup siswa."
+  },
+  {
+    "q": "Setelah eksperimen selesai (Fase 'Sesudah'), langkah pengelolaan limbah yang benar adalah...",
+    "opts": ["Membuang semua limbah jadi satu ke saluran wastafel sekolah", "Memisahkan limbah organik dari limbah logam berat/berbahaya sebelum dibuang, lalu memastikan keran air/gas/listrik dimatikan", "Menyimpan semua limbah di loker pribadi siswa untuk dibuang di rumah", "Membiarkan limbah di meja praktikum untuk diurus petugas kebersihan"],
+    "correct": 1,
+    "explain": "Fase 'Sesudah' mewajibkan pemisahan limbah (organik vs logam berat/berbahaya) sebelum dibuang, karena limbah berbahaya butuh penanganan/netralisasi khusus, plus memastikan seluruh keran air, aliran gas, dan listrik dimatikan sebelum meninggalkan ruangan."
+  },
+  {
+    "q": "Botol reagen berlabel simbol tengkorak &amp; tulang bersilang (skull and crossbones) menandakan bahan tersebut bersifat...",
+    "opts": ["Mudah terbakar (Flammable)", "Korosif (Corrosive)", "Beracun (Toxic) — bisa fatal jika terhirup, tertelan, atau terserap kulit", "Iritasi ringan pada kulit"],
+    "correct": 2,
+    "explain": "Simbol tengkorak & tulang bersilang menandakan bahan Toxic (beracun) — dapat menyebabkan keracunan akut/kronis jika terhirup, tertelan, atau terserap kulit. Contoh: merkuri (Hg), kalium sianida (KCN), metanol."
+  },
+  {
+    "q": "Asam Sulfat pekat (H₂SO₄) dan Natrium Hidroksida padat (NaOH) diberi label simbol bahaya berupa gambar cairan yang merusak permukaan meja/tangan. Simbol apa ini dan apa artinya?",
+    "opts": ["Flammable — mudah terbakar bila kena api", "Corrosive — dapat merusak jaringan kulit dan melubangi permukaan logam", "Explosive — mudah meledak bila terkena gesekan", "Toxic — mematikan bila terhirup dalam jumlah kecil"],
+    "correct": 1,
+    "explain": "Simbol Corrosive (korosif) berarti bahan dapat merusak jaringan hidup (kulit) dan melubangi permukaan logam/material lain. Asam & basa kuat seperti H₂SO₄ pekat, HCl pekat, dan NaOH padat adalah contoh khasnya."
+  },
+  {
+    "q": "Etanol dan aseton diberi label simbol api menyala (Flammable). Bagaimana cara penyimpanan yang benar untuk bahan mudah terbakar seperti ini?",
+    "opts": ["Simpan berdekatan dengan pembakar Bunsen agar mudah diambil saat dipakai", "Simpan di tempat sejuk, berventilasi baik, dan jauhkan dari api/sumber percikan", "Simpan di dalam kulkas bersama bahan makanan", "Simpan di tempat terbuka terkena sinar matahari langsung"],
+    "correct": 1,
+    "explain": "Bahan mudah terbakar (titik nyala rendah, <35°C) harus disimpan di tempat sejuk & berventilasi baik, jauh dari sumber api/percikan Bunsen — bukan didekatkan ke sumber panas."
+  },
+  {
+    "q": "Amonium Nitrat dan TNT diberi simbol bahaya berbentuk ledakan (Explosive). Apa yang harus dihindari saat menangani bahan seperti ini?",
+    "opts": ["Gesekan, benturan keras, dan sumber panas ekstrem", "Cahaya matahari langsung saja", "Suhu ruangan yang terlalu dingin", "Kontak dengan udara terbuka"],
+    "correct": 0,
+    "explain": "Bahan Explosive bereaksi keras terhadap gesekan, benturan, atau panas ekstrem — karena itu penanganannya harus menghindari ketiga hal tersebut, bukan sekadar soal cahaya atau suhu ruangan."
+  },
+  {
+    "q": "Kloroform dan amonia encer diberi label simbol tanda silang (X) yang menandakan sifat...",
+    "opts": ["Radioaktif — memancarkan radiasi berbahaya", "Iritasi/Harmful — menyebabkan gatal, kemerahan kulit, atau iritasi saluran pernapasan dengan bau menyengat", "Mudah meledak jika terkena air", "Aman digunakan tanpa perlindungan khusus"],
+    "correct": 1,
+    "explain": "Simbol tanda silang menandakan Irritant/Harmful (iritasi) — bahan menyebabkan inflamasi pada selaput lendir/kulit dan biasanya berbau menyengat tajam, seperti kloroform atau amonia encer. Tindakannya: pakai masker & sarung tangan, buka ventilasi udara."
+  },
+  {
+    "q": "Seorang siswa tidak sengaja terkena percikan Asam Klorida (HCl) pekat di tangannya. Apa langkah PERTAMA yang wajib segera dilakukan?",
+    "opts": ["Mengolesi tangan dengan salep atau minyak agar tidak perih", "Membawa korban ke wastafel/bak cuci tangan terdekat, lalu membilas dengan air mengalir terus-menerus minimal 15-20 menit", "Menunggu guru datang dulu sebelum melakukan tindakan apapun", "Mengelap tangan dengan tisu kering sampai bersih"],
+    "correct": 1,
+    "explain": "Langkah pertama & terpenting: segera bilas bagian tubuh yang terkena dengan air mengalir terus-menerus minimal 15-20 menit untuk mengencerkan & menghilangkan zat korosif. Jangan diolesi salep/minyak sembarangan, dan jangan menunggu — tindakan harus segera sebelum lapor ke guru."
+  },
+  {
+    "q": "Bahan kimia terpercik ke mata siswa saat praktikum. Fasilitas apa yang harus segera digunakan, dan berapa lama pembilasan minimal yang dianjurkan?",
+    "opts": ["Eyewash Station, dibilas air mengalir minimal 15 menit dengan mata dibuka lebar-lebar", "Menutup mata rapat-rapat dan menunggu tanpa tindakan apapun", "Mengucek mata dengan tangan agar zat kimia cepat keluar", "Meneteskan obat tetes mata biasa dari kotak P3K"],
+    "correct": 0,
+    "explain": "Fasilitas khusus Eyewash Station dipakai untuk kasus ini — mata dibuka lebar-lebar dan dibilas air mengalir selama minimal 15 menit. Mengucek mata justru bisa memperparah kerusakan jaringan mata."
+  },
+  {
+    "q": "Terjadi kebakaran kecil akibat tumpahan spiritus di atas meja praktikum. Apa yang HARUS dihindari saat memadamkannya?",
+    "opts": ["Menggunakan Alat Pemadam Api Ringan (APAR)", "Menggunakan kain/lap basah untuk menutup api", "Menyiram api dengan air dalam jumlah banyak", "Memanggil guru pembimbing untuk membantu"],
+    "correct": 2,
+    "explain": "Menyiram minyak/pelarut yang terbakar dengan air justru berbahaya — air bisa membuat cairan yang terbakar menyebar (karena massa jenis air lebih besar, pelarut yang lebih ringan akan mengapung & menyebar api), memperluas area kebakaran. Cara aman: gunakan kain/lap basah untuk menutup api (memutus pasokan oksigen) atau APAR."
+  },
+  {
+    "q": "Apa itu Praktikum Skala Kecil (Microscale Chemistry), dan berapa skala reagen yang biasa dipakai?",
+    "opts": ["Praktikum dengan reagen dalam skala tetes (0,1-1 mL) atau plat tetes porselen, menggantikan gelas kimia berskala penuh", "Praktikum yang hanya boleh dilakukan siswa berbadan kecil", "Praktikum tanpa bahan kimia sama sekali, hanya simulasi digital", "Praktikum dengan alat-alat berukuran mini tapi reagen tetap skala penuh"],
+    "correct": 0,
+    "explain": "Microscale chemistry menggunakan reagen cair dalam skala tetes (0,1-1 mL) atau plat tetes porselen — jauh lebih kecil dibanding gelas kimia skala penuh yang biasa dipakai di praktikum konvensional."
+  },
+  {
+    "q": "Microscale chemistry disebut sebagai wujud nyata penerapan Kimia Hijau di sekolah. Berapa persen limbah berbahaya yang bisa ditekan lewat metode ini?",
+    "opts": ["Sekitar 10%", "Sekitar 25%", "Sekitar 50%", "Hingga 90%"],
+    "correct": 3,
+    "explain": "Microscale chemistry bisa meminimalkan limbah berbahaya hingga 90% dibanding praktikum skala penuh, sekaligus menghemat biaya reagen, menekan polusi uap beracun, dan meningkatkan keselamatan siswa."
+  },
+  {
+    "q": "Manakah pernyataan yang PALING tepat menjelaskan hubungan antara microscale chemistry dengan 12 Prinsip Kimia Hijau?",
+    "opts": ["Microscale chemistry tidak berkaitan sama sekali dengan Kimia Hijau, keduanya topik terpisah", "Microscale chemistry menerapkan Prinsip Pencegahan Limbah secara langsung — karena reagen digunakan seminimal mungkin, limbah yang terbentuk otomatis lebih sedikit sejak awal", "Microscale chemistry hanya soal menghemat biaya, tidak ada hubungan dengan prinsip keselamatan/lingkungan", "Microscale chemistry menggantikan seluruh APD yang wajib dipakai siswa"],
+    "correct": 1,
+    "explain": "Karena reagen dipakai dalam skala tetes yang sangat kecil, limbah yang terbentuk otomatis jauh lebih sedikit sejak awal — ini penerapan langsung Prinsip 1 (Pencegahan Limbah), bukan sekadar soal biaya, dan tidak menggantikan kewajiban APD."
+  },
+  {
+    "q": "Seorang siswa berpendapat: \"Kimia Hijau berarti kita harus berhenti pakai bahan kimia buatan dan cuma pakai bahan alami.\" Apa yang salah dari pemahaman ini?",
+    "opts": ["Pemahaman ini benar sepenuhnya, tidak ada yang salah", "Kimia Hijau bukan soal 'alami vs buatan', tapi soal merancang & memilih proses/bahan (baik sintetis maupun alami) yang minim bahaya dan minim limbah sejak awal", "Kimia Hijau justru melarang penggunaan bahan alami sama sekali", "Kimia Hijau hanya berlaku untuk industri besar, tidak relevan untuk sekolah"],
+    "correct": 1,
+    "explain": "Miskonsepsi umum: mengira 'hijau' = 'alami'. Faktanya Kimia Hijau tetap memakai sintesis kimia sepenuhnya (termasuk katalis buatan, pelarut ionik terbarukan, dst) — intinya adalah merancang proses & memilih bahan (dari sumber apa pun) yang minim bahaya dan minim limbah, bukan soal asal-usul bahan semata. Bahan 'alami' pun bisa tetap berbahaya jika dipakai/dibuang sembarangan."
+  },
+  {
+    "q": "Sebuah pabrik menggunakan katalis enzimatis untuk mempercepat sintesis pada suhu ruang (25°C), dibanding cara lama yang butuh pemanasan tinggi. Prinsip Kimia Hijau apa yang diterapkan di sini, dan termasuk pilar apa?",
+    "opts": ["Prinsip 1 (Pencegahan Limbah) — Pilar Pencegahan", "Prinsip 6 (Efisiensi Energi) & Prinsip 9 (Penggunaan Katalis) — Pilar Sirkularitas", "Prinsip 4 (Merancang Bahan Aman) — Pilar Desain Cerdas", "Prinsip 12 (Pencegahan Kecelakaan) — Pilar Pencegahan"],
+    "correct": 1,
+    "explain": "Menjalankan reaksi di suhu ruang (bukan suhu tinggi) = Prinsip 6 (Efisiensi Energi), dan memakai katalis enzimatis = Prinsip 9 (Penggunaan Katalis) — keduanya masuk Pilar Sirkularitas (memakai sumber daya semaksimal & seefisien mungkin)."
+  }
+]

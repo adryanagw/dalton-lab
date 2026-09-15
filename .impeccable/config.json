@@ -176,6 +176,42 @@
         ],
         "createdAt": "2026-09-13T13:12:45.393Z",
         "reason": "Same .example-box CSS (border-top:1px solid #e6dfd0; padding:18px 2px 4px) copied verbatim from bab1-badan-usaha.pdf-pages.html per CHAPTER_CONTENT_GUIDE.md's copy-the-CSS-block-wholesale instruction; already shipped/ignored there, not new."
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "content-private/kimia/bab1-hakikat-kimia-hijau-k3lab.html"
+        ],
+        "createdAt": "2026-09-14T15:29:58.834Z",
+        "reason": "Intentional: .pdf-viewer-img ships with no src by design — filled at runtime via authenticated blob + object URL (app.js initPdfViewers/loadPage). Same pattern already ignored for bab1-badan-usaha.html/bab1-sel.html/bab1-eksponen-logaritma.html."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "content-private/kimia/bab1-hakikat-kimia-hijau-k3lab.html"
+        ],
+        "createdAt": "2026-09-14T15:29:58.862Z",
+        "reason": "False positive from scanning the content fragment without the site's real styles.css loaded (section{padding:86px 0} etc. defined globally, not zero). Same pattern already ignored for bab1-badan-usaha.html/bab1-sel.html/bab1-eksponen-logaritma.html."
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "content-private/kimia/bab1-hakikat-kimia-hijau-k3lab.html"
+        ],
+        "createdAt": "2026-09-14T15:29:58.889Z",
+        "reason": "False positive: content-only fragment scanned without the site's global styles.css :root variables resolving; same pattern already ignored for bab2-pendapatan-nasional.html/bab1-badan-usaha.html."
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "content-private/kimia/bab1-hakikat-kimia-hijau-k3lab.pdf-pages.html"
+        ],
+        "createdAt": "2026-09-15T01:49:56.330Z",
+        "reason": "False positive: line-height:1 only appears on single-line short label/UI text (.brand-word, .subject-chip, .chapter-tag, .callout/.formula-box/.example-box .label spans, .ref-table thead th) copied verbatim from the shared page-template CSS block per CHAPTER_CONTENT_GUIDE.md's copy-the-CSS-block-wholesale instruction (identical to bab1-eksponen-logaritma.pdf-pages.html/bab1-sel.pdf-pages.html). None of these are multi-line body paragraphs; body text (p.body-text, li) uses line-height 1.5-1.65 throughout."
       }
     ]
   }

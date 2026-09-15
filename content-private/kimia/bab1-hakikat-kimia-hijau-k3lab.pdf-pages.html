@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<!-- Rendered PDF companion content for Bab 1 Kimia (Hakikat Kimia, Kimia Hijau &
+     Keselamatan Laboratorium), built from bab1-hakikat-kimia-hijau-k3lab.pdf-spec.md on
+     public/assets/pdf-template/page-template.html. This is the actual filled source,
+     rendered once and shared by every student — no per-page watermark markup here on
+     purpose: the real student-identity watermark is drawn live, per viewer, by
+     initPdfViewers() in app.js (.pdf-viewer-watermark), stamped with that viewer's
+     actual session name and timestamp. Baking a placeholder name into the shared
+     image here would just show every student a second, fake watermark underneath
+     the real one. -->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dalton Lab — PDF Bab 1 Kimia</title>
+<link rel="stylesheet" href="../../public/assets/vendor/fonts/pdf-fonts.css">
+<link rel="stylesheet" href="../../public/assets/vendor/katex/katex.min.css">
+<style>
+  @page{ size:210mm 297mm; margin:0; }
+
+  :root{
+    --navy:#0d1b2e;
+    --navy-2:#16304f;
+    --orange:#ee7d31;
+    --orange-dark:#d4631a;
+    --paper:#faf6ee;
+    --card:#ffffff;
+    --slate:#4f6376;
+    --success:#2f9e6a;
+    --danger:#d64545;
+    --accent:#e2447e;
+    --orange-ink:#bb4d0e;
+  }
+  .pdf-page[data-subject="kimia"]{ --accent:#e2447e; }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#fff;font-family:'Literata',serif;}
+
+  /* ---- the reusable page shell — print version: no floating-card chrome,
+       the page IS the physical page, so no radius/shadow/desk background ---- */
+  .pdf-page{
+    position:relative;
+    width:210mm;
+    height:297mm;
+    padding:26px;
+    background:var(--accent);
+    overflow:hidden;
+    break-after:page;
+    page-break-after:always;
+  }
+  .pdf-page:last-child{break-after:auto;page-break-after:avoid;}
+  .pdf-page .sheet{
+    position:relative;
+    width:100%;
+    height:100%;
+    background:var(--card);
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  .page-head{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 40px 18px;
+    border-bottom:1px solid #eef0f2;
+  }
+  .page-head .brand{display:flex;align-items:center;gap:2px;}
+  .page-head .brand img{height:34px;width:auto;display:block;}
+  .page-head .brand-word{font:600 15px/1 'Fraunces',serif;color:var(--navy);letter-spacing:.01em;}
+  .page-head .brand-word span{color:var(--accent);}
+  .page-head .meta{display:flex;align-items:baseline;gap:8px;}
+  .subject-chip{font:italic 600 14px/1 'Fraunces',serif;color:var(--orange-ink);}
+  .chapter-tag{font:italic 400 13.5px/1 'Literata',serif;color:var(--slate);}
+
+  .page-body{
+    position:relative;
+    z-index:2;
+    flex:1;
+    padding:30px 40px 0;
+    overflow:hidden;
+  }
+
+  h1.page-title{font:700 34px/1.15 'Fraunces',serif;color:var(--navy);margin:0 0 6px;}
+  p.dek{font:italic 400 14.5px/1.4 'Literata',serif;color:var(--orange-ink);margin:0 0 18px;}
+  h2.section-title{font:600 21px/1.25 'Fraunces',serif;color:var(--navy);margin:0 0 10px;}
+  p.lead{font:400 16.5px/1.6 'Literata',serif;color:var(--slate);margin:0 0 18px;max-width:600px;}
+  p.body-text{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 14px;}
+  ul.learn-list{margin:0 0 20px;padding-left:20px;}
+  ul.learn-list li{font:400 16px/1.65 'Literata',serif;color:#22303f;margin-bottom:6px;}
+
+  /* .dense — page-body modifier for pages whose text volume needs slightly
+     tighter spacing to fit one page at the standard font size (see
+     content-private/biologi/bab1-sel.pdf-pages.html Page 2 for the same pattern). */
+  .page-body.dense h2.section-title{margin-bottom:6px;}
+  .page-body.dense p.lead{margin-bottom:10px;}
+  .page-body.dense p.body-text{margin-bottom:8px;line-height:1.5;}
+  .page-body.dense .callout{padding-top:12px;padding-bottom:12px;margin-bottom:14px;}
+  .page-body.dense .example-box{margin-bottom:10px;padding-top:12px;}
+  .page-body.dense .example-box .label{margin-bottom:6px;}
+  .page-body.dense .example-box li{margin-bottom:4px;font-size:14px;line-height:1.45;}
+  .page-body.dense .formula-box{margin-bottom:16px;padding:14px 2px;}
+  .page-body.dense .ref-table{margin-bottom:12px;}
+  .page-body.dense .ref-table th,.page-body.dense .ref-table td{padding:5px 8px;font-size:12px;}
+
+  .formula-box{border-top:1px solid #e6dfd0;border-bottom:1px solid #e6dfd0;padding:20px 2px;margin:0 0 22px;}
+  .formula-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;display:block;}
+  .formula-box .katex{font-size:1.05em;}
+  .formula-box .var-def{font:400 13.5px/1.55 'Literata',serif;color:var(--slate);margin-top:10px;}
+  .formula-box .var-def b{font-family:'IBM Plex Mono',monospace;font-weight:500;color:#22303f;}
+
+  .example-box{border-top:1px solid #e6dfd0;padding:18px 2px 4px;margin:0 0 22px;}
+  .example-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--navy);margin-bottom:12px;display:block;}
+  .example-box p.setup{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 10px;}
+  .example-box ol{margin:0;padding-left:18px;}
+  .example-box li{font:400 15px/1.6 'Literata',serif;color:#22303f;margin-bottom:8px;}
+
+  .callout{padding:16px 18px;margin:0 0 20px;font:400 14.5px/1.55 'Literata',serif;}
+  .callout.mistake{background:#fbf0ed;}
+  .callout.mistake .label{color:var(--danger);}
+  .callout .label{display:block;font:italic 600 14px/1 'Literata',serif;margin-bottom:7px;}
+  .callout .wrong{color:var(--danger);font-weight:600;}
+  .callout .right{color:var(--success);font-weight:600;}
+
+  .ref-table{width:100%;border-collapse:collapse;margin:0 0 20px;}
+  .ref-table caption{caption-side:top;text-align:left;font:italic 500 13.5px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;}
+  .ref-table th,.ref-table td{
+    text-align:left;
+    padding:7px 10px;
+    font:400 12px/1.4 'Literata',serif;
+    color:#22303f;
+    border-bottom:1px solid #eee7d8;
+    vertical-align:top;
+  }
+  .ref-table thead th{
+    font:600 11px/1.2 'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--slate);
+    border-bottom:1.5px solid var(--navy);
+    padding-bottom:8px;
+  }
+  .ref-table tbody tr:first-child td{padding-top:10px;}
+  .ref-table .katex{font-size:.95em;}
+
+  ol.ref-list{margin:0 0 20px;padding-left:20px;}
+  ol.ref-list li{font:400 13.5px/1.6 'Literata',serif;color:#22303f;margin-bottom:12px;}
+  ol.ref-list li i{color:var(--slate);font-style:italic;}
+
+  .ref-list-2col{columns:2;column-gap:26px;margin:0 0 18px;}
+  .ref-list-2col .item{break-inside:avoid;margin-bottom:11px;}
+  .ref-list-2col .item .num{font:600 11px/1 'IBM Plex Mono',monospace;color:var(--orange-ink);}
+  .ref-list-2col .item .term{font:600 13px/1.3 'Literata',serif;color:var(--navy);display:block;margin:3px 0 2px;}
+  .ref-list-2col .item .gloss{font:400 12px/1.45 'Literata',serif;color:#4a5560;}
+
+  .page-foot{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 40px 22px;
+    border-top:1px solid #eef0f2;
+  }
+  .page-foot .license{font:italic 400 12px/1.4 'Literata',serif;color:#5c6670;max-width:380px;}
+</style>
+</head>
+<body>
+
+<!-- ===== Page 1 — Chapter opener ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body">
+      <h1 class="page-title">Hakikat Kimia, Kimia Hijau &amp; Keselamatan Lab</h1>
+      <p class="dek">Materi PDF — pelengkap Bab 1</p>
+      <p class="lead">Materi tambahan ini fokus ke penjelasan lengkap peran kimia di tiap bidang kehidupan, tabel lengkap 12 Prinsip Kimia Hijau (penjelasan + contoh penerapan nyata), latihan soal terpandu tambahan, contoh soal Ekonomi Atom kedua, tabel lengkap simbol bahaya + tindakan pencegahannya, dan prosedur P3K lengkap — pelengkap materi &amp; diagram interaktif di halaman utama, bukan salinannya.</p>
+      <h2 class="section-title">Yang akan kamu pelajari</h2>
+      <ul class="learn-list">
+        <li>Penjelasan lengkap peran ilmu kimia di 5 bidang kehidupan (kesehatan, tekstil, pembersih rumah tangga, pertanian, teknologi) dengan mekanisme kimianya masing-masing</li>
+        <li>Tabel lengkap 12 Prinsip Kimia Hijau (Anastas &amp; Warner) — penjelasan konseptual SMA + contoh penerapan nyata untuk tiap satu dari 12 prinsip, disusun per 3 pilar</li>
+        <li>Dua soal analisis terpandu bergaya ujian: identifikasi prinsip Kimia Hijau pada kasus industri bioplastik, dan identifikasi simbol bahaya + aturan penyimpanan</li>
+        <li>Soal kedua perhitungan % Ekonomi Atom dengan reaksi berbeda (Zn + HCl), plus rekap rumus</li>
+        <li>Tabel lengkap 5 simbol bahaya bahan kimia — arti, contoh bahan, DAN tindakan pencegahan keamanan untuk tiap simbol</li>
+        <li>Prosedur Pertolongan Pertama (First Aid) kecelakaan laboratorium secara lengkap</li>
+        <li>Penjelasan lebih dalam soal microscale chemistry sebagai penerapan nyata Kimia Hijau</li>
+      </ul>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 2 — Peran Ilmu Kimia dalam Kehidupan Sehari-hari (Bagian 1) ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Hakikat Kimia</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Peran Ilmu Kimia dalam Kehidupan Sehari-hari (1/2)</h2>
+      <p class="lead">Lima bidang paling sering diuji, dengan mekanisme kimia di baliknya — bukan cuma nama produknya, tapi kenapa produk itu bisa bekerja. Kesehatan, tekstil, dan pembersih rumah tangga dulu di halaman ini; pertanian &amp; teknologi ada di halaman berikutnya.</p>
+      <p class="body-text"><b>Kesehatan &amp; Farmasi.</b> Penemuan vaksin, antibiotik, antiseptik, dan obat-obatan sintesis lahir dari pemahaman struktur molekul &amp; reaksi kimia di tubuh — antibiotik misalnya bekerja dengan mengganggu proses kimia spesifik dalam sel bakteri (mis. sintesis dinding selnya) tanpa merusak sel manusia. Penemuan-penemuan ini yang menyelamatkan jutaan nyawa sepanjang sejarah kedokteran modern.</p>
+      <p class="body-text"><b>Pakaian &amp; Tekstil.</b> Serat sintetis (poliester, nilon, akrilik) dibuat lewat proses polimerisasi — menyambung molekul-molekul kecil (monomer) jadi rantai panjang (polimer) yang kuat &amp; tahan lama, jauh lebih murah diproduksi massal dibanding serat alami. Pewarna tekstil sintetis juga hasil rekayasa kimia supaya warnanya tahan luntur.</p>
+      <p class="body-text"><b>Pembersih Rumah Tangga.</b> Sabun &amp; detergen bekerja lewat molekul surfaktan — punya "kepala" yang suka air (hidrofilik) dan "ekor" yang suka lemak (hidrofobik), sehingga bisa mengangkat kotoran berminyak dan membawanya larut ke dalam air. Pemutih pakaian (kloroks/NaClO, Natrium Hipoklorit) bekerja lewat mekanisme berbeda: NaClO adalah zat pengoksidasi (oksidator) yang melepaskan oksigen aktif untuk memutus ikatan rangkap pada molekul pigmen noda (kromofor), sehingga warna noda hilang — sekaligus merusak dinding sel bakteri &amp; virus lewat oksidasi, menjadikannya disinfektan yang efektif. Tanpa pemahaman kimia soal konsentrasi &amp; keamanan, kita tidak bisa memformulasi pembersih yang ampuh sekaligus aman dipakai di rumah.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 3 — Peran Ilmu Kimia dalam Kehidupan Sehari-hari (Bagian 2) ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Hakikat Kimia</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Peran Ilmu Kimia dalam Kehidupan Sehari-hari (2/2)</h2>
+      <p class="lead">Lanjutan dari halaman sebelumnya — pertanian &amp; pangan, lalu teknologi &amp; gadget.</p>
+      <p class="body-text"><b>Pertanian &amp; Pangan.</b> Pupuk urea (mengandung nitrogen dalam bentuk yang bisa diserap akar tanaman) dan NPK (Nitrogen-Fosfor-Kalium) hasil rekayasa kimia untuk menyuburkan tanah secara terarah. Biopestisida ramah lingkungan (dari mikroorganisme/tumbuhan) jadi alternatif pestisida sintetis yang lebih cepat terurai. Pengawetan makanan (mis. dengan asam benzoat dalam batas aman) mencegah pertumbuhan mikroorganisme perusak tanpa membuat makanan berbahaya dikonsumsi.</p>
+      <p class="body-text"><b>Teknologi &amp; Gadget.</b> Baterai lithium-ion pada smartphone bekerja lewat perpindahan ion litium antara elektroda saat mengisi/menggunakan daya (reaksi elektrokimia reversibel). Semikonduktor silikon — bahan dasar chip komputer — adalah hasil rekayasa struktur kristal &amp; kemurnian kimia yang sangat presisi. Layar OLED memakai senyawa organik yang memancarkan cahaya sendiri saat dialiri listrik (elektroluminesensi).</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira ilmu kimia cuma relevan di dalam laboratorium atau pabrik besar.<br>
+        <span class="right">✅ Benar:</span> kimia ada di hampir setiap barang yang kamu pakai/pegang sehari-hari — dari pasta gigi, sabun mandi, kompor gas, sampai baterai HP-mu. Memahami mekanismenya membantu kamu memakai produk-produk itu dengan lebih aman &amp; bijak, bukan cuma buat lulus ujian.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 4 — Referensi: 12 Prinsip Kimia Hijau (Pilar 1 & 2) ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; 12 Prinsip Kimia Hijau</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Referensi Lengkap: Pilar 1 (Pencegahan) &amp; Pilar 2 (Desain Cerdas)</h2>
+      <p class="lead">Tujuh dari 12 prinsip Anastas &amp; Warner, lengkap dengan penjelasan konseptual dan contoh penerapan nyata untuk tiap satu — Pilar Sirkularitas (5 prinsip sisanya) ada di Halaman 5.</p>
+      <table class="ref-table">
+        <thead><tr><th>No</th><th>Prinsip</th><th>Penjelasan Konseptual SMA</th><th>Contoh Penerapan Nyata SMA</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Pencegahan Limbah<br><i style="color:var(--slate);font-size:12px;">(Prevent Waste)</i></td><td>Mencegah terbentuknya limbah sejak awal lebih baik daripada mengolah limbah setelah dihasilkan.</td><td>Merancang reaksi tanpa produk sampingan beracun.</td></tr>
+          <tr><td>11</td><td>Analisis Real-Time<br><i style="color:var(--slate);font-size:12px;">(Real-time Analysis)</i></td><td>Pemantauan pemprosesan secara langsung untuk mencegah pembentukan zat berbahaya sebelum terjadi.</td><td>Sensor otomatis pencegah kebocoran reaksi.</td></tr>
+          <tr><td>12</td><td>Pencegahan Kecelakaan<br><i style="color:var(--slate);font-size:12px;">(Prevent Accidents)</i></td><td>Memilih zat kimia dan wujudnya yang meminimalkan potensi ledakan, kebakaran, dan kebocoran.</td><td>Menghindari penggunaan gas bertekanan ekstrem.</td></tr>
+          <tr><td>3</td><td>Sintesis Kurang Berbahaya<br><i style="color:var(--slate);font-size:12px;">(Less Hazardous Syntheses)</i></td><td>Menggunakan dan menghasilkan zat yang sedikit atau tidak beracun bagi manusia dan bumi.</td><td>Mengganti asam pekat berbahaya dengan asam organik lemah.</td></tr>
+          <tr><td>4</td><td>Merancang Bahan Lebih Aman<br><i style="color:var(--slate);font-size:12px;">(Design Safer Chemicals)</i></td><td>Merancang produk yang tetap efektif berfungsi tetapi minim tingkat beracunnya.</td><td>Pestisida hayati (biopestisida) ramah lingkungan.</td></tr>
+          <tr><td>5</td><td>Pelarut &amp; Alat Bantu Aman<br><i style="color:var(--slate);font-size:12px;">(Safer Solvents)</i></td><td>Mengurangi pelarut organik beracun (seperti benzen) dan menggantinya dengan pelarut ramah lingkungan.</td><td>Menggunakan air (H₂O) atau cairan ionik terbarukan sebagai pelarut.</td></tr>
+          <tr><td>8</td><td>Mengurangi Derivatif<br><i style="color:var(--slate);font-size:12px;">(Avoid Derivatives)</i></td><td>Menghindari langkah modifikasi sementara yang membutuhkan reagen tambahan dan buat limbah.</td><td>Sintesis langsung tanpa gugus pelindung berlebih.</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Pilar Pencegahan (Prinsip 1, 11, 12) semuanya soal bertindak SEBELUM masalah terjadi — merancang reaksi supaya nggak menghasilkan limbah sejak awal, memantau proses secara real-time supaya kebocoran terdeteksi sebelum jadi bencana, dan memilih bentuk zat kimia yang risikonya paling rendah. Pilar Desain Cerdas (Prinsip 3, 4, 5, 8) satu tingkat lebih teknis — soal bagaimana reaksi &amp; bahan itu sendiri dirancang: pakai zat yang kurang berbahaya, rancang produk akhir yang tetap efektif tapi minim racun, ganti pelarut organik beracun dengan yang lebih aman, dan hindari langkah tambahan yang cuma bikin limbah ekstra (gugus pelindung yang dipasang lalu dilepas lagi, misalnya).</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 5 — Referensi: 12 Prinsip Kimia Hijau (Pilar 3) & Kimia Hijau vs Pemanasan Global ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; 12 Prinsip Kimia Hijau</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Referensi Lengkap: Pilar 3 (Sirkularitas)</h2>
+      <p class="lead">Lima prinsip sisanya — semuanya soal memakai sumber daya (atom, energi, bahan baku) seefisien &amp; sesirkular mungkin.</p>
+      <table class="ref-table">
+        <thead><tr><th>No</th><th>Prinsip</th><th>Penjelasan Konseptual SMA</th><th>Contoh Penerapan Nyata SMA</th></tr></thead>
+        <tbody>
+          <tr><td>2</td><td>Ekonomi Atom Tinggi<br><i style="color:var(--slate);font-size:12px;">(Atom Economy)</i></td><td>Memaksimalkan seluruh atom reaktan menjadi produk akhir yang berguna.</td><td>Reaksi adisi atau penataan ulang (100% Ekonomi Atom).</td></tr>
+          <tr><td>6</td><td>Efisiensi Energi<br><i style="color:var(--slate);font-size:12px;">(Energy Efficiency)</i></td><td>Meminimalkan energi dengan menjalankan reaksi pada suhu dan tekanan ruang.</td><td>Sintesis enzimatis pada suhu kamar (25°C).</td></tr>
+          <tr><td>7</td><td>Bahan Baku Terbarukan<br><i style="color:var(--slate);font-size:12px;">(Renewable Feedstocks)</i></td><td>Mengutamakan bahan baku berbasis biomassa alam daripada minyak bumi/fosil.</td><td>Plastik biodegradable dari pati singkong/jagung.</td></tr>
+          <tr><td>9</td><td>Penggunaan Katalis<br><i style="color:var(--slate);font-size:12px;">(Use Catalysts)</i></td><td>Menggunakan katalis selektif yang dapat dipakai berulang kali dibandingkan reagen stoikiometri.</td><td>Katalis enzim/zeolit dalam industri.</td></tr>
+          <tr><td>10</td><td>Desain untuk Degradasi<br><i style="color:var(--slate);font-size:12px;">(Design for Degradation)</i></td><td>Merancang produk kimia agar setelah selesai dipakai dapat terurai alami menjadi zat tak beracun.</td><td>Detergen ramah lingkungan terurai hayati (biodegradable).</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Ekonomi Atom (Prinsip 2) diukur langsung lewat rumus (lihat Halaman 7) — soal ini yang paling sering keluar sebagai hitungan di ujian. Efisiensi Energi dan Penggunaan Katalis sering jalan beriringan: katalis mempercepat reaksi sekaligus menurunkan suhu/tekanan yang dibutuhkan, jadi hemat energi. Bahan Baku Terbarukan &amp; Desain untuk Degradasi sama-sama soal siklus hidup penuh produk — dari mana bahan bakunya berasal (terbarukan vs fosil), dan ke mana produk itu berakhir setelah dipakai (terurai alami vs menumpuk jadi limbah abadi seperti plastik konvensional).</p>
+      <h2 class="section-title" style="margin-top:8px;">Kimia Hijau &amp; Pemanasan Global</h2>
+      <p class="body-text">Kimia Hijau berperan langsung mengatasi Pemanasan Global (Global Warming) lewat tiga jalur: pertama, mengurangi emisi gas rumah kaca (CO₂ dan CH₄) lewat efisiensi energi dan penggunaan biomassa terbarukan (Prinsip 6 &amp; 7). Kedua, mengganti bahan perusak lapisan ozon (CFC) dengan pendingin ramah lingkungan. Ketiga, mendukung langsung Sustainable Development Goals (SDGs) PBB Nomor 12 (Konsumsi &amp; Produksi Bertanggung Jawab) dan Nomor 13 (Penanganan Perubahan Iklim).</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 6 — Latihan Soal Terpandu: Analisis Prinsip & Simbol Bahaya ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Latihan Terpandu</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Latihan Soal Terpandu &amp; Pembahasan</h2>
+      <p class="lead">Dua tipe soal yang paling sering diuji di luar hitungan Ekonomi Atom — analisis kasus penerapan prinsip, dan identifikasi simbol bahaya.</p>
+      <div class="example-box">
+        <span class="label">Soal &middot; Analisis Kasus 12 Prinsip Kimia Hijau</span>
+        <p class="setup">Sebuah pabrik plastik mengganti bahan baku minyak bumi dengan pati singkong untuk membuat kantong belanja yang mudah terurai di alam. Prinsip Kimia Hijau nomor berapa sajakah yang diterapkan?</p>
+        <ol>
+          <li><b>Prinsip 7 (Bahan Baku Terbarukan):</b> pati singkong berasal dari tanaman biomassa terbarukan, menggantikan bahan fosil tak terbarukan.</li>
+          <li><b>Prinsip 10 (Desain untuk Degradasi):</b> kantong bioplastik dirancang agar dapat terurai secara hayati (biodegradable) oleh mikroorganisme tanah.</li>
+          <li><b>Prinsip 1 (Pencegahan Limbah):</b> secara tidak langsung mencegah penumpukan limbah plastik abadi di lingkungan.</li>
+        </ol>
+      </div>
+      <div class="example-box">
+        <span class="label">Soal &middot; Identifikasi Simbol Bahaya &amp; Aturan Penyimpanan</span>
+        <p class="setup">Botol penyimpanan larutan Etanol memiliki simbol gambar api menyala, sedangkan botol Asam Sulfat pekat memiliki gambar cairan merusak tangan dan besi. Sebutkan nama simbol bahaya dan cara penyimpanan kedua bahan tersebut!</p>
+        <ol>
+          <li><b>Etanol</b> — simbol Flammable (Mudah Terbakar). Penyimpanan: tempat sejuk, berventilasi baik, jauh dari api Bunsen/sumber percikan.</li>
+          <li><b>Asam Sulfat pekat</b> — simbol Corrosive (Korosif). Penyimpanan: rak khusus bahan asam korosif, botol kaca tebal, diamankan dari risiko jatuh.</li>
+        </ol>
+      </div>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira satu kasus penerapan kimia hijau cuma bisa dikaitkan dengan satu prinsip saja.<br>
+        <span class="right">✅ Benar:</span> satu tindakan/keputusan bisa memenuhi beberapa prinsip sekaligus (lihat contoh bioplastik di atas — 3 prinsip berbeda terpenuhi dari satu keputusan mengganti bahan baku). Soal ujian sering minta "sebutkan SEMUA prinsip yang berlaku", bukan cuma satu.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 7 — Ekonomi Atom: Contoh Soal Kedua ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Ekonomi Atom</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Ekonomi Atom — Contoh Soal Kedua</h2>
+      <p class="lead">Metode yang sama, reaksi berbeda — reaksi logam seng dengan asam klorida, juga target produknya gas hidrogen.</p>
+      <div class="formula-box">
+        <span class="label">Rumus (rekap dari halaman utama)</span>
+        \(\%\,\text{Ekonomi Atom} = \dfrac{\text{Massa Molar Produk Target}}{\text{Total Massa Molar Seluruh Reaktan}} \times 100\%\)
+      </div>
+      <div class="example-box">
+        <span class="label">Soal &middot; Ekonomi Atom Reaksi Zn + HCl</span>
+        <p class="setup">Reaksi sintesis gas hidrogen di laboratorium dilakukan lewat reaksi logam Seng dengan Asam Klorida: \(\text{Zn}(s) + 2\text{HCl}(aq) \rightarrow \text{ZnCl}_2(aq) + \text{H}_2(g)\). Massa molar: Zn = 65,4; H = 1,0; Cl = 35,5 g/mol. Jika produk target adalah gas H₂, hitung % Ekonomi Atom reaksi ini.</p>
+        <ol>
+          <li>Tentukan produk target: gas H₂ (bukan ZnCl₂).</li>
+          <li>Massa molar HCl = 1,0 + 35,5 = 36,5 g/mol, sehingga massa 2HCl = 2 × 36,5 = 73 g/mol.</li>
+          <li>Total massa reaktan = massa Zn + massa 2HCl = 65,4 + 73 = 138,4 g/mol.</li>
+          <li>Massa produk target = massa H₂ = 2 g/mol (koefisien H₂ di sisi produk cuma 1, beda dengan contoh CaH₂ sebelumnya yang koefisiennya 2 — selalu cek koefisien reaksi setaranya dulu sebelum menghitung).</li>
+          <li>% Ekonomi Atom = (2 ÷ 138,4) × 100% ≈ 1,45%.</li>
+        </ol>
+      </div>
+      <p class="body-text">Bandingkan dengan contoh CaH₂ di halaman utama (5,13%) — reaksi Zn + HCl ini ekonomi atomnya lebih rendah lagi. Alasannya: massa molar Zn (65,4) dan Cl (35,5 × 2 di HCl) jauh lebih besar dibanding massa molar H₂ (cuma 2) yang jadi target, sehingga proporsi massa yang "nyangkut" di produk target makin kecil. Ini juga alasan kenapa industri sungguhan lebih suka reaksi adisi/penataan ulang langsung dibanding reaksi substitusi/pertukaran seperti ini — semakin besar "selisih ukuran" antara reaktan &amp; produk target, semakin rendah ekonomi atomnya.</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira % Ekonomi Atom sama dengan % rendemen (yield) reaksi.<br>
+        <span class="right">✅ Benar:</span> keduanya beda konsep. % Ekonomi Atom itu perhitungan teoretis dari persamaan reaksi setara (nggak peduli reaksinya berjalan sempurna atau tidak di lab sungguhan), sedangkan % rendemen (yield) itu perbandingan massa produk yang BENAR-BENAR didapat di lab dibanding massa produk maksimum secara teori.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 8 — Referensi Lengkap: Simbol Bahaya Bahan Kimia ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Simbol Bahaya</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Referensi Lengkap: 5 Simbol Bahaya Bahan Kimia</h2>
+      <p class="lead">Tabel lengkap arti, contoh bahan, DAN tindakan pencegahan keamanan untuk tiap simbol — kolom "tindakan" ini yang paling sering ditanyakan di soal uraian.</p>
+      <table class="ref-table">
+        <thead><tr><th>Simbol</th><th>Arti &amp; Sifat Bahan</th><th>Contoh Bahan Kimia</th><th>Tindakan Pencegahan Keamanan</th></tr></thead>
+        <tbody>
+          <tr><td>Toxic<br><i style="color:var(--slate);font-size:12px;">(Tengkorak)</i></td><td>Beracun. Dapat menyebabkan keracunan akut atau kronis jika terhirup, tertelan, atau terserap kulit.</td><td>Merkuri (Hg), Kalium Sianida (KCN), Metanol.</td><td>Gunakan lemari asam, hindari kontak kulit dan terhirup uapnya.</td></tr>
+          <tr><td>Corrosive<br><i style="color:var(--slate);font-size:12px;">(Cairan Merusak)</i></td><td>Korosif. Merusak jaringan kulit dan melubangi permukaan logam/meja.</td><td>Asam Sulfat (H₂SO₄), HCl pekat, NaOH padat.</td><td>Gunakan kacamata goggles dan sarung tangan tahan asam.</td></tr>
+          <tr><td>Flammable<br><i style="color:var(--slate);font-size:12px;">(Api Menyala)</i></td><td>Mudah Terbakar. Uap atau cairannya sangat mudah tersulut api.</td><td>Etanol, Aseton, Gas Elpiji (LPG), Eter.</td><td>Jauhkan dari pembakar Spiritus/Bunsen dan sumber percikan api.</td></tr>
+          <tr><td>Explosive<br><i style="color:var(--slate);font-size:12px;">(Ledakan)</i></td><td>Mudah Meledak jika terkena benturan, gesekan, atau panas ekstrem.</td><td>Amonium Nitrat, TNT, Peroksida pekat.</td><td>Hindari gesekan, benturan keras, dan sumber panas.</td></tr>
+          <tr><td>Irritant/Harmful<br><i style="color:var(--slate);font-size:12px;">(Tanda Silang)</i></td><td>Iritasi/Bahaya. Menyebabkan gatal, kemerahan pada kulit atau saluran pernapasan.</td><td>Kloroform, Amonia encer, H₂O₂ encer.</td><td>Gunakan masker dan sarung tangan, buka ventilasi udara.</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Pola yang perlu diinget: tindakan pencegahan selalu menyasar jalur paparan yang paling berisiko dari sifat bahan itu. Bahan Toxic &amp; Corrosive sama-sama berisiko lewat kontak kulit/terhirup, jadi APD-nya (lemari asam, goggles, sarung tangan tahan asam) fokus memutus jalur kontak langsung. Bahan Flammable &amp; Explosive sama-sama berisiko lewat sumber pemicu (api, gesekan, panas), jadi tindakannya fokus menjauhkan bahan dari pemicu itu, bukan soal APD tubuh. Bahan Irritant tindakannya di tengah-tengah — kombinasi APD (masker, sarung tangan) dan ventilasi ruangan.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 9 — Prosedur P3K Lengkap & Microscale Chemistry ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; P3K &amp; Skala Mikro</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Prosedur Pertolongan Pertama (First Aid) — Lengkap</h2>
+      <p class="lead">"Aturan Emas" pertolongan pertama kecelakaan laboratorium, ditulis lengkap langkah-demi-langkahnya.</p>
+      <ol class="ref-list">
+        <li><b>Terkena Asam/Basa Korosif pada Kulit:</b> SEGERA bilas bagian tubuh yang terkena dengan air mengalir secara terus-menerus selama minimal 15–20 menit. <i>Jangan diolesi salep/minyak secara sembarangan</i> — ini bisa menjebak zat korosif di kulit alih-alih mengencerkannya. Langsung laporkan kepada guru pembimbing lab setelah/sambil dibilas.</li>
+        <li><b>Bahan Kimia Terpercik ke Mata:</b> gunakan fasilitas Eyewash Station, buka mata lebar-lebar (jangan dikucek), dan bilas dengan air mengalir selama 15 menit. Kecepatan tindakan di sini krusial — jaringan mata jauh lebih sensitif dibanding kulit, kerusakan permanen bisa terjadi dalam hitungan menit kalau tidak segera dibilas.</li>
+        <li><b>Kebakaran Kecil:</b> padamkan menggunakan kain/lap basah (menutup api, memutus pasokan oksigen) atau Alat Pemadam Api Ringan (APAR). <i>Jangan menyiram minyak/pelarut yang terbakar dengan air</i> — pelarut organik umumnya lebih ringan dari air dan tidak larut di dalamnya, sehingga air justru akan membuat cairan yang terbakar mengapung &amp; menyebar, memperluas area kebakaran alih-alih memadamkannya.</li>
+      </ol>
+      <h2 class="section-title" style="margin-top:4px;">Microscale Chemistry — Kenapa Ini Dianggap Penerapan Kimia Hijau</h2>
+      <p class="body-text">Praktikum Skala Kecil (Microscale/Small-Scale Chemistry) memakai reagen cair dalam skala tetes (0,1–1 mL) atau plat tetes porselen, jauh lebih sedikit dibanding gelas kimia skala penuh yang dipakai praktikum konvensional. Empat keunggulan utamanya: hemat biaya reagen, meminimalkan limbah berbahaya hingga 90%, menekan polusi uap beracun, dan menjamin keselamatan yang jauh lebih tinggi bagi siswa SMA.</p>
+      <p class="body-text">Hubungannya dengan 12 Prinsip Kimia Hijau langsung ke Prinsip 1 (Pencegahan Limbah) — karena reagen dipakai seminimal mungkin, limbah yang terbentuk otomatis lebih sedikit sejak awal, bukan hasil pengolahan limbah setelah terlanjur banyak terbentuk. Ini contoh paling konkret yang bisa langsung dipraktikkan siswa SMA sendiri di sekolah — beda dari prinsip-prinsip lain yang levelnya lebih ke keputusan desain industri.</p>
+      <p class="body-text">Memahami Bab 1 ini adalah fondasi keselamatan dan kesadaran lingkungan buat siswa SMA — kimia ada di sekelilingmu, praktikum lab wajib mengutamakan keselamatan, dan Kimia Hijau adalah kunci menjaga bumi tetap lestari buat masa depan.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<script src="../../public/assets/vendor/katex/katex.min.js"></script>
+<script src="../../public/assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left:'$$', right:'$$', display:true},
+      {left:'\\[', right:'\\]', display:true},
+      {left:'\\(', right:'\\)', display:false}
+    ],
+    throwOnError:false
+  });
+</script>
+</body>
+</html>
