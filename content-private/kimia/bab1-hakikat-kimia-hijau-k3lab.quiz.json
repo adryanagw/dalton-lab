@@ -66,28 +66,28 @@
     "explain": "Ekonomi atom membandingkan massa molar produk yang benar-benar diinginkan terhadap total massa molar seluruh reaktan yang dipakai — mengukur seberapa efisien reaksi 'merakit' reaktan jadi produk target, bukan produk sampingan lain."
   },
   {
-    "q": "Reaksi sintesis gas hidrogen: CaH₂ + 2H₂O → Ca(OH)₂ + 2H₂. Massa molar CaH₂=42, H₂O=18, Ca(OH)₂=74, H₂=2 g/mol. Jika target produk yang diinginkan hanya H₂, berapa total massa molar seluruh reaktan?",
+    "q": "Reaksi sintesis gas hidrogen: \\(\\ce{CaH2}\\) + \\(\\ce{2H2O}\\) → \\(\\ce{Ca(OH)2}\\) + \\(\\ce{2H2}\\). Massa molar \\(\\ce{CaH2}\\)=42, \\(\\ce{H2O}\\)=18, \\(\\ce{Ca(OH)2}\\)=74, \\(\\ce{H2}\\)=2 g/mol. Jika target produk yang diinginkan hanya \\(\\ce{H2}\\), berapa total massa molar seluruh reaktan?",
     "opts": ["42 g/mol", "60 g/mol", "78 g/mol", "116 g/mol"],
     "correct": 2,
-    "explain": "Total massa reaktan = massa CaH₂ + massa 2H₂O = 42 + (2 × 18) = 42 + 36 = 78 g/mol. Ingat, 2H₂O berarti 2 mol air, jadi massanya dikali 2 dulu sebelum dijumlah."
+    "explain": "Total massa reaktan = massa \\(\\ce{CaH2}\\) + massa \\(\\ce{2H2O}\\) = 42 + (2 × 18) = 42 + 36 = 78 g/mol. Ingat, \\(\\ce{2H2O}\\) berarti 2 mol air, jadi massanya dikali 2 dulu sebelum dijumlah."
   },
   {
-    "q": "Melanjutkan soal reaksi CaH₂ + 2H₂O → Ca(OH)₂ + 2H₂ di atas, berapa % Ekonomi Atom-nya jika target produk adalah gas H₂?",
+    "q": "Melanjutkan soal reaksi \\(\\ce{CaH2}\\) + \\(\\ce{2H2O}\\) → \\(\\ce{Ca(OH)2}\\) + \\(\\ce{2H2}\\) di atas, berapa % Ekonomi Atom-nya jika target produk adalah gas \\(\\ce{H2}\\)?",
     "opts": ["2,56%", "5,13%", "51,3%", "94,87%"],
     "correct": 1,
-    "explain": "Massa produk target (2 mol H₂) = 2 × 2 = 4 g/mol. Total massa reaktan = 78 g/mol. % Ekonomi Atom = (4 ÷ 78) × 100% = 5,13% — rendah karena mayoritas massa reaktan (94,87%) justru terbuang jadi Ca(OH)₂, bukan H₂ yang diinginkan."
+    "explain": "Massa produk target (2 mol \\(\\ce{H2}\\)) = 2 × 2 = 4 g/mol. Total massa reaktan = 78 g/mol. % Ekonomi Atom = (4 ÷ 78) × 100% = 5,13% — rendah karena mayoritas massa reaktan (94,87%) justru terbuang jadi \\(\\ce{Ca(OH)2}\\), bukan \\(\\ce{H2}\\) yang diinginkan."
   },
   {
-    "q": "Reaksi Zn(s) + 2HCl(aq) → ZnCl₂(aq) + H₂(g) dipakai untuk sintesis gas hidrogen di laboratorium. Massa molar Zn=65,4; H=1,0; Cl=35,5 g/mol. Jika target produk adalah H₂, berapa total massa molar seluruh reaktan?",
+    "q": "Reaksi Zn(s) + 2HCl(aq) → \\(\\ce{ZnCl2}\\)(aq) + \\(\\ce{H2}\\)(g) dipakai untuk sintesis gas hidrogen di laboratorium. Massa molar Zn=65,4; H=1,0; Cl=35,5 g/mol. Jika target produk adalah \\(\\ce{H2}\\), berapa total massa molar seluruh reaktan?",
     "opts": ["65,4 g/mol", "73 g/mol", "136,5 g/mol", "138,4 g/mol"],
     "correct": 3,
     "explain": "Massa molar HCl = 1,0 + 35,5 = 36,5 g/mol, sehingga massa 2HCl = 2 × 36,5 = 73 g/mol. Total massa reaktan = massa Zn + massa 2HCl = 65,4 + 73 = 138,4 g/mol."
   },
   {
-    "q": "Melanjutkan soal Zn(s) + 2HCl(aq) → ZnCl₂(aq) + H₂(g) di atas (total massa reaktan = 138,4 g/mol), berapa % Ekonomi Atom-nya jika target produk adalah H₂ (massa molar 2 g/mol)?",
+    "q": "Melanjutkan soal Zn(s) + 2HCl(aq) → \\(\\ce{ZnCl2}\\)(aq) + \\(\\ce{H2}\\)(g) di atas (total massa reaktan = 138,4 g/mol), berapa % Ekonomi Atom-nya jika target produk adalah \\(\\ce{H2}\\) (massa molar 2 g/mol)?",
     "opts": ["Sekitar 1,45%", "Sekitar 14,5%", "Sekitar 47,3%", "Sekitar 94,3%"],
     "correct": 0,
-    "explain": "% Ekonomi Atom = (2 ÷ 138,4) × 100% ≈ 1,45% — bahkan lebih rendah dari contoh CaH₂ sebelumnya, karena massa molar Zn & Cl jauh lebih besar dibanding H₂ yang jadi target, sehingga proporsi massa yang 'terpakai' jadi produk target makin kecil."
+    "explain": "% Ekonomi Atom = (2 ÷ 138,4) × 100% ≈ 1,45% — bahkan lebih rendah dari contoh \\(\\ce{CaH2}\\) sebelumnya, karena massa molar Zn & Cl jauh lebih besar dibanding \\(\\ce{H2}\\) yang jadi target, sehingga proporsi massa yang 'terpakai' jadi produk target makin kecil."
   },
   {
     "q": "Sebuah reaksi punya % Ekonomi Atom mendekati 100%. Apa artinya, dan jenis reaksi apa yang biasanya menghasilkan nilai setinggi ini?",
@@ -132,10 +132,10 @@
     "explain": "Simbol tengkorak & tulang bersilang menandakan bahan Toxic (beracun) — dapat menyebabkan keracunan akut/kronis jika terhirup, tertelan, atau terserap kulit. Contoh: merkuri (Hg), kalium sianida (KCN), metanol."
   },
   {
-    "q": "Asam Sulfat pekat (H₂SO₄) dan Natrium Hidroksida padat (NaOH) diberi label simbol bahaya berupa gambar cairan yang merusak permukaan meja/tangan. Simbol apa ini dan apa artinya?",
+    "q": "Asam Sulfat pekat (\\(\\ce{H2SO4}\\)) dan Natrium Hidroksida padat (NaOH) diberi label simbol bahaya berupa gambar cairan yang merusak permukaan meja/tangan. Simbol apa ini dan apa artinya?",
     "opts": ["Flammable — mudah terbakar bila kena api", "Corrosive — dapat merusak jaringan kulit dan melubangi permukaan logam", "Explosive — mudah meledak bila terkena gesekan", "Toxic — mematikan bila terhirup dalam jumlah kecil"],
     "correct": 1,
-    "explain": "Simbol Corrosive (korosif) berarti bahan dapat merusak jaringan hidup (kulit) dan melubangi permukaan logam/material lain. Asam & basa kuat seperti H₂SO₄ pekat, HCl pekat, dan NaOH padat adalah contoh khasnya."
+    "explain": "Simbol Corrosive (korosif) berarti bahan dapat merusak jaringan hidup (kulit) dan melubangi permukaan logam/material lain. Asam & basa kuat seperti \\(\\ce{H2SO4}\\) pekat, HCl pekat, dan NaOH padat adalah contoh khasnya."
   },
   {
     "q": "Etanol dan aseton diberi label simbol api menyala (Flammable). Bagaimana cara penyimpanan yang benar untuk bahan mudah terbakar seperti ini?",
