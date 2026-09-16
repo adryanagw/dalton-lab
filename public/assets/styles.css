@@ -951,6 +951,7 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
   .diagram-legend-grid .diagram-card{max-width:760px;}
 }
 .diagram-eyebrow{font-family:'Space Grotesk';font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--orange-dark);margin:0 0 14px;}
+.diagram-eyebrow .katex{text-transform:none;}
 .diagram-card svg{width:100%;height:auto;display:block;}
 .diagram-card img{width:100%;height:auto;display:block;border-radius:12px;background:#fff;padding:14px;box-sizing:border-box;border:1px solid var(--line);}
 .diagram-caption{font-size:.8rem;color:var(--slate);text-align:left;margin:16px 0 0;line-height:1.5;}

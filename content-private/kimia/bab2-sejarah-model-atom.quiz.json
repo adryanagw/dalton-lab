@@ -1,0 +1,248 @@
+[
+  {
+    "q": "Siapa filsuf Yunani Kuno yang pertama kali mencetuskan gagasan bahwa materi tersusun dari partikel terkecil yang tidak dapat dibagi lagi, disebut 'atomos'?",
+    "opts": ["Aristoteles", "Demokritos", "John Dalton", "Plato"],
+    "correct": 1,
+    "explain": "Demokritos (±400 SM), bersama gurunya Leukipos, mengajukan gagasan filosofis (tanpa eksperimen) bahwa materi yang terus dipotong akan sampai pada partikel terkecil yang tak terbagi — atomos."
+  },
+  {
+    "q": "Filsuf mana yang menolak gagasan atomos Demokritos, dan lebih percaya bahwa materi tersusun dari empat elemen dasar (air, udara, tanah, api)?",
+    "opts": ["Leukipos", "Pythagoras", "Aristoteles", "Archimedes"],
+    "correct": 2,
+    "explain": "Aristoteles menolak gagasan atomos dan berpegang pada teori empat elemen dasar. Pengaruh besarnya membuat gagasan ini bertahan berabad-abad sebelum akhirnya konsep atom dihidupkan kembali oleh John Dalton pada 1803."
+  },
+  {
+    "q": "Apa perbedaan mendasar antara gagasan Demokritos dan teori atom John Dalton, meski keduanya sama-sama menyimpulkan materi tersusun dari partikel terkecil?",
+    "opts": ["Demokritos memakai eksperimen, Dalton memakai logika saja", "Demokritos murni logika/filosofis, Dalton berlandaskan hukum kuantitatif reaksi kimia hasil eksperimen", "Keduanya sama persis, tidak ada perbedaan berarti", "Demokritos membahas elektron, Dalton membahas proton"],
+    "correct": 1,
+    "explain": "Gagasan Demokritos murni filosofis dan kualitatif, tanpa bukti eksperimen ilmiah. John Dalton (1803) melandaskan teorinya pada hukum-hukum kuantitatif reaksi kimia yang sudah teruji di lab, seperti Hukum Kekekalan Massa dan Hukum Perbandingan Tetap."
+  },
+  {
+    "q": "John Dalton (1803) melandaskan teori atomnya pada dua hukum kimia kuantitatif. Apa saja kedua hukum tersebut?",
+    "opts": ["Hukum Newton & Hukum Coulomb", "Hukum Kekekalan Massa (Lavoisier) & Hukum Perbandingan Tetap (Proust)", "Hukum Boyle & Hukum Charles", "Hukum Faraday & Hukum Ohm"],
+    "correct": 1,
+    "explain": "Dalton menghidupkan kembali konsep atom dengan melandaskannya pada Hukum Kekekalan Massa (Lavoisier) dan Hukum Perbandingan Tetap (Proust) — dua hukum kuantitatif reaksi kimia yang sudah dibuktikan lewat eksperimen."
+  },
+  {
+    "q": "Model atom John Dalton sering disebut model 'bola pejal' atau 'billiard ball'. Apa maksud istilah ini?",
+    "opts": ["Atom digambarkan sebagai bola padat kecil tanpa struktur internal, tidak dapat dibagi lagi", "Atom digambarkan sebagai bola berongga berisi elektron", "Atom digambarkan sebagai inti dikelilingi kulit-kulit elektron", "Atom digambarkan sebagai awan probabilitas"],
+    "correct": 0,
+    "explain": "Dalton menggambarkan atom sebagai bola pejal yang sangat kecil, padat, dan tidak dapat dibagi lagi — tanpa struktur internal apa pun, mirip bola biliar padat."
+  },
+  {
+    "q": "Manakah yang BUKAN termasuk postulat utama teori atom Dalton?",
+    "opts": ["Semua atom dari unsur yang sama memiliki massa & sifat kimia identik", "Senyawa terbentuk dari atom-atom yang bergabung dalam rasio bilangan bulat sederhana", "Reaksi kimia hanya melibatkan penyusunan ulang atom, tidak ada atom yang diciptakan/dimusnahkan", "Atom tersusun dari inti bermuatan positif dikelilingi elektron"],
+    "correct": 3,
+    "explain": "Postulat tentang inti bermuatan positif dikelilingi elektron adalah gagasan Rutherford (1911), bukan Dalton. Dalton justru menganggap atom sebagai bola pejal tanpa struktur internal sama sekali."
+  },
+  {
+    "q": "Apa kelemahan utama teori atom Dalton yang menjadi titik awal lahirnya model atom berikutnya?",
+    "opts": ["Tidak bisa menjelaskan sifat kelistrikan materi, karena menganggap atom tidak punya struktur/muatan internal", "Tidak bisa menjelaskan reaksi kimia sama sekali", "Tidak bisa menjelaskan Hukum Kekekalan Massa", "Tidak bisa menjelaskan bentuk molekul"],
+    "correct": 0,
+    "explain": "Karena menganggap atom benar-benar pejal tanpa struktur internal, Dalton tidak bisa menjelaskan sifat kelistrikan materi — titik buta ini baru terjawab lewat eksperimen tabung sinar katode Thomson."
+  },
+  {
+    "q": "J.J. Thomson (1897) menemukan elektron lewat eksperimen apa?",
+    "opts": ["Penembakan lempeng emas", "Tetes minyak", "Tabung sinar katode", "Spektroskopi atom Hidrogen"],
+    "correct": 2,
+    "explain": "Thomson menembakkan arus listrik bertegangan tinggi pada gas bertekanan sangat rendah dalam tabung hampa (tabung sinar katode). Sinar yang dihasilkan dibelokkan ke arah pelat positif, membuktikan partikel di dalamnya bermuatan negatif — elektron."
+  },
+  {
+    "q": "Bagaimana Thomson menyimpulkan bahwa sinar katode terdiri dari partikel bermuatan negatif?",
+    "opts": ["Sinar tersebut memancarkan cahaya berwarna hijau", "Sinar tersebut dibelokkan oleh medan listrik & medan magnet ke arah pelat bermuatan positif", "Sinar tersebut tidak dipengaruhi medan listrik sama sekali", "Sinar tersebut membelok ke arah pelat negatif"],
+    "correct": 1,
+    "explain": "Sinar katode dibelokkan oleh medan listrik dan medan magnet ke arah pelat positif — pembelokan ke arah muatan berlawanan ini membuktikan sinar tersebut terdiri dari partikel bermuatan negatif (elektron)."
+  },
+  {
+    "q": "Apa nama model atom yang diajukan Thomson, dan bagaimana gambaran elektronnya?",
+    "opts": ["Model tata surya — elektron mengorbit jauh dari inti", "Model roti kismis (plum pudding) — elektron tersebar merata dalam bola bermuatan positif", "Model orbital — elektron berada di daerah probabilitas", "Model bola pejal — atom tanpa struktur internal"],
+    "correct": 1,
+    "explain": "Karena atom netral secara keseluruhan, Thomson mengajukan bahwa atom berupa bola pejal bermuatan positif yang homogen, dengan elektron-elektron bermuatan negatif tersebar di dalamnya seperti kismis dalam roti — plum pudding model."
+  },
+  {
+    "q": "Apa yang berhasil diukur Thomson dari eksperimen tabung sinar katode terkait elektron?",
+    "opts": ["Muatan mutlak satu elektron", "Massa mutlak satu elektron", "Rasio muatan terhadap massa elektron (e/m)", "Jari-jari orbit elektron"],
+    "correct": 2,
+    "explain": "Thomson berhasil mengukur rasio muatan terhadap massa elektron, e/m = \\(-1{,}76 \\times 10^{8}\\) C/g — bukan nilai muatan atau massa elektron secara terpisah."
+  },
+  {
+    "q": "Eksperimen tetes minyak Robert Millikan (1909) melengkapi penemuan Thomson dengan cara apa?",
+    "opts": ["Menemukan elektron untuk pertama kalinya", "Mengukur muatan presisi satu elektron, sehingga massa elektron bisa dihitung dari rasio e/m Thomson", "Membuktikan keberadaan inti atom", "Menemukan neutron"],
+    "correct": 1,
+    "explain": "Millikan mengukur muatan presisi satu elektron (\\(e = -1{,}602 \\times 10^{-19}\\) C) lewat eksperimen tetes minyak. Dikombinasikan dengan rasio e/m Thomson, massa elektron dihitung: \\(m_e = 9{,}109 \\times 10^{-28}\\) g."
+  },
+  {
+    "q": "Sekitar berapa bagian dari massa atom Hidrogen yang direpresentasikan oleh massa satu elektron?",
+    "opts": ["Sekitar 1/2 massa atom Hidrogen", "Sekitar 1/1836 massa atom Hidrogen", "Sama persis dengan massa atom Hidrogen", "Sekitar 10 kali massa atom Hidrogen"],
+    "correct": 1,
+    "explain": "Massa elektron \\(9{,}109 \\times 10^{-28}\\) g hanya sekitar \\(\\frac{1}{1836}\\) dari massa atom Hidrogen — alasan kenapa elektron dianggap nyaris tak bermassa dibanding inti atom."
+  },
+  {
+    "q": "Ernest Rutherford (1911) menguji model atom Thomson lewat eksperimen apa?",
+    "opts": ["Tabung sinar katode", "Tetes minyak", "Penembakan partikel alfa pada lempeng emas tipis", "Spektroskopi atom Hidrogen"],
+    "correct": 2,
+    "explain": "Rutherford, dibantu Geiger dan Marsden, menembakkan partikel alfa (bermuatan positif) ke lempeng emas yang sangat tipis untuk menguji model roti kismis Thomson."
+  },
+  {
+    "q": "Apa hasil yang mengejutkan dari eksperimen penembakan lempeng emas Rutherford?",
+    "opts": ["Semua partikel alfa terpantul balik", "Semua partikel alfa menembus lurus tanpa pembelokan", "Mayoritas partikel alfa menembus lurus, tapi sebagian kecil membelok tajam bahkan terpantul balik", "Partikel alfa berubah menjadi elektron"],
+    "correct": 2,
+    "explain": "Mayoritas partikel alfa memang menembus lurus, tapi sebagian kecil membelok tajam dan bahkan terpantul balik — hasil yang tidak bisa dijelaskan oleh model roti kismis Thomson."
+  },
+  {
+    "q": "Mengapa hasil eksperimen lempeng emas Rutherford membuktikan model 'Roti Kismis' Thomson tidak tepat?",
+    "opts": ["Karena kalau muatan positif tersebar merata & halus (model Thomson), gaya tolaknya terlalu lemah untuk membelokkan partikel alfa berenergi tinggi — tapi kenyataannya sebagian partikel membelok tajam", "Karena partikel alfa seharusnya tidak ada di dalam lempeng emas", "Karena lempeng emas seharusnya tidak bisa ditembus partikel apa pun", "Karena Thomson tidak pernah melakukan eksperimen apa pun"],
+    "correct": 0,
+    "explain": "Kalau muatan positif tersebar merata seperti dugaan Thomson, gaya tolak di titik mana pun dalam atom akan lemah — tidak cukup kuat membelokkan partikel alfa berenergi tinggi. Pembelokan tajam yang teramati membuktikan muatan positif justru terpusat sangat padat di satu titik (inti atom)."
+  },
+  {
+    "q": "Apa tiga kesimpulan utama Rutherford dari eksperimen lempeng emas?",
+    "opts": ["Atom tidak memiliki struktur internal sama sekali", "Sebagian besar volume atom adalah ruang kosong; muatan positif & hampir seluruh massa terpusat di inti; elektron mengelilingi inti di ruang kosong", "Elektron berada tepat di pusat atom", "Semua partikel alfa pasti dipantulkan oleh atom"],
+    "correct": 1,
+    "explain": "Rutherford menyimpulkan: (1) sebagian besar volume atom adalah ruang kosong, (2) muatan positif & hampir seluruh massa atom terpusat di inti (nukleus) yang sangat kecil, (3) elektron mengelilingi inti pada jarak relatif jauh seperti planet mengelilingi matahari."
+  },
+  {
+    "q": "Model atom Rutherford sering disebut juga model 'tata surya'. Kenapa disebut demikian?",
+    "opts": ["Karena atom ditemukan di luar angkasa", "Karena elektron mengelilingi inti pada jarak relatif jauh, mirip planet mengelilingi matahari", "Karena inti atom berbentuk seperti matahari sungguhan", "Karena model ini menjelaskan pergerakan planet"],
+    "correct": 1,
+    "explain": "Dalam model Rutherford, elektron bergerak mengelilingi inti atom (nukleus) yang padat & bermuatan positif di ruang kosong — analogi yang mirip dengan planet mengelilingi matahari, makanya disebut model tata surya."
+  },
+  {
+    "q": "Menurut elektrodinamika klasik Maxwell, apa yang seharusnya terjadi pada elektron yang bergerak melingkar mengelilingi inti (model Rutherford)?",
+    "opts": ["Elektron akan diam total di orbitnya", "Elektron yang terakselerasi harus terus memancarkan radiasi elektromagnetik, kehilangan energi, dan akhirnya jatuh spiral ke inti", "Elektron akan berubah menjadi proton", "Elektron akan menjauh dari inti selamanya"],
+    "correct": 1,
+    "explain": "Menurut Maxwell, muatan listrik (elektron) yang bergerak melingkar dan terakselerasi harus terus memancarkan radiasi elektromagnetik. Akibatnya elektron kehilangan energi, lintasannya mengecil spiral, dan seharusnya jatuh menabrak inti — atom seharusnya tidak stabil."
+  },
+  {
+    "q": "Kenapa prediksi Maxwell tentang keruntuhan elektron ke inti menjadi masalah besar bagi model Rutherford?",
+    "opts": ["Karena prediksi itu terbukti benar dan atom memang tidak stabil", "Karena kenyataannya atom di sekitar kita jelas bersifat stabil, bertentangan dengan prediksi tersebut", "Karena Maxwell tidak pernah mengusulkan teori elektrodinamika", "Karena masalah ini tidak relevan dengan struktur atom"],
+    "correct": 1,
+    "explain": "Kenyataannya atom bersifat stabil — elektron tidak pernah jatuh ke inti dalam kondisi normal. Kontradiksi antara prediksi klasik Maxwell dan kenyataan inilah yang harus dijawab oleh model atom berikutnya (Bohr)."
+  },
+  {
+    "q": "Niels Bohr (1913) mengatasi kelemahan model Rutherford dengan menerapkan teori siapa?",
+    "opts": ["Teori Relativitas Einstein", "Teori Kuantum Max Planck", "Hukum Gravitasi Newton", "Teori Evolusi Darwin"],
+    "correct": 1,
+    "explain": "Bohr menerapkan Teori Kuantum Max Planck — gagasan bahwa energi tidak mengalir kontinu, tapi dalam paket-paket diskrit (terkuantisasi) — untuk mengatasi kontradiksi model Rutherford dengan fisika klasik Maxwell."
+  },
+  {
+    "q": "Bagaimana postulat Bohr mengatasi masalah 'elektron seharusnya jatuh ke inti' dari fisika klasik Maxwell?",
+    "opts": ["Bohr menghilangkan konsep elektron sama sekali", "Bohr mempostulatkan elektron hanya boleh berada di orbit-orbit stasioner tertentu (terkuantisasi), dan selama di orbit itu elektron tidak memancarkan energi", "Bohr membuktikan bahwa Maxwell benar dan atom memang runtuh", "Bohr mengganti inti atom dengan struktur baru"],
+    "correct": 1,
+    "explain": "Bohr mempostulatkan bahwa elektron hanya boleh mengelilingi inti pada lintasan-lintasan tertentu yang diizinkan (orbit stasioner), dan selama berada di orbit itu, elektron tidak memancarkan atau menyerap radiasi energi — membatalkan prediksi keruntuhan Maxwell."
+  },
+  {
+    "q": "Menurut postulat Bohr, momentum sudut elektron pada orbit stasioner dirumuskan sebagai \\(mvr = n\\frac{h}{2\\pi}\\). Apa arti n dalam rumus tersebut?",
+    "opts": ["Jumlah neutron dalam inti", "Bilangan kuantum utama, menunjukkan orbit/kulit tertentu yang diizinkan (n = 1, 2, 3, ...)", "Jumlah proton dalam inti", "Kecepatan cahaya"],
+    "correct": 1,
+    "explain": "n adalah bilangan kuantum utama (n = 1, 2, 3, ...) yang menunjukkan orbit stasioner tertentu yang diizinkan bagi elektron — inilah bentuk kuantisasi momentum sudut yang diajukan Bohr."
+  },
+  {
+    "q": "Menurut postulat Bohr, apa yang terjadi saat elektron berpindah dari kulit dalam ke kulit luar (eksitasi)?",
+    "opts": ["Elektron memancarkan foton energi", "Elektron menyerap foton energi", "Elektron kehilangan muatannya", "Tidak terjadi perubahan energi apa pun"],
+    "correct": 1,
+    "explain": "Eksitasi (kulit dalam → kulit luar) terjadi dengan menyerap foton energi. Sebaliknya, saat elektron berpindah dari kulit luar ke kulit dalam, ia memancarkan foton energi: \\(\\Delta E = E_2 - E_1 = h\\nu\\)."
+  },
+  {
+    "q": "Apa keberhasilan utama model atom Bohr?",
+    "opts": ["Menjelaskan struktur semua atom berelektron banyak dengan akurat", "Berhasil menjelaskan kestabilan atom & pola spektrum garis emisi/absorpsi atom Hidrogen", "Menemukan elektron untuk pertama kalinya", "Membuktikan atom adalah bola pejal"],
+    "correct": 1,
+    "explain": "Bohr berhasil menjelaskan kestabilan atom (elektron tidak memancarkan energi selama di orbit stasioner) dan pola spektrum garis atom Hidrogen — pencapaian besar yang tidak bisa dijelaskan model sebelumnya."
+  },
+  {
+    "q": "Apa keterbatasan utama model atom Bohr?",
+    "opts": ["Tidak bisa menjelaskan atom apa pun, termasuk Hidrogen", "Hanya akurat untuk atom/ion berelektron tunggal (seperti H dan \\(\\ce{He+}\\)); gagal pada atom berelektron banyak & tidak menjelaskan efek Zeeman", "Tidak bisa menjelaskan kestabilan atom sama sekali", "Menganggap atom sebagai bola pejal tanpa struktur"],
+    "correct": 1,
+    "explain": "Model Bohr hanya akurat untuk atom/ion berelektron tunggal seperti Hidrogen (\\(\\ce{H}\\)) dan \\(\\ce{He+}\\). Untuk atom berelektron banyak, prediksinya meleset, dan model ini juga tidak bisa menjelaskan efek Zeeman (pembelahan garis spektrum dalam medan magnet)."
+  },
+  {
+    "q": "Konsep dualisme gelombang-partikel yang diajukan Louis de Broglie (1924) menyatakan bahwa...",
+    "opts": ["Elektron hanya bersifat partikel, tidak pernah bersifat gelombang", "Partikel mikroskopis seperti elektron memiliki sifat gelombang sekaligus sifat partikel, dirumuskan \\(\\lambda = \\frac{h}{p}\\)", "Cahaya hanya bersifat gelombang", "Proton dan neutron bersifat sama seperti foton"],
+    "correct": 1,
+    "explain": "De Broglie mengajukan bahwa partikel mikroskopis seperti elektron punya sifat gelombang sekaligus partikel, dirumuskan \\(\\lambda = \\frac{h}{p}\\). Gagasan ini mulai meruntuhkan asumsi 'lintasan pasti' ala orbit Bohr."
+  },
+  {
+    "q": "Apa isi Asas Ketidakpastian Heisenberg (1927), dan bagaimana pengaruhnya terhadap konsep 'orbit' Bohr?",
+    "opts": ["Posisi dan momentum elektron bisa ditentukan bersamaan dengan sangat akurat — memperkuat konsep orbit Bohr", "Posisi dan momentum elektron tidak dapat ditentukan secara pasti pada waktu bersamaan — membatalkan gagasan lintasan pasti ala orbit Bohr", "Elektron tidak punya posisi sama sekali", "Hanya berlaku untuk partikel bermuatan positif"],
+    "correct": 1,
+    "explain": "Heisenberg menyatakan posisi dan momentum elektron tidak dapat ditentukan secara pasti pada waktu bersamaan. Ini langsung membatalkan gagasan 'orbit' Bohr — kalau posisi elektron tidak bisa dipastikan, tidak mungkin ada lintasan yang benar-benar pasti pula."
+  },
+  {
+    "q": "Persamaan gelombang Schrödinger (1926) menghasilkan solusi berupa apa, bukan satu lintasan pasti?",
+    "opts": ["Sebuah garis lurus tunggal", "Fungsi probabilitas yang mendeskripsikan daerah kemungkinan posisi elektron", "Nilai kecepatan elektron yang pasti", "Jumlah proton dalam inti"],
+    "correct": 1,
+    "explain": "Solusi persamaan gelombang Schrödinger bukan satu lintasan pasti, melainkan fungsi probabilitas yang mendeskripsikan daerah kemungkinan (orbital) tempat elektron kemungkinan besar ditemukan."
+  },
+  {
+    "q": "Apa itu 'orbital' dalam model mekanika kuantum Schrödinger?",
+    "opts": ["Lintasan lingkaran dua dimensi yang pasti tempat elektron bergerak", "Daerah tiga dimensi di sekitar inti dengan peluang terbesar (probabilitas ≥ 90%) ditemukannya elektron", "Nama lain untuk inti atom", "Partikel sub-atomik baru yang ditemukan Schrödinger"],
+    "correct": 1,
+    "explain": "Orbital adalah daerah atau ruang tiga dimensi di sekitar inti atom dengan peluang terbesar (probabilitas ≥ 90%) untuk ditemukannya elektron — bukan lintasan pasti seperti orbit Bohr."
+  },
+  {
+    "q": "Apa perbedaan mendasar antara konsep 'Orbit' Niels Bohr dan 'Orbital' Erwin Schrödinger?",
+    "opts": ["Keduanya adalah istilah berbeda untuk konsep yang sama persis", "Orbit adalah lintasan 2D yang pasti & kaku; Orbital adalah daerah 3D probabilitas (≥90%), bukan lintasan pasti", "Orbit membahas proton, Orbital membahas neutron", "Orbit hanya berlaku untuk atom berelektron banyak, Orbital hanya untuk Hidrogen"],
+    "correct": 1,
+    "explain": "Orbit (Bohr) adalah lintasan lingkaran dua dimensi yang pasti & kaku, tempat elektron dianggap mengelilingi inti pada jarak tertentu. Orbital (Schrödinger) adalah daerah tiga dimensi di sekitar inti tempat elektron punya peluang terbesar (probabilitas ≥ 90%) ditemukan — berdasar Asas Ketidakpastian Heisenberg, posisi pasti elektron memang tidak pernah bisa ditentukan."
+  },
+  {
+    "q": "Seorang siswa ditanya 'di mana posisi pasti elektron dalam sebuah orbital?' Jawaban yang tepat adalah...",
+    "opts": ["Tepat di pusat orbital", "Di tepi luar orbital", "Posisi pasti tidak ada — orbital secara definisi adalah daerah probabilitas, bukan lokasi tunggal yang pasti", "Di titik yang sama dengan posisi inti atom"],
+    "correct": 2,
+    "explain": "Ini soal jebakan konsep klasik: orbital secara definisi adalah daerah probabilitas (≥90%), bukan satu titik/posisi pasti. Berdasar Asas Ketidakpastian Heisenberg, posisi pasti elektron tidak pernah bisa ditentukan sama sekali."
+  },
+  {
+    "q": "Berdasarkan urutan kemunculannya, manakah susunan model atom yang benar dari yang paling awal hingga paling akhir?",
+    "opts": ["Dalton → Demokritos → Thomson → Rutherford → Bohr → Schrödinger", "Demokritos → Dalton → Thomson → Rutherford → Bohr → Schrödinger", "Demokritos → Thomson → Dalton → Bohr → Rutherford → Schrödinger", "Schrödinger → Bohr → Rutherford → Thomson → Dalton → Demokritos"],
+    "correct": 1,
+    "explain": "Urutan kronologis: Demokritos (±400 SM, filosofis) → Dalton (1803, bola pejal) → Thomson (1897, roti kismis) → Rutherford (1911, inti/tata surya) → Bohr (1913, orbit stasioner) → Schrödinger (1926, orbital/awan elektron)."
+  },
+  {
+    "q": "Model atom manakah yang lahir langsung sebagai jawaban atas kontradiksi model Rutherford dengan elektrodinamika klasik Maxwell?",
+    "opts": ["Model Dalton", "Model Thomson", "Model Bohr", "Model Demokritos"],
+    "correct": 2,
+    "explain": "Model Bohr (1913) lahir untuk menjawab kontradiksi model Rutherford: menurut Maxwell elektron seharusnya jatuh spiral ke inti, tapi kenyataannya atom stabil. Bohr mengatasi ini dengan postulat orbit stasioner terkuantisasi."
+  },
+  {
+    "q": "Model atom manakah yang lahir sebagai jawaban langsung atas ketidakmampuan model Dalton menjelaskan sifat kelistrikan materi?",
+    "opts": ["Model Thomson (lewat penemuan elektron)", "Model Bohr", "Model Schrödinger", "Model Rutherford"],
+    "correct": 0,
+    "explain": "Dalton menganggap atom pejal tanpa struktur/muatan internal, sehingga tidak bisa menjelaskan sifat kelistrikan materi. Thomson menjawab ini lewat eksperimen tabung sinar katode yang menemukan elektron — partikel bermuatan di dalam atom."
+  },
+  {
+    "q": "Kenapa disebut bahwa perkembangan model atom adalah 'rantai sebab-akibat', bukan enam fakta lepas yang harus dihafal terpisah?",
+    "opts": ["Karena keenam model itu sebenarnya sama saja, tidak ada perbedaan", "Karena tiap model baru muncul secara spesifik untuk menjawab titik buta/kontradiksi yang ditemukan pada model sebelumnya", "Karena semua model ditemukan oleh orang yang sama", "Karena urutan tahunnya tidak penting untuk dipahami"],
+    "correct": 1,
+    "explain": "Setiap model bukan kebetulan — Thomson menjawab titik buta kelistrikan Dalton, Rutherford menguji & mematahkan model Thomson lewat eksperimen lempeng emas, Bohr menjawab kontradiksi Maxwell pada model Rutherford, dan Schrödinger menjawab keterbatasan Bohr pada atom berelektron banyak lewat dualisme gelombang-partikel & Asas Ketidakpastian."
+  },
+  {
+    "q": "Manakah pernyataan yang benar tentang hubungan model Bohr dan model Schrödinger?",
+    "opts": ["Model Schrödinger membuktikan model Bohr sepenuhnya salah dan tidak berguna sama sekali", "Model Schrödinger menggantikan konsep 'orbit' pasti Bohr dengan 'orbital' probabilistik, dipicu oleh dualisme de Broglie & Asas Ketidakpastian Heisenberg", "Model Bohr dan Schrödinger persis sama, hanya beda istilah", "Model Schrödinger dikembangkan sebelum model Bohr"],
+    "correct": 1,
+    "explain": "Model Schrödinger (1926) muncul setelah Bohr (1913), dipicu oleh dualisme gelombang-partikel de Broglie (1924) dan Asas Ketidakpastian Heisenberg (1927) yang membatalkan asumsi lintasan pasti Bohr — diganti dengan konsep orbital (daerah probabilitas)."
+  },
+  {
+    "q": "Eksperimen kunci apa yang mendasari lahirnya model atom Bohr?",
+    "opts": ["Eksperimen tetes minyak Millikan", "Spektroskopi spektrum garis atom Hidrogen & Teori Kuantum Planck", "Eksperimen penembakan lempeng emas", "Eksperimen tabung sinar katode"],
+    "correct": 1,
+    "explain": "Bohr mendasarkan modelnya pada hasil spektroskopi spektrum garis atom Hidrogen (pola garis emisi/absorpsi yang khas) dan Teori Kuantum Max Planck tentang energi terkuantisasi."
+  },
+  {
+    "q": "Manakah pasangan tokoh & kontribusi yang TIDAK sesuai?",
+    "opts": ["J.J. Thomson — menemukan elektron lewat tabung sinar katode", "Robert Millikan — mengukur muatan presisi satu elektron lewat tetes minyak", "Ernest Rutherford — menemukan inti atom lewat penembakan lempeng emas", "Niels Bohr — menemukan neutron lewat eksperimen radiasi"],
+    "correct": 3,
+    "explain": "Neutron ditemukan oleh James Chadwick (1932), bukan Niels Bohr. Bohr dikenal atas model orbit stasioner (1913) berdasarkan spektroskopi atom Hidrogen & Teori Kuantum Planck."
+  },
+  {
+    "q": "Model atom manakah yang pertama kali memperkenalkan gagasan bahwa sebagian besar volume atom adalah ruang kosong?",
+    "opts": ["Model Dalton", "Model Thomson", "Model Rutherford", "Model Bohr"],
+    "correct": 2,
+    "explain": "Rutherford (1911) menyimpulkan sebagian besar volume atom adalah ruang kosong, berdasarkan fakta bahwa mayoritas partikel alfa menembus lempeng emas tanpa pembelokan berarti."
+  },
+  {
+    "q": "Sebuah soal ujian menyatakan: 'Model X menjelaskan atom sebagai bola bermuatan positif homogen dengan elektron tersebar di dalamnya, seperti kismis dalam roti.' Model X yang dimaksud adalah...",
+    "opts": ["Model Dalton", "Model Thomson", "Model Rutherford", "Model Schrödinger"],
+    "correct": 1,
+    "explain": "Deskripsi 'bola bermuatan positif homogen dengan elektron tersebar seperti kismis dalam roti' adalah gambaran khas model roti kismis (plum pudding) J.J. Thomson (1897)."
+  }
+]

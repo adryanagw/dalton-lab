@@ -217,7 +217,7 @@
         "rule": "broken-image",
         "value": "*",
         "files": [
-          "content-private/kimia/bab2-struktur-atom-sistem-periodik.html"
+          "content-private/kimia/bab3-struktur-atom-sistem-periodik.html"
         ],
         "createdAt": "2026-09-15T16:27:32.477Z",
         "reason": "Intentional: .pdf-viewer-img ships with no src by design — filled at runtime via authenticated blob + object URL (app.js initPdfViewers/loadPage). Same pattern already ignored for bab1-hakikat-kimia-hijau-k3lab.html."
@@ -226,7 +226,7 @@
         "rule": "cramped-padding",
         "value": "*",
         "files": [
-          "content-private/kimia/bab2-struktur-atom-sistem-periodik.html"
+          "content-private/kimia/bab3-struktur-atom-sistem-periodik.html"
         ],
         "createdAt": "2026-09-15T16:27:32.506Z",
         "reason": "False positive from scanning the content fragment without the site's real styles.css loaded (section{padding:86px 0} etc. defined globally, not zero). Same pattern already ignored for bab1-hakikat-kimia-hijau-k3lab.html."
@@ -235,10 +235,28 @@
         "rule": "tight-leading",
         "value": "*",
         "files": [
-          "content-private/kimia/bab2-struktur-atom-sistem-periodik.pdf-pages.html"
+          "content-private/kimia/bab3-struktur-atom-sistem-periodik.pdf-pages.html"
         ],
         "createdAt": "2026-09-15T16:33:06.396Z",
         "reason": "False positive: line-height:1 only appears on single-line short label/UI text (.brand-word, .subject-chip, .chapter-tag, .callout/.formula-box/.example-box .label spans, .ref-table thead th) copied verbatim from the shared page-template CSS block per CHAPTER_CONTENT_GUIDE.md's copy-the-CSS-block-wholesale instruction (identical to bab1-hakikat-kimia-hijau-k3lab.pdf-pages.html). None of these are multi-line body paragraphs; body text (p.body-text, li) uses line-height 1.5-1.6 throughout."
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "content-private/kimia/bab2-sejarah-model-atom.html"
+        ],
+        "createdAt": "2026-09-16T00:00:00.000Z",
+        "reason": "Intentional: .pdf-viewer-img ships with no src by design — filled at runtime via authenticated blob + object URL (app.js initPdfViewers/loadPage). Same pattern already ignored for bab1-hakikat-kimia-hijau-k3lab.html/bab3-struktur-atom-sistem-periodik.html."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "content-private/kimia/bab2-sejarah-model-atom.html"
+        ],
+        "createdAt": "2026-09-16T05:08:07.743Z",
+        "reason": "False positive from scanning the content fragment without the site's real styles.css loaded (section{padding:86px 0} etc. defined globally, not zero). Same pattern already ignored for bab1-hakikat-kimia-hijau-k3lab.html and bab3-struktur-atom-sistem-periodik.html."
       }
     ]
   }

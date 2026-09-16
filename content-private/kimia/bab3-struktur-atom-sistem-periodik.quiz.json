@@ -9,7 +9,7 @@
     "q": "J.J. Thomson (1897) menemukan partikel apa lewat eksperimen tabung sinar katode?",
     "opts": ["Proton", "Neutron", "Elektron", "Inti atom"],
     "correct": 2,
-    "explain": "Thomson menemukan elektron dan menentukan rasio muatan/massanya lewat eksperimen tabung sinar katode; massanya kemudian dipastikan lewat percobaan tetes minyak Millikan (9,109 × 10⁻²⁸ g)."
+    "explain": "Thomson menemukan elektron dan menentukan rasio muatan/massanya lewat eksperimen tabung sinar katode; massanya kemudian dipastikan lewat percobaan tetes minyak Millikan (9,109 × \\(10^{-28}\\) g)."
   },
   {
     "q": "James Chadwick (1932) melengkapi model atom Rutherford dengan menemukan partikel apa?",
@@ -24,28 +24,28 @@
     "explain": "Proton bermuatan +1, neutron netral (0), elektron bermuatan −1. Proton & neutron berada di inti, elektron mengelilingi inti."
   },
   {
-    "q": "Notasi nuklida ditulis sebagai ᴬZX. Apa arti Z dan A dalam notasi tersebut?",
+    "q": "Notasi nuklida ditulis sebagai \\(^A_ZX\\). Apa arti Z dan A dalam notasi tersebut?",
     "opts": ["Z = nomor massa, A = nomor atom", "Z = jumlah neutron, A = jumlah proton", "Z = nomor atom (jumlah proton), A = nomor massa (proton + neutron)", "Z = jumlah elektron, A = jumlah proton"],
     "correct": 2,
     "explain": "Z (nomor atom) = jumlah proton — identitas unik unsur. A (nomor massa) = jumlah proton + neutron. Neutron dihitung dari N = A − Z."
   },
   {
-    "q": "Tentukan jumlah proton, neutron, dan elektron untuk atom netral ⁵⁶₂₆Fe!",
+    "q": "Tentukan jumlah proton, neutron, dan elektron untuk atom netral \\(\\ce{^{56}_{26}Fe}\\)!",
     "opts": ["26 proton, 26 neutron, 30 elektron", "26 proton, 30 neutron, 26 elektron", "30 proton, 26 neutron, 26 elektron", "56 proton, 26 neutron, 26 elektron"],
     "correct": 1,
     "explain": "Atom netral: Proton = Z = 26, Elektron = Z = 26. Neutron = A − Z = 56 − 26 = 30."
   },
   {
-    "q": "Ion ⁵⁶₂₆Fe³⁺ terbentuk dari atom Fe yang melepas 3 elektron. Berapa jumlah elektronnya sekarang?",
+    "q": "Ion \\(\\ce{^{56}_{26}Fe^3+}\\) terbentuk dari atom Fe yang melepas 3 elektron. Berapa jumlah elektronnya sekarang?",
     "opts": ["26", "29", "23", "3"],
     "correct": 2,
-    "explain": "Kation Fe³⁺ melepas 3 elektron dari atom netralnya (26 e⁻), sehingga elektronnya jadi 26 − 3 = 23. Jumlah proton (26) dan neutron (30) tidak berubah saat atom jadi ion."
+    "explain": "Kation \\(\\ce{Fe^3+}\\) melepas 3 elektron dari atom netralnya (26 \\(e^-\\)), sehingga elektronnya jadi 26 − 3 = 23. Jumlah proton (26) dan neutron (30) tidak berubah saat atom jadi ion."
   },
   {
-    "q": "Ion ³⁵₁₇Cl⁻ terbentuk dari atom Cl yang menangkap 1 elektron. Berapa jumlah proton, neutron, dan elektronnya?",
+    "q": "Ion \\(\\ce{^{35}_{17}Cl^-}\\) terbentuk dari atom Cl yang menangkap 1 elektron. Berapa jumlah proton, neutron, dan elektronnya?",
     "opts": ["17 proton, 18 neutron, 16 elektron", "17 proton, 18 neutron, 18 elektron", "18 proton, 17 neutron, 18 elektron", "17 proton, 17 neutron, 18 elektron"],
     "correct": 1,
-    "explain": "Proton = Z = 17 (tetap). Neutron = A − Z = 35 − 17 = 18 (tetap). Anion Cl⁻ menangkap 1 elektron: Elektron = 17 + 1 = 18."
+    "explain": "Proton = Z = 17 (tetap). Neutron = A − Z = 35 − 17 = 18 (tetap). Anion \\(\\ce{Cl^-}\\) menangkap 1 elektron: Elektron = 17 + 1 = 18."
   },
   {
     "q": "Apa perbedaan mendasar antara jumlah elektron pada atom netral dan pada ion menurut atom yang sama?",
@@ -57,29 +57,29 @@
     "q": "Dua atom disebut Isotop jika keduanya memiliki...",
     "opts": ["Nomor atom (Z) sama, nomor massa (A) berbeda", "Nomor massa (A) sama, nomor atom (Z) berbeda", "Jumlah neutron sama, unsur berbeda", "Jumlah elektron total sama"],
     "correct": 0,
-    "explain": "Isotop = unsur sama (Z/jumlah proton sama), tapi jumlah neutron & nomor massanya berbeda. Contoh: ¹²₆C dan ¹⁴₆C — sama-sama Karbon (Z=6), massa beda."
+    "explain": "Isotop = unsur sama (Z/jumlah proton sama), tapi jumlah neutron & nomor massanya berbeda. Contoh: \\(\\ce{^{12}_{6}C}\\) dan \\(\\ce{^{14}_{6}C}\\) — sama-sama Karbon (Z=6), massa beda."
   },
   {
-    "q": "Dua nuklida ¹⁴₆C dan ¹⁶₈O keduanya sama-sama memiliki 8 neutron (N = A − Z). Hubungan seperti ini disebut...",
+    "q": "Dua nuklida \\(\\ce{^{14}_{6}C}\\) dan \\(\\ce{^{16}_{8}O}\\) keduanya sama-sama memiliki 8 neutron (N = A − Z). Hubungan seperti ini disebut...",
     "opts": ["Isotop", "Isoton", "Isobar", "Isoelektron"],
     "correct": 1,
-    "explain": "Isoton = jumlah neutron sama, meski unsurnya berbeda. ¹⁴₆C: N = 14−6 = 8. ¹⁶₈O: N = 16−8 = 8. Keduanya isoton karena N sama = 8."
+    "explain": "Isoton = jumlah neutron sama, meski unsurnya berbeda. \\(\\ce{^{14}_{6}C}\\): N = 14−6 = 8. \\(\\ce{^{16}_{8}O}\\): N = 16−8 = 8. Keduanya isoton karena N sama = 8."
   },
   {
-    "q": "¹⁴₆C dan ¹⁴₇N sama-sama punya nomor massa A = 14, meski jumlah protonnya berbeda (unsur berbeda). Hubungan ini disebut...",
+    "q": "\\(\\ce{^{14}_{6}C}\\) dan \\(\\ce{^{14}_{7}N}\\) sama-sama punya nomor massa A = 14, meski jumlah protonnya berbeda (unsur berbeda). Hubungan ini disebut...",
     "opts": ["Isotop", "Isoton", "Isobar", "Isoelektron"],
     "correct": 2,
-    "explain": "Isobar = nomor massa (A) sama, unsur (Z) berbeda. ¹⁴₆C dan ¹⁴₇N sama-sama A=14, tapi Z-nya beda (6 vs 7), jadi keduanya isobar."
+    "explain": "Isobar = nomor massa (A) sama, unsur (Z) berbeda. \\(\\ce{^{14}_{6}C}\\) dan \\(\\ce{^{14}_{7}N}\\) sama-sama A=14, tapi Z-nya beda (6 vs 7), jadi keduanya isobar."
   },
   {
-    "q": "₁₁Na⁺, ₁₀Ne, dan ₉F⁻ semuanya memiliki jumlah elektron total yang sama (10 elektron), meski unsur & nomor atomnya berbeda-beda. Hubungan ini disebut...",
+    "q": "\\(\\ce{_{11}Na^+}\\), \\(\\ce{_{10}Ne}\\), dan \\(\\ce{_{9}F^-}\\) semuanya memiliki jumlah elektron total yang sama (10 elektron), meski unsur & nomor atomnya berbeda-beda. Hubungan ini disebut...",
     "opts": ["Isotop", "Isoton", "Isobar", "Isoelektron"],
     "correct": 3,
-    "explain": "Isoelektron = jumlah elektron total sama. Na⁺ (11−1=10 e⁻), Ne (10 e⁻), F⁻ (9+1=10 e⁻) — ketiganya punya 10 elektron meski unsurnya beda, jadi isoelektron."
+    "explain": "Isoelektron = jumlah elektron total sama. \\(\\ce{Na^+}\\) (11−1=10 \\(e^-\\)), Ne (10 \\(e^-\\)), \\(\\ce{F^-}\\) (9+1=10 \\(e^-\\)) — ketiganya punya 10 elektron meski unsurnya beda, jadi isoelektron."
   },
   {
-    "q": "Diberikan spesi A (¹⁴₆C) dan D (¹²₆C). Keduanya tergolong pasangan apa?",
-    "opts": ["Isoton, karena N sama", "Isotop, karena Z sama (sama-sama Z=6)", "Isobar, karena A sama", "Isoelektron, karena e⁻ sama"],
+    "q": "Diberikan spesi A (\\(\\ce{^{14}_{6}C}\\)) dan D (\\(\\ce{^{12}_{6}C}\\)). Keduanya tergolong pasangan apa?",
+    "opts": ["Isoton, karena N sama", "Isotop, karena Z sama (sama-sama Z=6)", "Isobar, karena A sama", "Isoelektron, karena \\(e^-\\) sama"],
     "correct": 1,
     "explain": "A dan D sama-sama unsur Karbon dengan Z=6 (proton sama), tapi nomor massanya beda (14 vs 12) — jadi isotop, bukan isoton/isobar."
   },
@@ -111,34 +111,34 @@
     "q": "Berapa kapasitas maksimal elektron pada subkulit d?",
     "opts": ["2 elektron (1 orbital)", "6 elektron (3 orbital)", "10 elektron (5 orbital)", "14 elektron (7 orbital)"],
     "correct": 2,
-    "explain": "Subkulit d punya 5 orbital, masing-masing maksimal 2 elektron (Larangan Pauli) → kapasitas total 5 × 2 = 10 elektron (d¹⁰)."
+    "explain": "Subkulit d punya 5 orbital, masing-masing maksimal 2 elektron (Larangan Pauli) → kapasitas total 5 × 2 = 10 elektron (\\(d^{10}\\))."
   },
   {
-    "q": "Tuliskan konfigurasi elektron unsur ₃₅Br mengikuti urutan Aufbau!",
-    "opts": ["1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁵", "1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁵", "1s² 2s² 2p⁶ 3s² 3p⁵", "1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 4p⁵ 3d¹⁰"],
+    "q": "Tuliskan konfigurasi elektron unsur \\(\\ce{_{35}Br}\\) mengikuti urutan Aufbau!",
+    "opts": ["\\(1s^{2}\\) \\(2s^{2}\\) \\(2p^{6}\\) \\(3s^{2}\\) \\(3p^{6}\\) \\(4s^{2}\\) \\(3d^{10}\\) \\(4p^{5}\\)", "\\(1s^{2}\\) \\(2s^{2}\\) \\(2p^{6}\\) \\(3s^{2}\\) \\(3p^{6}\\) \\(3d^{10}\\) \\(4s^{2}\\) \\(4p^{5}\\)", "\\(1s^{2}\\) \\(2s^{2}\\) \\(2p^{6}\\) \\(3s^{2}\\) \\(3p^{5}\\)", "\\(1s^{2}\\) \\(2s^{2}\\) \\(2p^{6}\\) \\(3s^{2}\\) \\(3p^{6}\\) \\(4s^{2}\\) \\(4p^{5}\\) \\(3d^{10}\\)"],
     "correct": 0,
-    "explain": "Mengikuti urutan energi Aufbau (4s diisi sebelum 3d): 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁵, total 2+2+6+2+6+2+10+5 = 35 elektron."
+    "explain": "Mengikuti urutan energi Aufbau (4s diisi sebelum 3d): \\(1s^{2}\\) \\(2s^{2}\\) \\(2p^{6}\\) \\(3s^{2}\\) \\(3p^{6}\\) \\(4s^{2}\\) \\(3d^{10}\\) \\(4p^{5}\\), total 2+2+6+2+6+2+10+5 = 35 elektron."
   },
   {
-    "q": "Dari konfigurasi elektron ₃₅Br (1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁵), berapa jumlah elektron valensinya?",
+    "q": "Dari konfigurasi elektron \\(\\ce{_{35}Br}\\) (\\(1s^{2}\\) \\(2s^{2}\\) \\(2p^{6}\\) \\(3s^{2}\\) \\(3p^{6}\\) \\(4s^{2}\\) \\(3d^{10}\\) \\(4p^{5}\\)), berapa jumlah elektron valensinya?",
     "opts": ["5", "7", "10", "17"],
     "correct": 1,
-    "explain": "Elektron valensi Br ada di subkulit terluar blok s & p: 4s² 4p⁵ → jumlah elektron valensi = 2 + 5 = 7 (unsur golongan utama, elektron valensi = nsᵃ npᵇ, jumlahnya a+b)."
+    "explain": "Elektron valensi Br ada di subkulit terluar blok s & p: \\(4s^{2}\\) \\(4p^{5}\\) → jumlah elektron valensi = 2 + 5 = 7 (unsur golongan utama, elektron valensi = n\\(s^a\\) n\\(p^b\\), jumlahnya a+b)."
   },
   {
-    "q": "₂₆Fe (besi) punya konfigurasi elektron [Ar] 4s² 3d⁶. Karena berakhir di blok d, bagaimana cara menghitung elektron valensinya?",
-    "opts": ["Elektron valensi = (n−1)dᵃ nsᵇ, jumlahnya a+b = 6+2 = 8", "Elektron valensi hanya dihitung dari 4s² saja, jadi 2", "Elektron valensi hanya dihitung dari 3d⁶ saja, jadi 6", "Unsur blok d tidak punya elektron valensi"],
+    "q": "\\(\\ce{_{26}Fe}\\) (besi) punya konfigurasi elektron [Ar] \\(4s^{2}\\) \\(3d^{6}\\). Karena berakhir di blok d, bagaimana cara menghitung elektron valensinya?",
+    "opts": ["Elektron valensi = (n−1)\\(d^a\\) n\\(s^b\\), jumlahnya a+b = 6+2 = 8", "Elektron valensi hanya dihitung dari \\(4s^{2}\\) saja, jadi 2", "Elektron valensi hanya dihitung dari \\(3d^{6}\\) saja, jadi 6", "Unsur blok d tidak punya elektron valensi"],
     "correct": 0,
-    "explain": "Untuk unsur transisi (blok d), elektron valensi = (n−1)dᵃ nsᵇ, dihitung dari total kedua subkulit itu: 3d⁶ + 4s² = 6 + 2 = 8 elektron valensi — beda dari unsur golongan utama (blok s/p) yang cuma dihitung dari kulit terluar saja."
+    "explain": "Untuk unsur transisi (blok d), elektron valensi = (n−1)\\(d^a\\) n\\(s^b\\), dihitung dari total kedua subkulit itu: \\(3d^{6}\\) + \\(4s^{2}\\) = 6 + 2 = 8 elektron valensi — beda dari unsur golongan utama (blok s/p) yang cuma dihitung dari kulit terluar saja."
   },
   {
     "q": "Bagaimana cara menentukan Periode suatu unsur dari konfigurasi elektronnya?",
     "opts": ["Dari jumlah total elektron", "Dari nilai kulit utama (n) terbesar yang terisi elektron", "Dari jumlah neutron dalam inti", "Dari jumlah orbital yang kosong"],
     "correct": 1,
-    "explain": "Periode ditunjukkan oleh nilai n (kulit utama) terbesar yang terisi elektron. Br punya elektron terluar di kulit n=4 (4s²4p⁵), jadi Br ada di Periode 4."
+    "explain": "Periode ditunjukkan oleh nilai n (kulit utama) terbesar yang terisi elektron. Br punya elektron terluar di kulit n=4 (\\(4s^{2}\\)\\(4p^{5}\\)), jadi Br ada di Periode 4."
   },
   {
-    "q": "Unsur ₃₅Br punya elektron valensi 7 pada blok p (4s² 4p⁵). Golongan berapa Br dalam tabel periodik?",
+    "q": "Unsur \\(\\ce{_{35}Br}\\) punya elektron valensi 7 pada blok p (\\(4s^{2}\\) \\(4p^{5}\\)). Golongan berapa Br dalam tabel periodik?",
     "opts": ["Golongan 4A", "Golongan 5A", "Golongan 7A (Halogen)", "Golongan 7B"],
     "correct": 2,
     "explain": "Karena berakhir di blok p dengan elektron valensi 7, Br masuk Golongan Utama (A) nomor 7A — golongan Halogen, sama seperti Cl dan F."
@@ -147,19 +147,19 @@
     "q": "Golongan 1A dalam tabel periodik (kecuali Hidrogen) dikenal dengan nama khusus...",
     "opts": ["Halogen", "Gas Mulia", "Alkali", "Alkali Tanah"],
     "correct": 2,
-    "explain": "Golongan 1A (konfigurasi valensi ns¹, kecuali H) disebut golongan Alkali — logam sangat reaktif, lunak, mudah membentuk kation +1."
+    "explain": "Golongan 1A (konfigurasi valensi n\\(s^{1}\\), kecuali H) disebut golongan Alkali — logam sangat reaktif, lunak, mudah membentuk kation +1."
   },
   {
-    "q": "Golongan 8A dengan konfigurasi valensi ns² np⁶ (He: 1s²) dikenal sebagai golongan...",
+    "q": "Golongan 8A dengan konfigurasi valensi n\\(s^{2}\\) n\\(p^{6}\\) (He: \\(1s^{2}\\)) dikenal sebagai golongan...",
     "opts": ["Halogen", "Gas Mulia", "Alkali Tanah", "Logam Transisi"],
     "correct": 1,
     "explain": "Golongan 8A = Gas Mulia — konfigurasi elektronnya sudah penuh (duplet untuk He, oktet untuk yang lain), sehingga sangat stabil dan sukar bereaksi dengan unsur lain."
   },
   {
-    "q": "Golongan 7A dengan konfigurasi valensi ns² np⁵ dikenal sebagai golongan Halogen. Apa sifat kimia utamanya?",
+    "q": "Golongan 7A dengan konfigurasi valensi n\\(s^{2}\\) n\\(p^{5}\\) dikenal sebagai golongan Halogen. Apa sifat kimia utamanya?",
     "opts": ["Logam sangat reaktif membentuk kation +2", "Non-logam sangat reaktif, cenderung menangkap 1 elektron membentuk anion −1", "Sangat stabil dan sukar bereaksi", "Logam transisi pembentuk senyawa kompleks"],
     "correct": 1,
-    "explain": "Halogen (7A) butuh 1 elektron lagi untuk mencapai konfigurasi oktet stabil seperti gas mulia, sehingga sangat reaktif menangkap elektron dan membentuk anion bermuatan −1 (mis. Cl⁻, F⁻)."
+    "explain": "Halogen (7A) butuh 1 elektron lagi untuk mencapai konfigurasi oktet stabil seperti gas mulia, sehingga sangat reaktif menangkap elektron dan membentuk anion bermuatan −1 (mis. \\(\\ce{Cl^-}\\), \\(\\ce{F^-}\\))."
   },
   {
     "q": "Bagaimana arah perubahan jari-jari atom dalam satu golongan, dari atas ke bawah?",
@@ -198,13 +198,13 @@
     "explain": "Fluorin (F) memiliki keelektronegatifan tertinggi di seluruh tabel periodik (4,0 pada skala Pauling) — atom paling kuat menarik pasangan elektron ikatan."
   },
   {
-    "q": "Tiga unsur ₁₁Na, ₁₄Si, dan ₁₇Cl berada pada periode yang sama (Periode 3). Urutkan jari-jari atomnya dari yang TERKECIL ke yang TERBESAR!",
+    "q": "Tiga unsur \\(\\ce{_{11}Na}\\), \\(\\ce{_{14}Si}\\), dan \\(\\ce{_{17}Cl}\\) berada pada periode yang sama (Periode 3). Urutkan jari-jari atomnya dari yang TERKECIL ke yang TERBESAR!",
     "opts": ["Na < Si < Cl", "Cl < Si < Na", "Si < Na < Cl", "Cl < Na < Si"],
     "correct": 1,
     "explain": "Dalam satu periode, makin ke kanan (Na → Si → Cl) jari-jari makin kecil karena Zeff makin besar. Urutan terkecil ke terbesar: Cl < Si < Na (Na di paling kiri, jari-jarinya paling besar)."
   },
   {
-    "q": "Melanjutkan soal ₁₁Na, ₁₄Si, dan ₁₇Cl di Periode 3, urutkan energi ionisasinya dari yang TERKECIL ke yang TERBESAR!",
+    "q": "Melanjutkan soal \\(\\ce{_{11}Na}\\), \\(\\ce{_{14}Si}\\), dan \\(\\ce{_{17}Cl}\\) di Periode 3, urutkan energi ionisasinya dari yang TERKECIL ke yang TERBESAR!",
     "opts": ["Cl < Si < Na", "Na < Si < Cl", "Si < Cl < Na", "Na < Cl < Si"],
     "correct": 1,
     "explain": "Energi ionisasi berbanding terbalik dengan jari-jari atom dalam satu periode: makin ke kanan (Na → Si → Cl) makin besar energi ionisasinya, karena elektron terluar makin kuat terikat inti. Urutan terkecil ke terbesar: Na < Si < Cl."
@@ -222,10 +222,10 @@
     "explain": "Dalam satu golongan (atas ke bawah): jari-jari atom makin besar (jumlah kulit n bertambah), sedangkan energi ionisasi makin kecil (elektron terluar makin jauh dari inti, makin mudah dilepas)."
   },
   {
-    "q": "Diketahui spesi A (¹⁴₆C, N=8), B (¹⁴₇N), C (¹⁶₈O, N=8), dan D (¹²₆C). Manakah pasangan yang tergolong Isobar?",
+    "q": "Diketahui spesi A (\\(\\ce{^{14}_{6}C}\\), N=8), B (\\(\\ce{^{14}_{7}N}\\)), C (\\(\\ce{^{16}_{8}O}\\), N=8), dan D (\\(\\ce{^{12}_{6}C}\\)). Manakah pasangan yang tergolong Isobar?",
     "opts": ["A dan D", "A dan C", "A dan B", "B dan C"],
     "correct": 2,
-    "explain": "Isobar = nomor massa (A) sama. A (¹⁴₆C) dan B (¹⁴₇N) sama-sama punya nomor massa 14, meski unsurnya beda (C vs N) — jadi keduanya isobar."
+    "explain": "Isobar = nomor massa (A) sama. A (\\(\\ce{^{14}_{6}C}\\)) dan B (\\(\\ce{^{14}_{7}N}\\)) sama-sama punya nomor massa 14, meski unsurnya beda (C vs N) — jadi keduanya isobar."
   },
   {
     "q": "Kenapa jumlah proton TIDAK PERNAH berubah saat sebuah atom netral menjadi ion (kation maupun anion)?",
@@ -240,9 +240,9 @@
     "explain": "Prinsip Aufbau soal urutan energi terendah ke tertinggi, bukan urutan nomor kulit. Pada rentang tertentu, energi subkulit 4s ternyata lebih rendah daripada 3d, jadi diisi lebih dulu — inilah kenapa diagram diagonal Aufbau perlu dihafal polanya, bukan cuma diurutkan angka n-nya."
   },
   {
-    "q": "Sebuah unsur X punya konfigurasi elektron berakhir di 3d³ 4s². Termasuk blok apa unsur ini, dan bagaimana golongan/elektron valensinya dihitung?",
-    "opts": ["Blok s, elektron valensi cuma dari 4s² = 2", "Blok d (unsur transisi), elektron valensi = 3d³ + 4s² = 3+2 = 5, tergolong golongan transisi", "Blok p, elektron valensi dari 3d³ saja", "Blok f, karena mengandung subkulit d"],
+    "q": "Sebuah unsur X punya konfigurasi elektron berakhir di \\(3d^{3}\\) \\(4s^{2}\\). Termasuk blok apa unsur ini, dan bagaimana golongan/elektron valensinya dihitung?",
+    "opts": ["Blok s, elektron valensi cuma dari \\(4s^{2}\\) = 2", "Blok d (unsur transisi), elektron valensi = \\(3d^{3}\\) + \\(4s^{2}\\) = 3+2 = 5, tergolong golongan transisi", "Blok p, elektron valensi dari \\(3d^{3}\\) saja", "Blok f, karena mengandung subkulit d"],
     "correct": 1,
-    "explain": "Subkulit terakhir yang diisi adalah 3d, jadi unsur ini masuk blok d (transisi). Elektron valensinya dihitung dari (n−1)d + ns = 3d³ + 4s² = 3+2 = 5, bukan cuma dari 4s² seperti aturan golongan utama."
+    "explain": "Subkulit terakhir yang diisi adalah 3d, jadi unsur ini masuk blok d (transisi). Elektron valensinya dihitung dari (n−1)d + ns = \\(3d^{3}\\) + \\(4s^{2}\\) = 3+2 = 5, bukan cuma dari \\(4s^{2}\\) seperti aturan golongan utama."
   }
 ]

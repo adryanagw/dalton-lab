@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<!-- Rendered PDF companion content for Bab 2 Kimia (Sejarah & Evolusi Model Atom),
+     built from bab2-sejarah-model-atom.pdf-spec.md on
+     public/assets/pdf-template/page-template.html. This is the actual filled source,
+     rendered once and shared by every student — no per-page watermark markup here on
+     purpose: the real student-identity watermark is drawn live, per viewer, by
+     initPdfViewers() in app.js (.pdf-viewer-watermark), stamped with that viewer's
+     actual session name and timestamp. Baking a placeholder name into the shared
+     image here would just show every student a second, fake watermark underneath
+     the real one. -->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dalton Lab — PDF Bab 2 Kimia</title>
+<link rel="stylesheet" href="../../public/assets/vendor/fonts/pdf-fonts.css">
+<link rel="stylesheet" href="../../public/assets/vendor/katex/katex.min.css">
+<style>
+  @page{ size:210mm 297mm; margin:0; }
+
+  :root{
+    --navy:#0d1b2e;
+    --navy-2:#16304f;
+    --orange:#ee7d31;
+    --orange-dark:#d4631a;
+    --paper:#faf6ee;
+    --card:#ffffff;
+    --slate:#4f6376;
+    --success:#2f9e6a;
+    --danger:#d64545;
+    --accent:#e2447e;
+    --orange-ink:#bb4d0e;
+  }
+  .pdf-page[data-subject="kimia"]{ --accent:#e2447e; }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#fff;font-family:'Literata',serif;}
+
+  /* ---- the reusable page shell — print version: no floating-card chrome,
+       the page IS the physical page, so no radius/shadow/desk background ---- */
+  .pdf-page{
+    position:relative;
+    width:210mm;
+    height:297mm;
+    padding:26px;
+    background:var(--accent);
+    overflow:hidden;
+    break-after:page;
+    page-break-after:always;
+  }
+  .pdf-page:last-child{break-after:auto;page-break-after:avoid;}
+  .pdf-page .sheet{
+    position:relative;
+    width:100%;
+    height:100%;
+    background:var(--card);
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  .page-head{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 40px 18px;
+    border-bottom:1px solid #eef0f2;
+  }
+  .page-head .brand{display:flex;align-items:center;gap:2px;}
+  .page-head .brand img{height:34px;width:auto;display:block;}
+  .page-head .brand-word{font:600 15px/1 'Fraunces',serif;color:var(--navy);letter-spacing:.01em;}
+  .page-head .brand-word span{color:var(--accent);}
+  .page-head .meta{display:flex;align-items:baseline;gap:8px;}
+  .subject-chip{font:italic 600 14px/1 'Fraunces',serif;color:var(--orange-ink);}
+  .chapter-tag{font:italic 400 13.5px/1 'Literata',serif;color:var(--slate);}
+
+  .page-body{
+    position:relative;
+    z-index:2;
+    flex:1;
+    padding:30px 40px 0;
+    overflow:hidden;
+  }
+
+  h1.page-title{font:700 34px/1.15 'Fraunces',serif;color:var(--navy);margin:0 0 6px;}
+  p.dek{font:italic 400 14.5px/1.4 'Literata',serif;color:var(--orange-ink);margin:0 0 18px;}
+  h2.section-title{font:600 21px/1.25 'Fraunces',serif;color:var(--navy);margin:0 0 10px;}
+  p.lead{font:400 16.5px/1.6 'Literata',serif;color:var(--slate);margin:0 0 18px;max-width:600px;}
+  p.body-text{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 14px;}
+  ul.learn-list{margin:0 0 20px;padding-left:20px;}
+  ul.learn-list li{font:400 16px/1.65 'Literata',serif;color:#22303f;margin-bottom:6px;}
+
+  /* .dense — page-body modifier for pages whose text volume needs slightly
+     tighter spacing to fit one page at the standard font size (see
+     content-private/biologi/bab1-sel.pdf-pages.html Page 2 for the same pattern). */
+  .page-body.dense h2.section-title{margin-bottom:6px;}
+  .page-body.dense p.lead{margin-bottom:10px;}
+  .page-body.dense p.body-text{margin-bottom:8px;line-height:1.5;}
+  .page-body.dense .callout{padding-top:12px;padding-bottom:12px;margin-bottom:14px;}
+  .page-body.dense .example-box{margin-bottom:10px;padding-top:12px;}
+  .page-body.dense .example-box .label{margin-bottom:6px;}
+  .page-body.dense .example-box li{margin-bottom:4px;font-size:14px;line-height:1.45;}
+  .page-body.dense .formula-box{margin-bottom:16px;padding:14px 2px;}
+  .page-body.dense .ref-table{margin-bottom:12px;}
+  .page-body.dense .ref-table th,.page-body.dense .ref-table td{padding:5px 8px;font-size:12px;}
+
+  .formula-box{border-top:1px solid #e6dfd0;border-bottom:1px solid #e6dfd0;padding:20px 2px;margin:0 0 22px;}
+  .formula-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;display:block;}
+  .formula-box .katex{font-size:1.05em;}
+  .formula-box .var-def{font:400 13.5px/1.55 'Literata',serif;color:var(--slate);margin-top:10px;}
+  .formula-box .var-def b{font-family:'IBM Plex Mono',monospace;font-weight:500;color:#22303f;}
+
+  .example-box{border-top:1px solid #e6dfd0;padding:18px 2px 4px;margin:0 0 22px;}
+  .example-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--navy);margin-bottom:12px;display:block;}
+  .example-box p.setup{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 10px;}
+  .example-box ol{margin:0;padding-left:18px;}
+  .example-box li{font:400 15px/1.6 'Literata',serif;color:#22303f;margin-bottom:8px;}
+
+  .callout{padding:16px 18px;margin:0 0 20px;font:400 14.5px/1.55 'Literata',serif;}
+  .callout.mistake{background:#fbf0ed;}
+  .callout.mistake .label{color:var(--danger);}
+  .callout .label{display:block;font:italic 600 14px/1 'Literata',serif;margin-bottom:7px;}
+  .callout .wrong{color:var(--danger);font-weight:600;}
+  .callout .right{color:var(--success);font-weight:600;}
+
+  .ref-table{width:100%;border-collapse:collapse;margin:0 0 20px;}
+  .ref-table caption{caption-side:top;text-align:left;font:italic 500 13.5px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;}
+  .ref-table th,.ref-table td{
+    text-align:left;
+    padding:7px 10px;
+    font:400 12px/1.4 'Literata',serif;
+    color:#22303f;
+    border-bottom:1px solid #eee7d8;
+    vertical-align:top;
+  }
+  .ref-table thead th{
+    font:600 11px/1.2 'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--slate);
+    border-bottom:1.5px solid var(--navy);
+    padding-bottom:8px;
+  }
+  .ref-table tbody tr:first-child td{padding-top:10px;}
+  .ref-table .katex{font-size:.95em;}
+
+  ol.ref-list{margin:0 0 20px;padding-left:20px;}
+  ol.ref-list li{font:400 13.5px/1.6 'Literata',serif;color:#22303f;margin-bottom:12px;}
+  ol.ref-list li i{color:var(--slate);font-style:italic;}
+
+  .ref-list-2col{columns:2;column-gap:26px;margin:0 0 18px;}
+  .ref-list-2col .item{break-inside:avoid;margin-bottom:11px;}
+  .ref-list-2col .item .num{font:600 11px/1 'IBM Plex Mono',monospace;color:var(--orange-ink);}
+  .ref-list-2col .item .term{font:600 13px/1.3 'Literata',serif;color:var(--navy);display:block;margin:3px 0 2px;}
+  .ref-list-2col .item .gloss{font:400 12px/1.45 'Literata',serif;color:#4a5560;}
+
+  .page-foot{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 40px 22px;
+    border-top:1px solid #eef0f2;
+  }
+  .page-foot .license{font:italic 400 12px/1.4 'Literata',serif;color:#5c6670;max-width:380px;}
+</style>
+</head>
+<body>
+
+<!-- ===== Page 1 — Chapter opener ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body">
+      <h1 class="page-title">Sejarah &amp; Evolusi Model Atom</h1>
+      <p class="dek">Materi PDF — pelengkap Bab 2</p>
+      <p class="lead">Materi tambahan ini fokus ke tabel perbandingan komprehensif keenam tokoh/model (dengan kelebihan &amp; kelemahan lengkap dalam prosa, bukan cuma daftar singkat), lembar rumus cepat notasi &amp; persamaan kuantum satu halaman, dua latihan soal terpandu tambahan (kontribusi Thomson &amp; Millikan, dan Hukum Perbandingan Berganda Dalton), pendalaman transisi dari filsafat Yunani Kuno ke sains kuantitatif Dalton, plus rekap kesalahan umum di seluruh bab — pelengkap narasi sebab-akibat di halaman utama, bukan salinannya.</p>
+      <h2 class="section-title">Yang akan kamu pelajari</h2>
+      <ul class="learn-list">
+        <li>Tabel perbandingan komprehensif 7 tokoh/model (Demokritos, Dalton, Thomson, Millikan, Rutherford, Bohr, Schrödinger) — konsep utama, eksperimen kunci, kelebihan &amp; kelemahan ditulis lengkap dalam prosa, bukan cuma kata kunci</li>
+        <li>Lembar rumus cepat satu halaman: notasi nuklida, momentum sudut Bohr, panjang gelombang de Broglie, energi transisi elektron, dan istilah kunci tiap model</li>
+        <li>Latihan soal terpandu tambahan: kontribusi kuantitatif J.J. Thomson &amp; Robert Millikan dalam menentukan karakteristik elektron</li>
+        <li>Latihan soal terpandu tambahan: kenapa Hukum Perbandingan Berganda jadi salah satu bukti terpenting yang mendukung Teori Atom Dalton</li>
+        <li>Pendalaman sejarah: kenapa gagasan Demokritos dianggap filosofis (bukan sains), dan apa yang benar-benar berubah begitu Dalton masuk ke era bukti kuantitatif</li>
+        <li>Rekap kesalahan umum siswa di seluruh sejarah evolusi model atom</li>
+      </ul>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 2 — Tabel Perbandingan Komprehensif (1/3) ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Tabel Perbandingan (1/3)</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Tabel Perbandingan Komprehensif Evolusi Model Atom (1/3)</h2>
+      <p class="lead">Versi lengkap 5 kolom dari tabel ringkas di halaman utama — kelebihan &amp; kelemahan tiap tokoh ditulis penuh sebagai kalimat penjelas, bukan cuma kata kunci, supaya bisa dibaca berdiri sendiri tanpa perlu buka halaman utama.</p>
+      <table class="ref-table">
+        <thead><tr><th>Tokoh &amp; Tahun</th><th>Konsep Utama</th><th>Eksperimen Kunci</th><th>Kelebihan/Kontribusi</th><th>Kelemahan/Keterbatasan</th></tr></thead>
+        <tbody>
+          <tr><td>Demokritos (±400 SM)</td><td>Materi tersusun dari partikel sangat kecil yang tidak dapat dibagi lagi (atomos).</td><td>Pemikiran filosofis murni, tanpa laboratorium atau alat ukur apa pun.</td><td>Mencetuskan ide dasar konsep atom pertama dalam sejarah peradaban manusia.</td><td>Tidak didukung bukti eksperimen ilmiah sama sekali; dianggap murni gagasan spekulatif, dan sempat ditolak Aristoteles.</td></tr>
+          <tr><td>John Dalton (1803)</td><td>Atom adalah bola pejal tak terbagi. Unsur yang sama memiliki atom identik; senyawa adalah gabungan atom dengan rasio bilangan bulat sederhana.</td><td>Berlandaskan Hukum Kekekalan Massa (Lavoisier) &amp; Hukum Perbandingan Tetap (Proust).</td><td>Meletakkan dasar teori kimia kuantitatif pertama; berhasil menjelaskan hukum rasio stoikiometri, termasuk memprediksi Hukum Perbandingan Berganda.</td><td>Tidak menjelaskan sifat kelistrikan materi; menganggap atom tidak bermassa internal/tidak berstruktur sama sekali.</td></tr>
+          <tr><td>J.J. Thomson (1897)</td><td>Model Roti Kismis: atom berupa bola padat bermuatan positif dengan elektron negatif tersebar merata di dalamnya.</td><td>Eksperimen Tabung Sinar Katode — mengukur rasio muatan terhadap massa elektron (e/m).</td><td>Membuktikan untuk pertama kalinya keberadaan partikel sub-atomik bermuatan negatif (elektron) di dalam atom — meruntuhkan model bola pejal Dalton.</td><td>Gagal menjelaskan di mana muatan positif sebenarnya terkonsentrasi, dan tidak bisa menjelaskan hasil hamburan sinar alfa Rutherford.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 3 — Tabel Perbandingan Komprehensif (2/3) ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Tabel Perbandingan (2/3)</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Tabel Perbandingan Komprehensif Evolusi Model Atom (2/3)</h2>
+      <p class="lead">Lanjutan tabel dari halaman sebelumnya — Millikan (pelengkap kuantitatif Thomson) dan Rutherford (penemu inti atom).</p>
+      <table class="ref-table">
+        <thead><tr><th>Tokoh &amp; Tahun</th><th>Konsep Utama</th><th>Eksperimen Kunci</th><th>Kelebihan/Kontribusi</th><th>Kelemahan/Keterbatasan</th></tr></thead>
+        <tbody>
+          <tr><td>Robert Millikan (1909)</td><td>Penentuan kuantitatif nilai muatan tunggal elektron dan kalkulasi massa elektron.</td><td>Eksperimen Tetes Minyak (Oil Drop Experiment) dengan pemberian muatan lewat radiasi sinar-X.</td><td>Memperoleh nilai muatan presisi satu elektron \(e = -1{,}6 \times 10^{-19}\) C, dan massa elektron \(m = 9{,}11 \times 10^{-28}\) g.</td><td>Fokusnya murni pada pengukuran parameter fisika elektron secara presisi, bukan pada penyusunan gambaran visual tata atom.</td></tr>
+          <tr><td>Ernest Rutherford (1911)</td><td>Model Inti/Tata Surya: pusat atom adalah inti padat bermuatan positif (nukleus), dikelilingi elektron yang bergerak di ruang kosong.</td><td>Penembakan Partikel Alfa (α) pada Lempeng Emas Tipis (dibantu Geiger &amp; Marsden).</td><td>Menemukan keberadaan Inti Atom dan Proton; menjelaskan bahwa sebagian besar volume atom adalah ruang kosong.</td><td>Bertentangan dengan elektrodinamika klasik Maxwell — elektron seharusnya terhempas jatuh ke inti, padahal atom nyatanya stabil.</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Perhatikan hubungan Thomson → Millikan: Millikan tidak menggantikan temuan Thomson, tapi melengkapinya secara kuantitatif — rasio e/m Thomson baru bisa diubah jadi nilai massa elektron yang konkret setelah nilai muatan e dari Millikan tersedia.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 4 — Tabel Perbandingan Komprehensif (3/3) ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Tabel Perbandingan (3/3)</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Tabel Perbandingan Komprehensif Evolusi Model Atom (3/3)</h2>
+      <p class="lead">Dua model terakhir, sekaligus dua model yang paling sering dibandingkan langsung di soal ujian (orbit vs orbital).</p>
+      <table class="ref-table">
+        <thead><tr><th>Tokoh &amp; Tahun</th><th>Konsep Utama</th><th>Eksperimen Kunci</th><th>Kelebihan/Kontribusi</th><th>Kelemahan/Keterbatasan</th></tr></thead>
+        <tbody>
+          <tr><td>Niels Bohr (1913)</td><td>Model Orbit/Kulit Stasioner: elektron mengelilingi inti pada tingkat energi terkuantisasi tanpa meradiasikan energi.</td><td>Spektroskopi Spektrum Garis Atom Hidrogen &amp; Teori Kuantum Max Planck.</td><td>Berhasil menjelaskan kestabilan atom (membantah prediksi keruntuhan Maxwell) dan pola spektrum emisi/absorpsi atom Hidrogen secara akurat.</td><td>Hanya akurat untuk atom/ion berelektron tunggal (\(\ce{H}\), \(\ce{He+}\)); gagal pada atom kompleks berelektron banyak, dan tidak menjelaskan efek Zeeman.</td></tr>
+          <tr><td>Erwin Schrödinger (1926)</td><td>Model Mekanika Kuantum/Awan Elektron: elektron berada dalam orbital (daerah probabilitas ≥90%), bukan lintasan pasti.</td><td>Persamaan Gelombang Schrödinger, didasari Dualisme Gelombang-Partikel de Broglie &amp; Asas Ketidakpastian Heisenberg.</td><td>Model paling akurat yang dipakai sampai sekarang; menjelaskan struktur atom berelektron banyak dan bentuk geometri orbital (s, p, d, f).</td><td>Persamaan matematisnya sangat kompleks; posisi pasti elektron tidak pernah bisa ditentukan, hanya berupa probabilitas.</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Perhatikan pola kelebihan/kelemahan di seluruh tabel tiga halaman ini: tiap "Kelemahan" pada satu baris hampir selalu jadi alasan langsung lahirnya "Konsep Utama" pada baris berikutnya. Itu bukan kebetulan — itulah keseluruhan poin bab ini: evolusi model atom adalah rantai sebab-akibat, bukan daftar nama yang harus dihafal lepas-lepas.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 4 — Lembar Rumus Cepat: Notasi & Persamaan Kuantum ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Lembar Rumus Cepat</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Lembar Rumus Cepat — Notasi &amp; Persamaan Kuantum</h2>
+      <p class="lead">Semua notasi &amp; persamaan inti Bab 2 dalam satu tabel — buat direview cepat sebelum ujian, tanpa perlu scroll ulang tiap section di halaman utama.</p>
+      <table class="ref-table">
+        <thead><tr><th>Konsep</th><th>Rumus/Notasi</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr><td>Rasio Muatan/Massa Elektron (Thomson)</td><td>\(e/m = -1{,}76 \times 10^{8}\) C/g</td><td>Diukur lewat pembelokan sinar katode oleh medan listrik &amp; magnet</td></tr>
+          <tr><td>Muatan Elektron (Millikan)</td><td>\(e = -1{,}602 \times 10^{-19}\) C</td><td>Diukur lewat eksperimen tetes minyak</td></tr>
+          <tr><td>Massa Elektron</td><td>\(m_e = 9{,}109 \times 10^{-28}\) g \(\approx \dfrac{1}{1836} m_{\ce{H}}\)</td><td>Dihitung dari kombinasi e/m Thomson &amp; e Millikan</td></tr>
+          <tr><td>Momentum Sudut Terkuantisasi (Bohr)</td><td>\(mvr = n\dfrac{h}{2\pi}\), \(n = 1,2,3,...\)</td><td>n = bilangan kuantum utama, menandai orbit stasioner yang diizinkan</td></tr>
+          <tr><td>Energi Transisi Elektron (Bohr)</td><td>\(\Delta E = E_2 - E_1 = h\nu\)</td><td>Eksitasi = menyerap foton, de-eksitasi = memancarkan foton</td></tr>
+          <tr><td>Panjang Gelombang de Broglie</td><td>\(\lambda = \dfrac{h}{p}\)</td><td>Dasar dualisme gelombang-partikel elektron</td></tr>
+          <tr><td>Probabilitas Orbital (Schrödinger)</td><td>Daerah dengan peluang \(\geq 90\%\)</td><td>Bukan posisi pasti — beda fundamental dari "orbit" Bohr</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Satu pola yang menyatukan baris ke-4 sampai ke-7: semuanya lahir dari usaha menjelaskan perilaku elektron yang TIDAK bisa dijelaskan fisika klasik — momentum terkuantisasi Bohr menjawab keruntuhan Maxwell, sementara de Broglie &amp; probabilitas orbital Schrödinger menjawab keterbatasan Bohr sendiri pada atom berelektron banyak.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 5 — Latihan Terpandu: Kontribusi Thomson & Millikan ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Latihan Terpandu</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Latihan Terpandu: Kontribusi Thomson &amp; Millikan pada Karakteristik Elektron</h2>
+      <p class="lead">Soal ujian klasik yang minta kamu membedakan dua kontribusi yang sering ketuker karena sama-sama "soal elektron" — padahal masing-masing mengukur besaran yang berbeda.</p>
+      <div class="example-box">
+        <span class="label">Soal &middot; Kontribusi J.J. Thomson &amp; Robert Millikan</span>
+        <p class="setup">Sebutkan kontribusi eksperimen J.J. Thomson dan Robert Millikan dalam menentukan karakteristik elektron!</p>
+        <ol>
+          <li>J.J. Thomson (1897): lewat eksperimen tabung sinar katode, berhasil MEMBUKTIKAN keberadaan elektron sebagai partikel sub-atomik bermuatan negatif, dan mengukur RASIO muatan terhadap massanya: \(e/m = -1{,}76 \times 10^{8}\) C/g. Perhatikan: ini baru rasio, bukan nilai muatan atau massa elektron yang berdiri sendiri.</li>
+          <li>Robert Millikan (1909): lewat eksperimen tetes minyak, berhasil MENGUKUR muatan presisi satu elektron secara berdiri sendiri: \(e = -1{,}602 \times 10^{-19}\) C.</li>
+          <li>Karena rasio e/m Thomson sudah diketahui, begitu nilai e dari Millikan didapat, massa elektron bisa dihitung: \(m_e = \dfrac{e}{(e/m)} = 9{,}11 \times 10^{-28}\) g.</li>
+          <li>Kesimpulan: Thomson menjawab PERTANYAAN KUALITATIF ("apakah elektron ada, dan berapa rasio muatan-massanya"), sedangkan Millikan menjawab PERTANYAAN KUANTITATIF LANJUTAN ("berapa persis nilai muatan &amp; massa satu elektron") — dua eksperimen yang saling melengkapi, bukan saling menggantikan.</li>
+        </ol>
+      </div>
+      <p class="body-text">Ini pola yang berulang di sepanjang bab: satu eksperimen menjawab pertanyaan "apa", eksperimen berikutnya menjawab pertanyaan "berapa persisnya" — sama seperti Rutherford yang menjawab "di mana muatan positif berada" setelah Thomson menjawab "apakah ada partikel bermuatan negatif di dalam atom".</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> menganggap Thomson dan Millikan menemukan hal yang sama, atau menukar siapa yang mengukur rasio e/m dan siapa yang mengukur nilai e secara langsung.<br>
+        <span class="right">✅ Benar:</span> Thomson = rasio e/m (via tabung sinar katode). Millikan = nilai e berdiri sendiri (via tetes minyak) — massa elektron BARU bisa dihitung setelah kedua nilai ini digabung.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 6 — Latihan Terpandu: Hukum Perbandingan Berganda & Teori Dalton ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Latihan Terpandu</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Latihan Terpandu: Hukum Perbandingan Berganda sebagai Bukti Teori Dalton</h2>
+      <p class="lead">Soal analisis konseptual — kenapa satu hukum kimia kuantitatif bisa jadi bukti kuat untuk sebuah model atom, bukan cuma kebetulan angka?</p>
+      <div class="example-box">
+        <span class="label">Soal &middot; Hukum Perbandingan Berganda</span>
+        <p class="setup">Mengapa Hukum Perbandingan Berganda Dalton menjadi salah satu bukti terpenting yang mendukung Teori Atom Dalton?</p>
+        <ol>
+          <li>Hukum Perbandingan Berganda menyatakan: jika dua unsur membentuk lebih dari satu senyawa, maka massa unsur kedua yang bergabung dengan massa unsur pertama yang tetap akan berbanding sebagai angka bulat &amp; sederhana (misal 1:2, bukan 1:2,37).</li>
+          <li>Pola "angka bulat &amp; sederhana" ini HANYA mungkin terjadi kalau unsur-unsur tersusun dari unit-partikel diskrit yang tak terbagi (atom-atom) — bukan materi kontinu yang bisa dibagi ke pecahan berapa pun (seperti cairan homogen).</li>
+          <li>Kalau materi memang kontinu (bisa dibagi tanpa batas), rasio massa antar-senyawa bisa berupa pecahan sembarang, bukan cuma rasio bulat sederhana. Kenyataannya rasio yang teramati selalu bulat &amp; sederhana — pas sesuai prediksi kalau materi tersusun dari atom.</li>
+          <li>Kesimpulan: Hukum Perbandingan Berganda bukan cuma pola matematis yang kebetulan cocok — pola itu SECARA LOGIS mengharuskan keberadaan partikel diskrit (atom), persis seperti yang dipostulatkan Dalton.</li>
+        </ol>
+      </div>
+      <p class="body-text">Ini contoh bagus soal "mengapa", bukan "apa" — ujian sering nanya kenapa sebuah hukum empiris (hasil pengukuran lab) bisa dipakai sebagai bukti teori (model penjelas). Jawabannya selalu: cek dulu, pola macam apa yang HARUS ada kalau teorinya benar, lalu bandingkan dengan pola yang benar-benar teramati di lab.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 7 — Pendalaman: Dari Filsafat Yunani Kuno ke Sains Kuantitatif Dalton ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Pendalaman</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Kenapa Butuh 2.200 Tahun dari Demokritos ke Dalton?</h2>
+      <p class="lead">Gagasan Demokritos benar secara garis besar ("materi tersusun dari partikel terkecil") — tapi butuh lebih dari dua milenium sebelum gagasan itu diterima sebagai sains. Bukan karena idenya salah, tapi karena caranya sampai ke kesimpulan itu yang bermasalah.</p>
+      <p class="body-text">Demokritos &amp; Leukipos sampai pada gagasan atomos murni lewat perdebatan logika — "kalau materi terus dipotong, apakah ada batasnya?" — tanpa satu pun pengukuran, timbangan, atau eksperimen terkontrol. Ini yang membuat Aristoteles, filsuf paling berpengaruh di masa itu, bisa menolaknya begitu saja dengan gagasan tandingan (empat elemen: air, udara, tanah, api) — dan karena besarnya pengaruh Aristoteles di dunia filsafat Barat, gagasan empat elemen inilah yang justru bertahan dominan selama berabad-abad, bukan gagasan atomos.</p>
+      <p class="body-text">Yang berubah di tangan John Dalton (1803) bukan kesimpulannya (atom itu ada), tapi METODENYA. Dalton tidak mengajukan atom lewat logika semata — ia mengajukannya sebagai penjelasan yang PALING MASUK AKAL untuk dua hukum kimia yang sudah diukur berkali-kali di laboratorium: Hukum Kekekalan Massa (massa total zat sebelum &amp; sesudah reaksi kimia selalu sama) dan Hukum Perbandingan Tetap (unsur-unsur dalam satu senyawa murni selalu bergabung dengan perbandingan massa yang tetap, berapa pun asal &amp; jumlah sampelnya). Begitu Dalton bisa MEMPREDIKSI pola baru (Hukum Perbandingan Berganda) dari model atomnya sendiri — dan prediksi itu terbukti benar saat diukur — teori atom pindah status dari "gagasan filosofis yang bisa ditolak logika lain" menjadi "teori ilmiah yang harus diuji lewat eksperimen, bukan debat."</p>
+      <p class="body-text">Pelajaran metodologis ini yang membuat bab ini relevan buat ujian, bukan cuma soal hafalan nama &amp; tahun: kamu akan sering ketemu soal yang minta membedakan MANA yang sekadar hipotesis/gagasan, dan MANA yang sudah jadi teori teruji — kuncinya selalu ada di satu pertanyaan: apakah gagasan itu sudah diuji lewat eksperimen terkontrol &amp; bisa memprediksi hasil baru, atau masih murni logika/pengamatan sepintas?</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 8 — Rekap Kesalahan Umum ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Rekap Kesalahan Umum</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Rekap Kesalahan Umum di Seluruh Bab 2</h2>
+      <p class="lead">Tujuh kesalahan paling sering ditemui siswa SMA di topik sejarah model atom, dirangkum jadi satu halaman referensi cepat.</p>
+      <ol class="ref-list">
+        <li><b>Mengira Demokritos "menemukan" atom lewat eksperimen.</b> Gagasan Demokritos murni filosofis/logika, tanpa laboratorium atau bukti eksperimen sama sekali — beda mendasar dari Dalton yang berlandaskan hukum kimia kuantitatif hasil eksperimen.</li>
+        <li><b>Menyamakan model Thomson dengan model Rutherford.</b> Thomson: muatan positif tersebar merata (roti kismis). Rutherford: muatan positif terpusat di inti (tata surya) — dua gambaran yang dibuktikan saling bertentangan oleh eksperimen lempeng emas.</li>
+        <li><b>Mengira Rutherford menemukan neutron.</b> Rutherford menemukan inti atom &amp; proton (1911); neutron baru ditemukan James Chadwick, 21 tahun kemudian (1932) — bab ini fokus ke enam model utama, bukan ke penemuan partikel Chadwick.</li>
+        <li><b>Menganggap model Bohr berlaku sama akuratnya untuk semua atom.</b> Model Bohr HANYA akurat untuk atom/ion berelektron tunggal (H, \(\ce{He+}\)) — bukan untuk atom berelektron banyak seperti karbon atau oksigen.</li>
+        <li><b>Mengira "orbit" dan "orbital" cuma beda ejaan untuk hal yang sama.</b> Orbit (Bohr) = lintasan 2D pasti. Orbital (Schrödinger) = daerah probabilitas 3D (≥90%), BUKAN lintasan pasti — beda konsep secara fundamental, bukan cuma beda istilah.</li>
+        <li><b>Menjawab "di mana posisi pasti elektron dalam orbital" dengan sebuah titik/lokasi.</b> Ini soal jebakan — jawabannya justru TIDAK ADA posisi pasti, karena itu definisi dasar orbital (probabilitas, bukan kepastian), berdasar Asas Ketidakpastian Heisenberg.</li>
+        <li><b>Menghafal urutan model tanpa tahu alasan pergantiannya.</b> Ujian sering nanya "kenapa model X diganti model Y", bukan cuma "urutkan modelnya" — selalu siapkan alasan kausal tiap pergantian (titik buta model lama → bukti eksperimen baru → model baru).</li>
+      </ol>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<script src="../../public/assets/vendor/katex/katex.min.js"></script>
+<script src="../../public/assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script src="../../public/assets/vendor/katex/contrib/mhchem.min.js"></script>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left:'$$', right:'$$', display:true},
+      {left:'\\[', right:'\\]', display:true},
+      {left:'\\(', right:'\\)', display:false}
+    ],
+    throwOnError:false
+  });
+</script>
+</body>
+</html>
