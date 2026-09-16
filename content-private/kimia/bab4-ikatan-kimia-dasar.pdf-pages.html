@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<!-- Rendered PDF companion content for Bab 4 Kimia (Ikatan Kimia Dasar), built from
+     bab4-ikatan-kimia-dasar.pdf-spec.md on public/assets/pdf-template/page-template.html.
+     This is the actual filled source, rendered once and shared by every student — no
+     per-page watermark markup here on purpose: the real student-identity watermark is
+     drawn live, per viewer, by initPdfViewers() in app.js (.pdf-viewer-watermark),
+     stamped with that viewer's actual session name and timestamp. Baking a placeholder
+     name into the shared image here would just show every student a second, fake
+     watermark underneath the real one. -->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dalton Lab — PDF Bab 4 Kimia</title>
+<link rel="stylesheet" href="../../public/assets/vendor/fonts/pdf-fonts.css">
+<link rel="stylesheet" href="../../public/assets/vendor/katex/katex.min.css">
+<style>
+  @page{ size:210mm 297mm; margin:0; }
+
+  :root{
+    --navy:#0d1b2e;
+    --navy-2:#16304f;
+    --orange:#ee7d31;
+    --orange-dark:#d4631a;
+    --paper:#faf6ee;
+    --card:#ffffff;
+    --slate:#4f6376;
+    --success:#2f9e6a;
+    --danger:#d64545;
+    --accent:#e2447e;
+    --orange-ink:#bb4d0e;
+  }
+  .pdf-page[data-subject="kimia"]{ --accent:#e2447e; }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#fff;font-family:'Literata',serif;}
+
+  .pdf-page{
+    position:relative;
+    width:210mm;
+    height:297mm;
+    padding:26px;
+    background:var(--accent);
+    overflow:hidden;
+    break-after:page;
+    page-break-after:always;
+  }
+  .pdf-page:last-child{break-after:auto;page-break-after:avoid;}
+  .pdf-page .sheet{
+    position:relative;
+    width:100%;
+    height:100%;
+    background:var(--card);
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  .page-head{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 40px 18px;
+    border-bottom:1px solid #eef0f2;
+  }
+  .page-head .brand{display:flex;align-items:center;gap:2px;}
+  .page-head .brand img{height:34px;width:auto;display:block;}
+  .page-head .brand-word{font:600 15px/1 'Fraunces',serif;color:var(--navy);letter-spacing:.01em;}
+  .page-head .brand-word span{color:var(--accent);}
+  .page-head .meta{display:flex;align-items:baseline;gap:8px;}
+  .subject-chip{font:italic 600 14px/1 'Fraunces',serif;color:var(--orange-ink);}
+  .chapter-tag{font:italic 400 13.5px/1 'Literata',serif;color:var(--slate);}
+
+  .page-body{
+    position:relative;
+    z-index:2;
+    flex:1;
+    padding:30px 40px 0;
+    overflow:hidden;
+  }
+
+  h1.page-title{font:700 34px/1.15 'Fraunces',serif;color:var(--navy);margin:0 0 6px;}
+  p.dek{font:italic 400 14.5px/1.4 'Literata',serif;color:var(--orange-ink);margin:0 0 18px;}
+  h2.section-title{font:600 21px/1.25 'Fraunces',serif;color:var(--navy);margin:0 0 10px;}
+  p.lead{font:400 16.5px/1.6 'Literata',serif;color:var(--slate);margin:0 0 18px;max-width:600px;}
+  p.body-text{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 14px;}
+  ul.learn-list{margin:0 0 20px;padding-left:20px;}
+  ul.learn-list li{font:400 16px/1.65 'Literata',serif;color:#22303f;margin-bottom:6px;}
+
+  .page-body.dense h2.section-title{margin-bottom:6px;}
+  .page-body.dense p.lead{margin-bottom:10px;}
+  .page-body.dense p.body-text{margin-bottom:8px;line-height:1.5;}
+  .page-body.dense .callout{padding-top:12px;padding-bottom:12px;margin-bottom:14px;}
+  .page-body.dense .example-box{margin-bottom:10px;padding-top:12px;}
+  .page-body.dense .example-box .label{margin-bottom:6px;}
+  .page-body.dense .example-box li{margin-bottom:4px;font-size:14px;line-height:1.45;}
+  .page-body.dense .formula-box{margin-bottom:16px;padding:14px 2px;}
+  .page-body.dense .ref-table{margin-bottom:12px;}
+  .page-body.dense .ref-table th,.page-body.dense .ref-table td{padding:5px 8px;font-size:12px;}
+
+  .formula-box{border-top:1px solid #e6dfd0;border-bottom:1px solid #e6dfd0;padding:20px 2px;margin:0 0 22px;}
+  .formula-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;display:block;}
+  .formula-box .katex{font-size:1.05em;}
+  .formula-box .var-def{font:400 13.5px/1.55 'Literata',serif;color:var(--slate);margin-top:10px;}
+  .formula-box .var-def b{font-family:'IBM Plex Mono',monospace;font-weight:500;color:#22303f;}
+
+  .example-box{border-top:1px solid #e6dfd0;padding:18px 2px 4px;margin:0 0 22px;}
+  .example-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--navy);margin-bottom:12px;display:block;}
+  .example-box p.setup{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 10px;}
+  .example-box ol{margin:0;padding-left:18px;}
+  .example-box li{font:400 15px/1.6 'Literata',serif;color:#22303f;margin-bottom:8px;}
+
+  .callout{padding:16px 18px;margin:0 0 20px;font:400 14.5px/1.55 'Literata',serif;}
+  .callout.mistake{background:#fbf0ed;}
+  .callout.mistake .label{color:var(--danger);}
+  .callout .label{display:block;font:italic 600 14px/1 'Literata',serif;margin-bottom:7px;}
+  .callout .wrong{color:var(--danger);font-weight:600;}
+  .callout .right{color:var(--success);font-weight:600;}
+
+  .ref-table{width:100%;border-collapse:collapse;margin:0 0 20px;}
+  .ref-table caption{caption-side:top;text-align:left;font:italic 500 13.5px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;}
+  .ref-table th,.ref-table td{
+    text-align:left;
+    padding:7px 10px;
+    font:400 12px/1.4 'Literata',serif;
+    color:#22303f;
+    border-bottom:1px solid #eee7d8;
+    vertical-align:top;
+  }
+  .ref-table thead th{
+    font:600 11px/1.2 'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--slate);
+    border-bottom:1.5px solid var(--navy);
+    padding-bottom:8px;
+  }
+  .ref-table tbody tr:first-child td{padding-top:10px;}
+  .ref-table .katex{font-size:.95em;}
+
+  ol.ref-list{margin:0 0 20px;padding-left:20px;}
+  ol.ref-list li{font:400 13.5px/1.6 'Literata',serif;color:#22303f;margin-bottom:12px;}
+  ol.ref-list li i{color:var(--slate);font-style:italic;}
+
+  .ref-list-2col{columns:2;column-gap:26px;margin:0 0 18px;}
+  .ref-list-2col .item{break-inside:avoid;margin-bottom:11px;}
+  .ref-list-2col .item .num{font:600 11px/1 'IBM Plex Mono',monospace;color:var(--orange-ink);}
+  .ref-list-2col .item .term{font:600 13px/1.3 'Literata',serif;color:var(--navy);display:block;margin:3px 0 2px;}
+  .ref-list-2col .item .gloss{font:400 12px/1.45 'Literata',serif;color:#4a5560;}
+
+  .page-foot{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 40px 22px;
+    border-top:1px solid #eef0f2;
+  }
+  .page-foot .license{font:italic 400 12px/1.4 'Literata',serif;color:#5c6670;max-width:380px;}
+</style>
+</head>
+<body>
+
+<!-- ===== Page 1 — Chapter opener ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 4</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body">
+      <h1 class="page-title">Ikatan Kimia Dasar</h1>
+      <p class="dek">Materi PDF — pelengkap Bab 4</p>
+      <p class="lead">Materi tambahan ini fokus ke dua tabel referensi tata nama ionik yang tidak ada di halaman utama (kation logam transisi &amp; anion poliatomik), tiga latihan soal terpandu tambahan (struktur Lewis \(\ce{CO2}\)/\(\ce{N2}\)/\(\ce{NH4+}\), ikatan koordinasi \(\ce{NH4+}\) dari \(\ce{NH3}\)+\(\ce{H+}\), dan tata nama IUPAC 5 senyawa sekaligus), analisis lengkap penyimpangan oktet untuk \(\ce{NO}\)/\(\ce{NO2}\) dan \(\ce{SF6}\)/\(\ce{XeF4}\), plus lembar rumus cepat &amp; rekap kesalahan umum — pelengkap materi &amp; diagram interaktif di halaman utama, bukan salinannya.</p>
+      <h2 class="section-title">Yang akan kamu pelajari</h2>
+      <ul class="learn-list">
+        <li>Struktur Lewis lengkap untuk \(\ce{CO2}\), \(\ce{N2}\), dan ion \(\ce{NH4+}\) (dengan ikatan kovalen koordinasi) — disebutkan tapi tidak digambar penuh di halaman utama</li>
+        <li>Tabel referensi kation logam transisi paling sering diuji (Fe, Cu, Cr, Mn, Sn, Pb, Ag, Hg) lengkap nama Stock/IUPAC &amp; nama Latin tradisionalnya</li>
+        <li>Tabel referensi anion umum (halida, kalkogenida, oksianion belerang/nitrogen/fosfor/halogen, hidroksida, dan beberapa poliatomik penting)</li>
+        <li>Latihan soal terpandu: metode silang muatan (criss-cross method) untuk 4 senyawa ionik sekaligus</li>
+        <li>Latihan soal terpandu: ikatan kovalen koordinasi \(\ce{NH4+}\) dari reaksi \(\ce{NH3}\) dengan \(\ce{H+}\)</li>
+        <li>Latihan soal terpandu: tata nama IUPAC untuk 5 senyawa sekaligus (ionik &amp; kovalen campur)</li>
+        <li>Analisis lengkap penyimpangan oktet pada \(\ce{NO}\), \(\ce{NO2}\) (elektron ganjil) dan \(\ce{SF6}\), \(\ce{XeF4}\) (oktet diperluas)</li>
+        <li>Lembar rumus cepat &amp; rekap kesalahan umum siswa di tiap sub-topik bab ini</li>
+      </ul>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 2 — Latihan Terpandu: Struktur Lewis CO2, N2 & Ion NH4+ ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 4 &middot; Latihan Terpandu</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Latihan Terpandu: Struktur Lewis \(\ce{CO2}\), \(\ce{N2}\) &amp; Ion \(\ce{NH4+}\)</h2>
+      <p class="lead">Halaman utama menuntaskan \(\ce{CH4}\), \(\ce{H2O}\), dan \(\ce{NH3}\) secara penuh — di sini giliran 3 spesi yang lebih menantang: satu dengan ikatan rangkap dua, satu dengan ikatan rangkap tiga, dan satu ion dengan ikatan kovalen koordinasi.</p>
+      <table class="ref-table">
+        <caption>Struktur Lewis \(\ce{CO2}\), \(\ce{N2}\), dan \(\ce{NH4+}\)</caption>
+        <thead><tr><th>Molekul/Ion</th><th>Total \(e^-\) Valensi</th><th>PEI / PEB</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr><td>Karbon Dioksida \(\ce{CO2}\)</td><td>4 (C) + 2×6 (O) = 16</td><td>4 PEI (2 ikatan rangkap 2), 4 PEB (di O)</td><td>\(\ce{O=C=O}\) — atom C dan kedua O masing-masing dikelilingi 8 \(e^-\) (oktet sempurna)</td></tr>
+          <tr><td>Gas Nitrogen \(\ce{N2}\)</td><td>2×5 (N) = 10</td><td>3 PEI (rangkap 3), 2 PEB (1 di tiap N)</td><td>\(\ce{N#N}\) — kedua atom N berbagi 3 pasang \(e^-\) sehingga masing-masing mencapai 8 \(e^-\)</td></tr>
+          <tr><td>Ion Amonium \(\ce{NH4+}\)</td><td>5 (N) + 4×1 (H) − 1 (muatan) = 8</td><td>3 PEI biasa + 1 PEI koordinasi</td><td>Atom N mendonasikan PEB-nya ke \(\ce{H+}\) membentuk ikatan kovalen koordinasi</td></tr>
+        </tbody>
+      </table>
+      <div class="example-box">
+        <span class="label">Cara Menghitung Total \(e^-\) Valensi Ion \(\ce{NH4+}\)</span>
+        <p class="setup">Kenapa \(\ce{NH4+}\) dihitung 5 + 4×1 − 1, bukan ditambah 1?</p>
+        <ol>
+          <li>Jumlahkan dulu elektron valensi tiap atom netral: N = 5, tiap H = 1 (×4 atom) = 4. Total sementara = 5 + 4 = 9.</li>
+          <li>Karena \(\ce{NH4+}\) adalah KATION (muatan +1), KURANGI 1 elektron dari total (kation berarti kekurangan elektron dibanding atom netralnya): 9 − 1 = 8.</li>
+          <li>Aturan umum: untuk ANION, TAMBAHKAN elektron sejumlah muatannya. Untuk KATION, KURANGI elektron sejumlah muatannya — arahnya gampang tertukar kalau tidak hati-hati.</li>
+        </ol>
+      </div>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> menambahkan elektron untuk ion \(\ce{NH4+}\) karena melihat ada tanda "+" tanpa memperhatikan bahwa tanda ini artinya KATION (kekurangan elektron), bukan ANION.<br>
+        <span class="right">✅ Benar:</span> tanda muatan pada rumus ion (+/−) menunjukkan KELEBIHAN atau KEKURANGAN elektron dibanding jumlah proton — kation (+) berarti KURANGI elektron, anion (−) berarti TAMBAHKAN elektron, saat menghitung total elektron valensi.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 3 — Referensi: Kation Logam Transisi & Anion Umum ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 4 &middot; Referensi Tambahan</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Referensi: Kation Logam Transisi &amp; Anion Umum</h2>
+      <p class="lead">Delapan logam transisi paling sering diuji di SMA, lengkap dengan nama Stock (IUPAC) &amp; nama Latin tradisionalnya — plus daftar anion umum yang paling sering muncul di soal tata nama &amp; rumus kimia.</p>
+      <table class="ref-table">
+        <caption>Kation Logam Transisi Paling Sering Diuji</caption>
+        <thead><tr><th>Unsur</th><th>Kation</th><th>Nama Stock</th><th>Nama Latin</th><th>Contoh Senyawa</th></tr></thead>
+        <tbody>
+          <tr><td>Besi (Fe)</td><td>\(\ce{Fe^2+}\)</td><td>Besi(II)</td><td>Fero (Ferrous)</td><td>\(\ce{FeSO4}\), \(\ce{FeCl2}\)</td></tr>
+          <tr><td>Besi (Fe)</td><td>\(\ce{Fe^3+}\)</td><td>Besi(III)</td><td>Feri (Ferric)</td><td>\(\ce{FeCl3}\), \(\ce{Fe2(SO4)3}\)</td></tr>
+          <tr><td>Tembaga (Cu)</td><td>\(\ce{Cu+}\)</td><td>Tembaga(I)</td><td>Kupro (Cuprous)</td><td>\(\ce{Cu2O}\), \(\ce{CuCl}\)</td></tr>
+          <tr><td>Tembaga (Cu)</td><td>\(\ce{Cu^2+}\)</td><td>Tembaga(II)</td><td>Kupri (Cupric)</td><td>\(\ce{CuSO4}\), \(\ce{CuO}\) (Terusi)</td></tr>
+          <tr><td>Kromium (Cr)</td><td>\(\ce{Cr^3+}\)</td><td>Kromium(III)</td><td>Kromi</td><td>\(\ce{Cr2O3}\), \(\ce{CrCl3}\)</td></tr>
+          <tr><td>Mangan (Mn)</td><td>\(\ce{Mn^2+}\)</td><td>Mangan(II)</td><td>Mangano</td><td>\(\ce{MnSO4}\), \(\ce{MnCl2}\)</td></tr>
+          <tr><td>Mangan (Mn)</td><td>\(\ce{Mn^4+}\)</td><td>Mangan(IV)</td><td>Manganik</td><td>\(\ce{MnO2}\) (Pirolusit)</td></tr>
+          <tr><td>Timah (Sn)*</td><td>\(\ce{Sn^2+}\)</td><td>Timah(II)</td><td>Stano (Stannous)</td><td>\(\ce{SnCl2}\), \(\ce{SnO}\)</td></tr>
+          <tr><td>Timah (Sn)*</td><td>\(\ce{Sn^4+}\)</td><td>Timah(IV)</td><td>Stani (Stannic)</td><td>\(\ce{SnCl4}\), \(\ce{SnO2}\)</td></tr>
+          <tr><td>Timbal (Pb)*</td><td>\(\ce{Pb^2+}\)</td><td>Timbal(II)</td><td>Plumbo (Plumbous)</td><td>\(\ce{Pb(NO3)2}\), \(\ce{PbI2}\)</td></tr>
+          <tr><td>Perak (Ag)</td><td>\(\ce{Ag+}\)</td><td>Perak(I)/Perak</td><td>Argento (Silver)</td><td>\(\ce{AgNO3}\), \(\ce{AgCl}\)</td></tr>
+          <tr><td>Raksa (Hg)</td><td>\(\ce{Hg^2+}\)</td><td>Raksa(II)</td><td>Merkuri (Mercuric)</td><td>\(\ce{HgCl2}\), \(\ce{HgO}\)</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">*Timah (Sn) dan Timbal (Pb) secara kualitatif adalah logam post-transisi blok p, bukan blok d murni — tapi tetap punya kation dengan valensi bervariasi seperti logam transisi, jadi dinamai dengan Sistem Stock yang sama.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 3b — Referensi: Anion Umum ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 4 &middot; Referensi Tambahan</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Referensi: Anion Umum yang Sering Diuji</h2>
+      <p class="lead">Lanjutan tabel referensi tata nama — daftar anion umum yang paling sering muncul di soal rumus kimia &amp; tata nama, dari halida sampai oksianion logam.</p>
+      <table class="ref-table">
+        <caption>Anion Umum yang Sering Diuji</caption>
+        <thead><tr><th>Kategori</th><th>Anion</th><th>Nama</th><th>Contoh Senyawa</th></tr></thead>
+        <tbody>
+          <tr><td>Halida</td><td>\(\ce{F-}\), \(\ce{Cl-}\), \(\ce{Br-}\)</td><td>Fluorida, Klorida, Bromida</td><td>\(\ce{NaF}\), \(\ce{FeCl3}\), \(\ce{AgBr}\)</td></tr>
+          <tr><td>Kalkogenida</td><td>\(\ce{O^2-}\), \(\ce{S^2-}\)</td><td>Oksida, Sulfida</td><td>\(\ce{Fe2O3}\), \(\ce{FeS}\)</td></tr>
+          <tr><td>Oksianion N</td><td>\(\ce{NO3-}\), \(\ce{NO2-}\)</td><td>Nitrat, Nitrit</td><td>\(\ce{KNO3}\), \(\ce{NaNO2}\)</td></tr>
+          <tr><td>Oksianion S</td><td>\(\ce{SO4^2-}\), \(\ce{SO3^2-}\)</td><td>Sulfat, Sulfit</td><td>\(\ce{Na2SO4}\), \(\ce{Na2SO3}\)</td></tr>
+          <tr><td>Oksianion P</td><td>\(\ce{PO4^3-}\)</td><td>Fosfat</td><td>\(\ce{Ca3(PO4)2}\)</td></tr>
+          <tr><td>Oksianion Halogen</td><td>\(\ce{ClO-}\), \(\ce{ClO3-}\)</td><td>Hipoklorit, Klorat</td><td>\(\ce{NaClO}\) (pemutih), \(\ce{KClO3}\)</td></tr>
+          <tr><td>Oksianion Logam</td><td>\(\ce{CrO4^2-}\), \(\ce{Cr2O7^2-}\), \(\ce{MnO4-}\)</td><td>Kromat, Dikromat, Permanganat</td><td>\(\ce{K2CrO4}\), \(\ce{K2Cr2O7}\), \(\ce{KMnO4}\)</td></tr>
+          <tr><td>Karbon</td><td>\(\ce{CO3^2-}\), \(\ce{HCO3-}\)</td><td>Karbonat, Hidrogenkarbonat</td><td>\(\ce{CaCO3}\), \(\ce{NaHCO3}\) (soda kue)</td></tr>
+          <tr><td>Hidroksida</td><td>\(\ce{OH-}\)</td><td>Hidroksida</td><td>\(\ce{NaOH}\), \(\ce{Ca(OH)2}\)</td></tr>
+          <tr><td>Poliatomik (kation)</td><td>\(\ce{NH4+}\)</td><td>Amonium</td><td>\(\ce{NH4Cl}\), \(\ce{(NH4)2SO4}\)</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Pola akhiran yang perlu diinget: anion monoatomik (dari 1 atom) selalu diakhiri "-ida" (klorida, oksida, sulfida). Oksianion (anion yang mengandung oksigen) diakhiri "-at" untuk jumlah O lebih banyak dan "-it" untuk jumlah O lebih sedikit — mis. sulfat (\(\ce{SO4^2-}\), 4 O) vs sulfit (\(\ce{SO3^2-}\), 3 O).</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 4 — Latihan Terpandu: Metode Silang Muatan ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 4 &middot; Latihan Terpandu</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Latihan Terpandu: Metode Silang Muatan (Criss-Cross Method)</h2>
+      <p class="lead">Cara cepat menentukan rumus senyawa ionik dari kation &amp; anionnya — angka muatan salah satu ion "disilangkan" jadi subskrip pasangannya, lalu disederhanakan kalau bisa.</p>
+      <div class="example-box">
+        <span class="label">Metode Silang Muatan untuk 4 Pasangan Ion</span>
+        <p class="setup">Tentukan rumus kimia netral dari pasangan kation-anion berikut menggunakan metode silang muatan, lalu berikan nama IUPAC-nya!</p>
+        <ol>
+          <li>\(\ce{Fe^3+}\) (Besi(III)) + \(\ce{SO4^2-}\) (Sulfat): silangkan angka muatan → 3 jadi subskrip \(\ce{SO4}\), 2 jadi subskrip Fe → \(\ce{Fe2(SO4)3}\) → Besi(III) sulfat.</li>
+          <li>\(\ce{Co^2+}\) (Kobalt(II)) + \(\ce{Cl-}\) (Klorida): silangkan → 2 jadi subskrip Cl, 1 (dari \(\ce{Cl-}\)) jadi subskrip Co, tapi karena Co-nya cuma 1 (tak perlu ditulis) → \(\ce{CoCl2}\) → Kobalt(II) klorida.</li>
+          <li>\(\ce{Ca^2+}\) (Kalsium) + \(\ce{PO4^3-}\) (Fosfat): silangkan → 2 jadi subskrip \(\ce{PO4}\) (dalam kurung karena poliatomik &amp; jumlahnya &gt;1), 3 jadi subskrip Ca → \(\ce{Ca3(PO4)2}\) → Kalsium fosfat.</li>
+          <li>\(\ce{Pb^4+}\) (Timbal(IV)) + \(\ce{O^2-}\) (Oksida): silangkan → 4 jadi subskrip O, 2 jadi subskrip Pb, lalu SEDERHANAKAN rasio 4:2 menjadi 2:1 → \(\ce{PbO2}\) → Timbal(IV) oksida.</li>
+        </ol>
+      </div>
+      <p class="body-text">Dua aturan wajib saat memakai metode ini: (1) kalau ion poliatomik butuh subskrip lebih dari 1, WAJIB dikasih tanda kurung — \(\ce{Ca3(PO4)2}\), bukan ditulis tanpa kurung (rumus tanpa kurung ambigu, bisa disalahbaca strukturnya). (2) Setelah disilangkan, SELALU cek apakah rasionya bisa disederhanakan (seperti \(\ce{Pb^4+}\) + \(\ce{O^2-}\) di atas, 4:2 disederhanakan jadi 2:1) — rasio subskrip akhir harus rasio paling sederhana.</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> lupa menyederhanakan rasio subskrip hasil silang muatan (menulis \(\ce{Pb4O2}\) alih-alih \(\ce{PbO2}\)), atau lupa kurung pada ion poliatomik yang subskripnya lebih dari 1.<br>
+        <span class="right">✅ Benar:</span> sederhanakan rasio subskrip ke bentuk paling kecil SEBELUM menuliskan rumus final, dan selalu kurung ion poliatomik yang muncul lebih dari sekali dalam rumus.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 5 — Latihan Terpandu: Ikatan Koordinasi NH4+ & Penamaan 5 Senyawa ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 4 &middot; Latihan Terpandu</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Latihan Terpandu: Ikatan Koordinasi \(\ce{NH4+}\) &amp; Tata Nama 5 Senyawa</h2>
+      <p class="lead">Dua latihan singkat sekaligus — mekanisme lengkap ikatan kovalen koordinasi pada \(\ce{NH4+}\), lalu drill penamaan IUPAC untuk 5 senyawa campuran ionik &amp; kovalen.</p>
+      <div class="example-box">
+        <span class="label">Soal &middot; Ikatan Kovalen Koordinasi pada \(\ce{NH4+}\)</span>
+        <p class="setup">Jelaskan bagaimana ikatan kovalen koordinasi terbentuk pada ion Amonium (\(\ce{NH4+}\)) dari reaksi molekul \(\ce{NH3}\) dengan ion \(\ce{H+}\)!</p>
+        <ol>
+          <li>Molekul \(\ce{NH3}\) memiliki 1 Pasangan Elektron Bebas (PEB) pada atom N (N dikelilingi 8 \(e^-\): 3 PEI + 1 PEB).</li>
+          <li>Ion \(\ce{H+}\) adalah kation hidrogen yang sudah kehilangan satu-satunya elektronnya — tidak punya elektron sama sekali (orbital kosong).</li>
+          <li>Atom N pada \(\ce{NH3}\) mendonasikan PEB-nya untuk dipakai bersama dengan \(\ce{H+}\), tanpa ada elektron yang disumbang dari pihak \(\ce{H+}\).</li>
+          <li>Ikatan N-H yang terbentuk dengan cara ini disebut Ikatan Kovalen Koordinasi (Datif), kadang disimbolkan dengan panah \(\ce{N -> H+}\) untuk menunjukkan arah donor elektronnya.</li>
+        </ol>
+      </div>
+      <p class="body-text">Yang menarik: begitu ikatan koordinasi ini terbentuk, keempat ikatan N-H pada \(\ce{NH4+}\) menjadi identik (sama panjang &amp; sama kekuatan) — tidak bisa dibedakan lagi mana yang "asalnya" ikatan kovalen biasa dan mana yang "asalnya" ikatan koordinasi. Cara terbentuknya beda, tapi hasil akhirnya sama persis.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 5b — Latihan Terpandu: Tata Nama IUPAC 5 Senyawa ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 4 &middot; Latihan Terpandu</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Latihan Terpandu: Tata Nama IUPAC 5 Senyawa Sekaligus</h2>
+      <p class="lead">Drill penamaan gabungan — 5 senyawa campuran ionik &amp; kovalen sekaligus, latihan mengenali jenis senyawa dengan cepat sebelum menentukan aturan penamaan mana yang berlaku.</p>
+      <div class="example-box">
+        <span class="label">Soal &middot; Tata Nama IUPAC 5 Senyawa Sekaligus</span>
+        <p class="setup">Berikan nama IUPAC resmi untuk senyawa-senyawa berikut: (a) \(\ce{FeCl3}\), (b) \(\ce{N2O4}\), (c) \(\ce{Na2SO4}\), (d) \(\ce{PCl5}\), (e) \(\ce{Cu2O}\).</p>
+        <ol>
+          <li>\(\ce{FeCl3}\): Besi adalah logam transisi dengan muatan +3 (\(\ce{Fe^3+}\) menetralkan 3 \(\ce{Cl-}\)) → Besi(III) klorida.</li>
+          <li>\(\ce{N2O4}\): Senyawa kovalen biner (2 atom N + 4 atom O) → Dinitrogen tetraoksida.</li>
+          <li>\(\ce{Na2SO4}\): Senyawa ionik dengan ion poliatomik sulfat → Natrium sulfat.</li>
+          <li>\(\ce{PCl5}\): Senyawa kovalen biner (1 atom P + 5 atom Cl) → Fosforus pentaklorida.</li>
+          <li>\(\ce{Cu2O}\): Tembaga adalah logam transisi dengan muatan +1 (2 \(\ce{Cu+}\) menetralkan 1 \(\ce{O^2-}\)) → Tembaga(I) oksida.</li>
+        </ol>
+      </div>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> langsung memakai awalan Yunani untuk semua senyawa tanpa cek dulu apakah senyawanya ionik (logam+non-logam) atau kovalen biner (non-logam+non-logam) — misalnya menamai \(\ce{FeCl3}\) sebagai "besi triklorida".<br>
+        <span class="right">✅ Benar:</span> cek dulu jenis unsurnya. Logam + non-logam = ionik (Sistem Stock/nama langsung). Non-logam + non-logam = kovalen biner (awalan Yunani). Fe adalah logam, jadi \(\ce{FeCl3}\) memakai Sistem Stock (Besi(III) klorida), bukan awalan Yunani.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 6 — Analisis Lengkap Penyimpangan Oktet: NO, NO2, SF6, XeF4 ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 4 &middot; Latihan Terpandu</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Analisis Lengkap Penyimpangan Oktet: \(\ce{NO}\), \(\ce{NO2}\), \(\ce{SF6}\), \(\ce{XeF4}\)</h2>
+      <p class="lead">Halaman utama menuntaskan \(\ce{BF3}\) (oktet tak lengkap) dan \(\ce{PCl5}\) (oktet diperluas) secara penuh — di sini giliran spesi elektron ganjil (\(\ce{NO}\), \(\ce{NO2}\)) dan satu contoh oktet diperluas lagi (\(\ce{SF6}\), \(\ce{XeF4}\)) yang lebih ekstrem.</p>
+      <div class="example-box">
+        <span class="label">Analisis &middot; Spesi Elektron Ganjil \(\ce{NO}\) &amp; \(\ce{NO2}\)</span>
+        <p class="setup">Kenapa \(\ce{NO}\) dan \(\ce{NO2}\) tidak bisa digambarkan dengan struktur Lewis yang oktet sempurna di semua atomnya?</p>
+        <ol>
+          <li>\(\ce{NO}\): elektron valensi N = 5, O = 6. Total = 11 elektron — jumlah GANJIL, tidak mungkin dibagi habis jadi pasangan-pasangan elektron.</li>
+          <li>Setelah 1 ikatan rangkap dua \(\ce{N=O}\) dibuat (4 elektron) plus PEB di kedua atom, atom N hanya berakhir dikelilingi 7 elektron (bukan 8) — sisa 1 elektron ini jadi elektron tak berpasangan (radikal bebas) di N.</li>
+          <li>\(\ce{NO2}\): elektron valensi N = 5, tiap O = 6 (×2) = 12. Total = 5 + 12 = 17 elektron — juga GANJIL. Molekul ini juga punya 1 elektron tak berpasangan pada atom N pusatnya.</li>
+          <li>Baik \(\ce{NO}\) maupun \(\ce{NO2}\) disebut radikal bebas karena punya elektron tak berpasangan — inilah yang membuat keduanya jauh lebih reaktif dibanding molekul dengan elektron serba berpasangan (mis. mudah bereaksi dengan \(\ce{O2}\) di udara membentuk \(\ce{NO2}\) dari \(\ce{NO}\)).</li>
+        </ol>
+      </div>
+      <div class="example-box">
+        <span class="label">Analisis &middot; Oktet Diperluas \(\ce{SF6}\) &amp; \(\ce{XeF4}\)</span>
+        <p class="setup">Bagaimana atom pusat S dan Xe bisa dikelilingi lebih dari 8 elektron pada \(\ce{SF6}\) dan \(\ce{XeF4}\)?</p>
+        <ol>
+          <li>\(\ce{SF6}\): atom S (elektron valensi 6, Periode 3) mengikat 6 atom F dengan 6 ikatan kovalen tunggal → atom pusat S dikelilingi 12 elektron (6 pasang ikatan).</li>
+          <li>Ini dimungkinkan karena S berada di Periode 3, punya subkulit 3d yang kosong dan bisa dipakai menampung pasangan elektron tambahan — sesuatu yang TIDAK dimiliki unsur Periode 2 seperti O (anggota segolongan S).</li>
+          <li>\(\ce{XeF4}\): atom Xe (gas mulia, tapi Periode 5, punya subkulit d) mengikat 4 atom F dengan 4 ikatan kovalen tunggal, PLUS menyisakan 2 PEB pada atom Xe sendiri → atom pusat Xe dikelilingi total 12 elektron (4 pasang ikatan + 2 PEB).</li>
+          <li>\(\ce{XeF4}\) adalah bukti bahwa "gas mulia tidak pernah bereaksi" bukan aturan mutlak — Xe (gas mulia berat, elektron valensinya relatif longgar terikat) tetap bisa membentuk senyawa dengan unsur sangat elektronegatif seperti F, meski butuh kondisi reaksi khusus di laboratorium (bukan terjadi spontan di alam).</li>
+        </ol>
+      </div>
+      <p class="body-text">Pola pengenal cepat oktet diperluas: kalau atom pusatnya ada di Periode 3 ke atas (P, S, Cl, Xe, dst.) DAN jumlah atom yang diikatnya (atau PEB yang tersisa) membuat total elektron di sekitarnya lebih dari 8, itu oktet diperluas — bukan kesalahan menggambar struktur.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 7 — Lembar Rumus Cepat: Rangkuman Satu Halaman ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 4 &middot; Lembar Rumus Cepat</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Lembar Rumus Cepat — Rangkuman Satu Halaman</h2>
+      <p class="lead">Semua konsep inti Bab 4 dalam satu tabel — buat direview cepat sebelum ujian, tanpa perlu scroll ulang tiap section di halaman utama.</p>
+      <table class="ref-table">
+        <thead><tr><th>Konsep</th><th>Penjelasan &amp; Rumus Utama</th><th>Contoh &amp; Catatan</th></tr></thead>
+        <tbody>
+          <tr><td>Kaidah Duplet &amp; Oktet</td><td>Kestabilan \(e^-\) terluar: Duplet = 2 \(e^-\) (n=1), Oktet = 8 \(e^-\) (\(ns^2np^6\))</td><td>\(\ce{He}\) (2 \(e^-\)), \(\ce{Ne}\) &amp; \(\ce{Ar}\) (8 \(e^-\))</td></tr>
+          <tr><td>Ikatan Ion (Elektrovalen)</td><td>Gaya elektrostatik kation (logam lepas \(e^-\)) &amp; anion (non-logam tangkap \(e^-\))</td><td>\(\ce{NaCl}\), \(\ce{MgBr2}\), \(\ce{Al2O3}\). Sifat: titik leleh tinggi, lelehan/larutan konduktor</td></tr>
+          <tr><td>Ikatan Kovalen</td><td>Pemakaian bersama PEI antar atom non-logam</td><td>Tunggal (\(\ce{H2}\)), Rangkap 2 (\(\ce{O2}\)), Rangkap 3 (\(\ce{N2}\)), Koordinasi (\(\ce{NH4+}\))</td></tr>
+          <tr><td>Penyimpangan Oktet</td><td>1) Tak lengkap (&lt;8 \(e^-\)) 2) Elektron ganjil 3) Diperluas (&gt;8 \(e^-\))</td><td>1) \(\ce{BeCl2}\), \(\ce{BF3}\) 2) \(\ce{NO}\), \(\ce{NO2}\) 3) \(\ce{PCl5}\), \(\ce{SF6}\), \(\ce{XeF4}\)</td></tr>
+          <tr><td>Kepolaran Molekul</td><td>Polar: \(\Delta En &gt; 0{,}4\), asimetris, ada PEB (\(\mu&gt;0\)). Nonpolar: \(\Delta En \approx 0\), simetris, tanpa PEB (\(\mu=0\))</td><td>Polar: \(\ce{H2O}\), \(\ce{NH3}\), \(\ce{HCl}\), \(\ce{HF}\). Nonpolar: \(\ce{CH4}\), \(\ce{CCl4}\), \(\ce{BF3}\), \(\ce{CO2}\)</td></tr>
+          <tr><td>Tata Nama IUPAC</td><td>Ionik: Logam+Non-logam+"-ida" / Angka Romawi Stock. Kovalen: awalan Yunani</td><td>\(\ce{FeCl3}\) = Besi(III) klorida. \(\ce{N2O4}\) = Dinitrogen tetraoksida</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Kalau cuma boleh hafal SATU baris dari tabel ini, hafalkan baris pertama: Kaidah Duplet &amp; Oktet. Semua konsep lain di bab ini — ikatan ion, ikatan kovalen, penyimpangan oktet, bahkan tata nama — sebenarnya cuma konsekuensi dari cara berbeda-beda yang dipakai atom untuk mencapai (atau, pada penyimpangan oktet, mendekati) konfigurasi elektron gas mulia yang stabil.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 7b — Rekap Kesalahan Umum per Sub-Topik ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 4 &middot; Rekap Kesalahan Umum</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Rekap Kesalahan Umum di Seluruh Bab 4</h2>
+      <p class="lead">Lima kesalahan paling sering ditemui siswa SMA di topik ikatan kimia, dirangkum jadi satu halaman referensi cepat sebelum ujian.</p>
+      <ol class="ref-list">
+        <li><b>Struktur dipaksa oktet padahal atom pusatnya memang menyimpang.</b> Cek dulu golongan &amp; periode atom pusat sebelum memaksakan oktet — Be/B (golongan 2A/3A) secara alami tak bisa oktet, sedangkan P/S/Xe (Periode 3+) boleh melebihi oktet.</li>
+        <li><b>Arah penambahan/pengurangan elektron pada ion tertukar.</b> Anion (−) = TAMBAH elektron. Kation (+) = KURANGI elektron — sering tertukar arahnya saat menghitung total elektron valensi ion poliatomik seperti \(\ce{NH4+}\).</li>
+        <li><b>Kepolaran molekul disamakan dengan kepolaran ikatan individualnya.</b> Molekul dengan ikatan polar bisa tetap NONPOLAR total kalau bentuknya simetris (\(\ce{CCl4}\), \(\ce{CO2}\)) — momen dipolnya saling meniadakan secara vektor.</li>
+        <li><b>Awalan Yunani dipakai pada senyawa ionik.</b> Awalan Yunani (mono-, di-, tri-) HANYA untuk senyawa kovalen biner. Senyawa ionik pakai Sistem Stock (angka Romawi) atau nama langsung, tidak pernah awalan Yunani.</li>
+        <li><b>Rumus senyawa ionik disamakan 1:1 tanpa metode silang muatan.</b> Subskrip ditentukan dari perbandingan muatan kation &amp; anion (disilangkan lalu disederhanakan), bukan asumsi 1 kation : 1 anion.</li>
+      </ol>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<script src="../../public/assets/vendor/katex/katex.min.js"></script>
+<script src="../../public/assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script src="../../public/assets/vendor/katex/contrib/mhchem.min.js"></script>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left:'$$', right:'$$', display:true},
+      {left:'\\[', right:'\\]', display:true},
+      {left:'\\(', right:'\\)', display:false}
+    ],
+    throwOnError:false
+  });
+</script>
+</body>
+</html>

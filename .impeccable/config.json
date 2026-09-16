@@ -257,6 +257,33 @@
         ],
         "createdAt": "2026-09-16T05:08:07.743Z",
         "reason": "False positive from scanning the content fragment without the site's real styles.css loaded (section{padding:86px 0} etc. defined globally, not zero). Same pattern already ignored for bab1-hakikat-kimia-hijau-k3lab.html and bab3-struktur-atom-sistem-periodik.html."
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "content-private/kimia/bab4-ikatan-kimia-dasar.html"
+        ],
+        "createdAt": "2026-09-16T11:26:03.896Z",
+        "reason": "Intentional: .pdf-viewer-img ships with no src by design — filled at runtime via authenticated blob + object URL (app.js initPdfViewers/loadPage). Same pattern already ignored for bab1/bab2/bab3 of this subject."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "content-private/kimia/bab4-ikatan-kimia-dasar.html"
+        ],
+        "createdAt": "2026-09-16T11:26:03.927Z",
+        "reason": "False positive from scanning the content fragment without the site's real styles.css loaded (section{padding:86px 0} etc. defined globally, not zero). Same pattern already ignored for bab1/bab2/bab3 of this subject."
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "content-private/kimia/bab4-ikatan-kimia-dasar.pdf-pages.html"
+        ],
+        "createdAt": "2026-09-16T11:26:03.955Z",
+        "reason": "False positive: line-height:1 only appears on single-line short label/UI text (.brand-word, .subject-chip, .chapter-tag, .callout/.formula-box/.example-box .label spans, .ref-table caption, .ref-list-2col .item .num) copied verbatim from the shared page-template CSS block per CHAPTER_CONTENT_GUIDE.md's copy-the-CSS-block-wholesale instruction, identical to bab1/bab2/bab3-struktur-atom-sistem-periodik.pdf-pages.html. Body text uses line-height 1.5-1.6 throughout."
       }
     ]
   }

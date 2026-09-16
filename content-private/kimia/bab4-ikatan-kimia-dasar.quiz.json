@@ -1,0 +1,284 @@
+[
+  {
+    "q": "Atom-atom cenderung berikatan dengan atom lain karena mengejar...",
+    "opts": ["Massa atom yang lebih besar", "Konfigurasi elektron sestabil gas mulia (energi potensial terendah)", "Jumlah proton yang lebih banyak", "Jari-jari atom yang lebih besar"],
+    "correct": 1,
+    "explain": "Atom berikatan supaya mencapai konfigurasi elektron sestabil gas mulia (duplet atau oktet), yaitu keadaan dengan energi potensial paling rendah — bukan soal massa, jumlah proton, atau ukuran atom."
+  },
+  {
+    "q": "Kaidah Duplet berlaku untuk atom-atom kecil seperti H, Li, Be karena kestabilannya dicapai dengan...",
+    "opts": ["8 elektron valensi", "2 elektron valensi pada kulit n=1, meniru \\(\\ce{He}\\)", "6 elektron valensi", "10 elektron valensi"],
+    "correct": 1,
+    "explain": "Kaidah Duplet adalah kestabilan dengan 2 elektron valensi di kulit terluar (n=1), meniru konfigurasi \\(\\ce{_{2}He}\\) (\\(1s^2\\)). Ini khusus untuk atom-atom ringan seperti H, Li, Be — bukan oktet 8 elektron."
+  },
+  {
+    "q": "Konfigurasi elektron \\(\\ce{_{10}Ne}\\) dan \\(\\ce{_{18}Ar}\\) yang menjadi acuan Kaidah Oktet adalah...",
+    "opts": ["\\(ns^1\\)", "\\(ns^2\\,np^6\\)", "\\(ns^2\\,np^4\\)", "\\(1s^2\\)"],
+    "correct": 1,
+    "explain": "Kaidah Oktet mengacu pada 8 elektron valensi di kulit terluar, ditulis \\(ns^2\\,np^6\\) — pola inilah yang dimiliki Ne (2,8) dan Ar (2,8,8) sebagai gas mulia stabil."
+  },
+  {
+    "q": "Lambang Lewis (Lewis Dot Symbol) berguna untuk...",
+    "opts": ["Menghitung massa molekul relatif", "Melacak perpindahan atau pemakaian bersama elektron valensi", "Menentukan titik didih senyawa", "Mengukur jari-jari atom"],
+    "correct": 1,
+    "explain": "Lambang Lewis adalah simbol unsur yang dikelilingi titik-titik mewakili elektron valensi — alat bantu visual untuk melacak elektron mana yang berpindah (ikatan ion) atau dipakai bersama (ikatan kovalen)."
+  },
+  {
+    "q": "Manakah pernyataan yang benar tentang gas mulia (Golongan 8A)?",
+    "opts": ["Sangat reaktif karena kulit terluarnya kosong", "Sangat stabil karena kulit terluarnya sudah terisi penuh elektron", "Selalu membentuk ikatan ion dengan logam", "Hanya stabil dalam bentuk molekul diatomik"],
+    "correct": 1,
+    "explain": "Gas mulia (He, Ne, Ar, Kr, Xe, Rn) sangat stabil dan nyaris tidak bereaksi karena kulit elektron terluarnya sudah terisi penuh (duplet untuk He, oktet untuk yang lain)."
+  },
+  {
+    "q": "Langkah PERTAMA dalam menggambar struktur Lewis suatu molekul/ion adalah...",
+    "opts": ["Menentukan atom pusat", "Menghitung total elektron valensi seluruh atom (disesuaikan dengan muatan jika ion)", "Melengkapi oktet atom luar", "Membuat ikatan rangkap"],
+    "correct": 1,
+    "explain": "Langkah 1 adalah menjumlahkan elektron valensi seluruh atom dalam molekul/ion, ditambah elektron untuk anion atau dikurangi untuk kation sesuai besar muatannya — baru langkah-langkah berikutnya bisa dikerjakan."
+  },
+  {
+    "q": "Dalam menentukan atom pusat suatu struktur Lewis, aturan umumnya adalah...",
+    "opts": ["Atom dengan keelektronegatifan paling tinggi", "Atom H selalu jadi atom pusat", "Atom dengan keelektronegatifan paling rendah (H selalu jadi atom luar)", "Atom dengan jumlah elektron valensi terbanyak"],
+    "correct": 2,
+    "explain": "Atom pusat umumnya adalah atom dengan keelektronegatifan paling rendah di antara atom-atom penyusun molekul, kecuali H yang selalu berada di luar (H hanya bisa membentuk satu ikatan)."
+  },
+  {
+    "q": "Total elektron valensi pada molekul \\(\\ce{CH4}\\) adalah...",
+    "opts": ["4", "6", "8", "10"],
+    "correct": 2,
+    "explain": "Elektron valensi C = 4, tiap H menyumbang 1 elektron × 4 atom H = 4. Total = 4 + 4 = 8 elektron valensi."
+  },
+  {
+    "q": "Pada struktur Lewis \\(\\ce{H2O}\\), atom pusat O dikelilingi oleh...",
+    "opts": ["4 PEI, 0 PEB", "2 PEI, 2 PEB", "3 PEI, 1 PEB", "1 PEI, 3 PEB"],
+    "correct": 1,
+    "explain": "Atom O pada \\(\\ce{H2O}\\) memiliki 2 pasangan elektron ikatan (PEI, dengan 2 atom H) dan 2 pasangan elektron bebas (PEB) — totalnya 8 elektron (oktet)."
+  },
+  {
+    "q": "Pada struktur Lewis \\(\\ce{NH3}\\), jumlah pasangan elektron bebas (PEB) pada atom pusat N adalah...",
+    "opts": ["0", "1", "2", "3"],
+    "correct": 1,
+    "explain": "Atom N pada \\(\\ce{NH3}\\) memiliki 3 PEI (mengikat 3 atom H) dan 1 PEB — total 8 elektron di sekitar N (oktet terpenuhi)."
+  },
+  {
+    "q": "Struktur Lewis \\(\\ce{CO2}\\) memiliki ikatan rangkap dua pada kedua sisi atom C karena...",
+    "opts": ["Atom O tidak bisa membentuk ikatan tunggal", "Setelah ikatan tunggal, atom C pusat belum oktet, sehingga PEB atom O diubah jadi ikatan rangkap", "Molekul \\(\\ce{CO2}\\) adalah ion", "Atom C memiliki 8 elektron valensi"],
+    "correct": 1,
+    "explain": "Setelah kerangka ikatan tunggal O-C-O dibuat, atom pusat C baru dikelilingi 4 elektron (belum oktet). Langkah 4 mengatasi ini dengan mengubah PEB milik tiap atom O jadi ikatan rangkap, sehingga C dan kedua O sama-sama mencapai oktet."
+  },
+  {
+    "q": "Pada ion \\(\\ce{NH4+}\\), ikatan antara atom N dan salah satu atom H terbentuk lewat mekanisme...",
+    "opts": ["Ikatan ion biasa", "Ikatan kovalen koordinasi, di mana N mendonasikan PEB-nya ke \\(\\ce{H+}\\)", "Ikatan logam", "Ikatan hidrogen"],
+    "correct": 1,
+    "explain": "Molekul \\(\\ce{NH3}\\) punya 1 PEB pada N. Saat bereaksi dengan \\(\\ce{H+}\\) (yang tidak punya elektron sama sekali), N mendonasikan PEB-nya untuk dipakai bersama — inilah ikatan kovalen koordinasi (datif), membentuk \\(\\ce{NH4+}\\)."
+  },
+  {
+    "q": "Molekul \\(\\ce{N2}\\) memiliki ikatan rangkap tiga karena setiap atom N...",
+    "opts": ["Hanya punya 3 elektron valensi", "Punya 5 elektron valensi dan butuh berbagi 3 pasang elektron dengan atom N lainnya untuk mencapai oktet", "Adalah gas mulia", "Berikatan ion dengan atom N lainnya"],
+    "correct": 1,
+    "explain": "Tiap atom N punya 5 elektron valensi. Total 10 elektron valensi untuk \\(\\ce{N2}\\) hanya cukup memenuhi oktet kedua atom kalau mereka berbagi 3 pasang elektron sekaligus (ikatan rangkap tiga, \\(\\ce{N#N}\\)), menyisakan 1 PEB di tiap atom."
+  },
+  {
+    "q": "Kategori penyimpangan kaidah oktet pada molekul \\(\\ce{BeCl2}\\) dan \\(\\ce{BF3}\\) disebut...",
+    "opts": ["Oktet Diperluas", "Spesi Elektron Ganjil", "Oktet Tak Lengkap", "Ikatan Koordinasi"],
+    "correct": 2,
+    "explain": "\\(\\ce{BeCl2}\\) (4 elektron di sekitar Be) dan \\(\\ce{BF3}\\) (6 elektron di sekitar B) adalah contoh Oktet Tak Lengkap — atom pusatnya dikelilingi kurang dari 8 elektron valensi karena elektron valensi Be/B sendiri memang sedikit."
+  },
+  {
+    "q": "Molekul \\(\\ce{NO}\\) dan \\(\\ce{NO2}\\) tergolong penyimpangan oktet jenis...",
+    "opts": ["Oktet Tak Lengkap", "Spesi Elektron Ganjil (radikal bebas)", "Oktet Diperluas", "Tidak ada penyimpangan"],
+    "correct": 1,
+    "explain": "\\(\\ce{NO}\\) (11 elektron valensi total) dan \\(\\ce{NO2}\\) (17 elektron valensi total) punya jumlah elektron valensi ganjil, sehingga selalu ada 1 elektron tak berpasangan — dikenal sebagai spesi elektron ganjil atau radikal bebas."
+  },
+  {
+    "q": "\\(\\ce{PCl5}\\) dan \\(\\ce{SF6}\\) bisa melanggar kaidah oktet dengan mengelilingi atom pusatnya lebih dari 8 elektron karena...",
+    "opts": ["Atom pusatnya berada di Periode 3 ke atas dan punya subkulit d kosong yang bisa dipakai", "Atom pusatnya adalah gas mulia", "Molekulnya bermuatan negatif", "Jumlah atom Cl/F-nya kurang dari 4"],
+    "correct": 0,
+    "explain": "Oktet Diperluas hanya mungkin terjadi pada atom pusat di Periode 3 atau lebih (seperti P dan S), karena unsur-unsur ini punya subkulit d kosong yang bisa menampung pasangan elektron tambahan — atom Periode 2 (seperti C, N, O) tidak punya opsi ini."
+  },
+  {
+    "q": "Pada molekul \\(\\ce{BF3}\\), atom pusat B dikelilingi oleh berapa elektron?",
+    "opts": ["4 elektron", "6 elektron", "8 elektron", "10 elektron"],
+    "correct": 1,
+    "explain": "Atom B (3 elektron valensi) membentuk 3 ikatan kovalen tunggal dengan 3 atom F, sehingga hanya dikelilingi 6 elektron (3 pasang ikatan) — Oktet Tak Lengkap."
+  },
+  {
+    "q": "Pada molekul \\(\\ce{PCl5}\\), atom pusat P dikelilingi oleh berapa elektron?",
+    "opts": ["6 elektron", "8 elektron", "10 elektron", "12 elektron"],
+    "correct": 2,
+    "explain": "Atom P (5 elektron valensi) membentuk 5 ikatan kovalen tunggal dengan 5 atom Cl, sehingga dikelilingi 10 elektron (5 pasang ikatan) — Oktet Diperluas."
+  },
+  {
+    "q": "Manakah pasangan molekul berikut yang SAMA-SAMA tergolong Oktet Diperluas?",
+    "opts": ["\\(\\ce{BeCl2}\\) dan \\(\\ce{BF3}\\)", "\\(\\ce{NO}\\) dan \\(\\ce{NO2}\\)", "\\(\\ce{SF6}\\) dan \\(\\ce{XeF4}\\)", "\\(\\ce{CH4}\\) dan \\(\\ce{H2O}\\)"],
+    "correct": 2,
+    "explain": "\\(\\ce{SF6}\\) (12 elektron di sekitar S) dan \\(\\ce{XeF4}\\) (12 elektron di sekitar Xe) sama-sama Oktet Diperluas, memanfaatkan subkulit d kosong pada atom pusat Periode 3+."
+  },
+  {
+    "q": "Ikatan Ion terjadi lewat gaya tarik-menarik elektrostatik antara...",
+    "opts": ["Dua atom non-logam yang berbagi elektron", "Kation dan anion hasil serah-terima elektron", "Dua atom logam", "Proton dan neutron dalam satu inti"],
+    "correct": 1,
+    "explain": "Ikatan ion terbentuk dari gaya elektrostatik antara kation (bermuatan positif, umumnya logam yang melepas elektron) dan anion (bermuatan negatif, umumnya non-logam yang menangkap elektron)."
+  },
+  {
+    "q": "Pada pembentukan \\(\\ce{NaCl}\\), atom Natrium (\\(\\ce{_{11}Na}\\) = 2, 8, 1) berubah menjadi ion \\(\\ce{Na+}\\) dengan cara...",
+    "opts": ["Menangkap 1 elektron", "Melepas 1 elektron valensi, meniru konfigurasi \\(\\ce{Ne}\\)", "Melepas 2 elektron", "Menangkap 7 elektron"],
+    "correct": 1,
+    "explain": "Na (2,8,1) melepas 1 elektron valensinya agar konfigurasinya jadi (2,8), sama seperti gas mulia Ne — inilah yang membuatnya jadi kation \\(\\ce{Na+}\\)."
+  },
+  {
+    "q": "Atom Klorin (\\(\\ce{_{17}Cl}\\) = 2, 8, 7) berubah menjadi ion \\(\\ce{Cl-}\\) dengan cara...",
+    "opts": ["Melepas 1 elektron", "Menangkap 1 elektron, meniru konfigurasi \\(\\ce{Ar}\\)", "Melepas 7 elektron", "Menangkap 7 elektron"],
+    "correct": 1,
+    "explain": "Cl (2,8,7) hanya butuh menangkap 1 elektron untuk mencapai (2,8,8), sama seperti gas mulia Ar — proses ini yang membuatnya jadi anion \\(\\ce{Cl-}\\)."
+  },
+  {
+    "q": "Senyawa ionik seperti \\(\\ce{NaCl}\\) memiliki titik leleh & titik didih yang tinggi karena...",
+    "opts": ["Ikatan kovalennya sangat lemah", "Dibutuhkan energi besar untuk memutus ikatan elektrostatik yang kuat dalam kisi kristal", "Molekulnya sangat ringan", "Strukturnya berbentuk gas pada suhu ruang"],
+    "correct": 1,
+    "explain": "Ion-ion dalam kisi kristal ionik terikat sangat kuat oleh gaya elektrostatik ke segala arah, sehingga butuh energi (panas) yang besar untuk memisahkannya — inilah yang membuat titik leleh/didih senyawa ionik cenderung tinggi."
+  },
+  {
+    "q": "Kenapa senyawa ionik padat TIDAK menghantarkan listrik, tapi lelehan/larutannya menghantarkan listrik dengan baik?",
+    "opts": ["Karena padatan tidak punya ion sama sekali", "Karena pada padatan, ion-ion terikat kaku di kisi kristal sehingga tidak bisa bergerak bebas; pada lelehan/larutan, ion bebas bergerak", "Karena lelehan senyawa ionik berubah jadi kovalen", "Karena padatan ionik selalu berwarna"],
+    "correct": 1,
+    "explain": "Konduktivitas listrik butuh muatan yang bisa bergerak bebas. Pada padatan ionik, ion-ionnya terkunci rapat dalam kisi kristal (tidak bisa bergerak) sehingga jadi isolator; begitu dilelehkan atau dilarutkan, ion-ionnya bebas bergerak dan jadi konduktor sangat baik."
+  },
+  {
+    "q": "Sifat \"keras tapi rapuh\" (brittle) pada senyawa ionik disebabkan oleh...",
+    "opts": ["Ikatan kovalen yang lemah", "Tekanan mekanis menggeser ion sejenis sampai saling tolak dan kristalnya pecah", "Struktur molekulnya yang lentur", "Titik lelehnya yang rendah"],
+    "correct": 1,
+    "explain": "Saat kristal ionik ditekan/dipukul, lapisan ion bisa bergeser sedikit sehingga ion-ion bermuatan sejenis (misalnya kation bertemu kation) jadi saling berdekatan dan tolak-menolak kuat — inilah yang membuat kristal ionik pecah/rapuh meski keras."
+  },
+  {
+    "q": "Atom Magnesium (\\(\\ce{_{12}Mg}\\) = 2, 8, 2) dan Fluorin (\\(\\ce{_{9}F}\\) = 2, 7) membentuk senyawa ionik dengan rumus...",
+    "opts": ["\\(\\ce{MgF}\\)", "\\(\\ce{MgF2}\\)", "\\(\\ce{Mg2F}\\)", "\\(\\ce{Mg2F3}\\)"],
+    "correct": 1,
+    "explain": "Mg melepas 2 elektron jadi \\(\\ce{Mg^2+}\\), sedangkan tiap F hanya menangkap 1 elektron jadi \\(\\ce{F-}\\). Supaya netral, dibutuhkan 2 ion \\(\\ce{F-}\\) untuk menyeimbangkan 1 ion \\(\\ce{Mg^2+}\\): \\(\\ce{Mg^2+ + 2F- -> MgF2}\\)."
+  },
+  {
+    "q": "Kesalahan umum siswa saat menentukan rumus senyawa ionik adalah...",
+    "opts": ["Menyamakan jumlah kation dan anion 1:1 tanpa memperhitungkan besar muatannya", "Menggunakan awalan Yunani", "Menuliskan simbol unsur dengan benar", "Menghitung elektron valensi terlalu banyak"],
+    "correct": 0,
+    "explain": "Rumus senyawa ionik ditentukan dari total muatan positif kation yang harus sama dengan total muatan negatif anion (metode silang muatan), bukan asal disamakan jumlah ion 1 banding 1."
+  },
+  {
+    "q": "Ikatan Kovalen terjadi lewat...",
+    "opts": ["Serah-terima elektron penuh antara logam dan non-logam", "Pemakaian bersama pasangan elektron ikatan (PEI) antar atom non-logam", "Gaya tarik antar inti atom logam", "Perpindahan proton antar atom"],
+    "correct": 1,
+    "explain": "Ikatan kovalen terbentuk dari pemakaian bersama pasangan elektron ikatan (PEI) antara atom-atom non-logam — berbeda dari ikatan ion yang serah-terima elektron secara penuh."
+  },
+  {
+    "q": "Ikatan pada molekul \\(\\ce{O2}\\) (\\(\\ce{O=O}\\)) tergolong ikatan kovalen...",
+    "opts": ["Tunggal", "Rangkap dua", "Rangkap tiga", "Koordinasi"],
+    "correct": 1,
+    "explain": "\\(\\ce{O2}\\) memakai 2 pasang PEI (4 elektron) antar kedua atom O, sehingga tergolong ikatan kovalen rangkap dua, ditulis \\(\\ce{O=O}\\)."
+  },
+  {
+    "q": "Pada ikatan kovalen koordinasi (datif), ciri khasnya adalah...",
+    "opts": ["Kedua atom sama-sama menyumbang 1 elektron", "PEI berasal dari satu atom donor saja (punya PEB), atom penerima menyediakan orbital kosong", "Kedua atom saling melepas elektron", "Ikatan ini hanya terjadi antar dua atom logam"],
+    "correct": 1,
+    "explain": "Pada ikatan koordinasi, pasangan elektron ikatan (PEI) berasal sepenuhnya dari satu atom (donor, yang punya PEB) — atom penerima tidak menyumbang elektron sama sekali, hanya menyediakan orbital kosong. Contoh: \\(\\ce{NH4+}\\), \\(\\ce{H3O+}\\), \\(\\ce{SO3}\\)."
+  },
+  {
+    "q": "Suatu ikatan kovalen digolongkan POLAR jika...",
+    "opts": ["Beda keelektronegatifan (\\(\\Delta En\\)) antar atomnya mendekati nol", "Beda keelektronegatifan (\\(\\Delta En\\)) antar atomnya cukup besar (\\(&gt; 0{,}4\\))", "Kedua atom penyusunnya sama jenis", "Distribusi elektronnya simetris sempurna"],
+    "correct": 1,
+    "explain": "Ikatan kovalen polar terjadi kalau beda keelektronegatifan (\\(\\Delta En\\)) kedua atom cukup besar (umumnya \\(&gt; 0{,}4\\)), sehingga elektron ikatan tertarik lebih kuat ke salah satu atom dan memunculkan kutub parsial \\(\\delta^+\\)/\\(\\delta^-\\)."
+  },
+  {
+    "q": "Molekul \\(\\ce{H2O}\\) bersifat POLAR karena...",
+    "opts": ["Bentuknya tetrahedral simetris", "Atom pusat O punya 2 PEB yang membuat distribusi muatan asimetris, menghasilkan momen dipol \\(\\mu &gt; 0\\)", "Tidak ada beda keelektronegatifan antara O dan H", "Molekulnya berbentuk linear sempurna"],
+    "correct": 1,
+    "explain": "Bentuk molekul \\(\\ce{H2O}\\) adalah V (bent) karena 2 PEB di atom O mendorong distribusi muatan jadi asimetris, sehingga momen dipol totalnya tidak nol (\\(\\mu &gt; 0\\)) — molekulnya polar."
+  },
+  {
+    "q": "Molekul \\(\\ce{CCl4}\\) bersifat NONPOLAR meskipun ikatan \\(\\ce{C-Cl}\\) itu sendiri polar, karena...",
+    "opts": ["Atom Cl tidak elektronegatif", "Bentuk molekulnya tetrahedral simetris sehingga keempat momen dipol saling meniadakan secara vektor", "Atom C tidak punya elektron valensi", "Molekulnya sebenarnya berupa ion"],
+    "correct": 1,
+    "explain": "\\(\\ce{CCl4}\\) berbentuk tetrahedral sempurna tanpa PEB pada atom pusat C. Keempat momen dipol ikatan \\(\\ce{C-Cl}\\) individual memang polar, tapi arahnya simetris ke 4 penjuru sehingga saling meniadakan secara vektor — total momen dipol molekul jadi nol (nonpolar)."
+  },
+  {
+    "q": "Manakah kelompok molekul berikut yang SEMUANYA nonpolar?",
+    "opts": ["\\(\\ce{H2O}\\), \\(\\ce{NH3}\\), \\(\\ce{HCl}\\)", "\\(\\ce{CH4}\\), \\(\\ce{CCl4}\\), \\(\\ce{CO2}\\)", "\\(\\ce{HF}\\), \\(\\ce{PCl3}\\), \\(\\ce{H2O}\\)", "\\(\\ce{NH3}\\), \\(\\ce{HF}\\), \\(\\ce{HCl}\\)"],
+    "correct": 1,
+    "explain": "\\(\\ce{CH4}\\), \\(\\ce{CCl4}\\), dan \\(\\ce{CO2}\\) semuanya berbentuk simetris tanpa PEB pada atom pusat, sehingga momen dipolnya nol (nonpolar). Kelompok lainnya berisi molekul-molekul polar seperti \\(\\ce{H2O}\\), \\(\\ce{NH3}\\), \\(\\ce{HCl}\\), \\(\\ce{HF}\\), \\(\\ce{PCl3}\\)."
+  },
+  {
+    "q": "Diagram tumpang-tindih orbital untuk \\(\\ce{H2}\\) menunjukkan tumpang-tindih yang simetris, artinya...",
+    "opts": ["Molekulnya polar", "Molekulnya nonpolar karena kedua atom identik menarik elektron sama kuat", "Molekulnya bermuatan", "Molekulnya adalah senyawa ionik"],
+    "correct": 1,
+    "explain": "Karena \\(\\ce{H2}\\) terdiri dari dua atom identik, keduanya menarik pasangan elektron ikatan dengan kekuatan sama besar (\\(\\Delta En = 0\\)), sehingga tumpang-tindih orbitalnya simetris dan molekulnya nonpolar sempurna."
+  },
+  {
+    "q": "Pada diagram ikatan polar \\(\\ce{H2O}\\), notasi \\(\\delta^-\\) muncul di sisi atom...",
+    "opts": ["H, karena H lebih elektronegatif", "O, karena O lebih elektronegatif dan menarik elektron ikatan lebih kuat", "Tidak ada notasi delta pada molekul ini", "Kedua atom H dan O sama-sama \\(\\delta^-\\)"],
+    "correct": 1,
+    "explain": "O jauh lebih elektronegatif daripada H, sehingga menarik pasangan elektron ikatan lebih kuat ke arahnya — memunculkan kutub parsial negatif (\\(\\delta^-\\)) di O dan kutub parsial positif (\\(\\delta^+\\)) di kedua atom H."
+  },
+  {
+    "q": "Rumus IUPAC yang benar untuk \\(\\ce{NaCl}\\) adalah...",
+    "opts": ["Natrium(I) klorida", "Natrium klorida", "Mononatrium monoklorida", "Natrium klorat"],
+    "correct": 1,
+    "explain": "Na adalah logam golongan utama (1A) yang hanya punya satu jenis muatan (+1), jadi tidak perlu angka Romawi Sistem Stock — cukup [Nama Logam] + [Nama Non-Logam]-ida: Natrium klorida."
+  },
+  {
+    "q": "\\(\\ce{FeCl3}\\) dinamakan \"Besi(III) klorida\" karena...",
+    "opts": ["Ada 3 atom Cl dalam rumusnya secara langsung menentukan nama", "Fe adalah logam transisi yang bisa punya lebih dari satu muatan, dan di sini muatannya +3 (Sistem Stock)", "Awalan Yunani tri- dipakai untuk logam", "Cl selalu bermuatan +3"],
+    "correct": 1,
+    "explain": "Fe adalah logam transisi dengan muatan bervariasi (+2 atau +3). Karena Cl selalu bermuatan -1 dan ada 3 Cl untuk menetralkan Fe, muatan Fe pastilah +3 — dituliskan sebagai angka Romawi dalam kurung (Sistem Stock): Besi(III) klorida."
+  },
+  {
+    "q": "Nama IUPAC untuk \\(\\ce{Cu2O}\\) adalah...",
+    "opts": ["Tembaga(II) oksida", "Tembaga(I) oksida", "Dikuprum oksida", "Tembaga dioksida"],
+    "correct": 1,
+    "explain": "Karena O bermuatan -2 dan ada 2 atom Cu untuk menetralkannya, tiap Cu bermuatan +1 → Tembaga(I) oksida. \\(\\ce{CuO}\\) (1 Cu : 1 O) adalah senyawa berbeda, Tembaga(II) oksida, karena Cu-nya bermuatan +2."
+  },
+  {
+    "q": "Senyawa \\(\\ce{Na2SO4}\\) dinamakan \"Natrium sulfat\" — cara penamaan ini menggunakan pola...",
+    "opts": ["Logam + non-logam + \"-ida\"", "[Nama Kation] + [Nama Ion Poliatomik]", "Awalan Yunani + nama unsur", "Sistem Stock dengan angka Romawi"],
+    "correct": 1,
+    "explain": "\\(\\ce{SO4^2-}\\) adalah ion poliatomik (sulfat), bukan unsur tunggal, jadi namanya dipakai langsung tanpa akhiran \"-ida\": [Nama Kation Natrium] + [Nama Ion Poliatomik Sulfat] = Natrium sulfat."
+  },
+  {
+    "q": "Nama IUPAC untuk senyawa kovalen \\(\\ce{N2O4}\\) adalah...",
+    "opts": ["Nitrogen(IV) oksida", "Dinitrogen tetraoksida", "Nitrogen tetraoksida", "Dinitrogen oksida"],
+    "correct": 1,
+    "explain": "Senyawa kovalen biner dinamai dengan awalan Yunani sesuai jumlah atom: 2 atom N = \"di-\" + nitrogen, 4 atom O = \"tetra-\" + oksida → Dinitrogen tetraoksida."
+  },
+  {
+    "q": "Kenapa \\(\\ce{CO}\\) dinamakan \"karbon monoksida\", BUKAN \"monokarbon monoksida\"?",
+    "opts": ["Karena C selalu punya 1 atom", "Karena awalan \"mono-\" tidak pernah dipakai pada unsur PERTAMA dalam nama senyawa kovalen biner", "Karena O tidak butuh awalan", "Karena C adalah logam"],
+    "correct": 1,
+    "explain": "Aturan penamaan kovalen biner: awalan \"mono-\" dihilangkan khusus untuk unsur pertama (meski jumlahnya 1), tapi tetap dipakai untuk unsur kedua jika jumlahnya 1 — makanya \\(\\ce{CO}\\) = \"karbon monoksida\", bukan \"karbon oksida\" atau \"monokarbon monoksida\"."
+  },
+  {
+    "q": "Nama IUPAC untuk \\(\\ce{PCl5}\\) adalah...",
+    "opts": ["Fosforus(V) klorida", "Fosforus pentaklorida", "Pentafosforus klorida", "Fosforus klorida"],
+    "correct": 1,
+    "explain": "\\(\\ce{PCl5}\\) adalah senyawa kovalen biner (non-logam + non-logam): 1 atom P (tanpa awalan \"mono-\" karena unsur pertama) + 5 atom Cl (\"penta-\") → Fosforus pentaklorida."
+  },
+  {
+    "q": "Kesalahan umum yang sering terjadi dalam tata nama adalah...",
+    "opts": ["Memakai Sistem Stock untuk logam transisi", "Memakai awalan Yunani (mono-, di-, tri-) pada senyawa IONIK, padahal awalan ini hanya untuk senyawa kovalen biner", "Menggunakan akhiran \"-ida\" untuk anion monoatomik", "Menyusun rumus ion poliatomik dengan tanda kurung"],
+    "correct": 1,
+    "explain": "Awalan Yunani (mono-, di-, tri-, dst.) hanya berlaku untuk senyawa kovalen biner antar non-logam. Senyawa ionik memakai Sistem Stock (angka Romawi) untuk logam transisi atau langsung nama unsur untuk logam golongan utama — bukan awalan Yunani."
+  },
+  {
+    "q": "Sebuah molekul memiliki total elektron valensi berjumlah GANJIL. Ini adalah sinyal bahwa molekul tersebut kemungkinan...",
+    "opts": ["Pasti senyawa ionik", "Termasuk kategori spesi elektron ganjil (radikal bebas), bukan salah hitung", "Tidak mungkin ada di alam", "Selalu memenuhi kaidah oktet sempurna"],
+    "correct": 1,
+    "explain": "Molekul netral yang oktetnya penuh selalu punya total elektron valensi genap (karena semua elektron berpasangan). Kalau hasilnya ganjil, itu justru ciri khas spesi elektron ganjil (radikal bebas) seperti \\(\\ce{NO}\\) dan \\(\\ce{NO2}\\), bukan kesalahan hitung."
+  },
+  {
+    "q": "Manakah dari berikut ini yang merupakan contoh ikatan kovalen rangkap tiga?",
+    "opts": ["\\(\\ce{H-H}\\)", "\\(\\ce{O=O}\\)", "\\(\\ce{N#N}\\)", "\\(\\ce{NH4+}\\)"],
+    "correct": 2,
+    "explain": "\\(\\ce{N#N}\\) (gas nitrogen, \\(\\ce{N2}\\)) memakai 3 pasang PEI (6 elektron) — ikatan kovalen rangkap tiga. \\(\\ce{H-H}\\) tunggal, \\(\\ce{O=O}\\) rangkap dua, dan \\(\\ce{NH4+}\\) melibatkan ikatan koordinasi, bukan rangkap tiga."
+  },
+  {
+    "q": "Pada penamaan senyawa ionik dengan logam transisi, angka Romawi dalam kurung menunjukkan...",
+    "opts": ["Jumlah atom logam dalam rumus", "Besar muatan (valensi) kation logam tersebut", "Jumlah elektron valensi non-logamnya", "Nomor periode logam tersebut"],
+    "correct": 1,
+    "explain": "Angka Romawi dalam Sistem Stock menunjukkan besar muatan/valensi kation logam transisi pada senyawa tersebut — dibutuhkan karena logam transisi bisa membentuk lebih dari satu jenis kation (mis. \\(\\ce{Fe^2+}\\) dan \\(\\ce{Fe^3+}\\))."
+  }
+]

@@ -283,6 +283,7 @@ const subjectsData = {
       {id:'bab1-hakikat-kimia-hijau-k3lab', num:'Bab 1', title:'Hakikat Ilmu Kimia, Kimia Hijau & Keselamatan Laboratorium', desc:'Metode ilmiah, simbol & prosedur K3 lab, hingga 12 prinsip kimia hijau dan ekonomi atom.', ready:true, estMinutes:20, subbabCount:10},
       {id:'bab2-sejarah-model-atom', num:'Bab 2', title:'Sejarah & Evolusi Model Atom', desc:'Dari gagasan Demokritos, bola pejal Dalton, roti kismis Thomson, inti Rutherford, orbit Bohr, hingga awan orbital Schrödinger.', ready:true, estMinutes:18, subbabCount:10},
       {id:'bab3-struktur-atom-sistem-periodik', num:'Bab 3', title:'Struktur Atom & Sistem Periodik Unsur', desc:'Partikel sub-atomik, notasi nuklida, konfigurasi elektron kuantum, hingga tabel periodik dan tren keperiodikan.', ready:true, estMinutes:20, subbabCount:8},
+      {id:'bab4-ikatan-kimia-dasar', num:'Bab 4', title:'Ikatan Kimia Dasar', desc:'Kaidah duplet & oktet, notasi & struktur Lewis, ikatan ion & kovalen, kepolaran molekul, hingga tata nama IUPAC.', ready:true, estMinutes:22, subbabCount:9},
     ]
   },
   fisika: {
