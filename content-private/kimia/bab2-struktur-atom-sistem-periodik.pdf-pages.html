@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<!-- Rendered PDF companion content for Bab 2 Kimia (Struktur Atom & Sistem Periodik
+     Unsur), built from bab2-struktur-atom-sistem-periodik.pdf-spec.md on
+     public/assets/pdf-template/page-template.html. This is the actual filled source,
+     rendered once and shared by every student — no per-page watermark markup here on
+     purpose: the real student-identity watermark is drawn live, per viewer, by
+     initPdfViewers() in app.js (.pdf-viewer-watermark), stamped with that viewer's
+     actual session name and timestamp. Baking a placeholder name into the shared
+     image here would just show every student a second, fake watermark underneath
+     the real one. -->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dalton Lab — PDF Bab 2 Kimia</title>
+<link rel="stylesheet" href="../../public/assets/vendor/fonts/pdf-fonts.css">
+<link rel="stylesheet" href="../../public/assets/vendor/katex/katex.min.css">
+<style>
+  @page{ size:210mm 297mm; margin:0; }
+
+  :root{
+    --navy:#0d1b2e;
+    --navy-2:#16304f;
+    --orange:#ee7d31;
+    --orange-dark:#d4631a;
+    --paper:#faf6ee;
+    --card:#ffffff;
+    --slate:#4f6376;
+    --success:#2f9e6a;
+    --danger:#d64545;
+    --accent:#e2447e;
+    --orange-ink:#bb4d0e;
+  }
+  .pdf-page[data-subject="kimia"]{ --accent:#e2447e; }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#fff;font-family:'Literata',serif;}
+
+  /* ---- the reusable page shell — print version: no floating-card chrome,
+       the page IS the physical page, so no radius/shadow/desk background ---- */
+  .pdf-page{
+    position:relative;
+    width:210mm;
+    height:297mm;
+    padding:26px;
+    background:var(--accent);
+    overflow:hidden;
+    break-after:page;
+    page-break-after:always;
+  }
+  .pdf-page:last-child{break-after:auto;page-break-after:avoid;}
+  .pdf-page .sheet{
+    position:relative;
+    width:100%;
+    height:100%;
+    background:var(--card);
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  .page-head{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 40px 18px;
+    border-bottom:1px solid #eef0f2;
+  }
+  .page-head .brand{display:flex;align-items:center;gap:2px;}
+  .page-head .brand img{height:34px;width:auto;display:block;}
+  .page-head .brand-word{font:600 15px/1 'Fraunces',serif;color:var(--navy);letter-spacing:.01em;}
+  .page-head .brand-word span{color:var(--accent);}
+  .page-head .meta{display:flex;align-items:baseline;gap:8px;}
+  .subject-chip{font:italic 600 14px/1 'Fraunces',serif;color:var(--orange-ink);}
+  .chapter-tag{font:italic 400 13.5px/1 'Literata',serif;color:var(--slate);}
+
+  .page-body{
+    position:relative;
+    z-index:2;
+    flex:1;
+    padding:30px 40px 0;
+    overflow:hidden;
+  }
+
+  h1.page-title{font:700 34px/1.15 'Fraunces',serif;color:var(--navy);margin:0 0 6px;}
+  p.dek{font:italic 400 14.5px/1.4 'Literata',serif;color:var(--orange-ink);margin:0 0 18px;}
+  h2.section-title{font:600 21px/1.25 'Fraunces',serif;color:var(--navy);margin:0 0 10px;}
+  p.lead{font:400 16.5px/1.6 'Literata',serif;color:var(--slate);margin:0 0 18px;max-width:600px;}
+  p.body-text{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 14px;}
+  ul.learn-list{margin:0 0 20px;padding-left:20px;}
+  ul.learn-list li{font:400 16px/1.65 'Literata',serif;color:#22303f;margin-bottom:6px;}
+
+  /* .dense — page-body modifier for pages whose text volume needs slightly
+     tighter spacing to fit one page at the standard font size (see
+     content-private/biologi/bab1-sel.pdf-pages.html Page 2 for the same pattern). */
+  .page-body.dense h2.section-title{margin-bottom:6px;}
+  .page-body.dense p.lead{margin-bottom:10px;}
+  .page-body.dense p.body-text{margin-bottom:8px;line-height:1.5;}
+  .page-body.dense .callout{padding-top:12px;padding-bottom:12px;margin-bottom:14px;}
+  .page-body.dense .example-box{margin-bottom:10px;padding-top:12px;}
+  .page-body.dense .example-box .label{margin-bottom:6px;}
+  .page-body.dense .example-box li{margin-bottom:4px;font-size:14px;line-height:1.45;}
+  .page-body.dense .formula-box{margin-bottom:16px;padding:14px 2px;}
+  .page-body.dense .ref-table{margin-bottom:12px;}
+  .page-body.dense .ref-table th,.page-body.dense .ref-table td{padding:5px 8px;font-size:12px;}
+
+  .formula-box{border-top:1px solid #e6dfd0;border-bottom:1px solid #e6dfd0;padding:20px 2px;margin:0 0 22px;}
+  .formula-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;display:block;}
+  .formula-box .katex{font-size:1.05em;}
+  .formula-box .var-def{font:400 13.5px/1.55 'Literata',serif;color:var(--slate);margin-top:10px;}
+  .formula-box .var-def b{font-family:'IBM Plex Mono',monospace;font-weight:500;color:#22303f;}
+
+  .example-box{border-top:1px solid #e6dfd0;padding:18px 2px 4px;margin:0 0 22px;}
+  .example-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--navy);margin-bottom:12px;display:block;}
+  .example-box p.setup{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 10px;}
+  .example-box ol{margin:0;padding-left:18px;}
+  .example-box li{font:400 15px/1.6 'Literata',serif;color:#22303f;margin-bottom:8px;}
+
+  .callout{padding:16px 18px;margin:0 0 20px;font:400 14.5px/1.55 'Literata',serif;}
+  .callout.mistake{background:#fbf0ed;}
+  .callout.mistake .label{color:var(--danger);}
+  .callout .label{display:block;font:italic 600 14px/1 'Literata',serif;margin-bottom:7px;}
+  .callout .wrong{color:var(--danger);font-weight:600;}
+  .callout .right{color:var(--success);font-weight:600;}
+
+  .ref-table{width:100%;border-collapse:collapse;margin:0 0 20px;}
+  .ref-table caption{caption-side:top;text-align:left;font:italic 500 13.5px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;}
+  .ref-table th,.ref-table td{
+    text-align:left;
+    padding:7px 10px;
+    font:400 12px/1.4 'Literata',serif;
+    color:#22303f;
+    border-bottom:1px solid #eee7d8;
+    vertical-align:top;
+  }
+  .ref-table thead th{
+    font:600 11px/1.2 'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--slate);
+    border-bottom:1.5px solid var(--navy);
+    padding-bottom:8px;
+  }
+  .ref-table tbody tr:first-child td{padding-top:10px;}
+  .ref-table .katex{font-size:.95em;}
+
+  ol.ref-list{margin:0 0 20px;padding-left:20px;}
+  ol.ref-list li{font:400 13.5px/1.6 'Literata',serif;color:#22303f;margin-bottom:12px;}
+  ol.ref-list li i{color:var(--slate);font-style:italic;}
+
+  .ref-list-2col{columns:2;column-gap:26px;margin:0 0 18px;}
+  .ref-list-2col .item{break-inside:avoid;margin-bottom:11px;}
+  .ref-list-2col .item .num{font:600 11px/1 'IBM Plex Mono',monospace;color:var(--orange-ink);}
+  .ref-list-2col .item .term{font:600 13px/1.3 'Literata',serif;color:var(--navy);display:block;margin:3px 0 2px;}
+  .ref-list-2col .item .gloss{font:400 12px/1.45 'Literata',serif;color:#4a5560;}
+
+  .page-foot{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 40px 22px;
+    border-top:1px solid #eef0f2;
+  }
+  .page-foot .license{font:italic 400 12px/1.4 'Literata',serif;color:#5c6670;max-width:380px;}
+</style>
+</head>
+<body>
+
+<!-- ===== Page 1 — Chapter opener ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body">
+      <h1 class="page-title">Struktur Atom &amp; Sistem Periodik Unsur</h1>
+      <p class="dek">Materi PDF — pelengkap Bab 2</p>
+      <p class="lead">Materi tambahan ini fokus ke lembar rumus cepat rangkuman seluruh bab, dua tabel referensi yang tidak ada di halaman utama (bentuk orbital &amp; nama khusus golongan), dua latihan soal terpandu tambahan (bilangan kuantum &amp; klasifikasi 6 spesi sekaligus), latihan konfigurasi elektron unsur transisi, plus rekap kesalahan umum di tiap sub-topik — pelengkap materi &amp; diagram interaktif di halaman utama, bukan salinannya.</p>
+      <h2 class="section-title">Yang akan kamu pelajari</h2>
+      <ul class="learn-list">
+        <li>Lembar rumus cepat satu halaman untuk seluruh Bab 2 — notasi nuklida, aturan ion, isotop/isoton/isobar/isoelektron, kapasitas subkulit, urutan Aufbau</li>
+        <li>Tabel lengkap bentuk &amp; jumlah orbital tiap subkulit (s, p, d, f)</li>
+        <li>Tabel lengkap nama khusus golongan (Alkali, Alkali Tanah, Halogen, Gas Mulia) dengan konfigurasi valensi dan sifat utama masing-masing</li>
+        <li>Latihan soal terpandu tambahan: klasifikasi isotop/isoton/isobar/isoelektron untuk 6 spesi sekaligus</li>
+        <li>Latihan soal terpandu tambahan: menentukan 4 bilangan kuantum (n, l, m, s) elektron terakhir unsur Klorin (₁₇Cl)</li>
+        <li>Latihan soal terpandu tambahan: konfigurasi elektron &amp; golongan/periode unsur transisi (₂₆Fe) secara lengkap</li>
+        <li>Rekap kesalahan umum siswa di tiap sub-topik bab ini</li>
+      </ul>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 2 — Lembar Rumus Cepat ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Lembar Rumus Cepat</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Lembar Rumus Cepat — Rangkuman Satu Halaman</h2>
+      <p class="lead">Semua rumus &amp; notasi inti Bab 2 dalam satu tabel — buat direview cepat sebelum ujian, tanpa perlu scroll ulang tiap section di halaman utama.</p>
+      <table class="ref-table">
+        <thead><tr><th>Konsep</th><th>Rumus/Notasi</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr><td>Notasi Nuklida</td><td>\(^{A}_{Z}X\)</td><td>Z = Nomor Atom (jumlah proton), A = Nomor Massa (proton + neutron)</td></tr>
+          <tr><td>Jumlah Neutron</td><td>\(N = A - Z\)</td><td>Selisih nomor massa dikurangi nomor atom</td></tr>
+          <tr><td>Aturan Atom Netral</td><td>\(p^+ = e^- = Z\)</td><td>Dalam atom netral, proton dan elektron jumlahnya sama</td></tr>
+          <tr><td>Muatan Ion</td><td>\(e^- = Z - (\text{muatan})\)</td><td>Kation (X<sup>n+</sup>): melepas n elektron. Anion (X<sup>n−</sup>): menangkap n elektron</td></tr>
+          <tr><td>Isotop/Isoton/Isobar/Isoelektron</td><td>Isotop: Z sama &middot; Isoton: N sama &middot; Isobar: A sama &middot; Isoelektron: e⁻ sama</td><td>Trik hafalan: Isotop (proton sama), Isoton (neutron sama), Isobar (massa sama)</td></tr>
+          <tr><td>Kapasitas Subkulit</td><td>s=2e⁻, p=6e⁻, d=10e⁻, f=14e⁻</td><td>Jumlah orbital dikali 2 (tiap orbital maks 2 elektron)</td></tr>
+          <tr><td>Urutan Aufbau</td><td>1s→2s→2p→3s→3p→4s→3d→4p→5s→4d...</td><td>Pengisian elektron dari tingkat energi terendah ke tertinggi</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Kalau cuma boleh hafal SATU baris dari tabel ini, hafalkan baris pertama: notasi nuklida ᴬZX. Hampir semua baris lain (jumlah neutron, aturan ion, isotop/isoton/isobar) diturunkan langsung dari Z dan A pada notasi ini — begitu ᴬZX dikuasai, sisanya tinggal aritmatika sederhana (pengurangan/penjumlahan).</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 3 — Referensi: Bentuk Orbital & Nama Khusus Golongan ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Referensi Tambahan</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Referensi: Bentuk Orbital &amp; Nama Khusus Golongan</h2>
+      <p class="lead">Dua tabel yang tidak ditampilkan penuh di halaman utama — bentuk geometris tiap subkulit, dan sifat lengkap 4 golongan bernama khusus yang paling sering diuji.</p>
+      <table class="ref-table">
+        <thead><tr><th>Subkulit</th><th>Jumlah Orbital</th><th>Kapasitas Maks.</th><th>Bentuk Orbital</th></tr></thead>
+        <tbody>
+          <tr><td>s (sharp)</td><td>1 orbital</td><td>2 elektron (s²)</td><td>Bola simetris (spherical)</td></tr>
+          <tr><td>p (principal)</td><td>3 orbital (pₓ, p_y, p_z)</td><td>6 elektron (p⁶)</td><td>Balon terpilin (dumbbell)</td></tr>
+          <tr><td>d (diffuse)</td><td>5 orbital</td><td>10 elektron (d¹⁰)</td><td>Daun semanggi (cloverleaf)</td></tr>
+          <tr><td>f (fundamental)</td><td>7 orbital</td><td>14 elektron (f¹⁴)</td><td>Kompleks multilobus</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Bentuk orbital ini sebenarnya jarang ditanya langsung sebagai "gambar", tapi sering muncul di soal konseptual — misalnya "kenapa subkulit p punya 3 orientasi berbeda (pₓ, p_y, p_z)?" Jawabannya karena bentuk dumbbell-nya bisa mengarah ke 3 sumbu ruang yang saling tegak lurus (x, y, z), makanya kapasitasnya 3 orbital × 2 elektron = 6.</p>
+      <table class="ref-table">
+        <thead><tr><th>Golongan</th><th>Nama Khusus</th><th>Konfigurasi Valensi</th><th>Sifat Utama</th></tr></thead>
+        <tbody>
+          <tr><td>1A</td><td>Alkali (kecuali H)</td><td>ns¹</td><td>Logam sangat reaktif, lunak, membentuk kation +1</td></tr>
+          <tr><td>2A</td><td>Alkali Tanah</td><td>ns²</td><td>Logam reaktif, membentuk kation +2</td></tr>
+          <tr><td>7A</td><td>Halogen</td><td>ns² np⁵</td><td>Non-logam sangat reaktif, membentuk anion −1</td></tr>
+          <tr><td>8A</td><td>Gas Mulia</td><td>ns² np⁶ (He: 1s²)</td><td>Sangat stabil, oktet/duplet penuh, sukar bereaksi</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Pola konfigurasi valensi ke-4 golongan ini gampang dibandingkan berurutan: Alkali (ns¹) hanya butuh MELEPAS 1 elektron untuk stabil, Alkali Tanah (ns²) melepas 2, sedangkan di ujung lain Halogen (ns² np⁵) hanya butuh MENANGKAP 1 elektron untuk stabil, dan Gas Mulia (ns² np⁶) sudah stabil sejak awal. Ini yang menjelaskan kenapa Alkali &amp; Halogen sama-sama "sangat reaktif" meski satu logam satu non-logam — keduanya cuma butuh SATU langkah kecil (lepas/tangkap 1 elektron) buat sampai ke konfigurasi stabil gas mulia terdekat.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 4 — Latihan Terpandu: Klasifikasi 6 Spesi Sekaligus ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Latihan Terpandu</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Latihan Terpandu: Klasifikasi 6 Spesi Sekaligus</h2>
+      <p class="lead">Versi yang lebih lengkap dari contoh di halaman utama — kali ini juga menguji pasangan Isoelektron, yang butuh menghitung jumlah elektron dari muatan ion, bukan cuma dari Z dan A.</p>
+      <div class="example-box">
+        <span class="label">Soal &middot; Klasifikasi Isotop, Isoton, Isobar, Isoelektron</span>
+        <p class="setup">Diberikan 6 spesi: A (¹⁴₆C), B (¹⁴₇N), C (¹⁶₈O), D (¹²₆C), E (₁₁Na⁺), F (₁₀Ne). Kelompokkan pasangan-pasangan yang tergolong Isotop, Isobar, Isoton, dan Isoelektron!</p>
+        <ol>
+          <li>Hitung dulu Z, A, N (=A−Z), dan jumlah e⁻ tiap spesi: A (Z=6,A=14,N=8,e⁻=6), B (Z=7,A=14,N=7,e⁻=7), C (Z=8,A=16,N=8,e⁻=8), D (Z=6,A=12,N=6,e⁻=6), E (Z=11, ion +1 → e⁻=11−1=10), F (Z=10, netral → e⁻=10).</li>
+          <li>Isotop (Z sama): A dan D, sama-sama Z=6.</li>
+          <li>Isobar (A sama): A dan B, sama-sama A=14.</li>
+          <li>Isoton (N sama): A dan C, sama-sama N=8.</li>
+          <li>Isoelektron (e⁻ sama): E dan F, sama-sama 10 elektron — perhatikan E adalah ION (Na⁺, melepas 1 elektron dari 11 jadi 10), sedangkan F adalah atom netral (Ne, 10 elektron sejak awal). Keduanya tetap isoelektron meski satu ion satu atom netral, karena yang dibandingkan cuma jumlah elektron akhirnya.</li>
+        </ol>
+      </div>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> lupa mengurangi/menambah elektron sesuai muatan ion saat mencari pasangan isoelektron, dan malah memakai nomor atom (Z) mentah dari ion tersebut.<br>
+        <span class="right">✅ Benar:</span> untuk ion, jumlah elektron HARUS dihitung dulu dari e⁻ = Z − muatan (bukan dipakai Z-nya langsung) sebelum dibandingkan ke spesi lain — Na⁺ elektronnya 10, bukan 11.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 5 — Latihan Terpandu: 4 Bilangan Kuantum ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Latihan Terpandu</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Latihan Terpandu: Menentukan 4 Bilangan Kuantum</h2>
+      <p class="lead">Soal lanjutan yang sering keluar di ujian — menentukan 4 bilangan kuantum (n, l, m, s) untuk elektron TERAKHIR sebuah unsur, bukan cuma menulis konfigurasi elektronnya saja.</p>
+      <div class="example-box">
+        <span class="label">Soal &middot; 4 Bilangan Kuantum Elektron Terakhir ₁₇Cl</span>
+        <p class="setup">Tentukan keempat bilangan kuantum (n, l, m, s) untuk elektron terakhir dari unsur ₁₇Cl (Klorin)!</p>
+        <ol>
+          <li>Tulis dulu konfigurasi elektron ₁₇Cl: 1s² 2s² 2p⁶ 3s² 3p⁵. Elektron terakhir berada di subkulit 3p⁵ (elektron ke-17).</li>
+          <li>Bilangan kuantum utama (n) = 3 — diambil langsung dari angka di depan subkulit terakhir (3p⁵).</li>
+          <li>Bilangan kuantum azimut (l) = 1 — tiap jenis subkulit punya nilai l tetap: s→l=0, p→l=1, d→l=2, f→l=3. Karena elektron terakhir ada di subkulit p, l = 1.</li>
+          <li>Bilangan kuantum magnetik (m): orbital p punya 3 orientasi dengan m = −1, 0, +1. Mengisi 5 elektron ke 3 orbital p mengikuti Kaidah Hund: isi ↑ dulu di ketiganya (elektron ke-1,2,3 di m=−1,0,+1), baru elektron ke-4 &amp; ke-5 mulai berpasangan (↓) dari orbital paling kiri lagi. Elektron ke-5 (terakhir) jatuh berpasangan di orbital m = 0.</li>
+          <li>Bilangan kuantum spin (s): karena elektron ke-5 ini adalah pasangan kedua di orbital m=0 (elektron pertama di situ sudah ↑), elektron ke-5 arahnya berlawanan → s = −½.</li>
+          <li>Hasil akhir: <b>n = 3, l = 1, m = 0, s = −½</b>.</li>
+        </ol>
+      </div>
+      <p class="body-text">Pola yang perlu diinget: elektron PERTAMA yang masuk ke tiap orbital dalam satu subkulit (mengikuti Kaidah Hund) selalu diberi spin +½ (↑), dan elektron yang jadi PASANGAN kedua di orbital yang sama diberi spin −½ (↓). Untuk tahu orbital mana yang ditempati elektron terakhir, gambar dulu semua orbitalnya sebagai kotak-kotak kosong, isi satu-satu sesuai Hund, baru lihat elektron ke berapa yang jadi elektron terakhir.</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> langsung menyimpulkan m = +1 atau nilai acak lain tanpa benar-benar menggambar pengisian orbital satu per satu sesuai Kaidah Hund.<br>
+        <span class="right">✅ Benar:</span> SELALU gambar diagram kotak orbital (orbital box diagram) dan isi elektronnya satu-satu mengikuti Hund sebelum menjawab bilangan kuantum m dan s — jangan ditebak.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 6 — Latihan Terpandu: Konfigurasi Elektron Unsur Transisi (Fe) ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Latihan Terpandu</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Latihan Terpandu: Konfigurasi Elektron &amp; Golongan Unsur Transisi (Fe)</h2>
+      <p class="lead">Halaman utama sudah menuliskan konfigurasi Fe &amp; bilang golongannya 8B — di sini langkah lengkapnya, dibandingkan langsung dengan cara golongan A dihitung untuk Br.</p>
+      <div class="example-box">
+        <span class="label">Soal &middot; Konfigurasi, Periode &amp; Golongan ₂₆Fe</span>
+        <p class="setup">Tentukan konfigurasi elektron, elektron valensi, Periode, dan Golongan unsur ₂₆Fe (Besi)!</p>
+        <ol>
+          <li>Urutan Aufbau (Z=26): 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶, disingkat [Ar] 4s² 3d⁶.</li>
+          <li>Kulit utama terbesar (n) = 4 → Periode 4 (sama seperti Br, karena keduanya baru mulai mengisi kulit ke-4).</li>
+          <li>Subkulit terakhir yang diisi = 3d (blok d) → unsur transisi, elektron valensi dihitung dari (n−1)dᵃnsᵇ = 3d⁶ 4s² → jumlah = 6+2 = 8.</li>
+          <li>Karena berakhir di blok d dengan jumlah elektron valensi 8 (termasuk rentang 8,9,10), Fe masuk Golongan Transisi <b>8B</b> — BUKAN Golongan 8A, meski jumlahnya sama-sama 8.</li>
+        </ol>
+      </div>
+      <p class="body-text">Perbandingan langsung dengan Br dari halaman utama: keduanya sama-sama Periode 4 (kulit terluar n=4), tapi caranya beda total. Br berakhir di blok p → dihitung dengan rumus golongan utama (nsᵃnpᵇ) → 7A. Fe berakhir di blok d → dihitung dengan rumus golongan transisi ((n−1)dᵃnsᵇ) → 8B. Aturan konversi golongan transisi: jika a+b = 8, 9, atau 10 → golongan 8B; jika a+b = 11 → 1B; jika a+b = 12 → 2B (kasus-kasus khusus di luar pola linear 1B-7B biasa).</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> memakai rumus golongan utama (jumlah elektron di kulit terluar ns+np) untuk unsur blok d, sehingga Fe dikira golongan 2A (cuma menghitung 4s² saja).<br>
+        <span class="right">✅ Benar:</span> begitu subkulit TERAKHIR yang diisi Aufbau adalah d, langsung ganti ke rumus golongan transisi (n−1)dᵃnsᵇ — jangan pernah pakai rumus golongan A untuk unsur blok d.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 7 — Rekap Kesalahan Umum per Sub-Topik ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Rekap Kesalahan Umum</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Rekap Kesalahan Umum di Seluruh Bab 2</h2>
+      <p class="lead">Tujuh kesalahan paling sering ditemui siswa SMA di topik ini, dirangkum jadi satu halaman referensi cepat.</p>
+      <ol class="ref-list">
+        <li><b>Isoton dikira soal proton, bukan neutron.</b> Isoton itu N (neutron) sama, dan unsurnya justru pasti BEDA (kalau protonnya sama, itu Isotop).</li>
+        <li><b>Elektron ion dihitung salah arah.</b> Kation (+) MELEPAS elektron (dikurangi), anion (−) MENANGKAP elektron (ditambah) — sering tertukar arahnya, terutama untuk anion.</li>
+        <li><b>Golongan unsur blok d dihitung pakai rumus golongan A.</b> Unsur blok d (transisi) WAJIB pakai rumus (n−1)dᵃnsᵇ, bukan nsᵃnpᵇ seperti golongan utama.</li>
+        <li><b>Bilangan kuantum m/s ditebak tanpa menggambar diagram orbital.</b> Selalu gambar kotak-kotak orbital dan isi elektron satu-satu sesuai Kaidah Hund dulu, jangan ditebak.</li>
+        <li><b>Jari-jari atom dan energi ionisasi dikira searah dalam satu periode.</b> Keduanya berbanding TERBALIK: makin kecil jari-jarinya, makin besar energi ionisasinya.</li>
+        <li><b>Afinitas elektron dan energi ionisasi dikira konsep yang sama.</b> Energi ionisasi = energi MELEPAS elektron. Afinitas elektron = energi saat MENANGKAP elektron — dua proses yang berlawanan arah, meski sama-sama makin besar ke arah kanan periode.</li>
+        <li><b>Notasi ion ditulis terbalik posisinya.</b> Muatan ion ditulis sebagai superskrip di KANAN ATAS simbol unsur (Fe³⁺, bukan Fe⁺³) — konvensi baku IUPAC selalu angka dulu baru tanda.</li>
+      </ol>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<script src="../../public/assets/vendor/katex/katex.min.js"></script>
+<script src="../../public/assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left:'$$', right:'$$', display:true},
+      {left:'\\[', right:'\\]', display:true},
+      {left:'\\(', right:'\\)', display:false}
+    ],
+    throwOnError:false
+  });
+</script>
+</body>
+</html>
