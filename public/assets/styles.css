@@ -881,7 +881,7 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 .split-big{font-family:'Space Grotesk';font-size:2.1rem;color:var(--orange);font-weight:600;margin:6px 0 12px;}
 .split-card p{font-size:.9rem;color:var(--ink);margin-bottom:14px;}
 .mini-note{font-size:.84rem;color:var(--slate);margin-top:18px;font-style:italic;}
-.role-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.role-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:start;}
 .role-card{
   padding:18px;font-size:.86rem;color:var(--ink);position:relative;padding-top:34px;
 }
