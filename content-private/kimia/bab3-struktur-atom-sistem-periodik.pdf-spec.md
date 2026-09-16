@@ -1,4 +1,4 @@
-# PDF Companion Spec — Bab 2 Kimia: Struktur Atom &amp; Sistem Periodik Unsur
+# PDF Companion Spec — Bab 3 Kimia: Struktur Atom &amp; Sistem Periodik Unsur
 
 Curated content for the PDF companion, built on `public/assets/pdf-template/page-template.html`
 (`.pdf-page[data-subject="kimia"]`). Not an export of the HTML page — per
@@ -17,7 +17,7 @@ definitions wherever a plain-text rendering would be ambiguous or ugly (subscrip
 
 **Sourcing note on the two extra reference tables (Page 6):** the "bentuk orbital" (subkulit
 shapes) table and the "nama khusus golongan" (special golongan names) table below are pulled
-from `bab2-struktur-atom-sistem-periodik-literature-reference-no-images.pdf` — **text/table
+from `bab3-struktur-atom-sistem-periodik-literature-reference-no-images.pdf` — **text/table
 content only**, per the task's explicit instruction. No image from that PDF is used anywhere in
 this chapter (HTML or PDF); all four diagram images used across both the HTML page and this PDF
 companion are sourced exclusively from the primary source PDF's embedded images, already
@@ -28,10 +28,10 @@ extracted to `public/assets/images/kimia/`.
 ## Page 1 — Chapter opener
 
 ```
-chapter-tag: Bab 2
+chapter-tag: Bab 3
 subject-chip: Kimia
 h1.page-title: Struktur Atom & Sistem Periodik Unsur
-p.dek: Materi PDF — pelengkap Bab 2
+p.dek: Materi PDF — pelengkap Bab 3
 p.lead: Materi tambahan ini fokus ke lembar rumus cepat rangkuman seluruh bab, dua tabel
   referensi yang tidak ada di halaman utama (bentuk orbital & nama khusus golongan), dua
   latihan soal terpandu tambahan (bilangan kuantum & klasifikasi 5 spesi sekaligus), plus
@@ -39,7 +39,7 @@ p.lead: Materi tambahan ini fokus ke lembar rumus cepat rangkuman seluruh bab, d
   utama, bukan salinannya.
 h2.section-title: Yang akan kamu pelajari
 ul.learn-list:
-  - Lembar rumus cepat (quick reference sheet) satu halaman untuk seluruh Bab 2 — notasi
+  - Lembar rumus cepat (quick reference sheet) satu halaman untuk seluruh Bab 3 — notasi
     nuklida, aturan ion, isotop/isoton/isobar/isoelektron, kapasitas subkulit, urutan Aufbau
   - Tabel lengkap bentuk & jumlah orbital tiap subkulit (s, p, d, f) — tidak ada di halaman
     utama, cuma disebut kapasitasnya saja di sana
@@ -71,11 +71,11 @@ page, which spreads the same formulas across multiple `.law-strip` boxes per sec
 | Urutan Aufbau | 1s→2s→2p→3s→3p→4s→3d→4p→5s→4d... | Pengisian elektron dari tingkat energi terendah ke tertinggi |
 
 ```
-chapter-tag: Bab 2 · Lembar Rumus Cepat
+chapter-tag: Bab 3 · Lembar Rumus Cepat
 subject-chip: Kimia
 
 h2.section-title: Lembar Rumus Cepat — Rangkuman Satu Halaman
-p.lead: Semua rumus & notasi inti Bab 2 dalam satu tabel — buat direview cepat sebelum ujian,
+p.lead: Semua rumus & notasi inti Bab 3 dalam satu tabel — buat direview cepat sebelum ujian,
   tanpa perlu scroll ulang tiap section di halaman utama.
 
 [ref-table di atas, dengan kolom "Rumus/Notasi" ditulis pakai KaTeX untuk notasi nuklida ᴬZX]
@@ -107,7 +107,7 @@ briefly in a `.law-strip`, without the full sifat-utama column).
 | 8A | Gas Mulia | ns² np⁶ (He: 1s²) | Sangat stabil, oktet/duplet penuh, sukar bereaksi |
 
 ```
-chapter-tag: Bab 2 · Referensi Tambahan
+chapter-tag: Bab 3 · Referensi Tambahan
 subject-chip: Kimia
 
 h2.section-title: Referensi: Bentuk Orbital & Nama Khusus Golongan
@@ -140,7 +140,7 @@ complex than the HTML's 5-spesi example since it also requires spotting an isoel
 (needs e⁻ count from ion charge, not just Z/A/N).
 
 ```
-chapter-tag: Bab 2 · Latihan Terpandu
+chapter-tag: Bab 3 · Latihan Terpandu
 subject-chip: Kimia
 
 h2.section-title: Latihan Terpandu: Klasifikasi 6 Spesi Sekaligus
@@ -178,7 +178,7 @@ periode — this is the exam-style extension into quantum numbers, appropriately
 only per §5's "1-2 additional worked examples beyond what's on the HTML page").
 
 ```
-chapter-tag: Bab 2 · Latihan Terpandu
+chapter-tag: Bab 3 · Latihan Terpandu
 subject-chip: Kimia
 
 h2.section-title: Latihan Terpandu: Menentukan 4 Bilangan Kuantum
@@ -223,7 +223,7 @@ callout note, without walking through the full periode/golongan derivation the w
 Br — this page completes that derivation in full guided-example form.
 
 ```
-chapter-tag: Bab 2 · Latihan Terpandu
+chapter-tag: Bab 3 · Latihan Terpandu
 subject-chip: Kimia
 
 h2.section-title: Latihan Terpandu: Konfigurasi Elektron & Golongan Unsur Transisi (Fe)
@@ -263,10 +263,10 @@ per section) into a single dense reference page, plus 2 misconceptions not cover
 page at all (afinitas elektron vs energi ionisasi mix-up, dan salah kaprah notasi ion).
 
 ```
-chapter-tag: Bab 2 · Rekap Kesalahan Umum
+chapter-tag: Bab 3 · Rekap Kesalahan Umum
 subject-chip: Kimia
 
-h2.section-title: Rekap Kesalahan Umum di Seluruh Bab 2
+h2.section-title: Rekap Kesalahan Umum di Seluruh Bab 3
 p.lead: Tujuh kesalahan paling sering ditemui siswa SMA di topik ini, dirangkum jadi satu
   halaman referensi cepat.
 
@@ -291,7 +291,7 @@ ol.ref-list:
 
 ## Note on the diagram images (HTML, not PDF)
 
-Not part of this spec, but placed in `bab2-struktur-atom-sistem-periodik.html` alongside this
+Not part of this spec, but placed in `bab3-struktur-atom-sistem-periodik.html` alongside this
 build — all 4 supplied diagram images, all used directly as `.diagram-card` images per the
 diagram-sourcing rule (real supplied source from the primary-source PDF, not hand-drawn
 recreations, and never from the defective literature-reference PDF):
