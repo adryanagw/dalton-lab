@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!-- Rendered PDF companion content for Bab 4B Kimia (Bentuk Molekul & Teori VSEPR), built from
+     bab4b-bentuk-molekul-vsepr.pdf-spec.md on public/assets/pdf-template/page-template.html.
+     This is the actual filled source, rendered once and shared by every student — no
+     per-page watermark markup here on purpose: the real student-identity watermark is
+     drawn live, per viewer, by initPdfViewers() in app.js (.pdf-viewer-watermark),
+     stamped with that viewer's actual session name and timestamp. Baking a placeholder
+     name into the shared image here would just show every student a second, fake
+     watermark underneath the real one. -->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dalton Lab — PDF Bab 4B Kimia</title>
+<link rel="stylesheet" href="../../public/assets/vendor/fonts/pdf-fonts.css">
+<link rel="stylesheet" href="../../public/assets/vendor/katex/katex.min.css">
+<style>
+  @page{ size:210mm 297mm; margin:0; }
+
+  :root{
+    --navy:#0d1b2e;
+    --navy-2:#16304f;
+    --orange:#ee7d31;
+    --orange-dark:#d4631a;
+    --paper:#faf6ee;
+    --card:#ffffff;
+    --slate:#4f6376;
+    --success:#2f9e6a;
+    --danger:#d64545;
+    --accent:#e2447e;
+    --orange-ink:#bb4d0e;
+  }
+  .pdf-page[data-subject="kimia"]{ --accent:#e2447e; }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#fff;font-family:'Literata',serif;}
+
+  .pdf-page{
+    position:relative;
+    width:210mm;
+    height:297mm;
+    padding:26px;
+    background:var(--accent);
+    overflow:hidden;
+    break-after:page;
+    page-break-after:always;
+  }
+  .pdf-page:last-child{break-after:auto;page-break-after:avoid;}
+  .pdf-page .sheet{
+    position:relative;
+    width:100%;
+    height:100%;
+    background:var(--card);
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  .page-head{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 40px 18px;
+    border-bottom:1px solid #eef0f2;
+  }
+  .page-head .brand{display:flex;align-items:center;gap:2px;}
+  .page-head .brand img{height:34px;width:auto;display:block;}
+  .page-head .brand-word{font:600 15px/1 'Fraunces',serif;color:var(--navy);letter-spacing:.01em;}
+  .page-head .brand-word span{color:var(--accent);}
+  .page-head .meta{display:flex;align-items:baseline;gap:8px;}
+  .subject-chip{font:italic 600 14px/1 'Fraunces',serif;color:var(--orange-ink);}
+  .chapter-tag{font:italic 400 13.5px/1 'Literata',serif;color:var(--slate);}
+
+  .page-body{
+    position:relative;
+    z-index:2;
+    flex:1;
+    padding:30px 40px 0;
+    overflow:hidden;
+  }
+
+  h1.page-title{font:700 34px/1.15 'Fraunces',serif;color:var(--navy);margin:0 0 6px;}
+  p.dek{font:italic 400 14.5px/1.4 'Literata',serif;color:var(--orange-ink);margin:0 0 18px;}
+  h2.section-title{font:600 21px/1.25 'Fraunces',serif;color:var(--navy);margin:0 0 10px;}
+  p.lead{font:400 16.5px/1.6 'Literata',serif;color:var(--slate);margin:0 0 18px;max-width:600px;}
+  p.body-text{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 14px;}
+  ul.learn-list{margin:0 0 20px;padding-left:20px;}
+  ul.learn-list li{font:400 16px/1.65 'Literata',serif;color:#22303f;margin-bottom:6px;}
+
+  .page-body.dense h2.section-title{margin-bottom:6px;}
+  .page-body.dense p.lead{margin-bottom:10px;}
+  .page-body.dense p.body-text{margin-bottom:8px;line-height:1.5;}
+  .page-body.dense .callout{padding-top:12px;padding-bottom:12px;margin-bottom:14px;}
+  .page-body.dense .example-box{margin-bottom:10px;padding-top:12px;}
+  .page-body.dense .example-box .label{margin-bottom:6px;}
+  .page-body.dense .example-box li{margin-bottom:4px;font-size:14px;line-height:1.45;}
+  .page-body.dense .formula-box{margin-bottom:16px;padding:14px 2px;}
+  .page-body.dense .ref-table{margin-bottom:12px;}
+  .page-body.dense .ref-table th,.page-body.dense .ref-table td{padding:5px 8px;font-size:12px;}
+
+  .formula-box{border-top:1px solid #e6dfd0;border-bottom:1px solid #e6dfd0;padding:20px 2px;margin:0 0 22px;}
+  .formula-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;display:block;}
+  .formula-box .katex{font-size:1.05em;}
+  .formula-box .var-def{font:400 13.5px/1.55 'Literata',serif;color:var(--slate);margin-top:10px;}
+  .formula-box .var-def b{font-family:'IBM Plex Mono',monospace;font-weight:500;color:#22303f;}
+
+  .example-box{border-top:1px solid #e6dfd0;padding:18px 2px 4px;margin:0 0 22px;}
+  .example-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--navy);margin-bottom:12px;display:block;}
+  .example-box p.setup{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 10px;}
+  .example-box ol{margin:0;padding-left:18px;}
+  .example-box li{font:400 15px/1.6 'Literata',serif;color:#22303f;margin-bottom:8px;}
+
+  .callout{padding:16px 18px;margin:0 0 20px;font:400 14.5px/1.55 'Literata',serif;}
+  .callout.mistake{background:#fbf0ed;}
+  .callout.mistake .label{color:var(--danger);}
+  .callout .label{display:block;font:italic 600 14px/1 'Literata',serif;margin-bottom:7px;}
+  .callout .wrong{color:var(--danger);font-weight:600;}
+  .callout .right{color:var(--success);font-weight:600;}
+
+  .ref-table{width:100%;border-collapse:collapse;margin:0 0 20px;}
+  .ref-table caption{caption-side:top;text-align:left;font:italic 500 13.5px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;}
+  .ref-table th,.ref-table td{
+    text-align:left;
+    padding:7px 10px;
+    font:400 12px/1.4 'Literata',serif;
+    color:#22303f;
+    border-bottom:1px solid #eee7d8;
+    vertical-align:top;
+  }
+  .ref-table thead th{
+    font:600 11px/1.2 'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--slate);
+    border-bottom:1.5px solid var(--navy);
+    padding-bottom:8px;
+  }
+  .ref-table tbody tr:first-child td{padding-top:10px;}
+  .ref-table .katex{font-size:.95em;}
+
+  ol.ref-list{margin:0 0 20px;padding-left:20px;}
+  ol.ref-list li{font:400 13.5px/1.6 'Literata',serif;color:#22303f;margin-bottom:12px;}
+  ol.ref-list li i{color:var(--slate);font-style:italic;}
+
+  .ref-list-2col{columns:2;column-gap:26px;margin:0 0 18px;}
+  .ref-list-2col .item{break-inside:avoid;margin-bottom:11px;}
+  .ref-list-2col .item .num{font:600 11px/1 'IBM Plex Mono',monospace;color:var(--orange-ink);}
+  .ref-list-2col .item .term{font:600 13px/1.3 'Literata',serif;color:var(--navy);display:block;margin:3px 0 2px;}
+  .ref-list-2col .item .gloss{font:400 12px/1.45 'Literata',serif;color:#4a5560;}
+
+  .page-foot{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 40px 22px;
+    border-top:1px solid #eef0f2;
+  }
+  .page-foot .license{font:italic 400 12px/1.4 'Literata',serif;color:#5c6670;max-width:380px;}
+</style>
+</head>
+<body>
+
+<!-- ===== Page 1 — Chapter opener ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 4B &middot; Pengayaan</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body">
+      <h1 class="page-title">Bentuk Molekul &amp; Teori VSEPR</h1>
+      <p class="dek">Materi PDF — pelengkap Bab 4B (Pengayaan)</p>
+      <p class="lead">Halaman utama fokus ke geometri domain total 3 &amp; 4 (kasus paling sering diuji di SMA: \(\ce{CH4}\), \(\ce{NH3}\), \(\ce{H2O}\), dan sejenisnya). Materi tambahan ini berisi matriks VSEPR lengkap 13 baris (domain 2 sampai 6) plus elaborasi penuh geometri domain 5 &amp; 6 — Trigonal Bipiramida, Jungkat-Jangkit, Bentuk T, dan Oktahedral — yang genuinely exam-relevant tapi terlalu padat untuk halaman utama.</p>
+      <h2 class="section-title">Yang akan kamu pelajari</h2>
+      <ul class="learn-list">
+        <li>Matriks VSEPR lengkap: 13 kombinasi \(AX_nE_m\) dari domain total 2 sampai 6</li>
+        <li>Geometri domain 5: Trigonal Bipiramida, Jungkat-Jangkit (Seesaw), Bentuk T, Linier (\(AX_2E_3\))</li>
+        <li>Geometri domain 6: Oktahedral, Piramida Alas Persegi, dan kenapa Persegi Planar (\(\ce{XeF4}\)) berbentuk rata</li>
+        <li>Kenapa gaya tolakan PEB pada domain 5 tidak seragam — posisi aksial vs ekuatorial</li>
+        <li>Dua contoh soal tambahan: \(\ce{SF4}\) dan \(\ce{ClF3}\)</li>
+        <li>Rekap kesalahan umum siswa saat mengerjakan soal VSEPR</li>
+      </ul>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 2 — Matriks VSEPR Lengkap (13 baris) ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 4B &middot; Referensi Lengkap</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Matriks Geometri Molekul VSEPR — Lengkap (Domain 2–6)</h2>
+      <p class="lead">Halaman utama cuma menampilkan baris domain 3 &amp; 4 (5 baris paling sering diuji). Berikut matriks lengkapnya, dari domain total 2 sampai 6 — 13 kombinasi \(AX_nE_m\) sekaligus.</p>
+      <table class="ref-table">
+        <caption>Matriks VSEPR Lengkap</caption>
+        <thead><tr><th>Domain</th><th>Formula</th><th>PEI</th><th>PEB</th><th>Geometri Molekul</th><th>Sudut Ideal</th><th>Contoh Molekul</th></tr></thead>
+        <tbody>
+          <tr><td>2</td><td>\(AX_2E_0\)</td><td>2</td><td>0</td><td>Linier</td><td>180°</td><td>\(\ce{BeCl2}\), \(\ce{CO2}\), \(\ce{CS2}\)</td></tr>
+          <tr><td>3</td><td>\(AX_3E_0\)</td><td>3</td><td>0</td><td>Segitiga Planar</td><td>120°</td><td>\(\ce{BF3}\), \(\ce{BCl3}\), \(\ce{SO3}\)</td></tr>
+          <tr><td>3</td><td>\(AX_2E_1\)</td><td>2</td><td>1</td><td>Bentuk V</td><td>~119°</td><td>\(\ce{SO2}\), \(\ce{O3}\), \(\ce{SnCl2}\)</td></tr>
+          <tr><td>4</td><td>\(AX_4E_0\)</td><td>4</td><td>0</td><td>Tetrahedral</td><td>109.5°</td><td>\(\ce{CH4}\), \(\ce{CCl4}\), \(\ce{SiF4}\)</td></tr>
+          <tr><td>4</td><td>\(AX_3E_1\)</td><td>3</td><td>1</td><td>Trigonal Piramida</td><td>107°</td><td>\(\ce{NH3}\), \(\ce{PCl3}\), \(\ce{H3O+}\)</td></tr>
+          <tr><td>4</td><td>\(AX_2E_2\)</td><td>2</td><td>2</td><td>Bentuk V</td><td>104.5°</td><td>\(\ce{H2O}\), \(\ce{H2S}\), \(\ce{OF2}\)</td></tr>
+          <tr><td>5</td><td>\(AX_5E_0\)</td><td>5</td><td>0</td><td>Trigonal Bipiramida</td><td>90° &amp; 120°</td><td>\(\ce{PCl5}\), \(\ce{AsF5}\)</td></tr>
+          <tr><td>5</td><td>\(AX_4E_1\)</td><td>4</td><td>1</td><td>Jungkat-Jangkit (Seesaw)</td><td>&lt;90° &amp; &lt;120°</td><td>\(\ce{SF4}\), \(\ce{SeF4}\)</td></tr>
+          <tr><td>5</td><td>\(AX_3E_2\)</td><td>3</td><td>2</td><td>Bentuk T</td><td>&lt;90°</td><td>\(\ce{ClF3}\), \(\ce{BrF3}\)</td></tr>
+          <tr><td>5</td><td>\(AX_2E_3\)</td><td>2</td><td>3</td><td>Linier</td><td>180°</td><td>\(\ce{XeF2}\), \(\ce{I3-}\)</td></tr>
+          <tr><td>6</td><td>\(AX_6E_0\)</td><td>6</td><td>0</td><td>Oktahedral</td><td>90°</td><td>\(\ce{SF6}\), \(\ce{SeF6}\)</td></tr>
+          <tr><td>6</td><td>\(AX_5E_1\)</td><td>5</td><td>1</td><td>Piramida Alas Persegi</td><td>&lt;90°</td><td>\(\ce{BrF5}\), \(\ce{IF5}\)</td></tr>
+          <tr><td>6</td><td>\(AX_4E_2\)</td><td>4</td><td>2</td><td>Persegi Planar</td><td>90°</td><td>\(\ce{XeF4}\), \(\ce{ICl4-}\)</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Enam baris pertama (domain 2–4) sudah dibahas di halaman utama secara penuh. Tujuh baris terakhir (domain 5 &amp; 6) dielaborasi di dua halaman berikutnya — termasuk kenapa posisi PEB-nya tidak sembarang.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 3 — Domain 5: Trigonal Bipiramida & turunannya ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 4B &middot; Materi Lanjutan</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Domain Total 5: Trigonal Bipiramida &amp; Posisi Aksial vs Ekuatorial</h2>
+      <p class="lead">Domain 5 punya satu wrinkle yang tidak dimiliki domain 3 atau 4: posisinya tidak semua setara, jadi di mana PEB "duduk" benar-benar menentukan bentuk akhirnya.</p>
+      <p class="body-text">Sebuah Trigonal Bipiramida (\(AX_5E_0\)) punya 5 PEI yang terbagi jadi 2 kelompok posisi: 2 posisi aksial (berseberangan 180° lurus lewat pusat atom) dan 3 posisi ekuatorial (mengelilingi "pinggang" molekul, berjarak 120° satu sama lain). Posisi aksial dan ekuatorial TIDAK setara — sebuah posisi aksial punya 3 tetangga sejauh 90°, sedangkan posisi ekuatorial cuma punya 2 tetangga sejauh 90° (2 tetangga lainnya di 120°, tolakannya jauh lebih lemah).</p>
+      <p class="body-text">Karena tolakan 90° jauh lebih kuat dibanding tolakan 120°, posisi dengan lebih sedikit tetangga 90° (yaitu ekuatorial) adalah posisi paling "nyaman". PEB, yang awan elektronnya paling besar dan paling butuh ruang, akan selalu mengincar posisi ekuatorial ini duluan — bukan posisi acak.</p>
+      <div class="example-box">
+        <span class="label">Kenapa PEB Selalu Memilih Posisi Ekuatorial Dulu, Bukan Aksial?</span>
+        <ol>
+          <li>Posisi ekuatorial punya 2 tetangga 90° (ke 2 posisi aksial) dan 2 tetangga 120° (ke sesama ekuatorial).</li>
+          <li>Posisi aksial punya 3 tetangga 90° (ke semua posisi ekuatorial) — lebih banyak tolakan kuat.</li>
+          <li>Karena tolakan 90° jauh lebih kuat dari tolakan 120°, posisi ekuatorial (tetangga 90°-nya lebih sedikit) adalah posisi paling nyaman.</li>
+          <li>Contoh: \(\ce{SF4}\) (\(AX_4E_1\)) — 1 PEB-nya menempati posisi ekuatorial, membuat 4 PEI-nya membentuk pola "jungkat-jangkit" yang asimetris, bukan pola simetris seandainya PEB-nya di aksial.</li>
+        </ol>
+      </div>
+      <table class="ref-table">
+        <caption>Geometri Turunan Trigonal Bipiramida (Domain 5)</caption>
+        <thead><tr><th>Formula</th><th>Geometri</th><th>Deskripsi Bentuk</th><th>Sudut</th><th>Contoh</th></tr></thead>
+        <tbody>
+          <tr><td>\(AX_5E_0\)</td><td>Trigonal Bipiramida</td><td>5 PEI penuh, kerangka dasar tanpa distorsi</td><td>90° &amp; 120°</td><td>\(\ce{PCl5}\), \(\ce{AsF5}\)</td></tr>
+          <tr><td>\(AX_4E_1\)</td><td>Jungkat-Jangkit</td><td>1 PEB di posisi ekuatorial, 4 PEI tersisa asimetris</td><td>&lt;90° &amp; &lt;120°</td><td>\(\ce{SF4}\), \(\ce{SeF4}\)</td></tr>
+          <tr><td>\(AX_3E_2\)</td><td>Bentuk T</td><td>2 PEB di kedua posisi ekuatorial, 3 PEI (1 ekuatorial + 2 aksial) membentuk huruf T</td><td>&lt;90°</td><td>\(\ce{ClF3}\), \(\ce{BrF3}\)</td></tr>
+          <tr><td>\(AX_2E_3\)</td><td>Linier</td><td>3 PEB di ketiga posisi ekuatorial, 2 PEI di kedua posisi aksial berseberangan</td><td>180°</td><td>\(\ce{XeF2}\), \(\ce{I3-}\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 4 — Domain 6: Oktahedral & turunannya ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 4B &middot; Materi Lanjutan</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Domain Total 6: Oktahedral, Piramida Alas Persegi, &amp; Persegi Planar</h2>
+      <p class="lead">Beda dari domain 5, keenam posisi Oktahedral itu geometris setara — tiap posisi punya persis 4 tetangga sejauh 90°. Jadi untuk PEB pertama, posisinya tidak masalah. Baru untuk PEB kedua posisinya jadi penting.</p>
+      <p class="body-text"><b>\(AX_6E_0\) (Oktahedral, contoh \(\ce{SF6}\)):</b> 6 PEI, semua posisi setara, sudut ikatan 90° di semua pasangan tetangga — bentuk paling simetris di antara semua geometri domain 6.</p>
+      <p class="body-text"><b>\(AX_5E_1\) (Piramida Alas Persegi, contoh \(\ce{BrF5}\), \(\ce{IF5}\)):</b> 1 PEB menempati salah satu dari 6 posisi (semua posisi setara, jadi tidak ada pilihan "terbaik" — di mana pun hasilnya sama), menyisakan 5 PEI membentuk piramida beralas persegi. Sudut ikatan sedikit di bawah 90° karena tolakan PEB–PEI menekan PEI yang berdekatan dengan PEB.</p>
+      <p class="body-text"><b>\(AX_4E_2\) (Persegi Planar, contoh \(\ce{XeF4}\), \(\ce{ICl4-}\)):</b> begitu ada PEB kedua, posisinya TIDAK sembarang lagi — 2 PEB akan selalu saling berseberangan 180° (posisi paling jauh satu sama lain yang tersedia) untuk meminimalkan tolakan PEB–PEB, yang paling kuat dalam hirarki tolakan VSEPR. Ini menyisakan 4 PEI yang tersusun rata dalam satu bidang datar — persis kasus \(\ce{XeF4}\) yang dibahas lengkap di halaman utama.</p>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira posisi PEB kedua pada domain 6 bisa di mana saja asal "ada 2 PEB", tanpa memperhitungkan bahwa keduanya harus saling berseberangan (180°) untuk geometri paling stabil.<br>
+        <span class="right">✅ Benar:</span> begitu ada lebih dari 1 PEB, urutan hirarki tolakan (PEB–PEB paling kuat) menentukan penempatannya — dua PEB akan selalu mengambil posisi paling berjauhan yang tersedia, bukan posisi acak. Ini persis alasan \(\ce{XeF4}\) berbentuk Persegi Planar yang rata, bukan bentuk melengkung.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 5 — Contoh soal tambahan & rekap kesalahan umum ===== -->
+<div class="pdf-page" data-subject="kimia">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 4B &middot; Latihan &amp; Rekap</span><span class="subject-chip">Kimia</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Contoh Soal Tambahan &amp; Rekap Kesalahan Umum VSEPR</h2>
+      <p class="lead">Dua contoh soal domain 5 (yang tidak dibahas di halaman utama), plus rangkuman lima kesalahan paling sering ditemui siswa SMA di topik VSEPR.</p>
+      <div class="example-box">
+        <span class="label">Soal &middot; Tentukan Geometri Molekul \(\ce{SF4}\)</span>
+        <ol>
+          <li>Atom pusat: S (Golongan VI A → EV = 6).</li>
+          <li>Jumlah PEI (n) = 4 (mengikat 4 atom F).</li>
+          <li>PEB (m) = (6 − 4) / 2 = 1 PEB.</li>
+          <li>Notasi VSEPR: \(AX_4E_1\) → domain total 5 → Geometri: Jungkat-Jangkit (Seesaw), dengan 1 PEB menempati posisi ekuatorial.</li>
+        </ol>
+      </div>
+      <div class="example-box">
+        <span class="label">Soal &middot; Tentukan Geometri Molekul \(\ce{ClF3}\)</span>
+        <ol>
+          <li>Atom pusat: Cl (Golongan VII A → EV = 7).</li>
+          <li>Jumlah PEI (n) = 3 (mengikat 3 atom F).</li>
+          <li>PEB (m) = (7 − 3) / 2 = 2 PEB.</li>
+          <li>Notasi VSEPR: \(AX_3E_2\) → domain total 5 → Geometri: Bentuk T, dengan kedua PEB menempati posisi ekuatorial.</li>
+        </ol>
+      </div>
+      <ol class="ref-list">
+        <li><b>Menyamakan domain total dengan jumlah PEI saja.</b> Selalu hitung n + m, bukan cuma n — dua molekul dengan PEI sama bisa punya domain total (dan kerangka dasar) yang beda kalau PEB-nya beda, seperti \(\ce{CH4}\) (domain 4) vs \(\ce{XeF4}\) (domain 6, meski PEI-nya sama-sama 4).</li>
+        <li><b>Mengira posisi PEB pada Trigonal Bipiramida bisa aksial atau ekuatorial secara bebas.</b> PEB selalu mengincar posisi ekuatorial dulu (tetangga 90°-nya paling sedikit) — bukan pilihan acak.</li>
+        <li><b>Menyamakan electron-domain geometry dengan molecular geometry.</b> Electron-domain geometry menghitung PEI + PEB; molecular geometry (bentuk molekul yang disebut di soal) hanya menghitung posisi PEI yang "terlihat" sebagai atom.</li>
+        <li><b>Lupa bahwa 2 PEB pada domain 6 harus saling berseberangan (180°), bukan berdekatan.</b> Tolakan PEB–PEB yang paling kuat memaksa keduanya mengambil posisi terjauh yang tersedia.</li>
+        <li><b>Menghafal nama geometri tanpa memahami polanya.</b> Semua nama geometri domain 5 dan 6 sebenarnya cuma "Trigonal Bipiramida/Oktahedral dikurangi 1 PEI, digantikan 1 PEB, di posisi yang paling sedikit tolakannya" — kalau pola ini dipahami, tidak perlu menghafal 13 nama satu-satu.</li>
+      </ol>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<script src="../../public/assets/vendor/katex/katex.min.js"></script>
+<script src="../../public/assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script src="../../public/assets/vendor/katex/contrib/mhchem.min.js"></script>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left:'$$', right:'$$', display:true},
+      {left:'\\[', right:'\\]', display:true},
+      {left:'\\(', right:'\\)', display:false}
+    ],
+    throwOnError:false
+  });
+</script>
+</body>
+</html>

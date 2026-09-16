@@ -1,0 +1,272 @@
+[
+  {
+    "q": "Teori VSEPR (Valence Shell Electron Pair Repulsion) dikembangkan oleh...",
+    "opts": ["Linus Pauling dan Gilbert Lewis", "Ronald Gillespie dan Ronald Nyholm", "Niels Bohr dan Ernest Rutherford", "John Dalton dan Amedeo Avogadro"],
+    "correct": 1,
+    "explain": "Teori VSEPR dikembangkan oleh Ronald Gillespie dan Ronald Nyholm untuk memprediksi struktur spasial molekul kovalen berdasarkan tolak-menolak antar domain elektron di atom pusat."
+  },
+  {
+    "q": "Menurut Teori VSEPR, geometri molekul ditentukan oleh...",
+    "opts": ["Massa atom pusat", "Gaya tolak-menolak antar domain elektron di atom pusat", "Jumlah proton di inti atom pusat", "Suhu ruang saat reaksi terjadi"],
+    "correct": 1,
+    "explain": "Prinsip utama VSEPR: pasangan elektron di kulit valensi atom pusat (PEI maupun PEB) saling tolak-menolak dan mengatur posisinya sejauh mungkin di ruang 3D untuk meminimalkan gaya tolakan elektrostatik."
+  },
+  {
+    "q": "Urutan hirarki kekuatan tolakan antar domain elektron dari yang PALING KUAT ke PALING LEMAH adalah...",
+    "opts": ["PEI–PEI > PEB–PEI > PEB–PEB", "PEB–PEB > PEI–PEI > PEB–PEI", "PEB–PEB > PEB–PEI > PEI–PEI", "PEB–PEI > PEB–PEB > PEI–PEI"],
+    "correct": 2,
+    "explain": "Urutan kekuatan tolakan: PEB–PEB (paling kuat) > PEB–PEI (sedang) > PEI–PEI (paling lemah). PEB butuh ruang lebih luas karena cuma terikat ke satu inti atom, sedangkan PEI ditarik dua inti sekaligus sehingga awan elektronnya lebih rapat ke sumbu ikatan."
+  },
+  {
+    "q": "Kenapa PEB butuh ruang yang lebih luas dibanding PEI?",
+    "opts": [
+      "Karena PEB punya muatan lebih besar dari PEI",
+      "Karena PEB hanya terikat pada satu inti atom (atom pusat), sedangkan PEI ditarik dua inti atom",
+      "Karena PEB selalu berpasangan rangkap, sedangkan PEI tunggal",
+      "Karena PEB terletak lebih jauh dari inti atom pusat"
+    ],
+    "correct": 1,
+    "explain": "PEB hanya 'dimiliki' oleh satu inti atom (atom pusat) sehingga awan elektronnya lebih menyebar, sementara PEI ditarik oleh dua inti atom sekaligus (atom pusat & atom luar) sehingga awan elektronnya lebih terkonsentrasi di sepanjang sumbu ikatan."
+    },
+  {
+    "q": "Dalam notasi \\(AX_nE_m\\), huruf A melambangkan...",
+    "opts": ["Jumlah atom luar", "Atom Pusat", "Jumlah pasangan elektron bebas", "Afinitas elektron"],
+    "correct": 1,
+    "explain": "A = Atom Pusat, X = Pasangan Elektron Ikatan (PEI) dengan jumlah n, E = Pasangan Elektron Bebas (PEB) dengan jumlah m."
+  },
+  {
+    "q": "Dalam notasi \\(AX_nE_m\\), huruf E dengan subskrip m melambangkan...",
+    "opts": ["Jumlah elektron valensi total molekul", "Jumlah Pasangan Elektron Bebas (PEB) pada atom pusat", "Jumlah Pasangan Elektron Ikatan (PEI)", "Energi ikatan rata-rata molekul"],
+    "correct": 1,
+    "explain": "E melambangkan Pasangan Elektron Bebas (PEB) pada atom pusat, dan m adalah jumlahnya. X dengan subskrip n adalah PEI (atom luar yang terikat)."
+  },
+  {
+    "q": "Bilangan Sterik (Domain Total) sebuah atom pusat dihitung dengan rumus...",
+    "opts": ["n × m", "n + m (jumlah PEI + jumlah PEB)", "n − m", "EV atom pusat saja, tanpa memperhitungkan PEI/PEB"],
+    "correct": 1,
+    "explain": "Bilangan Sterik (Domain Total) = n + m, yaitu jumlah PEI ditambah jumlah PEB pada atom pusat. Inilah yang menentukan kerangka dasar (electron-domain geometry) sebuah molekul."
+  },
+  {
+    "q": "Molekul \\(\\ce{CH4}\\), \\(\\ce{NH3}\\), dan \\(\\ce{H2O}\\) semuanya punya sudut ikatan yang berbeda (109.5°, 107°, 104.5°) meskipun...",
+    "opts": [
+      "Atom pusatnya sama-sama karbon",
+      "Domain total (n+m) atom pusatnya sama-sama 4",
+      "Jumlah PEB-nya sama-sama 0",
+      "Ketiganya sama-sama molekul ionik"
+    ],
+    "correct": 1,
+    "explain": "Ketiga molekul punya domain total 4 di atom pusatnya (\\(AX_4E_0\\), \\(AX_3E_1\\), \\(AX_2E_2\\)) — tapi jumlah PEB-nya beda (0, 1, 2), dan makin banyak PEB yang menekan PEI yang tersisa, makin kecil sudut ikatannya."
+  },
+  {
+    "q": "Kenapa sudut ikatan H-N-H pada \\(\\ce{NH3}\\) (107°) lebih kecil dari sudut ikatan H-C-H pada \\(\\ce{CH4}\\) (109.5°)?",
+    "opts": [
+      "Karena atom N lebih besar dari atom C",
+      "Karena \\(\\ce{NH3}\\) punya 1 PEB yang menekan ketiga PEI-nya lewat tolakan PEB–PEI",
+      "Karena \\(\\ce{NH3}\\) punya lebih sedikit elektron valensi total",
+      "Karena ikatan N-H lebih panjang dari ikatan C-H"
+    ],
+    "correct": 1,
+    "explain": "Atom pusat N pada \\(\\ce{NH3}\\) punya 1 PEB, sehingga muncul tolakan PEB–PEI (lebih kuat dari PEI–PEI) yang menekan ketiga PEI supaya saling merapat, menurunkan sudut ikatan dari 109.5° jadi 107°."
+  },
+  {
+    "q": "Kenapa sudut ikatan H-O-H pada \\(\\ce{H2O}\\) (104.5°) adalah yang paling kecil di antara \\(\\ce{CH4}\\), \\(\\ce{NH3}\\), dan \\(\\ce{H2O}\\)?",
+    "opts": [
+      "Karena \\(\\ce{H2O}\\) punya 2 PEB yang saling tolak-menolak (PEB–PEB) sekaligus menekan kedua PEI-nya",
+      "Karena atom O adalah unsur paling elektronegatif dari ketiganya",
+      "Karena \\(\\ce{H2O}\\) berbentuk cair pada suhu ruang",
+      "Karena \\(\\ce{H2O}\\) punya domain total lebih besar dari \\(\\ce{NH3}\\)"
+    ],
+    "correct": 0,
+    "explain": "Atom pusat O pada \\(\\ce{H2O}\\) punya 2 PEB — tolakan PEB–PEB (paling kuat dalam hirarki) di antara keduanya, ditambah tolakan PEB–PEI ke PEI yang tersisa, membuat sudut ikatan H-O-H turun paling banyak, jadi 104.5°."
+  },
+  {
+    "q": "Molekul dengan notasi VSEPR \\(AX_4E_0\\) memiliki geometri molekul...",
+    "opts": ["Trigonal Piramida", "Bentuk V", "Tetrahedral", "Segitiga Planar"],
+    "correct": 2,
+    "explain": "\\(AX_4E_0\\) berarti 4 PEI dan 0 PEB (domain total 4, semuanya PEI) — geometri molekulnya Tetrahedral dengan sudut ikatan ideal 109.5°, contohnya \\(\\ce{CH4}\\)."
+  },
+  {
+    "q": "Molekul dengan notasi VSEPR \\(AX_3E_1\\) memiliki geometri molekul...",
+    "opts": ["Tetrahedral", "Trigonal Piramida", "Segitiga Planar", "Bentuk V"],
+    "correct": 1,
+    "explain": "\\(AX_3E_1\\) berarti 3 PEI dan 1 PEB (domain total 4). Karena 1 PEB 'menghilangkan' satu sudut pandang dari bentuk tetrahedral dasarnya, geometri molekulnya jadi Trigonal Piramida — contohnya \\(\\ce{NH3}\\) dan \\(\\ce{PCl3}\\)."
+  },
+  {
+    "q": "Molekul dengan notasi VSEPR \\(AX_2E_2\\) memiliki geometri molekul...",
+    "opts": ["Tetrahedral", "Trigonal Piramida", "Bentuk V / Bengkok", "Linier"],
+    "correct": 2,
+    "explain": "\\(AX_2E_2\\) berarti 2 PEI dan 2 PEB (domain total 4). Dengan 2 PEB yang menekan dari dua sisi, bentuk molekulnya jadi Bentuk V (Bengkok) — contohnya \\(\\ce{H2O}\\) dan \\(\\ce{H2S}\\)."
+  },
+  {
+    "q": "Molekul dengan notasi VSEPR \\(AX_3E_0\\) memiliki geometri molekul dengan sudut ikatan ideal...",
+    "opts": ["90°", "104.5°", "109.5°", "120°"],
+    "correct": 3,
+    "explain": "\\(AX_3E_0\\) berarti 3 PEI dan 0 PEB (domain total 3, semuanya PEI) — geometri molekulnya Segitiga Planar dengan sudut ikatan ideal 120°, contohnya \\(\\ce{BF3}\\) dan \\(\\ce{SO3}\\)."
+  },
+  {
+    "q": "Molekul dengan notasi VSEPR \\(AX_2E_1\\) (domain total 3) memiliki geometri molekul...",
+    "opts": ["Tetrahedral", "Bentuk V dengan sudut ~119°", "Segitiga Planar", "Linier"],
+    "correct": 1,
+    "explain": "\\(AX_2E_1\\) berarti 2 PEI dan 1 PEB (domain total 3, kerangka dasarnya Segitiga Planar). 1 PEB menekan kedua PEI yang tersisa, membentuk geometri molekul Bentuk V dengan sudut sekitar 119° — contohnya \\(\\ce{SO2}\\) dan \\(\\ce{O3}\\)."
+  },
+  {
+    "q": "Molekul \\(\\ce{PCl3}\\) — atom pusat P (Golongan V A, EV = 5) mengikat 3 atom Cl. Berapa jumlah PEB pada atom pusat P?",
+    "opts": ["0", "1", "2", "3"],
+    "correct": 1,
+    "explain": "PEB (m) = (EV atom pusat − PEI) / 2 = (5 − 3) / 2 = 1 PEB, karena Cl adalah halogen yang kebutuhan elektron tambahannya dari atom pusat = 0 (cukup 1 ikatan tunggal)."
+  },
+  {
+    "q": "Berdasarkan hasil hitungan PEB pada \\(\\ce{PCl3}\\), notasi VSEPR dan geometri molekulnya adalah...",
+    "opts": ["\\(AX_3E_0\\), Segitiga Planar", "\\(AX_3E_1\\), Trigonal Piramida", "\\(AX_2E_2\\), Bentuk V", "\\(AX_3E_2\\), Bentuk T"],
+    "correct": 1,
+    "explain": "Dengan n = 3 (PEI) dan m = 1 (PEB), notasinya \\(AX_3E_1\\) — sama persis pola \\(\\ce{NH3}\\) — sehingga geometri molekulnya Trigonal Piramida dengan sudut ikatan sedikit kurang dari 109.5°."
+  },
+  {
+    "q": "Molekul \\(\\ce{XeF4}\\) — atom pusat Xe (Gas Mulia, EV = 8) mengikat 4 atom F. Berapa jumlah PEB pada atom pusat Xe?",
+    "opts": ["0", "1", "2", "3"],
+    "correct": 2,
+    "explain": "PEB (m) = (EV atom pusat − PEI) / 2 = (8 − 4) / 2 = 2 PEB, karena F adalah halogen dengan kebutuhan elektron tambahan dari atom pusat = 0."
+  },
+  {
+    "q": "Notasi VSEPR dan geometri molekul \\(\\ce{XeF4}\\) adalah...",
+    "opts": ["\\(AX_4E_0\\), Tetrahedral", "\\(AX_4E_1\\), Jungkat-Jangkit", "\\(AX_4E_2\\), Persegi Planar", "\\(AX_4E_2\\), Oktahedral"],
+    "correct": 2,
+    "explain": "Dengan n = 4 (PEI) dan m = 2 (PEB), notasinya \\(AX_4E_2\\) — domain total 6 (oktet diperluas, khas gas mulia Periode 5 seperti Xe). Karena 2 PEB-nya saling berseberangan, bentuk molekulnya jadi Persegi Planar dengan sudut ikatan 90°."
+  },
+  {
+    "q": "Kenapa \\(\\ce{XeF4}\\) TIDAK berbentuk Tetrahedral meskipun jumlah PEI-nya sama dengan \\(\\ce{CH4}\\) (sama-sama 4)?",
+    "opts": [
+      "Karena Xe bukan atom pusat yang valid",
+      "Karena \\(\\ce{XeF4}\\) punya 2 PEB tambahan sehingga domain totalnya 6 (bukan 4 seperti \\(\\ce{CH4}\\))",
+      "Karena F lebih elektronegatif dari H",
+      "Karena \\(\\ce{XeF4}\\) adalah senyawa ionik, bukan kovalen"
+    ],
+    "correct": 1,
+    "explain": "Jumlah PEI memang sama (4), tapi \\(\\ce{XeF4}\\) juga punya 2 PEB pada atom pusatnya, sehingga domain totalnya 6 (Oktahedral sebagai kerangka electron-domain), bukan 4 seperti \\(\\ce{CH4}\\). Bentuk molekul akhirnya (setelah PEB 'disingkirkan' dari perhitungan bentuk) jadi Persegi Planar, bukan Tetrahedral."
+  },
+  {
+    "q": "Langkah pertama dalam 5 langkah sistematis menentukan geometri molekul VSEPR adalah...",
+    "opts": ["Hitung PEB (m)", "Tentukan atom pusat", "Susun notasi \\(AX_nE_m\\)", "Hitung elektron valensi atom pusat"],
+    "correct": 1,
+    "explain": "Urutannya: (1) tentukan atom pusat, (2) hitung elektron valensi (EV) atom pusat, (3) hitung PEI (n), (4) hitung PEB (m), (5) susun \\(AX_nE_m\\) dan cocokkan ke matriks geometri."
+  },
+  {
+    "q": "Rumus untuk menghitung jumlah PEB (m) pada atom pusat adalah...",
+    "opts": [
+      "\\(m = \\text{EV atom pusat} \\times n\\)",
+      "\\(m = \\dfrac{\\text{EV atom pusat} - n - \\text{kebutuhan } e^- \\text{ atom luar}}{2}\\)",
+      "\\(m = \\text{EV atom pusat} + n\\)",
+      "\\(m = n - \\text{EV atom pusat}\\)"
+    ],
+    "correct": 1,
+    "explain": "PEB (m) = (EV atom pusat − PEI (n) − kebutuhan elektron atom luar) / 2. Untuk atom luar monovalen seperti halogen atau H, suku 'kebutuhan elektron atom luar' bernilai 0, sehingga rumusnya sering disederhanakan jadi m = (EV − n) / 2."
+  },
+  {
+    "q": "Jumlah PEI (n) pada atom pusat dihitung dari...",
+    "opts": [
+      "Total elektron valensi seluruh molekul",
+      "Jumlah atom yang terikat langsung ke atom pusat",
+      "Jumlah PEB pada atom pusat",
+      "Golongan atom pusat di tabel periodik"
+    ],
+    "correct": 1,
+    "explain": "PEI (n) = jumlah atom terikat pada atom pusat — tinggal hitung berapa atom luar yang terhubung langsung ke atom pusat lewat ikatan kovalen."
+  },
+  {
+    "q": "Molekul \\(\\ce{BF3}\\) (atom pusat B, Golongan III A, EV = 3, mengikat 3 atom F) punya notasi VSEPR...",
+    "opts": ["\\(AX_3E_1\\)", "\\(AX_3E_0\\)", "\\(AX_2E_1\\)", "\\(AX_3E_2\\)"],
+    "correct": 1,
+    "explain": "PEB (m) = (3 − 3) / 2 = 0. Dengan n = 3 dan m = 0, notasinya \\(AX_3E_0\\) — geometri molekulnya Segitiga Planar dengan sudut 120°, konsisten dengan Oktet Tak Lengkap yang dibahas di Bab 4 (atom pusat B cuma dikelilingi 6 elektron)."
+  },
+  {
+    "q": "Dua molekul yang sama-sama punya bilangan sterik (domain total) 4 tapi geometri molekulnya BEDA adalah...",
+    "opts": [
+      "\\(\\ce{CH4}\\) dan \\(\\ce{CCl4}\\) (sama-sama Tetrahedral)",
+      "\\(\\ce{NH3}\\) dan \\(\\ce{H2O}\\) (Trigonal Piramida vs Bentuk V)",
+      "\\(\\ce{BF3}\\) dan \\(\\ce{SO3}\\) (sama-sama Segitiga Planar)",
+      "\\(\\ce{XeF4}\\) dan \\(\\ce{SF6}\\) (sama-sama Oktahedral)"
+    ],
+    "correct": 1,
+    "explain": "\\(\\ce{NH3}\\) (\\(AX_3E_1\\)) dan \\(\\ce{H2O}\\) (\\(AX_2E_2\\)) sama-sama domain total 4, tapi jumlah PEB-nya beda (1 vs 2), sehingga geometri molekulnya beda: Trigonal Piramida vs Bentuk V. Ini contoh langsung dari deret kompresi sudut ikatan."
+  },
+  {
+    "q": "Manakah pernyataan yang PALING TEPAT membedakan electron-domain geometry dengan molecular geometry (bentuk molekul)?",
+    "opts": [
+      "Keduanya selalu identik untuk semua molekul",
+      "Electron-domain geometry memperhitungkan PEI + PEB, sedangkan molecular geometry hanya memperhitungkan posisi atom (PEI) yang terlihat",
+      "Molecular geometry memperhitungkan PEI + PEB, sedangkan electron-domain geometry cuma PEI",
+      "Electron-domain geometry hanya berlaku untuk senyawa ionik"
+    ],
+    "correct": 1,
+    "explain": "Electron-domain geometry = kerangka dasar berdasarkan SEMUA domain (PEI + PEB), sedangkan molecular geometry (bentuk molekul) yang biasa disebut adalah bentuk dari posisi atom-atom saja — PEB 'ada' secara elektronik dan tetap mempengaruhi sudut, tapi tidak dihitung sebagai bagian dari bentuknya. \\(\\ce{NH3}\\) contohnya: electron-domain geometry Tetrahedral, tapi molecular geometry Trigonal Piramida."
+  },
+  {
+    "q": "Molekul \\(\\ce{SO2}\\) (atom pusat S mengikat 2 atom O, dengan 1 PEB) memiliki notasi VSEPR dan geometri...",
+    "opts": ["\\(AX_2E_0\\), Linier", "\\(AX_2E_1\\), Bentuk V", "\\(AX_2E_2\\), Bentuk V", "\\(AX_3E_0\\), Segitiga Planar"],
+    "correct": 1,
+    "explain": "\\(\\ce{SO2}\\) punya 2 PEI dan 1 PEB pada atom pusat S, jadi notasinya \\(AX_2E_1\\) (domain total 3, kerangka dasar Segitiga Planar) — dengan bentuk molekul akhir Bentuk V, sudut ikatan sekitar 119°."
+  },
+  {
+    "q": "Ion \\(\\ce{H3O+}\\) memiliki geometri molekul yang sama dengan...",
+    "opts": ["\\(\\ce{H2O}\\) (Bentuk V)", "\\(\\ce{NH3}\\) (Trigonal Piramida)", "\\(\\ce{CH4}\\) (Tetrahedral)", "\\(\\ce{BF3}\\) (Segitiga Planar)"],
+    "correct": 1,
+    "explain": "Ion \\(\\ce{H3O+}\\) punya notasi \\(AX_3E_1\\) — atom pusat O terikat ke 3 atom H dengan 1 PEB tersisa, sama persis pola \\(\\ce{NH3}\\), sehingga geometri molekulnya juga Trigonal Piramida."
+  },
+  {
+    "q": "Jika sebuah atom pusat punya notasi VSEPR \\(AX_2E_0\\), berapa sudut ikatan ideal dan apa nama geometrinya?",
+    "opts": ["104.5°, Bentuk V", "120°, Segitiga Planar", "180°, Linier", "109.5°, Tetrahedral"],
+    "correct": 2,
+    "explain": "\\(AX_2E_0\\) berarti 2 PEI dan 0 PEB (domain total 2) — geometri molekulnya Linier dengan sudut ikatan 180°, contohnya \\(\\ce{BeCl2}\\) dan \\(\\ce{CO2}\\)."
+  },
+  {
+    "q": "Sebuah atom pusat memiliki EV = 6 dan mengikat 2 atom Cl (n = 2). Berapa jumlah PEB (m) dan bagaimana notasi VSEPR-nya?",
+    "opts": ["m = 3, \\(AX_2E_3\\)", "m = 2, \\(AX_2E_2\\)", "m = 1, \\(AX_2E_1\\)", "m = 0, \\(AX_2E_0\\)"],
+    "correct": 1,
+    "explain": "PEB (m) = (6 − 2) / 2 = 2. Dengan n = 2 dan m = 2, notasinya \\(AX_2E_2\\) — pola yang sama dengan \\(\\ce{H2O}\\), \\(\\ce{H2S}\\), atau \\(\\ce{OF2}\\)."
+  },
+  {
+    "q": "Sebuah atom pusat memiliki EV = 7 dan mengikat 1 atom H (n = 1). Berapa jumlah PEB (m)?",
+    "opts": ["1", "2", "3", "4"],
+    "correct": 2,
+    "explain": "PEB (m) = (7 − 1) / 2 = 3. Dengan n = 1 dan m = 3, notasinya \\(AX_1E_3\\) — pola ini cocok untuk molekul diatomik dengan atom pusat golongan halogen, seperti \\(\\ce{HCl}\\) atau \\(\\ce{HF}\\)."
+  },
+  {
+    "q": "Kenapa domain total (n+m) yang sama TIDAK selalu menghasilkan bentuk molekul yang sama?",
+    "opts": [
+      "Karena domain total tidak berhubungan dengan bentuk molekul sama sekali",
+      "Karena PEI dan PEB sama-sama dihitung untuk kerangka dasar, tapi hanya posisi PEI (atom) yang menentukan bentuk molekul yang 'terlihat'",
+      "Karena bentuk molekul hanya ditentukan oleh massa atom pusat",
+      "Karena molekul dengan domain total sama pasti punya jumlah atom yang sama"
+    ],
+    "correct": 1,
+    "explain": "Domain total menentukan kerangka dasar (electron-domain geometry) yang sama, tapi jumlah PEB yang berbeda mengubah berapa banyak posisi 'domain' itu yang benar-benar ditempati atom (PEI) — sehingga bentuk molekul (molecular geometry) yang terlihat bisa berbeda meski kerangka dasarnya sama, seperti deret \\(\\ce{CH4}\\)/\\(\\ce{NH3}\\)/\\(\\ce{H2O}\\)."
+  },
+  {
+    "q": "Manakah pasangan molekul berikut yang sama-sama memiliki geometri molekul Trigonal Piramida?",
+    "opts": [
+      "\\(\\ce{CH4}\\) dan \\(\\ce{SiF4}\\)",
+      "\\(\\ce{NH3}\\) dan \\(\\ce{PCl3}\\)",
+      "\\(\\ce{H2O}\\) dan \\(\\ce{H2S}\\)",
+      "\\(\\ce{BF3}\\) dan \\(\\ce{SO3}\\)"
+    ],
+    "correct": 1,
+    "explain": "\\(\\ce{NH3}\\) dan \\(\\ce{PCl3}\\) sama-sama punya notasi \\(AX_3E_1\\) (3 PEI, 1 PEB) sehingga sama-sama bergeometri Trigonal Piramida. \\(\\ce{CH4}\\)/\\(\\ce{SiF4}\\) Tetrahedral, \\(\\ce{H2O}\\)/\\(\\ce{H2S}\\) Bentuk V, \\(\\ce{BF3}\\)/\\(\\ce{SO3}\\) Segitiga Planar."
+  },
+  {
+    "q": "Dalam hirarki tolakan VSEPR, tolakan PEI–PEI disebut 'paling lemah' karena...",
+    "opts": [
+      "PEI tidak punya muatan sama sekali",
+      "PEI ditarik oleh dua inti atom sekaligus sehingga awan elektronnya lebih 'kurus' dan lebih dekat ke sumbu ikatan",
+      "PEI selalu berada jauh dari atom pusat",
+      "Jumlah PEI selalu lebih sedikit dari PEB"
+    ],
+    "correct": 1,
+    "explain": "PEI ditarik oleh dua inti atom (atom pusat & atom luar) sekaligus, membuat awan elektronnya lebih terkonsentrasi/'kurus' di sepanjang sumbu ikatan dibanding PEB yang cuma terikat satu inti — sehingga tolakan antar-PEI relatif paling lemah dalam hirarki."
+  },
+  {
+    "q": "Molekul \\(\\ce{OF2}\\) (atom pusat O, EV = 6, mengikat 2 atom F) memiliki geometri molekul...",
+    "opts": ["Tetrahedral", "Trigonal Piramida", "Bentuk V", "Segitiga Planar"],
+    "correct": 2,
+    "explain": "PEB (m) = (6 − 2) / 2 = 2, sehingga notasinya \\(AX_2E_2\\) — sama seperti \\(\\ce{H2O}\\) dan \\(\\ce{H2S}\\) — geometri molekulnya Bentuk V dengan sudut ikatan mendekati 104.5°."
+  }
+]
