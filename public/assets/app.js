@@ -1314,20 +1314,35 @@ function initVectorLab(root){
     return (Math.round(n*100)/100).toLocaleString('id-ID', {maximumFractionDigits:2});
   }
 
-  // Isometric 3D -> 2D projection: X right, Z left, Y straight up
-  // (matches the "up = positive Y" convention used in every other
-  // vector diagram in this chapter), 30 degree axis angle.
+  // Orthographic 3D -> 2D projection with a draggable camera (yaw +
+  // pitch around the origin). Orthographic (not perspective) on purpose:
+  // component lengths/ratios stay geometrically accurate regardless of
+  // rotation, which matters more here than the "closer = bigger" look
+  // of perspective. Default angles are true isometric (45deg yaw,
+  // arctan(1/sqrt2) pitch) so the resting view matches the standard
+  // isometric convention used elsewhere in this chapter.
   const W = 320, H = 280;
   const DPR = window.devicePixelRatio || 1;
   canvas.width = W * DPR; canvas.height = H * DPR;
   canvas.style.width = W+'px'; canvas.style.height = H+'px';
   ctx.scale(DPR, DPR);
-  const cx = W/2, cy = H/2 + 24;
-  const ISO = Math.PI/6;
+  const cx = W/2, cy = H/2 + 10;
+  const DEFAULT_YAW = Math.PI/4;
+  const DEFAULT_PITCH = Math.atan(1/Math.sqrt(2));
+  const PITCH_LIMIT = 1.45;
+  let yaw = DEFAULT_YAW, pitch = DEFAULT_PITCH;
 
+  function rotate(x,y,z){
+    const cyw = Math.cos(yaw), syw = Math.sin(yaw);
+    const x1 = x*cyw - z*syw;
+    const z1 = x*syw + z*cyw;
+    const cp = Math.cos(pitch), sp = Math.sin(pitch);
+    const y2 = y*cp - z1*sp;
+    const z2 = y*sp + z1*cp;
+    return [x1, y2, z2];
+  }
   function project(x,y,z){
-    const px = (x - z) * Math.cos(ISO);
-    const py = (x + z) * Math.sin(ISO) + y;
+    const [px,py] = rotate(x,y,z);
     return [px, py];
   }
   function toScreen(v, scale){
@@ -1346,6 +1361,22 @@ function initVectorLab(root){
     ctx.closePath(); ctx.fill();
   }
 
+  // Thin dashed drop-line from a vector's tip straight down to the
+  // ground (Y=0) plane, plus a small dot where it lands — gives a
+  // depth cue for the Y-component that a bare arrow doesn't, especially
+  // once the camera is rotated away from the default resting angle.
+  function drawDropLine(v, scale, color){
+    if(Math.abs(v[1]) < 1e-9) return;
+    const tip = toScreen(v, scale);
+    const ground = toScreen([v[0], 0, v[2]], scale);
+    ctx.setLineDash([3,3]);
+    ctx.strokeStyle = color; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(tip[0],tip[1]); ctx.lineTo(ground[0],ground[1]); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = color;
+    ctx.beginPath(); ctx.arc(ground[0], ground[1], 2, 0, Math.PI*2); ctx.fill();
+  }
+
   function renderCanvas(){
     const A = getVec('A'), B = getVec('B');
     const R = currentOp === 'add' ? vadd(A,B) : currentOp === 'cross' ? vcross(A,B) : null;
@@ -1356,6 +1387,20 @@ function initVectorLab(root){
 
     const axisLen = maxComp*1.4 + 1.5;
     const origin = toScreen([0,0,0], scale);
+
+    // Ground grid (X-Z plane at Y=0) — reads as a floor under rotation,
+    // the main visual cue that makes an orbit-able 3D scene legible
+    // instead of an ambiguous tangle of lines.
+    const half = axisLen, divisions = 6, step = (half*2)/divisions;
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)'; ctx.lineWidth = 1;
+    for(let i=0; i<=divisions; i++){
+      const p = -half + i*step;
+      const a = toScreen([p,0,-half], scale), b = toScreen([p,0,half], scale);
+      ctx.beginPath(); ctx.moveTo(a[0],a[1]); ctx.lineTo(b[0],b[1]); ctx.stroke();
+      const c = toScreen([-half,0,p], scale), d = toScreen([half,0,p], scale);
+      ctx.beginPath(); ctx.moveTo(c[0],c[1]); ctx.lineTo(d[0],d[1]); ctx.stroke();
+    }
+
     ctx.font = "600 12px 'Space Grotesk', sans-serif";
     [['X',[axisLen,0,0]],['Y',[0,axisLen,0]],['Z',[0,0,axisLen]]].forEach(([label,end])=>{
       const [ex,ey] = toScreen(end, scale);
@@ -1366,6 +1411,8 @@ function initVectorLab(root){
     });
 
     const aScreen = toScreen(A, scale), bScreen = toScreen(B, scale);
+    drawDropLine(A, scale, 'rgba(90,169,255,0.45)');
+    drawDropLine(B, scale, 'rgba(63,211,158,0.45)');
     drawArrow(origin[0],origin[1], aScreen[0],aScreen[1], '#5aa9ff', 3);
     drawArrow(origin[0],origin[1], bScreen[0],bScreen[1], '#3fd39e', 3);
 
@@ -1375,9 +1422,11 @@ function initVectorLab(root){
       ctx.strokeStyle = 'rgba(63,211,158,0.55)'; ctx.lineWidth = 1.5;
       ctx.beginPath(); ctx.moveTo(aScreen[0],aScreen[1]); ctx.lineTo(rScreen[0],rScreen[1]); ctx.stroke();
       ctx.setLineDash([]);
+      drawDropLine(R, scale, 'rgba(240,163,54,0.45)');
       drawArrow(origin[0],origin[1], rScreen[0],rScreen[1], '#f0a336', 3);
     } else if(currentOp === 'cross' && mag(R) > 1e-9){
       const rScreen = toScreen(R, scale);
+      drawDropLine(R, scale, 'rgba(240,163,54,0.45)');
       drawArrow(origin[0],origin[1], rScreen[0],rScreen[1], '#f0a336', 3);
     }
 
@@ -1428,6 +1477,33 @@ function initVectorLab(root){
       renderAll();
     });
   });
+
+  // Drag-to-orbit: pointer position deltas map directly to yaw/pitch.
+  // Pitch is clamped short of +/-90deg so the camera can't flip past
+  // looking straight down/up, which would make the scene unreadable.
+  let dragging = false, dragStartX = 0, dragStartY = 0, startYaw = 0, startPitch = 0;
+  canvas.addEventListener('pointerdown', (e)=>{
+    dragging = true; dragStartX = e.clientX; dragStartY = e.clientY;
+    startYaw = yaw; startPitch = pitch;
+    canvas.setPointerCapture(e.pointerId);
+  });
+  canvas.addEventListener('pointermove', (e)=>{
+    if(!dragging) return;
+    const dx = e.clientX - dragStartX, dy = e.clientY - dragStartY;
+    yaw = startYaw + dx * 0.008;
+    pitch = Math.max(-PITCH_LIMIT, Math.min(PITCH_LIMIT, startPitch - dy * 0.008));
+    renderCanvas();
+  });
+  canvas.addEventListener('pointerup', ()=>{ dragging = false; });
+  canvas.addEventListener('pointercancel', ()=>{ dragging = false; });
+
+  const resetBtn = root.querySelector('#vectorResetView');
+  if(resetBtn){
+    resetBtn.addEventListener('click', ()=>{
+      yaw = DEFAULT_YAW; pitch = DEFAULT_PITCH;
+      renderCanvas();
+    });
+  }
 
   renderAll();
 }

@@ -896,11 +896,16 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
    separate cards. Keeps a multi-step solution reading as one continuous
    walkthrough instead of fragmenting it into a grid. */
 .step-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 22px;}
-.step-row{
+/* Named .step-item, not .step-row — .step-row is already taken by the
+   Biologi mitosis-phase pill toggle (flex row of clickable pills), a
+   completely different component. Reusing that name here silently
+   inherited its display:flex, which broke KaTeX's baseline alignment
+   with the label text. */
+.step-item{
   padding:16px 0 16px 38px;position:relative;font-size:.86rem;color:var(--ink);
   text-align:justify;text-justify:inter-word;
 }
-.step-row + .step-row{border-top:1px solid var(--line);}
+.step-item + .step-item{border-top:1px solid var(--line);}
 .step-n{position:absolute;top:16px;left:0;font-family:'Space Grotesk';color:var(--orange);font-size:.78rem;font-weight:600;}
 
 /* === Koperasi === */
@@ -1056,10 +1061,18 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
   background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);
   border-radius:12px;padding:14px;display:flex;flex-direction:column;align-items:center;
 }
-.vector-canvas-wrap canvas{max-width:100%;height:auto;border-radius:8px;}
-.vector-legend{display:flex;gap:14px;margin-top:10px;font-size:.74rem;color:#c3ccd9;flex-wrap:wrap;justify-content:center;}
+.vector-canvas-wrap canvas{max-width:100%;height:auto;border-radius:8px;cursor:grab;touch-action:none;}
+.vector-canvas-wrap canvas:active{cursor:grabbing;}
+.vector-canvas-hint{font-size:.68rem;color:#8a99ad;margin-top:8px;text-align:center;}
+.vector-legend{display:flex;gap:14px;margin-top:10px;font-size:.74rem;color:#c3ccd9;flex-wrap:wrap;justify-content:center;align-items:center;}
 .vector-legend span{display:inline-flex;align-items:center;gap:6px;}
 .vector-legend .dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex-shrink:0;}
+.vector-reset-view{
+  border:1px solid rgba(255,255,255,0.22);background:rgba(255,255,255,0.06);color:#c3ccd9;
+  border-radius:20px;padding:5px 12px;font-family:'Space Grotesk';font-size:.7rem;font-weight:600;
+  cursor:pointer;transition:all .15s;
+}
+.vector-reset-view:hover{border-color:var(--purple);color:#fff;}
 .vector-output{margin-top:16px;display:flex;flex-direction:column;gap:12px;}
 @media(max-width:760px){
   .vector-lab{padding:24px;}
