@@ -688,6 +688,15 @@ section.tight{padding:60px 0;}
 .hero{
   padding:90px 0 70px;
   background:var(--paper);
+  /* .hero-decor is absolutely positioned with right:-60px; without a
+     positioned ancestor here it escapes to the page's initial
+     containing block instead of this section, pushing real document
+     width ~60px past the viewport. On mobile that forces the browser
+     to widen the layout viewport to fit it, leaving a blank gutter on
+     the right instead of filling the screen — a real bug, not a
+     viewport-meta issue. */
+  position:relative;
+  overflow:hidden;
 }
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;}
 /* No max-width on .hero-grid.single itself -- it's the same element as
