@@ -1,0 +1,343 @@
+[
+  {
+    "q": "Fisika disebut sebagai <i>\"sains mendasar\"</i>. Apa maksud pernyataan ini?",
+    "opts": [
+      "Fisika adalah ilmu yang paling mudah dipelajari dibanding sains lain",
+      "Prinsip-prinsip fisika menjadi fondasi bagi ilmu-ilmu lain seperti kimia, astronomi, geologi, hingga rekayasa teknologi modern",
+      "Fisika hanya mempelajari benda-benda yang ukurannya sangat besar",
+      "Fisika ditemukan lebih dulu daripada matematika"
+    ],
+    "correct": 1,
+    "explain": "Fisika disebut sains mendasar karena hampir semua ilmu lain bergantung pada prinsip fisikanya untuk menjelaskan fenomena — kimia butuh fisika untuk energi & ikatan molekul, astronomi butuh mekanika & gravitasi, geologi butuh gelombang seismik, dst. Bukan soal kemudahan belajar atau urutan penemuan."
+  },
+  {
+    "q": "Manakah dari berikut ini yang PALING tepat menggambarkan karakteristik fisika sebagai \"Ilmu Eksperimental\"?",
+    "opts": [
+      "Semua teori fisika diterima tanpa perlu dibuktikan lewat pengamatan",
+      "Fisika bergantung pada pengamatan sistematis, pengukuran presisi, dan eksperimen yang dapat diuji ulang (reproduksibel) oleh orang lain",
+      "Eksperimen fisika hanya boleh dilakukan oleh ilmuwan bergelar profesor",
+      "Fisika tidak memerlukan alat ukur karena cukup mengandalkan logika"
+    ],
+    "correct": 1,
+    "explain": "Karakteristik eksperimental berarti klaim fisika harus bisa diuji lewat pengamatan & eksperimen yang reproduksibel — kalau orang lain mengulang eksperimen yang sama dengan cara yang sama, mereka harus dapat hasil yang sama juga. Ini yang membedakan fisika dari spekulasi."
+  },
+  {
+    "q": "Kenapa matematika disebut sebagai \"bahasa\" ilmu fisika?",
+    "opts": [
+      "Karena semua ilmuwan fisika wajib jago matematika sebelum boleh meneliti",
+      "Karena matematika jadi alat bantu utama untuk menyusun model teori, merumuskan hukum alam, dan memprediksi fenomena fisis secara akurat dan kuantitatif",
+      "Karena rumus fisika ditulis pakai simbol matematika supaya terlihat lebih ilmiah",
+      "Karena matematika dan fisika ditemukan oleh orang yang sama"
+    ],
+    "correct": 1,
+    "explain": "Matematika bukan sekadar dekorasi simbol — ia alat bantu fungsional untuk menyusun model, merumuskan hukum, dan memprediksi hasil secara kuantitatif (angka pasti, bukan cuma deskripsi kualitatif)."
+  },
+  {
+    "q": "Matahari terlihat terbit di timur dan tenggelam di barat setiap hari. Apa penjelasan fisika yang benar untuk fenomena \"Gerak Semu Matahari\" ini?",
+    "opts": [
+      "Matahari benar-benar bergerak mengelilingi Bumi setiap 24 jam",
+      "Bumi berotasi pada porosnya dari barat ke timur, sehingga matahari yang sebenarnya diam terlihat bergerak ke arah berlawanan (timur ke barat)",
+      "Matahari bergerak karena ditarik oleh gaya magnet Bumi",
+      "Fenomena ini terjadi karena atmosfer Bumi membelokkan cahaya matahari"
+    ],
+    "correct": 1,
+    "explain": "Bumi berotasi dari barat ke timur pada porosnya (±24 jam per putaran). Karena kita ikut berputar bersama Bumi, matahari yang sebenarnya diam terlihat 'bergerak' ke arah berlawanan dari rotasi kita — makanya disebut gerak SEMU, bukan gerak sungguhan matahari."
+  },
+  {
+    "q": "Roket bisa melaju di ruang hampa udara (luar angkasa) meski tidak ada apa pun untuk 'ditolak' kakinya. Hukum fisika apa yang menjelaskan ini?",
+    "opts": [
+      "Hukum I Newton (Kelembaman)",
+      "Hukum II Newton (F = ma)",
+      "Hukum III Newton (Aksi-Reaksi) — roket mendorong gas panas ke bawah (aksi), gas itu mendorong balik roket ke atas (reaksi) dengan gaya sama besar",
+      "Hukum Kekekalan Energi"
+    ],
+    "correct": 2,
+    "explain": "Hukum III Newton: setiap gaya aksi menghasilkan gaya reaksi yang sama besar tapi berlawanan arah. Roket mendorong gas ke bawah (aksi), gas mendorong balik roket ke atas (reaksi) — kedua gaya ini bekerja antara roket & gas, bukan antara roket & udara luar, jadi tetap berlaku meski di ruang hampa."
+  },
+  {
+    "q": "Wahana bom-bom car di taman hiburan membuat dua mobil yang bertabrakan sama-sama terpental, bukan cuma satu. Fenomena fisika apa yang paling tepat menjelaskan ini?",
+    "opts": [
+      "Hukum I Newton",
+      "Hukum III Newton — gaya aksi dari satu mobil ke mobil lain menghasilkan gaya reaksi yang sama besar, berlawanan arah, pada mobil pertama",
+      "Hukum kekekalan massa",
+      "Prinsip Archimedes"
+    ],
+    "correct": 1,
+    "explain": "Sama seperti kasus roket, ini penerapan Hukum III Newton: gaya yang diberikan mobil A ke mobil B (aksi) menghasilkan gaya yang sama besar dari mobil B kembali ke mobil A (reaksi) — makanya keduanya sama-sama terpental."
+  },
+  {
+    "q": "Pelangi terbentuk lewat dua peristiwa optik yang terjadi di dalam titik-titik air hujan. Sebutkan kedua peristiwa itu!",
+    "opts": [
+      "Refleksi total dan interferensi",
+      "Pembiasan (cahaya membelok saat pindah medium) dan dispersi (tiap warna dibelokkan dengan sudut berbeda-beda)",
+      "Difraksi dan polarisasi",
+      "Konduksi dan konveksi"
+    ],
+    "correct": 1,
+    "explain": "Cahaya matahari mengalami pembiasan (membelok saat masuk & keluar tetes air, karena kecepatan cahaya berubah saat pindah medium) dan dispersi (tiap warna dibelokkan dengan sudut sedikit berbeda karena panjang gelombangnya beda-beda — merah paling sedikit dibelokkan, ungu paling banyak), menghasilkan spektrum warna pelangi."
+  },
+  {
+    "q": "Dalam pembentukan pelangi, kenapa warna merah dan ungu terpisah membentuk spektrum, bukan tetap jadi cahaya putih?",
+    "opts": [
+      "Karena warna merah lebih berat daripada warna ungu",
+      "Karena tiap warna cahaya punya panjang gelombang berbeda, sehingga dibelokkan dengan sudut yang berbeda pula saat dibiaskan",
+      "Karena air hujan hanya bisa memantulkan warna-warna tertentu",
+      "Karena mata manusia hanya bisa melihat sebagian warna sekaligus"
+    ],
+    "correct": 1,
+    "explain": "Dispersi terjadi karena setiap warna (panjang gelombang) dibelokkan dengan sudut pembiasan yang sedikit berbeda saat melewati medium (air). Cahaya ungu (panjang gelombang pendek) dibelokkan paling banyak, cahaya merah (panjang gelombang panjang) dibelokkan paling sedikit — hasilnya cahaya putih terurai jadi spektrum warna."
+  },
+  {
+    "q": "Manakah pasangan cabang Fisika Klasik dan fokus kajiannya yang PALING tepat?",
+    "opts": [
+      "Termodinamika — mempelajari gerak benda, gaya, dan Hukum Newton",
+      "Optik — mempelajari muatan listrik, arus, dan medan magnet",
+      "Mekanika — mempelajari gerak benda, lintasan, kecepatan, percepatan, gaya, serta hukum-hukum gerak",
+      "Elektromagnetisme — mempelajari sifat cahaya, pemantulan, dan pembiasan"
+    ],
+    "correct": 2,
+    "explain": "Mekanika fokus pada gerak benda, lintasan, kecepatan, percepatan, gaya, dan hukum-hukum gerak (Hukum Newton, kekekalan energi & momentum). Termodinamika sebenarnya soal panas/kalor & kerja, Optik soal cahaya, dan Elektromagnetisme soal muatan/arus/medan magnet — tiga opsi lain tertukar pasangannya."
+  },
+  {
+    "q": "Cabang fisika apa yang mempelajari hubungan antara panas (kalor), kerja, temperatur, dan perubahan energi termal dalam suatu sistem?",
+    "opts": [
+      "Mekanika",
+      "Termodinamika",
+      "Elektromagnetisme",
+      "Optik"
+    ],
+    "correct": 1,
+    "explain": "Termodinamika secara spesifik mengkaji hubungan kalor-kerja-temperatur dan perubahan energi termal — bukan gerak benda (Mekanika), muatan listrik (Elektromagnetisme), atau cahaya (Optik)."
+  },
+  {
+    "q": "Apa perbedaan mendasar antara Fisika Klasik dan Fisika Modern?",
+    "opts": [
+      "Fisika Klasik dirumuskan sebelum abad ke-20 untuk benda makroskopik berkecepatan relatif rendah, sedangkan Fisika Modern mencakup mekanika kuantum & relativitas",
+      "Fisika Klasik hanya berlaku di Bumi, Fisika Modern berlaku di luar angkasa",
+      "Fisika Klasik memakai rumus, Fisika Modern tidak memakai rumus sama sekali",
+      "Tidak ada perbedaan, keduanya istilah yang sama untuk hal yang sama"
+    ],
+    "correct": 0,
+    "explain": "Fisika Klasik dirumuskan sebelum abad ke-20, cocok untuk benda-benda berukuran normal (makroskopik) dengan kecepatan jauh di bawah kecepatan cahaya. Fisika Modern (mekanika kuantum & relativitas) muncul untuk menjelaskan dunia partikel sangat kecil dan kecepatan mendekati kecepatan cahaya, yang tidak bisa dijelaskan Fisika Klasik."
+  },
+  {
+    "q": "Apa perbedaan mendasar antara \"besaran\" dan \"satuan\"?",
+    "opts": [
+      "Besaran dan satuan adalah istilah yang sama persis, bisa dipakai bergantian",
+      "Besaran adalah sesuatu yang dapat diukur dan punya nilai kuantitatif, sedangkan satuan adalah pembanding acuan standar yang dipakai dalam pengukuran besaran itu",
+      "Besaran hanya berlaku untuk panjang & massa, satuan berlaku untuk semua hal lain",
+      "Satuan adalah nilai hasil pengukuran, besaran adalah alat ukurnya"
+    ],
+    "correct": 1,
+    "explain": "Besaran = APA yang diukur (panjang, massa, waktu — sesuatu yang bisa dinyatakan sebagai angka). Satuan = PEMBANDING ACUAN yang dipakai untuk menyatakan hasil pengukuran itu (meter untuk panjang, kilogram untuk massa)."
+  },
+  {
+    "q": "Kenapa 7 besaran pokok SI disebut sebagai besaran yang 'tidak diturunkan dari besaran lain'?",
+    "opts": [
+      "Karena satuannya ditetapkan secara internasional sebagai dasar, dan semua besaran turunan (kecepatan, gaya, dst.) pada akhirnya dibangun dari kombinasi ketujuh besaran ini",
+      "Karena besaran pokok tidak bisa diukur dengan alat ukur biasa",
+      "Karena besaran pokok hanya ada di negara-negara maju",
+      "Karena besaran pokok tidak punya satuan sama sekali"
+    ],
+    "correct": 0,
+    "explain": "Besaran pokok adalah besaran dasar/fondasi — satuannya ditetapkan langsung (bukan hasil kombinasi matematis besaran lain). Besaran turunan (kecepatan, gaya, energi, dst.) semuanya dibangun dari kombinasi perkalian/pembagian besaran pokok ini."
+  },
+  {
+    "q": "Manakah pasangan Besaran Pokok — Satuan SI — Simbol Satuan berikut yang BENAR?",
+    "opts": [
+      "Suhu Termodinamika — Celsius — °C",
+      "Kuat Arus Listrik — Ampere — A",
+      "Intensitas Cahaya — Lumen — lm",
+      "Jumlah Zat — Molar — M"
+    ],
+    "correct": 1,
+    "explain": "Kuat Arus Listrik satuan SI-nya Ampere (simbol A) — benar. Suhu Termodinamika SI-nya Kelvin (K, bukan Celsius), Intensitas Cahaya SI-nya Kandela (cd, bukan Lumen), dan Jumlah Zat SI-nya Mol (mol, bukan Molar)."
+  },
+  {
+    "q": "Apa simbol dimensi untuk besaran pokok Suhu Termodinamika?",
+    "opts": [
+      "[S]",
+      "[K]",
+      "[θ]",
+      "[T]"
+    ],
+    "correct": 2,
+    "explain": "Dimensi Suhu Termodinamika adalah [θ] (theta) — jangan tertukar dengan [T] yang merupakan dimensi untuk besaran pokok Waktu, meski keduanya sama-sama dimulai dengan huruf 'T' dalam bahasa sehari-hari (Temperature vs Time)."
+  },
+  {
+    "q": "Seorang astronaut punya massa 70 kg di Bumi. Setelah pergi ke Bulan (gravitasi Bulan ≈ 1/6 gravitasi Bumi), manakah pernyataan yang BENAR?",
+    "opts": [
+      "Massa & berat astronaut sama-sama berkurang jadi sekitar 1/6-nya",
+      "Massa astronaut tetap 70 kg (besaran pokok, skalar, tidak bergantung lokasi), tapi beratnya berkurang jadi sekitar 1/6 berat di Bumi karena berat adalah gaya gravitasi (w = m·g) yang bergantung pada g",
+      "Massa astronaut berkurang, tapi beratnya tetap sama",
+      "Massa dan berat astronaut sama-sama tidak berubah di mana pun berada"
+    ],
+    "correct": 1,
+    "explain": "Massa adalah besaran pokok & skalar — ukuran jumlah materi, nilainya tetap di mana pun (70 kg di Bumi = 70 kg di Bulan). Berat adalah besaran turunan & vektor, sebenarnya gaya gravitasi (w = m·g) — karena g di Bulan ≈ 1/6 g Bumi, berat astronaut di Bulan juga berkurang jadi sekitar 1/6 berat di Bumi, meski massanya tidak berubah sama sekali."
+  },
+  {
+    "q": "Besaran turunan Gaya (F) dibentuk dari kombinasi besaran pokok apa saja?",
+    "opts": [
+      "Panjang dan Waktu saja",
+      "Massa dan Panjang saja",
+      "Massa, Panjang, dan Waktu (lewat rumus F = m·a, di mana a = Δv/Δt melibatkan panjang & waktu)",
+      "Suhu dan Jumlah Zat"
+    ],
+    "correct": 2,
+    "explain": "Gaya F = m · a. Massa (m) adalah besaran pokok langsung, sedangkan percepatan (a) sendiri besaran turunan dari Panjang & Waktu (a = Δv/Δt, dan v = s/t). Jadi dimensi Gaya = \\([M][L][T]^{-2}\\) — gabungan tiga besaran pokok: Massa, Panjang, Waktu."
+  },
+  {
+    "q": "Berapa dimensi besaran turunan Massa Jenis (ρ = m/V)?",
+    "opts": [
+      "\\([M][L]^{3}\\)",
+      "\\([M][L]^{-3}\\)",
+      "\\([M][L]^{-1}\\)",
+      "\\([M]^{-1}[L]^{3}\\)"
+    ],
+    "correct": 1,
+    "explain": "Massa Jenis ρ = m/V. Dimensi Massa = \\([M]\\), dimensi Volume = \\([L]^{3}\\). Maka \\([\\rho] = [M]/[L]^{3} = [M][L]^{-3}\\) — pangkat volume di penyebut jadi negatif saat dipindah ke pembilang."
+  },
+  {
+    "q": "Buktikan secara dimensi rumus Usaha/Energi W = F · s (F = gaya, s = perpindahan). Berapa dimensi W?",
+    "opts": [
+      "\\([M][L][T]^{-1}\\)",
+      "\\([M][L]^{2}[T]^{-2}\\)",
+      "\\([M][L]^{2}[T]^{-1}\\)",
+      "\\([M][L]^{-2}[T]^{2}\\)"
+    ],
+    "correct": 1,
+    "explain": "Dimensi Gaya \\([F] = [M][L][T]^{-2}\\). Dimensi perpindahan \\([s] = [L]\\). Maka \\([W] = [F] \\times [s] = [M][L][T]^{-2} \\times [L] = [M][L]^{2}[T]^{-2}\\) — cocok dengan satuan Joule (\\(kg \\cdot m^{2}/s^{2}\\))."
+  },
+  {
+    "q": "Dalam rumus Volume V = p · l · t (p = panjang, l = lebar, t = tinggi), kenapa siswa harus hati-hati membaca simbol 't' di sini dibanding di rumus Kecepatan v = s/t?",
+    "opts": [
+      "Karena t selalu berarti waktu di semua rumus fisika, tidak ada pengecualian",
+      "Karena t di rumus Volume berarti tinggi, sedangkan t di rumus Kecepatan berarti waktu — simbol yang sama bisa berarti besaran berbeda tergantung konteks rumus",
+      "Karena rumus Volume sebenarnya salah dan seharusnya tidak memakai simbol t",
+      "Karena t di kedua rumus itu sebenarnya berarti hal yang sama, yaitu waktu"
+    ],
+    "correct": 1,
+    "explain": "Ini kesalahan umum siswa: mengasumsikan satu huruf simbol selalu berarti besaran yang sama di semua rumus. Faktanya konteks rumus menentukan artinya — t = tinggi di V = p·l·t, tapi t = waktu di v = s/t. Selalu cek definisi variabel yang diberikan soal, jangan asumsi dari hafalan simbol."
+  },
+  {
+    "q": "Apa fungsi utama analisis dimensi dalam fisika?",
+    "opts": [
+      "Untuk menghitung nilai numerik akhir suatu besaran secara langsung",
+      "Untuk mengecek apakah suatu persamaan fisika MUNGKIN benar — kalau dimensi ruas kiri & kanan tidak sama, persamaan itu pasti salah",
+      "Untuk mengganti kebutuhan alat ukur di laboratorium",
+      "Untuk menentukan warna suatu benda"
+    ],
+    "correct": 1,
+    "explain": "Analisis dimensi dipakai untuk menyaring persamaan yang jelas salah — kalau dimensi kedua ruas persamaan tidak cocok, persamaan itu pasti keliru. Tapi ini bukan bukti 100% benar, karena konstanta angka murni (seperti ½ pada rumus energi kinetik) tidak kelihatan dari analisis dimensi saja."
+  },
+  {
+    "q": "Manakah bentuk notasi ilmiah yang BENAR menurut format baku \\(a \\times 10^{n}\\)?",
+    "opts": [
+      "\\(30 \\times 10^{7}\\)",
+      "\\(0{,}3 \\times 10^{9}\\)",
+      "\\(3{,}00 \\times 10^{8}\\)",
+      "\\(300 \\times 10^{6}\\)"
+    ],
+    "correct": 2,
+    "explain": "Syarat notasi ilmiah baku: \\(1 \\leq a < 10\\). Hanya \\(3{,}00 \\times 10^{8}\\) yang memenuhi syarat ini (a = 3,00). Opsi lain melanggar aturan: 30 terlalu besar (≥10), 0,3 terlalu kecil (<1), dan 300 jauh melebihi batas — meski nilai total keempat opsi ini sebenarnya sama (300.000.000), hanya satu yang formatnya benar."
+  },
+  {
+    "q": "Kecepatan cahaya di ruang hampa adalah 300.000.000 m/s. Berapa bentuk notasi ilmiahnya yang benar?",
+    "opts": [
+      "\\(3{,}00 \\times 10^{6}\\ m/s\\)",
+      "\\(3{,}00 \\times 10^{7}\\ m/s\\)",
+      "\\(3{,}00 \\times 10^{8}\\ m/s\\)",
+      "\\(3{,}00 \\times 10^{9}\\ m/s\\)"
+    ],
+    "correct": 2,
+    "explain": "Geser koma desimal dari belakang angka 300.000.000 ke depan angka 3 — butuh 8 langkah geser ke kiri, jadi n = 8. Bentuk notasi ilmiahnya \\(3{,}00 \\times 10^{8}\\ m/s\\)."
+  },
+  {
+    "q": "Konstanta gravitasi universal \\(G\\) = 0,00000000006674 \\(N \\cdot m^{2}/kg^{2}\\). Berapa bentuk notasi ilmiahnya?",
+    "opts": [
+      "\\(6{,}674 \\times 10^{10}\\)",
+      "\\(6{,}674 \\times 10^{-10}\\)",
+      "\\(6{,}674 \\times 10^{-11}\\)",
+      "\\(6{,}674 \\times 10^{11}\\)"
+    ],
+    "correct": 2,
+    "explain": "Karena angka ini sangat kecil (banyak nol di depan), geser koma ke KANAN sampai tersisa satu digit di depan koma (6,674) — butuh 11 langkah geser, sehingga eksponennya NEGATIF: \\(6{,}674 \\times 10^{-11}\\)."
+  },
+  {
+    "q": "Muatan elementer elektron \\(e = 1{,}602 \\times 10^{-19}\\ C\\) dalam bentuk notasi ilmiah. Apa yang salah kalau seorang siswa menuliskannya sebagai \\(16{,}02 \\times 10^{-20}\\ C\\)?",
+    "opts": [
+      "Tidak ada yang salah, kedua bentuk itu sama-sama benar dan setara",
+      "Nilainya salah, seharusnya \\(16{,}02 \\times 10^{-20}\\) tidak sama dengan \\(1{,}602 \\times 10^{-19}\\)",
+      "Nilainya memang sama secara matematis, tapi bentuknya melanggar syarat notasi ilmiah karena a = 16,02 tidak memenuhi \\(1 \\leq a < 10\\)",
+      "Eksponennya seharusnya positif, bukan negatif"
+    ],
+    "correct": 2,
+    "explain": "Secara nilai, \\(16{,}02 \\times 10^{-20} = 1{,}602 \\times 10^{-19}\\) — sama saja. Tapi bentuk \\(16{,}02 \\times 10^{-20}\\) TIDAK memenuhi syarat format notasi ilmiah baku (\\(1 \\leq a < 10\\)) karena a = 16,02 lebih besar dari 10. Ini kesalahan format, bukan kesalahan nilai."
+  },
+  {
+    "q": "Konstanta Avogadro \\(N_A\\) = 602.200.000.000.000.000.000.000 /mol. Berapa bentuk notasi ilmiahnya?",
+    "opts": [
+      "\\(6{,}022 \\times 10^{22}\\ /mol\\)",
+      "\\(6{,}022 \\times 10^{23}\\ /mol\\)",
+      "\\(6{,}022 \\times 10^{24}\\ /mol\\)",
+      "\\(60{,}22 \\times 10^{22}\\ /mol\\)"
+    ],
+    "correct": 1,
+    "explain": "Geser koma dari belakang angka terakhir ke depan angka 6 — butuh 23 langkah geser ke kiri, sehingga n = 23. Bentuk notasi ilmiahnya \\(6{,}022 \\times 10^{23}\\ /mol\\). Opsi terakhir (\\(60{,}22 \\times 10^{22}\\)) secara nilai setara tapi melanggar format (a harus < 10)."
+  },
+  {
+    "q": "Massa jenis air murni pada suhu \\(4^{\\circ}C\\) adalah \\(1.000\\ kg/m^{3}\\). Berapa bentuk notasi ilmiahnya?",
+    "opts": [
+      "\\(1{,}00 \\times 10^{2}\\ kg/m^{3}\\)",
+      "\\(1{,}00 \\times 10^{3}\\ kg/m^{3}\\)",
+      "\\(1{,}00 \\times 10^{4}\\ kg/m^{3}\\)",
+      "\\(10{,}0 \\times 10^{2}\\ kg/m^{3}\\)"
+    ],
+    "correct": 1,
+    "explain": "1.000 = \\(1{,}00 \\times 10^{3}\\ kg/m^3\\) — geser koma 3 langkah ke kiri dari angka 1.000 sampai tersisa satu digit (1) di depan koma."
+  },
+  {
+    "q": "Sebuah persegi panjang punya panjang \\(p = 4{,}0 \\times 10^{2}\\) cm dan lebar \\(l = 2{,}0 \\times 10^{1}\\) cm. Berapa luasnya dalam notasi ilmiah (satuan \\(cm^{2}\\))?",
+    "opts": [
+      "\\(6{,}0 \\times 10^{3}\\ cm^{2}\\)",
+      "\\(8{,}0 \\times 10^{2}\\ cm^{2}\\)",
+      "\\(8{,}0 \\times 10^{3}\\ cm^{2}\\)",
+      "\\(8{,}0 \\times 10^{4}\\ cm^{2}\\)"
+    ],
+    "correct": 2,
+    "explain": "\\(A = p \\times l = (4{,}0 \\times 10^{2}) \\times (2{,}0 \\times 10^{1}) = (4{,}0 \\times 2{,}0) \\times 10^{2+1} = 8{,}0 \\times 10^{3}\\ cm^{2}\\). Ingat: kalikan angka depannya (a), lalu JUMLAHKAN eksponennya (n), jangan dikalikan."
+  },
+  {
+    "q": "Manakah besaran-besaran berikut yang SEMUANYA merupakan besaran turunan (bukan besaran pokok)?",
+    "opts": [
+      "Panjang, Massa, Waktu",
+      "Kecepatan, Gaya, Tekanan",
+      "Suhu, Kuat Arus Listrik, Jumlah Zat",
+      "Massa, Kecepatan, Suhu"
+    ],
+    "correct": 1,
+    "explain": "Kecepatan, Gaya, dan Tekanan semuanya besaran turunan — dibentuk dari kombinasi besaran pokok (v = s/t, F = m·a, P = F/A). Panjang/Massa/Waktu/Suhu/Kuat Arus/Jumlah Zat semuanya besaran pokok langsung."
+  },
+  {
+    "q": "Sebuah balok bermassa 2 kg didorong dengan percepatan \\(3\\ m/s^{2}\\). Berapa gaya yang bekerja, dan apa dimensinya?",
+    "opts": [
+      "6 \\(kg \\cdot m/s\\), dimensi \\([M][L][T]^{-1}\\)",
+      "6 N, dimensi \\([M][L][T]^{-2}\\)",
+      "5 N, dimensi \\([M][L][T]^{-1}\\)",
+      "6 N, dimensi \\([M][L]^{2}[T]^{-2}\\)"
+    ],
+    "correct": 1,
+    "explain": "\\(F = m \\times a = 2\\ kg \\times 3\\ m/s^{2} = 6\\ kg \\cdot m/s^{2} = 6\\ N\\). Dimensi Gaya selalu \\([M][L][T]^{-2}\\) (dari F = m·a, dimensi massa \\([M]\\) dikali dimensi percepatan \\([L][T]^{-2}\\)), terlepas dari nilai numeriknya."
+  },
+  {
+    "q": "Seorang siswa mengukur volume sebuah kotak dan mendapat hasil \\(V = p \\times l \\times t = 5\\ cm \\times 4\\ cm \\times 2\\ cm = 40\\ cm^{3}\\). Kenapa jawaban ini benar secara dimensi, dan apa dimensi Volume secara umum?",
+    "opts": [
+      "Salah, karena satuan volume seharusnya cm bukan \\(cm^{3}\\)",
+      "Benar — dimensi Volume adalah \\([L]^{3}\\) karena hasil kali tiga besaran panjang (p, l, t=tinggi), sesuai satuan \\(cm^{3}\\) (pangkat 3 dari satuan panjang)",
+      "Benar, tapi dimensinya seharusnya \\([L]\\) saja",
+      "Salah, karena rumus volume seharusnya pakai pembagian bukan perkalian"
+    ],
+    "correct": 1,
+    "explain": "Volume = hasil kali tiga besaran panjang (panjang \\times lebar \\times tinggi), sehingga dimensinya \\([L] \\times [L] \\times [L] = [L]^{3}\\) — konsisten dengan satuan pangkat tiga (\\(cm^{3}\\), \\(m^{3}\\), dst). Jawaban \\(40\\ cm^{3}\\) benar baik secara numerik maupun dimensi."
+  }
+]

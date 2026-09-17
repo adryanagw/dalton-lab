@@ -288,9 +288,11 @@ const subjectsData = {
     ]
   },
   fisika: {
-    name:'Fisika', icon:'atom', ready:false, color:'purple',
+    name:'Fisika', icon:'atom', ready:true, color:'purple',
     desc:'Mekanika, listrik-magnet, gelombang, dan lainnya.',
-    babs:[]
+    babs:[
+      {id:'bab1-besaran-dan-satuan', num:'Bab 1', title:'Pengantar Ilmu Fisika: Besaran & Satuan', desc:'Hakikat fisika, cabang-cabang fisika klasik, 7 besaran pokok SI, besaran turunan & dimensi, hingga notasi ilmiah.', ready:true, estMinutes:20, subbabCount:8},
+    ]
   },
   sejarah: {
     name:'Sejarah', icon:'book-open', ready:true, color:'red',
