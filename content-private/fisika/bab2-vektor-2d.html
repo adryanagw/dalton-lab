@@ -289,10 +289,66 @@
   </div>
 </section>
 
+<section id="simulasi-vektor" class="notebook-bg" data-nav="Simulasi Vektor">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">06 · Coba Sendiri</div>
+      <h2>Simulasi Vektor 3D</h2>
+      <p>Ubah-ubah komponen \(\vec{A}\) dan \(\vec{B}\) di bawah, ganti operasinya, lalu lihat sendiri hasilnya berubah secara langsung — baik angkanya maupun bentuk 3D-nya. Khusus 2 vektor biar tetap gampang dibaca visualnya.</p>
+    </div>
+
+    <div class="vector-lab">
+      <div class="vector-lab-head">
+        <div class="eyebrow" style="color:var(--purple);">🧪 Simulasi Lab</div>
+        <h3 style="color:#fff;">Operasi Dua Vektor 3D</h3>
+        <p style="color:#c3ccd9;font-size:.92rem;max-width:560px;">Sumbu \(Y\) mengarah ke atas, mengikuti konvensi diagram-diagram di bab ini. Vektor \(\vec{A}\) (biru) &amp; \(\vec{B}\) (hijau) selalu ditampilkan; hasil operasinya (oranye) ikut digambar kalau berupa vektor.</p>
+      </div>
+
+      <div class="vector-op-toggle">
+        <button type="button" class="active" data-op="add">Penjumlahan</button>
+        <button type="button" data-op="dot">Dot Product</button>
+        <button type="button" data-op="cross">Cross Product</button>
+      </div>
+
+      <div class="vector-lab-grid">
+        <div class="vector-inputs">
+          <div class="vector-input-group">
+            <div class="vg-label"><span class="vg-dot" style="background:#5aa9ff;"></span>Vektor \(\vec{A}\)</div>
+            <div class="vector-xyz-row">
+              <div><label>X</label><input type="number" id="vecAx" value="3" class="mono"></div>
+              <div><label>Y</label><input type="number" id="vecAy" value="2" class="mono"></div>
+              <div><label>Z</label><input type="number" id="vecAz" value="0" class="mono"></div>
+            </div>
+          </div>
+          <div class="vector-input-group">
+            <div class="vg-label"><span class="vg-dot" style="background:#3fd39e;"></span>Vektor \(\vec{B}\)</div>
+            <div class="vector-xyz-row">
+              <div><label>X</label><input type="number" id="vecBx" value="1" class="mono"></div>
+              <div><label>Y</label><input type="number" id="vecBy" value="3" class="mono"></div>
+              <div><label>Z</label><input type="number" id="vecBz" value="1" class="mono"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="vector-canvas-wrap">
+          <canvas id="vectorCanvas"></canvas>
+          <div class="vector-legend">
+            <span><span class="dot" style="background:#5aa9ff;"></span>A</span>
+            <span><span class="dot" style="background:#3fd39e;"></span>B</span>
+            <span><span class="dot" style="background:#f0a336;"></span>Hasil</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="vector-output" id="vectorOutput"></div>
+    </div>
+  </div>
+</section>
+
 <section id="kuis-fisika" style="background:var(--navy);" data-nav="Drill Soal" data-nav-cta>
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow" style="color:var(--purple);">06 · Uji Pemahaman</div>
+      <div class="eyebrow" style="color:var(--purple);">07 · Uji Pemahaman</div>
       <h2 style="color:#fff;">Drill Soal: Vektor Bidang 2D</h2>
       <p style="color:#c3ccd9;">Soal pilihan ganda mencakup semua materi di atas — dari klasifikasi skalar/vektor, penguraian komponen, resultan (metode analitis &amp; Aturan Kosinus), sampai dot product &amp; cross product (Usaha &amp; Torsi). Jawab satu-satu, dapatkan pembahasan langsung setelah menjawab.</p>
     </div>
