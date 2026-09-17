@@ -884,6 +884,7 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 .role-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:start;}
 .role-card{
   padding:18px;font-size:.86rem;color:var(--ink);position:relative;padding-top:34px;
+  text-align:justify;text-justify:inter-word;
 }
 .role-n{position:absolute;top:12px;left:18px;font-family:'Space Grotesk';color:var(--orange);font-size:.78rem;font-weight:600;}
 
