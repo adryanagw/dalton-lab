@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!-- Rendered PDF companion content for Bab 1 Fisika (Pengantar Ilmu Fisika: Besaran & Satuan),
+     built from bab1-besaran-dan-satuan.pdf-spec.md on
+     public/assets/pdf-template/page-template.html. This is the actual filled source,
+     rendered once and shared by every student — no per-page watermark markup here on
+     purpose: the real student-identity watermark is drawn live, per viewer, by
+     initPdfViewers() in app.js (.pdf-viewer-watermark), stamped with that viewer's
+     actual session name and timestamp. Baking a placeholder name into the shared
+     image here would just show every student a second, fake watermark underneath
+     the real one. -->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dalton Lab — PDF Bab 1 Fisika</title>
+<link rel="stylesheet" href="../../public/assets/vendor/fonts/pdf-fonts.css">
+<link rel="stylesheet" href="../../public/assets/vendor/katex/katex.min.css">
+<style>
+  @page{ size:210mm 297mm; margin:0; }
+
+  :root{
+    --navy:#0d1b2e;
+    --navy-2:#16304f;
+    --orange:#ee7d31;
+    --orange-dark:#d4631a;
+    --paper:#faf6ee;
+    --card:#ffffff;
+    --slate:#4f6376;
+    --success:#2f9e6a;
+    --danger:#d64545;
+    --accent:#8b5cf6;
+    --orange-ink:#bb4d0e;
+  }
+  .pdf-page[data-subject="fisika"]{ --accent:#8b5cf6; }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#fff;font-family:'Literata',serif;}
+
+  /* ---- the reusable page shell — print version: no floating-card chrome,
+       the page IS the physical page, so no radius/shadow/desk background ---- */
+  .pdf-page{
+    position:relative;
+    width:210mm;
+    height:297mm;
+    padding:26px;
+    background:var(--accent);
+    overflow:hidden;
+    break-after:page;
+    page-break-after:always;
+  }
+  .pdf-page:last-child{break-after:auto;page-break-after:avoid;}
+  .pdf-page .sheet{
+    position:relative;
+    width:100%;
+    height:100%;
+    background:var(--card);
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  .page-head{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 40px 18px;
+    border-bottom:1px solid #eef0f2;
+  }
+  .page-head .brand{display:flex;align-items:center;gap:2px;}
+  .page-head .brand img{height:34px;width:auto;display:block;}
+  .page-head .brand-word{font:600 15px/1 'Fraunces',serif;color:var(--navy);letter-spacing:.01em;}
+  .page-head .brand-word span{color:var(--accent);}
+  .page-head .meta{display:flex;align-items:baseline;gap:8px;}
+  .subject-chip{font:italic 600 14px/1 'Fraunces',serif;color:var(--orange-ink);}
+  .chapter-tag{font:italic 400 13.5px/1 'Literata',serif;color:var(--slate);}
+
+  .page-body{
+    position:relative;
+    z-index:2;
+    flex:1;
+    padding:30px 40px 0;
+    overflow:hidden;
+  }
+
+  h1.page-title{font:700 34px/1.15 'Fraunces',serif;color:var(--navy);margin:0 0 6px;}
+  p.dek{font:italic 400 14.5px/1.4 'Literata',serif;color:var(--orange-ink);margin:0 0 18px;}
+  h2.section-title{font:600 21px/1.25 'Fraunces',serif;color:var(--navy);margin:0 0 10px;}
+  p.lead{font:400 16.5px/1.6 'Literata',serif;color:var(--slate);margin:0 0 18px;max-width:600px;}
+  p.body-text{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 14px;}
+  ul.learn-list{margin:0 0 20px;padding-left:20px;}
+  ul.learn-list li{font:400 16px/1.65 'Literata',serif;color:#22303f;margin-bottom:6px;}
+
+  /* .dense — page-body modifier for pages whose text volume needs slightly
+     tighter spacing to fit one page at the standard font size (see
+     content-private/biologi/bab1-sel.pdf-pages.html Page 2 for the same pattern). */
+  .page-body.dense h2.section-title{margin-bottom:6px;}
+  .page-body.dense p.lead{margin-bottom:10px;}
+  .page-body.dense p.body-text{margin-bottom:8px;line-height:1.5;}
+  .page-body.dense .callout{padding-top:12px;padding-bottom:12px;margin-bottom:14px;}
+  .page-body.dense .example-box{margin-bottom:10px;padding-top:12px;}
+  .page-body.dense .example-box .label{margin-bottom:6px;}
+  .page-body.dense .example-box li{margin-bottom:4px;font-size:14px;line-height:1.45;}
+  .page-body.dense .formula-box{margin-bottom:16px;padding:14px 2px;}
+  .page-body.dense .ref-table{margin-bottom:12px;}
+  .page-body.dense .ref-table th,.page-body.dense .ref-table td{padding:5px 8px;font-size:12px;}
+
+  .formula-box{border-top:1px solid #e6dfd0;border-bottom:1px solid #e6dfd0;padding:20px 2px;margin:0 0 22px;}
+  .formula-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;display:block;}
+  .formula-box .katex{font-size:1.05em;}
+  .formula-box .var-def{font:400 13.5px/1.55 'Literata',serif;color:var(--slate);margin-top:10px;}
+  .formula-box .var-def b{font-family:'IBM Plex Mono',monospace;font-weight:500;color:#22303f;}
+
+  .example-box{border-top:1px solid #e6dfd0;padding:18px 2px 4px;margin:0 0 22px;}
+  .example-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--navy);margin-bottom:12px;display:block;}
+  .example-box p.setup{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 10px;}
+  .example-box ol{margin:0;padding-left:18px;}
+  .example-box li{font:400 15px/1.6 'Literata',serif;color:#22303f;margin-bottom:8px;}
+
+  .callout{padding:16px 18px;margin:0 0 20px;font:400 14.5px/1.55 'Literata',serif;}
+  .callout.mistake{background:#fbf0ed;}
+  .callout.mistake .label{color:var(--danger);}
+  .callout .label{display:block;font:italic 600 14px/1 'Literata',serif;margin-bottom:7px;}
+  .callout .wrong{color:var(--danger);font-weight:600;}
+  .callout .right{color:var(--success);font-weight:600;}
+
+  .ref-table{width:100%;border-collapse:collapse;margin:0 0 20px;}
+  .ref-table caption{caption-side:top;text-align:left;font:italic 500 13.5px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;}
+  .ref-table th,.ref-table td{
+    text-align:left;
+    padding:7px 10px;
+    font:400 12px/1.4 'Literata',serif;
+    color:#22303f;
+    border-bottom:1px solid #eee7d8;
+    vertical-align:top;
+  }
+  .ref-table thead th{
+    font:600 11px/1.35 'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--slate);
+    border-bottom:1.5px solid var(--navy);
+    padding-bottom:8px;
+  }
+  .ref-table tbody tr:first-child td{padding-top:10px;}
+  .ref-table .katex{font-size:.95em;}
+
+  ol.ref-list{margin:0 0 20px;padding-left:20px;}
+  ol.ref-list li{font:400 13.5px/1.6 'Literata',serif;color:#22303f;margin-bottom:12px;}
+  ol.ref-list li i{color:var(--slate);font-style:italic;}
+
+  .ref-list-2col{columns:2;column-gap:26px;margin:0 0 18px;}
+  .ref-list-2col .item{break-inside:avoid;margin-bottom:11px;}
+  .ref-list-2col .item .num{font:600 11px/1 'IBM Plex Mono',monospace;color:var(--orange-ink);}
+  .ref-list-2col .item .term{font:600 13px/1.3 'Literata',serif;color:var(--navy);display:block;margin:3px 0 2px;}
+  .ref-list-2col .item .gloss{font:400 12px/1.45 'Literata',serif;color:#4a5560;}
+
+  .page-foot{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 40px 22px;
+    border-top:1px solid #eef0f2;
+  }
+  .page-foot .license{font:italic 400 12px/1.4 'Literata',serif;color:#5c6670;max-width:380px;}
+</style>
+</head>
+<body>
+
+<!-- ===== Page 1 — Chapter opener ===== -->
+<div class="pdf-page" data-subject="fisika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1</span><span class="subject-chip">Fisika</span></div>
+    </div>
+    <div class="page-body">
+      <h1 class="page-title">Pengantar Ilmu Fisika: Besaran &amp; Satuan</h1>
+      <p class="dek">Materi PDF — pelengkap Bab 1</p>
+      <p class="lead">Materi tambahan ini fokus ke referensi lengkap besaran turunan (tiga kelompok: Mekanika lanjutan, Listrik-Magnet-Gelombang, Fluida-Termodinamika), tabel lengkap konstanta fisika dalam notasi ilmiah, latihan Analisis Dimensi tingkat lanjut, dan latihan tambahan — pelengkap materi di halaman utama, bukan salinannya.</p>
+      <h2 class="section-title">Yang akan kamu pelajari</h2>
+      <ul class="learn-list">
+        <li>Referensi lengkap besaran turunan kelompok Mekanika &amp; Kinematika lanjutan: Momentum Linear, Impuls, Momen Gaya/Torsi, Momen Inersia, Momentum Sudut (bekal Bab 2 mekanika)</li>
+        <li>Referensi lengkap besaran turunan kelompok Listrik, Magnet &amp; Gelombang (7 besaran)</li>
+        <li>Referensi lengkap besaran turunan kelompok Fluida &amp; Termodinamika (3 besaran)</li>
+        <li>Tabel lengkap 6 konstanta fisika dalam notasi ilmiah (termasuk 2 yang tidak ada di halaman utama: massa jenis air murni &amp; tekanan udara standar), plus 2 latihan konversi tambahan</li>
+        <li>Analisis Dimensi tingkat lanjut: memverifikasi homogenitas persamaan gerak, deteksi rumus yang salah lewat dimensi</li>
+        <li>Latihan soal tambahan (5 soal + pembahasan) mencakup besaran turunan, notasi ilmiah, dan analisis dimensi</li>
+      </ul>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 2 — Besaran Turunan Lengkap: Kelompok Mekanika & Kinematika (Lanjutan) ===== -->
+<div class="pdf-page" data-subject="fisika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Besaran Turunan</span><span class="subject-chip">Fisika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Besaran Turunan Lengkap: Kelompok Mekanika &amp; Kinematika (Lanjutan)</h2>
+      <p class="lead">Lima besaran turunan mekanika lain di luar 8 yang paling sering diuji di Bab 1 — semuanya akan kamu pakai lagi begitu masuk materi Momentum &amp; Impuls serta Rotasi/Momen Inersia di bab-bab berikutnya, jadi kenali dulu satuan &amp; dimensinya dari sekarang.</p>
+      <table class="ref-table">
+        <thead><tr><th>Besaran Turunan</th><th>Rumus</th><th>Satuan SI</th><th>Bentuk Satuan Pokok</th><th>Dimensi</th></tr></thead>
+        <tbody>
+          <tr><td>Momentum Linear (\(p\))</td><td>\(m \times v\)</td><td>kg·m/s</td><td>\(kg \cdot m \cdot s^{-1}\)</td><td>\([M][L][T]^{-1}\)</td></tr>
+          <tr><td>Impuls (\(I\))</td><td>\(F \times \Delta t\)</td><td>Newton sekon (N·s)</td><td>\(kg \cdot m \cdot s^{-1}\)</td><td>\([M][L][T]^{-1}\)</td></tr>
+          <tr><td>Momen Gaya / Torsi (\(\tau\))</td><td>\(F \times r\)</td><td>Newton meter (N·m)</td><td>\(kg \cdot m^{2} \cdot s^{-2}\)</td><td>\([M][L]^{2}[T]^{-2}\)</td></tr>
+          <tr><td>Momen Inersia (\(I\))</td><td>\(m \times r^{2}\)</td><td>\(kg \cdot m^{2}\)</td><td>\(kg \cdot m^{2}\)</td><td>\([M][L]^{2}\)</td></tr>
+          <tr><td>Momentum Sudut (\(L\))</td><td>\(r \times p\)</td><td>\(kg \cdot m^{2}/s\)</td><td>\(kg \cdot m^{2} \cdot s^{-1}\)</td><td>\([M][L]^{2}[T]^{-1}\)</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Perhatikan pola pasangan Momentum Linear &amp; Impuls — keduanya punya satuan SI dan dimensi yang identik, \([M][L][T]^{-1}\), karena Impuls (perubahan momentum akibat gaya yang bekerja selama selang waktu tertentu) memang secara fisis SAMA DENGAN perubahan Momentum Linear — inilah yang mendasari Teorema Impuls-Momentum yang akan kamu pelajari lebih lanjut. Pola serupa muncul di Torsi &amp; Usaha/Energi (halaman utama) — keduanya sama-sama \([M][L]^{2}[T]^{-2}\) secara dimensi meski satuannya ditulis beda (N·m vs Joule), karena keduanya sama-sama hasil kali sebuah gaya dengan sebuah panjang.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 3 — Besaran Turunan Lengkap: Kelompok Listrik, Magnet & Gelombang ===== -->
+<div class="pdf-page" data-subject="fisika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Besaran Turunan</span><span class="subject-chip">Fisika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Besaran Turunan Lengkap: Kelompok Listrik, Magnet &amp; Gelombang</h2>
+      <p class="lead">Tujuh besaran turunan yang akan kamu temui lagi begitu masuk materi Listrik Dinamis, Medan Magnet, dan Induksi Elektromagnetik — semuanya dibangun dari kombinasi besaran pokok Massa, Panjang, Waktu, dan Kuat Arus Listrik \([I]\).</p>
+      <table class="ref-table">
+        <thead><tr><th>Besaran Turunan</th><th>Rumus</th><th>Satuan SI</th><th>Bentuk Satuan Pokok</th><th>Dimensi</th></tr></thead>
+        <tbody>
+          <tr><td>Muatan Listrik (\(Q\))</td><td>\(I \times t\)</td><td>Coulomb (C)</td><td>\(A \cdot s\)</td><td>\([I][T]\)</td></tr>
+          <tr><td>Beda Potensial (\(V\))</td><td>\(W/Q\) atau \(I \times R\)</td><td>Volt (V)</td><td>\(kg \cdot m^{2} \cdot s^{-3} \cdot A^{-1}\)</td><td>\([M][L]^{2}[T]^{-3}[I]^{-1}\)</td></tr>
+          <tr><td>Hambatan Listrik (\(R\))</td><td>\(V/I\)</td><td>Ohm (Ω)</td><td>\(kg \cdot m^{2} \cdot s^{-3} \cdot A^{-2}\)</td><td>\([M][L]^{2}[T]^{-3}[I]^{-2}\)</td></tr>
+          <tr><td>Kapasitansi Listrik (\(C\))</td><td>\(Q/V\)</td><td>Farad (F)</td><td>\(kg^{-1} \cdot m^{-2} \cdot s^{4} \cdot A^{2}\)</td><td>\([M]^{-1}[L]^{-2}[T]^{4}[I]^{2}\)</td></tr>
+          <tr><td>Frekuensi (\(f\))</td><td>\(1/T\)</td><td>Hertz (Hz)</td><td>\(s^{-1}\)</td><td>\([T]^{-1}\)</td></tr>
+          <tr><td>Fluks Magnet (\(\Phi\))</td><td>\(B \times A\)</td><td>Weber (Wb)</td><td>\(kg \cdot m^{2} \cdot s^{-2} \cdot A^{-1}\)</td><td>\([M][L]^{2}[T]^{-2}[I]^{-1}\)</td></tr>
+          <tr><td>Induksi Magnet (\(B\))</td><td>\(\Phi/A\)</td><td>Tesla (T)</td><td>\(kg \cdot s^{-2} \cdot A^{-1}\)</td><td>\([M][T]^{-2}[I]^{-1}\)</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Satu pola yang bisa kamu pakai buat mengecek hafalan: Beda Potensial dan Hambatan Listrik dimensinya cuma beda satu pangkat pada \([I]\) — karena Hambatan \(R = V/I\) berarti dimensi \(R\) = dimensi \(V\) dibagi dimensi \(I\), sehingga pangkat \([I]\) pada \(V\) (\(-1\)) dikurangi 1 lagi jadi \(-2\) pada \(R\). Kapasitansi (\(C = Q/V\)) punya dimensi paling rumit di kelompok ini karena melibatkan pangkat 4 pada \([T]\) — jangan coba hafal langsung angkanya, tapi turunkan dari rumus \(Q/V\) setiap kali butuh, sama seperti latihan Analisis Dimensi di Halaman 6.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 4 — Besaran Turunan Lengkap: Kelompok Fluida & Termodinamika ===== -->
+<div class="pdf-page" data-subject="fisika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Besaran Turunan</span><span class="subject-chip">Fisika</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Besaran Turunan Lengkap: Kelompok Fluida &amp; Termodinamika</h2>
+      <p class="lead">Tiga besaran turunan lebih sederhana untuk melengkapi daftar — akan dipakai lagi saat materi Fluida Statis/Dinamis dan Suhu &amp; Kalor.</p>
+      <table class="ref-table">
+        <thead><tr><th>Besaran Turunan</th><th>Rumus</th><th>Satuan SI</th><th>Bentuk Satuan Pokok</th><th>Dimensi</th></tr></thead>
+        <tbody>
+          <tr><td>Tegangan Permukaan (\(\gamma\))</td><td>\(F/l\)</td><td>Newton per meter (N/m)</td><td>\(kg \cdot s^{-2}\)</td><td>\([M][T]^{-2}\)</td></tr>
+          <tr><td>Debit Volume (\(Q\))</td><td>\(V/t\) atau \(A \times v\)</td><td>\(m^{3}/s\)</td><td>\(m^{3} \cdot s^{-1}\)</td><td>\([L]^{3}[T]^{-1}\)</td></tr>
+          <tr><td>Kalor Jenis (\(c\))</td><td>\(Q/(m \times \Delta T)\)</td><td>Joule per (kg·K)</td><td>\(m^{2} \cdot s^{-2} \cdot K^{-1}\)</td><td>\([L]^{2}[T]^{-2}[\theta]^{-1}\)</td></tr>
+        </tbody>
+      </table>
+      <p class="body-text">Kalor Jenis (\(c\)) unik di antara semua besaran turunan yang sudah dibahas — satu-satunya yang dimensinya melibatkan \([\theta]\) (Suhu Termodinamika) selain kelompok Listrik-Magnet yang melibatkan \([I]\). Rumusnya \(Q/(m \cdot \Delta T)\) berarti kalor jenis mengukur berapa banyak kalor (\(Q\), dimensi energi) yang dibutuhkan untuk menaikkan suhu satu satuan massa sebesar satu satuan suhu — semakin besar kalor jenis suatu zat, semakin "susah" suhunya naik meski dipanaskan dengan kalor yang sama (air punya kalor jenis tinggi, makanya lambat panas &amp; lambat dingin dibanding logam).</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 5 — Notasi Ilmiah: Tabel Konstanta Fisika Lengkap & Latihan Tambahan ===== -->
+<div class="pdf-page" data-subject="fisika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Notasi Ilmiah</span><span class="subject-chip">Fisika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Notasi Ilmiah: Tabel Konstanta Fisika Lengkap</h2>
+      <p class="lead">Rekap semua 6 konstanta fisika dari halaman utama dalam satu tabel, plus 2 konversi tambahan yang belum dibahas di sana.</p>
+      <table class="ref-table">
+        <thead><tr><th>Besaran / Konstanta</th><th>Simbol</th><th>Nilai Standar Desimal</th><th>Notasi Ilmiah</th><th>Satuan SI</th></tr></thead>
+        <tbody>
+          <tr><td>Kecepatan Cahaya di Ruang Hampa</td><td>\(c\)</td><td>300.000.000 m/s</td><td>\(3{,}00 \times 10^{8}\)</td><td>m/s</td></tr>
+          <tr><td>Konstanta Gravitasi Universal</td><td>\(G\)</td><td>0,00000000006674 \(N \cdot m^{2}/kg^{2}\)</td><td>\(6{,}674 \times 10^{-11}\)</td><td>\(N \cdot m^{2}/kg^{2}\)</td></tr>
+          <tr><td>Muatan Elementer Elektron</td><td>\(e\)</td><td>0,0000000000000000001602 C</td><td>\(1{,}602 \times 10^{-19}\)</td><td>C</td></tr>
+          <tr><td>Massa Jenis Air murni (4°C)</td><td>\(\rho_{air}\)</td><td>\(1.000\ kg/m^{3}\)</td><td>\(1{,}00 \times 10^{3}\)</td><td>\(kg/m^{3}\)</td></tr>
+          <tr><td>Tekanan Udara Standar (1 atm)</td><td>\(P_0\)</td><td>101.300 Pa</td><td>\(1{,}013 \times 10^{5}\)</td><td>Pa</td></tr>
+          <tr><td>Konstanta Avogadro</td><td>\(N_A\)</td><td>602.200.000.000.000.000.000.000 /mol</td><td>\(6{,}022 \times 10^{23}\)</td><td>/mol</td></tr>
+        </tbody>
+      </table>
+      <div class="example-box">
+        <span class="label">Latihan Tambahan &middot; Konversi Massa Jenis Air &amp; Tekanan Udara Standar</span>
+        <ol>
+          <li>Massa jenis air murni (4°C) = \(1.000\ kg/m^{3}\). Geser koma 3 langkah ke kiri dari belakang angka 1.000 sampai tersisa satu digit di depan koma → \(\rho_{air} = 1{,}00 \times 10^{3}\ kg/m^{3}\).</li>
+          <li>Tekanan udara standar (1 atm) = 101.300 Pa. Geser koma 5 langkah ke kiri dari belakang angka 101.300 → \(P_0 = 1{,}013 \times 10^{5}\) Pa.</li>
+          <li>Perhatikan: 101.300 punya digit signifikan sampai ratusan (1013), sehingga bentuk notasi ilmiahnya \(1{,}013 \times 10^{5}\) — BUKAN \(1{,}01 \times 10^{5}\) (itu membulatkan &amp; menghilangkan 1 digit signifikan) atau \(1{,}0130 \times 10^{5}\) (menambah digit yang tidak ada di data asal).</li>
+        </ol>
+      </div>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira jumlah digit setelah koma pada bentuk notasi ilmiah boleh sembarang, asal angkanya "kelihatan mirip".<br>
+        <span class="right">✅ Benar:</span> jumlah digit signifikan pada \(a\) harus mencerminkan presisi data aslinya — kalau data punya 4 digit signifikan (1013), bentuk notasi ilmiahnya juga harus mempertahankan 4 digit signifikan itu (1,013), tidak boleh dibulatkan atau ditambah tanpa alasan.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 6 — Analisis Dimensi Tingkat Lanjut ===== -->
+<div class="pdf-page" data-subject="fisika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Analisis Dimensi</span><span class="subject-chip">Fisika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Analisis Dimensi Tingkat Lanjut: Verifikasi Homogenitas Persamaan</h2>
+      <p class="lead">Analisis dimensi paling sering diuji lewat soal "periksa apakah persamaan berikut mungkin benar" — begini cara mengerjakannya untuk persamaan bersuku banyak.</p>
+      <div class="formula-box">
+        <span class="label">Prinsip Homogenitas Dimensi</span>
+        \(\text{Jika } A + B = C \text{, maka } [A] = [B] = [C]\)
+        <div class="var-def">Setiap suku yang DIJUMLAHKAN atau DIKURANGKAN dalam satu persamaan WAJIB punya dimensi yang identik — kamu cuma boleh menjumlahkan besaran yang sejenis (nggak bisa menjumlahkan "panjang" dengan "waktu", persis seperti nggak bisa menjumlahkan 3 apel dengan 2 jeruk jadi "5 apel-jeruk").</div>
+      </div>
+      <div class="example-box">
+        <span class="label">Soal &middot; Verifikasi Persamaan Gerak Lurus Berubah Beraturan</span>
+        <p class="setup">Persamaan gerak lurus berubah beraturan (GLBB) berbunyi \(x = x_0 + v_0 t + \frac{1}{2} a t^{2}\), dengan \(x\) &amp; \(x_0\) = posisi (m), \(v_0\) = kecepatan awal (m/s), \(t\) = waktu (s), dan \(a\) = percepatan \(m/s^{2}\). Periksa apakah persamaan ini homogen secara dimensi.</p>
+        <ol>
+          <li>Dimensi ruas kiri: \([x] = [x_0] = [L]\) (posisi adalah besaran panjang).</li>
+          <li>Dimensi suku kedua \(v_0 t\): \([v_0][t] = [L][T]^{-1} \times [T] = [L][T]^{-1+1} = [L]\).</li>
+          <li>Dimensi suku ketiga \(\frac{1}{2} a t^{2}\): angka \(\frac{1}{2}\) adalah konstanta murni (tidak berdimensi), jadi \([a][t]^{2} = [L][T]^{-2} \times [T]^{2} = [L][T]^{-2+2} = [L]\).</li>
+          <li>Ketiga suku (\(x_0\), \(v_0 t\), \(\frac{1}{2}at^{2}\)) semuanya berdimensi \([L]\), sama dengan ruas kiri \([x]\) — persamaan ini HOMOGEN secara dimensi, jadi lolos uji kelayakan (meski ini belum membuktikan konstanta \(\frac{1}{2}\)-nya benar, karena konstanta angka murni memang tidak kelihatan dari analisis dimensi).</li>
+        </ol>
+      </div>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> mengira analisis dimensi bisa membuktikan sebuah rumus 100% benar.<br>
+        <span class="right">✅ Benar:</span> analisis dimensi cuma bisa MENGGUGURKAN rumus yang jelas salah (dimensi tidak cocok). Rumus yang lolos uji dimensi belum tentu benar 100% — konstanta angka murni seperti \(\frac{1}{2}\), \(2\pi\), atau faktor numerik lain tidak punya dimensi sehingga tidak terdeteksi lewat cara ini. Analisis dimensi adalah alat SARING awal, bukan bukti akhir.
+      </div>
+      <p class="body-text">Trik cepat: cek dulu SEMUA suku yang dijumlahkan/dikurangkan punya dimensi sama — kalau ada satu saja beda (mis. \(x = x_0 + v_0 t^{2}\), berdimensi \([L][T]\), bukan \([L]\)), opsi itu otomatis salah tanpa cek suku lain.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 7 — Latihan Tambahan ===== -->
+<div class="pdf-page" data-subject="fisika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 1 &middot; Latihan Tambahan</span><span class="subject-chip">Fisika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Latihan Tambahan</h2>
+      <p class="lead">Lima soal terakhir menggabungkan besaran turunan, notasi ilmiah, dan analisis dimensi — coba kerjakan dulu sebelum lihat pembahasannya.</p>
+      <ol class="ref-list">
+        <li><b>Soal 1.</b> Sebuah mobil bergerak dengan gaya dorong 2.000 N dan massa 1.000 kg. Berapa percepatannya, dan sebutkan dimensinya? <i>Pembahasan: \(a = F/m = 2.000/1.000 = 2\ m/s^{2}\), dimensi \([L][T]^{-2}\).</i></li>
+        <li><b>Soal 2.</b> Tulis 0,000045 kg dalam bentuk notasi ilmiah. <i>Pembahasan: geser koma 5 langkah ke kanan → \(4{,}5 \times 10^{-5}\) kg.</i></li>
+        <li><b>Soal 3.</b> Manakah dari berikut yang BUKAN besaran turunan: Momentum, Frekuensi, Kuat Arus Listrik, Tegangan Permukaan? <i>Pembahasan: Kuat Arus Listrik adalah besaran POKOK (satuan Ampere), tiga lainnya besaran turunan.</i></li>
+        <li><b>Soal 4.</b> Periksa apakah persamaan \(v^{2} = v_0^{2} + 2as\) homogen secara dimensi (\(v\) = kecepatan, \(a\) = percepatan, \(s\) = jarak). <i>Pembahasan: \([v^{2}] = [L]^{2}[T]^{-2}\). \([2as] = [L][T]^{-2} \times [L] = [L]^{2}[T]^{-2}\). Kedua ruas sama-sama \([L]^{2}[T]^{-2}\) — persamaan ini homogen.</i></li>
+        <li><b>Soal 5.</b> Tekanan atmosfer di puncak gunung tertentu tercatat 45.000 Pa. Tulis dalam notasi ilmiah dengan 2 digit signifikan. <i>Pembahasan: \(4{,}5 \times 10^{4}\) Pa — geser koma 4 langkah ke kiri, sisakan 2 digit signifikan (4 dan 5) sesuai presisi data asal.</i></li>
+      </ol>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<script src="../../public/assets/vendor/katex/katex.min.js"></script>
+<script src="../../public/assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script src="../../public/assets/vendor/katex/contrib/mhchem.min.js"></script>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left:'$$', right:'$$', display:true},
+      {left:'\\[', right:'\\]', display:true},
+      {left:'\\(', right:'\\)', display:false}
+    ],
+    throwOnError:false
+  });
+</script>
+</body>
+</html>
