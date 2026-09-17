@@ -844,7 +844,20 @@ section.tight{padding:60px 0;}
 .pros-cons span.minus::before{content:"–";position:absolute;left:0;color:var(--danger);font-weight:700;}
 
 /* === Comparison table === */
-.table-scroll{overflow-x:auto;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);}
+/* Every chapter's table-scroll wrapper carries an inline max-width
+   (640/760px) sized for the reading column — good for prose, but a
+   table isn't read top-to-bottom like a paragraph, so on a wide desktop
+   screen that same cap needlessly truncates columns into a horizontal
+   scroll that a huge monitor never needed. Override with a dynamic,
+   viewport-responsive cap instead (!important because inline style
+   specificity otherwise always wins), while still shrinking to fit on
+   narrow screens via the min(). Reading-width text elsewhere (p, li,
+   law-strip, etc.) intentionally keeps its 640px inline cap — that one
+   IS good typography (comfortable line length), not wasted space. */
+.table-scroll{
+  overflow-x:auto;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);
+  max-width:min(100%, 1000px) !important;
+}
 table.compare-table{border-collapse:collapse;width:100%;min-width:720px;background:var(--card);}
 table.compare-table th, table.compare-table td{
   padding:14px 18px;text-align:left;font-size:.86rem;border-bottom:1px solid var(--line);
