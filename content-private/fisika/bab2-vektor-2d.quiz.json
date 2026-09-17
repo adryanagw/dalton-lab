@@ -1,0 +1,431 @@
+[
+  {
+    "q": "Manakah pasangan berikut yang KEDUANYA termasuk besaran vektor?",
+    "opts": [
+      "Massa dan waktu",
+      "Perpindahan dan gaya",
+      "Energi dan suhu",
+      "Jarak dan laju"
+    ],
+    "correct": 1,
+    "explain": "Perpindahan dan gaya sama-sama punya nilai DAN arah spesifik, jadi keduanya vektor. Massa, waktu, energi, suhu, jarak, dan laju semuanya cuma punya nilai tanpa arah — besaran skalar."
+  },
+  {
+    "q": "Kenapa \"jarak\" digolongkan besaran skalar sedangkan \"perpindahan\" digolongkan besaran vektor, padahal satuannya sama-sama meter?",
+    "opts": [
+      "Jarak menyatakan panjang total lintasan yang ditempuh tanpa arah, sedangkan perpindahan menyatakan perubahan posisi awal ke akhir beserta arahnya",
+      "Jarak selalu lebih besar nilainya daripada perpindahan, jadi otomatis dianggap skalar",
+      "Satuan meter cuma sah dipakai untuk besaran skalar",
+      "Perpindahan nggak bisa diukur pakai alat, makanya dianggap vektor"
+    ],
+    "correct": 0,
+    "explain": "Jarak = total panjang lintasan (berapa pun liku-likunya), murni angka tanpa arah. Perpindahan = garis lurus dari posisi awal ke posisi akhir, punya arah tertentu — itu yang membuatnya vektor, bukan soal besar-kecil nilai atau alat ukur."
+  },
+  {
+    "q": "Notasi \\(|\\vec{F}|\\) pada sebuah vektor gaya menyatakan apa?",
+    "opts": [
+      "Arah vektor gaya tersebut",
+      "Besar/magnitudo vektor gaya — nilainya sendiri berupa besaran skalar",
+      "Satuan dari vektor gaya",
+      "Komponen vektor pada sumbu-X"
+    ],
+    "correct": 1,
+    "explain": "\\(|\\vec{F}|\\) adalah magnitudo (besar) vektor — selalu berupa angka positif tanpa arah, jadi meskipun berasal dari sebuah vektor, magnitudo itu sendiri adalah besaran skalar."
+  },
+  {
+    "q": "Secara geometris, sebuah vektor digambarkan sebagai anak panah. Panjang anak panah dan arah anak panah masing-masing menyatakan apa?",
+    "opts": [
+      "Panjang menyatakan besar/magnitudo vektor, arah menyatakan arah vektor terhadap sumbu acuan",
+      "Panjang menyatakan arah vektor, arah menyatakan magnitudo vektor",
+      "Panjang dan arah sama-sama menyatakan magnitudo vektor",
+      "Panjang menyatakan satuan vektor, arah tidak punya makna fisis"
+    ],
+    "correct": 0,
+    "explain": "Ini definisi dasar representasi geometris vektor: panjang anak panah = besar/magnitudo, arah anak panah = arah vektor terhadap sumbu acuan yang dipakai."
+  },
+  {
+    "q": "Sebuah gaya \\(\\vec{F} = 40\\) N membentuk sudut \\(30^{\\circ}\\) terhadap sumbu-X positif. Berapa komponen \\(F_x\\)-nya?",
+    "opts": [
+      "20 N",
+      "\\(20\\sqrt{3}\\) N (≈ 34,64 N)",
+      "40 N",
+      "\\(10\\sqrt{3}\\) N (≈ 17,32 N)"
+    ],
+    "correct": 1,
+    "explain": "\\(F_x = F\\cos\\theta = 40 \\times \\cos 30^{\\circ} = 40 \\times \\frac{\\sqrt{3}}{2} = 20\\sqrt{3} \\approx 34{,}64\\) N."
+  },
+  {
+    "q": "Untuk gaya yang sama, \\(\\vec{F} = 40\\) N pada sudut \\(30^{\\circ}\\) terhadap sumbu-X positif, berapa komponen \\(F_y\\)-nya?",
+    "opts": [
+      "20 N",
+      "\\(20\\sqrt{3}\\) N (≈ 34,64 N)",
+      "40 N",
+      "10 N"
+    ],
+    "correct": 0,
+    "explain": "\\(F_y = F\\sin\\theta = 40 \\times \\sin 30^{\\circ} = 40 \\times 0{,}5 = 20\\) N."
+  },
+  {
+    "q": "Diketahui sebuah vektor gaya punya komponen \\(F_x = 6\\) N dan \\(F_y = 8\\) N. Berapa besar (magnitudo) vektor \\(\\vec{F}\\)?",
+    "opts": [
+      "10 N",
+      "14 N",
+      "100 N",
+      "7 N"
+    ],
+    "correct": 0,
+    "explain": "\\(|\\vec{F}| = \\sqrt{F_x^2+F_y^2} = \\sqrt{6^2+8^2} = \\sqrt{36+64} = \\sqrt{100} = 10\\) N."
+  },
+  {
+    "q": "Masih dari soal sebelumnya (\\(F_x=6\\) N, \\(F_y=8\\) N), berapa sudut \\(\\theta\\) arah vektor tersebut terhadap sumbu-X positif?",
+    "opts": [
+      "53°",
+      "37°",
+      "45°",
+      "60°"
+    ],
+    "correct": 0,
+    "explain": "\\(\\tan\\theta = \\frac{F_y}{F_x} = \\frac{8}{6} = 1{,}33 \\Rightarrow \\theta = \\arctan(1{,}33) \\approx 53^{\\circ}\\)."
+  },
+  {
+    "q": "Vektor gaya dengan \\(F_x = 3\\) N dan \\(F_y = 4\\) N ditulis dalam notasi vektor satuan sebagai...",
+    "opts": [
+      "\\(\\vec{F} = 3\\hat{i} + 4\\hat{j}\\) N",
+      "\\(\\vec{F} = 4\\hat{i} + 3\\hat{j}\\) N",
+      "\\(\\vec{F} = 3\\hat{i} - 4\\hat{j}\\) N",
+      "\\(\\vec{F} = 7(\\hat{i}+\\hat{j})\\) N"
+    ],
+    "correct": 0,
+    "explain": "Notasi vektor satuan langsung menempatkan komponen sumbu-X di depan \\(\\hat{i}\\) dan komponen sumbu-Y di depan \\(\\hat{j}\\): \\(\\vec{F} = F_x\\hat{i}+F_y\\hat{j} = 3\\hat{i}+4\\hat{j}\\) N."
+  },
+  {
+    "q": "Berapa nilai \\(\\hat{i}\\cdot\\hat{i}\\) dan \\(\\hat{i}\\cdot\\hat{j}\\)?",
+    "opts": [
+      "\\(\\hat{i}\\cdot\\hat{i}=1\\), \\(\\hat{i}\\cdot\\hat{j}=0\\)",
+      "\\(\\hat{i}\\cdot\\hat{i}=0\\), \\(\\hat{i}\\cdot\\hat{j}=1\\)",
+      "\\(\\hat{i}\\cdot\\hat{i}=1\\), \\(\\hat{i}\\cdot\\hat{j}=1\\)",
+      "\\(\\hat{i}\\cdot\\hat{i}=0\\), \\(\\hat{i}\\cdot\\hat{j}=0\\)"
+    ],
+    "correct": 0,
+    "explain": "\\(\\hat{i}\\cdot\\hat{i} = 1\\) karena sudut antar vektor yang sama adalah \\(0^{\\circ}\\), dan \\(\\cos 0^{\\circ} = 1\\). \\(\\hat{i}\\cdot\\hat{j} = 0\\) karena \\(\\hat{i}\\) dan \\(\\hat{j}\\) saling tegak lurus (\\(90^{\\circ}\\)), dan \\(\\cos 90^{\\circ} = 0\\)."
+  },
+  {
+    "q": "Berapa hasil \\(\\hat{i}\\times\\hat{i}\\) dan \\(\\hat{i}\\times\\hat{j}\\)?",
+    "opts": [
+      "\\(\\hat{i}\\times\\hat{i}=0\\), \\(\\hat{i}\\times\\hat{j}=\\hat{k}\\)",
+      "\\(\\hat{i}\\times\\hat{i}=1\\), \\(\\hat{i}\\times\\hat{j}=\\hat{k}\\)",
+      "\\(\\hat{i}\\times\\hat{i}=0\\), \\(\\hat{i}\\times\\hat{j}=0\\)",
+      "\\(\\hat{i}\\times\\hat{i}=\\hat{k}\\), \\(\\hat{i}\\times\\hat{j}=0\\)"
+    ],
+    "correct": 0,
+    "explain": "\\(\\hat{i}\\times\\hat{i} = 0\\) karena vektor sejajar dirinya sendiri (sudut \\(0^{\\circ}\\), \\(\\sin 0^{\\circ}=0\\)). \\(\\hat{i}\\times\\hat{j} = \\hat{k}\\) mengikuti Kaidah Tangan Kanan untuk pasangan sumbu tegak lurus, \\(\\sin 90^{\\circ}=1\\)."
+  },
+  {
+    "q": "Dua gaya bekerja pada satu titik: \\(F_1 = 6\\) N pada \\(0^{\\circ}\\) dan \\(F_2 = 8\\) N pada \\(90^{\\circ}\\) terhadap sumbu-X positif. Berapa resultannya?",
+    "opts": [
+      "10 N pada sudut 53° dari sumbu-X",
+      "14 N pada sudut 45°",
+      "2 N pada sudut 90°",
+      "48 N pada sudut 0°"
+    ],
+    "correct": 0,
+    "explain": "\\(R_x = 6+0 = 6\\) N, \\(R_y = 0+8 = 8\\) N. \\(R = \\sqrt{6^2+8^2} = \\sqrt{100} = 10\\) N. \\(\\tan\\theta = \\frac{8}{6} = 1{,}33 \\Rightarrow \\theta \\approx 53^{\\circ}\\)."
+  },
+  {
+    "q": "Tiga gaya bekerja pada satu titik: \\(F_1=10\\) N pada \\(0^{\\circ}\\), \\(F_2=10\\) N pada \\(90^{\\circ}\\), dan \\(F_3=10\\) N pada \\(180^{\\circ}\\). Berapa besar dan arah resultannya?",
+    "opts": [
+      "R = 10 N searah sumbu-Y positif (θ = 90°)",
+      "R = 30 N searah sumbu-X positif",
+      "R = 0 N (semua saling meniadakan)",
+      "R = \\(10\\sqrt{2}\\) N pada sudut 45°"
+    ],
+    "correct": 0,
+    "explain": "\\(R_x = 10 + 0 + (-10) = 0\\) N (F1 dan F3 saling meniadakan karena berlawanan arah). \\(R_y = 0+10+0 = 10\\) N. Jadi \\(R = \\sqrt{0^2+10^2} = 10\\) N, arahnya tepat sepanjang sumbu-Y positif (\\(90^{\\circ}\\))."
+  },
+  {
+    "q": "Dua vektor \\(F_1=6\\) N dan \\(F_2=8\\) N membentuk sudut apit \\(\\alpha=90^{\\circ}\\). Berapa besar resultan penjumlahannya lewat Aturan Kosinus?",
+    "opts": [
+      "10 N",
+      "14 N",
+      "2 N",
+      "48 N"
+    ],
+    "correct": 0,
+    "explain": "\\(R = \\sqrt{F_1^2+F_2^2+2F_1F_2\\cos\\alpha} = \\sqrt{36+64+2(6)(8)\\cos 90^{\\circ}} = \\sqrt{100+0} = 10\\) N. Saat \\(\\alpha=90^{\\circ}\\), Aturan Kosinus otomatis berubah jadi Teorema Pythagoras biasa."
+  },
+  {
+    "q": "Dua vektor gaya \\(F_1=10\\) N dan \\(F_2=10\\) N membentuk sudut apit \\(\\alpha=60^{\\circ}\\). Berapa besar resultan penjumlahannya lewat Aturan Kosinus?",
+    "opts": [
+      "\\(10\\sqrt{3}\\) N (≈ 17,32 N)",
+      "20 N",
+      "10 N",
+      "\\(10\\sqrt{2}\\) N (≈ 14,14 N)"
+    ],
+    "correct": 0,
+    "explain": "\\(R = \\sqrt{10^2+10^2+2(10)(10)\\cos 60^{\\circ}} = \\sqrt{100+100+100} = \\sqrt{300} = 10\\sqrt{3} \\approx 17{,}32\\) N. Ini persis kasus yang sama dengan Contoh Soal HOTS Resultan Gaya 2D di materi — Aturan Kosinus dan metode analitis harus memberi hasil identik."
+  },
+  {
+    "q": "Dua vektor gaya \\(F_1=10\\) N dan \\(F_2=10\\) N membentuk sudut apit \\(\\alpha=60^{\\circ}\\). Berapa besar SELISIH (\\(D=|\\vec{F}_1-\\vec{F}_2|\\)) keduanya?",
+    "opts": [
+      "10 N",
+      "\\(10\\sqrt{3}\\) N",
+      "20 N",
+      "0 N"
+    ],
+    "correct": 0,
+    "explain": "\\(D = \\sqrt{F_1^2+F_2^2-2F_1F_2\\cos\\alpha} = \\sqrt{100+100-2(10)(10)\\cos 60^{\\circ}} = \\sqrt{200-100} = \\sqrt{100} = 10\\) N. Perhatikan tandanya berubah jadi minus dibanding rumus penjumlahan."
+  },
+  {
+    "q": "Pada Aturan Kosinus, sudut apit \\(\\alpha\\) dihitung sebagai...",
+    "opts": [
+      "Sudut antara kedua vektor saat titik pangkal (titik tangkap) keduanya diimpitkan",
+      "Sudut sembarang yang terlihat di gambar, bebas dipilih",
+      "Selalu 90° kalau tidak disebutkan di soal",
+      "Sudut antara resultan dan salah satu vektor"
+    ],
+    "correct": 0,
+    "explain": "\\(\\alpha\\) harus sudut apit yang benar secara definisi: sudut antar kedua vektor saat kedua titik pangkalnya diimpitkan di satu titik yang sama — salah ambil sudut (misalnya sudut luar/pelurus) akan menghasilkan jawaban yang salah total."
+  },
+  {
+    "q": "Dua vektor \\(\\vec{A}=(3,4)\\) dan \\(\\vec{B}=(4,3)\\) (dalam satuan N dan m secara berurutan sesuai konteks soal). Berapa \\(\\vec{A}\\cdot\\vec{B}\\)?",
+    "opts": [
+      "24",
+      "7",
+      "50",
+      "0"
+    ],
+    "correct": 0,
+    "explain": "\\(\\vec{A}\\cdot\\vec{B} = A_xB_x + A_yB_y = (3\\times4)+(4\\times3) = 12+12 = 24\\)."
+  },
+  {
+    "q": "Dua vektor punya \\(|\\vec{A}|=5\\), \\(|\\vec{B}|=10\\), dan sudut antara keduanya \\(\\theta=60^{\\circ}\\). Berapa \\(\\vec{A}\\cdot\\vec{B}\\)?",
+    "opts": [
+      "25",
+      "50",
+      "43,3",
+      "5"
+    ],
+    "correct": 0,
+    "explain": "\\(\\vec{A}\\cdot\\vec{B} = |\\vec{A}||\\vec{B}|\\cos\\theta = 5\\times10\\times\\cos 60^{\\circ} = 50\\times0{,}5 = 25\\)."
+  },
+  {
+    "q": "Sebuah gaya konstan \\(\\vec{F}=(10\\hat{i}+0\\hat{j})\\) N bekerja pada benda yang mengalami perpindahan \\(\\vec{s}=(5\\hat{i}+5\\hat{j})\\) m. Berapa usaha (\\(W\\)) yang dilakukan?",
+    "opts": [
+      "50 J",
+      "25 J",
+      "10 J",
+      "0 J"
+    ],
+    "correct": 0,
+    "explain": "\\(W = \\vec{F}\\cdot\\vec{s} = F_xs_x + F_ys_y = (10\\times5)+(0\\times5) = 50+0 = 50\\) Joule."
+  },
+  {
+    "q": "Sebuah gaya \\(F=20\\) N menarik benda sejauh \\(s=10\\) m, membentuk sudut \\(60^{\\circ}\\) terhadap arah perpindahan. Berapa usaha yang dilakukan gaya itu?",
+    "opts": [
+      "100 J",
+      "200 J",
+      "173,2 J",
+      "0 J"
+    ],
+    "correct": 0,
+    "explain": "\\(W = F \\cdot s \\cdot \\cos\\theta = 20\\times10\\times\\cos 60^{\\circ} = 200\\times0{,}5 = 100\\) Joule."
+  },
+  {
+    "q": "Mengapa usaha bernilai nol ketika arah gaya tegak lurus terhadap arah perpindahan benda (misalnya gaya berat pada gerak horizontal)?",
+    "opts": [
+      "Karena \\(\\cos 90^{\\circ}=0\\), sehingga tidak ada komponen gaya yang searah perpindahan",
+      "Karena gaya tegak lurus otomatis bernilai nol",
+      "Karena rumus usaha hanya berlaku untuk gaya sejajar perpindahan, jadi kasus ini di luar rumus",
+      "Karena perpindahan benda pasti nol kalau ada gaya tegak lurus"
+    ],
+    "correct": 0,
+    "explain": "\\(W = Fs\\cos\\theta\\), dan saat \\(\\theta=90^{\\circ}\\) maka \\(\\cos\\theta=0\\), sehingga \\(W=0\\) — bukan karena gayanya nol atau perpindahannya nol, tapi karena tidak ada komponen gaya yang searah/berlawanan dengan arah gerak."
+  },
+  {
+    "q": "Dua vektor punya \\(|\\vec{A}|=5\\), \\(|\\vec{B}|=4\\), dan sudut antara keduanya \\(\\theta=30^{\\circ}\\). Berapa besar \\(|\\vec{A}\\times\\vec{B}|\\)?",
+    "opts": [
+      "10",
+      "20",
+      "17,3",
+      "0"
+    ],
+    "correct": 0,
+    "explain": "\\(|\\vec{A}\\times\\vec{B}| = |\\vec{A}||\\vec{B}|\\sin\\theta = 5\\times4\\times\\sin 30^{\\circ} = 20\\times0{,}5 = 10\\)."
+  },
+  {
+    "q": "Sebuah gaya \\(F=20\\) N bekerja tegak lurus (\\(\\theta=90^{\\circ}\\)) pada lengan momen sepanjang \\(r=0{,}5\\) m dari poros putar. Berapa besar torsi yang dihasilkan?",
+    "opts": [
+      "10 N·m",
+      "5 N·m",
+      "20 N·m",
+      "0,5 N·m"
+    ],
+    "correct": 0,
+    "explain": "\\(\\tau = r \\cdot F \\cdot \\sin\\theta = 0{,}5\\times20\\times\\sin 90^{\\circ} = 0{,}5\\times20\\times1 = 10\\) N·m."
+  },
+  {
+    "q": "Sebuah gaya \\(F=15\\) N bekerja pada lengan momen \\(r=2\\) m, membentuk sudut \\(30^{\\circ}\\) terhadap lengan. Berapa besar torsinya?",
+    "opts": [
+      "15 N·m",
+      "30 N·m",
+      "7,5 N·m",
+      "0 N·m"
+    ],
+    "correct": 0,
+    "explain": "\\(\\tau = r \\cdot F \\cdot \\sin\\theta = 2\\times15\\times\\sin 30^{\\circ} = 30\\times0{,}5 = 15\\) N·m."
+  },
+  {
+    "q": "Sebuah gaya bekerja tepat searah (segaris) dengan lengan momen \\(\\vec{r}\\), atau tepat di titik porosnya (\\(r=0\\)). Berapa torsi yang dihasilkan, dan kenapa?",
+    "opts": [
+      "Torsi = 0, karena \\(\\sin 0^{\\circ}\\) (atau \\(\\sin 180^{\\circ}\\)) = 0, sehingga tidak ada komponen gaya yang tegak lurus lengan",
+      "Torsi = maksimum, karena gaya bekerja langsung pada benda",
+      "Torsi tidak bisa dihitung dalam kasus ini",
+      "Torsi = \\(\\vec{r}\\times\\vec{F}\\), tanpa memandang sudut"
+    ],
+    "correct": 0,
+    "explain": "\\(\\tau = rF\\sin\\theta\\). Saat gaya segaris dengan lengan (\\(\\theta=0^{\\circ}\\) atau \\(180^{\\circ}\\)), \\(\\sin\\theta=0\\), sehingga \\(\\tau=0\\) — gaya yang menarik lurus ke arah atau menjauhi poros tidak menghasilkan efek memutar sama sekali."
+  },
+  {
+    "q": "Kenapa rumus Usaha memakai \\(\\cos\\theta\\), sedangkan rumus Torsi memakai \\(\\sin\\theta\\)?",
+    "opts": [
+      "Usaha butuh komponen gaya yang SEJAJAR arah perpindahan (diproyeksikan lewat cos), sedangkan Torsi butuh komponen gaya yang TEGAK LURUS lengan (diproyeksikan lewat sin)",
+      "Itu cuma kebetulan notasi, tidak ada alasan fisis di baliknya",
+      "Usaha memakai sin karena hasilnya vektor, Torsi memakai cos karena hasilnya skalar",
+      "Keduanya sebenarnya bisa saling ditukar tanpa mengubah makna fisisnya"
+    ],
+    "correct": 0,
+    "explain": "Usaha (dot product) mengukur seberapa besar gaya yang searah gerak — makanya pakai \\(\\cos\\theta\\), maksimum saat \\(\\theta=0^{\\circ}\\). Torsi (cross product) mengukur seberapa besar gaya yang tegak lurus lengan (efektif memutar) — makanya pakai \\(\\sin\\theta\\), maksimum saat \\(\\theta=90^{\\circ}\\). Ini kebalikan yang paling sering ketuker di soal HOTS."
+  },
+  {
+    "q": "Hasil dari perkalian silang \\(\\vec{A}\\times\\vec{B}\\) berupa apa?",
+    "opts": [
+      "Vektor baru yang tegak lurus terhadap bidang yang memuat \\(\\vec{A}\\) dan \\(\\vec{B}\\)",
+      "Besaran skalar biasa",
+      "Sudut antara \\(\\vec{A}\\) dan \\(\\vec{B}\\)",
+      "Selalu sama dengan salah satu vektor asalnya"
+    ],
+    "correct": 0,
+    "explain": "Berbeda dengan dot product yang hasilnya skalar, cross product SELALU menghasilkan vektor baru — arahnya tegak lurus bidang A dan B, ditentukan Kaidah Tangan Kanan. Ini sering lupa dianggap 'sama-sama skalar' seperti dot product."
+  },
+  {
+    "q": "Manakah pernyataan yang benar tentang \\(\\vec{A}\\times\\vec{B}\\) dibanding \\(\\vec{B}\\times\\vec{A}\\)?",
+    "opts": [
+      "\\(\\vec{A}\\times\\vec{B} = -(\\vec{B}\\times\\vec{A})\\)",
+      "\\(\\vec{A}\\times\\vec{B} = \\vec{B}\\times\\vec{A}\\)",
+      "\\(\\vec{A}\\times\\vec{B} = |\\vec{A}||\\vec{B}|\\)",
+      "\\(\\vec{A}\\times\\vec{B} = \\vec{A}\\cdot\\vec{B}\\)"
+    ],
+    "correct": 0,
+    "explain": "Cross product bersifat anti-komutatif: menukar urutan membalik arah hasilnya (magnitudonya tetap sama). Ini beda dengan dot product yang komutatif (\\(\\vec{A}\\cdot\\vec{B} = \\vec{B}\\cdot\\vec{A}\\))."
+  },
+  {
+    "q": "Pernyataan \\(\\vec{A}\\cdot\\vec{B} = \\vec{B}\\cdot\\vec{A}\\) itu benar atau salah, dan kenapa?",
+    "opts": [
+      "Benar — karena \\(A_xB_x+A_yB_y = B_xA_x+B_yA_y\\), perkalian skalar biasa bersifat komutatif",
+      "Salah — urutan penulisan vektor memengaruhi hasil dot product",
+      "Benar, tapi hanya berlaku kalau kedua vektor punya magnitudo sama",
+      "Salah — dot product hanya berlaku satu arah saja"
+    ],
+    "correct": 0,
+    "explain": "Dot product bersifat komutatif karena pada akhirnya hasilnya adalah penjumlahan hasil kali skalar biasa antar komponen (\\(A_xB_x + A_yB_y\\)), dan perkalian skalar biasa memang komutatif — tidak ada arah yang perlu 'dibalik' seperti pada cross product."
+  },
+  {
+    "q": "Arah vektor hasil perkalian silang \\(\\vec{A}\\times\\vec{B}\\) ditentukan menggunakan...",
+    "opts": [
+      "Kaidah Tangan Kanan (genggam jari dari arah A ke B, ibu jari menunjukkan arah hasil)",
+      "Kaidah Tangan Kiri",
+      "Selalu searah sumbu-Y positif",
+      "Tidak bisa ditentukan, harus diukur langsung"
+    ],
+    "correct": 0,
+    "explain": "Kaidah Tangan Kanan adalah aturan standar untuk menentukan arah hasil cross product: genggam jari-jari dari arah vektor pertama menuju vektor kedua, ibu jari yang terjulur menunjukkan arah vektor hasilnya."
+  },
+  {
+    "q": "Dua gaya \\(F_1=8\\) N pada \\(0^{\\circ}\\) dan \\(F_2=6\\) N pada \\(90^{\\circ}\\) bekerja pada sebuah benda, menghasilkan perpindahan \\(s=5\\) m yang searah dengan resultan kedua gaya itu. Berapa usaha total yang dilakukan?",
+    "opts": [
+      "50 J",
+      "70 J",
+      "48 J",
+      "14 J"
+    ],
+    "correct": 0,
+    "explain": "Cari dulu resultan gaya: \\(R_x=8\\), \\(R_y=6\\), \\(R=\\sqrt{8^2+6^2}=\\sqrt{100}=10\\) N. Karena perpindahan searah persis dengan resultan gaya (\\(\\theta=0^{\\circ}\\) antara R dan s), usaha total \\(W = R\\cdot s\\cdot\\cos 0^{\\circ} = 10\\times5\\times1 = 50\\) Joule."
+  },
+  {
+    "q": "Sebuah vektor gaya \\(\\vec{F}=50\\) N membentuk sudut \\(37^{\\circ}\\) terhadap sumbu-X positif (gunakan \\(\\sin 37^{\\circ}\\approx 0{,}6\\), \\(\\cos 37^{\\circ}\\approx 0{,}8\\)). Berapa komponen \\(F_x\\) dan \\(F_y\\)-nya?",
+    "opts": [
+      "Fx = 40 N, Fy = 30 N",
+      "Fx = 30 N, Fy = 40 N",
+      "Fx = 50 N, Fy = 0 N",
+      "Fx = 25 N, Fy = 25 N"
+    ],
+    "correct": 0,
+    "explain": "\\(F_x = F\\cos\\theta = 50\\times0{,}8 = 40\\) N. \\(F_y = F\\sin\\theta = 50\\times0{,}6 = 30\\) N."
+  },
+  {
+    "q": "Berat sebuah benda (\\(w\\)) adalah besaran turunan yang termasuk kelompok...",
+    "opts": [
+      "Vektor, karena berat adalah gaya gravitasi (\\(w=mg\\)) yang punya arah (selalu ke pusat Bumi)",
+      "Skalar, karena hanya menyatakan nilai berapa kg benda tersebut",
+      "Vektor hanya jika benda dalam keadaan bergerak",
+      "Skalar, sama seperti massa"
+    ],
+    "correct": 0,
+    "explain": "Berat secara fisis adalah gaya gravitasi yang bekerja pada benda (\\(w = m\\cdot g\\)), dan gaya adalah besaran vektor — berat punya arah tetap (ke pusat Bumi/menuju bawah). Ini beda dengan massa yang murni skalar."
+  },
+  {
+    "q": "Sebuah vektor punya komponen \\(F_x = -6\\) N dan \\(F_y = 8\\) N (vektor ini berada di kuadran berapa, dan apa konsekuensinya untuk perhitungan sudut arahnya)?",
+    "opts": [
+      "Kuadran II — hasil \\(\\arctan(F_y/F_x)\\) dari kalkulator perlu dikoreksi +180° supaya sesuai arah vektor sebenarnya",
+      "Kuadran I — hasil arctan langsung dipakai tanpa koreksi",
+      "Kuadran III — kedua komponen pasti negatif",
+      "Kuadran IV — sudutnya pasti negatif tanpa perlu dikoreksi"
+    ],
+    "correct": 0,
+    "explain": "Fx negatif & Fy positif berarti vektor berada di kuadran II (90°-180°). Fungsi arctan standar kalkulator hanya mengembalikan nilai di rentang -90° sampai 90°, jadi untuk vektor di kuadran II atau III, hasil arctan mentah harus dikoreksi (+180°) supaya menunjukkan arah vektor yang sebenarnya."
+  },
+  {
+    "q": "Dua vektor \\(\\vec{A}\\) dan \\(\\vec{B}\\) dikatakan sama (\\(\\vec{A} = \\vec{B}\\)) jika dan hanya jika...",
+    "opts": [
+      "Titik pangkal keduanya berada di lokasi yang sama",
+      "Magnitudo keduanya setara DAN arah keduanya sama",
+      "Magnitudo keduanya setara, arah boleh berbeda",
+      "Keduanya menggambarkan besaran fisis yang sama jenisnya"
+    ],
+    "correct": 1,
+    "explain": "Aturan kesamaan mutlak butuh dua syarat sekaligus: |A| = |B| (magnitudo setara) dan arah A = arah B (Ax=Bx, Ay=By). Magnitudo sama saja tidak cukup kalau arahnya berbeda."
+  },
+  {
+    "q": "Sebuah vektor perpindahan digeser sejajar ke posisi lain di ruang koordinat tanpa mengubah panjang maupun orientasinya. Vektor jenis ini disebut...",
+    "opts": [
+      "Vektor Terikat (Bound Vector)",
+      "Vektor Bebas (Free Vector)",
+      "Vektor Satuan",
+      "Vektor Nol"
+    ],
+    "correct": 1,
+    "explain": "Vektor Bebas (Free Vector) boleh digeser sejajar di ruang koordinat tanpa mengubah maknanya — hanya bergantung pada panjang & orientasi, bukan titik pangkalnya. Vektor Terikat (Bound Vector) sebaliknya punya titik aplikasi/lokasi absolut yang bermakna, seperti gaya yang relevan untuk perhitungan torsi."
+  },
+  {
+    "q": "Pengurangan vektor \\(\\vec{A} - \\vec{B}\\) secara konsep sebenarnya setara dengan operasi apa?",
+    "opts": [
+      "\\(\\vec{A} + \\vec{B}\\) dengan sudut apit ditambah \\(90^{\\circ}\\)",
+      "\\(\\vec{A} + (-\\vec{B})\\), yaitu menjumlahkan A dengan B yang arahnya dibalik \\(180^{\\circ}\\)",
+      "Operasi terpisah yang tidak berhubungan dengan penjumlahan vektor",
+      "\\(|\\vec{A}| - |\\vec{B}|\\) secara skalar langsung"
+    ],
+    "correct": 1,
+    "explain": "A - B = A + (-B). Vektor -B punya magnitudo sama persis dengan B, cuma arahnya diputar 180 derajat — jadi pengurangan bukan operasi baru, melainkan penjumlahan dengan salah satu vektornya dibalik arahnya dulu."
+  },
+  {
+    "q": "Kenapa Aturan Kosinus punya dua bentuk berbeda — \\(R=\\sqrt{F_1^2+F_2^2+2F_1F_2\\cos\\alpha}\\) untuk penjumlahan dan \\(D=\\sqrt{F_1^2+F_2^2-2F_1F_2\\cos\\alpha}\\) untuk selisih?",
+    "opts": [
+      "Karena keduanya sebenarnya rumus yang berbeda total, tidak ada hubungannya",
+      "Karena tanda di tengah berbeda akibat salah satu vektor arahnya sudah dibalik duluan pada kasus selisih (setara dengan A + (-B))",
+      "Karena penjumlahan selalu menghasilkan nilai lebih besar secara definisi",
+      "Karena α diukur berbeda pada kedua kasus"
+    ],
+    "correct": 1,
+    "explain": "Selisih D = |F1 - F2| = |F1 + (-F2)| — karena arah salah satu vektor (F2) dibalik, suku silang pada penjabaran kosinus berubah tanda, sehingga tanda + pada rumus jumlah menjadi - pada rumus selisih."
+  }
+]

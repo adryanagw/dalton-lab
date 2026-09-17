@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!-- Rendered PDF companion content for Bab 2 Fisika (Vektor Bidang 2D),
+     built from bab2-vektor-2d.pdf-spec.md on
+     public/assets/pdf-template/page-template.html. This is the actual filled source,
+     rendered once and shared by every student — no per-page watermark markup here on
+     purpose: the real student-identity watermark is drawn live, per viewer, by
+     initPdfViewers() in app.js (.pdf-viewer-watermark), stamped with that viewer's
+     actual session name and timestamp. Baking a placeholder name into the shared
+     image here would just show every student a second, fake watermark underneath
+     the real one. -->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dalton Lab — PDF Bab 2 Fisika</title>
+<link rel="stylesheet" href="../../public/assets/vendor/fonts/pdf-fonts.css">
+<link rel="stylesheet" href="../../public/assets/vendor/katex/katex.min.css">
+<style>
+  @page{ size:210mm 297mm; margin:0; }
+
+  :root{
+    --navy:#0d1b2e;
+    --navy-2:#16304f;
+    --orange:#ee7d31;
+    --orange-dark:#d4631a;
+    --paper:#faf6ee;
+    --card:#ffffff;
+    --slate:#4f6376;
+    --success:#2f9e6a;
+    --danger:#d64545;
+    --accent:#8b5cf6;
+    --orange-ink:#bb4d0e;
+  }
+  .pdf-page[data-subject="fisika"]{ --accent:#8b5cf6; }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#fff;font-family:'Literata',serif;}
+
+  /* ---- the reusable page shell — print version: no floating-card chrome,
+       the page IS the physical page, so no radius/shadow/desk background ---- */
+  .pdf-page{
+    position:relative;
+    width:210mm;
+    height:297mm;
+    padding:26px;
+    background:var(--accent);
+    overflow:hidden;
+    break-after:page;
+    page-break-after:always;
+  }
+  .pdf-page:last-child{break-after:auto;page-break-after:avoid;}
+  .pdf-page .sheet{
+    position:relative;
+    width:100%;
+    height:100%;
+    background:var(--card);
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  .page-head{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 40px 18px;
+    border-bottom:1px solid #eef0f2;
+  }
+  .page-head .brand{display:flex;align-items:center;gap:2px;}
+  .page-head .brand img{height:34px;width:auto;display:block;}
+  .page-head .brand-word{font:600 15px/1 'Fraunces',serif;color:var(--navy);letter-spacing:.01em;}
+  .page-head .brand-word span{color:var(--accent);}
+  .page-head .meta{display:flex;align-items:baseline;gap:8px;}
+  .subject-chip{font:italic 600 14px/1 'Fraunces',serif;color:var(--orange-ink);}
+  .chapter-tag{font:italic 400 13.5px/1 'Literata',serif;color:var(--slate);}
+
+  .page-body{
+    position:relative;
+    z-index:2;
+    flex:1;
+    padding:30px 40px 0;
+    overflow:hidden;
+  }
+
+  h1.page-title{font:700 34px/1.15 'Fraunces',serif;color:var(--navy);margin:0 0 6px;}
+  p.dek{font:italic 400 14.5px/1.4 'Literata',serif;color:var(--orange-ink);margin:0 0 18px;}
+  h2.section-title{font:600 21px/1.25 'Fraunces',serif;color:var(--navy);margin:0 0 10px;}
+  p.lead{font:400 16.5px/1.6 'Literata',serif;color:var(--slate);margin:0 0 18px;max-width:600px;}
+  p.body-text{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 14px;}
+  ul.learn-list{margin:0 0 20px;padding-left:20px;}
+  ul.learn-list li{font:400 16px/1.65 'Literata',serif;color:#22303f;margin-bottom:6px;}
+
+  /* .dense — page-body modifier for pages whose text volume needs slightly
+     tighter spacing to fit one page at the standard font size (see
+     content-private/biologi/bab1-sel.pdf-pages.html Page 2 for the same pattern). */
+  .page-body.dense h2.section-title{margin-bottom:6px;}
+  .page-body.dense p.lead{margin-bottom:10px;}
+  .page-body.dense p.body-text{margin-bottom:8px;line-height:1.5;}
+  .page-body.dense .callout{padding-top:12px;padding-bottom:12px;margin-bottom:14px;}
+  .page-body.dense .example-box{margin-bottom:10px;padding-top:12px;}
+  .page-body.dense .example-box .label{margin-bottom:6px;}
+  .page-body.dense .example-box li{margin-bottom:4px;font-size:14px;line-height:1.45;}
+  .page-body.dense .formula-box{margin-bottom:16px;padding:14px 2px;}
+  .page-body.dense .ref-table{margin-bottom:12px;}
+  .page-body.dense .ref-table th,.page-body.dense .ref-table td{padding:5px 8px;font-size:12px;}
+
+  .formula-box{border-top:1px solid #e6dfd0;border-bottom:1px solid #e6dfd0;padding:20px 2px;margin:0 0 22px;}
+  .formula-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;display:block;}
+  .formula-box .katex{font-size:1.05em;}
+  .formula-box .var-def{font:400 13.5px/1.55 'Literata',serif;color:var(--slate);margin-top:10px;}
+  .formula-box .var-def b{font-family:'IBM Plex Mono',monospace;font-weight:500;color:#22303f;}
+
+  .example-box{border-top:1px solid #e6dfd0;padding:18px 2px 4px;margin:0 0 22px;}
+  .example-box .label{font:italic 500 14px/1 'Literata',serif;color:var(--navy);margin-bottom:12px;display:block;}
+  .example-box p.setup{font:400 15px/1.6 'Literata',serif;color:#22303f;margin:0 0 10px;}
+  .example-box ol{margin:0;padding-left:18px;}
+  .example-box li{font:400 15px/1.6 'Literata',serif;color:#22303f;margin-bottom:8px;}
+
+  .callout{padding:16px 18px;margin:0 0 20px;font:400 14.5px/1.55 'Literata',serif;}
+  .callout.mistake{background:#fbf0ed;}
+  .callout.mistake .label{color:var(--danger);}
+  .callout .label{display:block;font:italic 600 14px/1 'Literata',serif;margin-bottom:7px;}
+  .callout .wrong{color:var(--danger);font-weight:600;}
+  .callout .right{color:var(--success);font-weight:600;}
+
+  .ref-table{width:100%;border-collapse:collapse;margin:0 0 20px;}
+  .ref-table caption{caption-side:top;text-align:left;font:italic 500 13.5px/1 'Literata',serif;color:var(--orange-ink);margin-bottom:10px;}
+  .ref-table th,.ref-table td{
+    text-align:left;
+    padding:7px 10px;
+    font:400 12px/1.4 'Literata',serif;
+    color:#22303f;
+    border-bottom:1px solid #eee7d8;
+    vertical-align:top;
+  }
+  .ref-table thead th{
+    font:600 11px/1.35 'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--slate);
+    border-bottom:1.5px solid var(--navy);
+    padding-bottom:8px;
+  }
+  .ref-table tbody tr:first-child td{padding-top:10px;}
+  .ref-table .katex{font-size:.95em;}
+
+  ol.ref-list{margin:0 0 20px;padding-left:20px;}
+  ol.ref-list li{font:400 13.5px/1.6 'Literata',serif;color:#22303f;margin-bottom:12px;}
+  ol.ref-list li i{color:var(--slate);font-style:italic;}
+
+  .ref-list-2col{columns:2;column-gap:26px;margin:0 0 18px;}
+  .ref-list-2col .item{break-inside:avoid;margin-bottom:11px;}
+  .ref-list-2col .item .num{font:600 11px/1 'IBM Plex Mono',monospace;color:var(--orange-ink);}
+  .ref-list-2col .item .term{font:600 13px/1.3 'Literata',serif;color:var(--navy);display:block;margin:3px 0 2px;}
+  .ref-list-2col .item .gloss{font:400 12px/1.45 'Literata',serif;color:#4a5560;}
+
+  .page-foot{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 40px 22px;
+    border-top:1px solid #eef0f2;
+  }
+  .page-foot .license{font:italic 400 12px/1.4 'Literata',serif;color:#5c6670;max-width:380px;}
+</style>
+</head>
+<body>
+
+<!-- ===== Page 1 — Chapter opener ===== -->
+<div class="pdf-page" data-subject="fisika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2</span><span class="subject-chip">Fisika</span></div>
+    </div>
+    <div class="page-body">
+      <h1 class="page-title">Vektor Bidang 2D</h1>
+      <p class="dek">Materi PDF — pelengkap Bab 2</p>
+      <p class="lead">Materi tambahan ini fokus ke soal resultan 3 vektor (metode analitis penuh), soal Aturan Kosinus tambahan (sudut apit berbeda dari contoh di halaman utama, buat lihat efek perubahan sudut ke hasil R &amp; D), derivasi komponen dot product &amp; cross product langsung dari sifat vektor satuan, tabel ringkasan rumus vektor 2D, tabel perbandingan lengkap Dot vs Cross Product, kesalahan umum, dan latihan tambahan — pelengkap materi interaktif di halaman utama, bukan salinannya.</p>
+      <h2 class="section-title">Yang akan kamu pelajari</h2>
+      <ul class="learn-list">
+        <li>Soal resultan 3 vektor sekaligus pakai metode analitis penuh (notasi sigma Σ untuk n vektor)</li>
+        <li>Soal Aturan Kosinus dengan sudut apit 120° (dibandingkan langsung dengan Contoh Soal HOTS di halaman utama yang sudut apitnya 60°) — lihat efek sudut apit membesar ke R vs D</li>
+        <li>Derivasi rumus komponen \(\vec{A}\cdot\vec{B} = A_xB_x+A_yB_y\) dan \(\vec{r}\times\vec{F} = (r_xF_y-r_yF_x)\hat{k}\) langsung dari sifat perkalian vektor satuan (\(\hat{i}\), \(\hat{j}\), \(\hat{k}\)), dilanjutkan contoh soal Torsi lewat bentuk komponen</li>
+        <li>Tabel ringkasan seluruh rumus vektor bab ini dalam satu halaman referensi cepat</li>
+        <li>Tabel perbandingan lengkap Dot Product vs Cross Product (7 aspek)</li>
+        <li>Rekap 4 kesalahan umum yang paling sering bikin soal vektor salah</li>
+        <li>Latihan tambahan (5 soal + pembahasan) mencakup semua sub-topik bab ini</li>
+      </ul>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 2 — Latihan Tambahan: Resultan 3 Vektor (Metode Analitis Penuh) ===== -->
+<div class="pdf-page" data-subject="fisika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Resultan Vektor</span><span class="subject-chip">Fisika</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Latihan Tambahan: Resultan 3 Vektor Sekaligus</h2>
+      <p class="lead">Contoh Soal HOTS di halaman utama cuma pakai 2 vektor — di sini metode analitis dipakai untuk kasus aslinya: menjumlahkan n vektor sekaligus (di sini n=3), pakai notasi sigma penuh.</p>
+      <div class="example-box">
+        <span class="label">Soal &middot; Tiga Gaya Sebidang</span>
+        <p class="setup">Tiga buah gaya bekerja pada satu titik tangkap: \(\vec{F}_1 = 8\) N pada \(0^{\circ}\), \(\vec{F}_2 = 8\) N pada \(60^{\circ}\), dan \(\vec{F}_3 = 8\) N pada \(120^{\circ}\), semua diukur terhadap sumbu-X positif. Tentukan besar resultan \(R\) dan arah sudutnya!</p>
+        <ol>
+          <li>Uraikan tiap gaya ke sumbu-X dan sumbu-Y: \(F_{1x}=8\cos 0^{\circ}=8\) N, \(F_{1y}=8\sin 0^{\circ}=0\) N; \(F_{2x}=8\cos 60^{\circ}=4\) N, \(F_{2y}=8\sin 60^{\circ}=4\sqrt{3}\) N; \(F_{3x}=8\cos 120^{\circ}=-4\) N, \(F_{3y}=8\sin 120^{\circ}=4\sqrt{3}\) N.</li>
+          <li>Jumlahkan seluruh komponen memakai notasi sigma penuh: \(R_x = \sum_{i=1}^{3} F_{ix} = F_{1x}+F_{2x}+F_{3x} = 8+4+(-4) = 8\) N. \(R_y = \sum_{i=1}^{3} F_{iy} = F_{1y}+F_{2y}+F_{3y} = 0+4\sqrt{3}+4\sqrt{3} = 8\sqrt{3}\) N.</li>
+          <li>Hitung besar resultan: \(R = \sqrt{R_x^2+R_y^2} = \sqrt{8^2+(8\sqrt{3})^2} = \sqrt{64+192} = \sqrt{256} = 16\) N.</li>
+          <li>Hitung arah sudut: \(\tan\theta_R = \dfrac{R_y}{R_x} = \dfrac{8\sqrt{3}}{8} = \sqrt{3} \Rightarrow \theta_R = 60^{\circ}\) terhadap sumbu-X positif.</li>
+        </ol>
+      </div>
+      <p class="body-text">Perhatikan polanya: ketiga gaya besarnya sama (8 N) dan berjarak sudut yang sama (60° antar gaya berurutan), tapi resultannya (16 N pada 60°) BUKAN sekadar \(3\times8=24\) N — karena arahnya berbeda-beda, sebagian saling menguatkan (komponen-Y) dan sebagian saling meniadakan sebagian (komponen-X F1 &amp; F3). Ini kasus umum: makin banyak vektor yang terlibat, makin penting menguraikan SATU-PER-SATU ke sumbu-X/Y dulu sebelum menjumlahkan — nggak bisa dikira-kira langsung dari besarnya saja.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 3 — Latihan Tambahan: Aturan Kosinus dengan Sudut Apit Berbeda ===== -->
+<div class="pdf-page" data-subject="fisika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Resultan Vektor</span><span class="subject-chip">Fisika</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Latihan Tambahan: Aturan Kosinus — Efek Sudut Apit yang Membesar</h2>
+      <p class="lead">Contoh Soal HOTS di halaman utama pakai dua vektor 10 N dengan sudut apit 60°. Di sini, dua vektor yang SAMA PERSIS (10 N &amp; 10 N) dipakai lagi, tapi sudut apitnya diperbesar jadi 120° — perhatikan bagaimana hasil R dan D berubah dibanding sebelumnya.</p>
+      <div class="example-box">
+        <span class="label">Soal &middot; Dua Vektor dengan Sudut Apit 120°</span>
+        <p class="setup">Dua vektor gaya \(\vec{F}_1 = 10\) N dan \(\vec{F}_2 = 10\) N membentuk sudut apit \(\alpha = 120^{\circ}\). Tentukan besar resultan penjumlahan \(R\) dan besar selisih pengurangan \(D\) keduanya!</p>
+        <ol>
+          <li>Besar resultan penjumlahan: \(R = \sqrt{F_1^2+F_2^2+2F_1F_2\cos\alpha} = \sqrt{10^2+10^2+2(10)(10)\cos 120^{\circ}}\). Karena \(\cos 120^{\circ} = -0{,}5\): \(R = \sqrt{100+100+200(-0{,}5)} = \sqrt{200-100} = \sqrt{100} = 10\) N.</li>
+          <li>Besar selisih pengurangan: \(D = \sqrt{F_1^2+F_2^2-2F_1F_2\cos\alpha} = \sqrt{100+100-200(-0{,}5)} = \sqrt{200+100} = \sqrt{300} = 10\sqrt{3} \approx 17{,}32\) N.</li>
+          <li>Bandingkan dengan Contoh Soal HOTS di halaman utama (α=60°, \(F_1=F_2=10\) N): di sana \(R=10\sqrt{3}\approx 17{,}32\) N dan (kalau dihitung) \(D=10\) N — persis KEBALIKAN dari hasil di soal ini.</li>
+        </ol>
+      </div>
+      <div class="callout mistake">
+        <span class="label">Kesalahan Umum</span>
+        <span class="wrong">❌ Salah:</span> menganggap memperbesar sudut apit \(\alpha\) selalu memperbesar resultan \(R\).<br>
+        <span class="right">✅ Benar:</span> hubungannya justru terbalik untuk \(R\) — makin besar \(\alpha\) (kedua vektor makin "berlawanan arah"), makin KECIL \(R\) karena \(\cos\alpha\) makin negatif (dari +0,5 di α=60° jadi -0,5 di α=120°). Sebaliknya \(D\) (selisih) justru makin BESAR karena tandanya di depan suku \(2F_1F_2\cos\alpha\) terbalik (minus jadi plus efektifnya). Intinya: jangan hafal "R selalu lebih besar dari D" atau sebaliknya — itu tergantung besar sudut apitnya, harus dihitung, bukan ditebak.
+      </div>
+      <p class="body-text">Kasus ekstrem yang bisa dipakai buat cek cepat hafalan: kalau α=180° (dua vektor segaris tapi berlawanan arah persis), rumus R berubah jadi \(R=\sqrt{F_1^2+F_2^2-2F_1F_2}=|F_1-F_2|\) — resultan penjumlahan dua vektor yang berlawanan arah sama dengan SELISIH besarnya, sesuai intuisi (dua gaya tarik-menarik berlawanan arah saling meniadakan sebagian).</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 4 — Derivasi Komponen Dot Product & Cross Product + Contoh Soal Torsi ===== -->
+<div class="pdf-page" data-subject="fisika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Perkalian Vektor</span><span class="subject-chip">Fisika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Derivasi Komponen Dot Product &amp; Cross Product</h2>
+      <p class="lead">Rumus komponen \(\vec{A}\cdot\vec{B}=A_xB_x+A_yB_y\) yang dipakai di halaman utama sebenarnya bisa diturunkan langsung dari sifat perkalian vektor satuan — begini caranya, sekaligus versi cross product-nya yang belum dibahas dalam bentuk komponen.</p>
+      <div class="formula-box">
+        <span class="label">Derivasi Komponen Dot Product</span>
+        \(\vec{A}\cdot\vec{B} = (A_x\hat{i}+A_y\hat{j})\cdot(B_x\hat{i}+B_y\hat{j})\)<br>
+        \(= A_xB_x(\hat{i}\cdot\hat{i}) + A_xB_y(\hat{i}\cdot\hat{j}) + A_yB_x(\hat{j}\cdot\hat{i}) + A_yB_y(\hat{j}\cdot\hat{j})\)<br>
+        \(= A_xB_x(1) + A_xB_y(0) + A_yB_x(0) + A_yB_y(1) = A_xB_x+A_yB_y\)
+        <div class="var-def">Dua suku tengah lenyap karena \(\hat{i}\cdot\hat{j}=\hat{j}\cdot\hat{i}=0\) (saling tegak lurus), dan dua suku ujung jadi \(A_xB_x\) &amp; \(A_yB_y\) karena \(\hat{i}\cdot\hat{i}=\hat{j}\cdot\hat{j}=1\).</div>
+      </div>
+      <div class="formula-box">
+        <span class="label">Derivasi Komponen Cross Product (2D)</span>
+        \(\vec{A}\times\vec{B} = (A_x\hat{i}+A_y\hat{j})\times(B_x\hat{i}+B_y\hat{j})\)<br>
+        \(= A_xB_x(\hat{i}\times\hat{i}) + A_xB_y(\hat{i}\times\hat{j}) + A_yB_x(\hat{j}\times\hat{i}) + A_yB_y(\hat{j}\times\hat{j})\)<br>
+        \(= A_xB_x(0) + A_xB_y(\hat{k}) + A_yB_x(-\hat{k}) + A_yB_y(0) = (A_xB_y-A_yB_x)\hat{k}\)
+        <div class="var-def">Untuk vektor yang sama-sama terletak pada bidang X-Y (2D), hasil cross product-nya SELALU murni pada sumbu-Z (\(\hat{k}\)) — masuk akal, karena \(\hat{k}\) tegak lurus bidang X-Y yang memuat kedua vektor asal. Nilai skalarnya \((A_xB_y-A_yB_x)\) bisa positif (arah \(+\hat{k}\), keluar bidang/ke arah pembaca) atau negatif (arah \(-\hat{k}\), masuk bidang), tergantung urutan &amp; posisi kedua vektor — inilah yang mendasari Kaidah Tangan Kanan secara aljabar, bukan cuma visual.</div>
+      </div>
+      <div class="example-box">
+        <span class="label">Soal &middot; Torsi dari Vektor dalam Bentuk Komponen</span>
+        <p class="setup">Sebuah gaya \(\vec{F}=(2\hat{i}+5\hat{j})\) N bekerja pada benda dengan vektor lengan (posisi titik kerja gaya terhadap poros putar) \(\vec{r}=(3\hat{i}+4\hat{j})\) m. Tentukan torsi \(\vec{\tau}=\vec{r}\times\vec{F}\) yang dihasilkan!</p>
+        <ol>
+          <li>Pakai rumus komponen cross product yang baru diturunkan: \(\vec{\tau} = \vec{r}\times\vec{F} = (r_xF_y - r_yF_x)\hat{k}\).</li>
+          <li>Substitusi: \(\tau_z = (3)(5) - (4)(2) = 15 - 8 = 7\).</li>
+          <li>Jadi \(\vec{\tau} = 7\hat{k}\) N·m — besarnya \(|\vec{\tau}|=7\) N·m, arahnya sepanjang sumbu-Z positif (keluar dari bidang kertas ke arah pembaca, sesuai Kaidah Tangan Kanan karena hasilnya positif).</li>
+        </ol>
+      </div>
+      <p class="body-text">Bentuk komponen lebih cepat dipakai kalau \(\vec{r}\) dan \(\vec{F}\) sudah dalam \(\hat{i}\), \(\hat{j}\) — nggak perlu cari besar \(r\), \(F\), \(\theta\) dulu seperti rumus \(\tau=rF\sin\theta\); hasilnya sama, cuma jalan pintas aljabar.</p>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 5 — Ringkasan Rumus Vektor 2D & Tabel Perbandingan Dot vs Cross Product ===== -->
+<div class="pdf-page" data-subject="fisika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Referensi</span><span class="subject-chip">Fisika</span></div>
+    </div>
+    <div class="page-body dense">
+      <h2 class="section-title">Ringkasan Rumus Vektor Bidang 2D</h2>
+      <table class="ref-table">
+        <caption>Semua rumus bab ini dalam satu halaman</caption>
+        <thead><tr><th>Konsep</th><th>Rumus</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr><td>Komponen vektor</td><td>\(F_x=F\cos\theta\), \(F_y=F\sin\theta\)</td><td>θ dari sumbu-X positif</td></tr>
+          <tr><td>Notasi vektor satuan</td><td>\(\vec{F}=F_x\hat{i}+F_y\hat{j}\)</td><td>î, ĵ = vektor satuan sumbu X, Y</td></tr>
+          <tr><td>Magnitudo &amp; arah dari komponen</td><td>\(|\vec{F}|=\sqrt{F_x^2+F_y^2}\), \(\theta=\arctan(F_y/F_x)\)</td><td>koreksi +180° jika \(F_x<0\)</td></tr>
+          <tr><td>Resultan n vektor (analitis)</td><td>\(R_x=\sum F_{ix}\), \(R_y=\sum F_{iy}\), \(R=\sqrt{R_x^2+R_y^2}\)</td><td>berlaku untuk berapa pun n</td></tr>
+          <tr><td>Aturan Kosinus (2 vektor)</td><td>\(R=\sqrt{F_1^2+F_2^2+2F_1F_2\cos\alpha}\) (jumlah), \(D=\sqrt{F_1^2+F_2^2-2F_1F_2\cos\alpha}\) (selisih)</td><td>α = sudut apit, hanya untuk 2 vektor</td></tr>
+          <tr><td>Dot product</td><td>\(\vec{A}\cdot\vec{B}=|\vec{A}||\vec{B}|\cos\theta=A_xB_x+A_yB_y\)</td><td>hasil skalar</td></tr>
+          <tr><td>Usaha</td><td>\(W=\vec{F}\cdot\vec{s}=Fs\cos\theta\)</td><td>satuan Joule (J)</td></tr>
+          <tr><td>Cross product (magnitudo)</td><td>\(|\vec{A}\times\vec{B}|=|\vec{A}||\vec{B}|\sin\theta\)</td><td>hasil vektor, arah via tangan kanan</td></tr>
+          <tr><td>Cross product (komponen 2D)</td><td>\(\vec{A}\times\vec{B}=(A_xB_y-A_yB_x)\hat{k}\)</td><td>hasil murni pada sumbu-Z</td></tr>
+          <tr><td>Torsi</td><td>\(\vec{\tau}=\vec{r}\times\vec{F}\), \(|\vec{\tau}|=rF\sin\theta\)</td><td>satuan N·m</td></tr>
+        </tbody>
+      </table>
+      <h2 class="section-title" style="margin-top:20px;">Tabel Perbandingan Lengkap: Dot Product vs Cross Product</h2>
+      <table class="ref-table">
+        <caption>7 aspek pembeda utama — Dot Product (Perkalian Titik) vs Cross Product (Perkalian Silang)</caption>
+        <thead><tr><th>Aspek</th><th>Dot Product</th><th>Cross Product</th></tr></thead>
+        <tbody>
+          <tr><td>Jenis hasil</td><td>Skalar (cuma nilai)</td><td>Vektor (nilai + arah)</td></tr>
+          <tr><td>Rumus magnitudo/nilai</td><td>\(|\vec{A}||\vec{B}|\cos\theta\)</td><td>\(|\vec{A}||\vec{B}|\sin\theta\)</td></tr>
+          <tr><td>Rumus komponen (2D)</td><td>\(A_xB_x+A_yB_y\)</td><td>\((A_xB_y-A_yB_x)\hat{k}\)</td></tr>
+          <tr><td>Sifat urutan</td><td>Komutatif: \(\vec{A}\cdot\vec{B}=\vec{B}\cdot\vec{A}\)</td><td>Anti-komutatif: \(\vec{A}\times\vec{B}=-(\vec{B}\times\vec{A})\)</td></tr>
+          <tr><td>Nilai vektor satuan sejenis</td><td>\(\hat{i}\cdot\hat{i}=\hat{j}\cdot\hat{j}=1\)</td><td>\(\hat{i}\times\hat{i}=\hat{j}\times\hat{j}=0\)</td></tr>
+          <tr><td>Nilai vektor satuan beda</td><td>\(\hat{i}\cdot\hat{j}=0\)</td><td>\(\hat{i}\times\hat{j}=\hat{k}\), \(\hat{j}\times\hat{i}=-\hat{k}\)</td></tr>
+          <tr><td>Maksimum saat</td><td>\(\theta=0^{\circ}\) (segaris/sejajar)</td><td>\(\theta=90^{\circ}\) (tegak lurus)</td></tr>
+          <tr><td>Nol saat</td><td>\(\theta=90^{\circ}\) (tegak lurus)</td><td>\(\theta=0^{\circ}\) atau \(180^{\circ}\) (segaris)</td></tr>
+          <tr><td>Aplikasi fisis</td><td>Usaha: \(W=\vec{F}\cdot\vec{s}\)</td><td>Torsi: \(\vec{\tau}=\vec{r}\times\vec{F}\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 6 — Kesalahan Umum ===== -->
+<div class="pdf-page" data-subject="fisika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Kesalahan Umum</span><span class="subject-chip">Fisika</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Kesalahan Umum yang Sering Terjadi</h2>
+      <div class="callout mistake">
+        <span class="label">1. Jarak vs Perpindahan</span>
+        <span class="wrong">❌ Salah:</span> menganggap jarak dan perpindahan selalu sama nilainya.<br>
+        <span class="right">✅ Benar:</span> jarak (skalar) = total panjang lintasan; perpindahan (vektor) = perubahan posisi awal-akhir. Keduanya sama nilainya HANYA kalau geraknya lurus satu arah tanpa balik lagi.
+      </div>
+      <div class="callout mistake">
+        <span class="label">2. Resultan Bukan Jumlah Aljabar Biasa</span>
+        <span class="wrong">❌ Salah:</span> menghitung R = F1+F2 langsung tanpa memperhatikan sudut apitnya.<br>
+        <span class="right">✅ Benar:</span> R=F1+F2 cuma benar kalau α=0° (searah persis). Begitu ada sudut apit, R harus dihitung lewat metode analitis atau Aturan Kosinus — hasilnya SELALU ≤ F1+F2.
+      </div>
+      <div class="callout mistake">
+        <span class="label">3. cos itu Usaha, sin itu Torsi</span>
+        <span class="wrong">❌ Salah:</span> memakai sinθ untuk usaha atau cosθ untuk torsi (tertukar).<br>
+        <span class="right">✅ Benar:</span> Usaha (\(W=Fs\cos\theta\)) butuh komponen gaya SEJAJAR perpindahan. Torsi (\(\tau=rF\sin\theta\)) butuh komponen gaya TEGAK LURUS lengan. Keduanya kebalikan, jangan dihafal sembarang.
+      </div>
+      <div class="callout mistake">
+        <span class="label">4. Cross Product Hasilnya Vektor, Bukan Skalar</span>
+        <span class="wrong">❌ Salah:</span> menjawab hasil \(\vec{A}\times\vec{B}\) sebagai sebuah angka saja (seperti hasil dot product).<br>
+        <span class="right">✅ Benar:</span> hasil cross product SELALU berupa vektor baru (tegak lurus bidang A dan B, arah via Kaidah Tangan Kanan) — kalau soal cuma minta "besarnya", jawabannya memang angka (\(|\vec{A}\times\vec{B}|\)), tapi hasil lengkapnya tetap sebuah vektor dengan arah.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 7 — Latihan Tambahan ===== -->
+<div class="pdf-page" data-subject="fisika">
+  <div class="sheet">
+    <div class="page-head">
+      <div class="brand"><img src="../../public/assets/img/logo.png" alt="Dalton Lab"><span class="brand-word">DALTON <span>LAB</span></span></div>
+      <div class="meta"><span class="chapter-tag">Bab 2 &middot; Latihan Tambahan</span><span class="subject-chip">Fisika</span></div>
+    </div>
+    <div class="page-body">
+      <h2 class="section-title">Latihan Tambahan</h2>
+      <p class="lead">Lima soal terakhir menggabungkan semua sub-topik bab ini — coba kerjakan dulu sebelum lihat pembahasannya.</p>
+      <ol class="ref-list">
+        <li><b>Soal 1.</b> Manakah pasangan berikut yang keduanya besaran skalar: (a) gaya &amp; tekanan, (b) energi &amp; suhu, (c) kecepatan &amp; percepatan, (d) momentum &amp; perpindahan? <i>Pembahasan: (b) — energi dan suhu sama-sama tidak punya arah. Gaya, momentum, kecepatan, percepatan, dan perpindahan semuanya vektor; tekanan sebenarnya skalar juga, tapi pasangannya di opsi (a) yaitu gaya adalah vektor, jadi opsi (a) gugur.</i></li>
+        <li><b>Soal 2.</b> Sebuah gaya \(F=100\) N membentuk sudut \(53^{\circ}\) terhadap sumbu-X positif (gunakan \(\sin 53^{\circ}\approx 0{,}8\), \(\cos 53^{\circ}\approx 0{,}6\)). Tentukan \(F_x\) dan \(F_y\)! <i>Pembahasan: \(F_x=100\times 0{,}6=60\) N, \(F_y=100\times 0{,}8=80\) N.</i></li>
+        <li><b>Soal 3.</b> Dua vektor gaya 6 N dan 8 N membentuk sudut apit 90°. Hitung besar resultannya! <i>Pembahasan: \(R=\sqrt{6^2+8^2+2(6)(8)\cos 90^{\circ}}=\sqrt{36+64+0}=\sqrt{100}=10\) N (Aturan Kosinus otomatis jadi Pythagoras saat α=90°).</i></li>
+        <li><b>Soal 4.</b> Diketahui \(\vec{A}=(4\hat{i}+3\hat{j})\) N dan \(\vec{B}=(2\hat{i}+6\hat{j})\) m. Hitung \(\vec{A}\cdot\vec{B}\)! <i>Pembahasan: \(A\cdot B = (4\times2)+(3\times6) = 8+18=26\).</i></li>
+        <li><b>Soal 5.</b> Sebuah gaya \(F=30\) N bekerja pada lengan momen \(r=0{,}4\) m dengan sudut \(90^{\circ}\) terhadap lengan. Hitung besar torsinya! <i>Pembahasan: \(\tau=rF\sin\theta=0{,}4\times30\times\sin90^{\circ}=12\times1=12\) N·m.</i></li>
+      </ol>
+    </div>
+    <div class="page-foot">
+      <span class="license">Dalton Lab &middot; materi berlisensi untuk pemegang akses — dilarang disebarluaskan.</span>
+    </div>
+  </div>
+</div>
+
+<script src="../../public/assets/vendor/katex/katex.min.js"></script>
+<script src="../../public/assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script src="../../public/assets/vendor/katex/contrib/mhchem.min.js"></script>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left:'$$', right:'$$', display:true},
+      {left:'\\[', right:'\\]', display:true},
+      {left:'\\(', right:'\\)', display:false}
+    ],
+    throwOnError:false
+  });
+</script>
+</body>
+</html>

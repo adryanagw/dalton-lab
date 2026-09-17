@@ -1,0 +1,302 @@
+<section class="hero">
+  <div class="hero-decor"></div>
+  <div class="wrap hero-grid single">
+    <div>
+      <div class="eyebrow">Materi Kelas X · Fisika</div>
+      <h1 style="max-width:640px;">Vektor Bidang <em>2D</em>.</h1>
+      <div class="hero-btns">
+        <a href="#kuis-fisika" class="btn btn-primary">Langsung ke Drill Soal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pdf-materi" class="notebook-bg tight" data-nav="Materi PDF">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Materi PDF</div>
+      <h2>Soal Tambahan &amp; Referensi Lengkap Vektor</h2>
+    </div>
+    <div class="pdf-viewer" data-pdf-subject="fisika" data-pdf-bab="bab2-vektor-2d">
+      <div class="pdf-viewer-stage">
+        <div class="pdf-viewer-loading">Memuat…</div>
+        <img class="pdf-viewer-img" alt="Halaman materi PDF" decoding="sync" draggable="false" oncontextmenu="return false;">
+        <div class="pdf-viewer-watermark"></div>
+      </div>
+      <div class="pdf-viewer-controls">
+        <button type="button" class="pdf-viewer-prev" aria-label="Halaman sebelumnya">‹</button>
+        <span class="pdf-viewer-pagenum">Halaman 1 / 1</span>
+        <button type="button" class="pdf-viewer-next" aria-label="Halaman berikutnya">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skalar-vektor" class="tight" data-nav="Skalar &amp; Vektor">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">01 · Fondasi Bab Ini</div>
+      <h2>Besaran Skalar vs. Besaran Vektor</h2>
+      <p>Bab 1 sudah sempat singgung bedanya — sekarang kita bongkar tuntas, karena <b style="color:var(--heading);">seluruh isi Bab 2 ini adalah konsekuensi dari satu perbedaan ini</b>. Fisika membedakan besaran jadi dua kelompok berdasarkan ada-tidaknya arah:</p>
+    </div>
+
+    <div class="table-scroll" style="max-width:640px;margin-bottom:12px;">
+      <table class="compare-table">
+        <thead><tr><th>Kelompok</th><th>Definisi</th><th>Contoh</th></tr></thead>
+        <tbody>
+          <tr><td><b>Besaran Skalar</b></td><td>Cuma punya nilai (magnitudo), <b>tanpa arah</b>. Cukup ditulis satu angka + satuan.</td><td>massa (\(m\)), waktu (\(t\)), suhu (\(T\)), energi (\(E\)), jarak (\(s\))</td></tr>
+          <tr><td><b>Besaran Vektor</b></td><td>Punya nilai <b>sekaligus arah yang spesifik</b>. Dua vektor dengan angka sama tapi arah beda = dua vektor yang berbeda.</td><td>perpindahan (\(\vec{s}\)), kecepatan (\(\vec{v}\)), percepatan (\(\vec{a}\)), gaya (\(\vec{F}\)), momentum (\(\vec{p}\))</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-hint">Geser tabel ke samping untuk lihat semua kolom.</p>
+
+    <p style="max-width:640px;color:var(--slate);margin:18px 0 10px;">Secara geometris, vektor digambarkan sebagai <b>anak panah</b>: panjang anak panah menyatakan <b>besar/magnitudo</b> vektor (ditulis \(|\vec{F}|\), atau cukup \(F\) tanpa panah kalau konteksnya sudah jelas — magnitudo sendiri selalu berupa angka positif, jadi dia besaran skalar meski berasal dari sebuah vektor), sementara arah anak panah menyatakan arah vektor itu terhadap sumbu acuan.</p>
+
+    <div class="law-strip" style="max-width:640px;">
+      <b>⚠️ Jangan Tertukar: Jarak vs. Perpindahan</b><br>
+      <b>Jarak</b> (\(s\), skalar) = total panjang lintasan yang benar-benar ditempuh, nggak peduli lika-likunya. <b>Perpindahan</b> (\(\vec{s}\), vektor) = perubahan posisi dari titik awal ke titik akhir, garis lurus, plus arahnya. Kalau kamu jalan kaki mengelilingi lapangan bundar sejauh 400 m lalu balik ke titik start, jarak tempuhmu = 400 m, tapi perpindahanmu = 0 m (karena posisi akhir = posisi awal). Ini beda paling sering ketuker di soal UTBK.
+    </div>
+  </div>
+</section>
+
+<section id="penguraian-vektor" class="notebook-bg" data-nav="Penguraian Vektor">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">02 · Membelah Vektor ke Sumbu-X dan Sumbu-Y</div>
+      <h2>Penguraian Vektor Bidang 2D</h2>
+      <p>Supaya gampang dianalisis pakai aljabar biasa (bukan gambar), setiap vektor \(\vec{F}\) yang membentuk sudut \(\theta\) terhadap sumbu-X positif bisa "dipecah" jadi dua komponen yang saling tegak lurus: komponen sumbu-X (\(F_x\)) dan komponen sumbu-Y (\(F_y\)). Ini langkah wajib sebelum bisa menjumlahkan banyak vektor sekaligus di bagian berikutnya.</p>
+    </div>
+
+    <div class="jenis-box diagram-card">
+      <p class="diagram-eyebrow">Diagram · Penguraian Vektor \(\vec{F}\) ke Sumbu-X &amp; Sumbu-Y</p>
+      <img src="assets/images/fisika/penguraian-vektor-komponen-fx-fy.jpg" alt="Diagram vektor F pada bidang Kartesius diuraikan menjadi komponen Fx pada sumbu-X dan Fy pada sumbu-Y, dengan sudut theta terhadap sumbu-X positif" loading="lazy" decoding="async" width="1376" height="768">
+      <p class="diagram-caption">\(F_x\) dan \(F_y\) membentuk segitiga siku-siku dengan \(\vec{F}\) sebagai sisi miringnya — itu sebabnya rumus komponennya berasal dari trigonometri dasar.</p>
+    </div>
+
+    <div class="law-strip" style="max-width:640px;">
+      <b>📐 Rumus Komponen Vektor</b><br>
+      \(F_x = F \cdot \cos\theta\) &nbsp;dan&nbsp; \(F_y = F \cdot \sin\theta\)<br>
+      <span style="font-size:.88rem;color:var(--slate);">\(F\) = besar/magnitudo vektor (satuan sesuai besarannya, mis. N untuk gaya), \(\theta\) = sudut vektor terhadap sumbu-X positif. <b>Syarat berlaku:</b> \(\theta\) diukur dari sumbu-X positif, berlawanan arah jarum jam dihitung positif — kalau sudutnya diukur dari sumbu lain, rumusnya harus disesuaikan (cos ↔ sin tertukar).</span>
+    </div>
+
+    <p style="max-width:640px;color:var(--slate);margin:20px 0 10px;">Dengan komponennya, vektor \(\vec{F}\) bisa ditulis pakai <b>notasi vektor satuan</b> — \(\hat{i}\) mewakili arah sumbu-X, \(\hat{j}\) mewakili arah sumbu-Y (keduanya vektor bermagnitudo 1, cuma penunjuk arah):</p>
+
+    <div class="law-strip" style="max-width:640px;">
+      \(\vec{F} = F_x\hat{i} + F_y\hat{j}\)
+    </div>
+
+    <p style="max-width:640px;color:var(--slate);margin:20px 0 10px;">Sebaliknya, kalau sudah tahu \(F_x\) dan \(F_y\), besar (magnitudo) dan arah vektor aslinya bisa dicari balik pakai Teorema Pythagoras dan trigonometri:</p>
+
+    <div class="law-strip" style="max-width:640px;">
+      \(|\vec{F}| = \sqrt{F_x^2 + F_y^2}\) &nbsp;dan&nbsp; \(\tan\theta = \dfrac{F_y}{F_x} \Rightarrow \theta = \arctan\left(\dfrac{F_y}{F_x}\right)\)<br>
+      <span style="font-size:.88rem;color:var(--slate);">\(|\vec{F}|\) = magnitudo vektor hasil (satuan sama dengan \(F_x\), \(F_y\)), \(\theta\) = sudut arah vektor terhadap sumbu-X positif. <b>Perhatikan:</b> \(\arctan\) standar kalkulator cuma kasih hasil di rentang \(-90^{\circ}\) sampai \(90^{\circ}\) — kalau \(F_x\) negatif (vektor condong ke kuadran II atau III), hasil \(\arctan\) harus dikoreksi \(+180^{\circ}\) supaya sesuai kuadran vektor yang sebenarnya.</span>
+    </div>
+
+    <div class="section-head" style="margin:28px 0 14px;">
+      <h3 style="font-size:1.15rem;">Contoh Soal: Penguraian Vektor Dasar</h3>
+      <p style="max-width:760px;">Sebuah gaya \(\vec{F} = 40\) N membentuk sudut \(30^{\circ}\) terhadap sumbu-X positif. Tentukan komponen \(F_x\) dan \(F_y\)-nya!</p>
+    </div>
+
+    <div class="role-cards">
+      <div class="role-card jenis-box"><span class="role-n">01</span>Komponen sumbu-X: \(F_x = F\cos\theta = 40 \times \cos 30^{\circ} = 40 \times \dfrac{\sqrt{3}}{2} = 20\sqrt{3} \approx 34{,}64\) N.</div>
+      <div class="role-card jenis-box"><span class="role-n">02</span>Komponen sumbu-Y: \(F_y = F\sin\theta = 40 \times \sin 30^{\circ} = 40 \times 0{,}5 = 20\) N.</div>
+      <div class="role-card jenis-box"><span class="role-n">03</span>Jadi dalam notasi vektor satuan: \(\vec{F} = 20\sqrt{3}\,\hat{i} + 20\,\hat{j}\) N.</div>
+      <div class="role-card jenis-box"><span class="role-n">04</span>Cek balik: \(|\vec{F}| = \sqrt{(20\sqrt{3})^2 + 20^2} = \sqrt{1200 + 400} = \sqrt{1600} = 40\) N ✅ — cocok dengan magnitudo awal, artinya penguraiannya benar.</div>
+    </div>
+
+    <div class="law-strip" style="max-width:640px;margin-top:20px;">
+      <b>⚠️ Jangan Tertukar: Tanda Komponen Beda per Kuadran</b><br>
+      \(\cos\theta\) dan \(\sin\theta\) bisa negatif tergantung kuadran sudut \(\theta\)-nya — vektor di kuadran II (\(90^{\circ}\)–\(180^{\circ}\)) punya \(F_x\) negatif, kuadran III (\(180^{\circ}\)–\(270^{\circ}\)) punya \(F_x\) dan \(F_y\) negatif dua-duanya. Jangan otomatis anggap semua komponen positif — selalu cek dulu di kuadran mana sudutnya berada.
+    </div>
+  </div>
+</section>
+
+<section id="kesamaan-pengurangan" class="tight" data-nav="Kesamaan &amp; Pengurangan">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">03 · Kapan Dua Vektor Dianggap Sama?</div>
+      <h2>Kesamaan &amp; Pengurangan Vektor</h2>
+      <p>Sebelum masuk ke penjumlahan banyak vektor, dua konsep ini perlu jelas dulu: <b style="color:var(--heading);">kapan dua vektor dianggap identik</b>, dan <b style="color:var(--heading);">bagaimana cara "menguranginya"</b> — soalnya pengurangan vektor sebenarnya bukan operasi baru sama sekali.</p>
+    </div>
+
+    <div class="law-strip" style="max-width:640px;">
+      <b>📏 Aturan Kesamaan Mutlak:</b> Vektor \(\vec{A} = \vec{B}\) jika dan hanya jika (1) \(|\vec{A}| = |\vec{B}|\) (magnitudo setara) dan (2) arah \(\vec{A}\) = arah \(\vec{B}\) (\(A_x = B_x\), \(A_y = B_y\)). Kedua syarat ini harus dipenuhi bersamaan — magnitudo sama saja tidak cukup kalau arahnya beda.
+    </div>
+
+    <div class="jenis-box diagram-card" style="margin:24px auto;">
+      <p class="diagram-eyebrow">Diagram · Vektor Bebas vs Vektor Terikat</p>
+      <img src="assets/images/fisika/hukum-kesamaan-dua-vektor.jpg" alt="Ilustrasi vektor bebas yang dapat digeser sejajar di dalam ruang koordinat, dan vektor terikat yang punya titik aplikasi lokasi absolut" loading="lazy" decoding="async" width="1376" height="768">
+      <p class="diagram-caption">Kiri — <b>Vektor Bebas (Free Vector):</b> boleh digeser ke mana pun di ruang koordinat tanpa mengubah maknanya, cuma bergantung pada panjang &amp; orientasi (contoh: perpindahan umum). Kanan — <b>Vektor Terikat (Bound Vector):</b> punya titik aplikasi/lokasi absolut yang bermakna — memindahkannya mengubah efek fisisnya (contoh: gaya yang bekerja di titik tertentu pada benda, relevan buat torsi).</p>
+    </div>
+
+    <div class="section-head" style="margin:28px 0 14px;">
+      <h3 style="font-size:1.15rem;">Pengurangan Vektor: \(\vec{A} - \vec{B} = \vec{A} + (-\vec{B})\)</h3>
+      <p style="max-width:760px;">Vektor negatif \(-\vec{B}\) punya magnitudo sama persis dengan \(\vec{B}\), cuma arahnya diputar \(180^{\circ}\). Jadi mengurangkan \(\vec{B}\) dari \(\vec{A}\) sama saja dengan <i>menjumlahkan</i> \(\vec{A}\) dengan vektor \(-\vec{B}\) itu — bukan operasi terpisah yang butuh rumus baru.</p>
+    </div>
+
+    <div class="jenis-box diagram-card" style="margin:0 auto 24px;">
+      <p class="diagram-eyebrow">Diagram · 3 Langkah Pengurangan Vektor</p>
+      <img src="assets/images/fisika/pengurangan-vektor-a-minus-b.jpg" alt="Tiga langkah pengurangan vektor: identifikasi vektor A dan B, inversi arah B menjadi negatif B dengan memutar 180 derajat, lalu jumlahkan A dengan negatif B untuk mendapatkan resultan R" loading="lazy" decoding="async" width="1376" height="768">
+      <p class="diagram-caption">1) Identifikasi \(\vec{A}\) dan \(\vec{B}\). 2) Balik arah \(\vec{B}\) jadi \(-\vec{B}\) (magnitudo tetap, orientasi diputar \(180^{\circ}\)). 3) Jumlahkan \(\vec{A}\) dengan \(-\vec{B}\) pakai metode segitiga biasa, hasilnya \(\vec{R} = \vec{A} + (-\vec{B})\).</p>
+    </div>
+
+    <div class="role-cards" style="margin-bottom:10px;">
+      <div class="role-card jenis-box"><span class="role-n">01</span>Secara komponen, pengurangan langsung dikurangkan per sumbu: \(R_x = A_x - B_x\) dan \(R_y = A_y - B_y\), baru dihitung magnitudo &amp; arahnya seperti biasa.</div>
+      <div class="role-card jenis-box"><span class="role-n">02</span>Ini juga alasan kenapa Aturan Kosinus punya dua bentuk: \(R = \sqrt{F_1^2+F_2^2+2F_1F_2\cos\alpha}\) untuk <b>penjumlahan</b> \(\vec{F_1}+\vec{F_2}\), dan \(D = \sqrt{F_1^2+F_2^2-2F_1F_2\cos\alpha}\) untuk <b>selisih</b> \(\vec{F_1}-\vec{F_2}\) — tanda di tengah rumus berbeda karena arah salah satu vektornya sudah dibalik duluan.</div>
+    </div>
+
+    <div class="jenis-box" style="max-width:640px;">
+      <p style="margin:0;color:var(--slate);font-size:.9rem;"><b style="color:var(--heading);">Kesalahan Umum:</b> ❌ mengira pengurangan vektor "menghilangkan" sebagian dari vektor pertama, seperti pengurangan bilangan biasa. ✅ Pengurangan vektor cuma penjumlahan dengan arah salah satu vektornya dibalik — magnitudonya tidak "berkurang" secara sederhana, karena hasil akhirnya tetap bergantung pada sudut apit kedua vektor, persis seperti kasus Aturan Kosinus di atas.</p>
+    </div>
+  </div>
+</section>
+
+<section id="resultan-vektor" class="notebook-bg" data-nav="Resultan Vektor">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">04 · Menggabungkan Banyak Vektor</div>
+      <h2>Penjumlahan &amp; Resultan Vektor</h2>
+      <p>Menjumlahkan beberapa vektor sekaligus menghasilkan satu vektor pengganti yang disebut <b style="color:var(--heading);">Vektor Resultan</b> (\(\vec{R}\)) — efeknya setara dengan efek gabungan semua vektor aslinya. Dua metode grafis paling umum untuk memvisualisasikannya adalah <b>Metode Jajaran Genjang</b> dan <b>Metode Segitiga/Poligon</b>, tapi buat menghitung angka pasti (bukan cuma gambar kira-kira), yang dipakai adalah <b>Metode Analitis</b>.</p>
+    </div>
+
+    <div class="jenis-box diagram-card">
+      <p class="diagram-eyebrow">Diagram · Metode Jajaran Genjang &amp; Metode Segitiga/Poligon</p>
+      <img src="assets/images/fisika/metode-penjumlahan-vektor-jajaran-genjang-segitiga.jpg" alt="Perbandingan dua metode grafis penjumlahan vektor: Metode Jajaran Genjang (dua vektor dari titik pangkal sama membentuk jajaran genjang, resultan = diagonalnya) dan Metode Segitiga (vektor kedua disambung dari ujung vektor pertama, resultan = sisi penutup segitiga), keduanya menghasilkan resultan R yang sama" loading="lazy" decoding="async" width="1376" height="768">
+      <p class="diagram-caption">Dua metode ini menghasilkan \(\vec{R}\) yang persis sama — bedanya cuma cara menggambarnya (dua vektor dari satu titik pangkal vs. disambung ujung-ke-pangkal). Keduanya cuma alat bantu visual; nilai pastinya tetap dihitung analitis atau lewat Aturan Kosinus di bawah.</p>
+    </div>
+
+    <div class="section-head" style="margin:8px 0 14px;">
+      <h3 style="font-size:1.15rem;">Metode Analitis (Sumbu-X dan Sumbu-Y)</h3>
+      <p style="max-width:760px;">Ini metode utama yang dipakai di hampir semua soal resultan — berlaku untuk berapa pun jumlah vektornya (\(\vec{F}_1, \vec{F}_2, \ldots, \vec{F}_n\)), nggak cuma dua. Tiga langkahnya:</p>
+    </div>
+
+    <ul class="check-list" style="max-width:640px;">
+      <li><b>Uraikan setiap vektor</b> ke sumbu-X dan sumbu-Y: \(F_{ix} = F_i \cos\theta_i\) dan \(F_{iy} = F_i \sin\theta_i\), untuk tiap vektor ke-\(i\).</li>
+      <li><b>Jumlahkan seluruh komponen</b> per sumbu secara aljabar (komponen searah sumbu positif dijumlah, searah sumbu negatif dikurang): \(R_x = \sum_{i=1}^{n} F_{ix} = F_{1x} + F_{2x} + \cdots + F_{nx}\), dan \(R_y = \sum_{i=1}^{n} F_{iy} = F_{1y} + F_{2y} + \cdots + F_{ny}\).</li>
+      <li><b>Hitung besar &amp; arah resultan total</b> dari hasil penjumlahan komponen itu: \(R = \sqrt{R_x^2 + R_y^2}\) dan \(\tan\theta_R = \dfrac{R_y}{R_x}\).</li>
+    </ul>
+
+    <p style="max-width:640px;color:var(--slate);margin:16px 0 20px;font-size:.9rem;"><b style="color:var(--heading);">Syarat berlaku:</b> seluruh vektor harus sudah diuraikan terhadap sistem sumbu acuan yang sama (sumbu-X &amp; Y yang sama untuk semua vektor) — kalau sudut tiap vektor diukur dari acuan berbeda-beda, harus disamakan dulu sebelum dijumlah.</p>
+
+    <div class="section-head" style="margin:8px 0 14px;">
+      <h3 style="font-size:1.15rem;">Aturan Kosinus untuk Dua Vektor</h3>
+      <p style="max-width:760px;">Kalau cuma ada <b>tepat dua</b> vektor \(\vec{F}_1\) dan \(\vec{F}_2\) yang membentuk sudut apit \(\alpha\) (sudut antara keduanya saat titik pangkalnya diimpitkan), ada jalan pintas tanpa perlu menguraikan ke sumbu-X/Y dulu:</p>
+    </div>
+
+    <div class="law-strip" style="max-width:640px;margin-bottom:12px;">
+      <b>Besar Resultan Penjumlahan</b> (\(R = |\vec{F}_1 + \vec{F}_2|\)):<br>
+      \(R = \sqrt{F_1^2 + F_2^2 + 2F_1F_2\cos\alpha}\)
+    </div>
+    <div class="law-strip" style="max-width:640px;">
+      <b>Besar Selisih Pengurangan</b> (\(D = |\vec{F}_1 - \vec{F}_2|\)):<br>
+      \(D = \sqrt{F_1^2 + F_2^2 - 2F_1F_2\cos\alpha}\)
+    </div>
+
+    <p style="max-width:640px;color:var(--slate);margin:16px 0 24px;font-size:.9rem;"><b style="color:var(--heading);">Syarat berlaku:</b> hanya untuk penjumlahan/pengurangan <b>dua</b> vektor sekaligus (bukan tiga atau lebih), \(\alpha\) harus sudut apit yang benar (sudut antar kedua vektor saat pangkalnya diimpitkan, bukan sudut sembarang di gambar), dan perhatikan tanda \(+\)/\(-\) di depan suku \(2F_1F_2\cos\alpha\) — tertukar tandanya = jawaban salah total, bukan cuma meleset dikit.</p>
+
+    <div class="section-head" style="margin:8px 0 14px;">
+      <h3 style="font-size:1.15rem;">Contoh Soal HOTS: Resultan Gaya 2D (Metode Analitis)</h3>
+      <p style="max-width:760px;">Dua buah gaya bekerja pada satu titik tangkap di bidang X-Y: gaya \(\vec{F}_1 = 10\) N membentuk sudut \(0^{\circ}\) terhadap sumbu-X positif, dan gaya \(\vec{F}_2 = 10\) N membentuk sudut \(60^{\circ}\) terhadap sumbu-X positif. Tentukan besar gaya resultan \(R\) dan arah sudutnya terhadap sumbu-X!</p>
+    </div>
+
+    <div class="role-cards">
+      <div class="role-card jenis-box"><span class="role-n">01</span>Uraikan komponen tiap gaya: \(F_{1x} = 10\cos 0^{\circ} = 10\) N, \(F_{1y} = 10\sin 0^{\circ} = 0\) N; \(F_{2x} = 10\cos 60^{\circ} = 5\) N, \(F_{2y} = 10\sin 60^{\circ} = 5\sqrt{3}\) N.</div>
+      <div class="role-card jenis-box"><span class="role-n">02</span>Jumlahkan komponen per sumbu: \(R_x = F_{1x}+F_{2x} = 10+5 = 15\) N; \(R_y = F_{1y}+F_{2y} = 0+5\sqrt{3} = 5\sqrt{3}\) N.</div>
+      <div class="role-card jenis-box"><span class="role-n">03</span>Hitung besar resultan: \(R = \sqrt{R_x^2+R_y^2} = \sqrt{15^2+(5\sqrt{3})^2} = \sqrt{225+75} = \sqrt{300} = 10\sqrt{3} \approx 17{,}32\) N.</div>
+      <div class="role-card jenis-box"><span class="role-n">04</span>Hitung arah sudut: \(\tan\theta = \dfrac{R_y}{R_x} = \dfrac{5\sqrt{3}}{15} = \dfrac{\sqrt{3}}{3} \Rightarrow \theta = 30^{\circ}\) terhadap sumbu-X positif.</div>
+    </div>
+
+    <p style="max-width:640px;color:var(--slate);margin-top:14px;font-size:.9rem;"><b style="color:var(--heading);">Cek silang:</b> soal ini sebenarnya kasus dua vektor dengan sudut apit \(\alpha = 60^{\circ}\), jadi bisa juga langsung dihitung pakai Aturan Kosinus: \(R = \sqrt{10^2+10^2+2(10)(10)\cos 60^{\circ}} = \sqrt{100+100+100} = \sqrt{300} = 10\sqrt{3}\) N — hasilnya identik. Aturan Kosinus lebih cepat khusus untuk dua vektor; metode analitis wajib dipakai begitu vektornya tiga atau lebih.</p>
+
+    <div class="law-strip" style="max-width:640px;margin-top:20px;">
+      <b>⚠️ Jangan Tertukar: Resultan ≠ Jumlah Aljabar Biasa</b><br>
+      \(R = F_1 + F_2\) (penjumlahan angka biasa) <b>cuma benar kalau kedua vektor searah persis</b> (\(\alpha = 0^{\circ}\)). Begitu ada sudut apit di antara keduanya, resultannya SELALU lebih kecil dari jumlah aljabar \(F_1+F_2\) — itu sebabnya di contoh soal di atas, \(R = 10\sqrt{3} \approx 17{,}32\) N, bukan \(10+10=20\) N.
+    </div>
+  </div>
+</section>
+
+<section id="perkalian-vektor" data-nav="Perkalian Vektor">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">05 · Dot Product &amp; Cross Product</div>
+      <h2>Perkalian Vektor</h2>
+      <p>Ada dua cara "mengalikan" dua vektor, dan hasilnya beda jenis besaran sama sekali — ini yang paling sering ketuker kalau nggak dipahami akar bedanya sejak awal.</p>
+    </div>
+
+    <div class="table-scroll" style="max-width:640px;margin-bottom:16px;">
+      <table class="compare-table">
+        <thead><tr><th></th><th>Perkalian Titik (Dot Product)</th><th>Perkalian Silang (Cross Product)</th></tr></thead>
+        <tbody>
+          <tr><td><b>Hasilnya</b></td><td>Besaran SKALAR (cuma nilai)</td><td>Besaran VEKTOR baru (nilai + arah)</td></tr>
+          <tr><td><b>Rumus</b></td><td>\(\vec{A}\cdot\vec{B} = |\vec{A}||\vec{B}|\cos\theta\)</td><td>\(|\vec{A}\times\vec{B}| = |\vec{A}||\vec{B}|\sin\theta\)</td></tr>
+          <tr><td><b>Contoh fisis</b></td><td>Usaha (\(W\))</td><td>Momen Gaya / Torsi (\(\vec{\tau}\))</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-hint">Geser tabel ke samping untuk lihat semua kolom.</p>
+
+    <div class="jenis-box diagram-card">
+      <p class="diagram-eyebrow">Diagram · Perkalian Titik untuk Usaha &amp; Perkalian Silang untuk Torsi</p>
+      <img src="assets/images/fisika/visualisasi-dot-product-cross-product.jpg" alt="Dua panel: panel kiri Dot Product menunjukkan segitiga gaya F dan perpindahan s membentuk sudut theta menghasilkan Usaha W, panel kanan Cross Product menunjukkan vektor posisi r dan gaya F dalam ruang 3D menghasilkan torsi tau yang tegak lurus bidang r-F, dengan ikon kaidah tangan kanan" loading="lazy" decoding="async" width="1376" height="768">
+      <p class="diagram-caption">Panel kiri: hanya komponen \(\vec{F}\) yang SEJAJAR \(\vec{s}\) yang menghasilkan usaha (makanya pakai \(\cos\theta\)). Panel kanan: torsi butuh komponen \(\vec{F}\) yang TEGAK LURUS \(\vec{r}\) (makanya pakai \(\sin\theta\)), dan arah \(\vec{\tau}\) yang dihasilkan tegak lurus bidang \(\vec{r}\)-\(\vec{F}\), ditentukan Kaidah Tangan Kanan.</p>
+    </div>
+
+    <div class="section-head" style="margin:24px 0 14px;">
+      <h3 style="font-size:1.15rem;">1. Perkalian Titik (Dot Product)</h3>
+    </div>
+
+    <div class="law-strip" style="max-width:640px;">
+      \(\vec{A}\cdot\vec{B} = |\vec{A}||\vec{B}|\cos\theta = A_xB_x + A_yB_y\)<br>
+      <span style="font-size:.88rem;color:var(--slate);">\(\theta\) = sudut terkecil antara \(\vec{A}\) dan \(\vec{B}\) saat titik pangkalnya diimpitkan. Hasilnya SELALU skalar — nggak punya arah, cuma nilai (bisa positif, nol, atau negatif tergantung \(\theta\)).</span>
+    </div>
+
+    <ul class="check-list" style="max-width:640px;margin-top:16px;">
+      <li><b>Sifat Komutatif:</b> \(\vec{A}\cdot\vec{B} = \vec{B}\cdot\vec{A}\) — urutan nggak memengaruhi hasil.</li>
+      <li><b>Vektor Satuan:</b> \(\hat{i}\cdot\hat{i} = \hat{j}\cdot\hat{j} = 1\) (karena sudut antar vektor yang sama = \(0^{\circ}\), dan \(\cos 0^{\circ}=1\)), sedangkan \(\hat{i}\cdot\hat{j} = 0\) (karena saling tegak lurus, \(\cos 90^{\circ}=0\)).</li>
+      <li><b>Penerapan Fisis — Usaha (\(W\)):</b> Usaha adalah hasil perkalian titik antara gaya \(\vec{F}\) dan perpindahan \(\vec{s}\): \(W = \vec{F}\cdot\vec{s} = F \cdot s \cdot \cos\theta\), satuan Joule (J). <b>Syarat berlaku:</b> \(\vec{F}\) konstan sepanjang lintasan lurus, \(\theta\) = sudut antara arah \(\vec{F}\) dan arah \(\vec{s}\).</li>
+    </ul>
+
+    <div class="section-head" style="margin:8px 0 14px;">
+      <h3 style="font-size:1.15rem;">Contoh Soal HOTS: Usaha via Dot Product</h3>
+      <p style="max-width:760px;">Sebuah benda ditarik oleh gaya \(\vec{F} = (8\hat{i} + 6\hat{j})\) N sehingga mengalami perpindahan \(\vec{s} = (5\hat{i} + 2\hat{j})\) meter. Tentukan besar usaha (\(W\)) yang dilakukan gaya tersebut!</p>
+    </div>
+
+    <div class="role-cards" style="margin-bottom:8px;">
+      <div class="role-card jenis-box"><span class="role-n">01</span>Karena kedua vektor sudah dalam bentuk komponen, langsung pakai \(W = \vec{F}\cdot\vec{s} = (F_x \cdot s_x) + (F_y \cdot s_y)\).</div>
+      <div class="role-card jenis-box"><span class="role-n">02</span>Substitusi angkanya: \(W = (8 \times 5) + (6 \times 2) = 40 + 12 = 52\) Joule.</div>
+    </div>
+
+    <div class="section-head" style="margin:24px 0 14px;">
+      <h3 style="font-size:1.15rem;">2. Perkalian Silang (Cross Product)</h3>
+    </div>
+
+    <div class="law-strip" style="max-width:640px;">
+      \(|\vec{A}\times\vec{B}| = |\vec{A}||\vec{B}|\sin\theta\)<br>
+      <span style="font-size:.88rem;color:var(--slate);">\(\theta\) = sudut terkecil antara \(\vec{A}\) dan \(\vec{B}\). Hasilnya vektor BARU yang tegak lurus terhadap bidang yang memuat \(\vec{A}\) dan \(\vec{B}\) — arahnya ditentukan pakai <b>Kaidah Tangan Kanan</b> (genggam jari dari arah \(\vec{A}\) menuju \(\vec{B}\), ibu jari menunjukkan arah hasilnya).</span>
+    </div>
+
+    <ul class="check-list" style="max-width:640px;margin-top:16px;">
+      <li><b>Sifat Anti-komutatif:</b> \(\vec{A}\times\vec{B} = -(\vec{B}\times\vec{A})\) — tukar urutan, arah hasilnya kebalik (magnitudonya tetap sama, cuma arahnya berbalik).</li>
+      <li><b>Vektor Satuan:</b> \(\hat{i}\times\hat{i} = \hat{j}\times\hat{j} = 0\) (vektor sejajar dirinya sendiri, \(\sin 0^{\circ}=0\)), sedangkan \(\hat{i}\times\hat{j} = \hat{k}\) dan \(\hat{j}\times\hat{i} = -\hat{k}\).</li>
+      <li><b>Penerapan Fisis — Momen Gaya/Torsi (\(\vec{\tau}\)):</b> Torsi adalah hasil perkalian silang antara vektor posisi lengan gaya \(\vec{r}\) (dari poros putar ke titik kerja gaya) dan gaya \(\vec{F}\): \(\vec{\tau} = \vec{r}\times\vec{F} \Rightarrow |\vec{\tau}| = r \cdot F \cdot \sin\theta\), satuan Newton-meter (N·m). <b>Syarat berlaku:</b> \(\theta\) = sudut antara \(\vec{r}\) dan \(\vec{F}\); torsi jadi maksimum saat \(\vec{F}\) tegak lurus \(\vec{r}\) (\(\theta=90^{\circ}\)) dan nol saat \(\vec{F}\) segaris dengan \(\vec{r}\) (\(\theta=0^{\circ}\) atau \(180^{\circ}\)) — gaya yang menarik lurus ke arah/menjauhi poros nggak menghasilkan putaran sama sekali.</li>
+    </ul>
+
+    <div class="law-strip" style="max-width:640px;margin-top:20px;">
+      <b>⚠️ Jangan Tertukar: cos itu Usaha, sin itu Torsi</b><br>
+      Usaha (\(W=Fs\cos\theta\)) butuh komponen gaya yang <b>SEJAJAR</b> arah perpindahan — makanya pakai \(\cos\theta\), yang bernilai maksimum saat \(\theta=0^{\circ}\) (segaris). Torsi (\(\tau=rF\sin\theta\)) butuh komponen gaya yang <b>TEGAK LURUS</b> lengan — makanya pakai \(\sin\theta\), yang bernilai maksimum saat \(\theta=90^{\circ}\) (tegak lurus). Ketuker rumus ini adalah kesalahan paling umum di soal HOTS Usaha &amp; Torsi. Satu hal lagi yang sering lupa: hasil cross product itu VEKTOR (punya arah, lewat Kaidah Tangan Kanan), bukan cuma angka seperti hasil dot product.
+    </div>
+  </div>
+</section>
+
+<section id="kuis-fisika" style="background:var(--navy);" data-nav="Drill Soal" data-nav-cta>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="color:var(--purple);">06 · Uji Pemahaman</div>
+      <h2 style="color:#fff;">Drill Soal: Vektor Bidang 2D</h2>
+      <p style="color:#c3ccd9;">Soal pilihan ganda mencakup semua materi di atas — dari klasifikasi skalar/vektor, penguraian komponen, resultan (metode analitis &amp; Aturan Kosinus), sampai dot product &amp; cross product (Usaha &amp; Torsi). Jawab satu-satu, dapatkan pembahasan langsung setelah menjawab.</p>
+    </div>
+
+    <div class="quiz-root" data-quiz-subject="fisika" data-quiz-bab="bab2-vektor-2d"></div>
+  </div>
+</section>

@@ -338,6 +338,33 @@
         ],
         "createdAt": "2026-09-16T13:36:41.702Z",
         "reason": "False positive: line-height:1 only appears on single-line short label/UI text copied verbatim from the shared page-template CSS block per CHAPTER_CONTENT_GUIDE.md's copy-the-CSS-block-wholesale instruction, identical to bab1-bab4's pdf-pages.html. Body text uses line-height 1.5-1.6 throughout."
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "content-private/fisika/bab2-vektor-2d.html"
+        ],
+        "createdAt": "2026-09-17T07:08:16.929Z",
+        "reason": "Intentional: .pdf-viewer-img ships with no src by design — filled at runtime via authenticated blob + object URL (app.js initPdfViewers/loadPage). Same pattern already ignored for every other chapter's .html."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "content-private/fisika/bab2-vektor-2d.html"
+        ],
+        "createdAt": "2026-09-17T07:08:16.957Z",
+        "reason": "False positive from scanning the content fragment without the site's real styles.css loaded (section{padding:86px 0} etc. defined globally, not zero). Same pattern already ignored across every other chapter."
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "content-private/fisika/bab2-vektor-2d.pdf-pages.html"
+        ],
+        "createdAt": "2026-09-17T07:08:30.241Z",
+        "reason": "False positive: line-height:1 only appears on single-line short label/UI text copied verbatim from the shared page-template CSS block per CHAPTER_CONTENT_GUIDE.md's copy-the-CSS-block-wholesale instruction, identical to every other chapter's pdf-pages.html. Body text uses line-height 1.5-1.6 throughout."
       }
     ]
   }
