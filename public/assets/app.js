@@ -292,7 +292,7 @@ const subjectsData = {
     desc:'Mekanika, listrik-magnet, gelombang, dan lainnya.',
     babs:[
       {id:'bab1-besaran-dan-satuan', num:'Bab 1', title:'Pengantar Ilmu Fisika: Besaran & Satuan', desc:'Hakikat fisika, cabang-cabang fisika klasik, 7 besaran pokok SI, besaran turunan & dimensi, hingga notasi ilmiah.', ready:true, estMinutes:20, subbabCount:8},
-      {id:'bab2-vektor-2d', num:'Bab 2', title:'Vektor Bidang 2D', desc:'Penguraian vektor ke komponen, kesamaan & pengurangan vektor, penjumlahan & resultan, hingga perkalian titik dan perkalian silang.', ready:true, estMinutes:24, subbabCount:7},
+      {id:'bab2-vektor-2d', num:'Bab 2', title:'Vektor Bidang 2D', desc:'Penguraian vektor ke komponen, kesamaan & pengurangan vektor, penjumlahan & resultan, perkalian titik & silang, hingga simulasi 3D interaktif.', ready:true, estMinutes:26, subbabCount:8},
     ]
   },
   sejarah: {
@@ -1272,6 +1272,167 @@ function initShuCalculator(root){
 }
 
 /* =====================================================================
+   VECTOR LAB — interactive 3D vector simulator (addition, dot product,
+   cross product), deliberately limited to exactly 2 vectors so both the
+   canvas drawing and the numeric breakdown stay legible. Renders a small
+   isometric 3D projection by hand on <canvas> -- no 3D/charting library,
+   since "two vectors + one resultant" is a small fixed drawing job that
+   doesn't justify the dependency weight.
+   Markup contract: .vector-lab root containing #vecAx/#vecAy/#vecAz and
+   #vecBx/#vecBy/#vecBz number inputs, .vector-op-toggle buttons each
+   with [data-op="add"|"dot"|"cross"], <canvas id="vectorCanvas">, and
+   an empty #vectorOutput container for the live formula/result readout.
+   ===================================================================== */
+function initVectorLab(root){
+  const canvas = root.querySelector('#vectorCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const outputEl = root.querySelector('#vectorOutput');
+  const opButtons = root.querySelectorAll('.vector-op-toggle button');
+  const inputIds = ['vecAx','vecAy','vecAz','vecBx','vecBy','vecBz'];
+  let currentOp = 'add';
+
+  function getVec(prefix){
+    return [
+      parseFloat(root.querySelector('#vec'+prefix+'x').value) || 0,
+      parseFloat(root.querySelector('#vec'+prefix+'y').value) || 0,
+      parseFloat(root.querySelector('#vec'+prefix+'z').value) || 0,
+    ];
+  }
+  function mag(v){ return Math.sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2]); }
+  function vadd(a,b){ return [a[0]+b[0], a[1]+b[1], a[2]+b[2]]; }
+  function vdot(a,b){ return a[0]*b[0]+a[1]*b[1]+a[2]*b[2]; }
+  function vcross(a,b){
+    return [
+      a[1]*b[2]-a[2]*b[1],
+      a[2]*b[0]-a[0]*b[2],
+      a[0]*b[1]-a[1]*b[0],
+    ];
+  }
+  function fmt(n){
+    if(Math.abs(n) < 1e-9) n = 0;
+    return (Math.round(n*100)/100).toLocaleString('id-ID', {maximumFractionDigits:2});
+  }
+
+  // Isometric 3D -> 2D projection: X right, Z left, Y straight up
+  // (matches the "up = positive Y" convention used in every other
+  // vector diagram in this chapter), 30 degree axis angle.
+  const W = 320, H = 280;
+  const DPR = window.devicePixelRatio || 1;
+  canvas.width = W * DPR; canvas.height = H * DPR;
+  canvas.style.width = W+'px'; canvas.style.height = H+'px';
+  ctx.scale(DPR, DPR);
+  const cx = W/2, cy = H/2 + 24;
+  const ISO = Math.PI/6;
+
+  function project(x,y,z){
+    const px = (x - z) * Math.cos(ISO);
+    const py = (x + z) * Math.sin(ISO) + y;
+    return [px, py];
+  }
+  function toScreen(v, scale){
+    const [px,py] = project(v[0],v[1],v[2]);
+    return [cx + px*scale, cy - py*scale];
+  }
+  function drawArrow(x1,y1,x2,y2,color,width){
+    ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = width||3;
+    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+    const angle = Math.atan2(y2-y1, x2-x1);
+    const headLen = 9;
+    ctx.beginPath();
+    ctx.moveTo(x2, y2);
+    ctx.lineTo(x2 - headLen*Math.cos(angle-Math.PI/6), y2 - headLen*Math.sin(angle-Math.PI/6));
+    ctx.lineTo(x2 - headLen*Math.cos(angle+Math.PI/6), y2 - headLen*Math.sin(angle+Math.PI/6));
+    ctx.closePath(); ctx.fill();
+  }
+
+  function renderCanvas(){
+    const A = getVec('A'), B = getVec('B');
+    const R = currentOp === 'add' ? vadd(A,B) : currentOp === 'cross' ? vcross(A,B) : null;
+    const maxComp = Math.max(mag(A), mag(B), R ? mag(R) : 0, 1);
+    const scale = Math.min(26, 85/maxComp);
+
+    ctx.clearRect(0,0,W,H);
+
+    const axisLen = maxComp*1.4 + 1.5;
+    const origin = toScreen([0,0,0], scale);
+    ctx.font = "600 12px 'Space Grotesk', sans-serif";
+    [['X',[axisLen,0,0]],['Y',[0,axisLen,0]],['Z',[0,0,axisLen]]].forEach(([label,end])=>{
+      const [ex,ey] = toScreen(end, scale);
+      ctx.strokeStyle = 'rgba(255,255,255,0.25)'; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(origin[0],origin[1]); ctx.lineTo(ex,ey); ctx.stroke();
+      ctx.fillStyle = 'rgba(255,255,255,0.55)';
+      ctx.fillText(label, ex+4, ey+4);
+    });
+
+    const aScreen = toScreen(A, scale), bScreen = toScreen(B, scale);
+    drawArrow(origin[0],origin[1], aScreen[0],aScreen[1], '#5aa9ff', 3);
+    drawArrow(origin[0],origin[1], bScreen[0],bScreen[1], '#3fd39e', 3);
+
+    if(currentOp === 'add'){
+      const rScreen = toScreen(R, scale);
+      ctx.setLineDash([4,4]);
+      ctx.strokeStyle = 'rgba(63,211,158,0.55)'; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(aScreen[0],aScreen[1]); ctx.lineTo(rScreen[0],rScreen[1]); ctx.stroke();
+      ctx.setLineDash([]);
+      drawArrow(origin[0],origin[1], rScreen[0],rScreen[1], '#f0a336', 3);
+    } else if(currentOp === 'cross' && mag(R) > 1e-9){
+      const rScreen = toScreen(R, scale);
+      drawArrow(origin[0],origin[1], rScreen[0],rScreen[1], '#f0a336', 3);
+    }
+
+    ctx.fillStyle = '#fff';
+    ctx.beginPath(); ctx.arc(origin[0], origin[1], 3, 0, Math.PI*2); ctx.fill();
+  }
+
+  function renderOutput(){
+    const A = getVec('A'), B = getVec('B');
+    const magA = mag(A), magB = mag(B);
+    let html = '';
+    if(currentOp === 'add'){
+      const R = vadd(A,B);
+      html = `
+        <div class="output-card"><span>Resultan \\(\\vec{R} = \\vec{A}+\\vec{B}\\)</span><b>(${fmt(R[0])}, ${fmt(R[1])}, ${fmt(R[2])})</b></div>
+        <div class="output-card total"><span>Magnitudo \\(|\\vec{R}|\\)</span><b>${fmt(mag(R))}</b></div>
+        <div class="formula-box">\\(\\vec{R} = (A_x{+}B_x,\\ A_y{+}B_y,\\ A_z{+}B_z)\\)<br>\\(|\\vec{R}| = \\sqrt{R_x^2+R_y^2+R_z^2}\\)</div>`;
+    } else if(currentOp === 'dot'){
+      const d = vdot(A,B);
+      const cosTheta = (magA>0 && magB>0) ? d/(magA*magB) : 0;
+      const thetaDeg = (magA>0 && magB>0) ? (Math.acos(Math.max(-1,Math.min(1,cosTheta))) * 180/Math.PI) : 0;
+      html = `
+        <div class="output-card total"><span>\\(\\vec{A} \\cdot \\vec{B}\\) (hasil skalar)</span><b>${fmt(d)}</b></div>
+        <div class="output-card"><span>Sudut \\(\\theta\\) antara \\(\\vec{A}\\) &amp; \\(\\vec{B}\\)</span><b>${fmt(thetaDeg)}°</b></div>
+        <div class="formula-box">\\(\\vec{A}\\cdot\\vec{B} = A_xB_x+A_yB_y+A_zB_z = ${fmt(d)}\\)<br>\\(\\cos\\theta = \\dfrac{\\vec{A}\\cdot\\vec{B}}{|\\vec{A}||\\vec{B}|}\\)</div>`;
+    } else {
+      const R = vcross(A,B);
+      html = `
+        <div class="output-card"><span>\\(\\vec{A} \\times \\vec{B}\\) (hasil vektor)</span><b>(${fmt(R[0])}, ${fmt(R[1])}, ${fmt(R[2])})</b></div>
+        <div class="output-card total"><span>Magnitudo \\(|\\vec{A}\\times\\vec{B}|\\)</span><b>${fmt(mag(R))}</b></div>
+        <div class="formula-box">Arah hasil (oranye) tegak lurus bidang \\(\\vec{A}\\)-\\(\\vec{B}\\), ditentukan Kaidah Tangan Kanan.<br>\\(|\\vec{A}\\times\\vec{B}| = |\\vec{A}||\\vec{B}|\\sin\\theta\\)</div>`;
+    }
+    outputEl.innerHTML = html;
+    initMath(outputEl);
+  }
+
+  function renderAll(){ renderCanvas(); renderOutput(); }
+
+  inputIds.forEach(id=>{
+    const el = root.querySelector('#'+id);
+    if(el) el.addEventListener('input', renderAll);
+  });
+  opButtons.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      opButtons.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      currentOp = btn.dataset.op;
+      renderAll();
+    });
+  });
+
+  renderAll();
+}
+
+/* =====================================================================
    GENERIC QUIZ ENGINE
    Any chapter just needs: <div class="quiz-root" data-quiz-subject="…"
    data-quiz-bab="…"></div>
@@ -1897,6 +2058,7 @@ function initAllComponents(root){
   initClickGroups(root);
   initCollapsibleCards(root);
   initShuCalculator(root);
+  initVectorLab(root);
   initQuizzes(root);
   initPdfViewers(root);
   initPdfDownloadLinks(root);

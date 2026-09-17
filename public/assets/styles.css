@@ -881,11 +881,27 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 .split-big{font-family:'Space Grotesk';font-size:2.1rem;color:var(--orange);font-weight:600;margin:6px 0 12px;}
 .split-card p{font-size:.9rem;color:var(--ink);margin-bottom:14px;}
 .mini-note{font-size:.84rem;color:var(--slate);margin-top:18px;font-style:italic;}
-.role-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:start;}
+/* Flows as a single vertical column (not a side-by-side grid) so each
+   card gets the page's full reading width — a row of narrow columns
+   compresses multi-line explanations into a cramped, uninviting shape. */
+.role-cards{display:flex;flex-direction:column;gap:14px;}
 .role-card{
   padding:18px;font-size:.86rem;color:var(--ink);position:relative;padding-top:34px;
+  text-align:justify;text-justify:inter-word;
 }
 .role-n{position:absolute;top:12px;left:18px;font-family:'Space Grotesk';color:var(--orange);font-size:.78rem;font-weight:600;}
+
+/* Step breakdown for worked examples ("Contoh Soal"): one single card
+   holding all steps as internally-divided rows, rather than several
+   separate cards. Keeps a multi-step solution reading as one continuous
+   walkthrough instead of fragmenting it into a grid. */
+.step-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 22px;}
+.step-row{
+  padding:16px 0 16px 38px;position:relative;font-size:.86rem;color:var(--ink);
+  text-align:justify;text-justify:inter-word;
+}
+.step-row + .step-row{border-top:1px solid var(--line);}
+.step-n{position:absolute;top:16px;left:0;font-family:'Space Grotesk';color:var(--orange);font-size:.78rem;font-weight:600;}
 
 /* === Koperasi === */
 .principle-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:44px;}
@@ -1004,6 +1020,50 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 .formula-box{
   font-size:.74rem;color:#9fb0c2;line-height:1.7;background:rgba(0,0,0,0.2);
   border-radius:10px;padding:14px 16px;margin-top:4px;
+}
+
+/* Vector Lab (3D vector simulator — addition/dot/cross product) */
+.vector-lab{
+  background:var(--navy);border-radius:22px;padding:40px;
+  background-image: radial-gradient(circle at 90% 10%, rgba(139,92,246,0.22), transparent 55%);
+}
+.vector-lab-head{margin-bottom:22px;}
+.vector-op-toggle{display:inline-flex;flex-wrap:wrap;background:rgba(255,255,255,0.08);border-radius:30px;padding:5px;margin-bottom:24px;}
+.vector-op-toggle button{
+  border:none;background:transparent;padding:9px 18px;border-radius:22px;
+  font-family:'Space Grotesk';font-weight:600;font-size:.84rem;cursor:pointer;color:#c3ccd9;
+  transition:all .18s;white-space:nowrap;
+}
+.vector-op-toggle button.active{background:var(--purple);color:#fff;}
+.vector-lab-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start;}
+.vector-inputs{display:flex;flex-direction:column;gap:14px;}
+.vector-input-group{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:12px;padding:16px;}
+.vector-input-group .vg-label{
+  display:flex;align-items:center;gap:8px;font-family:'Space Grotesk';font-weight:600;
+  font-size:.86rem;color:#fff;margin-bottom:12px;
+}
+.vector-input-group .vg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.vector-xyz-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.vector-xyz-row label{
+  display:block;font-size:.68rem;color:#9fb0c2;margin-bottom:4px;
+  font-family:'Space Grotesk';text-transform:uppercase;letter-spacing:.04em;
+}
+.vector-xyz-row input[type="number"]{
+  width:100%;padding:9px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.08);color:#fff;font-size:.9rem;font-family:'IBM Plex Mono',monospace;
+}
+.vector-canvas-wrap{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);
+  border-radius:12px;padding:14px;display:flex;flex-direction:column;align-items:center;
+}
+.vector-canvas-wrap canvas{max-width:100%;height:auto;border-radius:8px;}
+.vector-legend{display:flex;gap:14px;margin-top:10px;font-size:.74rem;color:#c3ccd9;flex-wrap:wrap;justify-content:center;}
+.vector-legend span{display:inline-flex;align-items:center;gap:6px;}
+.vector-legend .dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex-shrink:0;}
+.vector-output{margin-top:16px;display:flex;flex-direction:column;gap:12px;}
+@media(max-width:760px){
+  .vector-lab{padding:24px;}
+  .vector-lab-grid{grid-template-columns:1fr;}
 }
 
 /* === Manajemen === */
@@ -1222,7 +1282,6 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
   .compare-grid{grid-template-columns:1fr;}
   .sector-grid{grid-template-columns:repeat(2,1fr);}
   .split-grid{grid-template-columns:1fr;}
-  .role-cards{grid-template-columns:repeat(2,1fr);}
   .principle-grid{grid-template-columns:repeat(3,1fr);}
   .two-col{grid-template-columns:1fr;}
   .six-m-grid{grid-template-columns:repeat(3,1fr);}
@@ -1268,7 +1327,6 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 }
 @media(max-width:680px){
   .sector-grid{grid-template-columns:1fr 1fr;}
-  .role-cards{grid-template-columns:1fr;}
   .principle-grid{grid-template-columns:repeat(2,1fr);}
   .six-m-grid{grid-template-columns:repeat(2,1fr);}
   .poac-grid{grid-template-columns:1fr;}
