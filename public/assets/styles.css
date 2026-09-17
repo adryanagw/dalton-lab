@@ -242,7 +242,7 @@ section.tight{padding:60px 0;}
   height:100dvh;
   display:flex;flex-direction:column;
   background:var(--nav-bg);border-right:1px solid var(--line);
-  padding:20px 16px;overflow-y:auto;
+  padding:20px 16px;overflow-y:auto;overflow-x:hidden;
 }
 .sidebar-brand{padding:4px 6px 20px;}
 .sidebar-brand img{height:32px;}
