@@ -304,18 +304,17 @@ section.tight{padding:44px 0;}
    the section label, and the session-badge details all hide, leaving
    just each nav item's icon so it reads as a slim button column. State
    persists via localStorage (see app.js) so it survives reloads. */
-/* Anchored near the bottom (vertically centered against
-   .sidebar-footer, the account/session row) rather than near the top,
-   for two reasons: it stays discoverable right next to the account
-   controls a user already looks at, and it never spatially overlaps
-   the lesson page's sticky subnav bar (z-index:90, far above this
-   button's z-index:5) — when it sat near the top, the subnav's opaque/
-   blurred background painted over it on every lesson page, leaving it
-   looking half cut-off. bottom (not top) since .sidebar-footer sits at
-   the sidebar's own bottom edge regardless of how tall the nav list
-   above it grows. */
+/* Anchored near the bottom, just above .sidebar-footer's own dividing
+   border-top line (not below it, overlapping the account row) — stays
+   discoverable right next to the account section without sitting
+   inside it, and still clears the lesson page's sticky subnav bar
+   (z-index:90, far above this button's z-index:5): when it sat near
+   the top, the subnav's opaque/blurred background painted over it on
+   every lesson page, leaving it looking half cut-off. bottom (not top)
+   since .sidebar-footer sits at the sidebar's own bottom edge
+   regardless of how tall the nav list above it grows. */
 .sidebar-collapse-btn{
-  position:absolute;bottom:53px;right:-13px;z-index:5;
+  position:absolute;bottom:118px;right:-13px;z-index:5;
   width:26px;height:26px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   background:var(--card);border:1px solid var(--line);color:var(--slate);
