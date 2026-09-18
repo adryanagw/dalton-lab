@@ -276,6 +276,28 @@ if(fontDecreaseBtn && fontIncreaseBtn){
   try{ applyFontSizeIdx(getFontSizeIdx()); }catch(e){ applyFontSizeIdx(FONT_SIZE_DEFAULT_IDX); }
 }
 
+/* ===== Table of contents (lesson chapter nav) hide toggle =====
+   Persisted like the sidebar collapse and text-size toggle above —
+   a reading preference a student sets once, not a per-session choice. */
+const tocToggleBtn = document.getElementById('tocToggleBtn');
+const lessonSubnavEl = document.getElementById('lessonSubnav');
+function setTocCollapsed(collapsed){
+  if(!lessonSubnavEl || !tocToggleBtn) return;
+  lessonSubnavEl.classList.toggle('toc-collapsed', collapsed);
+  tocToggleBtn.setAttribute('aria-expanded', String(!collapsed));
+  tocToggleBtn.setAttribute('aria-label', collapsed ? 'Tampilkan daftar isi' : 'Sembunyikan daftar isi');
+  tocToggleBtn.title = collapsed ? 'Tampilkan daftar isi' : 'Sembunyikan daftar isi';
+  try{ localStorage.setItem('daltonlab_toc_collapsed', collapsed ? '1' : '0'); }catch(e){}
+}
+if(tocToggleBtn){
+  tocToggleBtn.addEventListener('click', ()=>{
+    setTocCollapsed(!lessonSubnavEl.classList.contains('toc-collapsed'));
+  });
+  try{
+    if(localStorage.getItem('daltonlab_toc_collapsed') === '1') setTocCollapsed(true);
+  }catch(e){}
+}
+
 /* =====================================================================
    CATALOG — the ONE place you touch to add a new subject or chapter.
    Each bab just points at a content file (pure HTML, no JS) and an
@@ -604,6 +626,63 @@ const viewLesson = document.getElementById('view-lesson');
 let activeSubjectKey = 'ekonomi';
 let activeBabId = null;
 
+/* ===== Hash-based history so the browser Back button works =====
+   Every view here used to be a JS-toggled <div> with zero URL/history
+   change — clicking into a subject left the browser on the exact same
+   history entry as the home page, so Back skipped straight past the
+   whole site to whatever page was open before it. location.hash
+   assignment is the lightest fix that needs no server-side routing
+   changes (unlike full pushState-based clean URLs, which would need a
+   catch-all rewrite in vercel.json): setting a new hash both updates
+   the address bar AND pushes a real history entry for free, and
+   'hashchange' fires on Back/Forward so we can re-render for it.
+   syncingFromHash guards against a hashchange-triggered render loop:
+   when the router is re-rendering a view *because* the hash changed
+   (Back/Forward), the view function's own setRouteHash() call would
+   otherwise try to push yet another (redundant, wrong-direction)
+   history entry for the same navigation. */
+let syncingFromHash = false;
+function currentHash(){ return location.hash.replace(/^#/, ''); }
+function setRouteHash(hash){
+  if(syncingFromHash) return;
+  if(currentHash() === hash) return;
+  location.hash = hash;
+}
+function handleRouteFromHash(){
+  const hash = currentHash();
+  syncingFromHash = true;
+  try{
+    if(!hash){
+      goToHome();
+    } else if(hash.startsWith('subject/')){
+      const key = decodeURIComponent(hash.slice('subject/'.length));
+      if(subjectsData[key]){
+        if(hasAccess()) goToBabs(key); else goToSignIn(key);
+      } else {
+        goToHome();
+      }
+    } else if(hash.startsWith('lesson/')){
+      const parts = hash.slice('lesson/'.length).split('/').map(decodeURIComponent);
+      const subjectKey = parts[0], babId = parts[1];
+      if(subjectsData[subjectKey] && babId){
+        activeSubjectKey = subjectKey;
+        if(hasAccess()) goToLesson(babId); else goToSignIn(subjectKey);
+      } else {
+        goToHome();
+      }
+    } else if(hash === 'settings'){
+      if(getSession()) goToSettings(); else goToSignIn();
+    } else if(hash === 'signin'){
+      goToSignIn(activeSubjectKey);
+    } else {
+      goToHome();
+    }
+  } finally {
+    syncingFromHash = false;
+  }
+}
+window.addEventListener('hashchange', handleRouteFromHash);
+
 // Makes a click-only div behave like a real link for keyboard users: focusable,
 // announced as a link, and activatable with Enter/Space — without changing its
 // click wiring or visual markup.
@@ -714,6 +793,7 @@ function goToHome(){
   renderContinueBanner();
   updateHomeHero();
   window.scrollTo({top:0,behavior:'instant'});
+  setRouteHash('');
 }
 
 function enterSubject(subjectKey){
@@ -769,6 +849,7 @@ function goToSignIn(subjectKey){
   document.getElementById('navHomeLink').classList.remove('active');
   document.querySelectorAll('.subject-link').forEach(l=>l.classList.toggle('active', l.dataset.subject===subjectKey));
   window.scrollTo({top:0,behavior:'instant'});
+  setRouteHash('signin');
 }
 
 async function goToSettings(){
@@ -788,6 +869,7 @@ async function goToSettings(){
   document.getElementById('navHomeLink').classList.remove('active');
   document.querySelectorAll('.subject-link').forEach(l=>l.classList.remove('active'));
   window.scrollTo({top:0,behavior:'instant'});
+  setRouteHash('settings');
 
   try{
     const res = await fetch('/api/login', { headers:{ 'Authorization': 'Bearer ' + session.token } });
@@ -959,6 +1041,7 @@ function goToBabs(subjectKey){
   document.getElementById('navHomeLink').classList.remove('active');
   document.querySelectorAll('.subject-link').forEach(l=>l.classList.toggle('active', l.dataset.subject===subjectKey));
   window.scrollTo({top:0,behavior:'instant'});
+  setRouteHash('subject/' + encodeURIComponent(subjectKey));
 }
 
 function findBab(babId){
@@ -991,6 +1074,8 @@ async function goToLesson(babId){
     goToSignIn(activeSubjectKey);
     return;
   }
+
+  setRouteHash('lesson/' + encodeURIComponent(activeSubjectKey) + '/' + encodeURIComponent(babId));
 
   try{
     const res = await fetch(`/api/content?subject=${encodeURIComponent(activeSubjectKey)}&bab=${encodeURIComponent(babId)}`, {
@@ -2182,13 +2267,16 @@ function observeReveal(sections){
 observeReveal(document.querySelectorAll('body > section, #view-home section, #view-babs section, #view-signin section'));
 
 /* ===== Shareable entry-point routes =====
-   The rest of this app has no URL routing at all — every view is a JS-
-   toggled <div>, home is just whatever the shipped HTML defaults to
-   visible. /signup and /login are the one exception: real paths (see
-   the rewrites in vercel.json, which point both at this same
-   index.html) so a link like dalton-lab.vercel.app/signup can be
-   shared directly, landing a new visitor straight on the registration
-   panel instead of the login form goToSignIn() shows by default. */
+   /signup and /login are real paths (see the rewrites in vercel.json,
+   which point both at this same index.html) so a link like
+   dalton-lab.vercel.app/signup can be shared directly, landing a new
+   visitor straight on the registration panel instead of the login
+   form goToSignIn() shows by default. Everything else (subject pages,
+   lesson pages, settings) is now hash-routed — see handleRouteFromHash
+   above — so this only needs to handle the two path-based exceptions;
+   a hash present alongside one of these paths (not a real combination
+   today, but harmless if it ever happens) is left for the hashchange
+   listener to sort out afterward. */
 (function bootstrapEntryRoute(){
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
   if(path === '/signup'){
@@ -2197,5 +2285,10 @@ observeReveal(document.querySelectorAll('body > section, #view-home section, #vi
     if(toggleBtn && toggleBtn.style.display !== 'none') toggleBtn.click();
   } else if(path === '/login'){
     goToSignIn();
+  } else if(currentHash()){
+    // Deep link or a reload while parked on a subject/lesson/settings
+    // hash — render the matching view instead of always defaulting to
+    // home the way every prior load did.
+    handleRouteFromHash();
   }
 })();
