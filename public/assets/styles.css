@@ -1024,7 +1024,20 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 .katex-display>.katex{white-space:normal;}
 
 /* structure diagrams (labeled SVG figures) */
-.diagram-card{margin:28px 0 44px;max-width:760px;}
+/* Most diagram-card usages carry an inline margin shorthand with "auto"
+   left/right (e.g. "margin:0 auto 24px") to center the image — fine
+   when the reading column was a flat 640px, but once paragraphs/cards
+   became left-aligned and dynamically wider, a centered diagram reads
+   as visually disconnected, floating in extra whitespace instead of
+   lining up with the text above/below it. Longhand margin-left/right
+   here (!important, since that's the only way to beat an inline
+   shorthand's implied auto) overrides just the centering, leaving each
+   instance's own vertical margins alone. max-width also scales with
+   the same dynamic approach as everything else. */
+.diagram-card{
+  margin:28px 0 44px;max-width:clamp(760px, 60vw, 980px);
+  margin-left:0 !important;margin-right:0 !important;
+}
 .diagram-legend-grid{display:grid;grid-template-columns:760px 1fr;gap:24px;align-items:start;margin-bottom:50px;}
 .diagram-legend-grid .diagram-card{max-width:none;margin:0 0 24px;}
 .diagram-legend-grid .diagram-card:last-child{margin-bottom:0;}
@@ -1422,7 +1435,10 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
    behind /api/pdf-content the same way lesson content is gated behind
    /api/content. No download affordance by design (deterrent, not true
    prevention — see the watermark overlay below). ===== */
-.pdf-viewer{max-width:760px;margin:0 auto;}
+/* Was centered (margin:0 auto) at a flat 760px — same fix as
+   .diagram-card: left-align to match the now-dynamic reading column
+   instead of floating in the middle of extra desktop whitespace. */
+.pdf-viewer{max-width:clamp(760px, 60vw, 980px);margin:0;}
 .pdf-viewer-stage{
   position:relative;
   aspect-ratio:210/297;
