@@ -844,20 +844,35 @@ section.tight{padding:60px 0;}
 .pros-cons span.minus::before{content:"–";position:absolute;left:0;color:var(--danger);font-weight:700;}
 
 /* === Comparison table === */
-/* Every chapter's table-scroll wrapper carries an inline max-width
-   (640/760px) sized for the reading column — good for prose, but a
-   table isn't read top-to-bottom like a paragraph, so on a wide desktop
-   screen that same cap needlessly truncates columns into a horizontal
-   scroll that a huge monitor never needed. Override with a dynamic,
-   viewport-responsive cap instead (!important because inline style
-   specificity otherwise always wins), while still shrinking to fit on
-   narrow screens via the min(). Reading-width text elsewhere (p, li,
-   law-strip, etc.) intentionally keeps its 640px inline cap — that one
-   IS good typography (comfortable line length), not wasted space. */
+/* table-scroll wrappers carry an inline max-width (640/760px) sized for
+   the reading column — a table isn't read top-to-bottom like a
+   paragraph, so on a wide desktop screen that same cap needlessly
+   truncated columns into a horizontal scroll a huge monitor never
+   needed. Overridden with a more generous, viewport-responsive cap
+   below (!important because inline style specificity otherwise always
+   wins), while still shrinking to fit on narrow screens via the min(). */
 .table-scroll{
   overflow-x:auto;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);
   max-width:min(100%, 1000px) !important;
 }
+
+/* Every other content element (p, li, .jenis-box, .law-strip, .check-
+   list, ...) carries the same kind of inline reading-width cap, sized
+   for a phone or half a desktop screen. On a wide monitor that leaves a
+   lot of unused space beside every paragraph and card — reported by
+   user twice, with screenshots, after the table-only fix above wasn't
+   enough. clamp(MIN, vw, MAX) grows the column with window width
+   instead of leaving it flat, while still capping out at a sensible
+   reading length rather than letting lines run edge-to-edge on an
+   ultrawide monitor. MIN keeps mobile/tablet behavior byte-for-byte
+   identical to the original fixed value (the vw term never wins there).
+   .table-scroll is excluded — it already has its own, more generous
+   override above. */
+[style*="max-width:640px"]:not(.table-scroll){max-width:clamp(640px, 52vw, 880px) !important;}
+[style*="max-width:760px"]:not(.table-scroll){max-width:clamp(760px, 60vw, 980px) !important;}
+[style*="max-width:600px"]{max-width:clamp(600px, 48vw, 820px) !important;}
+[style*="max-width:560px"]{max-width:clamp(560px, 44vw, 760px) !important;}
+[style*="max-width:380px"]{max-width:clamp(380px, 30vw, 500px) !important;}
 table.compare-table{border-collapse:collapse;width:100%;min-width:720px;background:var(--card);}
 table.compare-table th, table.compare-table td{
   padding:14px 18px;text-align:left;font-size:.86rem;border-bottom:1px solid var(--line);
