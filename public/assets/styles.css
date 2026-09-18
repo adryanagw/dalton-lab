@@ -85,7 +85,20 @@ body{
   min-height:100vh;
   display:flex;
   flex-direction:column;
-  background:var(--paper);
+  background-color:var(--paper);
+  /* Faint pencil-sketch formulas/diagrams as an ambient background
+     layer — pre-baked into the PNG's alpha channel (max ~50% opacity)
+     rather than an opacity filter here, so it never competes with
+     foreground content. Fixed + cover so it reads as one subtle scene
+     anchored behind the page instead of an obviously-repeating tile;
+     disabled on mobile below (background-attachment:fixed is known to
+     jank on scroll in mobile Safari, and a short phone viewport barely
+     benefits from it anyway). */
+  background-image:url('images/site/bg-sketch.png');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:top center;
+  background-attachment:fixed;
   color:var(--ink);
   font-family:'Inter',sans-serif;
   line-height:1.6;
@@ -1403,6 +1416,7 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 @media(max-width:900px){
   .app-shell{flex-direction:column;}
   .mobile-topbar{display:flex;}
+  body{background-attachment:scroll;}
   .sidebar-collapse-btn{display:none;}
   .sidebar{
     position:fixed;top:0;left:0;z-index:220;
