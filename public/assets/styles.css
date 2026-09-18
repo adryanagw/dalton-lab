@@ -75,7 +75,11 @@
   color-scheme: dark;
 }
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;background:var(--paper);}
+/* Explicit base (matches the browser default, 16px) so the font-size
+   toggle (app.js) has a known, controllable starting point rather than
+   relying on an implicit UA default — every rem-based font-size/padding
+   across the whole site scales from this one value. */
+html{scroll-behavior:smooth;background:var(--paper);font-size:16px;transition:font-size .15s ease;}
 body{
   margin:0;
   min-height:100vh;
@@ -406,6 +410,20 @@ section.tight{padding:60px 0;}
 .lesson-links a.cta{background:var(--navy);color:#fff;}
 .lesson-links a.cta:hover{background:var(--accent-hover);}
 .lesson-links a.cta:active{transform:scale(.96);}
+.font-size-toggle{
+  display:flex;align-items:center;gap:2px;margin-left:auto;flex-shrink:0;
+  background:var(--paper-2);border:1px solid var(--line);border-radius:20px;padding:3px;
+}
+.font-size-toggle button{
+  border:none;background:transparent;width:30px;height:30px;border-radius:16px;
+  font-family:'Space Grotesk';font-weight:700;font-size:.78rem;color:var(--heading-soft);
+  cursor:pointer;transition:background-color .15s,color .15s;
+}
+.font-size-toggle button span{font-size:.9em;}
+.font-size-toggle button:first-child{font-size:.68rem;}
+.font-size-toggle button:hover:not(:disabled){background:var(--card);color:var(--heading);}
+.font-size-toggle button:disabled{opacity:.35;cursor:default;}
+.font-size-toggle button:focus-visible{outline:2px solid var(--orange);outline-offset:1px;}
 
 @media(max-width:760px){
   .lesson-subnav-inner{gap:10px;}

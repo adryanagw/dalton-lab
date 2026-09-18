@@ -247,6 +247,35 @@ try{
   if(localStorage.getItem('daltonlab_sidebar_collapsed') === '1') setSidebarCollapsed(true);
 }catch(e){}
 
+/* ===== Lesson text size (A-/A+) =====
+   Steps the root <html> font-size, not just #lessonContent — every
+   font-size/padding across the site is in rem, so this one value
+   cascades to headings, body text, cards, etc. everywhere at once
+   without needing every selector rewritten to reference a scoped
+   variable. Persisted (unlike the theme toggle) since this is an
+   accessibility preference a student sets once and expects to stick
+   across visits, not a per-session choice. */
+const FONT_SIZE_STEPS = [14, 16, 18, 20, 22];
+const FONT_SIZE_DEFAULT_IDX = 1;
+const fontDecreaseBtn = document.getElementById('fontDecreaseBtn');
+const fontIncreaseBtn = document.getElementById('fontIncreaseBtn');
+function applyFontSizeIdx(idx){
+  idx = Math.max(0, Math.min(FONT_SIZE_STEPS.length - 1, idx));
+  document.documentElement.style.fontSize = FONT_SIZE_STEPS[idx] + 'px';
+  if(fontDecreaseBtn) fontDecreaseBtn.disabled = idx === 0;
+  if(fontIncreaseBtn) fontIncreaseBtn.disabled = idx === FONT_SIZE_STEPS.length - 1;
+  try{ localStorage.setItem('daltonlab_font_size_idx', String(idx)); }catch(e){}
+}
+function getFontSizeIdx(){
+  const stored = parseInt(localStorage.getItem('daltonlab_font_size_idx'), 10);
+  return Number.isInteger(stored) && stored >= 0 && stored < FONT_SIZE_STEPS.length ? stored : FONT_SIZE_DEFAULT_IDX;
+}
+if(fontDecreaseBtn && fontIncreaseBtn){
+  fontDecreaseBtn.addEventListener('click', ()=> applyFontSizeIdx(getFontSizeIdx() - 1));
+  fontIncreaseBtn.addEventListener('click', ()=> applyFontSizeIdx(getFontSizeIdx() + 1));
+  try{ applyFontSizeIdx(getFontSizeIdx()); }catch(e){ applyFontSizeIdx(FONT_SIZE_DEFAULT_IDX); }
+}
+
 /* =====================================================================
    CATALOG — the ONE place you touch to add a new subject or chapter.
    Each bab just points at a content file (pure HTML, no JS) and an
