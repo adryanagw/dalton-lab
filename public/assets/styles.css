@@ -755,7 +755,7 @@ section.tight{padding:44px 0;}
 
 /* === HERO === */
 .hero{
-  padding:90px 0 70px;
+  padding:56px 0 44px;
   background:var(--paper);
   /* .hero-decor is absolutely positioned with right:-60px; without a
      positioned ancestor here it escapes to the page's initial
