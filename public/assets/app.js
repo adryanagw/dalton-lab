@@ -276,6 +276,28 @@ if(fontDecreaseBtn && fontIncreaseBtn){
   try{ applyFontSizeIdx(getFontSizeIdx()); }catch(e){ applyFontSizeIdx(FONT_SIZE_DEFAULT_IDX); }
 }
 
+/* ===== Table of contents (lesson chapter nav) hide toggle =====
+   Persisted like the sidebar collapse and text-size toggle above —
+   a reading preference a student sets once, not a per-session choice. */
+const tocToggleBtn = document.getElementById('tocToggleBtn');
+const lessonSubnavEl = document.getElementById('lessonSubnav');
+function setTocCollapsed(collapsed){
+  if(!lessonSubnavEl || !tocToggleBtn) return;
+  lessonSubnavEl.classList.toggle('toc-collapsed', collapsed);
+  tocToggleBtn.setAttribute('aria-expanded', String(!collapsed));
+  tocToggleBtn.setAttribute('aria-label', collapsed ? 'Tampilkan daftar isi' : 'Sembunyikan daftar isi');
+  tocToggleBtn.title = collapsed ? 'Tampilkan daftar isi' : 'Sembunyikan daftar isi';
+  try{ localStorage.setItem('daltonlab_toc_collapsed', collapsed ? '1' : '0'); }catch(e){}
+}
+if(tocToggleBtn){
+  tocToggleBtn.addEventListener('click', ()=>{
+    setTocCollapsed(!lessonSubnavEl.classList.contains('toc-collapsed'));
+  });
+  try{
+    if(localStorage.getItem('daltonlab_toc_collapsed') === '1') setTocCollapsed(true);
+  }catch(e){}
+}
+
 /* =====================================================================
    CATALOG — the ONE place you touch to add a new subject or chapter.
    Each bab just points at a content file (pure HTML, no JS) and an

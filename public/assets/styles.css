@@ -294,8 +294,15 @@ section.tight{padding:60px 0;}
    the section label, and the session-badge details all hide, leaving
    just each nav item's icon so it reads as a slim button column. State
    persists via localStorage (see app.js) so it survives reloads. */
+/* top:50% (not near the sidebar's own top) so it never spatially
+   overlaps the lesson page's sticky subnav bar (z-index:90, far above
+   this button's z-index:5) — when it did, the subnav's opaque/blurred
+   background painted over the top of the button on every lesson page,
+   leaving it looking half cut-off. margin-top (not a transform) for
+   the centering offset since transform is already used for the
+   collapsed-state icon flip below. */
 .sidebar-collapse-btn{
-  position:absolute;top:26px;right:-13px;z-index:5;
+  position:absolute;top:50%;margin-top:-13px;right:-13px;z-index:5;
   width:26px;height:26px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   background:var(--card);border:1px solid var(--line);color:var(--slate);
@@ -423,6 +430,19 @@ section.tight{padding:60px 0;}
 .lesson-links a.cta{background:var(--navy);color:#fff;}
 .lesson-links a.cta:hover{background:var(--accent-hover);}
 .lesson-links a.cta:active{transform:scale(.96);}
+/* Table-of-contents hide toggle: collapses .lesson-links (the chapter
+   nav pills) to reclaim vertical space while reading, without hiding
+   the back button or the text-size toggle alongside it. */
+.toc-toggle-btn{
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  width:26px;height:26px;border-radius:50%;margin-left:2px;
+  border:1px solid var(--line);background:transparent;color:var(--slate);
+  cursor:pointer;transition:color .15s,border-color .15s,transform .18s ease;
+}
+.toc-toggle-btn:hover{color:var(--heading);border-color:var(--orange);}
+.toc-toggle-btn .icon{width:14px;height:14px;}
+.lesson-subnav.toc-collapsed .toc-toggle-btn{transform:rotate(-90deg);}
+.lesson-subnav.toc-collapsed .lesson-links{display:none;}
 .font-size-toggle{
   display:flex;align-items:center;gap:2px;margin-left:auto;flex-shrink:0;
   background:var(--paper-2);border:1px solid var(--line);border-radius:20px;padding:3px;
