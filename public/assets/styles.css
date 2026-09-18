@@ -75,13 +75,30 @@
   color-scheme: dark;
 }
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;background:var(--paper);}
+/* Explicit base (matches the browser default, 16px) so the font-size
+   toggle (app.js) has a known, controllable starting point rather than
+   relying on an implicit UA default — every rem-based font-size/padding
+   across the whole site scales from this one value. */
+html{scroll-behavior:smooth;background:var(--paper);font-size:16px;transition:font-size .15s ease;}
 body{
   margin:0;
   min-height:100vh;
   display:flex;
   flex-direction:column;
-  background:var(--paper);
+  background-color:var(--paper);
+  /* Faint pencil-sketch formulas/diagrams as an ambient background
+     layer — pre-baked into the PNG's alpha channel (max ~50% opacity)
+     rather than an opacity filter here, so it never competes with
+     foreground content. Fixed + cover so it reads as one subtle scene
+     anchored behind the page instead of an obviously-repeating tile;
+     disabled on mobile below (background-attachment:fixed is known to
+     jank on scroll in mobile Safari, and a short phone viewport barely
+     benefits from it anyway). */
+  background-image:url('images/site/bg-sketch.png');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:top center;
+  background-attachment:fixed;
   color:var(--ink);
   font-family:'Inter',sans-serif;
   line-height:1.6;
@@ -406,6 +423,20 @@ section.tight{padding:60px 0;}
 .lesson-links a.cta{background:var(--navy);color:#fff;}
 .lesson-links a.cta:hover{background:var(--accent-hover);}
 .lesson-links a.cta:active{transform:scale(.96);}
+.font-size-toggle{
+  display:flex;align-items:center;gap:2px;margin-left:auto;flex-shrink:0;
+  background:var(--paper-2);border:1px solid var(--line);border-radius:20px;padding:3px;
+}
+.font-size-toggle button{
+  border:none;background:transparent;width:30px;height:30px;border-radius:16px;
+  font-family:'Space Grotesk';font-weight:700;font-size:.78rem;color:var(--heading-soft);
+  cursor:pointer;transition:background-color .15s,color .15s;
+}
+.font-size-toggle button span{font-size:.9em;}
+.font-size-toggle button:first-child{font-size:.68rem;}
+.font-size-toggle button:hover:not(:disabled){background:var(--card);color:var(--heading);}
+.font-size-toggle button:disabled{opacity:.35;cursor:default;}
+.font-size-toggle button:focus-visible{outline:2px solid var(--orange);outline-offset:1px;}
 
 @media(max-width:760px){
   .lesson-subnav-inner{gap:10px;}
@@ -1024,7 +1055,20 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 .katex-display>.katex{white-space:normal;}
 
 /* structure diagrams (labeled SVG figures) */
-.diagram-card{margin:28px 0 44px;max-width:760px;}
+/* Most diagram-card usages carry an inline margin shorthand with "auto"
+   left/right (e.g. "margin:0 auto 24px") to center the image — fine
+   when the reading column was a flat 640px, but once paragraphs/cards
+   became left-aligned and dynamically wider, a centered diagram reads
+   as visually disconnected, floating in extra whitespace instead of
+   lining up with the text above/below it. Longhand margin-left/right
+   here (!important, since that's the only way to beat an inline
+   shorthand's implied auto) overrides just the centering, leaving each
+   instance's own vertical margins alone. max-width also scales with
+   the same dynamic approach as everything else. */
+.diagram-card{
+  margin:28px 0 44px;max-width:clamp(760px, 60vw, 980px);
+  margin-left:0 !important;margin-right:0 !important;
+}
 .diagram-legend-grid{display:grid;grid-template-columns:760px 1fr;gap:24px;align-items:start;margin-bottom:50px;}
 .diagram-legend-grid .diagram-card{max-width:none;margin:0 0 24px;}
 .diagram-legend-grid .diagram-card:last-child{margin-bottom:0;}
@@ -1367,11 +1411,12 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
   .grid-3{grid-template-columns:repeat(2,1fr);}
   .grid-4{grid-template-columns:repeat(2,1fr);}
   .grid-5{grid-template-columns:repeat(3,1fr);}
-  .organel-grid{grid-template-columns:repeat(2,1fr);}
+  .organel-grid{grid-template-columns:repeat(2,1fr) !important;}
 }
 @media(max-width:900px){
   .app-shell{flex-direction:column;}
   .mobile-topbar{display:flex;}
+  body{background-attachment:scroll;}
   .sidebar-collapse-btn{display:none;}
   .sidebar{
     position:fixed;top:0;left:0;z-index:220;
@@ -1407,6 +1452,14 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
   .poac-grid{grid-template-columns:1fr;}
   .bidang-grid{grid-template-columns:1fr;}
   .thinker-strip{grid-template-columns:1fr;}
+  /* .toggle-switch is inline-flex with no wrap — fine for a 2-option
+     toggle, but Biologi Bab 1's 3-option filter ("Semua" / "Bermembran"
+     / "Tidak Bermembran") doesn't fit its buttons' unshrunk padding on
+     a narrow phone, pushing the whole page into horizontal overflow.
+     Wrapping (plus tighter padding) lets it break onto two lines
+     instead of forcing the page wider than the screen. */
+  .toggle-switch{flex-wrap:wrap;}
+  .toggle-opt{padding:9px 16px;font-size:.84rem;}
   .hero h1{font-size:2rem;}
   section{padding:56px 0;}
   .brand-sub{font-size:.7rem;letter-spacing:.06em;}
@@ -1414,7 +1467,13 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
   .grid-3{grid-template-columns:1fr;}
   .grid-4{grid-template-columns:1fr;}
   .grid-5{grid-template-columns:1fr;}
-  .organel-grid{grid-template-columns:1fr;}
+  /* !important: Kimia Bab 1 sets an inline grid-template-columns:
+     repeat(3,1fr) on its .organel-grid (a specific 3-column layout
+     that instance wants at desktop width), which otherwise always
+     beats this class rule regardless of viewport — forcing 3 columns
+     even on a 393px phone, with each card's min-content width pushing
+     the whole page into horizontal overflow. */
+  .organel-grid{grid-template-columns:1fr !important;}
   .step-pill{min-width:90px;font-size:.76rem;padding:10px 6px;}
 }
 
@@ -1422,7 +1481,10 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
    behind /api/pdf-content the same way lesson content is gated behind
    /api/content. No download affordance by design (deterrent, not true
    prevention — see the watermark overlay below). ===== */
-.pdf-viewer{max-width:760px;margin:0 auto;}
+/* Was centered (margin:0 auto) at a flat 760px — same fix as
+   .diagram-card: left-align to match the now-dynamic reading column
+   instead of floating in the middle of extra desktop whitespace. */
+.pdf-viewer{max-width:clamp(760px, 60vw, 980px);margin:0;}
 .pdf-viewer-stage{
   position:relative;
   aspect-ratio:210/297;
