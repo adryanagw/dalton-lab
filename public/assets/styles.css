@@ -188,7 +188,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 }
 section{padding:86px 0;position:relative;}
 section.tight{padding:60px 0;}
-.section-head{max-width:640px;margin-bottom:44px;}
+/* max-width matches the same dynamic reading-width clamp used for
+   inline max-width:640px elements below — this is a real CSS class
+   rule (not an inline style), so the [style*="..."] overrides never
+   touched it, leaving every section's intro paragraph (the text right
+   under its <h2>) stuck at a flat 640px regardless of window width. */
+.section-head{max-width:clamp(640px, 52vw, 880px);margin-bottom:44px;}
 .section-head p{color:var(--slate);font-size:1.05rem;}
 
 /* dotted lab-notebook texture background helper */
@@ -873,6 +878,21 @@ section.tight{padding:60px 0;}
 [style*="max-width:600px"]{max-width:clamp(600px, 48vw, 820px) !important;}
 [style*="max-width:560px"]{max-width:clamp(560px, 44vw, 760px) !important;}
 [style*="max-width:380px"]{max-width:clamp(380px, 30vw, 500px) !important;}
+
+/* Body paragraphs/list items never got the justify treatment that
+   .role-card/.step-item did earlier — only the short card text was
+   fixed, general prose was overlooked. Justified so the right edge
+   lines up cleanly instead of ragged, matching the card text beside
+   it. Scoped to #lessonContent so it never touches UI chrome, and
+   excludes classes that are deliberately short captions/credits/hints
+   (justify has no visible effect on a single short line anyway, but
+   these are meant to read as asides, not body text). */
+#lessonContent p:not(.diagram-caption):not(.diagram-eyebrow):not(.table-hint):not(.model3d-credit):not(.mini-note):not(.compare-def):not(.lead),
+#lessonContent li,
+#lessonContent .jenis-box > p,
+#lessonContent .law-strip{
+  text-align:justify;text-justify:inter-word;
+}
 table.compare-table{border-collapse:collapse;width:100%;min-width:720px;background:var(--card);}
 table.compare-table th, table.compare-table td{
   padding:14px 18px;text-align:left;font-size:.86rem;border-bottom:1px solid var(--line);
@@ -920,8 +940,13 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 .mini-note{font-size:.84rem;color:var(--slate);margin-top:18px;font-style:italic;}
 /* Flows as a single vertical column (not a side-by-side grid) so each
    card gets the page's full reading width — a row of narrow columns
-   compresses multi-line explanations into a cramped, uninviting shape. */
-.role-cards{display:flex;flex-direction:column;gap:14px;}
+   compresses multi-line explanations into a cramped, uninviting shape.
+   max-width matches the surrounding paragraph's dynamic reading-width
+   clamp (see the [style*="max-width:640px"] rule below) — without it,
+   role-cards/step-card (neither carries an inline max-width of their
+   own) fill the full .wrap width while the paragraph text above stays
+   capped, so the card visibly overshoots the text's right edge. */
+.role-cards{display:flex;flex-direction:column;gap:14px;max-width:clamp(640px, 52vw, 880px);}
 .role-card{
   padding:18px;font-size:.86rem;color:var(--ink);position:relative;padding-top:34px;
   text-align:justify;text-justify:inter-word;
@@ -932,7 +957,7 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
    holding all steps as internally-divided rows, rather than several
    separate cards. Keeps a multi-step solution reading as one continuous
    walkthrough instead of fragmenting it into a grid. */
-.step-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 22px;}
+.step-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 22px;max-width:clamp(640px, 52vw, 880px);}
 /* Named .step-item, not .step-row — .step-row is already taken by the
    Biologi mitosis-phase pill toggle (flex row of clickable pills), a
    completely different component. Reusing that name here silently
