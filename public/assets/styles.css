@@ -217,6 +217,10 @@ section.tight{padding:44px 0;}
    touched it, leaving every section's intro paragraph (the text right
    under its <h2>) stuck at a flat 640px regardless of window width. */
 .section-head{max-width:clamp(640px, 52vw, 880px);margin-bottom:44px;}
+/* Never had an explicit size before — fell back to the browser default
+   h2 (1.5em = 24px), noticeably large now that section padding/gaps
+   have already been tightened elsewhere. */
+.section-head h2{font-size:1.3rem;}
 .section-head p{color:var(--slate);font-size:1.05rem;}
 
 /* dotted lab-notebook texture background helper */
