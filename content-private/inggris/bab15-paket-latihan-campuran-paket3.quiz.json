@@ -1,0 +1,772 @@
+[
+  {
+    "q": "By the time the fire brigade arrived, the flames <b>___</b> the entire roof.",
+    "opts": [
+      "had already destroyed",
+      "have already destroyed",
+      "already destroyed",
+      "were already destroying"
+    ],
+    "correct": 0,
+    "explain": "Ada dua kejadian di masa lalu: api merusak atap DAN pemadam kebakaran tiba. Kejadian yang terjadi lebih dulu (merusak atap) memakai Past Perfect (had + V3), sedangkan kejadian yang lebih belakangan (tiba) memakai Simple Past. Signal word 'by the time' adalah ciri khas Past Perfect."
+  },
+  {
+    "q": "If she <u>had studied</u> (A) harder, she <u>would pass</u> (B) the exam <u>instead of</u> (C) failing it <u>miserably</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Kalimat ini adalah Conditional Type 3 (pengandaian masa lalu yang tidak terjadi), dengan pola: If + S + had + V3, S + would have + V3. Klausa 'if' sudah benar (had studied), tapi klausa hasil harus 'would have passed', bukan 'would pass' (itu pola Type 2). Kesalahan ada di (B)."
+  },
+  {
+    "q": "The committee <b>___</b> its final decision by next Friday.",
+    "opts": [
+      "will have made",
+      "will make",
+      "would make",
+      "has made"
+    ],
+    "correct": 0,
+    "explain": "'By next Friday' adalah signal word khas Future Perfect (will have + V3), yang menunjukkan sebuah aksi akan SUDAH selesai sebelum titik waktu tertentu di masa depan."
+  },
+  {
+    "q": "The manager <u>insisted on</u> (A) <u>reviewing</u> (B) the report before <u>it will be</u> (C) submitted <u>to the client</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 2,
+    "explain": "Dalam klausa waktu (time clause) yang diawali 'before', kita tidak memakai bentuk future (will be) meskipun maknanya tentang masa depan — cukup pakai present simple pasif: 'before it is submitted'. Kesalahan ada di (C)."
+  },
+  {
+    "q": "The new policy, which <b>___</b> by the board last month, has significantly improved employee morale.",
+    "opts": [
+      "was approved",
+      "approved",
+      "has approved",
+      "is approving"
+    ],
+    "correct": 0,
+    "explain": "Klausa 'which ___ by the board' membutuhkan bentuk pasif karena kebijakan (policy) DISETUJUI oleh board, bukan menyetujui. Karena ada penanda waktu spesifik 'last month', dipakai Simple Past Passive: was approved."
+  },
+  {
+    "q": "<u>Despite of</u> (A) the heavy rain, the football match <u>was not</u> (B) <u>postponed</u> (C) <u>as planned</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 0,
+    "explain": "'Despite' TIDAK diikuti 'of' — 'despite' langsung diikuti noun/gerund (despite the heavy rain), sedangkan 'in spite of' baru memakai 'of'. Kesalahan ada di (A): seharusnya cukup 'Despite'."
+  },
+  {
+    "q": "I would rather you <b>___</b> smoking before your health gets worse.",
+    "opts": [
+      "stopped",
+      "stop",
+      "will stop",
+      "stopping"
+    ],
+    "correct": 0,
+    "explain": "'Would rather + subjek lain' diikuti bentuk lampau (Simple Past) meskipun maknanya tentang saran untuk sekarang/masa depan — ini disebut 'unreal past'. Pola: would rather + S + V2."
+  },
+  {
+    "q": "She avoided <b>___</b> him about the missing money, afraid of his reaction.",
+    "opts": [
+      "telling",
+      "to tell",
+      "tell",
+      "told"
+    ],
+    "correct": 0,
+    "explain": "Kata kerja 'avoid' termasuk kelompok verb yang HANYA diikuti gerund (V-ing), bukan to-infinitive. Pola: avoid + V-ing."
+  },
+  {
+    "q": "The scientist <u>seems</u> (A) <u>have discovered</u> (B) a groundbreaking method <u>for treating</u> (C) the disease <u>effectively</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Setelah 'seems' yang diikuti perfect infinitive untuk menunjukkan sesuatu yang sudah terjadi, polanya adalah 'seems to have discovered', bukan 'seems have discovered' — kata 'to' hilang. Kesalahan ada di (B)."
+  },
+  {
+    "q": "Had I known about the traffic jam, I <b>___</b> earlier.",
+    "opts": [
+      "would have left",
+      "would leave",
+      "will leave",
+      "had left"
+    ],
+    "correct": 0,
+    "explain": "Ini adalah Conditional Type 3 dengan inversi (tanpa 'if'): 'Had I known' = 'If I had known'. Klausa hasilnya memakai 'would have + V3': would have left."
+  },
+  {
+    "q": "The bridge, <u>which</u> (A) is being <u>built</u> (B) by the local government, <u>are expected</u> (C) to be completed <u>next year</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 2,
+    "explain": "Subjek kalimat adalah 'The bridge' (tunggal), sehingga kata kerja bantunya harus 'is expected', bukan 'are expected'. Kesalahan ada di (C) — kesalahan subject-verb agreement."
+  },
+  {
+    "q": "He must <b>___</b> the meeting yesterday; otherwise he wouldn't know about the new schedule.",
+    "opts": [
+      "have attended",
+      "attend",
+      "attended",
+      "be attending"
+    ],
+    "correct": 0,
+    "explain": "Modal perfect 'must have + V3' dipakai untuk membuat kesimpulan logis tentang sesuatu di masa lalu berdasarkan bukti yang ada ('he knows the new schedule' → kesimpulan: dia pasti sudah menghadiri rapat)."
+  },
+  {
+    "q": "By this time next year, she <b>___</b> her master's degree for six months.",
+    "opts": [
+      "will have been completing",
+      "will have completed",
+      "will complete",
+      "completes"
+    ],
+    "correct": 1,
+    "explain": "'By this time next year' + jangka waktu yang selesai adalah signal khas Future Perfect (will have + V3): will have completed. (Future Perfect Continuous dipakai kalau menekankan durasi yang masih berlangsung, bukan hasil yang selesai)."
+  },
+  {
+    "q": "The suspect <u>denied</u> (A) <u>to steal</u> (B) the jewelry, <u>claiming</u> (C) he was elsewhere <u>at that time</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Kata kerja 'deny' hanya diikuti gerund, bukan to-infinitive. Seharusnya 'denied stealing'. Kesalahan ada di (B)."
+  },
+  {
+    "q": "Not only <b>___</b> the exam, but she also received a scholarship.",
+    "opts": [
+      "did she pass",
+      "she passed",
+      "she did pass",
+      "passed she"
+    ],
+    "correct": 0,
+    "explain": "Ketika kalimat dimulai dengan frasa negatif/pembatas seperti 'Not only', terjadi inversi subjek-kata kerja bantu, sama seperti kalimat tanya: 'Not only did she pass...'"
+  },
+  {
+    "q": "This report needs <b>___</b> before the deadline tomorrow.",
+    "opts": [
+      "finishing",
+      "finish",
+      "finished",
+      "to finishing"
+    ],
+    "correct": 0,
+    "explain": "Pola 'need + V-ing' memiliki makna pasif: 'This report needs finishing' = 'This report needs to be finished'. Ini adalah salah satu penggunaan gerund yang sering membingungkan karena maknanya pasif meski bentuknya aktif."
+  },
+  {
+    "q": "<u>Having finished</u> (A) her homework, Rina <u>go</u> (B) to bed <u>early</u> (C) that night <u>to rest</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Subjek 'Rina' (orang ketiga tunggal) di Simple Past seharusnya menggunakan 'went', bukan 'go'. Kesalahan ada di (B)."
+  },
+  {
+    "q": "The recipe requires the vegetables <b>___</b> thinly before they are added to the pot.",
+    "opts": [
+      "to be sliced",
+      "slicing",
+      "be sliced",
+      "sliced"
+    ],
+    "correct": 0,
+    "explain": "Pola 'require + object + to be + V3' dipakai untuk menyatakan sesuatu harus dilakukan pada objek tersebut secara pasif: the vegetables to be sliced (sayurannya HARUS DIIRIS, bukan mengiris)."
+  },
+  {
+    "q": "I wish I <b>___</b> more time to prepare for the interview yesterday.",
+    "opts": [
+      "had had",
+      "have had",
+      "had",
+      "have"
+    ],
+    "correct": 0,
+    "explain": "'Wish' untuk penyesalan tentang masa lalu memakai Past Perfect (had + V3). Karena kata kerja aslinya adalah 'have' (V1) menjadi 'had' (V2), maka bentuk perfect-nya adalah 'had had' — 'had' pertama sebagai auxiliary, 'had' kedua adalah V3 dari 'have'."
+  },
+  {
+    "q": "The novel <u>was written</u> (A) by an author <u>who's identity</u> (B) <u>remains</u> (C) unknown <u>to this day</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "'Who's' adalah kependekan dari 'who is', sedangkan yang dibutuhkan di sini adalah kata ganti kepemilikan 'whose' (identity milik author). Seharusnya 'whose identity'. Kesalahan ada di (B)."
+  },
+  {
+    "q": "You <b>___</b> the contract without consulting a lawyer first — now you're stuck with unfair terms.",
+    "opts": [
+      "shouldn't have signed",
+      "shouldn't sign",
+      "mustn't have signed",
+      "couldn't sign"
+    ],
+    "correct": 0,
+    "explain": "Modal perfect 'shouldn't have + V3' dipakai untuk mengkritik/menyesali tindakan yang sudah terjadi di masa lalu dan salah: seharusnya tidak menandatangani, tapi kenyataannya sudah ditandatangani."
+  },
+  {
+    "q": "Ever since he moved to Jakarta five years ago, he <b>___</b> as a freelance graphic designer.",
+    "opts": [
+      "has been working",
+      "was working",
+      "worked",
+      "is working"
+    ],
+    "correct": 0,
+    "explain": "'Ever since + titik waktu di masa lalu' adalah signal khas Present Perfect Continuous, menunjukkan aksi yang dimulai di masa lalu dan masih berlanjut sampai sekarang, dengan penekanan pada durasi/proses berkelanjutan."
+  },
+  {
+    "q": "The children <u>were made</u> (A) <u>to clean</u> (B) their rooms before they <u>were allowed</u> (C) <u>going out</u> (D) to play.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 3,
+    "explain": "Setelah 'be allowed', bentuk yang benar adalah to-infinitive: 'were allowed to go out', bukan gerund 'going out'. Kesalahan ada di (D)."
+  },
+  {
+    "q": "It is essential that every applicant <b>___</b> the form accurately.",
+    "opts": [
+      "complete",
+      "completes",
+      "completed",
+      "will complete"
+    ],
+    "correct": 0,
+    "explain": "Setelah ungkapan yang menyatakan keharusan/urgensi ('it is essential/important/necessary that'), digunakan Subjunctive Mood: subjek + bentuk dasar (base form) tanpa -s, terlepas dari subjeknya tunggal atau jamak: that every applicant complete."
+  },
+  {
+    "q": "The letter <b>___</b> to the wrong address, which explains why it never arrived.",
+    "opts": [
+      "must have been sent",
+      "must send",
+      "must be sending",
+      "must have sent"
+    ],
+    "correct": 0,
+    "explain": "Modal perfect pasif 'must have been + V3' dipakai untuk kesimpulan logis tentang sesuatu di masa lalu yang objeknya menerima aksi (surat itu DIKIRIM, bukan mengirim)."
+  },
+  {
+    "q": "<u>Regardless of</u> (A) his lack of experience, the young engineer <u>were hired</u> (B) <u>because of</u> (C) his impressive portfolio <u>and confidence</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Subjek 'the young engineer' tunggal, sehingga kata kerja bantunya harus 'was hired', bukan 'were hired'. Kesalahan ada di (B)."
+  },
+  {
+    "q": "The museum's rarest artifact <b>___</b> from public display since the incident occurred.",
+    "opts": [
+      "has been removed",
+      "removed",
+      "is removing",
+      "was remove"
+    ],
+    "correct": 0,
+    "explain": "Signal word 'since' menunjukkan aksi dimulai di masa lalu dan hasilnya masih berlaku hingga sekarang, dipadukan dengan makna pasif (artefak DIPINDAHKAN oleh seseorang) → Present Perfect Passive: has been removed."
+  },
+  {
+    "q": "If the government <b>___</b> stricter regulations years ago, the pollution level today would be much lower.",
+    "opts": [
+      "had enforced",
+      "enforced",
+      "would enforce",
+      "enforces"
+    ],
+    "correct": 0,
+    "explain": "Ini adalah conditional campuran (mixed conditional): syarat di masa lalu ('years ago') memakai Past Perfect (had enforced), sedangkan hasilnya berdampak di masa sekarang ('would be lower today')."
+  },
+  {
+    "q": "The professor <u>recommended</u> (A) that the student <u>revises</u> (B) his thesis <u>thoroughly</u> (C) <u>before submission</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Setelah 'recommend that', digunakan Subjunctive Mood (bentuk dasar tanpa -s): 'that the student revise', bukan 'revises'. Kesalahan ada di (B)."
+  },
+  {
+    "q": "The athlete trained relentlessly, <b>___</b> to win the gold medal at any cost.",
+    "opts": [
+      "determined",
+      "determining",
+      "determine",
+      "was determined"
+    ],
+    "correct": 0,
+    "explain": "'Determined' di sini berfungsi sebagai past participle (non-finite verb) yang membentuk klausa keterangan tambahan, bermakna pasif: (being) determined to win. Non-finite verb seperti ini tidak butuh subjek atau auxiliary terpisah."
+  },
+  {
+    "q": "Neither the manager nor the employees <b>___</b> aware of the sudden policy change.",
+    "opts": [
+      "were",
+      "was",
+      "is",
+      "have been"
+    ],
+    "correct": 0,
+    "explain": "Dalam struktur 'neither...nor', kata kerja mengikuti subjek yang paling dekat dengannya — di sini 'the employees' (jamak), sehingga dipakai 'were'."
+  },
+  {
+    "q": "The technician spent hours <u>trying to fix</u> (A) the machine, but it <u>kept</u> (B) <u>break</u> (C) down <u>repeatedly</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 2,
+    "explain": "Kata kerja 'keep' diikuti gerund (V-ing), bukan bentuk dasar: 'kept breaking down', bukan 'kept break down'. Kesalahan ada di (C)."
+  },
+  {
+    "q": "The two negotiators finally reached an agreement after the terms <b>___</b> for nearly a week.",
+    "opts": [
+      "had been discussed",
+      "were discussed",
+      "have discussed",
+      "discussed"
+    ],
+    "correct": 0,
+    "explain": "Diskusi terjadi SEBELUM kesepakatan tercapai (dua kejadian di masa lalu, satu lebih dulu), dan objeknya menerima aksi (terms DIBAHAS) → Past Perfect Passive: had been discussed."
+  },
+  {
+    "q": "The farmers irrigate their fields regularly <b>___</b> ensure a stable harvest despite the unpredictable weather.",
+    "opts": [
+      "to",
+      "for",
+      "so that",
+      "in order that"
+    ],
+    "correct": 0,
+    "explain": "Untuk menyatakan tujuan (purpose) dengan diikuti langsung kata kerja dasar, dipakai to-infinitive: 'to ensure'. ('so that'/'in order that' harus diikuti klausa lengkap dengan subjek, misalnya 'so that they can ensure', bukan langsung kata kerja.)"
+  },
+  {
+    "q": "The suspect's alibi <u>turned out</u> (A) <u>to being</u> (B) false <u>after</u> (C) new evidence <u>emerged</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Setelah 'turn out', bentuk yang benar adalah to-infinitive dengan V1: 'turned out to be false', bukan 'to being'. Kesalahan ada di (B)."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 1 dari 7 (Passage: Space Exploration and the Search for Life)</p><p>For centuries, humans have gazed at the night sky and wondered whether we are alone in the universe. Modern space agencies now search for signs of life using a combination of powerful telescopes, robotic probes, and rovers sent to explore nearby planets and moons. Mars has become a primary target because evidence suggests it once had liquid water flowing across its surface, a key ingredient for life as we know it.\n\nBeyond our solar system, astronomers scan distant stars for exoplanets located in the ‘habitable zone,’ a region where temperatures could allow liquid water to exist. Thousands of these planets have been identified, though confirming whether any of them actually harbor life remains extraordinarily difficult given the vast distances involved. Some scientists argue that even simple microbial life, if found elsewhere, would fundamentally change how humanity views its place in the cosmos.\n\nSkeptics, however, caution against excessive optimism. They point out that despite decades of searching, no conclusive evidence of extraterrestrial life has ever been found, and many promising signals have later been explained by natural, non-biological processes. Still, the search continues, driven by curiosity that seems as old as humanity itself, and by a persistent hope that we are not, after all, alone.</p></div><p><b>Soal 1 dari 7:</b> What is the passage mainly about?</p>",
+    "opts": [
+      "Humanity's ongoing scientific effort to search for life beyond Earth",
+      "A detailed history of Mars exploration missions",
+      "The technical design of modern telescopes",
+      "A debate about funding for space agencies"
+    ],
+    "correct": 0,
+    "explain": "Seluruh bacaan membahas berbagai cara dan alasan manusia mencari kehidupan di luar Bumi (Mars, exoplanet, sikap skeptis), jadi ide utamanya adalah upaya pencarian kehidupan di luar angkasa secara umum, bukan hanya satu misi atau satu topik teknis."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 2 dari 7 (Passage: Space Exploration and the Search for Life)</p><p>For centuries, humans have gazed at the night sky and wondered whether we are alone in the universe. Modern space agencies now search for signs of life using a combination of powerful telescopes, robotic probes, and rovers sent to explore nearby planets and moons. Mars has become a primary target because evidence suggests it once had liquid water flowing across its surface, a key ingredient for life as we know it.\n\nBeyond our solar system, astronomers scan distant stars for exoplanets located in the ‘habitable zone,’ a region where temperatures could allow liquid water to exist. Thousands of these planets have been identified, though confirming whether any of them actually harbor life remains extraordinarily difficult given the vast distances involved. Some scientists argue that even simple microbial life, if found elsewhere, would fundamentally change how humanity views its place in the cosmos.\n\nSkeptics, however, caution against excessive optimism. They point out that despite decades of searching, no conclusive evidence of extraterrestrial life has ever been found, and many promising signals have later been explained by natural, non-biological processes. Still, the search continues, driven by curiosity that seems as old as humanity itself, and by a persistent hope that we are not, after all, alone.</p></div><p><b>Soal 2 dari 7:</b> According to the passage, why has Mars become a primary target in the search for life?</p>",
+    "opts": [
+      "Because it is the closest planet to Earth",
+      "Because evidence suggests it once had liquid water on its surface",
+      "Because it has the same atmosphere as Earth",
+      "Because a rover has already found microbial life there"
+    ],
+    "correct": 1,
+    "explain": "Paragraf 1 menyatakan: 'Mars has become a primary target because evidence suggests it once had liquid water flowing across its surface, a key ingredient for life as we know it.'"
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 3 dari 7 (Passage: Space Exploration and the Search for Life)</p><p>For centuries, humans have gazed at the night sky and wondered whether we are alone in the universe. Modern space agencies now search for signs of life using a combination of powerful telescopes, robotic probes, and rovers sent to explore nearby planets and moons. Mars has become a primary target because evidence suggests it once had liquid water flowing across its surface, a key ingredient for life as we know it.\n\nBeyond our solar system, astronomers scan distant stars for exoplanets located in the ‘habitable zone,’ a region where temperatures could allow liquid water to exist. Thousands of these planets have been identified, though confirming whether any of them actually harbor life remains extraordinarily difficult given the vast distances involved. Some scientists argue that even simple microbial life, if found elsewhere, would fundamentally change how humanity views its place in the cosmos.\n\nSkeptics, however, caution against excessive optimism. They point out that despite decades of searching, no conclusive evidence of extraterrestrial life has ever been found, and many promising signals have later been explained by natural, non-biological processes. Still, the search continues, driven by curiosity that seems as old as humanity itself, and by a persistent hope that we are not, after all, alone.</p></div><p><b>Soal 3 dari 7:</b> What can be inferred about the discovery of even simple microbial life elsewhere in the universe?</p>",
+    "opts": [
+      "It would be considered scientifically insignificant",
+      "It would have a profound impact on how humans understand their place in the universe",
+      "It would immediately prove that intelligent life exists",
+      "It would end all further space exploration"
+    ],
+    "correct": 1,
+    "explain": "Paragraf 2 menyatakan bahwa penemuan kehidupan mikroba sederhana pun 'would fundamentally change how humanity views its place in the cosmos' — ini mengindikasikan dampak besar secara filosofis/ilmiah, meski tidak dinyatakan secara eksplisit sebagai fakta selesai."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 4 dari 7 (Passage: Space Exploration and the Search for Life)</p><p>For centuries, humans have gazed at the night sky and wondered whether we are alone in the universe. Modern space agencies now search for signs of life using a combination of powerful telescopes, robotic probes, and rovers sent to explore nearby planets and moons. Mars has become a primary target because evidence suggests it once had liquid water flowing across its surface, a key ingredient for life as we know it.\n\nBeyond our solar system, astronomers scan distant stars for exoplanets located in the ‘habitable zone,’ a region where temperatures could allow liquid water to exist. Thousands of these planets have been identified, though confirming whether any of them actually harbor life remains extraordinarily difficult given the vast distances involved. Some scientists argue that even simple microbial life, if found elsewhere, would fundamentally change how humanity views its place in the cosmos.\n\nSkeptics, however, caution against excessive optimism. They point out that despite decades of searching, no conclusive evidence of extraterrestrial life has ever been found, and many promising signals have later been explained by natural, non-biological processes. Still, the search continues, driven by curiosity that seems as old as humanity itself, and by a persistent hope that we are not, after all, alone.</p></div><p><b>Soal 4 dari 7:</b> The word “harbor” in paragraph 2 is closest in meaning to:</p>",
+    "opts": [
+      "destroy",
+      "contain or hold",
+      "discover",
+      "avoid"
+    ],
+    "correct": 1,
+    "explain": "Dalam konteks 'confirming whether any of them actually harbor life', 'harbor' berarti menampung/mengandung sesuatu di dalamnya — jadi paling dekat maknanya dengan 'contain or hold'."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 5 dari 7 (Passage: Space Exploration and the Search for Life)</p><p>For centuries, humans have gazed at the night sky and wondered whether we are alone in the universe. Modern space agencies now search for signs of life using a combination of powerful telescopes, robotic probes, and rovers sent to explore nearby planets and moons. Mars has become a primary target because evidence suggests it once had liquid water flowing across its surface, a key ingredient for life as we know it.\n\nBeyond our solar system, astronomers scan distant stars for exoplanets located in the ‘habitable zone,’ a region where temperatures could allow liquid water to exist. Thousands of these planets have been identified, though confirming whether any of them actually harbor life remains extraordinarily difficult given the vast distances involved. Some scientists argue that even simple microbial life, if found elsewhere, would fundamentally change how humanity views its place in the cosmos.\n\nSkeptics, however, caution against excessive optimism. They point out that despite decades of searching, no conclusive evidence of extraterrestrial life has ever been found, and many promising signals have later been explained by natural, non-biological processes. Still, the search continues, driven by curiosity that seems as old as humanity itself, and by a persistent hope that we are not, after all, alone.</p></div><p><b>Soal 5 dari 7:</b> What does “them” refer to in the sentence “confirming whether any of them actually harbor life remains extraordinarily difficult” in paragraph 2?</p>",
+    "opts": [
+      "Space agencies",
+      "Telescopes",
+      "Exoplanets",
+      "Scientists"
+    ],
+    "correct": 2,
+    "explain": "Kalimat sebelumnya membahas 'exoplanets' yang teridentifikasi di zona layak huni, sehingga 'them' merujuk pada exoplanets tersebut."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 6 dari 7 (Passage: Space Exploration and the Search for Life)</p><p>For centuries, humans have gazed at the night sky and wondered whether we are alone in the universe. Modern space agencies now search for signs of life using a combination of powerful telescopes, robotic probes, and rovers sent to explore nearby planets and moons. Mars has become a primary target because evidence suggests it once had liquid water flowing across its surface, a key ingredient for life as we know it.\n\nBeyond our solar system, astronomers scan distant stars for exoplanets located in the ‘habitable zone,’ a region where temperatures could allow liquid water to exist. Thousands of these planets have been identified, though confirming whether any of them actually harbor life remains extraordinarily difficult given the vast distances involved. Some scientists argue that even simple microbial life, if found elsewhere, would fundamentally change how humanity views its place in the cosmos.\n\nSkeptics, however, caution against excessive optimism. They point out that despite decades of searching, no conclusive evidence of extraterrestrial life has ever been found, and many promising signals have later been explained by natural, non-biological processes. Still, the search continues, driven by curiosity that seems as old as humanity itself, and by a persistent hope that we are not, after all, alone.</p></div><p><b>Soal 6 dari 7:</b> What is the author's tone in the final paragraph of the passage?</p>",
+    "opts": [
+      "Dismissive and mocking",
+      "Balanced, acknowledging skepticism while noting the search continues",
+      "Angry and accusatory",
+      "Purely celebratory with no doubt expressed"
+    ],
+    "correct": 1,
+    "explain": "Paragraf terakhir menyajikan pandangan skeptis (belum ada bukti konklusif) sekaligus mengakui pencarian tetap berlanjut karena rasa ingin tahu dan harapan — menunjukkan nada yang seimbang, bukan sepenuhnya optimis atau sepenuhnya pesimis."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 7 dari 7 (Passage: Space Exploration and the Search for Life)</p><p>For centuries, humans have gazed at the night sky and wondered whether we are alone in the universe. Modern space agencies now search for signs of life using a combination of powerful telescopes, robotic probes, and rovers sent to explore nearby planets and moons. Mars has become a primary target because evidence suggests it once had liquid water flowing across its surface, a key ingredient for life as we know it.\n\nBeyond our solar system, astronomers scan distant stars for exoplanets located in the ‘habitable zone,’ a region where temperatures could allow liquid water to exist. Thousands of these planets have been identified, though confirming whether any of them actually harbor life remains extraordinarily difficult given the vast distances involved. Some scientists argue that even simple microbial life, if found elsewhere, would fundamentally change how humanity views its place in the cosmos.\n\nSkeptics, however, caution against excessive optimism. They point out that despite decades of searching, no conclusive evidence of extraterrestrial life has ever been found, and many promising signals have later been explained by natural, non-biological processes. Still, the search continues, driven by curiosity that seems as old as humanity itself, and by a persistent hope that we are not, after all, alone.</p></div><p><b>Soal 7 dari 7:</b> All of the following are mentioned in the passage as tools or methods used in the search for extraterrestrial life EXCEPT:</p>",
+    "opts": [
+      "Telescopes",
+      "Robotic probes and rovers",
+      "Scanning stars for exoplanets in the habitable zone",
+      "Underwater sonar equipment"
+    ],
+    "correct": 3,
+    "explain": "Bacaan menyebutkan telescopes, robotic probes, rovers, dan pemindaian bintang untuk exoplanet, tetapi tidak pernah menyebutkan 'underwater sonar equipment' sebagai alat pencarian kehidupan luar angkasa."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 1 dari 7 (Passage: Endangered Languages and Preservation Efforts)</p><p>Linguists estimate that thousands of languages spoken around the world today may disappear within the next century as smaller communities shift to dominant languages for economic and social reasons. When a language vanishes, it is not merely a set of words that is lost; unique ways of categorizing knowledge, oral histories, traditional songs, and cultural practices often disappear along with it.\n\nSeveral organizations have launched projects to document endangered languages before their last speakers pass away. Researchers travel to remote villages to record conversations, stories, and songs, creating digital archives that can later be used by linguists and, potentially, by descendants of the community hoping to reconnect with their heritage. In some cases, these efforts have even helped revive languages once thought to be nearly extinct, as younger generations rediscover interest in learning them.\n\nCritics of language preservation sometimes argue that resources would be better spent elsewhere, since the world already shares a handful of widely used languages that facilitate global communication. Advocates respond that linguistic diversity, much like biological diversity, represents an irreplaceable resource: each language encodes a distinct way of understanding the world, and once it disappears, that particular way of thinking is gone forever.</p></div><p><b>Soal 1 dari 7:</b> What is the main idea of this passage?</p>",
+    "opts": [
+      "Endangered languages are disappearing and various efforts are being made to document and preserve them",
+      "All languages in the world are equally likely to survive",
+      "Global communication requires everyone to speak the same language",
+      "Linguists have stopped studying endangered languages"
+    ],
+    "correct": 0,
+    "explain": "Bacaan ini membahas fenomena hilangnya bahasa-bahasa di dunia dan berbagai usaha pendokumentasian/pelestarian, termasuk perdebatan pro-kontra mengenai usaha tersebut."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 2 dari 7 (Passage: Endangered Languages and Preservation Efforts)</p><p>Linguists estimate that thousands of languages spoken around the world today may disappear within the next century as smaller communities shift to dominant languages for economic and social reasons. When a language vanishes, it is not merely a set of words that is lost; unique ways of categorizing knowledge, oral histories, traditional songs, and cultural practices often disappear along with it.\n\nSeveral organizations have launched projects to document endangered languages before their last speakers pass away. Researchers travel to remote villages to record conversations, stories, and songs, creating digital archives that can later be used by linguists and, potentially, by descendants of the community hoping to reconnect with their heritage. In some cases, these efforts have even helped revive languages once thought to be nearly extinct, as younger generations rediscover interest in learning them.\n\nCritics of language preservation sometimes argue that resources would be better spent elsewhere, since the world already shares a handful of widely used languages that facilitate global communication. Advocates respond that linguistic diversity, much like biological diversity, represents an irreplaceable resource: each language encodes a distinct way of understanding the world, and once it disappears, that particular way of thinking is gone forever.</p></div><p><b>Soal 2 dari 7:</b> According to the passage, what do researchers do to help preserve endangered languages?</p>",
+    "opts": [
+      "They force communities to stop using dominant languages",
+      "They travel to remote villages to record conversations, stories, and songs",
+      "They translate all languages into English",
+      "They build new schools in every village"
+    ],
+    "correct": 1,
+    "explain": "Paragraf 2 menyatakan: 'Researchers travel to remote villages to record conversations, stories, and songs, creating digital archives...'"
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 3 dari 7 (Passage: Endangered Languages and Preservation Efforts)</p><p>Linguists estimate that thousands of languages spoken around the world today may disappear within the next century as smaller communities shift to dominant languages for economic and social reasons. When a language vanishes, it is not merely a set of words that is lost; unique ways of categorizing knowledge, oral histories, traditional songs, and cultural practices often disappear along with it.\n\nSeveral organizations have launched projects to document endangered languages before their last speakers pass away. Researchers travel to remote villages to record conversations, stories, and songs, creating digital archives that can later be used by linguists and, potentially, by descendants of the community hoping to reconnect with their heritage. In some cases, these efforts have even helped revive languages once thought to be nearly extinct, as younger generations rediscover interest in learning them.\n\nCritics of language preservation sometimes argue that resources would be better spent elsewhere, since the world already shares a handful of widely used languages that facilitate global communication. Advocates respond that linguistic diversity, much like biological diversity, represents an irreplaceable resource: each language encodes a distinct way of understanding the world, and once it disappears, that particular way of thinking is gone forever.</p></div><p><b>Soal 3 dari 7:</b> What can be inferred as a major reason why smaller languages are disappearing?</p>",
+    "opts": [
+      "Communities are voluntarily shifting toward dominant languages due to economic and social pressures",
+      "Governments are banning all minority languages by law",
+      "Smaller languages are being replaced by machine translation",
+      "Younger generations refuse to be recorded by researchers"
+    ],
+    "correct": 0,
+    "explain": "Paragraf 1 menyebutkan bahasa-bahasa menghilang 'as smaller communities shift to dominant languages for economic and social reasons', yang menyiratkan tekanan ekonomi dan sosial sebagai penyebab utamanya."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 4 dari 7 (Passage: Endangered Languages and Preservation Efforts)</p><p>Linguists estimate that thousands of languages spoken around the world today may disappear within the next century as smaller communities shift to dominant languages for economic and social reasons. When a language vanishes, it is not merely a set of words that is lost; unique ways of categorizing knowledge, oral histories, traditional songs, and cultural practices often disappear along with it.\n\nSeveral organizations have launched projects to document endangered languages before their last speakers pass away. Researchers travel to remote villages to record conversations, stories, and songs, creating digital archives that can later be used by linguists and, potentially, by descendants of the community hoping to reconnect with their heritage. In some cases, these efforts have even helped revive languages once thought to be nearly extinct, as younger generations rediscover interest in learning them.\n\nCritics of language preservation sometimes argue that resources would be better spent elsewhere, since the world already shares a handful of widely used languages that facilitate global communication. Advocates respond that linguistic diversity, much like biological diversity, represents an irreplaceable resource: each language encodes a distinct way of understanding the world, and once it disappears, that particular way of thinking is gone forever.</p></div><p><b>Soal 4 dari 7:</b> The word “irreplaceable” in paragraph 3 is closest in meaning to:</p>",
+    "opts": [
+      "temporary",
+      "impossible to replace",
+      "easily duplicated",
+      "worthless"
+    ],
+    "correct": 1,
+    "explain": "Dalam konteks 'linguistic diversity... represents an irreplaceable resource', kata 'irreplaceable' berarti sesuatu yang tidak dapat digantikan jika hilang — paling dekat maknanya dengan 'impossible to replace'."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 5 dari 7 (Passage: Endangered Languages and Preservation Efforts)</p><p>Linguists estimate that thousands of languages spoken around the world today may disappear within the next century as smaller communities shift to dominant languages for economic and social reasons. When a language vanishes, it is not merely a set of words that is lost; unique ways of categorizing knowledge, oral histories, traditional songs, and cultural practices often disappear along with it.\n\nSeveral organizations have launched projects to document endangered languages before their last speakers pass away. Researchers travel to remote villages to record conversations, stories, and songs, creating digital archives that can later be used by linguists and, potentially, by descendants of the community hoping to reconnect with their heritage. In some cases, these efforts have even helped revive languages once thought to be nearly extinct, as younger generations rediscover interest in learning them.\n\nCritics of language preservation sometimes argue that resources would be better spent elsewhere, since the world already shares a handful of widely used languages that facilitate global communication. Advocates respond that linguistic diversity, much like biological diversity, represents an irreplaceable resource: each language encodes a distinct way of understanding the world, and once it disappears, that particular way of thinking is gone forever.</p></div><p><b>Soal 5 dari 7:</b> What does “it” refer to in the sentence “When a language vanishes, it is not merely a set of words that is lost” in paragraph 1?</p>",
+    "opts": [
+      "A community",
+      "A researcher",
+      "A language",
+      "A digital archive"
+    ],
+    "correct": 2,
+    "explain": "Kalimat tersebut secara langsung membahas kondisi ketika sebuah 'language' menghilang, sehingga 'it' merujuk pada bahasa itu sendiri."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 6 dari 7 (Passage: Endangered Languages and Preservation Efforts)</p><p>Linguists estimate that thousands of languages spoken around the world today may disappear within the next century as smaller communities shift to dominant languages for economic and social reasons. When a language vanishes, it is not merely a set of words that is lost; unique ways of categorizing knowledge, oral histories, traditional songs, and cultural practices often disappear along with it.\n\nSeveral organizations have launched projects to document endangered languages before their last speakers pass away. Researchers travel to remote villages to record conversations, stories, and songs, creating digital archives that can later be used by linguists and, potentially, by descendants of the community hoping to reconnect with their heritage. In some cases, these efforts have even helped revive languages once thought to be nearly extinct, as younger generations rediscover interest in learning them.\n\nCritics of language preservation sometimes argue that resources would be better spent elsewhere, since the world already shares a handful of widely used languages that facilitate global communication. Advocates respond that linguistic diversity, much like biological diversity, represents an irreplaceable resource: each language encodes a distinct way of understanding the world, and once it disappears, that particular way of thinking is gone forever.</p></div><p><b>Soal 6 dari 7:</b> What is the author's tone throughout the passage, particularly in the final paragraph?</p>",
+    "opts": [
+      "Entirely one-sided, dismissing any criticism of preservation efforts",
+      "Balanced, presenting both critics' concerns and advocates' responses",
+      "Sarcastic toward linguists",
+      "Purely emotional with no factual grounding"
+    ],
+    "correct": 1,
+    "explain": "Paragraf terakhir secara eksplisit menghadirkan argumen kritik ('critics... argue that resources would be better spent elsewhere') maupun argumen pendukung ('advocates respond that...'), menunjukkan penyajian yang seimbang."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 7 dari 7 (Passage: Endangered Languages and Preservation Efforts)</p><p>Linguists estimate that thousands of languages spoken around the world today may disappear within the next century as smaller communities shift to dominant languages for economic and social reasons. When a language vanishes, it is not merely a set of words that is lost; unique ways of categorizing knowledge, oral histories, traditional songs, and cultural practices often disappear along with it.\n\nSeveral organizations have launched projects to document endangered languages before their last speakers pass away. Researchers travel to remote villages to record conversations, stories, and songs, creating digital archives that can later be used by linguists and, potentially, by descendants of the community hoping to reconnect with their heritage. In some cases, these efforts have even helped revive languages once thought to be nearly extinct, as younger generations rediscover interest in learning them.\n\nCritics of language preservation sometimes argue that resources would be better spent elsewhere, since the world already shares a handful of widely used languages that facilitate global communication. Advocates respond that linguistic diversity, much like biological diversity, represents an irreplaceable resource: each language encodes a distinct way of understanding the world, and once it disappears, that particular way of thinking is gone forever.</p></div><p><b>Soal 7 dari 7:</b> All of the following are mentioned in the passage as things that may disappear along with a language EXCEPT:</p>",
+    "opts": [
+      "Unique ways of categorizing knowledge",
+      "Oral histories",
+      "Traditional songs",
+      "National border boundaries"
+    ],
+    "correct": 3,
+    "explain": "Paragraf 1 menyebutkan 'unique ways of categorizing knowledge, oral histories, traditional songs, and cultural practices' sebagai hal yang ikut hilang, tetapi tidak pernah menyebutkan 'national border boundaries'."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 1 dari 7 (Passage: Urban Farming and Vertical Agriculture)</p><p>As cities around the world continue to grow, urban planners face a persistent challenge: how to feed dense populations without relying entirely on food transported from distant rural areas. Urban farming, which includes rooftop gardens, community plots, and small-scale greenhouses, has become an increasingly popular response, allowing city residents to grow vegetables and herbs close to where they will be consumed.\n\nA more ambitious version of this idea is vertical farming, in which crops are grown in stacked layers inside climate-controlled buildings, often using artificial lighting and nutrient-rich water instead of soil. Because vertical farms can operate indoors year-round, they are largely unaffected by seasonal changes or unpredictable weather, and they typically use far less water than traditional outdoor agriculture. Proponents claim that this method could eventually reduce the distance food travels from farm to table, cutting down on transportation costs and emissions.\n\nNevertheless, vertical farming faces real obstacles. The equipment required, including specialized lighting and climate-control systems, remains expensive to build and operate, and the energy consumption of these systems has raised questions about whether the approach is truly more sustainable than conventional farming. For now, most experts view vertical farms as a useful supplement to traditional agriculture rather than a wholesale replacement for it.</p></div><p><b>Soal 1 dari 7:</b> What is the main idea of this passage?</p>",
+    "opts": [
+      "Vertical farming has completely replaced traditional agriculture worldwide",
+      "Urban farming and vertical agriculture are growing responses to feeding cities, though vertical farming still faces significant challenges",
+      "Rooftop gardens are illegal in most major cities",
+      "Traditional farming uses less water than vertical farming"
+    ],
+    "correct": 1,
+    "explain": "Bacaan menjelaskan urban farming dan vertical farming sebagai solusi memberi makan penduduk kota, sambil mencatat tantangan nyata yang masih dihadapi vertical farming."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 2 dari 7 (Passage: Urban Farming and Vertical Agriculture)</p><p>As cities around the world continue to grow, urban planners face a persistent challenge: how to feed dense populations without relying entirely on food transported from distant rural areas. Urban farming, which includes rooftop gardens, community plots, and small-scale greenhouses, has become an increasingly popular response, allowing city residents to grow vegetables and herbs close to where they will be consumed.\n\nA more ambitious version of this idea is vertical farming, in which crops are grown in stacked layers inside climate-controlled buildings, often using artificial lighting and nutrient-rich water instead of soil. Because vertical farms can operate indoors year-round, they are largely unaffected by seasonal changes or unpredictable weather, and they typically use far less water than traditional outdoor agriculture. Proponents claim that this method could eventually reduce the distance food travels from farm to table, cutting down on transportation costs and emissions.\n\nNevertheless, vertical farming faces real obstacles. The equipment required, including specialized lighting and climate-control systems, remains expensive to build and operate, and the energy consumption of these systems has raised questions about whether the approach is truly more sustainable than conventional farming. For now, most experts view vertical farms as a useful supplement to traditional agriculture rather than a wholesale replacement for it.</p></div><p><b>Soal 2 dari 7:</b> According to the passage, what do vertical farms use instead of soil to grow crops?</p>",
+    "opts": [
+      "Sand and gravel",
+      "Artificial lighting and nutrient-rich water",
+      "Compost only",
+      "Recycled plastic"
+    ],
+    "correct": 1,
+    "explain": "Paragraf 2 menyatakan crops ditanam 'often using artificial lighting and nutrient-rich water instead of soil.'"
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 3 dari 7 (Passage: Urban Farming and Vertical Agriculture)</p><p>As cities around the world continue to grow, urban planners face a persistent challenge: how to feed dense populations without relying entirely on food transported from distant rural areas. Urban farming, which includes rooftop gardens, community plots, and small-scale greenhouses, has become an increasingly popular response, allowing city residents to grow vegetables and herbs close to where they will be consumed.\n\nA more ambitious version of this idea is vertical farming, in which crops are grown in stacked layers inside climate-controlled buildings, often using artificial lighting and nutrient-rich water instead of soil. Because vertical farms can operate indoors year-round, they are largely unaffected by seasonal changes or unpredictable weather, and they typically use far less water than traditional outdoor agriculture. Proponents claim that this method could eventually reduce the distance food travels from farm to table, cutting down on transportation costs and emissions.\n\nNevertheless, vertical farming faces real obstacles. The equipment required, including specialized lighting and climate-control systems, remains expensive to build and operate, and the energy consumption of these systems has raised questions about whether the approach is truly more sustainable than conventional farming. For now, most experts view vertical farms as a useful supplement to traditional agriculture rather than a wholesale replacement for it.</p></div><p><b>Soal 3 dari 7:</b> What can be inferred about the current state of vertical farming as a replacement for traditional agriculture?</p>",
+    "opts": [
+      "It has already fully replaced traditional farming in most countries",
+      "It is not yet considered a complete replacement due to cost and energy concerns",
+      "It is banned in urban areas",
+      "It requires no electricity at all"
+    ],
+    "correct": 1,
+    "explain": "Paragraf terakhir menyebutkan biaya peralatan yang mahal dan konsumsi energi yang tinggi, lalu menyimpulkan bahwa para ahli memandang vertical farms sebagai 'a useful supplement... rather than a wholesale replacement' — menyiratkan bahwa itu belum bisa sepenuhnya menggantikan pertanian tradisional."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 4 dari 7 (Passage: Urban Farming and Vertical Agriculture)</p><p>As cities around the world continue to grow, urban planners face a persistent challenge: how to feed dense populations without relying entirely on food transported from distant rural areas. Urban farming, which includes rooftop gardens, community plots, and small-scale greenhouses, has become an increasingly popular response, allowing city residents to grow vegetables and herbs close to where they will be consumed.\n\nA more ambitious version of this idea is vertical farming, in which crops are grown in stacked layers inside climate-controlled buildings, often using artificial lighting and nutrient-rich water instead of soil. Because vertical farms can operate indoors year-round, they are largely unaffected by seasonal changes or unpredictable weather, and they typically use far less water than traditional outdoor agriculture. Proponents claim that this method could eventually reduce the distance food travels from farm to table, cutting down on transportation costs and emissions.\n\nNevertheless, vertical farming faces real obstacles. The equipment required, including specialized lighting and climate-control systems, remains expensive to build and operate, and the energy consumption of these systems has raised questions about whether the approach is truly more sustainable than conventional farming. For now, most experts view vertical farms as a useful supplement to traditional agriculture rather than a wholesale replacement for it.</p></div><p><b>Soal 4 dari 7:</b> The word “proponents” in paragraph 2 is closest in meaning to:</p>",
+    "opts": [
+      "opponents",
+      "supporters",
+      "inventors",
+      "investigators"
+    ],
+    "correct": 1,
+    "explain": "Dalam konteks 'Proponents claim that this method could eventually reduce the distance food travels', kata 'proponents' berarti pihak yang mendukung/membela suatu gagasan, dekat maknanya dengan 'supporters'."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 5 dari 7 (Passage: Urban Farming and Vertical Agriculture)</p><p>As cities around the world continue to grow, urban planners face a persistent challenge: how to feed dense populations without relying entirely on food transported from distant rural areas. Urban farming, which includes rooftop gardens, community plots, and small-scale greenhouses, has become an increasingly popular response, allowing city residents to grow vegetables and herbs close to where they will be consumed.\n\nA more ambitious version of this idea is vertical farming, in which crops are grown in stacked layers inside climate-controlled buildings, often using artificial lighting and nutrient-rich water instead of soil. Because vertical farms can operate indoors year-round, they are largely unaffected by seasonal changes or unpredictable weather, and they typically use far less water than traditional outdoor agriculture. Proponents claim that this method could eventually reduce the distance food travels from farm to table, cutting down on transportation costs and emissions.\n\nNevertheless, vertical farming faces real obstacles. The equipment required, including specialized lighting and climate-control systems, remains expensive to build and operate, and the energy consumption of these systems has raised questions about whether the approach is truly more sustainable than conventional farming. For now, most experts view vertical farms as a useful supplement to traditional agriculture rather than a wholesale replacement for it.</p></div><p><b>Soal 5 dari 7:</b> What does “they” refer to in the sentence “they are largely unaffected by seasonal changes or unpredictable weather” in paragraph 2?</p>",
+    "opts": [
+      "Urban planners",
+      "Vertical farms",
+      "Rooftop gardens",
+      "City residents"
+    ],
+    "correct": 1,
+    "explain": "Kalimat sebelumnya menjelaskan bahwa 'vertical farms can operate indoors year-round', sehingga 'they' pada kalimat berikutnya merujuk pada vertical farms."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 6 dari 7 (Passage: Urban Farming and Vertical Agriculture)</p><p>As cities around the world continue to grow, urban planners face a persistent challenge: how to feed dense populations without relying entirely on food transported from distant rural areas. Urban farming, which includes rooftop gardens, community plots, and small-scale greenhouses, has become an increasingly popular response, allowing city residents to grow vegetables and herbs close to where they will be consumed.\n\nA more ambitious version of this idea is vertical farming, in which crops are grown in stacked layers inside climate-controlled buildings, often using artificial lighting and nutrient-rich water instead of soil. Because vertical farms can operate indoors year-round, they are largely unaffected by seasonal changes or unpredictable weather, and they typically use far less water than traditional outdoor agriculture. Proponents claim that this method could eventually reduce the distance food travels from farm to table, cutting down on transportation costs and emissions.\n\nNevertheless, vertical farming faces real obstacles. The equipment required, including specialized lighting and climate-control systems, remains expensive to build and operate, and the energy consumption of these systems has raised questions about whether the approach is truly more sustainable than conventional farming. For now, most experts view vertical farms as a useful supplement to traditional agriculture rather than a wholesale replacement for it.</p></div><p><b>Soal 6 dari 7:</b> What is the author's tone in presenting vertical farming throughout the passage?</p>",
+    "opts": [
+      "Purely promotional, ignoring any downsides",
+      "Balanced, presenting both its advantages and its real obstacles",
+      "Entirely dismissive of the concept",
+      "Angry toward traditional farmers"
+    ],
+    "correct": 1,
+    "explain": "Bacaan menyampaikan keunggulan (hemat air, tidak terpengaruh cuaca) sekaligus kendala nyata (biaya, konsumsi energi) secara berimbang tanpa memihak sepenuhnya."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 7 dari 7 (Passage: Urban Farming and Vertical Agriculture)</p><p>As cities around the world continue to grow, urban planners face a persistent challenge: how to feed dense populations without relying entirely on food transported from distant rural areas. Urban farming, which includes rooftop gardens, community plots, and small-scale greenhouses, has become an increasingly popular response, allowing city residents to grow vegetables and herbs close to where they will be consumed.\n\nA more ambitious version of this idea is vertical farming, in which crops are grown in stacked layers inside climate-controlled buildings, often using artificial lighting and nutrient-rich water instead of soil. Because vertical farms can operate indoors year-round, they are largely unaffected by seasonal changes or unpredictable weather, and they typically use far less water than traditional outdoor agriculture. Proponents claim that this method could eventually reduce the distance food travels from farm to table, cutting down on transportation costs and emissions.\n\nNevertheless, vertical farming faces real obstacles. The equipment required, including specialized lighting and climate-control systems, remains expensive to build and operate, and the energy consumption of these systems has raised questions about whether the approach is truly more sustainable than conventional farming. For now, most experts view vertical farms as a useful supplement to traditional agriculture rather than a wholesale replacement for it.</p></div><p><b>Soal 7 dari 7:</b> All of the following are mentioned in the passage as forms of urban farming EXCEPT:</p>",
+    "opts": [
+      "Rooftop gardens",
+      "Community plots",
+      "Small-scale greenhouses",
+      "Floating ocean farms"
+    ],
+    "correct": 3,
+    "explain": "Paragraf 1 menyebutkan 'rooftop gardens, community plots, and small-scale greenhouses' sebagai bentuk urban farming, tetapi tidak pernah menyebutkan 'floating ocean farms'."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 1 dari 7 (Passage: How Human Memory and Learning Work)</p><p>Human memory is often compared to a filing cabinet, but the comparison is misleading; unlike files stored neatly in folders, memories are reconstructed each time they are recalled, which means they can shift and change over the years. Researchers who study memory distinguish between several types, including short-term memory, which holds information for only a few seconds unless it is actively rehearsed, and long-term memory, which can store information for decades.\n\nOne of the most consistent findings in learning research is that information is retained more effectively when it is reviewed repeatedly over spaced intervals rather than crammed into a single study session. This principle, often called spaced repetition, works because each time a memory is retrieved, the neural connections associated with it are strengthened, making the information easier to recall in the future. Sleep also plays a crucial role in this process, as the brain appears to consolidate newly learned material into long-term storage during certain sleep stages.\n\nDespite advances in understanding how memory works, many students continue to rely on last-minute cramming before exams, a strategy that research consistently shows produces weaker long-term retention than spaced, distributed study, even though it may feel effective in the short term.</p></div><p><b>Soal 1 dari 7:</b> What is the main idea of this passage?</p>",
+    "opts": [
+      "Human memory works exactly like a filing cabinet",
+      "Memory is reconstructive rather than fixed, and spaced repetition is more effective for learning than cramming",
+      "Cramming before exams is the most effective study method",
+      "Sleep has no effect on memory at all"
+    ],
+    "correct": 1,
+    "explain": "Bacaan ini menjelaskan bahwa ingatan bersifat direkonstruksi (bukan tersimpan statis seperti arsip), dan bahwa spaced repetition lebih efektif untuk retensi jangka panjang dibandingkan sistem kebut semalam (cramming)."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 2 dari 7 (Passage: How Human Memory and Learning Work)</p><p>Human memory is often compared to a filing cabinet, but the comparison is misleading; unlike files stored neatly in folders, memories are reconstructed each time they are recalled, which means they can shift and change over the years. Researchers who study memory distinguish between several types, including short-term memory, which holds information for only a few seconds unless it is actively rehearsed, and long-term memory, which can store information for decades.\n\nOne of the most consistent findings in learning research is that information is retained more effectively when it is reviewed repeatedly over spaced intervals rather than crammed into a single study session. This principle, often called spaced repetition, works because each time a memory is retrieved, the neural connections associated with it are strengthened, making the information easier to recall in the future. Sleep also plays a crucial role in this process, as the brain appears to consolidate newly learned material into long-term storage during certain sleep stages.\n\nDespite advances in understanding how memory works, many students continue to rely on last-minute cramming before exams, a strategy that research consistently shows produces weaker long-term retention than spaced, distributed study, even though it may feel effective in the short term.</p></div><p><b>Soal 2 dari 7:</b> According to the passage, what does the brain appear to do during certain sleep stages?</p>",
+    "opts": [
+      "Erase unnecessary short-term memories completely",
+      "Consolidate newly learned material into long-term storage",
+      "Stop all neural activity entirely",
+      "Only process information related to dreams"
+    ],
+    "correct": 1,
+    "explain": "Paragraf 2 menyatakan: 'the brain appears to consolidate newly learned material into long-term storage during certain sleep stages.'"
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 3 dari 7 (Passage: How Human Memory and Learning Work)</p><p>Human memory is often compared to a filing cabinet, but the comparison is misleading; unlike files stored neatly in folders, memories are reconstructed each time they are recalled, which means they can shift and change over the years. Researchers who study memory distinguish between several types, including short-term memory, which holds information for only a few seconds unless it is actively rehearsed, and long-term memory, which can store information for decades.\n\nOne of the most consistent findings in learning research is that information is retained more effectively when it is reviewed repeatedly over spaced intervals rather than crammed into a single study session. This principle, often called spaced repetition, works because each time a memory is retrieved, the neural connections associated with it are strengthened, making the information easier to recall in the future. Sleep also plays a crucial role in this process, as the brain appears to consolidate newly learned material into long-term storage during certain sleep stages.\n\nDespite advances in understanding how memory works, many students continue to rely on last-minute cramming before exams, a strategy that research consistently shows produces weaker long-term retention than spaced, distributed study, even though it may feel effective in the short term.</p></div><p><b>Soal 3 dari 7:</b> What can be inferred about students who rely on cramming before exams?</p>",
+    "opts": [
+      "They achieve the strongest possible long-term retention of material",
+      "They may feel confident in the short term, but their retention tends to be weaker over time",
+      "They never pass their exams",
+      "They are following the method most recommended by memory researchers"
+    ],
+    "correct": 1,
+    "explain": "Paragraf terakhir menyatakan cramming 'may feel effective in the short term' tetapi menghasilkan 'weaker long-term retention' dibanding spaced study — menyiratkan rasa percaya diri sesaat yang menyesatkan, bukan hasil belajar yang sebenarnya optimal."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 4 dari 7 (Passage: How Human Memory and Learning Work)</p><p>Human memory is often compared to a filing cabinet, but the comparison is misleading; unlike files stored neatly in folders, memories are reconstructed each time they are recalled, which means they can shift and change over the years. Researchers who study memory distinguish between several types, including short-term memory, which holds information for only a few seconds unless it is actively rehearsed, and long-term memory, which can store information for decades.\n\nOne of the most consistent findings in learning research is that information is retained more effectively when it is reviewed repeatedly over spaced intervals rather than crammed into a single study session. This principle, often called spaced repetition, works because each time a memory is retrieved, the neural connections associated with it are strengthened, making the information easier to recall in the future. Sleep also plays a crucial role in this process, as the brain appears to consolidate newly learned material into long-term storage during certain sleep stages.\n\nDespite advances in understanding how memory works, many students continue to rely on last-minute cramming before exams, a strategy that research consistently shows produces weaker long-term retention than spaced, distributed study, even though it may feel effective in the short term.</p></div><p><b>Soal 4 dari 7:</b> The word “consolidate” in paragraph 2 is closest in meaning to:</p>",
+    "opts": [
+      "erase",
+      "strengthen and stabilize",
+      "randomly distribute",
+      "ignore"
+    ],
+    "correct": 1,
+    "explain": "Dalam konteks 'consolidate newly learned material into long-term storage', kata 'consolidate' berarti memperkuat dan memantapkan sesuatu agar tersimpan lebih permanen — dekat maknanya dengan 'strengthen and stabilize'."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 5 dari 7 (Passage: How Human Memory and Learning Work)</p><p>Human memory is often compared to a filing cabinet, but the comparison is misleading; unlike files stored neatly in folders, memories are reconstructed each time they are recalled, which means they can shift and change over the years. Researchers who study memory distinguish between several types, including short-term memory, which holds information for only a few seconds unless it is actively rehearsed, and long-term memory, which can store information for decades.\n\nOne of the most consistent findings in learning research is that information is retained more effectively when it is reviewed repeatedly over spaced intervals rather than crammed into a single study session. This principle, often called spaced repetition, works because each time a memory is retrieved, the neural connections associated with it are strengthened, making the information easier to recall in the future. Sleep also plays a crucial role in this process, as the brain appears to consolidate newly learned material into long-term storage during certain sleep stages.\n\nDespite advances in understanding how memory works, many students continue to rely on last-minute cramming before exams, a strategy that research consistently shows produces weaker long-term retention than spaced, distributed study, even though it may feel effective in the short term.</p></div><p><b>Soal 5 dari 7:</b> What does “it” refer to in the sentence “information is retained more effectively when it is reviewed repeatedly over spaced intervals” in paragraph 2?</p>",
+    "opts": [
+      "Sleep",
+      "Information",
+      "The brain",
+      "A filing cabinet"
+    ],
+    "correct": 1,
+    "explain": "Kalimat tersebut membahas retensi 'information', sehingga 'it' yang direview secara berkala merujuk pada information itu sendiri."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 6 dari 7 (Passage: How Human Memory and Learning Work)</p><p>Human memory is often compared to a filing cabinet, but the comparison is misleading; unlike files stored neatly in folders, memories are reconstructed each time they are recalled, which means they can shift and change over the years. Researchers who study memory distinguish between several types, including short-term memory, which holds information for only a few seconds unless it is actively rehearsed, and long-term memory, which can store information for decades.\n\nOne of the most consistent findings in learning research is that information is retained more effectively when it is reviewed repeatedly over spaced intervals rather than crammed into a single study session. This principle, often called spaced repetition, works because each time a memory is retrieved, the neural connections associated with it are strengthened, making the information easier to recall in the future. Sleep also plays a crucial role in this process, as the brain appears to consolidate newly learned material into long-term storage during certain sleep stages.\n\nDespite advances in understanding how memory works, many students continue to rely on last-minute cramming before exams, a strategy that research consistently shows produces weaker long-term retention than spaced, distributed study, even though it may feel effective in the short term.</p></div><p><b>Soal 6 dari 7:</b> What is the author's tone toward the practice of cramming before exams?</p>",
+    "opts": [
+      "Strongly encouraging, recommending it as the best method",
+      "Mildly cautionary, noting that research shows it is less effective than spaced study",
+      "Completely neutral with no evaluation given",
+      "Angry and insulting toward students"
+    ],
+    "correct": 1,
+    "explain": "Paragraf terakhir secara implisit memperingatkan bahwa cramming 'produces weaker long-term retention', meskipun disampaikan secara informatif, bukan menyerang secara emosional — nada ini bersifat mengingatkan (cautionary), bukan netral sepenuhnya."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 7 dari 7 (Passage: How Human Memory and Learning Work)</p><p>Human memory is often compared to a filing cabinet, but the comparison is misleading; unlike files stored neatly in folders, memories are reconstructed each time they are recalled, which means they can shift and change over the years. Researchers who study memory distinguish between several types, including short-term memory, which holds information for only a few seconds unless it is actively rehearsed, and long-term memory, which can store information for decades.\n\nOne of the most consistent findings in learning research is that information is retained more effectively when it is reviewed repeatedly over spaced intervals rather than crammed into a single study session. This principle, often called spaced repetition, works because each time a memory is retrieved, the neural connections associated with it are strengthened, making the information easier to recall in the future. Sleep also plays a crucial role in this process, as the brain appears to consolidate newly learned material into long-term storage during certain sleep stages.\n\nDespite advances in understanding how memory works, many students continue to rely on last-minute cramming before exams, a strategy that research consistently shows produces weaker long-term retention than spaced, distributed study, even though it may feel effective in the short term.</p></div><p><b>Soal 7 dari 7:</b> All of the following are mentioned in the passage as related to memory and learning EXCEPT:</p>",
+    "opts": [
+      "Short-term memory",
+      "Spaced repetition",
+      "The role of sleep in consolidating memory",
+      "Genetic engineering to enhance memory"
+    ],
+    "correct": 3,
+    "explain": "Bacaan membahas short-term memory, long-term memory, spaced repetition, dan peran tidur, tetapi tidak pernah menyebutkan 'genetic engineering' sebagai topik."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 1 dari 7 (Passage: Ocean Plastic Pollution and Marine Life)</p><p>Each year, enormous quantities of plastic waste enter the world's oceans, carried by rivers, coastal runoff, and improperly discarded fishing equipment. Once in the water, plastic does not simply disappear; instead, it breaks down slowly into smaller and smaller fragments known as microplastics, some too small to be seen without a microscope. These fragments have now been detected in nearly every part of the ocean, from surface waters to the deepest trenches.\n\nMarine animals are affected in several ways. Larger pieces of plastic can be mistaken for food and swallowed by turtles, seabirds, and fish, sometimes causing fatal blockages in their digestive systems. Microplastics, meanwhile, are ingested even by tiny organisms at the bottom of the food chain, which means the particles can accumulate as they move upward through larger predators, including species that humans eventually consume. Entanglement in discarded fishing nets, sometimes called ‘ghost nets,’ poses another serious threat, trapping and injuring marine mammals that are unable to free themselves.\n\nEfforts to address the problem range from beach cleanups and improved waste management to international agreements aimed at reducing single-use plastic production. While these measures have raised public awareness considerably, many scientists warn that without a substantial reduction in the amount of plastic produced globally, the volume already present in the ocean will continue to pose a threat to marine life for generations to come.</p></div><p><b>Soal 1 dari 7:</b> What is the main idea of this passage?</p>",
+    "opts": [
+      "Plastic pollution in the ocean harms marine life in multiple ways, and current efforts may not be enough without reduced plastic production",
+      "Ocean plastic pollution has already been completely solved",
+      "Only large plastic items pose a threat to marine animals",
+      "Fishing nets are the only source of ocean plastic pollution"
+    ],
+    "correct": 0,
+    "explain": "Bacaan menjelaskan berbagai dampak plastik terhadap kehidupan laut serta memperingatkan bahwa upaya saat ini mungkin belum cukup tanpa pengurangan produksi plastik secara global."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 2 dari 7 (Passage: Ocean Plastic Pollution and Marine Life)</p><p>Each year, enormous quantities of plastic waste enter the world's oceans, carried by rivers, coastal runoff, and improperly discarded fishing equipment. Once in the water, plastic does not simply disappear; instead, it breaks down slowly into smaller and smaller fragments known as microplastics, some too small to be seen without a microscope. These fragments have now been detected in nearly every part of the ocean, from surface waters to the deepest trenches.\n\nMarine animals are affected in several ways. Larger pieces of plastic can be mistaken for food and swallowed by turtles, seabirds, and fish, sometimes causing fatal blockages in their digestive systems. Microplastics, meanwhile, are ingested even by tiny organisms at the bottom of the food chain, which means the particles can accumulate as they move upward through larger predators, including species that humans eventually consume. Entanglement in discarded fishing nets, sometimes called ‘ghost nets,’ poses another serious threat, trapping and injuring marine mammals that are unable to free themselves.\n\nEfforts to address the problem range from beach cleanups and improved waste management to international agreements aimed at reducing single-use plastic production. While these measures have raised public awareness considerably, many scientists warn that without a substantial reduction in the amount of plastic produced globally, the volume already present in the ocean will continue to pose a threat to marine life for generations to come.</p></div><p><b>Soal 2 dari 7:</b> According to the passage, what are 'ghost nets'?</p>",
+    "opts": [
+      "Nets used exclusively by scientists to study marine life",
+      "Discarded fishing nets that trap and injure marine mammals",
+      "A type of biodegradable fishing equipment",
+      "Nets specifically designed to collect microplastics"
+    ],
+    "correct": 1,
+    "explain": "Paragraf 2 menyatakan: 'Entanglement in discarded fishing nets, sometimes called ‘ghost nets,’ poses another serious threat, trapping and injuring marine mammals...'"
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 3 dari 7 (Passage: Ocean Plastic Pollution and Marine Life)</p><p>Each year, enormous quantities of plastic waste enter the world's oceans, carried by rivers, coastal runoff, and improperly discarded fishing equipment. Once in the water, plastic does not simply disappear; instead, it breaks down slowly into smaller and smaller fragments known as microplastics, some too small to be seen without a microscope. These fragments have now been detected in nearly every part of the ocean, from surface waters to the deepest trenches.\n\nMarine animals are affected in several ways. Larger pieces of plastic can be mistaken for food and swallowed by turtles, seabirds, and fish, sometimes causing fatal blockages in their digestive systems. Microplastics, meanwhile, are ingested even by tiny organisms at the bottom of the food chain, which means the particles can accumulate as they move upward through larger predators, including species that humans eventually consume. Entanglement in discarded fishing nets, sometimes called ‘ghost nets,’ poses another serious threat, trapping and injuring marine mammals that are unable to free themselves.\n\nEfforts to address the problem range from beach cleanups and improved waste management to international agreements aimed at reducing single-use plastic production. While these measures have raised public awareness considerably, many scientists warn that without a substantial reduction in the amount of plastic produced globally, the volume already present in the ocean will continue to pose a threat to marine life for generations to come.</p></div><p><b>Soal 3 dari 7:</b> What can be inferred about the long-term effectiveness of current cleanup efforts if global plastic production is not reduced?</p>",
+    "opts": [
+      "They will completely eliminate ocean plastic pollution within a few years",
+      "They alone may not be sufficient, since existing plastic will continue to threaten marine life",
+      "They have no effect on public awareness at all",
+      "They will cause more plastic to enter the ocean"
+    ],
+    "correct": 1,
+    "explain": "Paragraf terakhir menyatakan bahwa tanpa pengurangan produksi plastik secara signifikan, volume plastik yang sudah ada 'will continue to pose a threat to marine life for generations to come', menyiratkan bahwa cleanup saja tidak cukup."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 4 dari 7 (Passage: Ocean Plastic Pollution and Marine Life)</p><p>Each year, enormous quantities of plastic waste enter the world's oceans, carried by rivers, coastal runoff, and improperly discarded fishing equipment. Once in the water, plastic does not simply disappear; instead, it breaks down slowly into smaller and smaller fragments known as microplastics, some too small to be seen without a microscope. These fragments have now been detected in nearly every part of the ocean, from surface waters to the deepest trenches.\n\nMarine animals are affected in several ways. Larger pieces of plastic can be mistaken for food and swallowed by turtles, seabirds, and fish, sometimes causing fatal blockages in their digestive systems. Microplastics, meanwhile, are ingested even by tiny organisms at the bottom of the food chain, which means the particles can accumulate as they move upward through larger predators, including species that humans eventually consume. Entanglement in discarded fishing nets, sometimes called ‘ghost nets,’ poses another serious threat, trapping and injuring marine mammals that are unable to free themselves.\n\nEfforts to address the problem range from beach cleanups and improved waste management to international agreements aimed at reducing single-use plastic production. While these measures have raised public awareness considerably, many scientists warn that without a substantial reduction in the amount of plastic produced globally, the volume already present in the ocean will continue to pose a threat to marine life for generations to come.</p></div><p><b>Soal 4 dari 7:</b> The word “ingested” in paragraph 2 is closest in meaning to:</p>",
+    "opts": [
+      "avoided",
+      "swallowed or consumed",
+      "destroyed",
+      "produced"
+    ],
+    "correct": 1,
+    "explain": "Dalam konteks 'Microplastics... are ingested even by tiny organisms', kata 'ingested' berarti dimakan/ditelan masuk ke dalam tubuh — dekat maknanya dengan 'swallowed or consumed'."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 5 dari 7 (Passage: Ocean Plastic Pollution and Marine Life)</p><p>Each year, enormous quantities of plastic waste enter the world's oceans, carried by rivers, coastal runoff, and improperly discarded fishing equipment. Once in the water, plastic does not simply disappear; instead, it breaks down slowly into smaller and smaller fragments known as microplastics, some too small to be seen without a microscope. These fragments have now been detected in nearly every part of the ocean, from surface waters to the deepest trenches.\n\nMarine animals are affected in several ways. Larger pieces of plastic can be mistaken for food and swallowed by turtles, seabirds, and fish, sometimes causing fatal blockages in their digestive systems. Microplastics, meanwhile, are ingested even by tiny organisms at the bottom of the food chain, which means the particles can accumulate as they move upward through larger predators, including species that humans eventually consume. Entanglement in discarded fishing nets, sometimes called ‘ghost nets,’ poses another serious threat, trapping and injuring marine mammals that are unable to free themselves.\n\nEfforts to address the problem range from beach cleanups and improved waste management to international agreements aimed at reducing single-use plastic production. While these measures have raised public awareness considerably, many scientists warn that without a substantial reduction in the amount of plastic produced globally, the volume already present in the ocean will continue to pose a threat to marine life for generations to come.</p></div><p><b>Soal 5 dari 7:</b> What does “they” refer to in the sentence “the particles can accumulate as they move upward through larger predators” in paragraph 2?</p>",
+    "opts": [
+      "Fishing nets",
+      "The particles (microplastics)",
+      "Marine scientists",
+      "Beach cleanup volunteers"
+    ],
+    "correct": 1,
+    "explain": "Kalimat tersebut membahas partikel mikroplastik yang berpindah melalui rantai makanan, sehingga 'they' merujuk pada particles/microplastics itu sendiri."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 6 dari 7 (Passage: Ocean Plastic Pollution and Marine Life)</p><p>Each year, enormous quantities of plastic waste enter the world's oceans, carried by rivers, coastal runoff, and improperly discarded fishing equipment. Once in the water, plastic does not simply disappear; instead, it breaks down slowly into smaller and smaller fragments known as microplastics, some too small to be seen without a microscope. These fragments have now been detected in nearly every part of the ocean, from surface waters to the deepest trenches.\n\nMarine animals are affected in several ways. Larger pieces of plastic can be mistaken for food and swallowed by turtles, seabirds, and fish, sometimes causing fatal blockages in their digestive systems. Microplastics, meanwhile, are ingested even by tiny organisms at the bottom of the food chain, which means the particles can accumulate as they move upward through larger predators, including species that humans eventually consume. Entanglement in discarded fishing nets, sometimes called ‘ghost nets,’ poses another serious threat, trapping and injuring marine mammals that are unable to free themselves.\n\nEfforts to address the problem range from beach cleanups and improved waste management to international agreements aimed at reducing single-use plastic production. While these measures have raised public awareness considerably, many scientists warn that without a substantial reduction in the amount of plastic produced globally, the volume already present in the ocean will continue to pose a threat to marine life for generations to come.</p></div><p><b>Soal 6 dari 7:</b> What is the author's tone throughout the passage?</p>",
+    "opts": [
+      "Indifferent and unconcerned about the issue",
+      "Concerned and cautionary, highlighting both the problem and the limits of current solutions",
+      "Purely celebratory about how well the problem has been solved",
+      "Sarcastic toward environmental scientists"
+    ],
+    "correct": 1,
+    "explain": "Bacaan menjelaskan bahaya plastik secara serius dan mengutip peringatan ilmuwan di akhir teks, menunjukkan nada yang prihatin dan mengingatkan (concerned and cautionary)."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan · Soal 7 dari 7 (Passage: Ocean Plastic Pollution and Marine Life)</p><p>Each year, enormous quantities of plastic waste enter the world's oceans, carried by rivers, coastal runoff, and improperly discarded fishing equipment. Once in the water, plastic does not simply disappear; instead, it breaks down slowly into smaller and smaller fragments known as microplastics, some too small to be seen without a microscope. These fragments have now been detected in nearly every part of the ocean, from surface waters to the deepest trenches.\n\nMarine animals are affected in several ways. Larger pieces of plastic can be mistaken for food and swallowed by turtles, seabirds, and fish, sometimes causing fatal blockages in their digestive systems. Microplastics, meanwhile, are ingested even by tiny organisms at the bottom of the food chain, which means the particles can accumulate as they move upward through larger predators, including species that humans eventually consume. Entanglement in discarded fishing nets, sometimes called ‘ghost nets,’ poses another serious threat, trapping and injuring marine mammals that are unable to free themselves.\n\nEfforts to address the problem range from beach cleanups and improved waste management to international agreements aimed at reducing single-use plastic production. While these measures have raised public awareness considerably, many scientists warn that without a substantial reduction in the amount of plastic produced globally, the volume already present in the ocean will continue to pose a threat to marine life for generations to come.</p></div><p><b>Soal 7 dari 7:</b> All of the following are mentioned in the passage as sources through which plastic enters the ocean EXCEPT:</p>",
+    "opts": [
+      "Rivers",
+      "Coastal runoff",
+      "Improperly discarded fishing equipment",
+      "Volcanic eruptions"
+    ],
+    "correct": 3,
+    "explain": "Paragraf 1 menyebutkan rivers, coastal runoff, dan discarded fishing equipment sebagai sumber sampah plastik yang masuk ke laut, tetapi tidak pernah menyebutkan 'volcanic eruptions'."
+  }
+]

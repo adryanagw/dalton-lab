@@ -373,6 +373,7 @@ const subjectsData = {
       {id:'bab12-modal-verb-forms', num:'Bab 12', title:'Modal Verbs: Bentuk Present/Past & Perfect', desc:'Makna modal present & past yang sering salah dikira "cuma masa lalu", hingga modal perfect (must/might/should have) untuk deduksi & penyesalan.', ready:true, estMinutes:18, subbabCount:7},
       {id:'bab13-active-passive-voice', num:'Bab 13', title:'Active & Passive Voice', desc:'Transformasi aktif-pasif di hampir semua tenses, passive dengan modal, passive dua objek, hingga kapan TIDAK boleh pakai passive.', ready:true, estMinutes:25, subbabCount:10},
       {id:'bab14-prepositions', num:'Bab 14', title:'Prepositions', desc:'Preposisi waktu, tempat, arah, hingga daftar lengkap dependent prepositions (adjective+preposition, verb+preposition) dan kesalahan umum akibat terjemahan langsung dari bahasa Indonesia.', ready:true, estMinutes:26, subbabCount:9},
+      {id:'bab15-paket-latihan-campuran', num:'Bab 15', title:'Paket Latihan Campuran: Reading & Grammar', desc:'Tiga paket simulasi tes terpisah (gaya TOEFL/UTBK), masing-masing 70 soal campuran Structure & Written Expression (merangkum seluruh 13 bab grammar) dan Reading Comprehension (5 bacaan orisinal per paket).', ready:true, estMinutes:70, subbabCount:3},
     ]
   },
 };

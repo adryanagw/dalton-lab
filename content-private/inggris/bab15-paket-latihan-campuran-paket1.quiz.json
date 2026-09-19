@@ -1,0 +1,772 @@
+[
+  {
+    "q": "The factory near our house ___ hazardous waste directly into the river every week, which local residents have complained about for years.",
+    "opts": [
+      "is dumping",
+      "dumps",
+      "has dumped",
+      "dumped"
+    ],
+    "correct": 1,
+    "explain": "Ini kebiasaan/rutinitas berulang (\"every week\"), jadi pakai Simple Present: S + V1(+s/es). Karena subjeknya tunggal (\"the factory\"), verb-nya \"dumps\", bukan \"dump\"."
+  },
+  {
+    "q": "<u>Right now</u> (A), the negotiation team <u>are discussing</u> (B) a new trade agreement, and they <u>are expecting</u> (C) to reach a decision <u>by tomorrow afternoon</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 2,
+    "explain": "\"Expect\" termasuk stative verb (kata kerja yang menyatakan keadaan/pikiran/harapan, bukan aksi fisik yang sedang berlangsung), sehingga tidak dipakai dalam bentuk continuous meskipun konteksnya \"sekarang\". Seharusnya tetap \"expect\" (Simple Present), bukan \"are expecting\". Bandingkan dengan \"are discussing\" (B) yang benar karena \"discuss\" adalah action verb sungguhan, cocok dipakai continuous untuk aksi yang sedang berlangsung \"right now\"."
+  },
+  {
+    "q": "Last semester, our biology teacher ___ us on a field trip to a mangrove conservation area, and we ___ over forty species of birds.",
+    "opts": [
+      "took ... saw",
+      "takes ... see",
+      "has taken ... has seen",
+      "was taking ... were seeing"
+    ],
+    "correct": 0,
+    "explain": "\"Last semester\" adalah signal word Simple Past (waktu spesifik di masa lalu yang sudah selesai). \"Take\" dan \"see\" adalah irregular verb, bentuk V2-nya \"took\" dan \"saw\"."
+  },
+  {
+    "q": "While the scientists <u>were analyzing</u> (A) the soil samples yesterday, one of the interns <u>accidentally knocked</u> (B) over a beaker, and the supervisor <u>was noticing</u> (C) it immediately because she <u>was standing</u> (D) right next to the table.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 2,
+    "explain": "\"Notice\" adalah stative verb (menyatakan persepsi/pikiran), sehingga tidak lazim dipakai dalam bentuk continuous. Seharusnya \"noticed it immediately\" (Simple Past), bukan \"was noticing it\". Bandingkan dengan (A) dan (D) yang memang aksi sedang berlangsung ketika aksi lain (B, Simple Past) menyela — pola khas Past Continuous + Simple Past yang benar."
+  },
+  {
+    "q": "According to the latest forecast, the typhoon ___ the coastal provinces sometime tomorrow evening, so the local government has already begun evacuations.",
+    "opts": [
+      "will hit",
+      "hits",
+      "is hitting",
+      "hit"
+    ],
+    "correct": 0,
+    "explain": "Prediksi berdasarkan data/perkiraan (\"according to the latest forecast\") untuk kejadian di masa depan menggunakan Simple Future \"will + V1\". \"Will hit\" tepat karena ini prediksi, bukan jadwal tetap atau rencana yang sudah diatur (yang akan memakai \"is going to\" atau Present Continuous)."
+  },
+  {
+    "q": "This time next week, the entire research team <u>will be presenting</u> (A) their findings at the international conference, so please <u>make sure</u> (B) that all the slides <u>are finalize</u> (C) before <u>Friday</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 2,
+    "explain": "Setelah \"be\" (are), kata kerja harus dalam bentuk V3/past participle untuk membentuk passive (\"are finalized\"), bukan bentuk dasar \"finalize\". Kalimat pasif yang benar: \"the slides are finalized\" — slide-nya yang \"diselesaikan\", bukan melakukan aksi."
+  },
+  {
+    "q": "Scientists ___ a new species of frog in that rainforest, but they ___ its full genetic profile yet.",
+    "opts": [
+      "have discovered ... haven't mapped",
+      "discovered ... don't map",
+      "have discovered ... didn't map",
+      "discover ... haven't mapped"
+    ],
+    "correct": 0,
+    "explain": "\"Have discovered\" (Present Perfect) tepat untuk aksi masa lalu yang hasilnya masih relevan sekarang (spesies itu baru ditemukan dan sekarang jadi bahan penelitian). \"Haven't mapped ... yet\" adalah pola baku Present Perfect negatif dengan signal word \"yet\" untuk sesuatu yang belum terjadi sampai sekarang."
+  },
+  {
+    "q": "The engineers <u>have been working</u> (A) on the bridge repair <u>since</u> (B) three months, and they <u>have already used</u> (C) more than half of the allocated <u>budget</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "\"Since\" dipakai untuk titik awal waktu (since March, since Monday), sedangkan \"for\" dipakai untuk durasi/rentang waktu (\"for three months\"). Karena \"three months\" adalah durasi, seharusnya \"for three months\", bukan \"since three months\" — kesalahan klasik pelajar Indonesia yang menyamakan \"sejak\" dan \"selama\"."
+  },
+  {
+    "q": "By the time the ambulance ___ at the scene, several bystanders ___ first aid to the injured driver.",
+    "opts": [
+      "arrived ... had already given",
+      "had arrived ... already gave",
+      "arrives ... have already given",
+      "had arrived ... had already give"
+    ],
+    "correct": 0,
+    "explain": "Pola \"by the time + Simple Past, S + had + V3\" menunjukkan dua kejadian masa lalu di mana satu terjadi lebih dulu. Ambulans tiba (Simple Past, \"arrived\") setelah warga sekitar sudah lebih dulu memberi pertolongan pertama (Past Perfect, \"had already given\")."
+  },
+  {
+    "q": "She <u>was</u> (A) exhausted when she finally sat down, because she <u>had been rehearsing</u> (B) for the school play <u>since</u> (C) five hours <u>without</u> (D) a single break.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 2,
+    "explain": "Sama seperti aturan since/for pada umumnya: \"five hours\" adalah durasi, jadi harus pakai \"for five hours\", bukan \"since five hours\". Bentuk Past Perfect Continuous-nya sendiri (\"had been rehearsing\") sudah tepat untuk aksi berlangsung sebelum titik waktu lampau lainnya."
+  },
+  {
+    "q": "By the end of this decade, engineers ___ several prototypes of fully biodegradable packaging, assuming current research funding continues.",
+    "opts": [
+      "will have developed",
+      "will develop",
+      "develop",
+      "will be developing"
+    ],
+    "correct": 0,
+    "explain": "\"By the end of this decade\" adalah signal word khas Future Perfect (S + will have + V3), menandakan aksi yang akan sudah selesai sebelum titik waktu tertentu di masa depan."
+  },
+  {
+    "q": "When she <u>turns</u> (A) sixty next year, my grandmother <u>will have been teaching</u> (B) at that elementary school <u>for</u> (C) over three decade <u>without</u> (D) taking a single sabbatical.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 2,
+    "explain": "Setelah angka lebih dari satu (\"three\"), kata benda yang dihitung harus jamak: \"three decades\", bukan \"three decade\". Struktur Future Perfect Continuous \"will have been teaching\" sendiri sudah tepat untuk aksi berkelanjutan yang akan mencapai durasi tertentu di masa depan."
+  },
+  {
+    "q": "If the committee ___ the proposal next week, the new scholarship program ___ launched by January.",
+    "opts": [
+      "approves ... will be",
+      "approved ... would be",
+      "will approve ... is",
+      "approves ... would be"
+    ],
+    "correct": 0,
+    "explain": "Conditional Type 1 (kejadian yang realistis/mungkin terjadi di masa depan): if-clause pakai Simple Present (\"approves\"), main clause pakai \"will + V1\" (\"will be launched\", di sini disingkat \"will be\" karena mengikuti passive \"launched\")."
+  },
+  {
+    "q": "If I <u>were</u> (A) the school principal, I <u>will change</u> (B) the exam schedule so that students <u>would have</u> (C) more time to <u>prepare</u> (D) for national exams.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Conditional Type 2 (andaian tidak nyata di masa sekarang) mewajibkan main clause pakai \"would + V1\", bukan \"will\". Karena if-clause sudah memakai \"were\" (penanda khas Type 2), main clause seharusnya \"would change\", bukan \"will change\"."
+  },
+  {
+    "q": "If the pilot ___ the storm warning earlier, the flight ___ delayed and the passengers would have been much safer.",
+    "opts": [
+      "had noticed ... would have been",
+      "noticed ... would be",
+      "had noticed ... would be",
+      "has noticed ... would have been"
+    ],
+    "correct": 0,
+    "explain": "Conditional Type 3 (andaian tidak nyata di masa lalu, tidak bisa diubah lagi): if-clause pakai Past Perfect (\"had noticed\"), main clause pakai \"would have + V3\" (\"would have been delayed\")."
+  },
+  {
+    "q": "The committee is <u>responsible</u> (A) for <u>ensure</u> (B) that every participant <u>receives</u> (C) proper training <u>before</u> (D) the expedition begins.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Setelah preposisi (\"for\"), kata kerja harus berbentuk gerund (V-ing), bukan bentuk dasar. Seharusnya \"responsible for ensuring\", bukan \"responsible for ensure\" — aturan baku: preposition + gerund."
+  },
+  {
+    "q": "It was extremely difficult for the rescue team ___ any survivors in the debris after the earthquake, given how unstable the structure had become.",
+    "opts": [
+      "to locate",
+      "locating",
+      "locate",
+      "located"
+    ],
+    "correct": 0,
+    "explain": "Pola \"It is + adjective + for + object + to-infinitive\" adalah struktur baku (\"it was difficult for the team to locate\"), bukan gerund. Adjective seperti difficult, easy, important, essential umumnya diikuti to-infinitive dalam struktur ini."
+  },
+  {
+    "q": "He <u>finally</u> (A) admitted <u>to cheat</u> (B) on the final exam, which <u>resulted</u> (C) in his immediate <u>expulsion</u> (D) from the university.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Verb \"admit\" termasuk kelompok verb yang hanya diikuti gerund, bukan infinitive — sama seperti enjoy, avoid, deny, suggest, finish. Seharusnya \"admitted to cheating\" (di sini \"to\" adalah preposisi, bukan penanda infinitive) atau lebih sederhana \"admitted cheating\", bukan \"admitted to cheat\"."
+  },
+  {
+    "q": "___ by the sudden drop in temperature, the hikers decided to set up camp earlier than planned.",
+    "opts": [
+      "Surprised",
+      "Surprise",
+      "They were surprised",
+      "Surprising"
+    ],
+    "correct": 0,
+    "explain": "Klausa non-finite (tanpa subjek dan tanpa penanda tense sendiri) di awal kalimat sering berbentuk past participle untuk makna pasif: \"Surprised by ... , the hikers decided ...\" berarti \"para pendaki itu terkejut\", sehingga bentuk yang dipakai adalah V3 (surprised), bukan V-ing (surprising, yang berarti mengejutkan pihak lain) atau klausa finite lengkap."
+  },
+  {
+    "q": "<u>To maintain</u> (A) a healthy coral reef <u>require</u> (B) strict regulation of fishing activities, consistent water-quality monitoring, and <u>active</u> (C) community <u>participation</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Ketika to-infinitive phrase (\"to maintain a healthy coral reef\") berfungsi sebagai subjek kalimat, ia dianggap tunggal, sehingga verb-nya harus \"requires\", bukan \"require\". Kesalahan umum: menyamakan subjek non-finite dengan kata benda jamak di dalamnya."
+  },
+  {
+    "q": "The negotiator ___ a firm stance throughout the meeting, even though the opposing party repeatedly tried to change the terms of the agreement.",
+    "opts": [
+      "hold",
+      "held",
+      "holded",
+      "holds"
+    ],
+    "correct": 1,
+    "explain": "\"Hold\" adalah irregular verb: hold - held - held. Konteks kalimat (\"throughout the meeting\", peristiwa selesai di masa lalu) membutuhkan Simple Past, sehingga bentuknya \"held\", bukan \"holded\" (bentuk regular yang salah untuk verb ini) atau \"hold\"/\"holds\"."
+  },
+  {
+    "q": "By the time the investigators arrived, the suspect had already <u>flee</u> (A) the country, and the evidence <u>had been</u> (B) carefully <u>hidden</u> (C) in a location no one <u>had thought</u> (D) to check.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 0,
+    "explain": "Setelah \"had\" (Past Perfect), kata kerja harus dalam bentuk V3. \"Flee\" adalah irregular verb: flee - fled - fled, sehingga seharusnya \"had already fled\", bukan \"had already flee\"."
+  },
+  {
+    "q": "The volunteers ___ hundreds of trees along the riverbank last month as part of a reforestation program organized by local students.",
+    "opts": [
+      "planted",
+      "plant",
+      "planting",
+      "have plant"
+    ],
+    "correct": 0,
+    "explain": "\"Plant\" adalah regular verb, bentuk V2/V3-nya dibentuk dengan menambahkan \"-ed\": plant - planted - planted. Karena ada signal word \"last month\" (Simple Past), bentuk yang tepat adalah \"planted\"."
+  },
+  {
+    "q": "Even as a child, she ___ solve complex mathematical puzzles that adults in her family struggled with.",
+    "opts": [
+      "could",
+      "can",
+      "must",
+      "should"
+    ],
+    "correct": 0,
+    "explain": "\"Could\" adalah modal untuk menyatakan kemampuan (ability) di masa lalu, cocok dengan konteks \"even as a child\". \"Can\" hanya untuk kemampuan di masa sekarang, sedangkan \"must\" dan \"should\" tidak menyatakan kemampuan."
+  },
+  {
+    "q": "All passengers <u>must</u> (A) to fasten their seatbelts <u>before</u> (B) the aircraft <u>begins</u> (C) taxiing toward the <u>runway</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 0,
+    "explain": "Modal verb (must, can, should, will, dst.) selalu diikuti langsung oleh bare infinitive (V1 tanpa \"to\"). Seharusnya \"must fasten\", bukan \"must to fasten\" — kesalahan klasik pelajar Indonesia yang menambahkan \"to\" setelah modal, padahal hanya kata seperti \"have to\", \"ought to\", \"need to\" yang memakai \"to\"."
+  },
+  {
+    "q": "The lights in the laboratory were still on at midnight, so someone ___ the last one to leave the building.",
+    "opts": [
+      "must have been",
+      "must be",
+      "must has been",
+      "should have been"
+    ],
+    "correct": 0,
+    "explain": "Perfect modal \"must have + V3\" dipakai untuk membuat deduksi kuat tentang sesuatu yang terjadi di masa lalu berdasarkan bukti yang ada sekarang (lampu masih menyala). \"Must has been\" salah secara struktur (harus \"have\", bukan \"has\", setelah modal apapun subjeknya), dan \"should have been\" bermakna berbeda (seharusnya, bukan kesimpulan logis)."
+  },
+  {
+    "q": "Looking back at his university years, he often <u>says</u> (A) that he <u>should have studied</u> (B) engineering instead of <u>literature</u> (C), because he <u>could had</u> (D) earned a much higher salary.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 3,
+    "explain": "Struktur perfect modal yang benar adalah \"modal + have + V3\", bukan \"modal + had + V3\". Seharusnya \"could have earned\", bukan \"could had earned\" — kesalahan umum karena siswa mengira \"had\" wajib dipakai untuk menunjukkan makna masa lalu, padahal cukup \"have\" karena modal-nya sendiri sudah menunjukkan konteks lampau."
+  },
+  {
+    "q": "According to the new safety regulation, all construction workers ___ hard hats and safety harnesses at all times on site.",
+    "opts": [
+      "must be provided with",
+      "must provide",
+      "must be provide with",
+      "must providing"
+    ],
+    "correct": 0,
+    "explain": "Ini kalimat pasif dengan modal: struktur \"modal + be + V3\". Karena pekerja \"diberi\" (bukan \"memberi\") alat keselamatan, bentuk pasif yang tepat adalah \"must be provided with\", bukan bentuk aktif \"must provide\"."
+  },
+  {
+    "q": "Active: \"The government has implemented several new environmental policies this year.\" Passive: \"Several new environmental policies ___ this year.\"",
+    "opts": [
+      "have been implemented by the government",
+      "has been implemented by the government",
+      "were implemented by the government",
+      "have implemented by the government"
+    ],
+    "correct": 0,
+    "explain": "Kalimat aktif memakai Present Perfect (\"has implemented\"), sehingga bentuk pasifnya juga Present Perfect: \"have/has been + V3\". Karena subjek pasif barunya jamak (\"several new environmental policies\"), auxiliary-nya \"have\", bukan \"has\": \"have been implemented by the government\"."
+  },
+  {
+    "q": "The final report <u>must</u> (A) <u>submitted</u> (B) to the dean's office <u>no later than</u> (C) Friday afternoon, or the grant <u>will be</u> (D) forfeited.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Struktur pasif dengan modal wajib memakai \"be\" sebelum V3: \"must be submitted\", bukan hanya \"must submitted\". Kata \"be\" yang hilang inilah kesalahannya."
+  },
+  {
+    "q": "By the time the auditors arrived, all the financial records ___ and neatly filed away, so the review proceeded without delay.",
+    "opts": [
+      "had already been organized",
+      "had already organized",
+      "have already been organized",
+      "were already organizing"
+    ],
+    "correct": 0,
+    "explain": "Kalimat ini menggabungkan Past Perfect dan passive voice: \"had been + V3\". Karena \"the financial records\" menerima aksi diorganisir (bukan mengorganisir), bentuknya harus pasif: \"had already been organized\", cocok dengan konteks \"by the time ... arrived\" (Past Perfect untuk aksi yang selesai lebih dulu)."
+  },
+  {
+    "q": "The old manuscript was discovered hidden ___ a false compartment ___ the bottom of an antique wooden desk.",
+    "opts": [
+      "in ... at",
+      "at ... in",
+      "on ... at",
+      "in ... on"
+    ],
+    "correct": 0,
+    "explain": "\"In\" dipakai untuk ruang tertutup/berdimensi (\"in a compartment\" — di dalam sebuah kompartemen), sedangkan \"at\" dipakai untuk titik spesifik (\"at the bottom\" — di titik dasar/bagian bawah tertentu)."
+  },
+  {
+    "q": "The museum's new exhibition will open <u>on</u> (A) the first Saturday <u>of</u> (B) December, and it will run <u>until</u> (C) early <u>on</u> (D) next year.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 3,
+    "explain": "\"Early next year\" adalah frasa waktu yang berdiri sendiri tanpa preposisi tambahan sebelum \"next\" — kata \"next\" (seperti \"last\", \"this\") biasanya tidak didahului preposisi. Seharusnya \"until early next year\", bukan \"until early on next year\"."
+  },
+  {
+    "q": "The committee members were extremely proud ___ the students' achievement, especially since the team had struggled ___ funding issues for years.",
+    "opts": [
+      "of ... with",
+      "in ... of",
+      "of ... for",
+      "about ... with"
+    ],
+    "correct": 0,
+    "explain": "\"Proud of\" dan \"struggle with\" adalah kombinasi adjective/verb + preposisi yang tetap (fixed collocation) dan harus dihafal, bukan diterjemahkan langsung dari bahasa Indonesia."
+  },
+  {
+    "q": "If she <u>had accepted</u> (A) the scholarship offer five years ago, she <u>would working</u> (B) as a marine biologist now, instead of <u>still searching</u> (C) for a stable job <u>in</u> (D) an unrelated field.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Ini adalah mixed conditional (andaian masa lalu yang berdampak ke masa sekarang): if-clause pakai Past Perfect (\"had accepted\", sudah benar), tapi main clause seharusnya \"would be + V-ing\" (would + be + present participle), bukan langsung \"would working\" tanpa \"be\". Bentuk yang benar: \"she would be working as a marine biologist now\" — kata \"be\" yang hilang inilah kesalahannya."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: The Shift Toward Renewable Energy)</p><p>For most of the twentieth century, fossil fuels such as coal, oil, and natural gas powered nearly every aspect of modern life, from electricity generation to transportation. These fuels were attractive because they were relatively easy to extract, transport, and burn for energy. However, their widespread use came with a significant drawback: burning fossil fuels releases carbon dioxide and other greenhouse gases into the atmosphere, which trap heat and contribute to long-term climate change. As the environmental consequences became harder to ignore, governments, companies, and researchers began investing more heavily in renewable alternatives.<br><br>Solar panels, wind turbines, and hydroelectric dams now generate a growing share of the world's electricity. Unlike fossil fuels, these sources do not deplete over time and produce little to no direct carbon emissions once built. Still, the transition is far from simple. Renewable energy often depends on weather and geography, which makes storage technology essential for keeping power available when the sun isn't shining or the wind isn't blowing. Critics also point out that manufacturing solar panels and batteries requires mining certain minerals, meaning the shift is not entirely free of environmental cost. Even so, most energy experts agree that continuing to rely primarily on fossil fuels is not sustainable, and that a gradual, well-managed transition toward cleaner sources remains the most realistic path forward.</p></div><p><b>Soal 1 dari 7:</b> What is the main idea of this passage?</p>",
+    "opts": [
+      "Fossil fuels are completely harmless and should continue to be the primary energy source",
+      "The world is gradually shifting from fossil fuels to renewable energy despite the challenges this transition involves",
+      "Solar panels are the only renewable energy source worth investing in",
+      "Climate change has no connection to how humans generate electricity"
+    ],
+    "correct": 1,
+    "explain": "Bacaan ini menjelaskan mengapa dunia bergeser dari bahan bakar fosil ke energi terbarukan (\"began investing more heavily in renewable alternatives\") sekaligus mengakui tantangan yang ada (penyimpanan energi, penambangan mineral) — jadi ide utamanya adalah proses transisi itu sendiri, bukan klaim ekstrem seperti opsi lain."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: The Shift Toward Renewable Energy)</p><p>For most of the twentieth century, fossil fuels such as coal, oil, and natural gas powered nearly every aspect of modern life, from electricity generation to transportation. These fuels were attractive because they were relatively easy to extract, transport, and burn for energy. However, their widespread use came with a significant drawback: burning fossil fuels releases carbon dioxide and other greenhouse gases into the atmosphere, which trap heat and contribute to long-term climate change. As the environmental consequences became harder to ignore, governments, companies, and researchers began investing more heavily in renewable alternatives.<br><br>Solar panels, wind turbines, and hydroelectric dams now generate a growing share of the world's electricity. Unlike fossil fuels, these sources do not deplete over time and produce little to no direct carbon emissions once built. Still, the transition is far from simple. Renewable energy often depends on weather and geography, which makes storage technology essential for keeping power available when the sun isn't shining or the wind isn't blowing. Critics also point out that manufacturing solar panels and batteries requires mining certain minerals, meaning the shift is not entirely free of environmental cost. Even so, most energy experts agree that continuing to rely primarily on fossil fuels is not sustainable, and that a gradual, well-managed transition toward cleaner sources remains the most realistic path forward.</p></div><p><b>Soal 2 dari 7:</b> According to the passage, why were fossil fuels widely used throughout the twentieth century?</p>",
+    "opts": [
+      "Because they produce zero greenhouse gases",
+      "Because they were relatively easy to extract, transport, and burn for energy",
+      "Because governments banned all other forms of energy",
+      "Because they never require any mining or extraction process"
+    ],
+    "correct": 1,
+    "explain": "Kalimat kedua bacaan menyebutkan langsung: \"These fuels were attractive because they were relatively easy to extract, transport, and burn for energy.\""
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: The Shift Toward Renewable Energy)</p><p>For most of the twentieth century, fossil fuels such as coal, oil, and natural gas powered nearly every aspect of modern life, from electricity generation to transportation. These fuels were attractive because they were relatively easy to extract, transport, and burn for energy. However, their widespread use came with a significant drawback: burning fossil fuels releases carbon dioxide and other greenhouse gases into the atmosphere, which trap heat and contribute to long-term climate change. As the environmental consequences became harder to ignore, governments, companies, and researchers began investing more heavily in renewable alternatives.<br><br>Solar panels, wind turbines, and hydroelectric dams now generate a growing share of the world's electricity. Unlike fossil fuels, these sources do not deplete over time and produce little to no direct carbon emissions once built. Still, the transition is far from simple. Renewable energy often depends on weather and geography, which makes storage technology essential for keeping power available when the sun isn't shining or the wind isn't blowing. Critics also point out that manufacturing solar panels and batteries requires mining certain minerals, meaning the shift is not entirely free of environmental cost. Even so, most energy experts agree that continuing to rely primarily on fossil fuels is not sustainable, and that a gradual, well-managed transition toward cleaner sources remains the most realistic path forward.</p></div><p><b>Soal 3 dari 7:</b> The word 'deplete' in paragraph 2 is closest in meaning to...</p>",
+    "opts": [
+      "increase suddenly",
+      "run out or become used up",
+      "become more efficient",
+      "get transported easily"
+    ],
+    "correct": 1,
+    "explain": "Konteksnya: \"these sources do not deplete over time\" dibandingkan dengan bahan bakar fosil yang jumlahnya terbatas dan bisa habis. \"Deplete\" berarti berkurang/habis terpakai, jadi \"run out or become used up\" paling tepat."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: The Shift Toward Renewable Energy)</p><p>For most of the twentieth century, fossil fuels such as coal, oil, and natural gas powered nearly every aspect of modern life, from electricity generation to transportation. These fuels were attractive because they were relatively easy to extract, transport, and burn for energy. However, their widespread use came with a significant drawback: burning fossil fuels releases carbon dioxide and other greenhouse gases into the atmosphere, which trap heat and contribute to long-term climate change. As the environmental consequences became harder to ignore, governments, companies, and researchers began investing more heavily in renewable alternatives.<br><br>Solar panels, wind turbines, and hydroelectric dams now generate a growing share of the world's electricity. Unlike fossil fuels, these sources do not deplete over time and produce little to no direct carbon emissions once built. Still, the transition is far from simple. Renewable energy often depends on weather and geography, which makes storage technology essential for keeping power available when the sun isn't shining or the wind isn't blowing. Critics also point out that manufacturing solar panels and batteries requires mining certain minerals, meaning the shift is not entirely free of environmental cost. Even so, most energy experts agree that continuing to rely primarily on fossil fuels is not sustainable, and that a gradual, well-managed transition toward cleaner sources remains the most realistic path forward.</p></div><p><b>Soal 4 dari 7:</b> What can be inferred from the passage about the transition to renewable energy?</p>",
+    "opts": [
+      "It will happen instantly with no obstacles",
+      "It is entirely impossible given current technology",
+      "It involves real trade-offs and is not a perfectly clean or simple process",
+      "It has already been fully completed worldwide"
+    ],
+    "correct": 2,
+    "explain": "Bacaan menyebutkan storage technology yang masih jadi tantangan dan bahwa manufaktur panel surya/baterai butuh penambangan mineral (\"the shift is not entirely free of environmental cost\") — ini mengarah pada kesimpulan bahwa transisinya penuh trade-off, bukan proses instan atau sempurna."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: The Shift Toward Renewable Energy)</p><p>For most of the twentieth century, fossil fuels such as coal, oil, and natural gas powered nearly every aspect of modern life, from electricity generation to transportation. These fuels were attractive because they were relatively easy to extract, transport, and burn for energy. However, their widespread use came with a significant drawback: burning fossil fuels releases carbon dioxide and other greenhouse gases into the atmosphere, which trap heat and contribute to long-term climate change. As the environmental consequences became harder to ignore, governments, companies, and researchers began investing more heavily in renewable alternatives.<br><br>Solar panels, wind turbines, and hydroelectric dams now generate a growing share of the world's electricity. Unlike fossil fuels, these sources do not deplete over time and produce little to no direct carbon emissions once built. Still, the transition is far from simple. Renewable energy often depends on weather and geography, which makes storage technology essential for keeping power available when the sun isn't shining or the wind isn't blowing. Critics also point out that manufacturing solar panels and batteries requires mining certain minerals, meaning the shift is not entirely free of environmental cost. Even so, most energy experts agree that continuing to rely primarily on fossil fuels is not sustainable, and that a gradual, well-managed transition toward cleaner sources remains the most realistic path forward.</p></div><p><b>Soal 5 dari 7:</b> All of the following are mentioned in the passage as sources or aspects of renewable energy EXCEPT...</p>",
+    "opts": [
+      "Solar panels",
+      "Wind turbines",
+      "Hydroelectric dams",
+      "Nuclear reactors"
+    ],
+    "correct": 3,
+    "explain": "Bacaan menyebutkan solar panels, wind turbines, dan hydroelectric dams secara eksplisit. Nuclear reactors sama sekali tidak disebutkan di dalam bacaan."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: The Shift Toward Renewable Energy)</p><p>For most of the twentieth century, fossil fuels such as coal, oil, and natural gas powered nearly every aspect of modern life, from electricity generation to transportation. These fuels were attractive because they were relatively easy to extract, transport, and burn for energy. However, their widespread use came with a significant drawback: burning fossil fuels releases carbon dioxide and other greenhouse gases into the atmosphere, which trap heat and contribute to long-term climate change. As the environmental consequences became harder to ignore, governments, companies, and researchers began investing more heavily in renewable alternatives.<br><br>Solar panels, wind turbines, and hydroelectric dams now generate a growing share of the world's electricity. Unlike fossil fuels, these sources do not deplete over time and produce little to no direct carbon emissions once built. Still, the transition is far from simple. Renewable energy often depends on weather and geography, which makes storage technology essential for keeping power available when the sun isn't shining or the wind isn't blowing. Critics also point out that manufacturing solar panels and batteries requires mining certain minerals, meaning the shift is not entirely free of environmental cost. Even so, most energy experts agree that continuing to rely primarily on fossil fuels is not sustainable, and that a gradual, well-managed transition toward cleaner sources remains the most realistic path forward.</p></div><p><b>Soal 6 dari 7:</b> What does 'these sources' in paragraph 2 refer to?</p>",
+    "opts": [
+      "Fossil fuels like coal and oil",
+      "Solar panels, wind turbines, and hydroelectric dams",
+      "Governments and companies",
+      "Greenhouse gases"
+    ],
+    "correct": 1,
+    "explain": "Kalimat sebelumnya menyebutkan \"Solar panels, wind turbines, and hydroelectric dams now generate a growing share of the world's electricity.\" Kalimat berikutnya, \"Unlike fossil fuels, these sources do not deplete...\", merujuk kembali ke tiga sumber energi terbarukan tersebut."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: The Shift Toward Renewable Energy)</p><p>For most of the twentieth century, fossil fuels such as coal, oil, and natural gas powered nearly every aspect of modern life, from electricity generation to transportation. These fuels were attractive because they were relatively easy to extract, transport, and burn for energy. However, their widespread use came with a significant drawback: burning fossil fuels releases carbon dioxide and other greenhouse gases into the atmosphere, which trap heat and contribute to long-term climate change. As the environmental consequences became harder to ignore, governments, companies, and researchers began investing more heavily in renewable alternatives.<br><br>Solar panels, wind turbines, and hydroelectric dams now generate a growing share of the world's electricity. Unlike fossil fuels, these sources do not deplete over time and produce little to no direct carbon emissions once built. Still, the transition is far from simple. Renewable energy often depends on weather and geography, which makes storage technology essential for keeping power available when the sun isn't shining or the wind isn't blowing. Critics also point out that manufacturing solar panels and batteries requires mining certain minerals, meaning the shift is not entirely free of environmental cost. Even so, most energy experts agree that continuing to rely primarily on fossil fuels is not sustainable, and that a gradual, well-managed transition toward cleaner sources remains the most realistic path forward.</p></div><p><b>Soal 7 dari 7:</b> What is the author's tone in this passage?</p>",
+    "opts": [
+      "Alarmist and one-sided, refusing to acknowledge any downside of renewable energy",
+      "Balanced and informative, presenting both the benefits and the genuine challenges of the transition",
+      "Dismissive, suggesting the whole topic is unimportant",
+      "Purely promotional, written like an advertisement for solar panel companies"
+    ],
+    "correct": 1,
+    "explain": "Penulis menjelaskan manfaat energi terbarukan tapi juga secara jujur mengakui tantangannya (ketergantungan cuaca, kebutuhan mineral tambang) — nada ini seimbang dan informatif, bukan sepihak atau promosional."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: The Mystery of the Indus Valley Civilization)</p><p>Long before many of the civilizations typically covered in history classes rose to prominence, a highly organized society flourished along the banks of the Indus River in what is now Pakistan and northwestern India. Archaeologists refer to this culture as the Indus Valley Civilization, and its major cities, including Mohenjo-daro and Harappa, reveal a surprisingly advanced level of urban planning. Streets were laid out in orderly grids, homes were connected to covered drainage systems, and standardized bricks were used across the region, suggesting a strong central authority or shared set of construction standards.<br><br>What makes this civilization particularly intriguing to historians is how much remains unknown about it. Thousands of carved seals bearing a distinctive script have been discovered at various sites, yet no one has been able to definitively decipher the writing, leaving basic questions about the civilization's language, government, and religious beliefs unanswered. Unlike many ancient societies, there is little evidence of grand palaces, monumental tombs, or obvious symbols of a ruling elite, which has led some researchers to speculate that the civilization may have been governed in a more decentralized or cooperative manner than its contemporaries. Eventually, around 1900 BCE, many of the major settlements were gradually abandoned. Scholars still debate the reasons, pointing to possibilities such as shifting river patterns, prolonged drought, or gradual changes in trade routes, though no single explanation has been universally accepted.</p></div><p><b>Soal 1 dari 7:</b> What is the main idea of this passage?</p>",
+    "opts": [
+      "The Indus Valley Civilization was ruled by a well-documented line of kings",
+      "The Indus Valley Civilization was an advanced but still mysterious ancient society, with many aspects of its culture remaining unknown",
+      "Historians have fully deciphered the Indus script and understand the civilization completely",
+      "Mohenjo-daro and Harappa were unimportant, minor settlements"
+    ],
+    "correct": 1,
+    "explain": "Bacaan menekankan dua hal: kecanggihan perencanaan kota (grid jalan, drainase, batu bata standar) DAN banyaknya misteri yang belum terpecahkan (aksara belum terbaca, penyebab keruntuhan masih diperdebatkan) — jadi ide utamanya adalah kombinasi \"advanced but mysterious\"."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: The Mystery of the Indus Valley Civilization)</p><p>Long before many of the civilizations typically covered in history classes rose to prominence, a highly organized society flourished along the banks of the Indus River in what is now Pakistan and northwestern India. Archaeologists refer to this culture as the Indus Valley Civilization, and its major cities, including Mohenjo-daro and Harappa, reveal a surprisingly advanced level of urban planning. Streets were laid out in orderly grids, homes were connected to covered drainage systems, and standardized bricks were used across the region, suggesting a strong central authority or shared set of construction standards.<br><br>What makes this civilization particularly intriguing to historians is how much remains unknown about it. Thousands of carved seals bearing a distinctive script have been discovered at various sites, yet no one has been able to definitively decipher the writing, leaving basic questions about the civilization's language, government, and religious beliefs unanswered. Unlike many ancient societies, there is little evidence of grand palaces, monumental tombs, or obvious symbols of a ruling elite, which has led some researchers to speculate that the civilization may have been governed in a more decentralized or cooperative manner than its contemporaries. Eventually, around 1900 BCE, many of the major settlements were gradually abandoned. Scholars still debate the reasons, pointing to possibilities such as shifting river patterns, prolonged drought, or gradual changes in trade routes, though no single explanation has been universally accepted.</p></div><p><b>Soal 2 dari 7:</b> According to the passage, what specific evidence suggests strong urban planning in Indus Valley cities?</p>",
+    "opts": [
+      "Grand palaces and monumental tombs",
+      "Orderly street grids, covered drainage systems, and standardized bricks",
+      "A fully translated system of writing",
+      "Written records of a ruling monarchy"
+    ],
+    "correct": 1,
+    "explain": "Bacaan menyebutkan langsung: \"Streets were laid out in orderly grids, homes were connected to covered drainage systems, and standardized bricks were used across the region.\""
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: The Mystery of the Indus Valley Civilization)</p><p>Long before many of the civilizations typically covered in history classes rose to prominence, a highly organized society flourished along the banks of the Indus River in what is now Pakistan and northwestern India. Archaeologists refer to this culture as the Indus Valley Civilization, and its major cities, including Mohenjo-daro and Harappa, reveal a surprisingly advanced level of urban planning. Streets were laid out in orderly grids, homes were connected to covered drainage systems, and standardized bricks were used across the region, suggesting a strong central authority or shared set of construction standards.<br><br>What makes this civilization particularly intriguing to historians is how much remains unknown about it. Thousands of carved seals bearing a distinctive script have been discovered at various sites, yet no one has been able to definitively decipher the writing, leaving basic questions about the civilization's language, government, and religious beliefs unanswered. Unlike many ancient societies, there is little evidence of grand palaces, monumental tombs, or obvious symbols of a ruling elite, which has led some researchers to speculate that the civilization may have been governed in a more decentralized or cooperative manner than its contemporaries. Eventually, around 1900 BCE, many of the major settlements were gradually abandoned. Scholars still debate the reasons, pointing to possibilities such as shifting river patterns, prolonged drought, or gradual changes in trade routes, though no single explanation has been universally accepted.</p></div><p><b>Soal 3 dari 7:</b> The word 'decipher' in paragraph 2 is closest in meaning to...</p>",
+    "opts": [
+      "destroy or erase",
+      "translate or figure out the meaning of",
+      "collect or gather physically",
+      "ignore completely"
+    ],
+    "correct": 1,
+    "explain": "Konteksnya: \"no one has been able to definitively decipher the writing\" — berarti belum ada yang berhasil menerjemahkan/memecahkan makna aksara tersebut, sehingga \"translate or figure out the meaning of\" adalah padanan yang tepat."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: The Mystery of the Indus Valley Civilization)</p><p>Long before many of the civilizations typically covered in history classes rose to prominence, a highly organized society flourished along the banks of the Indus River in what is now Pakistan and northwestern India. Archaeologists refer to this culture as the Indus Valley Civilization, and its major cities, including Mohenjo-daro and Harappa, reveal a surprisingly advanced level of urban planning. Streets were laid out in orderly grids, homes were connected to covered drainage systems, and standardized bricks were used across the region, suggesting a strong central authority or shared set of construction standards.<br><br>What makes this civilization particularly intriguing to historians is how much remains unknown about it. Thousands of carved seals bearing a distinctive script have been discovered at various sites, yet no one has been able to definitively decipher the writing, leaving basic questions about the civilization's language, government, and religious beliefs unanswered. Unlike many ancient societies, there is little evidence of grand palaces, monumental tombs, or obvious symbols of a ruling elite, which has led some researchers to speculate that the civilization may have been governed in a more decentralized or cooperative manner than its contemporaries. Eventually, around 1900 BCE, many of the major settlements were gradually abandoned. Scholars still debate the reasons, pointing to possibilities such as shifting river patterns, prolonged drought, or gradual changes in trade routes, though no single explanation has been universally accepted.</p></div><p><b>Soal 4 dari 7:</b> What can be inferred from the lack of grand palaces or obvious symbols of a ruling elite?</p>",
+    "opts": [
+      "The civilization definitely had no leadership structure of any kind",
+      "It is possible the civilization was governed differently from many other ancient societies, perhaps in a less centralized way",
+      "The civilization was too small to need any government",
+      "Archaeologists have proven the civilization was a democracy"
+    ],
+    "correct": 1,
+    "explain": "Bacaan menyatakan hal ini secara hati-hati sebagai spekulasi, bukan fakta pasti: \"which has led some researchers to speculate that the civilization may have been governed in a more decentralized or cooperative manner.\" Ini inferensi yang didukung teks, bukan klaim absolut seperti opsi lain."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: The Mystery of the Indus Valley Civilization)</p><p>Long before many of the civilizations typically covered in history classes rose to prominence, a highly organized society flourished along the banks of the Indus River in what is now Pakistan and northwestern India. Archaeologists refer to this culture as the Indus Valley Civilization, and its major cities, including Mohenjo-daro and Harappa, reveal a surprisingly advanced level of urban planning. Streets were laid out in orderly grids, homes were connected to covered drainage systems, and standardized bricks were used across the region, suggesting a strong central authority or shared set of construction standards.<br><br>What makes this civilization particularly intriguing to historians is how much remains unknown about it. Thousands of carved seals bearing a distinctive script have been discovered at various sites, yet no one has been able to definitively decipher the writing, leaving basic questions about the civilization's language, government, and religious beliefs unanswered. Unlike many ancient societies, there is little evidence of grand palaces, monumental tombs, or obvious symbols of a ruling elite, which has led some researchers to speculate that the civilization may have been governed in a more decentralized or cooperative manner than its contemporaries. Eventually, around 1900 BCE, many of the major settlements were gradually abandoned. Scholars still debate the reasons, pointing to possibilities such as shifting river patterns, prolonged drought, or gradual changes in trade routes, though no single explanation has been universally accepted.</p></div><p><b>Soal 5 dari 7:</b> All of the following are mentioned as possible reasons for the abandonment of major settlements EXCEPT...</p>",
+    "opts": [
+      "Shifting river patterns",
+      "Prolonged drought",
+      "Changes in trade routes",
+      "A sudden military invasion"
+    ],
+    "correct": 3,
+    "explain": "Bacaan hanya menyebutkan tiga kemungkinan: \"shifting river patterns, prolonged drought, or gradual changes in trade routes.\" Invasi militer sama sekali tidak disebutkan sebagai salah satu teori dalam bacaan ini."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: The Mystery of the Indus Valley Civilization)</p><p>Long before many of the civilizations typically covered in history classes rose to prominence, a highly organized society flourished along the banks of the Indus River in what is now Pakistan and northwestern India. Archaeologists refer to this culture as the Indus Valley Civilization, and its major cities, including Mohenjo-daro and Harappa, reveal a surprisingly advanced level of urban planning. Streets were laid out in orderly grids, homes were connected to covered drainage systems, and standardized bricks were used across the region, suggesting a strong central authority or shared set of construction standards.<br><br>What makes this civilization particularly intriguing to historians is how much remains unknown about it. Thousands of carved seals bearing a distinctive script have been discovered at various sites, yet no one has been able to definitively decipher the writing, leaving basic questions about the civilization's language, government, and religious beliefs unanswered. Unlike many ancient societies, there is little evidence of grand palaces, monumental tombs, or obvious symbols of a ruling elite, which has led some researchers to speculate that the civilization may have been governed in a more decentralized or cooperative manner than its contemporaries. Eventually, around 1900 BCE, many of the major settlements were gradually abandoned. Scholars still debate the reasons, pointing to possibilities such as shifting river patterns, prolonged drought, or gradual changes in trade routes, though no single explanation has been universally accepted.</p></div><p><b>Soal 6 dari 7:</b> What does 'it' refer to in the phrase 'how much remains unknown about it' in paragraph 2?</p>",
+    "opts": [
+      "The Indus River",
+      "The Indus Valley Civilization",
+      "The carved seals",
+      "Mohenjo-daro specifically"
+    ],
+    "correct": 1,
+    "explain": "Kalimat itu membuka paragraf kedua dan langsung melanjutkan topik paragraf pertama, yaitu peradaban Lembah Indus secara keseluruhan (\"this culture\" / \"the Indus Valley Civilization\"), bukan sungainya, segelnya, atau satu kota saja."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: The Mystery of the Indus Valley Civilization)</p><p>Long before many of the civilizations typically covered in history classes rose to prominence, a highly organized society flourished along the banks of the Indus River in what is now Pakistan and northwestern India. Archaeologists refer to this culture as the Indus Valley Civilization, and its major cities, including Mohenjo-daro and Harappa, reveal a surprisingly advanced level of urban planning. Streets were laid out in orderly grids, homes were connected to covered drainage systems, and standardized bricks were used across the region, suggesting a strong central authority or shared set of construction standards.<br><br>What makes this civilization particularly intriguing to historians is how much remains unknown about it. Thousands of carved seals bearing a distinctive script have been discovered at various sites, yet no one has been able to definitively decipher the writing, leaving basic questions about the civilization's language, government, and religious beliefs unanswered. Unlike many ancient societies, there is little evidence of grand palaces, monumental tombs, or obvious symbols of a ruling elite, which has led some researchers to speculate that the civilization may have been governed in a more decentralized or cooperative manner than its contemporaries. Eventually, around 1900 BCE, many of the major settlements were gradually abandoned. Scholars still debate the reasons, pointing to possibilities such as shifting river patterns, prolonged drought, or gradual changes in trade routes, though no single explanation has been universally accepted.</p></div><p><b>Soal 7 dari 7:</b> What is the author's purpose in writing this passage?</p>",
+    "opts": [
+      "To argue that the Indus Valley Civilization was inferior to other ancient civilizations",
+      "To inform readers about the civilization's achievements while honestly acknowledging what remains unresolved",
+      "To promote a specific tourist destination",
+      "To criticize modern archaeologists for their lack of effort"
+    ],
+    "correct": 1,
+    "explain": "Penulis memaparkan pencapaian peradaban ini (tata kota, sistem drainase) sekaligus jujur mengakui banyak hal yang belum terpecahkan (aksara, penyebab keruntuhan) — tujuannya informatif, bukan argumentatif atau promosional."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Why the Human Body Needs Sleep)</p><p>Sleep occupies roughly a third of a human lifetime, yet for a long time scientists viewed it as little more than a passive state in which the brain simply shuts down. Modern research has revealed a very different picture: sleep is an active, highly regulated process that plays an essential role in memory consolidation, emotional regulation, and physical repair. During certain stages of sleep, the brain strengthens neural connections formed during the day, effectively helping to transfer information from short-term to long-term memory. This is one reason students who sleep poorly before an exam often perform worse than those who get adequate rest, even if both groups studied the same material.<br><br>Sleep is typically divided into several stages, alternating between non-REM (rapid eye movement) and REM sleep throughout the night. Non-REM stages are associated with physical restoration, including tissue repair and the release of growth hormones, while REM sleep is closely linked to vivid dreaming and emotional processing. Chronic sleep deprivation, meanwhile, has been associated with a wide range of problems, including difficulty concentrating, weakened immune function, mood instability, and increased risk of accidents. Despite this, many teenagers and young adults regularly cut their sleep short because of academic pressure, part-time jobs, or simply staying up late on their phones. Sleep experts generally recommend that teenagers aim for eight to ten hours of sleep per night, though few actually reach that target on a consistent basis.</p></div><p><b>Soal 1 dari 7:</b> What is the main idea of this passage?</p>",
+    "opts": [
+      "Sleep is simply a passive state where nothing important happens in the brain",
+      "Sleep is an active biological process essential for memory, emotional health, and physical repair, yet many people don't get enough of it",
+      "REM sleep is dangerous and should be avoided",
+      "Teenagers do not need any more sleep than adults"
+    ],
+    "correct": 1,
+    "explain": "Bacaan menjelaskan bahwa sains modern menemukan tidur adalah proses aktif yang penting untuk memori, regulasi emosi, dan perbaikan fisik, lalu menutup dengan fakta bahwa banyak remaja tidak cukup tidur — inilah gagasan utamanya, bukan klaim bahwa tidur itu pasif atau berbahaya."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Why the Human Body Needs Sleep)</p><p>Sleep occupies roughly a third of a human lifetime, yet for a long time scientists viewed it as little more than a passive state in which the brain simply shuts down. Modern research has revealed a very different picture: sleep is an active, highly regulated process that plays an essential role in memory consolidation, emotional regulation, and physical repair. During certain stages of sleep, the brain strengthens neural connections formed during the day, effectively helping to transfer information from short-term to long-term memory. This is one reason students who sleep poorly before an exam often perform worse than those who get adequate rest, even if both groups studied the same material.<br><br>Sleep is typically divided into several stages, alternating between non-REM (rapid eye movement) and REM sleep throughout the night. Non-REM stages are associated with physical restoration, including tissue repair and the release of growth hormones, while REM sleep is closely linked to vivid dreaming and emotional processing. Chronic sleep deprivation, meanwhile, has been associated with a wide range of problems, including difficulty concentrating, weakened immune function, mood instability, and increased risk of accidents. Despite this, many teenagers and young adults regularly cut their sleep short because of academic pressure, part-time jobs, or simply staying up late on their phones. Sleep experts generally recommend that teenagers aim for eight to ten hours of sleep per night, though few actually reach that target on a consistent basis.</p></div><p><b>Soal 2 dari 7:</b> According to the passage, what happens to neural connections during certain stages of sleep?</p>",
+    "opts": [
+      "They are completely erased",
+      "They are strengthened, helping transfer information from short-term to long-term memory",
+      "They stop forming entirely until the person wakes up",
+      "They are only affected during REM sleep, never during non-REM sleep"
+    ],
+    "correct": 1,
+    "explain": "Bacaan menyatakan: \"the brain strengthens neural connections formed during the day, effectively helping to transfer information from short-term to long-term memory.\""
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Why the Human Body Needs Sleep)</p><p>Sleep occupies roughly a third of a human lifetime, yet for a long time scientists viewed it as little more than a passive state in which the brain simply shuts down. Modern research has revealed a very different picture: sleep is an active, highly regulated process that plays an essential role in memory consolidation, emotional regulation, and physical repair. During certain stages of sleep, the brain strengthens neural connections formed during the day, effectively helping to transfer information from short-term to long-term memory. This is one reason students who sleep poorly before an exam often perform worse than those who get adequate rest, even if both groups studied the same material.<br><br>Sleep is typically divided into several stages, alternating between non-REM (rapid eye movement) and REM sleep throughout the night. Non-REM stages are associated with physical restoration, including tissue repair and the release of growth hormones, while REM sleep is closely linked to vivid dreaming and emotional processing. Chronic sleep deprivation, meanwhile, has been associated with a wide range of problems, including difficulty concentrating, weakened immune function, mood instability, and increased risk of accidents. Despite this, many teenagers and young adults regularly cut their sleep short because of academic pressure, part-time jobs, or simply staying up late on their phones. Sleep experts generally recommend that teenagers aim for eight to ten hours of sleep per night, though few actually reach that target on a consistent basis.</p></div><p><b>Soal 3 dari 7:</b> The word 'consolidation' in paragraph 1 (as in 'memory consolidation') is closest in meaning to...</p>",
+    "opts": [
+      "destruction or deletion",
+      "the process of making something stable or permanent",
+      "random guessing",
+      "temporary confusion"
+    ],
+    "correct": 1,
+    "explain": "Dalam konteks memori, \"consolidation\" berarti proses menstabilkan/memperkuat ingatan agar bertahan lama — sejalan dengan penjelasan berikutnya tentang memori jangka pendek berubah menjadi jangka panjang."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Why the Human Body Needs Sleep)</p><p>Sleep occupies roughly a third of a human lifetime, yet for a long time scientists viewed it as little more than a passive state in which the brain simply shuts down. Modern research has revealed a very different picture: sleep is an active, highly regulated process that plays an essential role in memory consolidation, emotional regulation, and physical repair. During certain stages of sleep, the brain strengthens neural connections formed during the day, effectively helping to transfer information from short-term to long-term memory. This is one reason students who sleep poorly before an exam often perform worse than those who get adequate rest, even if both groups studied the same material.<br><br>Sleep is typically divided into several stages, alternating between non-REM (rapid eye movement) and REM sleep throughout the night. Non-REM stages are associated with physical restoration, including tissue repair and the release of growth hormones, while REM sleep is closely linked to vivid dreaming and emotional processing. Chronic sleep deprivation, meanwhile, has been associated with a wide range of problems, including difficulty concentrating, weakened immune function, mood instability, and increased risk of accidents. Despite this, many teenagers and young adults regularly cut their sleep short because of academic pressure, part-time jobs, or simply staying up late on their phones. Sleep experts generally recommend that teenagers aim for eight to ten hours of sleep per night, though few actually reach that target on a consistent basis.</p></div><p><b>Soal 4 dari 7:</b> What can be inferred about students who sleep poorly before an exam?</p>",
+    "opts": [
+      "They are guaranteed to fail regardless of how much they studied",
+      "Their exam performance may suffer because sleep plays a direct role in how well studied material is retained",
+      "Sleep has no real connection to how well they do on the exam",
+      "They will perform better than students who slept well"
+    ],
+    "correct": 1,
+    "explain": "Bacaan menghubungkan konsolidasi memori saat tidur dengan performa ujian: \"students who sleep poorly before an exam often perform worse than those who get adequate rest, even if both groups studied the same material\" — ini mendukung inferensi bahwa tidur memengaruhi seberapa baik materi yang dipelajari benar-benar diingat."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Why the Human Body Needs Sleep)</p><p>Sleep occupies roughly a third of a human lifetime, yet for a long time scientists viewed it as little more than a passive state in which the brain simply shuts down. Modern research has revealed a very different picture: sleep is an active, highly regulated process that plays an essential role in memory consolidation, emotional regulation, and physical repair. During certain stages of sleep, the brain strengthens neural connections formed during the day, effectively helping to transfer information from short-term to long-term memory. This is one reason students who sleep poorly before an exam often perform worse than those who get adequate rest, even if both groups studied the same material.<br><br>Sleep is typically divided into several stages, alternating between non-REM (rapid eye movement) and REM sleep throughout the night. Non-REM stages are associated with physical restoration, including tissue repair and the release of growth hormones, while REM sleep is closely linked to vivid dreaming and emotional processing. Chronic sleep deprivation, meanwhile, has been associated with a wide range of problems, including difficulty concentrating, weakened immune function, mood instability, and increased risk of accidents. Despite this, many teenagers and young adults regularly cut their sleep short because of academic pressure, part-time jobs, or simply staying up late on their phones. Sleep experts generally recommend that teenagers aim for eight to ten hours of sleep per night, though few actually reach that target on a consistent basis.</p></div><p><b>Soal 5 dari 7:</b> All of the following are mentioned as consequences of chronic sleep deprivation EXCEPT...</p>",
+    "opts": [
+      "Difficulty concentrating",
+      "Weakened immune function",
+      "Mood instability",
+      "Improved long-term memory"
+    ],
+    "correct": 3,
+    "explain": "Bacaan menyebutkan difficulty concentrating, weakened immune function, mood instability, dan increased risk of accidents sebagai akibat kurang tidur kronis — bukan peningkatan memori jangka panjang, yang justru berlawanan dengan efek sebenarnya."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Why the Human Body Needs Sleep)</p><p>Sleep occupies roughly a third of a human lifetime, yet for a long time scientists viewed it as little more than a passive state in which the brain simply shuts down. Modern research has revealed a very different picture: sleep is an active, highly regulated process that plays an essential role in memory consolidation, emotional regulation, and physical repair. During certain stages of sleep, the brain strengthens neural connections formed during the day, effectively helping to transfer information from short-term to long-term memory. This is one reason students who sleep poorly before an exam often perform worse than those who get adequate rest, even if both groups studied the same material.<br><br>Sleep is typically divided into several stages, alternating between non-REM (rapid eye movement) and REM sleep throughout the night. Non-REM stages are associated with physical restoration, including tissue repair and the release of growth hormones, while REM sleep is closely linked to vivid dreaming and emotional processing. Chronic sleep deprivation, meanwhile, has been associated with a wide range of problems, including difficulty concentrating, weakened immune function, mood instability, and increased risk of accidents. Despite this, many teenagers and young adults regularly cut their sleep short because of academic pressure, part-time jobs, or simply staying up late on their phones. Sleep experts generally recommend that teenagers aim for eight to ten hours of sleep per night, though few actually reach that target on a consistent basis.</p></div><p><b>Soal 6 dari 7:</b> What does 'that target' refer to in the final sentence of the passage?</p>",
+    "opts": [
+      "The recommendation of eight to ten hours of sleep per night for teenagers",
+      "The stages of non-REM and REM sleep",
+      "The academic pressure teenagers face",
+      "The process of memory consolidation"
+    ],
+    "correct": 0,
+    "explain": "Kalimat sebelumnya menyebutkan rekomendasi \"eight to ten hours of sleep per night\" untuk remaja; \"that target\" merujuk langsung ke angka jam tidur yang direkomendasikan tersebut."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Why the Human Body Needs Sleep)</p><p>Sleep occupies roughly a third of a human lifetime, yet for a long time scientists viewed it as little more than a passive state in which the brain simply shuts down. Modern research has revealed a very different picture: sleep is an active, highly regulated process that plays an essential role in memory consolidation, emotional regulation, and physical repair. During certain stages of sleep, the brain strengthens neural connections formed during the day, effectively helping to transfer information from short-term to long-term memory. This is one reason students who sleep poorly before an exam often perform worse than those who get adequate rest, even if both groups studied the same material.<br><br>Sleep is typically divided into several stages, alternating between non-REM (rapid eye movement) and REM sleep throughout the night. Non-REM stages are associated with physical restoration, including tissue repair and the release of growth hormones, while REM sleep is closely linked to vivid dreaming and emotional processing. Chronic sleep deprivation, meanwhile, has been associated with a wide range of problems, including difficulty concentrating, weakened immune function, mood instability, and increased risk of accidents. Despite this, many teenagers and young adults regularly cut their sleep short because of academic pressure, part-time jobs, or simply staying up late on their phones. Sleep experts generally recommend that teenagers aim for eight to ten hours of sleep per night, though few actually reach that target on a consistent basis.</p></div><p><b>Soal 7 dari 7:</b> What is the author's tone in this passage?</p>",
+    "opts": [
+      "Explanatory and mildly concerned about the gap between sleep recommendations and actual teenage sleep habits",
+      "Purely humorous, treating the topic as a joke",
+      "Completely neutral with no implied concern at all",
+      "Angry and accusatory toward teenagers specifically"
+    ],
+    "correct": 0,
+    "explain": "Penulis menjelaskan sains tidur secara informatif, lalu menutup dengan nada sedikit prihatin bahwa \"few actually reach that target on a consistent basis\" — nada ini menjelaskan sekaligus menyiratkan keprihatinan ringan, bukan humor, kemarahan, atau benar-benar netral tanpa sikap."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Social Media and the Teenage Mind)</p><p>Over the past decade, social media platforms have become deeply woven into the daily lives of teenagers around the world. For many, checking notifications, scrolling through feeds, and comparing their lives to those of their peers has become an almost automatic habit. While these platforms offer genuine benefits, such as staying connected with friends, discovering new interests, and finding communities built around shared identities, researchers and psychologists have raised concerns about their effects on adolescent mental health. Because the teenage years are a particularly sensitive period for identity formation and self-esteem, constant exposure to curated, idealized images of other people's lives can intensify feelings of inadequacy or social comparison.<br><br>One frequently discussed concern is the phenomenon sometimes called 'fear of missing out,' or FOMO, in which teenagers feel anxious upon seeing that friends are socializing or having experiences without them. Another concern involves sleep disruption, since many teenagers use their phones late into the night, delaying rest in favor of scrolling. At the same time, it would be an oversimplification to treat social media as uniformly harmful. Some studies suggest that the effects depend heavily on how a platform is used: passively scrolling through others' content tends to correlate more strongly with negative feelings than actively messaging friends or participating in supportive online communities. Parents, educators, and platform designers continue to debate the best way to help teenagers build a healthier relationship with these tools, rather than eliminating them altogether.</p></div><p><b>Soal 1 dari 7:</b> What is the main idea of this passage?</p>",
+    "opts": [
+      "Social media has no effect whatsoever on teenagers' mental health",
+      "Social media has both benefits and potential psychological risks for teenagers, and its effects often depend on how it is used",
+      "All teenagers should be banned from using any social media platform",
+      "FOMO is a made-up condition with no real basis"
+    ],
+    "correct": 1,
+    "explain": "Bacaan menampilkan sisi manfaat (terhubung dengan teman, menemukan komunitas) DAN risiko (FOMO, gangguan tidur, perbandingan sosial), lalu menegaskan efeknya bergantung pada cara penggunaan — inilah gagasan utama yang seimbang, bukan klaim ekstrem di kedua sisi."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Social Media and the Teenage Mind)</p><p>Over the past decade, social media platforms have become deeply woven into the daily lives of teenagers around the world. For many, checking notifications, scrolling through feeds, and comparing their lives to those of their peers has become an almost automatic habit. While these platforms offer genuine benefits, such as staying connected with friends, discovering new interests, and finding communities built around shared identities, researchers and psychologists have raised concerns about their effects on adolescent mental health. Because the teenage years are a particularly sensitive period for identity formation and self-esteem, constant exposure to curated, idealized images of other people's lives can intensify feelings of inadequacy or social comparison.<br><br>One frequently discussed concern is the phenomenon sometimes called 'fear of missing out,' or FOMO, in which teenagers feel anxious upon seeing that friends are socializing or having experiences without them. Another concern involves sleep disruption, since many teenagers use their phones late into the night, delaying rest in favor of scrolling. At the same time, it would be an oversimplification to treat social media as uniformly harmful. Some studies suggest that the effects depend heavily on how a platform is used: passively scrolling through others' content tends to correlate more strongly with negative feelings than actively messaging friends or participating in supportive online communities. Parents, educators, and platform designers continue to debate the best way to help teenagers build a healthier relationship with these tools, rather than eliminating them altogether.</p></div><p><b>Soal 2 dari 7:</b> According to the passage, why are the teenage years described as a particularly sensitive period?</p>",
+    "opts": [
+      "Because teenagers are legally required to use social media",
+      "Because it is a period of identity formation and self-esteem development, making exposure to idealized images especially impactful",
+      "Because teenagers do not yet know how to use phones",
+      "Because psychologists have not studied this age group at all"
+    ],
+    "correct": 1,
+    "explain": "Bacaan menyatakan: \"the teenage years are a particularly sensitive period for identity formation and self-esteem, [so] constant exposure to curated, idealized images ... can intensify feelings of inadequacy or social comparison.\""
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Social Media and the Teenage Mind)</p><p>Over the past decade, social media platforms have become deeply woven into the daily lives of teenagers around the world. For many, checking notifications, scrolling through feeds, and comparing their lives to those of their peers has become an almost automatic habit. While these platforms offer genuine benefits, such as staying connected with friends, discovering new interests, and finding communities built around shared identities, researchers and psychologists have raised concerns about their effects on adolescent mental health. Because the teenage years are a particularly sensitive period for identity formation and self-esteem, constant exposure to curated, idealized images of other people's lives can intensify feelings of inadequacy or social comparison.<br><br>One frequently discussed concern is the phenomenon sometimes called 'fear of missing out,' or FOMO, in which teenagers feel anxious upon seeing that friends are socializing or having experiences without them. Another concern involves sleep disruption, since many teenagers use their phones late into the night, delaying rest in favor of scrolling. At the same time, it would be an oversimplification to treat social media as uniformly harmful. Some studies suggest that the effects depend heavily on how a platform is used: passively scrolling through others' content tends to correlate more strongly with negative feelings than actively messaging friends or participating in supportive online communities. Parents, educators, and platform designers continue to debate the best way to help teenagers build a healthier relationship with these tools, rather than eliminating them altogether.</p></div><p><b>Soal 3 dari 7:</b> The word 'curated' in paragraph 1 is closest in meaning to...</p>",
+    "opts": [
+      "randomly generated",
+      "carefully selected and presented, often to look better than reality",
+      "completely unedited and raw",
+      "scientifically verified"
+    ],
+    "correct": 1,
+    "explain": "\"Curated, idealized images\" merujuk pada konten yang sengaja dipilih/disunting agar terlihat sempurna, bukan gambaran hidup yang apa adanya — jadi \"carefully selected and presented, often to look better than reality\" paling tepat."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Social Media and the Teenage Mind)</p><p>Over the past decade, social media platforms have become deeply woven into the daily lives of teenagers around the world. For many, checking notifications, scrolling through feeds, and comparing their lives to those of their peers has become an almost automatic habit. While these platforms offer genuine benefits, such as staying connected with friends, discovering new interests, and finding communities built around shared identities, researchers and psychologists have raised concerns about their effects on adolescent mental health. Because the teenage years are a particularly sensitive period for identity formation and self-esteem, constant exposure to curated, idealized images of other people's lives can intensify feelings of inadequacy or social comparison.<br><br>One frequently discussed concern is the phenomenon sometimes called 'fear of missing out,' or FOMO, in which teenagers feel anxious upon seeing that friends are socializing or having experiences without them. Another concern involves sleep disruption, since many teenagers use their phones late into the night, delaying rest in favor of scrolling. At the same time, it would be an oversimplification to treat social media as uniformly harmful. Some studies suggest that the effects depend heavily on how a platform is used: passively scrolling through others' content tends to correlate more strongly with negative feelings than actively messaging friends or participating in supportive online communities. Parents, educators, and platform designers continue to debate the best way to help teenagers build a healthier relationship with these tools, rather than eliminating them altogether.</p></div><p><b>Soal 4 dari 7:</b> What can be inferred from the passage about passive scrolling versus active messaging?</p>",
+    "opts": [
+      "They have exactly the same psychological effect on teenagers",
+      "Passive scrolling tends to be associated with more negative feelings than actively engaging with friends online",
+      "Active messaging is always harmful, while passive scrolling is always safe",
+      "Neither activity has been studied by researchers"
+    ],
+    "correct": 1,
+    "explain": "Bacaan menyebutkan langsung: \"passively scrolling through others' content tends to correlate more strongly with negative feelings than actively messaging friends or participating in supportive online communities.\""
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Social Media and the Teenage Mind)</p><p>Over the past decade, social media platforms have become deeply woven into the daily lives of teenagers around the world. For many, checking notifications, scrolling through feeds, and comparing their lives to those of their peers has become an almost automatic habit. While these platforms offer genuine benefits, such as staying connected with friends, discovering new interests, and finding communities built around shared identities, researchers and psychologists have raised concerns about their effects on adolescent mental health. Because the teenage years are a particularly sensitive period for identity formation and self-esteem, constant exposure to curated, idealized images of other people's lives can intensify feelings of inadequacy or social comparison.<br><br>One frequently discussed concern is the phenomenon sometimes called 'fear of missing out,' or FOMO, in which teenagers feel anxious upon seeing that friends are socializing or having experiences without them. Another concern involves sleep disruption, since many teenagers use their phones late into the night, delaying rest in favor of scrolling. At the same time, it would be an oversimplification to treat social media as uniformly harmful. Some studies suggest that the effects depend heavily on how a platform is used: passively scrolling through others' content tends to correlate more strongly with negative feelings than actively messaging friends or participating in supportive online communities. Parents, educators, and platform designers continue to debate the best way to help teenagers build a healthier relationship with these tools, rather than eliminating them altogether.</p></div><p><b>Soal 5 dari 7:</b> All of the following are mentioned as genuine benefits of social media for teenagers EXCEPT...</p>",
+    "opts": [
+      "Staying connected with friends",
+      "Discovering new interests",
+      "Finding communities built around shared identities",
+      "Guaranteed improvement in academic grades"
+    ],
+    "correct": 3,
+    "explain": "Bacaan menyebutkan tiga manfaat: staying connected with friends, discovering new interests, dan finding communities built around shared identities. Peningkatan nilai akademik sama sekali tidak disebutkan sebagai manfaat dalam bacaan ini."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Social Media and the Teenage Mind)</p><p>Over the past decade, social media platforms have become deeply woven into the daily lives of teenagers around the world. For many, checking notifications, scrolling through feeds, and comparing their lives to those of their peers has become an almost automatic habit. While these platforms offer genuine benefits, such as staying connected with friends, discovering new interests, and finding communities built around shared identities, researchers and psychologists have raised concerns about their effects on adolescent mental health. Because the teenage years are a particularly sensitive period for identity formation and self-esteem, constant exposure to curated, idealized images of other people's lives can intensify feelings of inadequacy or social comparison.<br><br>One frequently discussed concern is the phenomenon sometimes called 'fear of missing out,' or FOMO, in which teenagers feel anxious upon seeing that friends are socializing or having experiences without them. Another concern involves sleep disruption, since many teenagers use their phones late into the night, delaying rest in favor of scrolling. At the same time, it would be an oversimplification to treat social media as uniformly harmful. Some studies suggest that the effects depend heavily on how a platform is used: passively scrolling through others' content tends to correlate more strongly with negative feelings than actively messaging friends or participating in supportive online communities. Parents, educators, and platform designers continue to debate the best way to help teenagers build a healthier relationship with these tools, rather than eliminating them altogether.</p></div><p><b>Soal 6 dari 7:</b> What does 'these tools' refer to in the final sentence of the passage?</p>",
+    "opts": [
+      "Sleep schedules",
+      "Social media platforms",
+      "Parents and educators",
+      "Feelings of inadequacy"
+    ],
+    "correct": 1,
+    "explain": "Kalimat terakhir membahas cara membantu remaja membangun hubungan yang lebih sehat dengan \"these tools\" alih-alih menghilangkannya sama sekali — merujuk kembali ke topik utama bacaan, yaitu platform media sosial."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Social Media and the Teenage Mind)</p><p>Over the past decade, social media platforms have become deeply woven into the daily lives of teenagers around the world. For many, checking notifications, scrolling through feeds, and comparing their lives to those of their peers has become an almost automatic habit. While these platforms offer genuine benefits, such as staying connected with friends, discovering new interests, and finding communities built around shared identities, researchers and psychologists have raised concerns about their effects on adolescent mental health. Because the teenage years are a particularly sensitive period for identity formation and self-esteem, constant exposure to curated, idealized images of other people's lives can intensify feelings of inadequacy or social comparison.<br><br>One frequently discussed concern is the phenomenon sometimes called 'fear of missing out,' or FOMO, in which teenagers feel anxious upon seeing that friends are socializing or having experiences without them. Another concern involves sleep disruption, since many teenagers use their phones late into the night, delaying rest in favor of scrolling. At the same time, it would be an oversimplification to treat social media as uniformly harmful. Some studies suggest that the effects depend heavily on how a platform is used: passively scrolling through others' content tends to correlate more strongly with negative feelings than actively messaging friends or participating in supportive online communities. Parents, educators, and platform designers continue to debate the best way to help teenagers build a healthier relationship with these tools, rather than eliminating them altogether.</p></div><p><b>Soal 7 dari 7:</b> What is the author's purpose in writing this passage?</p>",
+    "opts": [
+      "To convince readers that social media should be completely banned for teenagers",
+      "To present a balanced overview of both the benefits and psychological risks of social media use among teenagers",
+      "To advertise a specific social media platform as the safest option",
+      "To argue that psychologists are wrong to study this topic"
+    ],
+    "correct": 1,
+    "explain": "Penulis memaparkan manfaat dan risiko secara berimbang, lalu menutup dengan menyebut perdebatan yang masih berlangsung tentang cara terbaik membantu remaja — tujuannya memberikan gambaran seimbang, bukan mengampanyekan larangan total atau produk tertentu."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Coral Reefs and the Threat of Bleaching)</p><p>Coral reefs are often described as the 'rainforests of the sea' because, despite covering less than one percent of the ocean floor, they support an extraordinarily high proportion of marine life. This biodiversity is made possible by a remarkable partnership between coral polyps, the tiny animals that build reef structures, and microscopic algae called zooxanthellae that live within the coral's tissue. The algae photosynthesize and provide the coral with energy, while the coral offers the algae a protected environment and access to sunlight. This relationship also gives healthy coral its vivid colors, since the pigments largely come from the algae themselves.<br><br>When ocean temperatures rise even slightly above normal for an extended period, this delicate partnership can break down. Stressed coral polyps expel the zooxanthellae living inside them, causing the coral to lose its color and turn strikingly white, a phenomenon known as coral bleaching. Bleached coral is not necessarily dead, but it becomes far more vulnerable to disease and starvation, since it has lost its main source of energy. If favorable conditions return quickly enough, some coral can recover by taking in new algae; if the stress continues for too long, however, the coral often dies, leaving behind a fragile skeleton that can no longer support the same diversity of marine species. Because reefs provide habitat, food, and even coastal protection from storms for millions of people, scientists consider widespread bleaching events a serious warning sign of the broader effects of a warming ocean.</p></div><p><b>Soal 1 dari 7:</b> What is the main idea of this passage?</p>",
+    "opts": [
+      "Coral reefs are unimportant ecosystems that cover most of the ocean floor",
+      "Coral reefs rely on a delicate partnership with algae, and rising ocean temperatures threaten this relationship through a process called bleaching",
+      "Coral bleaching always results in immediate and permanent death of the reef",
+      "Zooxanthellae harm coral polyps rather than helping them"
+    ],
+    "correct": 1,
+    "explain": "Bacaan menjelaskan hubungan simbiosis karang-alga yang membuat terumbu karang begitu hidup, lalu menjelaskan bagaimana kenaikan suhu laut mengganggu hubungan itu dan menyebabkan pemutihan — inilah gagasan utamanya, bukan klaim bahwa karang tidak penting atau bahwa alga merugikan karang."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Coral Reefs and the Threat of Bleaching)</p><p>Coral reefs are often described as the 'rainforests of the sea' because, despite covering less than one percent of the ocean floor, they support an extraordinarily high proportion of marine life. This biodiversity is made possible by a remarkable partnership between coral polyps, the tiny animals that build reef structures, and microscopic algae called zooxanthellae that live within the coral's tissue. The algae photosynthesize and provide the coral with energy, while the coral offers the algae a protected environment and access to sunlight. This relationship also gives healthy coral its vivid colors, since the pigments largely come from the algae themselves.<br><br>When ocean temperatures rise even slightly above normal for an extended period, this delicate partnership can break down. Stressed coral polyps expel the zooxanthellae living inside them, causing the coral to lose its color and turn strikingly white, a phenomenon known as coral bleaching. Bleached coral is not necessarily dead, but it becomes far more vulnerable to disease and starvation, since it has lost its main source of energy. If favorable conditions return quickly enough, some coral can recover by taking in new algae; if the stress continues for too long, however, the coral often dies, leaving behind a fragile skeleton that can no longer support the same diversity of marine species. Because reefs provide habitat, food, and even coastal protection from storms for millions of people, scientists consider widespread bleaching events a serious warning sign of the broader effects of a warming ocean.</p></div><p><b>Soal 2 dari 7:</b> According to the passage, what specifically causes coral to display vivid colors?</p>",
+    "opts": [
+      "Minerals absorbed directly from seawater",
+      "Pigments that largely come from the zooxanthellae algae living within the coral's tissue",
+      "Artificial dyes produced by the coral itself",
+      "Sunlight reflecting off the coral's skeleton"
+    ],
+    "correct": 1,
+    "explain": "Bacaan menyatakan: \"This relationship also gives healthy coral its vivid colors, since the pigments largely come from the algae themselves.\""
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Coral Reefs and the Threat of Bleaching)</p><p>Coral reefs are often described as the 'rainforests of the sea' because, despite covering less than one percent of the ocean floor, they support an extraordinarily high proportion of marine life. This biodiversity is made possible by a remarkable partnership between coral polyps, the tiny animals that build reef structures, and microscopic algae called zooxanthellae that live within the coral's tissue. The algae photosynthesize and provide the coral with energy, while the coral offers the algae a protected environment and access to sunlight. This relationship also gives healthy coral its vivid colors, since the pigments largely come from the algae themselves.<br><br>When ocean temperatures rise even slightly above normal for an extended period, this delicate partnership can break down. Stressed coral polyps expel the zooxanthellae living inside them, causing the coral to lose its color and turn strikingly white, a phenomenon known as coral bleaching. Bleached coral is not necessarily dead, but it becomes far more vulnerable to disease and starvation, since it has lost its main source of energy. If favorable conditions return quickly enough, some coral can recover by taking in new algae; if the stress continues for too long, however, the coral often dies, leaving behind a fragile skeleton that can no longer support the same diversity of marine species. Because reefs provide habitat, food, and even coastal protection from storms for millions of people, scientists consider widespread bleaching events a serious warning sign of the broader effects of a warming ocean.</p></div><p><b>Soal 3 dari 7:</b> The word 'expel' in paragraph 2 is closest in meaning to...</p>",
+    "opts": [
+      "absorb or take in",
+      "push out or release from within",
+      "photograph or observe",
+      "protect and shelter"
+    ],
+    "correct": 1,
+    "explain": "Konteksnya: \"Stressed coral polyps expel the zooxanthellae living inside them, causing the coral to lose its color.\" Karang mengeluarkan/membuang alga dari dalam tubuhnya, sehingga \"push out or release from within\" adalah padanan yang tepat."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Coral Reefs and the Threat of Bleaching)</p><p>Coral reefs are often described as the 'rainforests of the sea' because, despite covering less than one percent of the ocean floor, they support an extraordinarily high proportion of marine life. This biodiversity is made possible by a remarkable partnership between coral polyps, the tiny animals that build reef structures, and microscopic algae called zooxanthellae that live within the coral's tissue. The algae photosynthesize and provide the coral with energy, while the coral offers the algae a protected environment and access to sunlight. This relationship also gives healthy coral its vivid colors, since the pigments largely come from the algae themselves.<br><br>When ocean temperatures rise even slightly above normal for an extended period, this delicate partnership can break down. Stressed coral polyps expel the zooxanthellae living inside them, causing the coral to lose its color and turn strikingly white, a phenomenon known as coral bleaching. Bleached coral is not necessarily dead, but it becomes far more vulnerable to disease and starvation, since it has lost its main source of energy. If favorable conditions return quickly enough, some coral can recover by taking in new algae; if the stress continues for too long, however, the coral often dies, leaving behind a fragile skeleton that can no longer support the same diversity of marine species. Because reefs provide habitat, food, and even coastal protection from storms for millions of people, scientists consider widespread bleaching events a serious warning sign of the broader effects of a warming ocean.</p></div><p><b>Soal 4 dari 7:</b> What can be inferred about bleached coral that does not receive favorable conditions soon enough?</p>",
+    "opts": [
+      "It will instantly regrow brighter colors than before",
+      "It is likely to die, since it remains without its main energy source for too long",
+      "It will turn into a completely different species of coral",
+      "It has no relationship to ocean temperature at all"
+    ],
+    "correct": 1,
+    "explain": "Bacaan menyatakan: \"if the stress continues for too long, however, the coral often dies, leaving behind a fragile skeleton.\" Ini mendukung inferensi bahwa karang yang tidak segera mendapat kondisi yang membaik cenderung mati."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Coral Reefs and the Threat of Bleaching)</p><p>Coral reefs are often described as the 'rainforests of the sea' because, despite covering less than one percent of the ocean floor, they support an extraordinarily high proportion of marine life. This biodiversity is made possible by a remarkable partnership between coral polyps, the tiny animals that build reef structures, and microscopic algae called zooxanthellae that live within the coral's tissue. The algae photosynthesize and provide the coral with energy, while the coral offers the algae a protected environment and access to sunlight. This relationship also gives healthy coral its vivid colors, since the pigments largely come from the algae themselves.<br><br>When ocean temperatures rise even slightly above normal for an extended period, this delicate partnership can break down. Stressed coral polyps expel the zooxanthellae living inside them, causing the coral to lose its color and turn strikingly white, a phenomenon known as coral bleaching. Bleached coral is not necessarily dead, but it becomes far more vulnerable to disease and starvation, since it has lost its main source of energy. If favorable conditions return quickly enough, some coral can recover by taking in new algae; if the stress continues for too long, however, the coral often dies, leaving behind a fragile skeleton that can no longer support the same diversity of marine species. Because reefs provide habitat, food, and even coastal protection from storms for millions of people, scientists consider widespread bleaching events a serious warning sign of the broader effects of a warming ocean.</p></div><p><b>Soal 5 dari 7:</b> All of the following are mentioned as things coral reefs provide to millions of people EXCEPT...</p>",
+    "opts": [
+      "Habitat",
+      "Food",
+      "Coastal protection from storms",
+      "A direct source of drinking water"
+    ],
+    "correct": 3,
+    "explain": "Bacaan menyebutkan habitat, food, dan coastal protection from storms sebagai manfaat terumbu karang bagi manusia. Sumber air minum langsung sama sekali tidak disebutkan."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Coral Reefs and the Threat of Bleaching)</p><p>Coral reefs are often described as the 'rainforests of the sea' because, despite covering less than one percent of the ocean floor, they support an extraordinarily high proportion of marine life. This biodiversity is made possible by a remarkable partnership between coral polyps, the tiny animals that build reef structures, and microscopic algae called zooxanthellae that live within the coral's tissue. The algae photosynthesize and provide the coral with energy, while the coral offers the algae a protected environment and access to sunlight. This relationship also gives healthy coral its vivid colors, since the pigments largely come from the algae themselves.<br><br>When ocean temperatures rise even slightly above normal for an extended period, this delicate partnership can break down. Stressed coral polyps expel the zooxanthellae living inside them, causing the coral to lose its color and turn strikingly white, a phenomenon known as coral bleaching. Bleached coral is not necessarily dead, but it becomes far more vulnerable to disease and starvation, since it has lost its main source of energy. If favorable conditions return quickly enough, some coral can recover by taking in new algae; if the stress continues for too long, however, the coral often dies, leaving behind a fragile skeleton that can no longer support the same diversity of marine species. Because reefs provide habitat, food, and even coastal protection from storms for millions of people, scientists consider widespread bleaching events a serious warning sign of the broader effects of a warming ocean.</p></div><p><b>Soal 6 dari 7:</b> What does 'this delicate partnership' refer to in paragraph 2?</p>",
+    "opts": [
+      "The relationship between scientists and coastal communities",
+      "The symbiotic relationship between coral polyps and zooxanthellae algae",
+      "The relationship between ocean currents and coastal storms",
+      "The relationship between coral skeletons and fish species"
+    ],
+    "correct": 1,
+    "explain": "Paragraf pertama menjelaskan hubungan simbiosis antara coral polyps dan zooxanthellae; paragraf kedua membuka dengan \"this delicate partnership can break down,\" merujuk langsung ke hubungan tersebut."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Coral Reefs and the Threat of Bleaching)</p><p>Coral reefs are often described as the 'rainforests of the sea' because, despite covering less than one percent of the ocean floor, they support an extraordinarily high proportion of marine life. This biodiversity is made possible by a remarkable partnership between coral polyps, the tiny animals that build reef structures, and microscopic algae called zooxanthellae that live within the coral's tissue. The algae photosynthesize and provide the coral with energy, while the coral offers the algae a protected environment and access to sunlight. This relationship also gives healthy coral its vivid colors, since the pigments largely come from the algae themselves.<br><br>When ocean temperatures rise even slightly above normal for an extended period, this delicate partnership can break down. Stressed coral polyps expel the zooxanthellae living inside them, causing the coral to lose its color and turn strikingly white, a phenomenon known as coral bleaching. Bleached coral is not necessarily dead, but it becomes far more vulnerable to disease and starvation, since it has lost its main source of energy. If favorable conditions return quickly enough, some coral can recover by taking in new algae; if the stress continues for too long, however, the coral often dies, leaving behind a fragile skeleton that can no longer support the same diversity of marine species. Because reefs provide habitat, food, and even coastal protection from storms for millions of people, scientists consider widespread bleaching events a serious warning sign of the broader effects of a warming ocean.</p></div><p><b>Soal 7 dari 7:</b> What is the author's tone toward the topic of coral bleaching?</p>",
+    "opts": [
+      "Indifferent, suggesting the topic does not matter",
+      "Informative with an underlying tone of concern about the broader consequences of a warming ocean",
+      "Celebratory, praising bleaching as a positive natural event",
+      "Purely comedic, treating coral bleaching as an amusing topic"
+    ],
+    "correct": 1,
+    "explain": "Penulis menjelaskan proses biologis secara informatif, lalu menutup dengan menyebut bahwa ilmuwan menganggap pemutihan karang sebagai \"a serious warning sign of the broader effects of a warming ocean\" — nada ini informatif sekaligus menyiratkan keprihatinan, bukan acuh, merayakan, atau lucu."
+  }
+]
