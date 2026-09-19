@@ -344,7 +344,7 @@ const subjectsData = {
     desc:'Mekanika, listrik-magnet, gelombang, dan lainnya.',
     babs:[
       {id:'bab1-besaran-dan-satuan', num:'Bab 1', title:'Pengantar Ilmu Fisika: Besaran & Satuan', desc:'Hakikat fisika, cabang-cabang fisika klasik, 7 besaran pokok SI, besaran turunan & dimensi, hingga notasi ilmiah.', ready:true, estMinutes:20, subbabCount:8},
-      {id:'bab2-vektor-2d', num:'Bab 2', title:'Vektor Bidang 2D', desc:'Penguraian vektor ke komponen, kesamaan & pengurangan vektor, penjumlahan & resultan, perkalian titik & silang, hingga simulasi 3D interaktif.', ready:true, estMinutes:26, subbabCount:8},
+      {id:'bab2-vektor-2d', num:'Bab 2', title:'Vektor Bidang 2D', desc:'Penguraian vektor ke komponen, kesamaan & pengurangan vektor, penjumlahan & resultan, perkalian titik & silang, simulasi 3D interaktif, hingga pengayaan vektor dalam ruang 3D.', ready:true, estMinutes:28, subbabCount:9},
     ]
   },
   sejarah: {
