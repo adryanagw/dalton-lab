@@ -208,8 +208,18 @@ module.exports = async function handler(req, res) {
       return;
     }
 
+    // IP from the standard proxy-chain header (Vercel sets x-forwarded-for;
+    // first entry is the actual client). Geo fields come from Vercel's
+    // edge geolocation headers — no third-party lookup needed, and they're
+    // simply absent (null) when running locally / off Vercel.
+    const ip = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim() || null;
+    const geoCity = req.headers['x-vercel-ip-city'] ? decodeURIComponent(req.headers['x-vercel-ip-city']) : null;
+    const geoRegion = req.headers['x-vercel-ip-country-region'] || null;
+    const geoCountry = req.headers['x-vercel-ip-country'] || null;
+
     await sql`
-      INSERT INTO sessions (username, sid, user_agent) VALUES (${user.username}, ${sid}, ${req.headers['user-agent'] || null})
+      INSERT INTO sessions (username, sid, user_agent, ip_address, geo_city, geo_region, geo_country)
+      VALUES (${user.username}, ${sid}, ${req.headers['user-agent'] || null}, ${ip}, ${geoCity}, ${geoRegion}, ${geoCountry})
     `;
 
     res.status(200).json({ success: true, nama: user.nama, expiresAt, token });

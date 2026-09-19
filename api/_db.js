@@ -120,6 +120,10 @@ async function ensureSchema() {
         username   TEXT NOT NULL,
         sid        TEXT UNIQUE NOT NULL,
         user_agent TEXT,
+        ip_address TEXT,
+        geo_city   TEXT,
+        geo_region TEXT,
+        geo_country TEXT,
         created_at TIMESTAMPTZ NOT NULL DEFAULT now()
       )
     `
@@ -145,6 +149,17 @@ async function ensureSchema() {
     sql`ALTER TABLE users ADD COLUMN IF NOT EXISTS sekolah TEXT`,
     sql`ALTER TABLE users ADD COLUMN IF NOT EXISTS kelas TEXT`,
     sql`ALTER TABLE users ADD COLUMN IF NOT EXISTS tanggal_lahir DATE`
+  ]);
+
+  // Retrofit for the sessions table's IP/location columns, added after
+  // that table already existed live (same reasoning as the users columns
+  // above) — captured at login time from the request's forwarded-IP and
+  // Vercel's edge geo headers, shown to admin on the Sesi Aktif page.
+  await Promise.all([
+    sql`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS ip_address TEXT`,
+    sql`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS geo_city TEXT`,
+    sql`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS geo_region TEXT`,
+    sql`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS geo_country TEXT`
   ]);
 
   await sql`
