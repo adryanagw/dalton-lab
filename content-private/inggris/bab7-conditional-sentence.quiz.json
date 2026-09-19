@@ -1,0 +1,428 @@
+[
+  {
+    "q": "\"If you touch fire, you get burned.\" Kalimat ini termasuk conditional tipe apa?",
+    "opts": ["Tipe 0 (Zero Conditional)", "Tipe 1 (First Conditional)", "Tipe 2 (Second Conditional)", "Tipe 3 (Third Conditional)"],
+    "correct": 0,
+    "explain": "Kedua klausa pakai present simple (touch, get burned) dan menyatakan fakta yang selalu benar — ini pola Zero Conditional, dipakai untuk kebenaran umum/hukum alam."
+  },
+  {
+    "q": "\"If she studies hard, she will pass the exam.\" Kalimat ini termasuk conditional tipe apa?",
+    "opts": ["Tipe 0", "Tipe 1", "Tipe 2", "Tipe 3"],
+    "correct": 1,
+    "explain": "If-clause pakai present simple (studies) dan main clause pakai will + V1 (will pass) — pola First Conditional, untuk kondisi nyata dan mungkin terjadi di masa depan."
+  },
+  {
+    "q": "\"If I were rich, I would buy a mansion.\" Kalimat ini termasuk conditional tipe apa?",
+    "opts": ["Tipe 0", "Tipe 1", "Tipe 2", "Tipe 3"],
+    "correct": 2,
+    "explain": "If-clause pakai past simple dengan \"were\" untuk subjek \"I\" (ciri khas Tipe 2), main clause pakai would + V1 — pola Second Conditional, khayalan yang tidak nyata sekarang."
+  },
+  {
+    "q": "\"If he had left earlier, he would have caught the train.\" Kalimat ini termasuk conditional tipe apa?",
+    "opts": ["Tipe 0", "Tipe 1", "Tipe 2", "Tipe 3"],
+    "correct": 3,
+    "explain": "If-clause pakai past perfect (had left) dan main clause pakai would have + V3 (would have caught) — pola Third Conditional, penyesalan tentang sesuatu yang sudah tidak bisa diubah di masa lalu."
+  },
+  {
+    "q": "\"Ice melts if you heat it.\" Kalimat ini termasuk conditional tipe apa?",
+    "opts": ["Tipe 0", "Tipe 1", "Tipe 2", "Tipe 3"],
+    "correct": 0,
+    "explain": "Kedua klausa present simple dan menyatakan fakta ilmiah yang selalu benar — Zero Conditional. Perhatikan main clause ditulis duluan di sini, tapi tipenya tetap ditentukan dari tense, bukan urutan."
+  },
+  {
+    "q": "\"If I had wings, I would fly.\" Kalimat ini termasuk conditional tipe apa?",
+    "opts": ["Tipe 0", "Tipe 1", "Tipe 2", "Tipe 3"],
+    "correct": 2,
+    "explain": "If-clause past simple (had), main clause would + V1 (would fly) — Second Conditional, khayalan yang bertentangan dengan kenyataan sekarang (kenyataannya manusia tidak punya sayap)."
+  },
+  {
+    "q": "\"If they had practiced more, they would have won.\" Kalimat ini termasuk conditional tipe apa?",
+    "opts": ["Tipe 0", "Tipe 1", "Tipe 2", "Tipe 3"],
+    "correct": 3,
+    "explain": "If-clause past perfect (had practiced), main clause would have + V3 (would have won) — Third Conditional, membayangkan hasil berbeda dari kejadian masa lalu yang sudah selesai."
+  },
+  {
+    "q": "\"If you don't hurry, you will miss the bus.\" Kalimat ini termasuk conditional tipe apa?",
+    "opts": ["Tipe 0", "Tipe 1", "Tipe 2", "Tipe 3"],
+    "correct": 1,
+    "explain": "If-clause present simple negatif (don't hurry), main clause will + V1 (will miss) — First Conditional, peringatan tentang konsekuensi nyata di masa depan."
+  },
+  {
+    "q": "\"Water boils if you heat it to 100°C.\" Kalimat ini termasuk conditional tipe apa?",
+    "opts": ["Tipe 0", "Tipe 1", "Tipe 2", "Tipe 3"],
+    "correct": 0,
+    "explain": "Fakta ilmiah, kedua klausa present simple — Zero Conditional."
+  },
+  {
+    "q": "\"If I hadn't missed the bus, I wouldn't have been late.\" Kalimat ini termasuk conditional tipe apa?",
+    "opts": ["Tipe 0", "Tipe 1", "Tipe 2", "Tipe 3"],
+    "correct": 3,
+    "explain": "If-clause past perfect negatif (hadn't missed), main clause would have + V3 negatif (wouldn't have been) — Third Conditional, penyesalan atas kejadian masa lalu."
+  },
+  {
+    "q": "If she ___ (study) hard, she will pass the exam.",
+    "opts": ["study", "studies", "studied", "had studied"],
+    "correct": 1,
+    "explain": "Ini Tipe 1 (ditandai \"will pass\" di main clause) — if-clause harus present simple, dan karena subjeknya \"she\" (orang ketiga tunggal), butuh akhiran -es: \"studies\"."
+  },
+  {
+    "q": "If I ___ (be) you, I would apologize.",
+    "opts": ["am", "was", "were", "had been"],
+    "correct": 2,
+    "explain": "Ini pola \"if I were you\" khas Tipe 2 — bentuk to be di if-clause hipotetis selalu \"were\" untuk semua subjek, termasuk \"I\"."
+  },
+  {
+    "q": "If it ___ (rain), the ground gets wet. (kebenaran umum)",
+    "opts": ["rain", "rains", "rained", "will rain"],
+    "correct": 1,
+    "explain": "Main clause \"gets wet\" pakai present simple, menandakan Zero Conditional — if-clause juga harus present simple, dan subjek \"it\" butuh -s: \"rains\"."
+  },
+  {
+    "q": "If they had known about the meeting, they ___ (help) prepare it.",
+    "opts": ["would help", "will help", "would have helped", "helped"],
+    "correct": 2,
+    "explain": "If-clause pakai past perfect (\"had known\") — ciri Tipe 3, jadi main clause harus \"would have + V3\": \"would have helped\"."
+  },
+  {
+    "q": "If we ___ (leave) now, we will arrive on time.",
+    "opts": ["leave", "left", "had left", "will leave"],
+    "correct": 0,
+    "explain": "Main clause \"will arrive\" menandakan Tipe 1 — if-clause harus present simple: \"leave\" (subjek \"we\", tidak butuh -s)."
+  },
+  {
+    "q": "If I had more time, I ___ (finish) the project.",
+    "opts": ["will finish", "would finish", "would have finished", "finished"],
+    "correct": 1,
+    "explain": "If-clause \"had\" adalah past simple (bukan past perfect \"had had\"), jadi ini Tipe 2 murni — main clause harus \"would + V1\": \"would finish\"."
+  },
+  {
+    "q": "If you heat ice, it ___ (melt).",
+    "opts": ["melt", "melts", "melted", "will melt"],
+    "correct": 1,
+    "explain": "Fakta ilmiah, Zero Conditional — kedua klausa present simple, subjek \"it\" butuh -s: \"melts\"."
+  },
+  {
+    "q": "If she ___ (not study), she would fail.",
+    "opts": ["doesn't study", "didn't study", "hadn't studied", "won't study"],
+    "correct": 1,
+    "explain": "Main clause \"would fail\" menandakan Tipe 2 — if-clause harus past simple negatif: \"didn't study\"."
+  },
+  {
+    "q": "If he had studied, he ___ (pass) the test.",
+    "opts": ["would pass", "will pass", "would have passed", "passes"],
+    "correct": 2,
+    "explain": "If-clause past perfect (\"had studied\") menandakan Tipe 3 — main clause harus \"would have + V3\": \"would have passed\"."
+  },
+  {
+    "q": "If I win the lottery, I ___ (buy) a house.",
+    "opts": ["buy", "would buy", "will buy", "bought"],
+    "correct": 2,
+    "explain": "If-clause \"win\" adalah present simple — pola Tipe 1 (kondisi realistis di masa depan) — main clause harus \"will + V1\": \"will buy\"."
+  },
+  {
+    "q": "If I ___ (know) the answer, I would tell you.",
+    "opts": ["know", "knew", "had known", "will know"],
+    "correct": 1,
+    "explain": "Main clause \"would tell\" menandakan Tipe 2 — if-clause harus past simple: \"knew\"."
+  },
+  {
+    "q": "If water freezes, it ___ (expand).",
+    "opts": ["expand", "expands", "expanded", "will expand"],
+    "correct": 1,
+    "explain": "Fakta ilmiah tentang sifat air — Zero Conditional, kedua klausa present simple: \"expands\"."
+  },
+  {
+    "q": "If you ___ (arrive) late again, you will be fired.",
+    "opts": ["arrive", "arrived", "had arrived", "will arrive"],
+    "correct": 0,
+    "explain": "Main clause \"will be fired\" menandakan Tipe 1 — if-clause harus present simple: \"arrive\"."
+  },
+  {
+    "q": "If I ___ (be) a bird, I would fly to every country.",
+    "opts": ["am", "was", "were", "will be"],
+    "correct": 2,
+    "explain": "Khayalan murni tidak mungkin (manusia tidak bisa jadi burung) dengan \"would fly\" di main clause — Tipe 2, dan \"to be\" hipotetis untuk \"I\" tetap \"were\"."
+  },
+  {
+    "q": "Manakah kalimat yang mengandung kesalahan grammar?",
+    "opts": [
+      "If it rains, we will stay home.",
+      "If it will rain, we will stay home.",
+      "If it rains, we stay home.",
+      "If it doesn't rain, we won't stay home."
+    ],
+    "correct": 1,
+    "explain": "\"If it will rain\" salah karena if-clause tidak boleh memakai \"will\" — seharusnya \"If it rains, we will stay home.\" Will hanya boleh ada di main clause Tipe 1."
+  },
+  {
+    "q": "Manakah kalimat yang mengandung kesalahan grammar?",
+    "opts": [
+      "If I were you, I would take the job.",
+      "If I was you, I would take the job.",
+      "If she were rich, she would travel.",
+      "If it were possible, I would help."
+    ],
+    "correct": 1,
+    "explain": "\"If I was you\" salah — untuk subjek hipotetis di Tipe 2, bentuk to be yang benar adalah \"were\" untuk semua subjek, termasuk \"I\": seharusnya \"If I were you\"."
+  },
+  {
+    "q": "Manakah kalimat yang mengandung kesalahan grammar?",
+    "opts": [
+      "If she studied harder, she would pass.",
+      "If she studies harder, she will pass.",
+      "If she studied harder, she will pass.",
+      "If she had studied harder, she would have passed."
+    ],
+    "correct": 2,
+    "explain": "\"If she studied harder, she will pass\" mencampur if-clause Tipe 2 (past simple: studied) dengan main clause Tipe 1 (will pass) — tense-nya tidak konsisten. Seharusnya \"would pass\" (Tipe 2 penuh) atau ubah if-clause jadi \"studies\" (Tipe 1 penuh)."
+  },
+  {
+    "q": "Manakah kalimat yang mengandung kesalahan grammar?",
+    "opts": [
+      "If they had arrived early, they would have arrived on time.",
+      "If they had arrived early, they would arrive on time.",
+      "If they arrived early, they would arrive on time.",
+      "If they arrive early, they will arrive on time."
+    ],
+    "correct": 1,
+    "explain": "If-clause \"had arrived\" adalah past perfect (ciri Tipe 3), tapi main clause \"would arrive\" cuma \"would + V1\" (ciri Tipe 2) — kurang \"have\". Seharusnya \"would have arrived\"."
+  },
+  {
+    "q": "Manakah kalimat yang mengandung kesalahan grammar?",
+    "opts": [
+      "If I had money, I would travel.",
+      "If I have money, I will travel.",
+      "If I would have money, I would travel.",
+      "If I had had money, I would have traveled."
+    ],
+    "correct": 2,
+    "explain": "\"If I would have money\" salah karena if-clause tidak boleh memakai \"would\" — seharusnya \"If I had money, I would travel.\""
+  },
+  {
+    "q": "Manakah kalimat yang mengandung kesalahan grammar?",
+    "opts": [
+      "If you heat water, it boils.",
+      "If you heat water, it boil.",
+      "Water boils if you heat it.",
+      "If water is heated, it boils."
+    ],
+    "correct": 1,
+    "explain": "Subjek \"it\" (orang ketiga tunggal) di present simple butuh akhiran -s: seharusnya \"it boils\", bukan \"it boil\"."
+  },
+  {
+    "q": "Manakah kalimat yang mengandung kesalahan grammar?",
+    "opts": [
+      "If he doesn't hurry, he will miss the bus.",
+      "If he doesn't hurry, he will misses the bus.",
+      "If he hurries, he won't miss the bus.",
+      "He will miss the bus if he doesn't hurry."
+    ],
+    "correct": 1,
+    "explain": "Setelah modal \"will\", kata kerja harus bentuk dasar (V1) tanpa -s — seharusnya \"will miss\", bukan \"will misses\"."
+  },
+  {
+    "q": "Manakah kalimat yang mengandung kesalahan grammar?",
+    "opts": [
+      "If I had seen you, I would have said hello.",
+      "If I had seen you, I would said hello.",
+      "If I saw you, I would say hello.",
+      "If I see you, I will say hello."
+    ],
+    "correct": 1,
+    "explain": "Main clause Tipe 3 butuh \"would have + V3\" — \"would said\" salah karena kurang \"have\" dan \"said\" (V2/V3) tidak bisa langsung menempel setelah \"would\". Seharusnya \"would have said\"."
+  },
+  {
+    "q": "Ubah kalimat Tipe 1 berikut menjadi Tipe 2: \"If it rains, we will cancel the trip.\"",
+    "opts": [
+      "If it rained, we would cancel the trip.",
+      "If it rains, we would cancel the trip.",
+      "If it had rained, we would have cancelled the trip.",
+      "If it rains, we will have cancelled the trip."
+    ],
+    "correct": 0,
+    "explain": "Transformasi Tipe 1 → Tipe 2: if-clause present simple → past simple (rains → rained), main clause will + V1 → would + V1 (will cancel → would cancel)."
+  },
+  {
+    "q": "Ubah kalimat Tipe 2 berikut menjadi Tipe 3: \"If I had money, I would buy a car.\"",
+    "opts": [
+      "If I have money, I will buy a car.",
+      "If I had had money, I would have bought a car.",
+      "If I had money, I would have bought a car.",
+      "If I have had money, I would buy a car."
+    ],
+    "correct": 1,
+    "explain": "Transformasi Tipe 2 → Tipe 3: if-clause past simple → past perfect (had → had had), main clause would + V1 → would have + V3 (would buy → would have bought)."
+  },
+  {
+    "q": "Ubah kalimat Tipe 3 berikut menjadi Tipe 2: \"If she had known the answer, she would have told us.\"",
+    "opts": [
+      "If she knows the answer, she will tell us.",
+      "If she knew the answer, she would tell us.",
+      "If she had known the answer, she would tell us.",
+      "If she knew the answer, she would have told us."
+    ],
+    "correct": 1,
+    "explain": "Transformasi Tipe 3 → Tipe 2: if-clause past perfect → past simple (had known → knew), main clause would have + V3 → would + V1 (would have told → would tell)."
+  },
+  {
+    "q": "Gabungkan menjadi satu kalimat conditional Tipe 1 dengan urutan main clause duluan (tanpa koma): \"If she calls, I will answer.\"",
+    "opts": [
+      "I will answer, if she calls.",
+      "I will answer if she calls.",
+      "If she calls I will answer.",
+      "I answer if she will call."
+    ],
+    "correct": 1,
+    "explain": "Kalau main clause ditulis duluan, tidak perlu koma: \"I will answer if she calls.\" Koma hanya dipakai kalau if-clause ditulis lebih dulu."
+  },
+  {
+    "q": "Manakah penulisan yang benar untuk conditional dengan if-clause di awal kalimat?",
+    "opts": [
+      "If it rains we will stay home.",
+      "If it rains, we will stay home.",
+      "It, if rains, we will stay home.",
+      "If, it rains we will stay home."
+    ],
+    "correct": 1,
+    "explain": "Aturan koma: kalau if-clause ditulis duluan, wajib pakai koma sebelum main clause dimulai — \"If it rains, we will stay home.\""
+  },
+  {
+    "q": "\"We will stay home if it rains.\" — apakah penulisan tanpa koma ini benar?",
+    "opts": [
+      "Benar, karena main clause ditulis duluan sehingga tidak perlu koma",
+      "Salah, harus tetap pakai koma di semua conditional sentence",
+      "Salah, urutan klausanya harus dibalik dulu",
+      "Benar, tapi hanya berlaku untuk Tipe 0"
+    ],
+    "correct": 0,
+    "explain": "Aturan koma cuma berlaku kalau if-clause di depan. Kalau main clause di depan seperti di sini, tidak perlu koma sama sekali — dan aturan ini berlaku untuk semua tipe, tidak khusus Tipe 0."
+  },
+  {
+    "q": "Rewrite: \"If I have enough time, I visit my grandmother every weekend.\" — kalimat ini termasuk tipe apa, dan kenapa?",
+    "opts": [
+      "Tipe 1, karena \"will visit\" ada di main clause",
+      "Tipe 0, karena menyatakan kebiasaan rutin dengan present simple di kedua klausa",
+      "Tipe 2, karena membicarakan sesuatu yang tidak nyata",
+      "Tipe 3, karena membicarakan masa lalu"
+    ],
+    "correct": 1,
+    "explain": "Kedua klausa pakai present simple (\"have\", \"visit\") dan menyatakan kebiasaan/rutinitas yang selalu terjadi — ini fungsi kedua dari Zero Conditional (bukan cuma fakta ilmiah, tapi juga kebiasaan tetap)."
+  },
+  {
+    "q": "\"If I had studied medicine, I would be a doctor now.\" Ini adalah contoh dari apa?",
+    "opts": [
+      "Tipe 2 murni",
+      "Tipe 3 murni",
+      "Mixed conditional: syarat di masa lalu, akibat di masa kini",
+      "Mixed conditional: syarat di masa kini, akibat di masa lalu"
+    ],
+    "correct": 2,
+    "explain": "If-clause pakai past perfect (had studied — syarat yang gagal terjadi di masa lalu), tapi main clause pakai would + V1 (would be, tanpa \"have\") karena akibatnya dirasakan SEKARANG (\"now\") — pola mixed conditional: masa lalu → masa kini."
+  },
+  {
+    "q": "\"If she weren't so shy, she would have asked the question yesterday.\" Ini adalah contoh dari apa?",
+    "opts": [
+      "Tipe 2 murni",
+      "Tipe 3 murni",
+      "Mixed conditional: syarat di masa lalu, akibat di masa kini",
+      "Mixed conditional: syarat di masa kini, akibat di masa lalu"
+    ],
+    "correct": 3,
+    "explain": "If-clause pakai past simple (weren't — sifat/keadaan yang berlaku terus-menerus, sekarang pun dia masih pemalu), tapi main clause pakai would have + V3 (would have asked) karena akibatnya soal kejadian di masa lalu (\"yesterday\") — pola mixed conditional: masa kini → masa lalu."
+  },
+  {
+    "q": "Manakah pola bentuk yang benar untuk mixed conditional \"syarat di masa lalu, akibat di masa kini\"?",
+    "opts": [
+      "If + past simple, would + V1",
+      "If + past perfect, would + V1",
+      "If + past perfect, would have + V3",
+      "If + past simple, would have + V3"
+    ],
+    "correct": 1,
+    "explain": "Pola A dari mixed conditional: if-clause past perfect (menyatakan syarat yang gagal terjadi di masa lalu) + main clause would + V1 (akibat yang dirasakan sekarang, bukan \"would have\")."
+  },
+  {
+    "q": "Manakah pola bentuk yang benar untuk mixed conditional \"syarat di masa kini, akibat di masa lalu\"?",
+    "opts": [
+      "If + past simple, would + V1",
+      "If + past perfect, would have + V3",
+      "If + past simple, would have + V3",
+      "If + present simple, would have + V3"
+    ],
+    "correct": 2,
+    "explain": "Pola B dari mixed conditional: if-clause past simple (menyatakan sifat/keadaan yang berlaku terus-menerus sampai sekarang) + main clause would have + V3 (akibat yang sudah terjadi/tidak terjadi di masa lalu)."
+  },
+  {
+    "q": "\"Unless you study, you will fail the exam.\" \"Unless\" di kalimat ini setara dengan makna apa?",
+    "opts": ["if...then", "if...not", "even if", "as long as"],
+    "correct": 1,
+    "explain": "\"Unless\" berarti \"if...not\" — kalimat ini setara dengan \"If you don't study, you will fail the exam.\" \"Unless\" sering jadi signal word Tipe 1 yang menggantikan \"if not\"."
+  },
+  {
+    "q": "Fungsi utama dari Second Conditional (Tipe 2) di percakapan sehari-hari, selain khayalan, adalah untuk...",
+    "opts": [
+      "Menyatakan fakta ilmiah",
+      "Memberi saran/nasihat lewat pola \"If I were you...\"",
+      "Menyatakan penyesalan atas masa lalu",
+      "Memberi peringatan atas konsekuensi nyata"
+    ],
+    "correct": 1,
+    "explain": "\"If I were you, I would...\" adalah salah satu penggunaan paling umum dari Tipe 2 dalam percakapan — dipakai untuk memberi saran, bukan cuma khayalan murni."
+  },
+  {
+    "q": "\"If you press this button, the machine turns on.\" Kalimat ini contoh Zero Conditional untuk konteks apa?",
+    "opts": ["Fakta ilmiah alam", "Prosedur/instruksi yang selalu berlaku", "Penyesalan masa lalu", "Kemungkinan kecil di masa depan"],
+    "correct": 1,
+    "explain": "Bukan fakta ilmiah alam, tapi hasil otomatis dari sebuah instruksi/prosedur (menekan tombol selalu menyalakan mesin) — salah satu fungsi Zero Conditional selain fakta ilmiah murni."
+  },
+  {
+    "q": "Perbaiki kesalahan pada kalimat: \"If I will see her, I will tell her the news.\"",
+    "opts": [
+      "If I see her, I will tell her the news.",
+      "If I would see her, I will tell her the news.",
+      "If I saw her, I would tell her the news.",
+      "If I had seen her, I would have told her the news."
+    ],
+    "correct": 0,
+    "explain": "Kesalahannya sama seperti pola umum Tipe 1: if-clause tidak boleh memakai \"will\". Karena konteksnya masih realistis/masa depan (bukan hipotetis), perbaikannya tetap Tipe 1: \"If I see her, I will tell her the news.\""
+  },
+  {
+    "q": "Perbaiki kesalahan pada kalimat: \"If I was rich, I would buy a big house.\"",
+    "opts": [
+      "If I am rich, I will buy a big house.",
+      "If I were rich, I would buy a big house.",
+      "If I had been rich, I would have bought a big house.",
+      "If I was rich, I will buy a big house."
+    ],
+    "correct": 1,
+    "explain": "Kesalahannya di \"was\" — untuk if-clause hipotetis Tipe 2, bentuk to be yang benar untuk semua subjek adalah \"were\": \"If I were rich, I would buy a big house.\""
+  },
+  {
+    "q": "Manakah kalimat Tipe 3 yang paling tepat menyatakan penyesalan karena tidak membawa payung, sehingga basah kuyup?",
+    "opts": [
+      "If I bring an umbrella, I don't get wet.",
+      "If I brought an umbrella, I wouldn't get wet.",
+      "If I had brought an umbrella, I wouldn't have gotten wet.",
+      "If I had brought an umbrella, I don't get wet."
+    ],
+    "correct": 2,
+    "explain": "Kejadiannya sudah selesai (sudah basah kuyup, sudah tidak bisa diubah) — butuh Tipe 3 penuh: if-clause past perfect (had brought) + main clause would have + V3 negatif (wouldn't have gotten)."
+  },
+  {
+    "q": "\"If you ___ (not/hurry), you will be late for school.\" Lengkapi if-clause dengan bentuk yang tepat.",
+    "opts": ["don't hurry", "didn't hurry", "won't hurry", "hadn't hurried"],
+    "correct": 0,
+    "explain": "Main clause \"will be late\" menandakan Tipe 1 — if-clause harus present simple negatif: \"don't hurry\"."
+  },
+  {
+    "q": "Manakah kalimat yang secara grammar dan makna paling tepat untuk situasi: \"Kenyataannya, Budi tidak lulus ujian karena dia tidak belajar minggu lalu\"?",
+    "opts": [
+      "If Budi studies, he passes the exam.",
+      "If Budi studied, he would pass the exam.",
+      "If Budi had studied, he would have passed the exam.",
+      "If Budi studies, he will pass the exam."
+    ],
+    "correct": 2,
+    "explain": "Kejadian sudah terjadi di masa lalu dan sudah tidak bisa diubah (minggu lalu dia tidak belajar dan tidak lulus) — ini butuh Third Conditional penuh: \"If Budi had studied, he would have passed the exam.\""
+  }
+]

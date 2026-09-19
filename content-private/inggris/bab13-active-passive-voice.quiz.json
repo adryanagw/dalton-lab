@@ -1,0 +1,320 @@
+[
+  {
+    "q": "Apa yang terjadi pada objek kalimat aktif ketika kalimat itu diubah ke bentuk pasif?",
+    "opts": ["Objek dihapus sepenuhnya", "Objek berpindah jadi subjek kalimat pasif", "Objek berubah jadi kata keterangan", "Objek tetap di posisi yang sama"],
+    "correct": 1,
+    "explain": "Inti dari passive voice adalah memindahkan objek kalimat aktif ke posisi subjek kalimat pasif, sementara subjek aktif (pelaku) pindah ke belakang jadi agent (didahului \"by\", opsional)."
+  },
+  {
+    "q": "Rumus umum kalimat pasif adalah...",
+    "opts": ["S + V + O", "O + be + V1 + (by + S)", "O + be + V3 + (by + S)", "S + be + V-ing + O"],
+    "correct": 2,
+    "explain": "Rumus umum passive voice: objek kalimat aktif (jadi subjek baru) + be (disesuaikan tense) + V3 (past participle) + \"by + agent\" yang sifatnya opsional."
+  },
+  {
+    "q": "Ubah ke bentuk pasif: \"The teacher checks our homework every day.\"",
+    "opts": ["Our homework checks by the teacher every day.", "Our homework is checked by the teacher every day.", "Our homework was checked by the teacher every day.", "Our homework is checking by the teacher every day."],
+    "correct": 1,
+    "explain": "\"checks\" = Simple Present. Rumus pasif Simple Present: S + is/am/are + V3. Subjek baru \"our homework\" (dianggap tunggal) → \"is checked\"."
+  },
+  {
+    "q": "Ubah ke bentuk pasif: \"They are building a new bridge.\"",
+    "opts": ["A new bridge is built by them.", "A new bridge was being built by them.", "A new bridge is being built by them.", "A new bridge has been built by them."],
+    "correct": 2,
+    "explain": "\"are building\" = Present Continuous. Rumus pasifnya: S + is/am/are + being + V3 → \"is being built\"."
+  },
+  {
+    "q": "Ubah ke bentuk pasif: \"She has written three novels.\"",
+    "opts": ["Three novels are written by her.", "Three novels have been written by her.", "Three novels had been written by her.", "Three novels have written by her."],
+    "correct": 1,
+    "explain": "\"has written\" = Present Perfect. Rumus pasifnya: S + has/have + been + V3. Subjek baru \"three novels\" (jamak) → \"have been written\"."
+  },
+  {
+    "q": "Ubah ke bentuk pasif: \"Alexander Graham Bell invented the telephone.\"",
+    "opts": ["The telephone invents by Alexander Graham Bell.", "The telephone is invented by Alexander Graham Bell.", "The telephone was invented by Alexander Graham Bell.", "The telephone has invented by Alexander Graham Bell."],
+    "correct": 2,
+    "explain": "\"invented\" = V2, Simple Past. Rumus pasifnya: S + was/were + V3. Subjek baru \"the telephone\" (tunggal) → \"was invented\"."
+  },
+  {
+    "q": "Ubah ke bentuk pasif: \"Someone was watching the house.\"",
+    "opts": ["The house was watched by someone.", "The house was being watched by someone.", "The house is being watched by someone.", "The house had been watched by someone."],
+    "correct": 1,
+    "explain": "\"was watching\" = Past Continuous. Rumus pasifnya: S + was/were + being + V3 → \"was being watched\"."
+  },
+  {
+    "q": "Ubah ke bentuk pasif: \"The thief had stolen the money before the police arrived.\"",
+    "opts": ["The money was stolen before the police arrived.", "The money has been stolen before the police arrived.", "The money had been stolen before the police arrived.", "The money had stolen before the police arrived."],
+    "correct": 2,
+    "explain": "\"had stolen\" = Past Perfect. Rumus pasifnya: S + had + been + V3 → \"had been stolen\". \"before the police arrived\" tetap aktif karena \"arrive\" intransitif."
+  },
+  {
+    "q": "Ubah ke bentuk pasif: \"The company will launch a new product next month.\"",
+    "opts": ["A new product will launch next month.", "A new product is launched next month.", "A new product will be launched next month.", "A new product will have launched next month."],
+    "correct": 2,
+    "explain": "\"will launch\" = Simple Future. Rumus pasifnya: S + will + be + V3 → \"will be launched\"."
+  },
+  {
+    "q": "Ubah ke bentuk pasif: \"They are going to repair the bridge.\"",
+    "opts": ["The bridge is going to repair.", "The bridge is going to be repaired.", "The bridge was going to be repaired.", "The bridge is repaired."],
+    "correct": 1,
+    "explain": "\"are going to repair\" = Simple Future (going to). Rumus pasifnya: S + is/am/are + going to + be + V3 → \"is going to be repaired\"."
+  },
+  {
+    "q": "Ubah ke bentuk pasif: \"They will have completed the project by next year.\"",
+    "opts": ["The project will be completed by next year.", "The project will have completed by next year.", "The project will have been completed by next year.", "The project has been completed by next year."],
+    "correct": 2,
+    "explain": "\"will have completed\" = Future Perfect. Rumus pasifnya: S + will + have + been + V3 → \"will have been completed\"."
+  },
+  {
+    "q": "Manakah bentuk pasif yang benar untuk kalimat dengan modal \"must\"? \"You must finish the work by tomorrow.\"",
+    "opts": ["The work must finish by tomorrow.", "The work must be finished by tomorrow.", "The work must been finished by tomorrow.", "The work is must finished by tomorrow."],
+    "correct": 1,
+    "explain": "Passive dengan modal selalu: modal + be + V3, tanpa perubahan bentuk modal itu sendiri. \"must be finished\" adalah bentuk yang benar."
+  },
+  {
+    "q": "\"This problem ___ solved in different ways.\" (modal: can)",
+    "opts": ["can be", "can been", "can is", "is can"],
+    "correct": 0,
+    "explain": "Rumus modal passive: modal + be + V3. \"can be solved\" adalah bentuk yang benar — \"be\" tidak berubah bentuk apapun setelah modal."
+  },
+  {
+    "q": "Manakah bentuk pasif yang benar dari \"might have sent\" (modal perfect)?",
+    "opts": ["might be sent", "might have been sent", "might has sent", "might be being sent"],
+    "correct": 1,
+    "explain": "Modal perfect passive: modal + have + been + V3. \"The letter might have been sent already\" adalah bentuk yang benar."
+  },
+  {
+    "q": "\"The teacher gave the students a new assignment.\" Manakah bentuk pasif yang PALING natural (subjek = objek orang)?",
+    "opts": ["A new assignment was given the students.", "The students were given a new assignment.", "The students gave a new assignment.", "A new assignment gave the students."],
+    "correct": 1,
+    "explain": "Untuk kata kerja berobjek dua (give, send, show, dst.), bentuk pasif yang paling natural dipakai penutur asli adalah objek orang jadi subjek: \"The students were given a new assignment (by the teacher).\""
+  },
+  {
+    "q": "\"The teacher gave the students a new assignment.\" Manakah bentuk pasif kedua yang juga benar (subjek = objek benda)?",
+    "opts": ["A new assignment was given to the students.", "A new assignment was given the students.", "A new assignment gave to the students.", "The students was given to a new assignment."],
+    "correct": 0,
+    "explain": "Bentuk pasif kedua (subjek = objek benda) butuh preposisi \"to\" sebelum objek orangnya: \"A new assignment was given to the students (by the teacher).\""
+  },
+  {
+    "q": "Preposisi apa yang dipakai setelah kata kerja \"buy\" ketika membentuk pasif kedua (subjek = objek benda)? Contoh: \"He bought his mother a gift.\" → \"A gift was bought ___ his mother.\"",
+    "opts": ["to", "for", "by", "of"],
+    "correct": 1,
+    "explain": "Kata kerja seperti buy, make, cook, find memakai preposisi \"for\" di pasif kedua, berbeda dari give/send/show/tell/offer/lend yang memakai \"to\"."
+  },
+  {
+    "q": "\"He got fired last week.\" Kalimat ini adalah contoh dari...",
+    "opts": ["Active voice biasa", "Get-passive, alternatif informal dari be-passive", "Kesalahan tata bahasa", "Present Perfect pasif"],
+    "correct": 1,
+    "explain": "\"got fired\" adalah get-passive — versi informal dari \"was fired\", biasa dipakai dalam percakapan sehari-hari untuk kejadian tiba-tiba/negatif, bukan di tulisan formal."
+  },
+  {
+    "q": "Di konteks manakah get-passive (\"got fired\", \"got hurt\") SEBAIKNYA dihindari?",
+    "opts": ["Percakapan santai dengan teman", "Tulisan formal, akademik, atau berita", "Obrolan keluarga di rumah", "Chat informal dengan teman sekelas"],
+    "correct": 1,
+    "explain": "Get-passive adalah bentuk informal — di tulisan formal/akademik/berita, penutur asli tetap memakai be-passive standar (\"was fired\", bukan \"got fired\")."
+  },
+  {
+    "q": "Kenapa kalimat \"The accident was happened yesterday.\" SALAH?",
+    "opts": ["Karena \"yesterday\" tidak cocok dengan Simple Past", "Karena \"happen\" adalah kata kerja intransitif, tidak punya objek, jadi tidak bisa dipasifkan", "Karena harus pakai \"were\" bukan \"was\"", "Karena kalimat pasif tidak boleh punya keterangan waktu"],
+    "correct": 1,
+    "explain": "\"happen\" tidak diikuti objek (intransitif), jadi tidak ada apapun yang bisa dipindah jadi subjek pasif. Kalimat yang benar tetap aktif: \"The accident happened yesterday.\""
+  },
+  {
+    "q": "Manakah dari kata kerja berikut yang TIDAK BISA dipasifkan karena intransitif?",
+    "opts": ["eat", "write", "arrive", "build"],
+    "correct": 2,
+    "explain": "\"arrive\" adalah kata kerja intransitif (tidak punya objek) — tidak bisa dipasifkan. eat, write, dan build semuanya bisa diikuti objek, jadi bisa dipasifkan."
+  },
+  {
+    "q": "\"She ___ late.\" (arrive, dalam bentuk yang benar, Simple Past)",
+    "opts": ["was arrived", "arrived", "was arriving passively", "is arrived"],
+    "correct": 1,
+    "explain": "\"arrive\" intransitif, tidak bisa dipasifkan sama sekali. Bentuk yang benar tetap aktif Simple Past: \"She arrived late.\""
+  },
+  {
+    "q": "Kapan sebaiknya kita TETAP menyebutkan \"by + agent\" di kalimat pasif, bukan menghilangkannya?",
+    "opts": ["Selalu, tidak ada pengecualian", "Ketika pelakunya adalah informasi penting/relevan yang ingin disampaikan", "Hanya di kalimat pertanyaan", "Tidak pernah, \"by + agent\" selalu opsional dan boleh dihilangkan"],
+    "correct": 1,
+    "explain": "\"By + agent\" boleh dihilangkan kalau pelakunya tidak diketahui/tidak penting/sudah jelas dari konteks, tapi harus dipertahankan kalau siapa pelakunya justru bagian penting dari informasi yang disampaikan (mis. \"The novel was written by Andrea Hirata.\")."
+  },
+  {
+    "q": "Manakah kalimat yang PALING tepat digunakan ketika siapa pelakunya sama sekali tidak diketahui?",
+    "opts": ["Someone stole my wallet yesterday.", "My wallet was stolen yesterday.", "My wallet stole yesterday.", "My wallet is stealing yesterday."],
+    "correct": 1,
+    "explain": "Kalau pelakunya tidak diketahui, passive voice tanpa \"by + agent\" adalah pilihan paling natural: \"My wallet was stolen yesterday.\""
+  },
+  {
+    "q": "Temukan kesalahan pada kalimat: \"The report is wrote by her yesterday.\"",
+    "opts": ["\"be\" (is) tidak cocok dengan signal word waktu \"yesterday\" (Simple Past)", "Kata \"by\" seharusnya dihilangkan", "Subjeknya seharusnya \"he\" bukan \"her\"", "Tidak ada kesalahan"],
+    "correct": 0,
+    "explain": "\"yesterday\" adalah signal word Simple Past, jadi \"be\" yang dipakai harus \"was\", bukan \"is\". Bentuk benar: \"The report was written by her yesterday.\""
+  },
+  {
+    "q": "Perbaikan yang tepat untuk \"The house was build in 1990.\" adalah...",
+    "opts": ["The house was built in 1990.", "The house is build in 1990.", "The house was building in 1990.", "The house has build in 1990."],
+    "correct": 0,
+    "explain": "Kata kerja setelah \"be\" pasif harus V3, bukan V1. \"build\" adalah V1; V3-nya \"built\" (build–built–built)."
+  },
+  {
+    "q": "Manakah pasangan V1-V2-V3 yang BENAR untuk kata kerja \"write\"?",
+    "opts": ["write - writed - writed", "write - wrote - written", "write - wrote - wrote", "write - written - wrote"],
+    "correct": 1,
+    "explain": "\"write\" adalah kata kerja tidak beraturan: write (V1) – wrote (V2) – written (V3). V3 \"written\" yang dipakai dalam bentuk pasif."
+  },
+  {
+    "q": "Manakah pasangan V1-V2-V3 yang BENAR untuk kata kerja \"build\"?",
+    "opts": ["build - builded - builded", "build - built - built", "build - built - builded", "build - build - built"],
+    "correct": 1,
+    "explain": "\"build\" adalah kata kerja tidak beraturan dengan V2 dan V3 yang sama: build – built – built."
+  },
+  {
+    "q": "Kalimat \"The novel 'Laskar Pelangi' was written.\" terasa kurang lengkap ketika konteksnya justru menekankan siapa penulisnya. Perbaikan yang tepat adalah...",
+    "opts": ["The novel 'Laskar Pelangi' was written by Andrea Hirata.", "The novel 'Laskar Pelangi' is written.", "Andrea Hirata was written the novel 'Laskar Pelangi'.", "The novel 'Laskar Pelangi' writes by Andrea Hirata."],
+    "correct": 0,
+    "explain": "Kalau nama penulisnya adalah informasi penting yang ingin disampaikan, \"by + agent\" wajib dicantumkan, bukan dihilangkan."
+  },
+  {
+    "q": "Manakah kalimat pasif yang benar dari: \"The government is going to build a new hospital.\"",
+    "opts": ["A new hospital is going to build by the government.", "A new hospital is going to be built by the government.", "A new hospital is built going to by the government.", "A new hospital was going to be built by the government."],
+    "correct": 1,
+    "explain": "Rumus pasif untuk \"going to\": S + is/am/are + going to + be + V3. \"build\" → V3 \"built\"."
+  },
+  {
+    "q": "Ubah ke bentuk pasif: \"Scientists have discovered a new species of frog.\"",
+    "opts": ["A new species of frog is discovered by scientists.", "A new species of frog has been discovered by scientists.", "A new species of frog was discovered by scientists.", "A new species of frog had been discovered by scientists."],
+    "correct": 1,
+    "explain": "\"have discovered\" = Present Perfect (subjek jamak \"scientists\", tapi objek barunya \"a new species\" tunggal → \"has been discovered\")."
+  },
+  {
+    "q": "Ubah ke bentuk pasif: \"Indonesia gained independence in 1945.\"",
+    "opts": ["Independence gains by Indonesia in 1945.", "Independence is gained by Indonesia in 1945.", "Independence was gained by Indonesia in 1945.", "Independence has gained by Indonesia in 1945."],
+    "correct": 2,
+    "explain": "\"gained\" = V2, Simple Past. Rumus pasif Simple Past: S + was/were + V3 → \"was gained\"."
+  },
+  {
+    "q": "Temukan kesalahan: \"Many guests was invited by the local chief.\"",
+    "opts": ["\"be\" (was) tidak cocok dengan subjek jamak \"many guests\", seharusnya \"were\"", "\"invited\" seharusnya \"invite\"", "\"by\" seharusnya dihilangkan", "Tidak ada kesalahan"],
+    "correct": 0,
+    "explain": "\"be\" pada kalimat pasif harus menyesuaikan jumlah subjek barunya. \"Many guests\" jamak, jadi butuh \"were\", bukan \"was\"."
+  },
+  {
+    "q": "Temukan kesalahan: \"The details of the incident will be explain by the committee soon.\"",
+    "opts": ["\"will\" seharusnya \"would\"", "\"explain\" seharusnya \"explained\" (bentuk V3)", "\"by\" seharusnya \"from\"", "Tidak ada kesalahan"],
+    "correct": 1,
+    "explain": "Kata kerja setelah \"be\" pasif wajib V3. \"explain\" adalah kata kerja beraturan, V3-nya \"explained\", bukan bentuk dasar \"explain\"."
+  },
+  {
+    "q": "Manakah kalimat berikut yang SUDAH benar (tidak perlu diperbaiki)?",
+    "opts": ["A traditional ceremony was held in the village last week.", "The accident was happened during the event.", "The report is wrote by her yesterday.", "The house was build in 1990."],
+    "correct": 0,
+    "explain": "\"hold\" (V3 = held) dipasifkan dengan benar untuk Simple Past: \"was held\", cocok dengan subjek tunggal dan signal word \"last week\"."
+  },
+  {
+    "q": "\"Look! A new bridge ___ (build) right now.\" Lengkapi dengan bentuk pasif yang tepat.",
+    "opts": ["is being built", "is built", "was being built", "has been built"],
+    "correct": 0,
+    "explain": "\"Look!\" + \"right now\" adalah signal word Present Continuous. Rumus pasifnya: S + is/am/are + being + V3 → \"is being built\"."
+  },
+  {
+    "q": "\"By next year, this school ___ (renovate) completely.\" Lengkapi dengan bentuk pasif yang tepat.",
+    "opts": ["will be renovated", "will have been renovated", "is being renovated", "was renovated"],
+    "correct": 1,
+    "explain": "\"By next year\" adalah signal word Future Perfect (aksi selesai sebelum titik waktu tertentu di masa depan). Rumus pasifnya: S + will + have + been + V3."
+  },
+  {
+    "q": "\"The cake ___ (eat) by the guests before the party even started.\" Lengkapi dengan bentuk pasif yang tepat.",
+    "opts": ["was eaten", "had been eaten", "has been eaten", "is eaten"],
+    "correct": 1,
+    "explain": "Aksi ini selesai SEBELUM aksi lain di masa lalu (\"the party started\") → Past Perfect. Rumus pasifnya: S + had + been + V3 → \"had been eaten\"."
+  },
+  {
+    "q": "Manakah kalimat pasif yang menunjukkan aksi yang MASIH BERLANGSUNG di masa lalu (bukan sudah selesai)?",
+    "opts": ["The letter was written by him.", "The letter was being written by him.", "The letter has been written by him.", "The letter will be written by him."],
+    "correct": 1,
+    "explain": "\"was being written\" (Past Continuous pasif) menunjukkan aksi yang sedang berlangsung di suatu titik waktu tertentu di masa lalu, bukan aksi yang sudah selesai."
+  },
+  {
+    "q": "Kata kerja mana yang bisa dipasifkan karena punya objek (transitive)?",
+    "opts": ["sleep", "die", "repair", "exist"],
+    "correct": 2,
+    "explain": "\"repair\" adalah kata kerja transitif (butuh objek, misalnya \"repair the car\"), jadi bisa dipasifkan: \"The car was repaired.\" sleep, die, dan exist semuanya intransitif."
+  },
+  {
+    "q": "\"The money ___ (steal) from the safe last night, but the police haven't found the thief yet.\" Lengkapi dengan bentuk pasif yang tepat.",
+    "opts": ["is stolen", "was stolen", "steals", "will be stolen"],
+    "correct": 1,
+    "explain": "\"last night\" adalah signal word Simple Past. Rumus pasifnya: S + was/were + V3 → \"was stolen\"."
+  },
+  {
+    "q": "Manakah alasan yang PALING tepat kenapa kalimat berita/ilmiah sering pakai passive voice?",
+    "opts": ["Supaya kalimatnya lebih panjang dan terlihat rumit", "Supaya fokus pembaca ada di aksi/hasil, bukan siapa pelakunya", "Karena aturan tata bahasa mewajibkan semua berita pakai passive", "Supaya kalimatnya lebih mudah dihafal"],
+    "correct": 1,
+    "explain": "Passive voice memindahkan fokus dari pelaku ke aksi/objek yang menerima aksi — cocok untuk berita/ilmiah yang ingin menonjolkan peristiwa/hasil, bukan siapa yang melakukannya."
+  },
+  {
+    "q": "\"He teaches us English.\" Manakah bentuk pasif yang paling natural?",
+    "opts": ["English is taught us by him.", "We are taught English by him.", "We teach English by him.", "English teaches us by him."],
+    "correct": 1,
+    "explain": "Kata kerja berobjek dua (\"teach\"), objek orang (\"us\" → \"we\") jadi subjek pasif adalah bentuk yang paling natural: \"We are taught English by him.\""
+  },
+  {
+    "q": "\"He teaches us English.\" Manakah bentuk pasif kedua yang juga benar?",
+    "opts": ["English is taught to us by him.", "English is taught for us by him.", "English teaches to us by him.", "We are taught to English by him."],
+    "correct": 0,
+    "explain": "\"teach\" memakai preposisi \"to\" di pasif kedua (objek benda jadi subjek): \"English is taught to us by him.\""
+  },
+  {
+    "q": "Manakah pernyataan yang PALING tepat tentang \"by + agent\" dalam kalimat pasif?",
+    "opts": ["Wajib selalu ada di setiap kalimat pasif", "Sifatnya opsional — boleh dicantumkan atau dihilangkan tergantung apakah pelakunya penting diketahui", "Hanya boleh dipakai di kalimat tanya", "Selalu diletakkan di awal kalimat"],
+    "correct": 1,
+    "explain": "\"By + agent\" bersifat opsional: dicantumkan kalau pelakunya penting/relevan, dihilangkan kalau tidak diketahui/tidak penting/sudah jelas dari konteks."
+  },
+  {
+    "q": "\"This bridge ___ (build) in 1975.\" Lengkapi dengan bentuk pasif yang tepat, dan tunjukkan alasan \"by + agent\" boleh dihilangkan.",
+    "opts": ["was built — karena siapa kontraktornya tidak relevan untuk kalimat ini", "is built — karena kejadiannya masih berlangsung", "will be built — karena kejadiannya di masa depan", "has built — karena kejadiannya baru selesai"],
+    "correct": 0,
+    "explain": "\"in 1975\" = signal word Simple Past → \"was built\". Siapa yang membangunnya tidak disebut karena tidak relevan untuk informasi yang ingin disampaikan (kapan jembatan itu dibangun)."
+  },
+  {
+    "q": "Manakah kalimat yang menggunakan get-passive dengan tepat dalam konteks percakapan santai?",
+    "opts": ["The annual report got submitted to the board of directors.", "She got hurt during the football match.", "The treaty got signed by both governments.", "The policy got announced in the official gazette."],
+    "correct": 1,
+    "explain": "\"got hurt\" cocok untuk get-passive: kejadian tiba-tiba/tak terduga dalam konteks santai. Opsi lain (laporan tahunan, perjanjian resmi, kebijakan pemerintah) semuanya konteks formal yang seharusnya tetap pakai be-passive."
+  },
+  {
+    "q": "\"The window ___ (break) by the storm last night.\" Lengkapi dengan bentuk pasif yang tepat.",
+    "opts": ["is broken", "was broken", "breaks", "has broken"],
+    "correct": 1,
+    "explain": "\"last night\" = signal word Simple Past. \"break\" → V3 \"broken\". Rumus pasif: S + was/were + V3 → \"was broken\"."
+  },
+  {
+    "q": "Manakah dari kalimat berikut yang merupakan bentuk pasif Present Perfect yang benar?",
+    "opts": ["The car has repaired by the mechanic.", "The car has been repaired by the mechanic.", "The car is repaired by the mechanic.", "The car had repaired by the mechanic."],
+    "correct": 1,
+    "explain": "Present Perfect pasif: S + has/have + been + V3. \"has been repaired\" adalah bentuk yang benar — jangan lupa \"been\" di antara \"has\" dan V3."
+  },
+  {
+    "q": "Kenapa \"The results were happened as expected.\" salah, dan apa perbaikannya?",
+    "opts": ["\"happen\" intransitif, tidak bisa dipasifkan → \"The results happened as expected.\"", "\"be\" seharusnya \"was\" bukan \"were\" → \"The results was happened as expected.\"", "Seharusnya ditambah \"by\" → \"The results were happened by as expected.\"", "Kalimat ini sudah benar"],
+    "correct": 0,
+    "explain": "\"happen\" tidak punya objek (intransitif), jadi tidak bisa dipasifkan sama sekali — harus tetap dalam bentuk aktif: \"The results happened as expected.\""
+  },
+  {
+    "q": "\"The bridge was designed.\" vs \"The bridge was designed by Ir. Sedyatmo.\" — mana yang lebih tepat kalau konteksnya sedang membahas kontribusi Ir. Sedyatmo pada dunia teknik sipil Indonesia?",
+    "opts": ["Kedua kalimat sama-sama tepat, tidak ada bedanya", "\"The bridge was designed.\" — karena passive selalu menghilangkan agent", "\"The bridge was designed by Ir. Sedyatmo.\" — karena nama perancangnya adalah info penting dalam konteks ini", "Tidak ada yang tepat, harus pakai active voice"],
+    "correct": 2,
+    "explain": "Ketika pelakunya adalah informasi yang relevan/penting untuk disampaikan (di sini: kontribusi Ir. Sedyatmo), \"by + agent\" wajib dipertahankan, bukan dihilangkan."
+  },
+  {
+    "q": "\"Many endangered animals ___ (protect) by this new law starting next year.\" Lengkapi dengan bentuk pasif yang tepat.",
+    "opts": ["will be protected", "are protected", "were protected", "have been protected"],
+    "correct": 0,
+    "explain": "\"starting next year\" = signal word Simple Future. Rumus pasif: S + will + be + V3 → \"will be protected\"."
+  },
+  {
+    "q": "Manakah yang merupakan pasangan modal-passive yang benar untuk \"You should not ignore this warning.\"",
+    "opts": ["This warning should not ignore.", "This warning should not be ignored.", "This warning should not be ignoring.", "This warning is should not ignored."],
+    "correct": 1,
+    "explain": "Modal negatif passive: modal + not + be + V3. \"should not be ignored\" adalah bentuk yang benar."
+  }
+]

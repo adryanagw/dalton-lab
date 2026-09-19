@@ -1,0 +1,430 @@
+[
+  {
+    "q": "The exam will start ___ 8 a.m. ___ Monday.",
+    "opts": ["in ... on", "at ... on", "on ... at", "at ... in"],
+    "correct": 1,
+    "explain": "Jam pada jam dinding pakai AT (at 8 a.m.), sedangkan nama hari pakai ON (on Monday). Dua satuan waktu berbeda, dua preposisi berbeda."
+  },
+  {
+    "q": "I was born ___ 2008, ___ July, ___ a Tuesday.",
+    "opts": ["in ... in ... on", "on ... in ... at", "in ... on ... at", "at ... in ... on"],
+    "correct": 0,
+    "explain": "Tahun (2008) dan bulan (July) sama-sama pakai IN karena periode panjang. Hari (a Tuesday) pakai ON."
+  },
+  {
+    "q": "Manakah kalimat yang menggunakan preposition of time dengan BENAR?",
+    "opts": ["I always drink coffee at the morning.", "Owls hunt in night.", "We open presents on Christmas Day.", "She was born at 2007."],
+    "correct": 2,
+    "explain": "\"on Christmas Day\" benar karena hari bernama khusus pakai ON. Seharusnya: \"in the morning\", \"at night\", \"in 2007\"."
+  },
+  {
+    "q": "Let's meet ___ noon, right in front of the library.",
+    "opts": ["in", "on", "at", "to"],
+    "correct": 2,
+    "explain": "\"noon\" adalah titik waktu spesifik, sama seperti clock time, sehingga pakai AT."
+  },
+  {
+    "q": "Kenapa \"night\" memakai preposisi AT (at night), bukan IN seperti bagian hari lainnya?",
+    "opts": [
+      "Karena \"night\" dianggap satu titik/blok waktu spesifik, bukan rentang waktu panjang seperti morning/afternoon/evening",
+      "Karena aturan tata bahasa mewajibkan semua kata bersuku kata satu memakai AT",
+      "Karena \"night\" tidak pernah muncul di kalimat formal",
+      "Tidak ada alasannya, murni kebetulan"
+    ],
+    "correct": 0,
+    "explain": "Morning/afternoon/evening dianggap rentang waktu yang lebih panjang (pakai IN), sedangkan night dianggap satu blok waktu spesifik (pakai AT) — kecuali dipasangkan dengan hari spesifik, misalnya \"on Friday night\"."
+  },
+  {
+    "q": "My father usually reads the newspaper ___ the afternoon, but ___ weekends he prefers to read ___ night.",
+    "opts": ["in ... on ... at", "at ... in ... on", "on ... at ... in", "in ... at ... on"],
+    "correct": 0,
+    "explain": "\"the afternoon\" (bagian hari) = IN, \"weekends\" (pola hari berulang) = ON, \"night\" (blok waktu spesifik) = AT."
+  },
+  {
+    "q": "The keys are ___ the drawer, and the drawer is ___ the second floor.",
+    "opts": ["on ... in", "in ... on", "at ... in", "in ... at"],
+    "correct": 1,
+    "explain": "\"the drawer\" adalah ruang tertutup → IN. \"the second floor\" adalah lantai gedung → ON."
+  },
+  {
+    "q": "Manakah kombinasi preposition of place yang BENAR?",
+    "opts": ["in Jalan Sudirman", "at Indonesia", "on the table", "in the party"],
+    "correct": 2,
+    "explain": "\"on the table\" benar (permukaan datar). Seharusnya: \"on Jalan Sudirman\" (nama jalan), \"in Indonesia\" (negara), \"at the party\" (acara/kegiatan)."
+  },
+  {
+    "q": "Turn left ___ the traffic light, then the museum is ___ Asia's largest collection of ancient artifacts, located ___ the city center.",
+    "opts": ["at ... with ... in", "on ... in ... at", "at ... in ... in", "in ... at ... on"],
+    "correct": 2,
+    "explain": "\"the traffic light\" = titik spesifik → AT. \"Asia\" = benua → IN. \"the city center\" = wilayah/area → IN."
+  },
+  {
+    "q": "Kenapa \"I'm on the bus\" dianggap benar, padahal secara harfiah penumpang juga \"di dalam\" bus itu?",
+    "opts": [
+      "Karena bus selalu terbuka di bagian atas",
+      "Kendaraan besar/umum (bus, train, plane, ship) memakai ON, sedangkan kendaraan kecil/pribadi (car, taxi) memakai IN — aturan ini harus dihafal per jenis kendaraan",
+      "Karena \"on\" dan \"in\" bisa dipakai bebas untuk transportasi apa saja",
+      "Karena bus dianggap sebagai permukaan datar seperti meja"
+    ],
+    "correct": 1,
+    "explain": "Ini pengecualian yang harus dihafal: in a car/taxi (kendaraan kecil), tapi on a bus/train/plane/ship/bike (kendaraan besar/umum atau yang dinaiki)."
+  },
+  {
+    "q": "He is ___ school right now, but he'll be ___ home ___ 6 p.m.",
+    "opts": ["at ... at ... at", "in ... in ... on", "at ... in ... at", "on ... at ... in"],
+    "correct": 0,
+    "explain": "\"at school\" dan \"at home\" adalah frasa idiomatis yang fokus ke fungsi tempatnya, bukan bangunannya. \"6 p.m.\" adalah jam spesifik → AT."
+  },
+  {
+    "q": "She walked ___ the room and jumped ___ the bed, while her cat jumped ___ the roof outside.",
+    "opts": ["into ... onto ... onto", "in ... on ... on", "to ... in ... at", "into ... on ... in"],
+    "correct": 0,
+    "explain": "\"into the room\" (masuk ke ruang tertutup) dan \"onto the bed\"/\"onto the roof\" (bergerak naik ke atas permukaan) sama-sama menunjukkan pergerakan, sehingga pakai into/onto, bukan in/on yang menunjukkan posisi diam."
+  },
+  {
+    "q": "We drove ___ the tunnel, then ___ the bridge that goes ___ the river.",
+    "opts": ["through ... across ... along", "across ... through ... along", "through ... along ... across", "along ... through ... across"],
+    "correct": 0,
+    "explain": "\"through the tunnel\" (melewati bagian dalam), \"across the bridge\" (dari satu sisi ke sisi lain), \"along the river\" (mengikuti garis memanjang sungai)."
+  },
+  {
+    "q": "The train goes ___ Jakarta ___ Surabaya, passing several cities ___ the way.",
+    "opts": ["from ... to ... on", "to ... from ... in", "from ... to ... in", "in ... to ... at"],
+    "correct": 0,
+    "explain": "\"from...to\" menunjukkan titik awal-akhir perjalanan. \"on the way\" adalah frasa idiomatis (dalam perjalanan)."
+  },
+  {
+    "q": "He ran ___ the stairs quickly, then walked ___ the hill slowly.",
+    "opts": ["up ... down", "into ... through", "on ... at", "to ... from"],
+    "correct": 0,
+    "explain": "\"up the stairs\" (bergerak naik) dan \"down the hill\" (bergerak turun) menunjukkan arah vertikal sepanjang sesuatu."
+  },
+  {
+    "q": "She walked ___ the exit, hoping to leave before the meeting ended.",
+    "opts": ["towards", "into", "through", "along"],
+    "correct": 0,
+    "explain": "\"towards\" menunjukkan bergerak ke arah sesuatu, belum tentu sampai — cocok untuk konteks \"menuju pintu keluar\" tanpa memastikan sudah sampai."
+  },
+  {
+    "q": "Apa perbedaan utama antara \"She jumped into the pool\" dan \"She is swimming in the pool\"?",
+    "opts": [
+      "Tidak ada perbedaan, keduanya sama persis",
+      "\"into\" menunjukkan aksi pergerakan masuk ke posisi baru, sedangkan \"in\" menunjukkan posisi diam yang sudah ada di situ",
+      "\"into\" hanya dipakai untuk kolam renang",
+      "\"in\" hanya dipakai untuk kalimat pasif"
+    ],
+    "correct": 1,
+    "explain": "into/onto = pergerakan menuju posisi baru; in/on = posisi diam yang sudah ada. \"Jumped into\" = aksi melompat masuk; \"swimming in\" = sudah di dalam, sedang berenang."
+  },
+  {
+    "q": "This novel was written ___ Andrea Hirata, and it was later adapted into a film ___ a famous director.",
+    "opts": ["by ... by", "with ... with", "by ... with", "with ... by"],
+    "correct": 0,
+    "explain": "Kedua kalimat pasif ini menunjukkan pelaku/agent (siapa yang menulis, siapa yang mengadaptasi) → keduanya pakai BY, bukan WITH."
+  },
+  {
+    "q": "The window was broken ___ the boy ___ a hammer.",
+    "opts": ["by ... with", "with ... by", "by ... by", "with ... with"],
+    "correct": 0,
+    "explain": "\"by the boy\" menunjukkan pelaku (agent), \"with a hammer\" menunjukkan alat (instrument) — dua preposisi berbeda bisa muncul sekaligus dalam satu kalimat pasif."
+  },
+  {
+    "q": "She cut the vegetables ___ a sharp knife before the soup was cooked ___ her mother.",
+    "opts": ["with ... by", "by ... with", "with ... with", "by ... by"],
+    "correct": 0,
+    "explain": "\"with a sharp knife\" = alat (instrument), \"by her mother\" = pelaku (agent) dalam klausa pasif."
+  },
+  {
+    "q": "I'm ___ your problems — you can always talk to me.",
+    "opts": ["aware to", "aware of", "aware in", "aware at"],
+    "correct": 1,
+    "explain": "\"aware\" pasangan tetapnya OF (aware of = sadar akan)."
+  },
+  {
+    "q": "He's very ___ spiders, so he never goes near the garden shed.",
+    "opts": ["afraid at", "afraid to", "afraid of", "afraid with"],
+    "correct": 2,
+    "explain": "\"afraid\" pasangan tetapnya OF (afraid of = takut akan)."
+  },
+  {
+    "q": "My parents are really ___ me for winning the competition.",
+    "opts": ["proud with", "proud of", "proud at", "proud to"],
+    "correct": 1,
+    "explain": "\"proud\" pasangan tetapnya OF (proud of = bangga akan)."
+  },
+  {
+    "q": "I'm ___ waiting in this long queue — it's been an hour!",
+    "opts": ["tired at", "tired to", "tired with", "tired of"],
+    "correct": 3,
+    "explain": "\"tired\" pasangan tetapnya OF (tired of = bosan/lelah akan)."
+  },
+  {
+    "q": "She's very ___ learning new languages — it's basically her hobby.",
+    "opts": ["interested in", "interested to", "interested at", "interested on"],
+    "correct": 0,
+    "explain": "\"interested\" pasangan tetapnya IN (interested in), bukan \"to\"."
+  },
+  {
+    "q": "He's ___ maths but really ___ history.",
+    "opts": ["good at ... bad at", "good in ... bad in", "good to ... bad to", "good with ... bad with"],
+    "correct": 0,
+    "explain": "\"good\" dan \"bad\" (dalam konteks kemampuan/kepiawaian) pasangan tetapnya AT."
+  },
+  {
+    "q": "We were all ___ the sudden announcement.",
+    "opts": ["surprised with", "surprised of", "surprised at", "surprised to"],
+    "correct": 2,
+    "explain": "\"surprised\" pasangan tetapnya AT (surprised at = terkejut akan)."
+  },
+  {
+    "q": "She's finally ___ her long-term boyfriend next month.",
+    "opts": ["getting married with", "getting married to", "getting married at", "getting married in"],
+    "correct": 1,
+    "explain": "\"married\" pasangan tetapnya TO — bukan \"with\", meski dalam Bahasa Indonesia kita bilang \"menikah dengan\"."
+  },
+  {
+    "q": "This phone case is very ___ the one I lost last week.",
+    "opts": ["similar to", "similar with", "similar at", "similar of"],
+    "correct": 0,
+    "explain": "\"similar\" pasangan tetapnya TO (similar to = mirip dengan)."
+  },
+  {
+    "q": "My little brother is ___ his phone — he can't put it down.",
+    "opts": ["addicted with", "addicted at", "addicted to", "addicted in"],
+    "correct": 2,
+    "explain": "\"addicted\" pasangan tetapnya TO (addicted to = kecanduan)."
+  },
+  {
+    "q": "After living in Bogor for years, I'm finally ___ the rainy weather.",
+    "opts": ["used at", "used to", "used with", "used for"],
+    "correct": 1,
+    "explain": "\"used to\" (dalam konteks kebiasaan/terbiasa) pasangan tetapnya TO, diikuti kata benda atau gerund — beda dari \"used to + V1\" (dulu biasa)."
+  },
+  {
+    "q": "We were very ___ the hotel service during our trip.",
+    "opts": ["satisfied at", "satisfied to", "satisfied with", "satisfied of"],
+    "correct": 2,
+    "explain": "\"satisfied\" pasangan tetapnya WITH (satisfied with = puas dengan)."
+  },
+  {
+    "q": "This city is ___ its street food and traditional markets.",
+    "opts": ["famous for", "famous of", "famous at", "famous with"],
+    "correct": 0,
+    "explain": "\"famous\" pasangan tetapnya FOR (famous for = terkenal karena)."
+  },
+  {
+    "q": "As the team leader, she's ___ the entire project's success.",
+    "opts": ["responsible of", "responsible for", "responsible at", "responsible to"],
+    "correct": 1,
+    "explain": "\"responsible\" pasangan tetapnya FOR (responsible for = bertanggung jawab atas)."
+  },
+  {
+    "q": "This app's design is completely ___ the previous version — nothing looks the same.",
+    "opts": ["different of", "different to", "different than", "different from"],
+    "correct": 3,
+    "explain": "\"different\" pasangan tetapnya FROM (different from = berbeda dari) dalam Bahasa Inggris standar/formal."
+  },
+  {
+    "q": "He's really ___ his upcoming exam results.",
+    "opts": ["worried about", "worried to", "worried at", "worried for"],
+    "correct": 0,
+    "explain": "\"worried\" pasangan tetapnya ABOUT (worried about = khawatir tentang)."
+  },
+  {
+    "q": "I always ___ music while I study.",
+    "opts": ["listen music", "listen at music", "listen to music", "listen for music"],
+    "correct": 2,
+    "explain": "\"listen\" pasangan tetapnya TO (listen to = mendengarkan) — tidak bisa langsung diikuti objek tanpa preposisi."
+  },
+  {
+    "q": "This old bicycle ___ my grandfather.",
+    "opts": ["belongs at", "belongs to", "belongs with", "belongs for"],
+    "correct": 1,
+    "explain": "\"belong\" pasangan tetapnya TO (belong to = milik)."
+  },
+  {
+    "q": "We finally ___ the airport after a very long flight.",
+    "opts": ["arrived to", "arrived at", "arrived on", "arrived with"],
+    "correct": 1,
+    "explain": "\"arrive\" tidak pernah diikuti \"to\" secara langsung — pakai AT untuk titik/lokasi spesifik seperti bandara, atau IN untuk kota/negara."
+  },
+  {
+    "q": "I'm currently ___ my missing wallet — have you seen it anywhere?",
+    "opts": ["looking for", "looking at", "looking after", "looking to"],
+    "correct": 0,
+    "explain": "\"look for\" = mencari. Beda dengan \"look at\" (melihat ke arah) dan \"look after\" (merawat/menjaga) — kata kerja yang sama, makna berbeda tergantung preposisinya."
+  },
+  {
+    "q": "It all ___ the weather — if it rains, the event will be cancelled.",
+    "opts": ["depends to", "depends on", "depends at", "depends for"],
+    "correct": 1,
+    "explain": "\"depend\" pasangan tetapnya selalu ON, tidak pernah \"to\"."
+  },
+  {
+    "q": "You can always ___ your best friend when you need help.",
+    "opts": ["rely to", "rely on", "rely at", "rely with"],
+    "correct": 1,
+    "explain": "\"rely\" pasangan tetapnya ON (rely on = mengandalkan), sama seperti \"depend on\" dan \"count on\"."
+  },
+  {
+    "q": "Please ___ your homework before you start playing games.",
+    "opts": ["focus at", "focus in", "focus on", "focus to"],
+    "correct": 2,
+    "explain": "\"focus\" pasangan tetapnya ON (focus on = fokus pada)."
+  },
+  {
+    "q": "I really ___ you — I know you can do this.",
+    "opts": ["believe on", "believe in", "believe at", "believe to"],
+    "correct": 1,
+    "explain": "\"believe\" pasangan tetapnya IN (believe in = percaya akan keberadaan/nilai seseorang atau sesuatu)."
+  },
+  {
+    "q": "This basketball team ___ five talented players.",
+    "opts": ["consists in", "consists with", "consists of", "consists on"],
+    "correct": 2,
+    "explain": "\"consist\" pasangan tetapnya OF (consist of = terdiri dari)."
+  },
+  {
+    "q": "We need to ___ the budget before the meeting ends.",
+    "opts": ["discuss about", "discuss to", "discuss", "discuss with"],
+    "correct": 2,
+    "explain": "\"discuss\" adalah kata kerja transitif dan TIDAK butuh preposisi tambahan — langsung diikuti objek. \"Discuss about\" adalah kesalahan klasik dari terjemahan langsung \"membahas tentang\"."
+  },
+  {
+    "q": "Let's ___ the new marketing plan over lunch tomorrow.",
+    "opts": ["talk about", "talk", "discuss about", "talk to"],
+    "correct": 0,
+    "explain": "\"talk\" adalah kata kerja intransitif, jadi memang butuh \"about\" untuk memperkenalkan topiknya — beda dengan \"discuss\" yang transitif dan tidak butuh preposisi."
+  },
+  {
+    "q": "Manakah kalimat berikut yang menggunakan verb + preposition dengan BENAR?",
+    "opts": [
+      "She always cares of her little sister.",
+      "He apologized for being late.",
+      "They succeeded of finishing the marathon.",
+      "The team consists in five members."
+    ],
+    "correct": 1,
+    "explain": "\"apologize for\" benar. Seharusnya: \"cares for\", \"succeeded in\", \"consists of\"."
+  },
+  {
+    "q": "Can you please ___ this math problem ___ me? I really don't understand it.",
+    "opts": ["explain ... to", "explain to ... for", "explain ... for", "explain me ... -"],
+    "correct": 0,
+    "explain": "Pola \"explain + [apa yang dijelaskan] + to + [orangnya]\" — \"explain me\" (tanpa \"to\") adalah kesalahan klasik dari pola \"jelaskan saya\" dalam Bahasa Indonesia."
+  },
+  {
+    "q": "Identifikasi kesalahan pada kalimat: \"He got married with a girl he met at university.\"",
+    "opts": [
+      "Kalimatnya sudah benar, tidak ada kesalahan",
+      "\"married with\" seharusnya \"married to\" — hasil terjemahan langsung dari \"menikah dengan\"",
+      "\"at university\" seharusnya \"in university\"",
+      "\"met\" seharusnya \"meets\""
+    ],
+    "correct": 1,
+    "explain": "\"married\" selalu pasangan dengan TO, bukan WITH, meski dalam Bahasa Indonesia kita menerjemahkannya sebagai \"menikah dengan\"."
+  },
+  {
+    "q": "Identifikasi kesalahan pada kalimat: \"We arrived to the hotel very late last night.\"",
+    "opts": [
+      "Kalimatnya sudah benar",
+      "\"very late\" seharusnya \"very lately\"",
+      "\"arrived to\" seharusnya \"arrived at\" (untuk lokasi/titik spesifik seperti hotel)",
+      "\"last night\" seharusnya \"in last night\""
+    ],
+    "correct": 2,
+    "explain": "\"arrive\" tidak pernah langsung diikuti \"to\". Untuk titik/lokasi spesifik seperti hotel/bandara/stasiun, pakai \"arrive at\"."
+  },
+  {
+    "q": "Identifikasi kesalahan pada kalimat: \"I'm interested to know more about your project.\"",
+    "opts": [
+      "Kalimatnya sudah benar",
+      "\"interested to know\" seharusnya \"interested in knowing\" — \"interested\" pasangan tetapnya IN, diikuti gerund",
+      "\"more about\" seharusnya \"more of\"",
+      "\"your project\" seharusnya \"your projects\""
+    ],
+    "correct": 1,
+    "explain": "\"interested\" selalu diikuti IN, bukan TO, dan kata kerja setelahnya harus bentuk -ing (gerund), bukan \"to + V1\"."
+  },
+  {
+    "q": "Identifikasi kesalahan pada kalimat: \"Whether the trip happens or not depends to the budget we have.\"",
+    "opts": [
+      "Kalimatnya sudah benar",
+      "\"depends to\" seharusnya \"depends on\" — \"depend\" tidak pernah dipasangkan dengan \"to\"",
+      "\"Whether\" seharusnya \"If\"",
+      "\"budget\" seharusnya \"budgets\""
+    ],
+    "correct": 1,
+    "explain": "\"depend\" pasangan tetapnya selalu ON. Kesalahan \"depend to\" muncul dari terjemahan langsung \"tergantung kepada/pada\"."
+  },
+  {
+    "q": "Temukan kalimat yang mengandung kesalahan preposisi: \"They discussed about the schedule, and then they agreed with the final decision.\"",
+    "opts": [
+      "Keduanya benar, tidak ada kesalahan",
+      "\"discussed about\" salah (harusnya tanpa \"about\"), \"agreed with\" sudah benar",
+      "\"agreed with\" salah (harusnya \"agreed to\"), \"discussed about\" sudah benar",
+      "Keduanya salah dan harus dihapus preposisinya"
+    ],
+    "correct": 1,
+    "explain": "\"discuss\" adalah verb transitif, tidak butuh \"about\". \"agree with\" (setuju dengan seseorang/pendapat) sudah benar sebagai pasangan tetap."
+  },
+  {
+    "q": "Baca paragraf berikut: \"Rina is a university student who is good at painting. She's currently working on a project about Indonesian culture, and she's excited about presenting it next week. She's also grateful for her professor's support.\" Berdasarkan paragraf ini, preposisi apa yang tepat mengikuti kata \"grateful\"?",
+    "opts": ["grateful of", "grateful for", "grateful to (hanya)", "grateful with"],
+    "correct": 1,
+    "explain": "\"grateful\" pasangan tetapnya FOR ketika diikuti hal yang disyukuri (grateful for her professor's support = bersyukur atas dukungan profesornya)."
+  },
+  {
+    "q": "Dari paragraf pada soal sebelumnya, frasa \"good at painting\" menunjukkan pola dependent preposition untuk kategori apa?",
+    "opts": ["Verb + preposition", "Adjective + preposition menunjukkan kemampuan/keahlian", "Preposition of time", "Preposition of place"],
+    "correct": 1,
+    "explain": "\"good at\" adalah pola adjective + preposition (AT) yang menunjukkan kemampuan/keahlian dalam sesuatu."
+  },
+  {
+    "q": "Manakah pasangan verb + preposition berikut yang artinya \"merawat/menjaga\", bukan \"mencari\" atau \"melihat ke arah\"?",
+    "opts": ["look for", "look at", "look after", "look to"],
+    "correct": 2,
+    "explain": "\"look after\" = merawat/menjaga. \"look for\" = mencari, \"look at\" = melihat ke arah — tiga makna berbeda dari kata kerja dasar yang sama tergantung preposisinya."
+  },
+  {
+    "q": "She ___ the missing report all morning but couldn't find it anywhere.",
+    "opts": ["searched for", "searched at", "searched to", "searched with"],
+    "correct": 0,
+    "explain": "\"search for\" = mencari secara menyeluruh, pasangan tetapnya FOR."
+  },
+  {
+    "q": "The heavy rain last week ___ severe flooding in several areas.",
+    "opts": ["resulted from", "resulted in", "resulted at", "resulted with"],
+    "correct": 1,
+    "explain": "\"result in\" = mengakibatkan (sebab → akibat). \"result from\" artinya kebalikannya (akibat → sebab), jadi konteks kalimat ini butuh \"result in\"."
+  },
+  {
+    "q": "Don't ___ yourself ___ other people — everyone has their own journey.",
+    "opts": ["compare ... with", "compare ... to only", "compare ... at", "compare ... for"],
+    "correct": 0,
+    "explain": "\"compare... with\" adalah pola verb + preposition standar untuk membandingkan dua hal/orang."
+  },
+  {
+    "q": "Manakah kalimat yang secara SEMUA preposisinya benar?",
+    "opts": [
+      "She is famous for her paintings, and she's always proud of her students' progress.",
+      "She is famous of her paintings, and she's always proud at her students' progress.",
+      "She is famous with her paintings, and she's always proud to her students' progress.",
+      "She is famous at her paintings, and she's always proud with her students' progress."
+    ],
+    "correct": 0,
+    "explain": "\"famous for\" dan \"proud of\" adalah pasangan tetap yang benar. Pilihan lain salah memasangkan kedua adjective dengan preposisi yang salah."
+  },
+  {
+    "q": "I'm ___ this software — I've used it for years at my old job.",
+    "opts": ["familiar with", "familiar of", "familiar to", "familiar at"],
+    "correct": 0,
+    "explain": "\"familiar\" pasangan tetapnya WITH (familiar with = akrab/paham dengan)."
+  },
+  {
+    "q": "He ___ his mistake and apologized to everyone in the room.",
+    "opts": ["was ashamed at", "was ashamed of", "was ashamed with", "was ashamed to"],
+    "correct": 1,
+    "explain": "\"ashamed\" pasangan tetapnya OF (ashamed of = malu akan)."
+  }
+]

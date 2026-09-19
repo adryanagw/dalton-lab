@@ -55,7 +55,8 @@ const ICON_PATHS = {
   'arrow-left': '<path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/>',
   sparkle: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2 2M16 16l2 2M6 18l2-2M16 8l2-2"/>',
   'log-in': '<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/>',
-  download: '<path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/>'
+  download: '<path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/>',
+  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 3 4 6.5 4 9s-1.5 6-4 9c-2.5-3-4-6.5-4-9s1.5-6 4-9z"/>'
 };
 function icon(name, extraClass){
   const path = ICON_PATHS[name];
@@ -352,6 +353,26 @@ const subjectsData = {
     desc:'Kolonialisme, pergerakan nasional, kemerdekaan, dan sejarah Indonesia lainnya.',
     babs:[
       {id:'bab1-kolonialisme-imperialisme', num:'Bab 1', title:'Kolonialisme & Imperialisme Barat', desc:'Rute penjelajahan samudra bangsa Eropa, VOC, sistem tanam paksa, hingga dampak kolonialisme di Nusantara.', ready:true, estMinutes:20, subbabCount:11},
+    ]
+  },
+  inggris: {
+    name:'Bahasa Inggris', icon:'globe', ready:true, color:'teal',
+    desc:'Tenses, kalimat kondisional, jenis-jenis verb, modal, kalimat aktif-pasif, dan tata bahasa Inggris lainnya.',
+    babs:[
+      {id:'bab1-simple-present-continuous', num:'Bab 1', title:'Simple Present & Present Continuous', desc:'Bentuk dan pola +/−/? untuk kedua tenses, tiga fungsi Simple Present, empat fungsi Present Continuous, jebakan stative verbs, hingga tabel perbandingan keduanya.', ready:true, estMinutes:28, subbabCount:11},
+      {id:'bab2-simple-past-continuous', num:'Bab 2', title:'Simple Past & Past Continuous', desc:'Aturan ejaan -ed, tabel irregular verbs dasar, fungsi Simple Past & Past Continuous, pola when/while untuk aksi yang diinterupsi, hingga latihan menggabungkan kalimat.', ready:true, estMinutes:20, subbabCount:8},
+      {id:'bab3-simple-future-continuous', num:'Bab 3', title:'Simple Future & Future Continuous', desc:'Perbedaan will vs going to, bentuk & fungsi Future Continuous, tabel perbandingan ketiga cara menyatakan masa depan, hingga latihan penentuan konteks.', ready:true, estMinutes:20, subbabCount:8},
+      {id:'bab4-present-perfect-continuous', num:'Bab 4', title:'Present Perfect & Present Perfect Continuous', desc:'Empat fungsi Present Perfect, perbandingan since vs for, Present Perfect Continuous, hingga jebakan klasik Present Perfect vs Simple Past.', ready:true, estMinutes:23, subbabCount:9},
+      {id:'bab5-past-perfect-continuous', num:'Bab 5', title:'Past Perfect & Past Perfect Continuous', desc:'"Masa lalu dari masa lalu" — bentuk & fungsi Past Perfect, Past Perfect Continuous, hingga latihan menggabungkan dua peristiwa masa lalu.', ready:true, estMinutes:15, subbabCount:5},
+      {id:'bab6-future-perfect-continuous', num:'Bab 6', title:'Future Perfect & Future Perfect Continuous', desc:'Bentuk & fungsi Future Perfect dan Future Perfect Continuous, ditutup rekap 12 tenses dalam satu tabel.', ready:true, estMinutes:18, subbabCount:7},
+      {id:'bab7-conditional-sentence', num:'Bab 7', title:'Conditional Sentences (If-Clauses)', desc:'Empat tipe kalimat pengandaian (Zero-Third Conditional), Mixed Conditionals, tabel rangkuman lengkap, hingga transformasi antar tipe.', ready:true, estMinutes:23, subbabCount:9},
+      {id:'bab8-gerund-vs-infinitive', num:'Bab 8', title:'Gerund vs To-Infinitive', desc:'Kapan pakai gerund, kapan pakai to-infinitive, verb yang berubah makna (remember/stop/try/regret), hingga jebakan "look forward to".', ready:true, estMinutes:20, subbabCount:8},
+      {id:'bab9-finite-vs-nonfinite-verbs', num:'Bab 9', title:'Finite vs Non-Finite Verbs', desc:'Cara mengenali verb utama dalam kalimat, participle clauses, hingga jebakan dangling participle.', ready:true, estMinutes:23, subbabCount:9},
+      {id:'bab10-regular-vs-irregular-verbs', num:'Bab 10', title:'Regular vs Irregular Verbs', desc:'Aturan ejaan -ed & tiga pelafalannya, tabel lengkap 40 irregular verbs terkelompok berdasarkan pola V1-V2-V3.', ready:true, estMinutes:15, subbabCount:6},
+      {id:'bab11-full-modal-auxiliary-verbs', num:'Bab 11', title:'Full Verbs, Modal & Auxiliary Verbs', desc:'Klasifikasi tiga jenis verb, fungsi auxiliary be/do/have secara mendalam, hingga perbedaan auxiliary vs full verb pada kata yang sama.', ready:true, estMinutes:20, subbabCount:8},
+      {id:'bab12-modal-verb-forms', num:'Bab 12', title:'Modal Verbs: Bentuk Present/Past & Perfect', desc:'Makna modal present & past yang sering salah dikira "cuma masa lalu", hingga modal perfect (must/might/should have) untuk deduksi & penyesalan.', ready:true, estMinutes:18, subbabCount:7},
+      {id:'bab13-active-passive-voice', num:'Bab 13', title:'Active & Passive Voice', desc:'Transformasi aktif-pasif di hampir semua tenses, passive dengan modal, passive dua objek, hingga kapan TIDAK boleh pakai passive.', ready:true, estMinutes:25, subbabCount:10},
+      {id:'bab14-prepositions', num:'Bab 14', title:'Prepositions', desc:'Preposisi waktu, tempat, arah, hingga daftar lengkap dependent prepositions (adjective+preposition, verb+preposition) dan kesalahan umum akibat terjemahan langsung dari bahasa Indonesia.', ready:true, estMinutes:26, subbabCount:9},
     ]
   },
 };

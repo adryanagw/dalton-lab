@@ -1,0 +1,362 @@
+[
+  {
+    "q": "Pilih bentuk yang tepat: I ___ (finish) my homework already.",
+    "opts": ["have finished", "finished", "has finished", "am finishing"],
+    "correct": 0,
+    "explain": "Subjek \"I\" pakai have, dan \"already\" adalah signal word khas Present Perfect (have/has + V3). \"finish\" jadi V3-nya \"finished\"."
+  },
+  {
+    "q": "Pilih bentuk yang tepat: She ___ (live) in London for two years.",
+    "opts": ["has lived", "have lived", "lived", "is living"],
+    "correct": 0,
+    "explain": "Subjek tunggal orang ketiga (she) pakai has. \"for two years\" adalah durasi, cocok dengan Present Perfect yang menekankan fakta/hasil keadaan sampai sekarang."
+  },
+  {
+    "q": "Pilih bentuk yang tepat: They ___ (not/finish) the project yet.",
+    "opts": ["haven't finished", "hasn't finished", "didn't finish", "aren't finishing"],
+    "correct": 0,
+    "explain": "Subjek jamak \"they\" pakai haven't (have + not). \"yet\" adalah signal word negatif khas Present Perfect, diletakkan di akhir kalimat."
+  },
+  {
+    "q": "Pilih bentuk yang tepat: ___ you ever ___ (be) to Japan?",
+    "opts": ["Have; been", "Has; been", "Did; be", "Are; being"],
+    "correct": 0,
+    "explain": "Subjek \"you\" pakai Have. \"ever\" adalah signal word pengalaman khas Present Perfect tanya. V3 dari \"be\" adalah \"been\"."
+  },
+  {
+    "q": "Pilih bentuk yang tepat: He ___ (not/call) me yet.",
+    "opts": ["hasn't called", "haven't called", "didn't call", "isn't calling"],
+    "correct": 0,
+    "explain": "Subjek tunggal \"he\" pakai hasn't (has + not). Verb regular \"call\" → V3-nya \"called\"."
+  },
+  {
+    "q": "Manakah rumus Present Perfect Continuous yang benar untuk kalimat positif?",
+    "opts": ["S + have/has + been + V-ing", "S + have/has + V3", "S + is/am/are + V-ing", "S + have/has + been + V3"],
+    "correct": 0,
+    "explain": "Present Perfect Continuous dibentuk dari have/has + been + V-ing, menekankan durasi/proses aksi yang berlangsung sampai sekarang."
+  },
+  {
+    "q": "Pilih bentuk yang tepat: We ___ (wait) for the bus for twenty minutes.",
+    "opts": ["have been waiting", "has been waiting", "have waited", "are waiting"],
+    "correct": 0,
+    "explain": "Subjek jamak \"we\" pakai have. Penekanannya pada durasi proses menunggu yang masih berlangsung, jadi pakai Present Perfect Continuous: have been + V-ing."
+  },
+  {
+    "q": "Pilih bentuk yang tepat: My eyes are tired. I ___ (read) all day.",
+    "opts": ["have been reading", "have read", "has been reading", "am reading"],
+    "correct": 0,
+    "explain": "Subjek \"I\" pakai have. Kalimat menekankan proses membaca yang berlangsung lama (\"all day\") dengan efek yang masih terasa (mata lelah) → Present Perfect Continuous."
+  },
+  {
+    "q": "Pilih bentuk yang tepat: ___ she ___ (study) for the exam since morning?",
+    "opts": ["Has; been studying", "Have; been studying", "Does; study", "Is; studying"],
+    "correct": 0,
+    "explain": "Subjek tunggal \"she\" pakai Has di kalimat tanya Present Perfect Continuous: Has/Have + S + been + V-ing."
+  },
+  {
+    "q": "\"I have lived in Jakarta ___ 2015.\" Pilih kata yang tepat.",
+    "opts": ["since", "for", "from", "in"],
+    "correct": 0,
+    "explain": "\"2015\" adalah titik waktu spesifik (tahun mulai), bukan durasi — jadi wajib pakai since, bukan for."
+  },
+  {
+    "q": "\"She has worked here ___ three years.\" Pilih kata yang tepat.",
+    "opts": ["for", "since", "in", "at"],
+    "correct": 0,
+    "explain": "\"three years\" adalah rentang/durasi waktu, bukan titik waktu — jadi wajib pakai for."
+  },
+  {
+    "q": "\"They have been friends ___ they were in elementary school.\" Pilih kata yang tepat.",
+    "opts": ["since", "for", "during", "while"],
+    "correct": 0,
+    "explain": "Since juga bisa diikuti klausa (bukan cuma satu kata) yang menyatakan titik waktu mulainya sesuatu — \"since they were in elementary school\" menandai titik mulai persahabatan mereka."
+  },
+  {
+    "q": "\"I haven't seen him ___ last Monday.\" Pilih kata yang tepat.",
+    "opts": ["since", "for", "from", "at"],
+    "correct": 0,
+    "explain": "\"last Monday\" adalah titik waktu spesifik kapan terakhir kali bertemu → since, bukan for."
+  },
+  {
+    "q": "\"We have known each other ___ a long time.\" Pilih kata yang tepat.",
+    "opts": ["for", "since", "from", "by"],
+    "correct": 0,
+    "explain": "\"a long time\" adalah frasa durasi (bukan titik waktu), jadi pakai for."
+  },
+  {
+    "q": "Manakah yang jadi ciri khas kata setelah \"since\"?",
+    "opts": ["Titik waktu spesifik di garis waktu (misalnya tahun, hari, jam, peristiwa)", "Jumlah/rentang waktu (misalnya angka + satuan waktu)", "Kata kerja bentuk -ing", "Kata sifat"],
+    "correct": 0,
+    "explain": "Since selalu diikuti titik waktu spesifik — kapan sesuatu dimulai — bukan berapa lama sesuatu berlangsung (itu tugas for)."
+  },
+  {
+    "q": "Manakah yang jadi ciri khas kata/frasa setelah \"for\" dalam konteks Present Perfect?",
+    "opts": ["Durasi/rentang waktu (angka + satuan waktu, atau frasa seperti \"a while\")", "Titik waktu spesifik seperti tahun atau hari", "Nama tempat", "Kata benda tunggal"],
+    "correct": 0,
+    "explain": "For selalu diikuti oleh durasi — berapa lama sesuatu sudah berlangsung — bukan kapan titik mulainya (itu tugas since)."
+  },
+  {
+    "q": "Manakah kalimat yang menggunakan since/for dengan BENAR?",
+    "opts": ["I have studied English since 2018.", "I have studied English since three years.", "I have studied English for 2018.", "I have studied English for since three years."],
+    "correct": 0,
+    "explain": "\"2018\" adalah titik waktu spesifik → cocok dengan since. Opsi lain salah karena mencampur since dengan durasi atau for dengan titik waktu."
+  },
+  {
+    "q": "Temukan kesalahan pada kalimat: \"She has lived here since five years.\"",
+    "opts": ["Seharusnya \"for five years\", karena \"five years\" adalah durasi bukan titik waktu", "Seharusnya \"has lived\" diganti \"have lived\"", "Seharusnya \"lived\" diganti \"living\"", "Kalimat sudah benar"],
+    "correct": 0,
+    "explain": "\"Five years\" adalah jumlah/durasi waktu, bukan titik waktu spesifik, jadi harus pakai for, bukan since."
+  },
+  {
+    "q": "\"My grandfather has been a teacher ___ he was 25 years old.\" Pilih kata yang tepat.",
+    "opts": ["since", "for", "during", "within"],
+    "correct": 0,
+    "explain": "\"he was 25 years old\" adalah titik/peristiwa waktu spesifik (usia tertentu saat mulai jadi guru) → since."
+  },
+  {
+    "q": "Which sentence correctly uses Present Perfect to talk about an EXPERIENCE (without a specific time)?",
+    "opts": ["I have visited Bali twice.", "I visited Bali twice yesterday.", "I am visiting Bali twice.", "I have visited Bali twice yesterday."],
+    "correct": 0,
+    "explain": "Present Perfect untuk pengalaman tidak menyebut kapan persisnya terjadi — \"I have visited Bali twice\" menyatakan pengalaman tanpa waktu spesifik, cocok."
+  },
+  {
+    "q": "Which sentence shows the use of Present Perfect for a RESULT that is still relevant now?",
+    "opts": ["She has broken her leg, so she can't walk now.", "She broke her leg last year.", "She is breaking her leg.", "She will break her leg."],
+    "correct": 0,
+    "explain": "Kalimat ini fokus pada hasil aksi masa lalu (kaki patah) yang efeknya masih terasa sekarang (tidak bisa berjalan) — fungsi khas Present Perfect."
+  },
+  {
+    "q": "Which sentence shows Present Perfect used for an action within an UNFINISHED time period?",
+    "opts": ["I have read three books this month.", "I read three books last month.", "I am reading three books.", "I will read three books this month."],
+    "correct": 0,
+    "explain": "\"this month\" adalah periode waktu yang belum berakhir saat kalimat diucapkan — cocok dengan salah satu fungsi Present Perfect."
+  },
+  {
+    "q": "Which sentence uses \"just\" correctly with Present Perfect to show an action that JUST happened?",
+    "opts": ["The bus has just left.", "The bus just leaves.", "The bus is just leaving now.", "The bus just left yesterday."],
+    "correct": 0,
+    "explain": "\"has just left\" menandakan aksi yang baru saja terjadi — pola have/has + just + V3 adalah bentuk standar untuk fungsi ini."
+  },
+  {
+    "q": "Complete: The bus ___ just ___ (leave).",
+    "opts": ["has; left", "have; left", "is; leaving", "was; leaving"],
+    "correct": 0,
+    "explain": "Subjek tunggal \"the bus\" pakai has. \"just\" adalah signal word untuk aksi yang baru saja terjadi, diikuti V3 \"left\"."
+  },
+  {
+    "q": "Manakah signal word yang PALING TEPAT untuk kalimat: \"I ___ finished my work.\" (menyatakan sudah selesai, sebelum kata kerja)",
+    "opts": ["already", "yet", "ago", "when"],
+    "correct": 0,
+    "explain": "\"Already\" biasa diletakkan sebelum V3 di kalimat positif Present Perfect untuk menekankan sesuatu sudah terjadi (kadang lebih cepat dari perkiraan)."
+  },
+  {
+    "q": "Manakah signal word yang tepat untuk kalimat negatif/tanya di akhir kalimat: \"Has she arrived ___?\"",
+    "opts": ["yet", "already", "since", "ago"],
+    "correct": 0,
+    "explain": "\"Yet\" dipakai di kalimat negatif dan tanya, biasanya diletakkan di akhir kalimat — \"belum\" atau \"sudahkah\"."
+  },
+  {
+    "q": "Spot the error: \"I have visited Bali yesterday.\"",
+    "opts": ["\"yesterday\" adalah signal waktu spesifik, seharusnya kalimat pakai Simple Past: \"I visited Bali yesterday.\"", "\"visited\" seharusnya \"visit\"", "\"have\" seharusnya \"has\"", "Kalimat sudah benar"],
+    "correct": 0,
+    "explain": "Signal waktu spesifik seperti \"yesterday\" mewajibkan Simple Past, bukan Present Perfect — ini kesalahan paling umum pelajar Indonesia."
+  },
+  {
+    "q": "Spot the error: \"He go to school every day since he was young.\"",
+    "opts": ["Seharusnya \"He has gone to school every day since he was young\" — subjek tunggal, ada signal \"since\"", "\"school\" seharusnya \"schools\"", "\"young\" seharusnya \"younger\"", "Kalimat sudah benar"],
+    "correct": 0,
+    "explain": "Ada signal word \"since\" yang menandai Present Perfect, dan subjek \"he\" butuh has + V3 (gone), bukan bentuk base verb \"go\"."
+  },
+  {
+    "q": "Spot the error: \"I have been knowing him for years.\"",
+    "opts": ["\"know\" adalah stative verb, tidak boleh dipakai bentuk continuous — seharusnya \"I have known him for years.\"", "\"for\" seharusnya \"since\"", "\"have\" seharusnya \"has\"", "Kalimat sudah benar"],
+    "correct": 0,
+    "explain": "Stative verbs (know, love, believe, understand, want, need, own, belong) tidak dipakai dalam bentuk -ing, termasuk di Present Perfect Continuous. Pakai Present Perfect biasa."
+  },
+  {
+    "q": "Spot the error: \"She have finished her homework.\"",
+    "opts": ["Seharusnya \"has\" karena subjek \"she\" tunggal orang ketiga", "Seharusnya \"finish\" bukan \"finished\"", "Seharusnya \"homeworks\"", "Kalimat sudah benar"],
+    "correct": 0,
+    "explain": "Subjek tunggal orang ketiga (she/he/it) wajib pakai has, bukan have — aturan sama seperti do/does di Simple Present."
+  },
+  {
+    "q": "Spot the error: \"They has been playing football since two hours.\"",
+    "opts": ["Dua kesalahan: \"has\" seharusnya \"have\" (subjek jamak), dan \"since two hours\" seharusnya \"for two hours\" (durasi)", "Hanya \"has\" yang salah", "Hanya \"since\" yang salah", "Kalimat sudah benar"],
+    "correct": 0,
+    "explain": "\"They\" adalah subjek jamak sehingga butuh have, bukan has. \"Two hours\" adalah durasi sehingga butuh for, bukan since."
+  },
+  {
+    "q": "Manakah kalimat yang paling tepat menggambarkan PENEKANAN PADA HASIL (bukan durasi)?",
+    "opts": ["I have read five chapters.", "I have been reading for three hours.", "I am reading five chapters.", "I read five chapters yesterday."],
+    "correct": 0,
+    "explain": "Present Perfect biasa menekankan hasil/jumlah yang telah dicapai (lima bab), berbeda dengan Present Perfect Continuous yang menekankan durasi prosesnya."
+  },
+  {
+    "q": "Manakah kalimat yang paling tepat menggambarkan PENEKANAN PADA DURASI/PROSES?",
+    "opts": ["I have been reading for three hours.", "I have read five chapters.", "I read for three hours yesterday.", "I will read for three hours."],
+    "correct": 0,
+    "explain": "Present Perfect Continuous menekankan lamanya proses membaca yang berlangsung, bukan hasil akhirnya."
+  },
+  {
+    "q": "\"Her eyes are red. She ___ (cry).\" Pilih bentuk yang paling tepat.",
+    "opts": ["has been crying", "has cried", "cried", "is crying now"],
+    "correct": 0,
+    "explain": "Ini fungsi Present Perfect Continuous untuk aksi yang baru saja berhenti tapi buktinya (mata merah) masih terlihat sekarang."
+  },
+  {
+    "q": "Which sentence must use Simple Past, not Present Perfect?",
+    "opts": ["I visited my grandmother last week.", "I have visited my grandmother.", "I have never visited my grandmother.", "I have just visited my grandmother."],
+    "correct": 0,
+    "explain": "\"Last week\" adalah signal waktu spesifik, jadi wajib Simple Past — Present Perfect tidak boleh dipakai di sini."
+  },
+  {
+    "q": "Which sentence correctly uses Present Perfect (no specific past time mentioned)?",
+    "opts": ["I have watched that film.", "I watched that film two days ago.", "I have watched that film two days ago.", "I am watching that film two days ago."],
+    "correct": 0,
+    "explain": "Tanpa penanda waktu spesifik, Present Perfect tepat dipakai untuk menyatakan pengalaman/aksi yang relevansinya masih terasa sekarang."
+  },
+  {
+    "q": "Ubah kalimat berikut ke bentuk yang tepat sesuai konteks: \"When I was 10, I ___ (move) to Bandung.\"",
+    "opts": ["moved", "have moved", "have been moving", "move"],
+    "correct": 0,
+    "explain": "\"When I was 10\" adalah penanda waktu spesifik di masa lalu, jadi wajib Simple Past: \"moved\", bukan Present Perfect."
+  },
+  {
+    "q": "Manakah pernyataan yang BENAR tentang perbedaan Present Perfect dan Simple Past?",
+    "opts": ["Present Perfect dipakai tanpa waktu spesifik dan masih relevan dengan sekarang; Simple Past selalu punya waktu spesifik dan sudah putus dari sekarang", "Present Perfect selalu untuk masa depan, Simple Past untuk masa lalu", "Keduanya sama persis, bisa saling menggantikan bebas", "Present Perfect hanya dipakai untuk subjek jamak"],
+    "correct": 0,
+    "explain": "Perbedaan utamanya bukan soal makna umum \"sudah\", tapi soal ada-tidaknya penanda waktu spesifik dan relevansinya dengan masa sekarang."
+  },
+  {
+    "q": "Complete with the correct V3: I have never ___ (eat) durian before.",
+    "opts": ["eaten", "ate", "eat", "eating"],
+    "correct": 0,
+    "explain": "V3 dari \"eat\" adalah \"eaten\" (eat–ate–eaten), dan \"never\" adalah signal word khas Present Perfect untuk pengalaman."
+  },
+  {
+    "q": "Complete with the correct V3: She has ___ (write) three letters this week.",
+    "opts": ["written", "wrote", "write", "writing"],
+    "correct": 0,
+    "explain": "V3 dari \"write\" adalah \"written\" (write–wrote–written). \"this week\" menunjukkan periode waktu yang belum selesai."
+  },
+  {
+    "q": "Complete with the correct V3: Have you ever ___ (break) a bone?",
+    "opts": ["broken", "broke", "break", "breaking"],
+    "correct": 0,
+    "explain": "V3 dari \"break\" adalah \"broken\" (break–broke–broken); \"ever\" menandai pertanyaan tentang pengalaman."
+  },
+  {
+    "q": "Complete with the correct V3: We have already ___ (do) the assignment.",
+    "opts": ["done", "did", "do", "doing"],
+    "correct": 0,
+    "explain": "V3 dari \"do\" adalah \"done\" (do–did–done); \"already\" menegaskan sesuatu sudah selesai."
+  },
+  {
+    "q": "Complete with the correct V3: He has ___ (go) to the market.",
+    "opts": ["gone", "went", "go", "going"],
+    "correct": 0,
+    "explain": "V3 dari \"go\" adalah \"gone\" (go–went–gone). Perhatikan: \"has been\" berarti \"pernah pergi dan sudah kembali\", sedangkan \"has gone\" bisa berarti masih di sana — nuansa yang sering diuji lanjutannya di tingkat lebih tinggi."
+  },
+  {
+    "q": "Which one correctly forms the question form of Present Perfect Continuous?",
+    "opts": ["Have you been waiting long?", "You have been waiting long?", "Do you have been waiting long?", "Are you have been waiting long?"],
+    "correct": 0,
+    "explain": "Bentuk tanya Present Perfect Continuous: Have/Has + S + been + V-ing — \"Have you been waiting long?\" sudah tepat."
+  },
+  {
+    "q": "Choose the correct negative form: He ___ well lately.",
+    "opts": ["hasn't been feeling", "haven't been feeling", "didn't feel", "isn't feeling"],
+    "correct": 0,
+    "explain": "Subjek tunggal \"he\" pakai hasn't (has + not) + been + V-ing untuk Present Perfect Continuous negatif."
+  },
+  {
+    "q": "\"I ___ (study) English ___ I was in junior high school.\" Pilih pasangan kata kerja + kata penghubung yang tepat.",
+    "opts": ["have studied; since", "have studied; for", "studied; since", "study; for"],
+    "correct": 0,
+    "explain": "Ada titik waktu spesifik (saat SMP) yang masih berhubungan dengan sekarang → Present Perfect + since untuk titik waktu mulainya."
+  },
+  {
+    "q": "Manakah kalimat yang benar untuk menyatakan sesuatu yang BARU SAJA terjadi?",
+    "opts": ["I have just finished my lunch.", "I just finish my lunch.", "I am just finishing my lunch since noon.", "I finished my lunch just now since noon."],
+    "correct": 0,
+    "explain": "\"have + just + V3\" adalah pola standar untuk aksi yang baru saja terjadi dalam Present Perfect."
+  },
+  {
+    "q": "Reading context: \"Look! Someone has spilled coffee on the carpet.\" Fungsi Present Perfect di sini adalah...",
+    "opts": ["Menunjukkan hasil aksi masa lalu yang masih terlihat sekarang (noda di karpet)", "Menyatakan pengalaman hidup", "Menyatakan aksi dalam periode waktu belum selesai", "Menyatakan jadwal tetap"],
+    "correct": 0,
+    "explain": "Kalimat ini fokus pada bukti/hasil yang masih terlihat sekarang (noda kopi), bukan pada kapan tumpahnya terjadi — fungsi khas Present Perfect untuk hasil yang relevan sekarang."
+  },
+  {
+    "q": "Reading context: \"I've been trying to reach you all day, but your phone is off.\" Fungsi Present Perfect Continuous di sini adalah...",
+    "opts": ["Menekankan durasi proses (usaha menghubungi) yang berlangsung terus sepanjang hari", "Menyatakan pengalaman hidup", "Menyatakan hasil yang sudah tuntas", "Menyatakan jadwal masa depan"],
+    "correct": 0,
+    "explain": "\"all day\" menekankan lamanya proses mencoba menghubungi, fokus pada durasi berulang/berkelanjutan — fungsi khas Present Perfect Continuous."
+  },
+  {
+    "q": "Which sentence is grammatically correct?",
+    "opts": ["I have lived in this house since I was born.", "I have lived in this house for I was born.", "I lived in this house since I am born.", "I have live in this house since I was born."],
+    "correct": 0,
+    "explain": "\"Since I was born\" adalah klausa titik waktu (kapan mulai tinggal di sana) — cocok dengan since dan V3 \"lived\" setelah have."
+  },
+  {
+    "q": "Which sentence correctly transforms \"He started learning guitar three years ago. He still plays it now.\" into one Present Perfect Continuous sentence?",
+    "opts": ["He has been learning guitar for three years.", "He has learned guitar for three years ago.", "He learned guitar since three years.", "He is learning guitar three years ago."],
+    "correct": 0,
+    "explain": "Menggabungkan dua kalimat itu (mulai 3 tahun lalu + masih berlangsung sekarang) tepatnya jadi Present Perfect Continuous dengan for + durasi, tanpa kata \"ago\" (ago hanya dipakai dengan Simple Past)."
+  },
+  {
+    "q": "Spot the error: \"We have finished the exam two hours ago.\"",
+    "opts": ["\"two hours ago\" adalah signal waktu spesifik, seharusnya Simple Past: \"We finished the exam two hours ago.\"", "\"finished\" seharusnya \"finish\"", "\"have\" seharusnya \"has\"", "Kalimat sudah benar"],
+    "correct": 0,
+    "explain": "\"Ago\" selalu menandai waktu spesifik di masa lalu dan hanya cocok dengan Simple Past, tidak pernah dengan Present Perfect."
+  },
+  {
+    "q": "Manakah pasangan V1-V2-V3 yang BENAR?",
+    "opts": ["see – saw – seen", "see – seen – saw", "see – saw – saw", "see – see – seen"],
+    "correct": 0,
+    "explain": "Bentuk irregular verb \"see\" adalah see (V1) – saw (V2) – seen (V3)."
+  },
+  {
+    "q": "Manakah pasangan V1-V2-V3 yang BENAR?",
+    "opts": ["take – took – taken", "take – taken – took", "take – took – took", "take – take – taken"],
+    "correct": 0,
+    "explain": "Bentuk irregular verb \"take\" adalah take (V1) – took (V2) – taken (V3)."
+  },
+  {
+    "q": "Complete: This is the first time I ___ (eat) sushi.",
+    "opts": ["have eaten", "ate", "eat", "am eating"],
+    "correct": 0,
+    "explain": "Pola \"This is the first time + Present Perfect\" adalah idiom umum untuk menyatakan pengalaman baru pertama kali dialami."
+  },
+  {
+    "q": "Manakah kalimat yang cocok memakai stative verb dengan BENAR dalam konteks durasi?",
+    "opts": ["I have wanted this job for a long time.", "I have been wanting this job for a long time.", "I want this job since a long time.", "I am wanting this job for a long time."],
+    "correct": 0,
+    "explain": "\"Want\" adalah stative verb sehingga tidak boleh dipakai bentuk -ing (baik Present Continuous maupun Present Perfect Continuous); gunakan Present Perfect biasa."
+  },
+  {
+    "q": "Reading context: \"So far, I have submitted two assignments this semester.\" Kapan periode waktu \"this semester\" dianggap selesai atau belum saat kalimat ini diucapkan?",
+    "opts": ["Belum selesai — semester itu masih berjalan", "Sudah selesai total", "Tidak relevan sama sekali", "Baru akan dimulai"],
+    "correct": 0,
+    "explain": "Present Perfect dengan periode waktu seperti \"this semester\" menandakan periode itu masih berjalan/belum berakhir saat kalimat diucapkan."
+  },
+  {
+    "q": "Manakah yang merupakan signal word khas untuk menyatakan \"sampai sejauh ini\"?",
+    "opts": ["so far", "yesterday", "last year", "two days ago"],
+    "correct": 0,
+    "explain": "\"So far\" (juga \"up to now\", \"until now\") adalah signal word Present Perfect yang menandakan sesuatu berlangsung sampai titik sekarang."
+  },
+  {
+    "q": "Choose the best translation-checking pair: \"Dia sudah bekerja di sini sejak hari Senin.\"",
+    "opts": ["She has worked here since Monday.", "She has worked here for Monday.", "She worked here since Monday.", "She has been work here since Monday."],
+    "correct": 0,
+    "explain": "\"Sejak hari Senin\" adalah titik waktu spesifik → since, dan strukturnya Present Perfect: has + V3 (worked)."
+  },
+  {
+    "q": "Choose the best translation-checking pair: \"Mereka sudah berteman selama sepuluh tahun.\"",
+    "opts": ["They have been friends for ten years.", "They have been friends since ten years.", "They were friends for ten years.", "They have friend for ten years."],
+    "correct": 0,
+    "explain": "\"Selama sepuluh tahun\" adalah durasi → for, dan subjek jamak \"they\" pakai have."
+  }
+]

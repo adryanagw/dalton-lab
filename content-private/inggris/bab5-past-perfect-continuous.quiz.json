@@ -1,0 +1,403 @@
+[
+  {
+    "q": "Rumus dasar Past Perfect (+) yang benar adalah...",
+    "opts": ["S + have + V3", "S + had + V3", "S + had + V-ing", "S + has + V2"],
+    "correct": 1,
+    "explain": "Past Perfect positif selalu memakai 'had' (sama untuk semua subjek) diikuti V3/past participle, bukan V-ing (itu Past Perfect Continuous) atau have/has (itu Present Perfect)."
+  },
+  {
+    "q": "Rumus dasar Past Perfect Continuous (+) yang benar adalah...",
+    "opts": ["S + had + V-ing", "S + had been + V-ing", "S + have been + V-ing", "S + was/were + V-ing"],
+    "correct": 1,
+    "explain": "Past Perfect Continuous positif: S + had been + V-ing. 'had' tetap sama untuk semua subjek, lalu 'been' menandai Continuous, baru V-ing."
+  },
+  {
+    "q": "'By the time we ___ home, it ___ dark.' Pilih bentuk yang tepat.",
+    "opts": ["got / had already become", "get / became", "had got / became", "got / becomes"],
+    "correct": 0,
+    "explain": "Kegelapan datang lebih dulu (has already become dark), jadi pakai Past Perfect (had already become). Kedatangan kita di rumah jadi titik acuan, pakai Simple Past (got)."
+  },
+  {
+    "q": "Manakah kalimat yang menggunakan Past Perfect dengan benar?",
+    "opts": ["She had went to the market before lunch.", "She had gone to the market before lunch.", "She had go to the market before lunch.", "She has gone to the market before lunch yesterday."],
+    "correct": 1,
+    "explain": "V3 dari 'go' adalah 'gone', bukan 'went' (itu V2). 'She had gone...' adalah bentuk Past Perfect yang benar."
+  },
+  {
+    "q": "Temukan kesalahan pada kalimat: 'When the police arrived, the thief had already ran away.'",
+    "opts": ["'arrived' seharusnya 'arrive'", "'had already ran' seharusnya 'had already run'", "'the police' seharusnya 'a police'", "Tidak ada kesalahan"],
+    "correct": 1,
+    "explain": "Setelah 'had', kata kerja harus V3. V3 dari 'run' adalah 'run' juga secara ejaan sama dengan V1, tapi V2-nya 'ran' salah dipakai di sini — bentuk yang benar adalah 'had already run'."
+  },
+  {
+    "q": "'I ___ never ___ such a beautiful sunset until I visited Bali.' Lengkapi dengan Past Perfect.",
+    "opts": ["was / seen", "had / seen", "have / seen", "had / see"],
+    "correct": 1,
+    "explain": "Pola Past Perfect: had + never + V3. 'had never seen' menunjukkan pengalaman yang belum pernah terjadi sebelum titik waktu tertentu di masa lalu (sebelum ke Bali)."
+  },
+  {
+    "q": "Gabungkan dua kalimat berikut menjadi satu kalimat Past Perfect: 'The movie started. We arrived at the cinema late.'",
+    "opts": [
+      "The movie had already started when we arrived at the cinema late.",
+      "The movie has already started when we arrived at the cinema late.",
+      "The movie already started when we had arrived at the cinema late.",
+      "The movie was starting when we had arrived at the cinema late."
+    ],
+    "correct": 0,
+    "explain": "Film mulai lebih dulu (Past Perfect: had already started), kedatangan kami di bioskop jadi titik acuan (Simple Past: arrived)."
+  },
+  {
+    "q": "'She ___ for the bus for twenty minutes before it finally arrived.' Pilih bentuk yang paling tepat untuk menekankan durasi.",
+    "opts": ["had waited", "had been waiting", "was waiting", "has been waiting"],
+    "correct": 1,
+    "explain": "Karena ada penanda durasi eksplisit ('for twenty minutes') dan penekanan pada proses menunggu yang berlangsung lama, Past Perfect Continuous ('had been waiting') lebih tepat daripada Past Perfect biasa."
+  },
+  {
+    "q": "Manakah kalimat yang salah?",
+    "opts": [
+      "He had been working there for five years before he resigned.",
+      "He had been work there for five years before he resigned.",
+      "He had worked there for five years before he resigned.",
+      "Had he been working there for five years before he resigned?"
+    ],
+    "correct": 1,
+    "explain": "Setelah 'had been', kata kerja wajib berbentuk V-ing. 'work' tanpa -ing salah; seharusnya 'working'."
+  },
+  {
+    "q": "'By 2020, my grandfather ___ in that house for forty years.' Pilih bentuk terbaik untuk menekankan durasi panjang yang masih relevan sampai titik acuan.",
+    "opts": ["lived", "had lived", "had been living", "has lived"],
+    "correct": 2,
+    "explain": "Karena menekankan durasi panjang ('for forty years') yang berlangsung sampai satu titik waktu di masa lalu (2020), Past Perfect Continuous 'had been living' paling tepat (walau 'had lived' juga secara gramatikal bisa diterima untuk penekanan hasil/selesai, opsi ini secara khusus meminta penekanan durasi)."
+  },
+  {
+    "q": "Perbaiki kesalahan pada kalimat: 'She has finished her homework before dinner yesterday.'",
+    "opts": [
+      "She had finished her homework before dinner yesterday.",
+      "She have finished her homework before dinner yesterday.",
+      "She finished had her homework before dinner yesterday.",
+      "Tidak ada kesalahan"
+    ],
+    "correct": 0,
+    "explain": "'has' (Present Perfect) tidak cocok dipakai bersama penanda waktu masa lalu spesifik ('yesterday'). Seharusnya 'had' (Past Perfect)."
+  },
+  {
+    "q": "'___ you ___ to Japan before you moved there for work?' Bentuk pertanyaan Past Perfect yang benar adalah...",
+    "opts": ["Did / go", "Had / gone", "Have / gone", "Were / going"],
+    "correct": 1,
+    "explain": "Pertanyaan Past Perfect: Had + S + V3. 'Had you gone...' menanyakan apakah sesuatu sudah terjadi sebelum satu titik waktu di masa lalu (sebelum pindah kerja)."
+  },
+  {
+    "q": "Manakah yang merupakan signal word paling umum untuk Past Perfect (bukan Continuous)?",
+    "opts": ["since", "for", "already", "how long"],
+    "correct": 2,
+    "explain": "'already' adalah signal word khas Past Perfect ('had already + V3'). 'since', 'for', dan 'how long' lebih umum dipakai untuk menandai durasi di Past Perfect Continuous."
+  },
+  {
+    "q": "'His clothes were dirty and torn because he ___ football all afternoon.' Pilih bentuk yang paling tepat.",
+    "opts": ["played", "had played", "had been playing", "was playing"],
+    "correct": 2,
+    "explain": "Past Perfect Continuous cocok untuk menjelaskan penyebab suatu kondisi lewat aksi berdurasi sebelumnya — di sini, kondisi baju kotor & robek disebabkan oleh aksi bermain bola yang berlangsung lama ('all afternoon')."
+  },
+  {
+    "q": "Temukan kesalahan: 'They had been study English for two hours before the test started.'",
+    "opts": [
+      "'had been study' seharusnya 'had been studying'",
+      "'started' seharusnya 'start'",
+      "'for two hours' seharusnya 'since two hours'",
+      "Tidak ada kesalahan"
+    ],
+    "correct": 0,
+    "explain": "Setelah 'had been' harus V-ing. 'study' tanpa -ing salah; seharusnya 'studying'."
+  },
+  {
+    "q": "'I ___ dinner when he called, so I couldn't answer the phone right away.' Konteks: sedang makan malam ketika telepon berdering, sebagai aksi yang sedang berlangsung, bukan yang sudah selesai duluan. Pilih bentuk yang tepat.",
+    "opts": ["had eaten", "had been eating", "was eating", "have eaten"],
+    "correct": 2,
+    "explain": "Karena aksinya SEDANG berlangsung tepat saat telepon berdering (bukan sudah selesai sebelum itu, dan bukan pula direntang durasi yang jadi sebab-akibat), Past Continuous ('was eating') lebih tepat daripada Past Perfect. Soal ini menguji kemampuan membedakan kapan Past Perfect TIDAK diperlukan."
+  },
+  {
+    "q": "Gabungkan: 'I finished my work. My friends came over.' (pekerjaan selesai lebih dulu)",
+    "opts": [
+      "I finished my work before my friends had come over.",
+      "I had finished my work before my friends came over.",
+      "I have finished my work before my friends came over.",
+      "I was finishing my work before my friends came over."
+    ],
+    "correct": 1,
+    "explain": "Pekerjaan selesai lebih dulu → Past Perfect ('had finished'). Kedatangan teman jadi titik acuan belakangan → Simple Past ('came')."
+  },
+  {
+    "q": "'___ she ___ her project before the deadline?' (bentuk tanya, menanyakan penyelesaian sebelum tenggat waktu)",
+    "opts": ["Did / finish", "Had / finished", "Has / finished", "Was / finishing"],
+    "correct": 1,
+    "explain": "Menanyakan apakah sesuatu sudah selesai sebelum satu titik waktu di masa lalu ('before the deadline') menggunakan Past Perfect interogatif: Had + S + V3."
+  },
+  {
+    "q": "Manakah kalimat yang paling tepat menerangkan 'setelah durasi lama belajar, akhirnya dia lulus ujian'?",
+    "opts": [
+      "She had been studying hard for months, and she finally passed the exam.",
+      "She had studying hard for months, and she finally passed the exam.",
+      "She has been studying hard for months, and she finally passed the exam.",
+      "She was study hard for months, and she finally passed the exam."
+    ],
+    "correct": 0,
+    "explain": "'had been studying' (Past Perfect Continuous) menekankan durasi belajar yang panjang sebelum akhirnya lulus (Simple Past: passed)."
+  },
+  {
+    "q": "Perbaiki: 'By the time he called, I had ate dinner.'",
+    "opts": [
+      "By the time he called, I had eaten dinner.",
+      "By the time he called, I have eaten dinner.",
+      "By the time he called, I had eat dinner.",
+      "By the time he had called, I ate dinner."
+    ],
+    "correct": 0,
+    "explain": "Setelah 'had' harus V3. V3 dari 'eat' adalah 'eaten', bukan 'ate' (V2)."
+  },
+  {
+    "q": "'I ___ to school yesterday.' Manakah bentuk yang paling tepat untuk satu kejadian biasa di masa lalu, tanpa acuan kejadian lain?",
+    "opts": ["had gone", "had been going", "went", "have gone"],
+    "correct": 2,
+    "explain": "Kalau cuma ada SATU kejadian di masa lalu tanpa titik acuan/kejadian lain yang perlu ditandai urutannya, cukup pakai Simple Past ('went'). Past Perfect ('had gone') justru salah karena tidak ada dua titik waktu yang dibandingkan."
+  },
+  {
+    "q": "'The plane ___ off before we ___ at the airport.' Pilih bentuk yang benar.",
+    "opts": ["had taken / reached", "took / had reached", "had taken / had reached", "took / reached"],
+    "correct": 0,
+    "explain": "Pesawat lepas landas lebih dulu → Past Perfect ('had taken off'). Kedatangan kami di bandara jadi titik acuan belakangan → Simple Past ('reached')."
+  },
+  {
+    "q": "Manakah pasangan kalimat yang maknanya SAMA?",
+    "opts": [
+      "'I had eaten before I went to school.' dan 'Before I went to school, I had eaten.'",
+      "'I had eaten before I went to school.' dan 'I ate before I had gone to school.'",
+      "'I had eaten before I went to school.' dan 'I had eaten before I had gone to school.'",
+      "Tidak ada yang sama"
+    ],
+    "correct": 0,
+    "explain": "Urutan klausa boleh dibalik tanpa mengubah makna — yang menandai urutan waktu adalah bentuk kata kerjanya (Past Perfect vs Simple Past), bukan urutan penulisan kalimat."
+  },
+  {
+    "q": "'How long ___ you ___ for the exam before it was postponed?' Lengkapi bentuk tanya yang menekankan durasi.",
+    "opts": ["did / study", "had / studied", "had / been studying", "have / been studying"],
+    "correct": 2,
+    "explain": "'How long had you been studying...?' adalah bentuk tanya Past Perfect Continuous yang tepat untuk menanyakan durasi sebelum satu kejadian di masa lalu (ujian ditunda)."
+  },
+  {
+    "q": "Temukan kesalahan: 'She had been waited for the locksmith for an hour when he finally came.'",
+    "opts": [
+      "'had been waited' seharusnya 'had been waiting'",
+      "'finally came' seharusnya 'finally come'",
+      "'for an hour' seharusnya 'since an hour'",
+      "Tidak ada kesalahan"
+    ],
+    "correct": 0,
+    "explain": "Past Perfect Continuous butuh V-ing setelah 'had been', bukan V3 (yang membuatnya terlihat seperti struktur pasif). Seharusnya 'had been waiting'."
+  },
+  {
+    "q": "'After she ___ the letter, she ___ it in the drawer.' Urutan: baca dulu, lalu simpan.",
+    "opts": ["had read / put", "read / had put", "had read / had put", "reads / put"],
+    "correct": 0,
+    "explain": "Membaca surat terjadi lebih dulu → Past Perfect ('had read'). Menyimpannya di laci terjadi belakangan → Simple Past ('put')."
+  },
+  {
+    "q": "Manakah yang BUKAN signal word khas Past Perfect Continuous?",
+    "opts": ["for", "since", "already", "how long"],
+    "correct": 2,
+    "explain": "'already' lebih umum menandai Past Perfect biasa (menyatakan sudah selesai), sedangkan 'for', 'since', dan 'how long' menandai durasi khas Past Perfect Continuous."
+  },
+  {
+    "q": "'It was the first time I ___ sushi.' Lengkapi dengan Past Perfect.",
+    "opts": ["ate", "had eaten", "have eaten", "was eating"],
+    "correct": 1,
+    "explain": "Frasa 'the first time' menandai pengalaman yang belum pernah terjadi sebelum titik waktu tertentu di masa lalu — pola khas Past Perfect."
+  },
+  {
+    "q": "Baca konteks: 'Rina got to the party at 8 PM. Most of the guests left at 7:30 PM.' Manakah kalimat yang paling tepat menggabungkan kedua fakta ini?",
+    "opts": [
+      "When Rina got to the party, most of the guests had already left.",
+      "When Rina got to the party, most of the guests already left.",
+      "When Rina had got to the party, most of the guests left.",
+      "When Rina gets to the party, most of the guests had left."
+    ],
+    "correct": 0,
+    "explain": "Tamu-tamu pergi lebih dulu (7:30) sebelum Rina tiba (8:00) → aksi yang lebih dulu pakai Past Perfect ('had already left'), kedatangan Rina jadi titik acuan dengan Simple Past ('got')."
+  },
+  {
+    "q": "Perbaiki: 'I had never saw such a big crowd before that concert.'",
+    "opts": [
+      "I had never seen such a big crowd before that concert.",
+      "I have never seen such a big crowd before that concert.",
+      "I never had seen such a big crowd before that concert.",
+      "I had never see such a big crowd before that concert."
+    ],
+    "correct": 0,
+    "explain": "V3 dari 'see' adalah 'seen', bukan 'saw' (V2). 'had never seen' adalah bentuk yang benar."
+  },
+  {
+    "q": "'By the time firefighters arrived, the fire ___ most of the building.' Pilih bentuk yang menekankan hasil sudah terjadi (bukan durasinya).",
+    "opts": ["destroyed", "had destroyed", "had been destroying", "was destroying"],
+    "correct": 1,
+    "explain": "Yang ditekankan di sini adalah hasil akhir (bangunan sudah terlanjur hancur sebagian besar) sebelum pemadam kebakaran tiba, jadi Past Perfect ('had destroyed') lebih tepat daripada Continuous."
+  },
+  {
+    "q": "Manakah kalimat yang menunjukkan kesalahan klasik 'lupa V3'?",
+    "opts": [
+      "She had broken the vase before her mom came home.",
+      "She had break the vase before her mom came home.",
+      "She had been breaking the vase before her mom came home.",
+      "Had she broken the vase before her mom came home?"
+    ],
+    "correct": 1,
+    "explain": "'had break' salah karena setelah 'had' harus V3 ('broken'), bukan bentuk dasar ('break')."
+  },
+  {
+    "q": "'We ___ each other for years before we finally decided to get married.' Pilih bentuk terbaik untuk menekankan hubungan yang berlangsung lama.",
+    "opts": ["knew", "had known", "had been knowing", "have known"],
+    "correct": 1,
+    "explain": "'know' termasuk stative verb (kata kerja keadaan) yang jarang dipakai dalam bentuk Continuous, jadi meski maknanya durasi panjang, tetap dipakai Past Perfect biasa ('had known'), bukan Past Perfect Continuous."
+  },
+  {
+    "q": "Baca paragraf: 'Tom was exhausted. He ___ all night for his final exam.' Pilih bentuk yang paling menonjolkan proses belajar semalaman sebagai penyebab kelelahan.",
+    "opts": ["studied", "had studied", "had been studying", "has been studying"],
+    "correct": 2,
+    "explain": "Past Perfect Continuous ('had been studying') cocok untuk menjelaskan penyebab kondisi (kelelahan) lewat aksi berdurasi panjang yang terjadi sebelumnya."
+  },
+  {
+    "q": "'Had you ___ your umbrella when it started to rain?' Lengkapi bentuk tanya Past Perfect.",
+    "opts": ["bring", "brought", "brings", "bringing"],
+    "correct": 1,
+    "explain": "Setelah 'Had you', kata kerjanya harus V3. V3 dari 'bring' adalah 'brought'."
+  },
+  {
+    "q": "Manakah kalimat yang salah menggunakan 'has' padahal seharusnya 'had'?",
+    "opts": [
+      "She had already left when I arrived at the station.",
+      "She has already left when I arrived at the station.",
+      "Had she already left when you arrived at the station?",
+      "She hadn't left when I arrived at the station."
+    ],
+    "correct": 1,
+    "explain": "Karena konteksnya jelas masa lalu (ada 'arrived'), penanda Past Perfect yang benar adalah 'had', bukan 'has' (Present Perfect)."
+  },
+  {
+    "q": "Gabungkan: 'The rain stopped. We left the house.' (hujan berhenti duluan)",
+    "opts": [
+      "The rain had stopped before we left the house.",
+      "The rain stopped before we had left the house.",
+      "The rain had stopped before we had left the house.",
+      "The rain has stopped before we left the house."
+    ],
+    "correct": 0,
+    "explain": "Hujan berhenti lebih dulu → Past Perfect ('had stopped'). Kami meninggalkan rumah jadi titik acuan belakangan → Simple Past ('left')."
+  },
+  {
+    "q": "'By the time the ambulance arrived, the situation ___ worse.' (situasi memburuk terus-menerus sebelum ambulans tiba) Pilih bentuk yang paling tepat.",
+    "opts": ["got", "had gotten", "had been getting", "was getting"],
+    "correct": 2,
+    "explain": "Karena situasinya memburuk secara bertahap/berkelanjutan sebelum ambulans tiba, Past Perfect Continuous ('had been getting') menekankan proses yang berlangsung itu."
+  },
+  {
+    "q": "Temukan kesalahan: 'When I had arrived home, my brother was cooking dinner already.'",
+    "opts": [
+      "'had arrived' seharusnya 'arrived' (Simple Past sebagai titik acuan)",
+      "'was cooking' seharusnya 'cooked'",
+      "'already' seharusnya diletakkan di awal kalimat",
+      "Tidak ada kesalahan"
+    ],
+    "correct": 0,
+    "explain": "Kedatangan saya di rumah adalah titik acuan waktu, jadi harus Simple Past ('arrived'), bukan Past Perfect. Yang jadi 'aksi lebih dulu' di sini justru kegiatan memasak yang sudah berlangsung — kalau mau ditekankan durasinya, bisa jadi 'had already been cooking'."
+  },
+  {
+    "q": "'They had been married for ten years before they ___ to have children.' Lengkapi kata kerja terakhir (titik acuan, Simple Past).",
+    "opts": ["decide", "decided", "had decided", "deciding"],
+    "correct": 1,
+    "explain": "Klausa kedua adalah titik acuan waktu, jadi memakai Simple Past ('decided'), sementara klausa pertama ('had been married') sudah memakai Past Perfect Continuous untuk durasi."
+  },
+  {
+    "q": "Manakah kalimat yang paling tepat menerjemahkan 'Sebelum dia pindah ke Jakarta, dia sudah tinggal di Bandung selama 15 tahun'?",
+    "opts": [
+      "Before he moved to Jakarta, he had lived in Bandung for 15 years.",
+      "Before he had moved to Jakarta, he lived in Bandung for 15 years.",
+      "Before he moves to Jakarta, he had lived in Bandung for 15 years.",
+      "Before he moved to Jakarta, he lived in Bandung for 15 years already."
+    ],
+    "correct": 0,
+    "explain": "Tinggal di Bandung 15 tahun terjadi lebih dulu → Past Perfect ('had lived'). Pindah ke Jakarta jadi titik acuan belakangan → Simple Past ('moved')."
+  },
+  {
+    "q": "'___ the meeting started, everyone ___ their seats.' Pilih bentuk yang benar.",
+    "opts": ["Before / had taken", "Before / took", "After / had taken", "By the time / take"],
+    "correct": 0,
+    "explain": "'Before the meeting started, everyone had taken their seats' — mengambil tempat duduk terjadi lebih dulu (Past Perfect), rapat dimulai jadi titik acuan (Simple Past, ditandai kata 'Before')."
+  },
+  {
+    "q": "Manakah yang merupakan kesalahan 'overuse' Past Perfect (dipakai padahal tidak perlu)?",
+    "opts": [
+      "I had visited Bali last year. (tanpa kejadian lain sebagai pembanding)",
+      "I had visited Bali before I moved to Jakarta.",
+      "By the time I turned 20, I had visited Bali three times.",
+      "I had already visited Bali when my friend invited me again."
+    ],
+    "correct": 0,
+    "explain": "'I had visited Bali last year' tanpa ada kejadian/titik acuan lain di masa lalu adalah pemakaian Past Perfect yang tidak perlu — cukup Simple Past: 'I visited Bali last year.'"
+  },
+  {
+    "q": "Baca konteks singkat: 'Maria was nervous during the interview. She ___ enough for it.' Pilih bentuk yang paling menekankan kurangnya durasi persiapan sebelum wawancara.",
+    "opts": ["didn't prepare", "hadn't prepared", "hadn't been preparing", "wasn't preparing"],
+    "correct": 2,
+    "explain": "Karena yang ditekankan adalah proses persiapan yang kurang (bukan cuma hasil 'belum siap'), Past Perfect Continuous negatif ('hadn't been preparing') paling pas — meski 'hadn't prepared' juga gramatikal untuk sekadar hasil belum siap."
+  },
+  {
+    "q": "'The students ___ their exam by the time the bell rang.' Pilih bentuk yang benar.",
+    "opts": ["finished", "had finished", "have finished", "were finishing"],
+    "correct": 1,
+    "explain": "Murid-murid menyelesaikan ujian sebelum bel berbunyi → Past Perfect ('had finished'). Bel berbunyi jadi titik acuan dengan Simple Past ('rang')."
+  },
+  {
+    "q": "Manakah pasangan V1-V2-V3 yang BENAR untuk digunakan setelah 'had' dalam Past Perfect?",
+    "opts": ["go - went - gone", "go - went - went", "go - gone - went", "go - going - gone"],
+    "correct": 0,
+    "explain": "Bentuk V3 (past participle) dari 'go' adalah 'gone', yang dipakai setelah 'had'. Urutan yang benar: V1 go, V2 went, V3 gone."
+  },
+  {
+    "q": "'By the time she was 18, she ___ three different countries.' Pilih bentuk yang tepat.",
+    "opts": ["visited", "had visited", "has visited", "was visiting"],
+    "correct": 1,
+    "explain": "Menandai pengalaman yang sudah terjadi sebelum titik waktu tertentu di masa lalu (usia 18 tahun) — pola khas Past Perfect."
+  },
+  {
+    "q": "Perbaiki paragraf ini: 'He was out of breath. He had run five kilometers.' Manakah kalimat kedua yang lebih menekankan durasi/proses lari, bukan hasil?",
+    "opts": [
+      "He had been running for five kilometers.",
+      "He had been run for five kilometers.",
+      "He has been running for five kilometers.",
+      "He was running for five kilometers."
+    ],
+    "correct": 0,
+    "explain": "Untuk menekankan proses/durasi berlari (sebagai penyebab dia kehabisan napas), Past Perfect Continuous ('had been running') lebih tepat daripada Past Perfect biasa."
+  },
+  {
+    "q": "'As soon as the guests ___, the host ___ dinner.' (tamu datang lebih dulu, baru tuan rumah menyajikan)",
+    "opts": ["had arrived / served", "arrived / had served", "had arrived / had served", "arrive / serve"],
+    "correct": 0,
+    "explain": "Kedatangan tamu terjadi lebih dulu → Past Perfect ('had arrived'). Penyajian makan malam jadi aksi berikutnya → Simple Past ('served')."
+  },
+  {
+    "q": "Manakah kalimat yang tepat untuk konteks: dua kejadian ditulis dengan 'and then', urutan sudah jelas dari kata hubung itu sendiri?",
+    "opts": [
+      "I had finished my chores and then I had watched TV.",
+      "I finished my chores and then I watched TV.",
+      "I had finished my chores and then I watched TV.",
+      "I finished my chores and then I had watched TV."
+    ],
+    "correct": 1,
+    "explain": "Karena kata hubung 'and then' sudah otomatis menandai urutan alami, kedua aksi cukup Simple Past — tidak perlu Past Perfect di sini."
+  },
+  {
+    "q": "'Before the pandemic, many people ___ from home.' (belum pernah bekerja dari rumah sebelumnya) Pilih bentuk yang tepat.",
+    "opts": ["never worked", "had never worked", "have never worked", "weren't working"],
+    "correct": 1,
+    "explain": "Menyatakan pengalaman yang belum pernah terjadi sebelum satu titik waktu di masa lalu (sebelum pandemi) menggunakan Past Perfect: 'had never worked'."
+  }
+]
