@@ -427,5 +427,38 @@
     ],
     "correct": 1,
     "explain": "Selisih D = |F1 - F2| = |F1 + (-F2)| — karena arah salah satu vektor (F2) dibalik, suku silang pada penjabaran kosinus berubah tanda, sehingga tanda + pada rumus jumlah menjadi - pada rumus selisih."
+  },
+  {
+    "q": "Magnitudo dari vektor gaya \\(\\vec{F} = (2\\hat{i}+3\\hat{j}+6\\hat{k})\\) N adalah...",
+    "opts": [
+      "\\(7\\) N",
+      "\\(\\sqrt{11}\\) N",
+      "\\(11\\) N",
+      "\\(6\\) N"
+    ],
+    "correct": 0,
+    "explain": "Rumus magnitudo 3D adalah perluasan Pythagoras: \\(|\\vec{F}| = \\sqrt{F_x^2+F_y^2+F_z^2} = \\sqrt{2^2+3^2+6^2} = \\sqrt{4+9+36} = \\sqrt{49} = 7\\) N."
+  },
+  {
+    "q": "Diberikan \\(\\vec{A} = (2,3,6)\\) dan \\(\\vec{B} = (1,-2,2)\\), hasil \\(\\vec{A}\\cdot\\vec{B}\\) adalah...",
+    "opts": [
+      "\\(10\\)",
+      "\\(8\\)",
+      "\\(-8\\)",
+      "\\(2\\)"
+    ],
+    "correct": 1,
+    "explain": "Dot product 3D tinggal menambahkan suku Z ke rumus 2D: \\(\\vec{A}\\cdot\\vec{B} = A_xB_x+A_yB_y+A_zB_z = (2\\times1)+(3\\times(-2))+(6\\times2) = 2-6+12 = 8\\)."
+  },
+  {
+    "q": "Vektor satuan \\(\\hat{k}\\) pada sistem koordinat ruang 3D selalu tegak lurus terhadap...",
+    "opts": [
+      "Hanya sumbu-X",
+      "Hanya sumbu-Y",
+      "Bidang-XY (sumbu-X dan sumbu-Y sekaligus)",
+      "Tidak tegak lurus terhadap sumbu manapun"
+    ],
+    "correct": 2,
+    "explain": "\\(\\hat{k}\\) menunjuk searah sumbu-Z dan tegak lurus terhadap seluruh bidang-XY yang dibentuk oleh \\(\\hat{i}\\) dan \\(\\hat{j}\\), mengikuti Kaidah Tangan Kanan: \\(\\hat{k} = \\hat{i}\\times\\hat{j}\\)."
   }
 ]

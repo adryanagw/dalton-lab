@@ -341,10 +341,60 @@
   </div>
 </section>
 
+<section id="pengayaan-vektor-3d" class="notebook-bg" data-nav="Pengayaan">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">07 · Pengayaan</div>
+      <h2>Vektor dalam Ruang 3D</h2>
+      <p>Semua konsep di bab ini sejauh ini dibatasi di bidang datar (sumbu-X &amp; sumbu-Y) supaya gampang divisualisasikan. Tapi dunia nyata — gaya pada rangka bangunan, arah terbang pesawat, sampai lintasan satelit — sering butuh dimensi ketiga: sumbu-Z. Kabar baiknya, semua rumus yang sudah dipelajari tinggal <b style="color:var(--heading);">diperluas</b>, bukan diganti total.</p>
+    </div>
+
+    <div class="section-head" style="margin:24px 0 14px;">
+      <h3 style="font-size:1.15rem;">1. Notasi &amp; Magnitudo Vektor 3D</h3>
+    </div>
+
+    <div class="law-strip" style="max-width:640px;">
+      \(\vec{A} = A_x\hat{i} + A_y\hat{j} + A_z\hat{k}\)<br>
+      <span style="font-size:.88rem;color:var(--slate);">\(\hat{k}\) adalah vektor satuan sepanjang sumbu-Z, tegak lurus terhadap bidang-XY (bidang yang dibentuk \(\hat{i}\) dan \(\hat{j}\)). Arahnya mengikuti Kaidah Tangan Kanan: \(\hat{k} = \hat{i}\times\hat{j}\).</span>
+    </div>
+
+    <div class="law-strip" style="max-width:640px;margin-top:14px;">
+      \(|\vec{A}| = \sqrt{A_x^2 + A_y^2 + A_z^2}\)<br>
+      <span style="font-size:.88rem;color:var(--slate);">Cuma perluasan Teorema Pythagoras: di 2D, magnitudo dihitung dari dua komponen tegak lurus; di 3D, tinggal ditambah satu komponen tegak lurus lagi (\(A_z\)) di bawah akar.</span>
+    </div>
+
+    <div class="section-head" style="margin:24px 0 14px;">
+      <h3 style="font-size:1.15rem;">2. Operasi Vektor 3D</h3>
+    </div>
+
+    <ul class="check-list" style="max-width:640px;">
+      <li><b>Penjumlahan &amp; Pengurangan:</b> tetap komponen-per-komponen, tinggal tambah komponen Z: \(\vec{A}\pm\vec{B} = (A_x\pm B_x)\hat{i} + (A_y\pm B_y)\hat{j} + (A_z\pm B_z)\hat{k}\).</li>
+      <li><b>Dot Product:</b> hasilnya tetap skalar, tinggal tambah suku Z: \(\vec{A}\cdot\vec{B} = A_xB_x + A_yB_y + A_zB_z\).</li>
+      <li><b>Cross Product:</b> hasilnya tetap vektor baru yang tegak lurus \(\vec{A}\) dan \(\vec{B}\), tapi rumus komponennya lebih panjang: \(\vec{A}\times\vec{B} = (A_yB_z - A_zB_y)\hat{i} - (A_xB_z - A_zB_x)\hat{j} + (A_xB_y - A_yB_x)\hat{k}\).</li>
+    </ul>
+
+    <div class="section-head" style="margin:24px 0 14px;">
+      <h3 style="font-size:1.15rem;">Contoh Soal: Gaya &amp; Perpindahan di Ruang 3D</h3>
+      <p style="max-width:760px;">Sebuah gaya \(\vec{F} = (2\hat{i} + 3\hat{j} + 6\hat{k})\) N bekerja pada benda yang mengalami perpindahan \(\vec{s} = (1\hat{i} - 2\hat{j} + 2\hat{k})\) m. Tentukan besar gaya \(\vec{F}\), usaha yang dilakukan, dan torsi yang dihasilkan jika \(\vec{s}\) juga dianggap sebagai lengan momen terhadap \(\vec{F}\)!</p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-item"><span class="step-n">01</span>Besar gaya \(\vec{F}\): \(|\vec{F}| = \sqrt{2^2+3^2+6^2} = \sqrt{4+9+36} = \sqrt{49} = 7\) N.</div>
+      <div class="step-item"><span class="step-n">02</span>Usaha lewat dot product: \(W = \vec{F}\cdot\vec{s} = (2\times1)+(3\times(-2))+(6\times2) = 2-6+12 = 8\) Joule.</div>
+      <div class="step-item"><span class="step-n">03</span>Torsi lewat cross product \(\vec{\tau}=\vec{s}\times\vec{F}\):<br>\(\tau_x = (-2\times6)-(2\times3) = -12-6 = -18\)<br>\(\tau_y = (2\times2)-(1\times6) = 4-6 = -2\)<br>\(\tau_z = (1\times3)-(-2\times2) = 3+4 = 7\)<br>Jadi \(\vec{\tau} = (-18\hat{i} - 2\hat{j} + 7\hat{k})\) N·m.</div>
+    </div>
+
+    <div class="law-strip" style="max-width:640px;margin-top:20px;">
+      <b>💡 Semua Rumus 2D Tetap Berlaku</b><br>
+      Kalau \(A_z = 0\) dan \(B_z = 0\), semua rumus 3D di atas otomatis kembali jadi rumus 2D yang sudah dipelajari — vektor 2D sebenarnya cuma kasus khusus dari vektor 3D. Coba sendiri komponen Z-nya di simulasi bagian 06 di atas untuk lihat bentuk 3D-nya secara langsung.
+    </div>
+  </div>
+</section>
+
 <section id="kuis-fisika" style="background:var(--navy);" data-nav="Drill Soal" data-nav-cta>
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow" style="color:var(--purple);">07 · Uji Pemahaman</div>
+      <div class="eyebrow" style="color:var(--purple);">08 · Uji Pemahaman</div>
       <h2 style="color:#fff;">Drill Soal: Vektor Bidang 2D</h2>
       <p style="color:#c3ccd9;">Soal pilihan ganda mencakup semua materi di atas — dari klasifikasi skalar/vektor, penguraian komponen, resultan (metode analitis &amp; Aturan Kosinus), sampai dot product &amp; cross product (Usaha &amp; Torsi). Jawab satu-satu, dapatkan pembahasan langsung setelah menjawab.</p>
     </div>
