@@ -1,0 +1,772 @@
+[
+  {
+    "q": "Water ___ at 100 degrees Celsius at sea level.",
+    "opts": [
+      "boils",
+      "boil",
+      "is boiling",
+      "boiled"
+    ],
+    "correct": 0,
+    "explain": "Fakta ilmiah/general truth memakai Simple Present, dan subjek tunggal \"water\" butuh -s pada kata kerja: \"boils\". Present continuous/simple past nggak cocok untuk fakta yang selalu benar, bukan kejadian sekali waktu."
+  },
+  {
+    "q": "<u>Currently</u> (A), she <u>is knowing</u> (B) three languages <u>fluently</u> (C), which impresses <u>everyone</u> (D) at work.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "\"Know\" adalah stative verb (kata kerja yang menyatakan keadaan/kondisi mental, bukan aksi), jadi nggak dipakai dalam bentuk continuous. Seharusnya: \"she knows three languages fluently\" (Simple Present)."
+  },
+  {
+    "q": "Yesterday, the committee ___ to postpone the meeting until next week.",
+    "opts": [
+      "chose",
+      "choose",
+      "has chosen",
+      "was choosing"
+    ],
+    "correct": 0,
+    "explain": "Signal word \"yesterday\" menandakan Simple Past. \"Choose\" adalah irregular verb: choose - chose - chosen, jadi bentuk V2-nya adalah \"chose\"."
+  },
+  {
+    "q": "While the scientists <u>were analyzing</u> (A) the samples, the power suddenly <u>went</u> (B) out, so they <u>had to continued</u> (C) their work manually <u>the next morning</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 2,
+    "explain": "\"Had to\" adalah bentuk lampau dari modal \"have to\", dan modal selalu diikuti bare infinitive (kata kerja dasar tanpa -ed/-ing/to). Seharusnya: \"had to continue\", bukan \"had to continued\"."
+  },
+  {
+    "q": "Look at those dark clouds! It ___ rain soon.",
+    "opts": [
+      "will",
+      "is going to",
+      "would",
+      "is"
+    ],
+    "correct": 1,
+    "explain": "\"Going to\" dipakai untuk prediksi berdasarkan bukti/tanda yang terlihat sekarang (awan gelap). \"Will\" biasanya untuk keputusan spontan atau janji, bukan prediksi berbasis bukti visual saat ini."
+  },
+  {
+    "q": "This time next week, I <u>will be lying</u> (A) on a beach in Bali, while all of you <u>will still working</u> (B) in the office, <u>wishing</u> (C) you <u>had come</u> (D) with me.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Future Continuous butuh pola \"will be + V-ing\", bagian \"be\" nggak boleh hilang. Seharusnya: \"will still be working\", bukan \"will still working\"."
+  },
+  {
+    "q": "She ___ her homework, so she can go out and play now.",
+    "opts": [
+      "finished",
+      "has finished",
+      "is finishing",
+      "finish"
+    ],
+    "correct": 1,
+    "explain": "Present Perfect dipakai untuk aksi yang selesai di masa lalu tapi hasilnya masih relevan sekarang (dia bisa main sekarang karena PR-nya sudah selesai), tanpa waktu spesifik disebutkan. Kalau pakai Simple Past (\"finished\"), kesannya cuma laporan fakta lampau tanpa hubungan ke keadaan sekarang."
+  },
+  {
+    "q": "He <u>has been studying</u> (A) English <u>since</u> (B) five years, and his pronunciation <u>has improved</u> (C) a lot <u>recently</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "\"Since\" dipakai untuk titik waktu mulai (since 2018, since Monday), sedangkan \"for\" dipakai untuk durasi/rentang waktu (for five years). Seharusnya: \"for five years\", bukan \"since five years\"."
+  },
+  {
+    "q": "By the time the ambulance arrived, the patient ___ already lost consciousness.",
+    "opts": [
+      "has",
+      "had",
+      "was",
+      "would have"
+    ],
+    "correct": 1,
+    "explain": "Past Perfect (\"had + V3\") dipakai untuk aksi yang terjadi lebih dulu daripada aksi lampau lain (kehilangan kesadaran terjadi sebelum ambulans tiba). Pola: had + already + V3 (had lost)."
+  },
+  {
+    "q": "Before she got the job, she <u>had been sending</u> (A) applications for months, and she <u>was starting</u> (B) to lose hope <u>when</u> (C) the good news finally <u>arrive</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 3,
+    "explain": "Klausa \"when...\" di sini menceritakan kejadian lampau tunggal, jadi butuh Simple Past. Seharusnya: \"arrived\", bukan \"arrive\"."
+  },
+  {
+    "q": "By 2030, scientists ___ a cure for many currently incurable diseases, according to some experts.",
+    "opts": [
+      "will have found",
+      "will find",
+      "will be finding",
+      "found"
+    ],
+    "correct": 0,
+    "explain": "Future Perfect (\"will have + V3\") dipakai untuk aksi yang diperkirakan sudah selesai sebelum titik waktu tertentu di masa depan — di sini titik waktunya adalah \"by 2030\"."
+  },
+  {
+    "q": "By the time you arrive, I <u>will have been waiting</u> (A) here for <u>over</u> (B) three hours, <u>so</u> (C) please <u>don't to be</u> (D) late again.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 3,
+    "explain": "Kalimat imperatif negatif memakai pola \"Don't + bare infinitive\" tanpa \"to\". Seharusnya: \"don't be late\", bukan \"don't to be late\"."
+  },
+  {
+    "q": "If it ___ tomorrow, we will cancel the outdoor ceremony.",
+    "opts": [
+      "rains",
+      "will rain",
+      "rained",
+      "would rain"
+    ],
+    "correct": 0,
+    "explain": "Conditional type 1 (kejadian yang mungkin terjadi di masa depan) memakai pola: If + Simple Present, ... will + V1. Klausa \"if\" nggak boleh pakai \"will\" meskipun menceritakan masa depan."
+  },
+  {
+    "q": "If she <u>studied</u> (A) harder, she <u>will pass</u> (B) the exam, but she <u>doesn't seem</u> (C) motivated <u>at all</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Conditional type 2 (situasi hipotetis/tidak nyata di masa sekarang) memakai pola: If + Simple Past, ... would + V1. Seharusnya: \"she would pass the exam\", bukan \"she will pass\"."
+  },
+  {
+    "q": "If they ___ earlier, they would not have missed the flight.",
+    "opts": [
+      "left",
+      "had left",
+      "have left",
+      "would leave"
+    ],
+    "correct": 1,
+    "explain": "Conditional type 3 (penyesalan terhadap kejadian lampau yang nggak terjadi) memakai pola: If + Past Perfect, ... would have + V3. Seharusnya: \"If they had left earlier\"."
+  },
+  {
+    "q": "If she <u>had studied</u> (A) medicine, she <u>would working</u> (B) as a doctor now instead of <u>struggling</u> (C) to find <u>a job</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Ini mixed conditional: syarat di masa lalu (had studied) menghasilkan akibat di masa sekarang (\"now\"). Bagian akibatnya butuh \"would be + V-ing\", bukan \"would working\" — seharusnya \"would be working\"."
+  },
+  {
+    "q": "She is really good ___ solving complex mathematical problems.",
+    "opts": [
+      "at",
+      "in",
+      "for",
+      "to"
+    ],
+    "correct": 0,
+    "explain": "\"Good at\" adalah kolokasi tetap yang diikuti oleh gerund (V-ing), bukan preposisi lain. Setelah preposisi, kata kerja selalu berbentuk gerund, bukan infinitive: \"good at solving\"."
+  },
+  {
+    "q": "The manager <u>decided</u> (A) <u>postponing</u> (B) the launch <u>because</u> (C) the product wasn't <u>ready</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "\"Decide\" adalah verb yang diikuti oleh to-infinitive, bukan gerund. Seharusnya: \"decided to postpone\", bukan \"decided postponing\"."
+  },
+  {
+    "q": "On his way to the office, he stopped ___ a newspaper at the kiosk, then continued walking.",
+    "opts": [
+      "to buy",
+      "buying",
+      "buy",
+      "bought"
+    ],
+    "correct": 0,
+    "explain": "\"Stop + to-infinitive\" berarti berhenti (dari aktivitas lain) untuk melakukan sesuatu (tujuan) — di sini dia berhenti berjalan untuk membeli koran. \"Stop + gerund\" (stop buying) artinya berbeda: berhenti melakukan kebiasaan membeli sesuatu."
+  },
+  {
+    "q": "<u>Exhausted</u> (A) from the long journey, the travelers <u>decided</u> (B) <u>stopping</u> (C) at the nearest hotel <u>to rest</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 2,
+    "explain": "\"Decide\" (finite verb utama) harus diikuti non-finite to-infinitive, bukan gerund. Seharusnya: \"decided to stop\", bukan \"decided stopping\". (\"Exhausted\" di awal kalimat sendiri adalah participle clause non-finite yang sudah benar sebagai pengganti \"Because they were exhausted...\")."
+  },
+  {
+    "q": "The window was ___ by the strong wind during the storm last night.",
+    "opts": [
+      "broke",
+      "broken",
+      "breaking",
+      "break"
+    ],
+    "correct": 1,
+    "explain": "Passive voice butuh pola \"be + V3\" (past participle). \"Break\" adalah irregular verb: break - broke - broken, jadi V3-nya adalah \"broken\", bukan \"broke\" (yang merupakan V2/Simple Past)."
+  },
+  {
+    "q": "The team <u>had</u> (A) <u>traveled</u> (B) all night and <u>arrived</u> (C) home just as the sun <u>raised</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 3,
+    "explain": "\"Raise\" adalah verb transitif beraturan (butuh objek: raise something), sedangkan \"rise\" adalah verb intransitif tidak beraturan (rise - rose - risen, tanpa objek) yang tepat untuk matahari. Seharusnya: \"as the sun rose\", bukan \"raised\"."
+  },
+  {
+    "q": "When I was a child, I ___ swim across the entire lake without stopping.",
+    "opts": [
+      "can",
+      "could",
+      "may",
+      "must"
+    ],
+    "correct": 1,
+    "explain": "\"Could\" dipakai untuk menyatakan kemampuan umum di masa lalu (general past ability). \"Can\" hanya untuk masa sekarang, sedangkan \"may\" dan \"must\" nggak menyatakan kemampuan."
+  },
+  {
+    "q": "Students <u>must</u> (A) <u>to submit</u> (B) their assignments <u>before</u> (C) the deadline, or they <u>will fail</u> (D) the course.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Modal verb (must, can, should, dst.) selalu diikuti bare infinitive tanpa \"to\". Seharusnya: \"must submit\", bukan \"must to submit\"."
+  },
+  {
+    "q": "You look exhausted. You ___ so late last night.",
+    "opts": [
+      "shouldn't stay",
+      "shouldn't have stayed",
+      "don't have to stay",
+      "mustn't have stayed"
+    ],
+    "correct": 1,
+    "explain": "Perfect modal \"should have + V3\" (di sini bentuk negatif: shouldn't have + V3) dipakai untuk mengkritik atau menyesali tindakan yang sudah terjadi di masa lalu. \"Shouldn't stay\" (tanpa \"have\") salah karena itu bentuk untuk saran masa sekarang/depan, bukan penyesalan atas kejadian lampau."
+  },
+  {
+    "q": "The lights are off and nobody answers the door, so they <u>must has left</u> (A) already; they <u>can't have gone</u> (B) far though, since their car <u>is still</u> (C) parked <u>outside</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 0,
+    "explain": "Perfect modal selalu memakai \"have\", tidak peduli subjeknya apa (must have, tidak pernah \"must has\"). Seharusnya: \"must have left\", bukan \"must has left\"."
+  },
+  {
+    "q": "English ___ widely as a second language in many countries around the world.",
+    "opts": [
+      "speaks",
+      "is spoken",
+      "is speaking",
+      "spoke"
+    ],
+    "correct": 1,
+    "explain": "\"English\" adalah penerima aksi (dituturkan), bukan pelaku, sehingga kalimat ini pasif: be (is) + V3 (spoken). \"Speaks\" salah karena itu bentuk aktif, seolah-olah English yang berbicara."
+  },
+  {
+    "q": "While the new bridge <u>was being built</u> (A), traffic <u>was diverted</u> (B) through a temporary road that <u>had constructed</u> (C) specifically <u>for</u> (D) this purpose.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 2,
+    "explain": "Jalan itu bukan pelaku, melainkan dibangun oleh seseorang, jadi harus pasif: \"had been constructed\" (Past Perfect Passive), bukan \"had constructed\" (Past Perfect aktif yang seolah-olah jalan itu sendiri yang membangun)."
+  },
+  {
+    "q": "All applications ___ before the end of this month, according to the new policy.",
+    "opts": [
+      "must submit",
+      "must be submitted",
+      "must submitted",
+      "must be submit"
+    ],
+    "correct": 1,
+    "explain": "Passive voice dengan modal memakai pola: modal + be + V3. \"Applications\" adalah penerima aksi (diajukan), sehingga bentuknya \"must be submitted\"."
+  },
+  {
+    "q": "He is very <u>interested</u> (A) <u>on</u> (B) astronomy and often <u>reads</u> (C) books <u>about</u> (D) black holes.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "\"Interested\" adalah kolokasi tetap dengan preposisi \"in\", bukan \"on\". Seharusnya: \"interested in astronomy\"."
+  },
+  {
+    "q": "The conference will be held ___ the morning of March 5th, ___ 9 sharp.",
+    "opts": [
+      "in ... at",
+      "on ... at",
+      "at ... on",
+      "in ... on"
+    ],
+    "correct": 0,
+    "explain": "\"The morning\" (bagian hari) memakai IN, sedangkan jam spesifik \"9 sharp\" memakai AT."
+  },
+  {
+    "q": "The cat is hiding <u>under</u> (A) the bed, while the dog is sleeping <u>at</u> (B) the sofa <u>in</u> (C) the living room <u>upstairs</u> (D).",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 1,
+    "explain": "Sofa adalah permukaan tempat sesuatu berada di atasnya, jadi memakai ON, bukan AT. Seharusnya: \"on the sofa\"."
+  },
+  {
+    "q": "The success of the project depends ___ how well the team communicates.",
+    "opts": [
+      "of",
+      "on",
+      "to",
+      "with"
+    ],
+    "correct": 1,
+    "explain": "\"Depend\" adalah dependent preposition verb yang selalu diikuti \"on\" — kolokasi tetap \"depend on\"."
+  },
+  {
+    "q": "By the time she <u>graduates</u> (A) next year, she <u>will have been studying</u> (B) medicine for six years, and she <u>hopes</u> (C) to specialize in pediatrics after she <u>will finish</u> (D) her residency.",
+    "opts": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "correct": 3,
+    "explain": "Di dalam klausa waktu yang diawali \"after\"/\"when\"/\"by the time\", bahasa Inggris nggak memakai bentuk \"will\" meskipun menceritakan masa depan — pakai Simple Present. Seharusnya: \"after she finishes\", bukan \"after she will finish\"."
+  },
+  {
+    "q": "Swimming every day ___ to be one of the best ways to stay fit and reduce stress.",
+    "opts": [
+      "are considered",
+      "is considered",
+      "considering",
+      "considered"
+    ],
+    "correct": 1,
+    "explain": "\"Swimming every day\" adalah gerund phrase yang berfungsi sebagai subjek tunggal, jadi kata kerjanya harus tunggal: \"is considered\" (passive, Simple Present), bukan \"are considered\"."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Artificial Intelligence and Jobs)</p><p>Artificial intelligence (AI) has moved from science fiction into the daily operations of many industries, from customer service chatbots to algorithms that sort résumés for hiring managers. Because AI systems can perform repetitive or data-heavy tasks faster and more accurately than humans, some economists warn that entire categories of jobs, especially those involving routine data entry or basic customer support, may disappear within a generation. Workers in these fields often fear that machines will simply replace them rather than assist them.<br><br>However, the picture is more complicated than a straightforward story of job loss. Historically, new technologies have tended to eliminate certain tasks while simultaneously generating demand for entirely new roles that did not previously exist. AI is arguably following this same pattern: it has already created a growing need for professionals who can design, train, and monitor these systems, as well as specialists who focus on the ethical and legal questions AI raises. What seems clear is that adaptability will matter more than ever. Workers who are willing to learn new digital skills throughout their careers are far more likely to thrive alongside AI than those who assume their current skill set will remain relevant indefinitely.</p></div><p><b>Soal 1 dari 7:</b> What is the main idea of this passage?</p>",
+    "opts": [
+      "AI will completely eliminate the need for human workers in every industry.",
+      "AI is likely to eliminate some jobs while creating others, making adaptability essential.",
+      "Economists agree that AI poses no real threat to employment.",
+      "Only customer service jobs will be affected by AI in the future."
+    ],
+    "correct": 1,
+    "explain": "Gagasan utamanya ada di paragraf 2: \"AI is arguably following this same pattern... What seems clear is that adaptability will matter more than ever\" — intinya AI menghilangkan sebagian pekerjaan sekaligus menciptakan yang baru, dan yang paling penting adalah kemampuan beradaptasi."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Artificial Intelligence and Jobs)</p><p>Artificial intelligence (AI) has moved from science fiction into the daily operations of many industries, from customer service chatbots to algorithms that sort résumés for hiring managers. Because AI systems can perform repetitive or data-heavy tasks faster and more accurately than humans, some economists warn that entire categories of jobs, especially those involving routine data entry or basic customer support, may disappear within a generation. Workers in these fields often fear that machines will simply replace them rather than assist them.<br><br>However, the picture is more complicated than a straightforward story of job loss. Historically, new technologies have tended to eliminate certain tasks while simultaneously generating demand for entirely new roles that did not previously exist. AI is arguably following this same pattern: it has already created a growing need for professionals who can design, train, and monitor these systems, as well as specialists who focus on the ethical and legal questions AI raises. What seems clear is that adaptability will matter more than ever. Workers who are willing to learn new digital skills throughout their careers are far more likely to thrive alongside AI than those who assume their current skill set will remain relevant indefinitely.</p></div><p><b>Soal 2 dari 7:</b> According to the passage, which types of jobs are economists most worried AI might eliminate?</p>",
+    "opts": [
+      "Creative and artistic jobs",
+      "Jobs involving routine data entry or basic customer support",
+      "Jobs requiring ethical judgment",
+      "Management positions"
+    ],
+    "correct": 1,
+    "explain": "Teks menyebutkan secara eksplisit: \"especially those involving routine data entry or basic customer support\"."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Artificial Intelligence and Jobs)</p><p>Artificial intelligence (AI) has moved from science fiction into the daily operations of many industries, from customer service chatbots to algorithms that sort résumés for hiring managers. Because AI systems can perform repetitive or data-heavy tasks faster and more accurately than humans, some economists warn that entire categories of jobs, especially those involving routine data entry or basic customer support, may disappear within a generation. Workers in these fields often fear that machines will simply replace them rather than assist them.<br><br>However, the picture is more complicated than a straightforward story of job loss. Historically, new technologies have tended to eliminate certain tasks while simultaneously generating demand for entirely new roles that did not previously exist. AI is arguably following this same pattern: it has already created a growing need for professionals who can design, train, and monitor these systems, as well as specialists who focus on the ethical and legal questions AI raises. What seems clear is that adaptability will matter more than ever. Workers who are willing to learn new digital skills throughout their careers are far more likely to thrive alongside AI than those who assume their current skill set will remain relevant indefinitely.</p></div><p><b>Soal 3 dari 7:</b> What can be inferred about workers who refuse to learn new digital skills?</p>",
+    "opts": [
+      "They will automatically be promoted",
+      "They are more likely to be negatively affected as AI becomes more common",
+      "They will be hired as AI ethics specialists",
+      "Their jobs are completely safe from automation"
+    ],
+    "correct": 1,
+    "explain": "Kalimat terakhir menyiratkan bahwa pekerja yang mau belajar skill digital baru \"far more likely to thrive\" dibanding yang menganggap skill mereka akan tetap relevan selamanya — artinya yang menolak belajar berisiko lebih besar terkena dampak negatif."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Artificial Intelligence and Jobs)</p><p>Artificial intelligence (AI) has moved from science fiction into the daily operations of many industries, from customer service chatbots to algorithms that sort résumés for hiring managers. Because AI systems can perform repetitive or data-heavy tasks faster and more accurately than humans, some economists warn that entire categories of jobs, especially those involving routine data entry or basic customer support, may disappear within a generation. Workers in these fields often fear that machines will simply replace them rather than assist them.<br><br>However, the picture is more complicated than a straightforward story of job loss. Historically, new technologies have tended to eliminate certain tasks while simultaneously generating demand for entirely new roles that did not previously exist. AI is arguably following this same pattern: it has already created a growing need for professionals who can design, train, and monitor these systems, as well as specialists who focus on the ethical and legal questions AI raises. What seems clear is that adaptability will matter more than ever. Workers who are willing to learn new digital skills throughout their careers are far more likely to thrive alongside AI than those who assume their current skill set will remain relevant indefinitely.</p></div><p><b>Soal 4 dari 7:</b> The word 'routine' in paragraph 1 is closest in meaning to...</p>",
+    "opts": [
+      "unusual",
+      "repetitive and regular",
+      "highly skilled",
+      "temporary"
+    ],
+    "correct": 1,
+    "explain": "Dalam konteks \"routine data entry\", kata \"routine\" berarti tugas yang dilakukan berulang-ulang dan bersifat rutin/tetap, sejalan dengan kalimat sebelumnya soal \"repetitive or data-heavy tasks\"."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Artificial Intelligence and Jobs)</p><p>Artificial intelligence (AI) has moved from science fiction into the daily operations of many industries, from customer service chatbots to algorithms that sort résumés for hiring managers. Because AI systems can perform repetitive or data-heavy tasks faster and more accurately than humans, some economists warn that entire categories of jobs, especially those involving routine data entry or basic customer support, may disappear within a generation. Workers in these fields often fear that machines will simply replace them rather than assist them.<br><br>However, the picture is more complicated than a straightforward story of job loss. Historically, new technologies have tended to eliminate certain tasks while simultaneously generating demand for entirely new roles that did not previously exist. AI is arguably following this same pattern: it has already created a growing need for professionals who can design, train, and monitor these systems, as well as specialists who focus on the ethical and legal questions AI raises. What seems clear is that adaptability will matter more than ever. Workers who are willing to learn new digital skills throughout their careers are far more likely to thrive alongside AI than those who assume their current skill set will remain relevant indefinitely.</p></div><p><b>Soal 5 dari 7:</b> What does 'this same pattern' in paragraph 2 refer to?</p>",
+    "opts": [
+      "AI replacing all human jobs permanently",
+      "The historical pattern of technology eliminating some tasks while creating new roles",
+      "The pattern of workers refusing to adapt",
+      "The pattern of governments regulating AI"
+    ],
+    "correct": 1,
+    "explain": "Frasa itu merujuk ke kalimat sebelumnya: \"new technologies have tended to eliminate certain tasks while simultaneously generating demand for entirely new roles\" — itulah pola historis yang dimaksud."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Artificial Intelligence and Jobs)</p><p>Artificial intelligence (AI) has moved from science fiction into the daily operations of many industries, from customer service chatbots to algorithms that sort résumés for hiring managers. Because AI systems can perform repetitive or data-heavy tasks faster and more accurately than humans, some economists warn that entire categories of jobs, especially those involving routine data entry or basic customer support, may disappear within a generation. Workers in these fields often fear that machines will simply replace them rather than assist them.<br><br>However, the picture is more complicated than a straightforward story of job loss. Historically, new technologies have tended to eliminate certain tasks while simultaneously generating demand for entirely new roles that did not previously exist. AI is arguably following this same pattern: it has already created a growing need for professionals who can design, train, and monitor these systems, as well as specialists who focus on the ethical and legal questions AI raises. What seems clear is that adaptability will matter more than ever. Workers who are willing to learn new digital skills throughout their careers are far more likely to thrive alongside AI than those who assume their current skill set will remain relevant indefinitely.</p></div><p><b>Soal 6 dari 7:</b> What is the author's tone toward the future impact of AI on jobs?</p>",
+    "opts": [
+      "Purely alarmist and pessimistic",
+      "Balanced, acknowledging both risks and opportunities",
+      "Dismissive of any concerns",
+      "Overly promotional of AI companies"
+    ],
+    "correct": 1,
+    "explain": "Penulis menyampaikan kekhawatiran soal hilangnya pekerjaan (paragraf 1) sekaligus peluang pekerjaan baru dan pentingnya adaptasi (paragraf 2) — ini menunjukkan nada yang seimbang, bukan sepenuhnya pesimis atau promotif."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Artificial Intelligence and Jobs)</p><p>Artificial intelligence (AI) has moved from science fiction into the daily operations of many industries, from customer service chatbots to algorithms that sort résumés for hiring managers. Because AI systems can perform repetitive or data-heavy tasks faster and more accurately than humans, some economists warn that entire categories of jobs, especially those involving routine data entry or basic customer support, may disappear within a generation. Workers in these fields often fear that machines will simply replace them rather than assist them.<br><br>However, the picture is more complicated than a straightforward story of job loss. Historically, new technologies have tended to eliminate certain tasks while simultaneously generating demand for entirely new roles that did not previously exist. AI is arguably following this same pattern: it has already created a growing need for professionals who can design, train, and monitor these systems, as well as specialists who focus on the ethical and legal questions AI raises. What seems clear is that adaptability will matter more than ever. Workers who are willing to learn new digital skills throughout their careers are far more likely to thrive alongside AI than those who assume their current skill set will remain relevant indefinitely.</p></div><p><b>Soal 7 dari 7:</b> All of the following are mentioned in the passage EXCEPT...</p>",
+    "opts": [
+      "Chatbots used in customer service",
+      "Algorithms sorting résumés",
+      "New roles for AI ethics specialists",
+      "Specific salary figures for AI-related jobs"
+    ],
+    "correct": 3,
+    "explain": "Teks menyebutkan chatbot, algoritma penyortir résumé, dan spesialis etika AI, tapi tidak pernah menyebutkan angka gaji spesifik untuk pekerjaan terkait AI."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Human Migration and Immigration Patterns)</p><p>Human migration is not a new phenomenon; people have moved across regions and continents for thousands of years in search of better resources, safety, or opportunity. What has changed in recent decades is the scale and speed at which migration occurs, driven by factors such as economic disparity between countries, armed conflict, and, increasingly, the effects of climate change on agriculture and water supply. When large numbers of people cross a border, the movement is often described as immigration from the perspective of the receiving country and emigration from the perspective of the country being left behind.<br><br>Public debate about migration tends to focus heavily on its challenges, such as pressure on housing or public services in destination cities. Yet research consistently shows that migrants also make substantial contributions to the economies they join, filling labor shortages in sectors like agriculture, healthcare, and construction, and often starting new businesses at higher rates than native-born residents. Countries that manage migration well tend to invest early in language education and job-matching programs, which helps newcomers integrate more quickly and reduces long-term social tension. Understanding migration as a complex, two-way exchange, rather than a simple story of gain or loss for either side, is essential for crafting fair and effective policy.</p></div><p><b>Soal 1 dari 7:</b> What is the main idea of this passage?</p>",
+    "opts": [
+      "Migration is a purely modern problem caused only by climate change",
+      "Migration is a longstanding phenomenon that brings both challenges and benefits, and needs balanced policy",
+      "Migrants always cause more problems than benefits for host countries",
+      "Immigration and emigration mean exactly the same thing"
+    ],
+    "correct": 1,
+    "explain": "Kalimat penutup merangkum gagasan utamanya: \"Understanding migration as a complex, two-way exchange... is essential for crafting fair and effective policy\" — migrasi punya tantangan sekaligus manfaat."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Human Migration and Immigration Patterns)</p><p>Human migration is not a new phenomenon; people have moved across regions and continents for thousands of years in search of better resources, safety, or opportunity. What has changed in recent decades is the scale and speed at which migration occurs, driven by factors such as economic disparity between countries, armed conflict, and, increasingly, the effects of climate change on agriculture and water supply. When large numbers of people cross a border, the movement is often described as immigration from the perspective of the receiving country and emigration from the perspective of the country being left behind.<br><br>Public debate about migration tends to focus heavily on its challenges, such as pressure on housing or public services in destination cities. Yet research consistently shows that migrants also make substantial contributions to the economies they join, filling labor shortages in sectors like agriculture, healthcare, and construction, and often starting new businesses at higher rates than native-born residents. Countries that manage migration well tend to invest early in language education and job-matching programs, which helps newcomers integrate more quickly and reduces long-term social tension. Understanding migration as a complex, two-way exchange, rather than a simple story of gain or loss for either side, is essential for crafting fair and effective policy.</p></div><p><b>Soal 2 dari 7:</b> According to the passage, what factors drive migration in recent decades?</p>",
+    "opts": [
+      "Economic disparity, armed conflict, and climate change effects",
+      "Only armed conflict",
+      "Only economic disparity",
+      "Government advertising campaigns"
+    ],
+    "correct": 0,
+    "explain": "Teks menyebutkan: \"driven by factors such as economic disparity between countries, armed conflict, and, increasingly, the effects of climate change\"."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Human Migration and Immigration Patterns)</p><p>Human migration is not a new phenomenon; people have moved across regions and continents for thousands of years in search of better resources, safety, or opportunity. What has changed in recent decades is the scale and speed at which migration occurs, driven by factors such as economic disparity between countries, armed conflict, and, increasingly, the effects of climate change on agriculture and water supply. When large numbers of people cross a border, the movement is often described as immigration from the perspective of the receiving country and emigration from the perspective of the country being left behind.<br><br>Public debate about migration tends to focus heavily on its challenges, such as pressure on housing or public services in destination cities. Yet research consistently shows that migrants also make substantial contributions to the economies they join, filling labor shortages in sectors like agriculture, healthcare, and construction, and often starting new businesses at higher rates than native-born residents. Countries that manage migration well tend to invest early in language education and job-matching programs, which helps newcomers integrate more quickly and reduces long-term social tension. Understanding migration as a complex, two-way exchange, rather than a simple story of gain or loss for either side, is essential for crafting fair and effective policy.</p></div><p><b>Soal 3 dari 7:</b> What can be inferred about countries that do NOT invest in language education and job-matching programs for migrants?</p>",
+    "opts": [
+      "They will experience faster integration",
+      "They may face more social tension and slower integration of newcomers",
+      "They will automatically reduce migration",
+      "Their economies will grow faster than others"
+    ],
+    "correct": 1,
+    "explain": "Karena teks menyatakan investasi semacam itu \"helps newcomers integrate more quickly and reduces long-term social tension\", tanpa investasi tersebut kemungkinan besar integrasi lebih lambat dan tensi sosial lebih tinggi."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Human Migration and Immigration Patterns)</p><p>Human migration is not a new phenomenon; people have moved across regions and continents for thousands of years in search of better resources, safety, or opportunity. What has changed in recent decades is the scale and speed at which migration occurs, driven by factors such as economic disparity between countries, armed conflict, and, increasingly, the effects of climate change on agriculture and water supply. When large numbers of people cross a border, the movement is often described as immigration from the perspective of the receiving country and emigration from the perspective of the country being left behind.<br><br>Public debate about migration tends to focus heavily on its challenges, such as pressure on housing or public services in destination cities. Yet research consistently shows that migrants also make substantial contributions to the economies they join, filling labor shortages in sectors like agriculture, healthcare, and construction, and often starting new businesses at higher rates than native-born residents. Countries that manage migration well tend to invest early in language education and job-matching programs, which helps newcomers integrate more quickly and reduces long-term social tension. Understanding migration as a complex, two-way exchange, rather than a simple story of gain or loss for either side, is essential for crafting fair and effective policy.</p></div><p><b>Soal 4 dari 7:</b> The word 'disparity' in paragraph 1 is closest in meaning to...</p>",
+    "opts": [
+      "similarity",
+      "agreement",
+      "difference or inequality",
+      "cooperation"
+    ],
+    "correct": 2,
+    "explain": "\"Economic disparity between countries\" berarti kesenjangan/ketimpangan ekonomi antarnegara, jadi \"disparity\" paling dekat maknanya dengan \"perbedaan/ketimpangan\"."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Human Migration and Immigration Patterns)</p><p>Human migration is not a new phenomenon; people have moved across regions and continents for thousands of years in search of better resources, safety, or opportunity. What has changed in recent decades is the scale and speed at which migration occurs, driven by factors such as economic disparity between countries, armed conflict, and, increasingly, the effects of climate change on agriculture and water supply. When large numbers of people cross a border, the movement is often described as immigration from the perspective of the receiving country and emigration from the perspective of the country being left behind.<br><br>Public debate about migration tends to focus heavily on its challenges, such as pressure on housing or public services in destination cities. Yet research consistently shows that migrants also make substantial contributions to the economies they join, filling labor shortages in sectors like agriculture, healthcare, and construction, and often starting new businesses at higher rates than native-born residents. Countries that manage migration well tend to invest early in language education and job-matching programs, which helps newcomers integrate more quickly and reduces long-term social tension. Understanding migration as a complex, two-way exchange, rather than a simple story of gain or loss for either side, is essential for crafting fair and effective policy.</p></div><p><b>Soal 5 dari 7:</b> What does 'the movement' in paragraph 1 refer to?</p>",
+    "opts": [
+      "The movement of goods between countries",
+      "Large numbers of people crossing a border",
+      "The movement of climate patterns",
+      "Political protest movements"
+    ],
+    "correct": 1,
+    "explain": "Frasa itu merujuk langsung ke klausa sebelumnya: \"When large numbers of people cross a border, the movement is often described as...\"."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Human Migration and Immigration Patterns)</p><p>Human migration is not a new phenomenon; people have moved across regions and continents for thousands of years in search of better resources, safety, or opportunity. What has changed in recent decades is the scale and speed at which migration occurs, driven by factors such as economic disparity between countries, armed conflict, and, increasingly, the effects of climate change on agriculture and water supply. When large numbers of people cross a border, the movement is often described as immigration from the perspective of the receiving country and emigration from the perspective of the country being left behind.<br><br>Public debate about migration tends to focus heavily on its challenges, such as pressure on housing or public services in destination cities. Yet research consistently shows that migrants also make substantial contributions to the economies they join, filling labor shortages in sectors like agriculture, healthcare, and construction, and often starting new businesses at higher rates than native-born residents. Countries that manage migration well tend to invest early in language education and job-matching programs, which helps newcomers integrate more quickly and reduces long-term social tension. Understanding migration as a complex, two-way exchange, rather than a simple story of gain or loss for either side, is essential for crafting fair and effective policy.</p></div><p><b>Soal 6 dari 7:</b> What is the author's attitude toward public debate on migration?</p>",
+    "opts": [
+      "Fully supportive of the negative framing",
+      "Critical, suggesting the debate overlooks migrants' economic contributions",
+      "Indifferent and uninterested",
+      "Strongly against any form of migration"
+    ],
+    "correct": 1,
+    "explain": "Kata penghubung kontras \"Yet\" setelah menyebut debat publik yang fokus pada tantangan, diikuti bukti kontribusi ekonomi migran, menunjukkan penulis mengkritik ketidakseimbangan narasi publik tersebut."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Human Migration and Immigration Patterns)</p><p>Human migration is not a new phenomenon; people have moved across regions and continents for thousands of years in search of better resources, safety, or opportunity. What has changed in recent decades is the scale and speed at which migration occurs, driven by factors such as economic disparity between countries, armed conflict, and, increasingly, the effects of climate change on agriculture and water supply. When large numbers of people cross a border, the movement is often described as immigration from the perspective of the receiving country and emigration from the perspective of the country being left behind.<br><br>Public debate about migration tends to focus heavily on its challenges, such as pressure on housing or public services in destination cities. Yet research consistently shows that migrants also make substantial contributions to the economies they join, filling labor shortages in sectors like agriculture, healthcare, and construction, and often starting new businesses at higher rates than native-born residents. Countries that manage migration well tend to invest early in language education and job-matching programs, which helps newcomers integrate more quickly and reduces long-term social tension. Understanding migration as a complex, two-way exchange, rather than a simple story of gain or loss for either side, is essential for crafting fair and effective policy.</p></div><p><b>Soal 7 dari 7:</b> All of the following sectors are mentioned as benefiting from migrant labor EXCEPT...</p>",
+    "opts": [
+      "Agriculture",
+      "Healthcare",
+      "Construction",
+      "Tourism"
+    ],
+    "correct": 3,
+    "explain": "Teks menyebutkan sektor agriculture, healthcare, dan construction sebagai contoh yang diisi tenaga kerja migran — sektor pariwisata (tourism) tidak disebutkan."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Nutrition Myths vs. Scientific Evidence)</p><p>Nutrition is a field where popular belief and scientific evidence frequently diverge, partly because diet advice spreads quickly on social media without being reviewed by experts. One persistent myth is that carbohydrates are inherently fattening and should be avoided entirely. In reality, weight gain depends on total calorie intake and overall dietary pattern, not on any single macronutrient; whole grains, fruits, and legumes, all rich in carbohydrates, are strongly associated with better health outcomes when eaten as part of a balanced diet.<br><br>Another common misconception is that all fat is unhealthy. While certain saturated and trans fats, found heavily in processed snacks, are linked to cardiovascular problems, unsaturated fats from sources such as olive oil, nuts, and fish appear to support heart health rather than harm it. A third myth involves detox diets and cleanses, which claim to flush toxins from the body using juices or supplements. The human liver and kidneys already perform this filtering function continuously and effectively, so such products are largely unnecessary for a healthy person, though they remain heavily marketed. Nutritionists generally agree that no single food or short-term diet can substitute for a consistently balanced, varied eating pattern over time, which is a far less exciting message than any of these myths.</p></div><p><b>Soal 1 dari 7:</b> What is the main idea of this passage?</p>",
+    "opts": [
+      "All carbohydrates and fats should be avoided",
+      "Several popular nutrition myths are not supported by scientific evidence, and balanced eating matters more",
+      "Detox diets are proven to remove toxins effectively",
+      "Social media is the most reliable source of nutrition advice"
+    ],
+    "correct": 1,
+    "explain": "Passage ini membongkar tiga mitos gizi (karbohidrat, lemak, detox) satu per satu dan menyimpulkan bahwa pola makan seimbang jangka panjang yang sebenarnya penting, bukan mitos-mitos tersebut."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Nutrition Myths vs. Scientific Evidence)</p><p>Nutrition is a field where popular belief and scientific evidence frequently diverge, partly because diet advice spreads quickly on social media without being reviewed by experts. One persistent myth is that carbohydrates are inherently fattening and should be avoided entirely. In reality, weight gain depends on total calorie intake and overall dietary pattern, not on any single macronutrient; whole grains, fruits, and legumes, all rich in carbohydrates, are strongly associated with better health outcomes when eaten as part of a balanced diet.<br><br>Another common misconception is that all fat is unhealthy. While certain saturated and trans fats, found heavily in processed snacks, are linked to cardiovascular problems, unsaturated fats from sources such as olive oil, nuts, and fish appear to support heart health rather than harm it. A third myth involves detox diets and cleanses, which claim to flush toxins from the body using juices or supplements. The human liver and kidneys already perform this filtering function continuously and effectively, so such products are largely unnecessary for a healthy person, though they remain heavily marketed. Nutritionists generally agree that no single food or short-term diet can substitute for a consistently balanced, varied eating pattern over time, which is a far less exciting message than any of these myths.</p></div><p><b>Soal 2 dari 7:</b> According to the passage, what actually determines weight gain?</p>",
+    "opts": [
+      "Eating carbohydrates specifically",
+      "Total calorie intake and overall dietary pattern",
+      "Avoiding all fat",
+      "Using detox juices"
+    ],
+    "correct": 1,
+    "explain": "Teks menyatakan langsung: \"weight gain depends on total calorie intake and overall dietary pattern, not on any single macronutrient\"."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Nutrition Myths vs. Scientific Evidence)</p><p>Nutrition is a field where popular belief and scientific evidence frequently diverge, partly because diet advice spreads quickly on social media without being reviewed by experts. One persistent myth is that carbohydrates are inherently fattening and should be avoided entirely. In reality, weight gain depends on total calorie intake and overall dietary pattern, not on any single macronutrient; whole grains, fruits, and legumes, all rich in carbohydrates, are strongly associated with better health outcomes when eaten as part of a balanced diet.<br><br>Another common misconception is that all fat is unhealthy. While certain saturated and trans fats, found heavily in processed snacks, are linked to cardiovascular problems, unsaturated fats from sources such as olive oil, nuts, and fish appear to support heart health rather than harm it. A third myth involves detox diets and cleanses, which claim to flush toxins from the body using juices or supplements. The human liver and kidneys already perform this filtering function continuously and effectively, so such products are largely unnecessary for a healthy person, though they remain heavily marketed. Nutritionists generally agree that no single food or short-term diet can substitute for a consistently balanced, varied eating pattern over time, which is a far less exciting message than any of these myths.</p></div><p><b>Soal 3 dari 7:</b> What can be inferred about why nutrition myths spread so easily?</p>",
+    "opts": [
+      "Because scientists actively promote them",
+      "Because they travel quickly on social media without expert review, making them seem credible",
+      "Because governments require people to believe them",
+      "Because they are always tested in laboratories first"
+    ],
+    "correct": 1,
+    "explain": "Kalimat pembuka menyebut \"diet advice spreads quickly on social media without being reviewed by experts\" sebagai salah satu sebab mitos gizi begitu populer meski tidak akurat."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Nutrition Myths vs. Scientific Evidence)</p><p>Nutrition is a field where popular belief and scientific evidence frequently diverge, partly because diet advice spreads quickly on social media without being reviewed by experts. One persistent myth is that carbohydrates are inherently fattening and should be avoided entirely. In reality, weight gain depends on total calorie intake and overall dietary pattern, not on any single macronutrient; whole grains, fruits, and legumes, all rich in carbohydrates, are strongly associated with better health outcomes when eaten as part of a balanced diet.<br><br>Another common misconception is that all fat is unhealthy. While certain saturated and trans fats, found heavily in processed snacks, are linked to cardiovascular problems, unsaturated fats from sources such as olive oil, nuts, and fish appear to support heart health rather than harm it. A third myth involves detox diets and cleanses, which claim to flush toxins from the body using juices or supplements. The human liver and kidneys already perform this filtering function continuously and effectively, so such products are largely unnecessary for a healthy person, though they remain heavily marketed. Nutritionists generally agree that no single food or short-term diet can substitute for a consistently balanced, varied eating pattern over time, which is a far less exciting message than any of these myths.</p></div><p><b>Soal 4 dari 7:</b> The word 'inherently' in paragraph 1 is closest in meaning to...</p>",
+    "opts": [
+      "occasionally",
+      "by its very nature",
+      "rarely",
+      "artificially"
+    ],
+    "correct": 1,
+    "explain": "\"Inherently fattening\" berarti dianggap menggemukkan secara mendasar/alami, jadi \"inherently\" paling dekat maknanya dengan \"pada dasarnya/secara alami\"."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Nutrition Myths vs. Scientific Evidence)</p><p>Nutrition is a field where popular belief and scientific evidence frequently diverge, partly because diet advice spreads quickly on social media without being reviewed by experts. One persistent myth is that carbohydrates are inherently fattening and should be avoided entirely. In reality, weight gain depends on total calorie intake and overall dietary pattern, not on any single macronutrient; whole grains, fruits, and legumes, all rich in carbohydrates, are strongly associated with better health outcomes when eaten as part of a balanced diet.<br><br>Another common misconception is that all fat is unhealthy. While certain saturated and trans fats, found heavily in processed snacks, are linked to cardiovascular problems, unsaturated fats from sources such as olive oil, nuts, and fish appear to support heart health rather than harm it. A third myth involves detox diets and cleanses, which claim to flush toxins from the body using juices or supplements. The human liver and kidneys already perform this filtering function continuously and effectively, so such products are largely unnecessary for a healthy person, though they remain heavily marketed. Nutritionists generally agree that no single food or short-term diet can substitute for a consistently balanced, varied eating pattern over time, which is a far less exciting message than any of these myths.</p></div><p><b>Soal 5 dari 7:</b> What does 'such products' in paragraph 2 refer to?</p>",
+    "opts": [
+      "Whole grains and legumes",
+      "Detox juices and supplements marketed as cleanses",
+      "Olive oil, nuts, and fish",
+      "Processed snacks containing trans fats"
+    ],
+    "correct": 1,
+    "explain": "Frasa itu merujuk ke kalimat sebelumnya yang membahas \"detox diets and cleanses... using juices or supplements\"."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Nutrition Myths vs. Scientific Evidence)</p><p>Nutrition is a field where popular belief and scientific evidence frequently diverge, partly because diet advice spreads quickly on social media without being reviewed by experts. One persistent myth is that carbohydrates are inherently fattening and should be avoided entirely. In reality, weight gain depends on total calorie intake and overall dietary pattern, not on any single macronutrient; whole grains, fruits, and legumes, all rich in carbohydrates, are strongly associated with better health outcomes when eaten as part of a balanced diet.<br><br>Another common misconception is that all fat is unhealthy. While certain saturated and trans fats, found heavily in processed snacks, are linked to cardiovascular problems, unsaturated fats from sources such as olive oil, nuts, and fish appear to support heart health rather than harm it. A third myth involves detox diets and cleanses, which claim to flush toxins from the body using juices or supplements. The human liver and kidneys already perform this filtering function continuously and effectively, so such products are largely unnecessary for a healthy person, though they remain heavily marketed. Nutritionists generally agree that no single food or short-term diet can substitute for a consistently balanced, varied eating pattern over time, which is a far less exciting message than any of these myths.</p></div><p><b>Soal 6 dari 7:</b> What is the author's tone when discussing detox diets and nutrition myths in general?</p>",
+    "opts": [
+      "Awed and enthusiastic",
+      "Skeptical, pointing out these claims lack scientific support",
+      "Completely neutral with no opinion",
+      "Angry and insulting toward dieters"
+    ],
+    "correct": 1,
+    "explain": "Frasa seperti \"largely unnecessary\" dan \"a far less exciting message than any of these myths\" menunjukkan sikap skeptis penulis terhadap klaim-klaim yang tidak didukung bukti ilmiah."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Nutrition Myths vs. Scientific Evidence)</p><p>Nutrition is a field where popular belief and scientific evidence frequently diverge, partly because diet advice spreads quickly on social media without being reviewed by experts. One persistent myth is that carbohydrates are inherently fattening and should be avoided entirely. In reality, weight gain depends on total calorie intake and overall dietary pattern, not on any single macronutrient; whole grains, fruits, and legumes, all rich in carbohydrates, are strongly associated with better health outcomes when eaten as part of a balanced diet.<br><br>Another common misconception is that all fat is unhealthy. While certain saturated and trans fats, found heavily in processed snacks, are linked to cardiovascular problems, unsaturated fats from sources such as olive oil, nuts, and fish appear to support heart health rather than harm it. A third myth involves detox diets and cleanses, which claim to flush toxins from the body using juices or supplements. The human liver and kidneys already perform this filtering function continuously and effectively, so such products are largely unnecessary for a healthy person, though they remain heavily marketed. Nutritionists generally agree that no single food or short-term diet can substitute for a consistently balanced, varied eating pattern over time, which is a far less exciting message than any of these myths.</p></div><p><b>Soal 7 dari 7:</b> All of the following are mentioned as sources of healthy unsaturated fat EXCEPT...</p>",
+    "opts": [
+      "Olive oil",
+      "Nuts",
+      "Fish",
+      "Processed snacks"
+    ],
+    "correct": 3,
+    "explain": "Olive oil, nuts, dan fish disebut sebagai sumber lemak tak jenuh yang baik; processed snacks justru disebut sebagai sumber lemak jenuh/trans yang berkaitan dengan masalah kardiovaskular."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Volcanic Activity and Monitoring)</p><p>Volcanoes form where molten rock, gas, and ash from deep within the Earth find a path to the surface, often at the boundaries where tectonic plates meet or pull apart. Not every volcano behaves the same way: some produce slow, flowing lava that allows people nearby considerable time to evacuate, while others can erupt explosively with almost no warning, sending ash clouds and pyroclastic flows racing down their slopes at devastating speed. Because the consequences of an unexpected eruption can be catastrophic for nearby communities, scientists have developed several methods to monitor volcanic activity and estimate when an eruption might occur.<br><br>Seismographs detect the small earthquakes that typically increase in frequency as magma pushes upward through cracks in the rock before an eruption. Tiltmeters and GPS sensors measure subtle changes in the shape of a volcano's surface, since a swelling ground often signals that magma is accumulating underneath. Scientists also sample gases escaping from vents, because a rising ratio of sulfur dioxide to other gases can indicate that fresh magma is nearing the surface. No single instrument can predict an eruption with complete certainty, but combining data from all three methods allows volcanologists to issue warnings that, while imperfect, have saved many lives in recent decades by giving communities time to prepare or evacuate.</p></div><p><b>Soal 1 dari 7:</b> What is the main idea of this passage?</p>",
+    "opts": [
+      "All volcanoes erupt in the exact same predictable way",
+      "Scientists use multiple monitoring methods to understand and predict volcanic eruptions, which has saved lives",
+      "Volcanic eruptions cannot be studied with current technology",
+      "Tectonic plates have nothing to do with volcano formation"
+    ],
+    "correct": 1,
+    "explain": "Gagasan utama ada di kalimat penutup paragraf 2: kombinasi seismograf, tiltmeter/GPS, dan sampel gas memungkinkan peringatan dini yang \"have saved many lives in recent decades\"."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Volcanic Activity and Monitoring)</p><p>Volcanoes form where molten rock, gas, and ash from deep within the Earth find a path to the surface, often at the boundaries where tectonic plates meet or pull apart. Not every volcano behaves the same way: some produce slow, flowing lava that allows people nearby considerable time to evacuate, while others can erupt explosively with almost no warning, sending ash clouds and pyroclastic flows racing down their slopes at devastating speed. Because the consequences of an unexpected eruption can be catastrophic for nearby communities, scientists have developed several methods to monitor volcanic activity and estimate when an eruption might occur.<br><br>Seismographs detect the small earthquakes that typically increase in frequency as magma pushes upward through cracks in the rock before an eruption. Tiltmeters and GPS sensors measure subtle changes in the shape of a volcano's surface, since a swelling ground often signals that magma is accumulating underneath. Scientists also sample gases escaping from vents, because a rising ratio of sulfur dioxide to other gases can indicate that fresh magma is nearing the surface. No single instrument can predict an eruption with complete certainty, but combining data from all three methods allows volcanologists to issue warnings that, while imperfect, have saved many lives in recent decades by giving communities time to prepare or evacuate.</p></div><p><b>Soal 2 dari 7:</b> According to the passage, what do tiltmeters and GPS sensors measure?</p>",
+    "opts": [
+      "The temperature of lava",
+      "Subtle changes in the shape of a volcano's surface",
+      "The sound of underground earthquakes",
+      "The chemical composition of ash"
+    ],
+    "correct": 1,
+    "explain": "Teks menyatakan langsung: \"Tiltmeters and GPS sensors measure subtle changes in the shape of a volcano's surface\"."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Volcanic Activity and Monitoring)</p><p>Volcanoes form where molten rock, gas, and ash from deep within the Earth find a path to the surface, often at the boundaries where tectonic plates meet or pull apart. Not every volcano behaves the same way: some produce slow, flowing lava that allows people nearby considerable time to evacuate, while others can erupt explosively with almost no warning, sending ash clouds and pyroclastic flows racing down their slopes at devastating speed. Because the consequences of an unexpected eruption can be catastrophic for nearby communities, scientists have developed several methods to monitor volcanic activity and estimate when an eruption might occur.<br><br>Seismographs detect the small earthquakes that typically increase in frequency as magma pushes upward through cracks in the rock before an eruption. Tiltmeters and GPS sensors measure subtle changes in the shape of a volcano's surface, since a swelling ground often signals that magma is accumulating underneath. Scientists also sample gases escaping from vents, because a rising ratio of sulfur dioxide to other gases can indicate that fresh magma is nearing the surface. No single instrument can predict an eruption with complete certainty, but combining data from all three methods allows volcanologists to issue warnings that, while imperfect, have saved many lives in recent decades by giving communities time to prepare or evacuate.</p></div><p><b>Soal 3 dari 7:</b> What can be inferred about volcanoes located near tectonic plate boundaries?</p>",
+    "opts": [
+      "They are less likely to be volcanically active",
+      "They are more likely to form and be active due to the movement of plates",
+      "They never produce lava flows",
+      "They cannot be monitored using seismographs"
+    ],
+    "correct": 1,
+    "explain": "Paragraf 1 menyebut gunung berapi \"often at the boundaries where tectonic plates meet or pull apart\", menyiratkan hubungan erat antara batas lempeng tektonik dan aktivitas vulkanik."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Volcanic Activity and Monitoring)</p><p>Volcanoes form where molten rock, gas, and ash from deep within the Earth find a path to the surface, often at the boundaries where tectonic plates meet or pull apart. Not every volcano behaves the same way: some produce slow, flowing lava that allows people nearby considerable time to evacuate, while others can erupt explosively with almost no warning, sending ash clouds and pyroclastic flows racing down their slopes at devastating speed. Because the consequences of an unexpected eruption can be catastrophic for nearby communities, scientists have developed several methods to monitor volcanic activity and estimate when an eruption might occur.<br><br>Seismographs detect the small earthquakes that typically increase in frequency as magma pushes upward through cracks in the rock before an eruption. Tiltmeters and GPS sensors measure subtle changes in the shape of a volcano's surface, since a swelling ground often signals that magma is accumulating underneath. Scientists also sample gases escaping from vents, because a rising ratio of sulfur dioxide to other gases can indicate that fresh magma is nearing the surface. No single instrument can predict an eruption with complete certainty, but combining data from all three methods allows volcanologists to issue warnings that, while imperfect, have saved many lives in recent decades by giving communities time to prepare or evacuate.</p></div><p><b>Soal 4 dari 7:</b> The word 'subtle' in paragraph 2 is closest in meaning to...</p>",
+    "opts": [
+      "extremely obvious and large",
+      "slight and hard to notice",
+      "dangerous",
+      "permanent"
+    ],
+    "correct": 1,
+    "explain": "\"Subtle changes in the shape\" berarti perubahan kecil/halus yang sulit terlihat langsung, sehingga butuh alat khusus (tiltmeter, GPS) untuk mendeteksinya."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Volcanic Activity and Monitoring)</p><p>Volcanoes form where molten rock, gas, and ash from deep within the Earth find a path to the surface, often at the boundaries where tectonic plates meet or pull apart. Not every volcano behaves the same way: some produce slow, flowing lava that allows people nearby considerable time to evacuate, while others can erupt explosively with almost no warning, sending ash clouds and pyroclastic flows racing down their slopes at devastating speed. Because the consequences of an unexpected eruption can be catastrophic for nearby communities, scientists have developed several methods to monitor volcanic activity and estimate when an eruption might occur.<br><br>Seismographs detect the small earthquakes that typically increase in frequency as magma pushes upward through cracks in the rock before an eruption. Tiltmeters and GPS sensors measure subtle changes in the shape of a volcano's surface, since a swelling ground often signals that magma is accumulating underneath. Scientists also sample gases escaping from vents, because a rising ratio of sulfur dioxide to other gases can indicate that fresh magma is nearing the surface. No single instrument can predict an eruption with complete certainty, but combining data from all three methods allows volcanologists to issue warnings that, while imperfect, have saved many lives in recent decades by giving communities time to prepare or evacuate.</p></div><p><b>Soal 5 dari 7:</b> What does 'their' refer to in the phrase 'racing down their slopes' in paragraph 1?</p>",
+    "opts": [
+      "Scientists",
+      "Volcanoes",
+      "Communities",
+      "Ash clouds"
+    ],
+    "correct": 1,
+    "explain": "\"Their slopes\" merujuk kembali ke gunung berapi (volcanoes) yang disebutkan sebelumnya sebagai sumber ash clouds dan pyroclastic flows yang meluncur menuruni lerengnya."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Volcanic Activity and Monitoring)</p><p>Volcanoes form where molten rock, gas, and ash from deep within the Earth find a path to the surface, often at the boundaries where tectonic plates meet or pull apart. Not every volcano behaves the same way: some produce slow, flowing lava that allows people nearby considerable time to evacuate, while others can erupt explosively with almost no warning, sending ash clouds and pyroclastic flows racing down their slopes at devastating speed. Because the consequences of an unexpected eruption can be catastrophic for nearby communities, scientists have developed several methods to monitor volcanic activity and estimate when an eruption might occur.<br><br>Seismographs detect the small earthquakes that typically increase in frequency as magma pushes upward through cracks in the rock before an eruption. Tiltmeters and GPS sensors measure subtle changes in the shape of a volcano's surface, since a swelling ground often signals that magma is accumulating underneath. Scientists also sample gases escaping from vents, because a rising ratio of sulfur dioxide to other gases can indicate that fresh magma is nearing the surface. No single instrument can predict an eruption with complete certainty, but combining data from all three methods allows volcanologists to issue warnings that, while imperfect, have saved many lives in recent decades by giving communities time to prepare or evacuate.</p></div><p><b>Soal 6 dari 7:</b> What is the author's purpose in this passage?</p>",
+    "opts": [
+      "To warn readers to avoid living near any volcano",
+      "To inform readers about how volcanoes form and how scientists monitor them",
+      "To argue that volcanic eruptions can now be predicted with total certainty",
+      "To criticize volcanologists for their methods"
+    ],
+    "correct": 1,
+    "explain": "Passage ini bersifat informatif: menjelaskan proses pembentukan gunung berapi lalu memaparkan metode-metode ilmiah untuk memantaunya, tanpa nada menakut-nakuti atau mengkritik."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Volcanic Activity and Monitoring)</p><p>Volcanoes form where molten rock, gas, and ash from deep within the Earth find a path to the surface, often at the boundaries where tectonic plates meet or pull apart. Not every volcano behaves the same way: some produce slow, flowing lava that allows people nearby considerable time to evacuate, while others can erupt explosively with almost no warning, sending ash clouds and pyroclastic flows racing down their slopes at devastating speed. Because the consequences of an unexpected eruption can be catastrophic for nearby communities, scientists have developed several methods to monitor volcanic activity and estimate when an eruption might occur.<br><br>Seismographs detect the small earthquakes that typically increase in frequency as magma pushes upward through cracks in the rock before an eruption. Tiltmeters and GPS sensors measure subtle changes in the shape of a volcano's surface, since a swelling ground often signals that magma is accumulating underneath. Scientists also sample gases escaping from vents, because a rising ratio of sulfur dioxide to other gases can indicate that fresh magma is nearing the surface. No single instrument can predict an eruption with complete certainty, but combining data from all three methods allows volcanologists to issue warnings that, while imperfect, have saved many lives in recent decades by giving communities time to prepare or evacuate.</p></div><p><b>Soal 7 dari 7:</b> All of the following are mentioned as volcano monitoring methods EXCEPT...</p>",
+    "opts": [
+      "Seismographs detecting small earthquakes",
+      "Tiltmeters and GPS sensors measuring ground changes",
+      "Sampling gases from vents",
+      "Satellite thermal imaging of lava temperature"
+    ],
+    "correct": 3,
+    "explain": "Teks menyebutkan seismograf, tiltmeter/GPS, dan sampel gas sebagai metode pemantauan; pencitraan termal satelit tidak disebutkan sama sekali."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Remote Work and Its Effect on Cities)</p><p>The rapid expansion of remote work has reshaped not only how people do their jobs but also where they choose to live. When employees are no longer required to commute daily to a central office, many discover that they can perform the same work from a smaller town, a rural area, or even a different country altogether, often at a significantly lower cost of living. This shift has led to a noticeable migration away from some expensive city centers, as workers seek larger homes, quieter surroundings, or proximity to family, while keeping salaries tied to urban job markets.<br><br>The effects on cities themselves have been mixed. Commercial districts built around office workers, such as downtown lunch spots and dry cleaners, have suffered from reduced daily foot traffic, and some commercial real estate has sat empty for extended periods. At the same time, certain smaller cities and suburban towns have experienced unexpected economic revival, as newly arrived remote workers spend money locally and support new businesses. Urban planners are now debating whether city centers should be redesigned with more housing and mixed-use spaces rather than office towers, arguing that a permanent shift toward flexible work arrangements means cities can no longer assume that commuters will automatically return in the same numbers as before the shift began.</p></div><p><b>Soal 1 dari 7:</b> What is the main idea of this passage?</p>",
+    "opts": [
+      "Remote work has had no real effect on where people live",
+      "Remote work has changed where people live and created mixed economic effects on cities",
+      "All city centers are now completely abandoned",
+      "Remote work only benefits large cities"
+    ],
+    "correct": 1,
+    "explain": "Passage ini menjelaskan bagaimana remote work menggeser pilihan tempat tinggal orang dan menghasilkan efek campuran pada kota — sebagian dirugikan (distrik komersial), sebagian diuntungkan (kota kecil)."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Remote Work and Its Effect on Cities)</p><p>The rapid expansion of remote work has reshaped not only how people do their jobs but also where they choose to live. When employees are no longer required to commute daily to a central office, many discover that they can perform the same work from a smaller town, a rural area, or even a different country altogether, often at a significantly lower cost of living. This shift has led to a noticeable migration away from some expensive city centers, as workers seek larger homes, quieter surroundings, or proximity to family, while keeping salaries tied to urban job markets.<br><br>The effects on cities themselves have been mixed. Commercial districts built around office workers, such as downtown lunch spots and dry cleaners, have suffered from reduced daily foot traffic, and some commercial real estate has sat empty for extended periods. At the same time, certain smaller cities and suburban towns have experienced unexpected economic revival, as newly arrived remote workers spend money locally and support new businesses. Urban planners are now debating whether city centers should be redesigned with more housing and mixed-use spaces rather than office towers, arguing that a permanent shift toward flexible work arrangements means cities can no longer assume that commuters will automatically return in the same numbers as before the shift began.</p></div><p><b>Soal 2 dari 7:</b> According to the passage, what has happened to some commercial districts built around office workers?</p>",
+    "opts": [
+      "They have expanded rapidly",
+      "They have suffered from reduced foot traffic and empty real estate",
+      "They have been converted into parks",
+      "They have seen record profits"
+    ],
+    "correct": 1,
+    "explain": "Teks menyatakan: \"Commercial districts built around office workers... have suffered from reduced daily foot traffic, and some commercial real estate has sat empty for extended periods\"."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Remote Work and Its Effect on Cities)</p><p>The rapid expansion of remote work has reshaped not only how people do their jobs but also where they choose to live. When employees are no longer required to commute daily to a central office, many discover that they can perform the same work from a smaller town, a rural area, or even a different country altogether, often at a significantly lower cost of living. This shift has led to a noticeable migration away from some expensive city centers, as workers seek larger homes, quieter surroundings, or proximity to family, while keeping salaries tied to urban job markets.<br><br>The effects on cities themselves have been mixed. Commercial districts built around office workers, such as downtown lunch spots and dry cleaners, have suffered from reduced daily foot traffic, and some commercial real estate has sat empty for extended periods. At the same time, certain smaller cities and suburban towns have experienced unexpected economic revival, as newly arrived remote workers spend money locally and support new businesses. Urban planners are now debating whether city centers should be redesigned with more housing and mixed-use spaces rather than office towers, arguing that a permanent shift toward flexible work arrangements means cities can no longer assume that commuters will automatically return in the same numbers as before the shift began.</p></div><p><b>Soal 3 dari 7:</b> What can be inferred about smaller towns that have attracted remote workers?</p>",
+    "opts": [
+      "Their local economies have generally declined",
+      "Their local businesses have likely benefited from new local spending",
+      "They have banned remote workers from moving in",
+      "They have lost access to the internet"
+    ],
+    "correct": 1,
+    "explain": "Teks menyebut kota-kota kecil \"experienced unexpected economic revival, as newly arrived remote workers spend money locally and support new businesses\", menyiratkan bisnis lokal di sana mendapat manfaat."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Remote Work and Its Effect on Cities)</p><p>The rapid expansion of remote work has reshaped not only how people do their jobs but also where they choose to live. When employees are no longer required to commute daily to a central office, many discover that they can perform the same work from a smaller town, a rural area, or even a different country altogether, often at a significantly lower cost of living. This shift has led to a noticeable migration away from some expensive city centers, as workers seek larger homes, quieter surroundings, or proximity to family, while keeping salaries tied to urban job markets.<br><br>The effects on cities themselves have been mixed. Commercial districts built around office workers, such as downtown lunch spots and dry cleaners, have suffered from reduced daily foot traffic, and some commercial real estate has sat empty for extended periods. At the same time, certain smaller cities and suburban towns have experienced unexpected economic revival, as newly arrived remote workers spend money locally and support new businesses. Urban planners are now debating whether city centers should be redesigned with more housing and mixed-use spaces rather than office towers, arguing that a permanent shift toward flexible work arrangements means cities can no longer assume that commuters will automatically return in the same numbers as before the shift began.</p></div><p><b>Soal 4 dari 7:</b> The word 'revival' in paragraph 2 is closest in meaning to...</p>",
+    "opts": [
+      "decline",
+      "renewal or comeback",
+      "destruction",
+      "stagnation"
+    ],
+    "correct": 1,
+    "explain": "\"Economic revival\" berarti kebangkitan/pemulihan ekonomi, sehingga \"revival\" paling dekat maknanya dengan \"pembaruan/kebangkitan kembali\"."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Remote Work and Its Effect on Cities)</p><p>The rapid expansion of remote work has reshaped not only how people do their jobs but also where they choose to live. When employees are no longer required to commute daily to a central office, many discover that they can perform the same work from a smaller town, a rural area, or even a different country altogether, often at a significantly lower cost of living. This shift has led to a noticeable migration away from some expensive city centers, as workers seek larger homes, quieter surroundings, or proximity to family, while keeping salaries tied to urban job markets.<br><br>The effects on cities themselves have been mixed. Commercial districts built around office workers, such as downtown lunch spots and dry cleaners, have suffered from reduced daily foot traffic, and some commercial real estate has sat empty for extended periods. At the same time, certain smaller cities and suburban towns have experienced unexpected economic revival, as newly arrived remote workers spend money locally and support new businesses. Urban planners are now debating whether city centers should be redesigned with more housing and mixed-use spaces rather than office towers, arguing that a permanent shift toward flexible work arrangements means cities can no longer assume that commuters will automatically return in the same numbers as before the shift began.</p></div><p><b>Soal 5 dari 7:</b> What does 'this shift' refer to in paragraph 1?</p>",
+    "opts": [
+      "The shift from paper to digital records",
+      "The migration away from expensive city centers toward smaller towns due to remote work",
+      "A shift in national tax policy",
+      "A shift in office building architecture"
+    ],
+    "correct": 1,
+    "explain": "Frasa itu merujuk ke kalimat sebelumnya yang menjelaskan karyawan pindah dari kota besar karena tidak lagi wajib datang ke kantor pusat setiap hari."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Remote Work and Its Effect on Cities)</p><p>The rapid expansion of remote work has reshaped not only how people do their jobs but also where they choose to live. When employees are no longer required to commute daily to a central office, many discover that they can perform the same work from a smaller town, a rural area, or even a different country altogether, often at a significantly lower cost of living. This shift has led to a noticeable migration away from some expensive city centers, as workers seek larger homes, quieter surroundings, or proximity to family, while keeping salaries tied to urban job markets.<br><br>The effects on cities themselves have been mixed. Commercial districts built around office workers, such as downtown lunch spots and dry cleaners, have suffered from reduced daily foot traffic, and some commercial real estate has sat empty for extended periods. At the same time, certain smaller cities and suburban towns have experienced unexpected economic revival, as newly arrived remote workers spend money locally and support new businesses. Urban planners are now debating whether city centers should be redesigned with more housing and mixed-use spaces rather than office towers, arguing that a permanent shift toward flexible work arrangements means cities can no longer assume that commuters will automatically return in the same numbers as before the shift began.</p></div><p><b>Soal 6 dari 7:</b> What is the author's tone in this passage?</p>",
+    "opts": [
+      "Alarmist, predicting the total collapse of all cities",
+      "Analytical and balanced, presenting both negative and positive effects on cities",
+      "Purely celebratory about remote work with no downsides mentioned",
+      "Dismissive of urban planners' concerns"
+    ],
+    "correct": 1,
+    "explain": "Kata \"mixed\" di awal paragraf 2 dan pemaparan dampak negatif (distrik komersial sepi) sekaligus positif (kota kecil bangkit) menunjukkan nada analitis dan seimbang, bukan sensasional."
+  },
+  {
+    "q": "<div class=\"jenis-box\" style=\"text-align:left;margin-bottom:16px;\"><p class=\"diagram-eyebrow\">Bacaan &middot; Soal 1-7 dari 7 (Passage: Remote Work and Its Effect on Cities)</p><p>The rapid expansion of remote work has reshaped not only how people do their jobs but also where they choose to live. When employees are no longer required to commute daily to a central office, many discover that they can perform the same work from a smaller town, a rural area, or even a different country altogether, often at a significantly lower cost of living. This shift has led to a noticeable migration away from some expensive city centers, as workers seek larger homes, quieter surroundings, or proximity to family, while keeping salaries tied to urban job markets.<br><br>The effects on cities themselves have been mixed. Commercial districts built around office workers, such as downtown lunch spots and dry cleaners, have suffered from reduced daily foot traffic, and some commercial real estate has sat empty for extended periods. At the same time, certain smaller cities and suburban towns have experienced unexpected economic revival, as newly arrived remote workers spend money locally and support new businesses. Urban planners are now debating whether city centers should be redesigned with more housing and mixed-use spaces rather than office towers, arguing that a permanent shift toward flexible work arrangements means cities can no longer assume that commuters will automatically return in the same numbers as before the shift began.</p></div><p><b>Soal 7 dari 7:</b> All of the following are mentioned as reasons workers relocate due to remote work EXCEPT...</p>",
+    "opts": [
+      "Larger homes",
+      "Quieter surroundings",
+      "Proximity to family",
+      "Better public transportation systems"
+    ],
+    "correct": 3,
+    "explain": "Teks menyebutkan rumah yang lebih besar, lingkungan yang lebih tenang, dan kedekatan dengan keluarga sebagai alasan pindah; sistem transportasi umum yang lebih baik tidak disebutkan."
+  }
+]
