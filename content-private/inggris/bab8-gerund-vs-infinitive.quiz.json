@@ -1,0 +1,308 @@
+[
+  {
+    "q": "She enjoys ___ mystery novels before bed.",
+    "opts": ["read", "to read", "reading", "reads"],
+    "correct": 2,
+    "explain": "\"Enjoy\" termasuk kata kerja yang selalu diikuti gerund (V-ing), tidak pernah to-infinitive. Jadi jawabannya \"reading\" — She enjoys reading mystery novels (Dia suka membaca novel misteri)."
+  },
+  {
+    "q": "I want ___ a new laptop next month.",
+    "opts": ["buying", "to buy", "buy", "bought"],
+    "correct": 1,
+    "explain": "\"Want\" termasuk kata kerja yang selalu diikuti to-infinitive, bukan gerund. I want to buy a new laptop (Saya ingin membeli laptop baru)."
+  },
+  {
+    "q": "___ every day is good for your health.",
+    "opts": ["Exercise", "To exercising", "Exercising", "Exercised"],
+    "correct": 2,
+    "explain": "Gerund bisa berfungsi sebagai subjek kalimat. Exercising every day is good for your health (Berolahraga setiap hari baik untuk kesehatanmu)."
+  },
+  {
+    "q": "He's not interested in ___ the news anymore.",
+    "opts": ["watch", "to watch", "watching", "watches"],
+    "correct": 2,
+    "explain": "Setelah preposisi (\"in\"), kata kerja selalu berbentuk gerund, tidak pernah to-infinitive. He's not interested in watching the news anymore (Dia sudah tidak tertarik menonton berita lagi)."
+  },
+  {
+    "q": "They decided ___ to Yogyakarta for the weekend.",
+    "opts": ["going", "to go", "go", "goes"],
+    "correct": 1,
+    "explain": "\"Decide\" diikuti to-infinitive. They decided to go to Yogyakarta for the weekend (Mereka memutuskan pergi ke Yogyakarta untuk akhir pekan)."
+  },
+  {
+    "q": "I study hard ___ my dream university.",
+    "opts": ["for enter", "entering", "to enter", "for entering"],
+    "correct": 2,
+    "explain": "To-infinitive dipakai untuk menyatakan tujuan (purpose). I study hard to enter my dream university (Saya belajar keras untuk masuk universitas impian saya)."
+  },
+  {
+    "q": "This math problem is very difficult ___.",
+    "opts": ["solving", "to solve", "solve", "for solve"],
+    "correct": 1,
+    "explain": "To-infinitive dipakai setelah kata sifat seperti \"difficult\". This math problem is very difficult to solve (Soal matematika ini sangat sulit dipecahkan)."
+  },
+  {
+    "q": "She avoided ___ eye contact during the interview.",
+    "opts": ["making", "to make", "make", "makes"],
+    "correct": 0,
+    "explain": "\"Avoid\" termasuk kata kerja yang selalu diikuti gerund. She avoided making eye contact during the interview (Dia menghindari kontak mata selama wawancara)."
+  },
+  {
+    "q": "We finally managed ___ the project before the deadline.",
+    "opts": ["finishing", "finish", "to finish", "finished"],
+    "correct": 2,
+    "explain": "\"Manage\" diikuti to-infinitive. We finally managed to finish the project before the deadline (Kami akhirnya berhasil menyelesaikan proyek sebelum tenggat)."
+  },
+  {
+    "q": "Which sentence correctly uses gerund as the subject of the sentence?",
+    "opts": ["To swimming is fun.", "Swim is fun.", "Swimming is fun.", "To swim fun."],
+    "correct": 2,
+    "explain": "Gerund (bentuk V-ing) yang benar digunakan sebagai subjek kalimat adalah \"Swimming is fun.\" (Berenang itu menyenangkan)."
+  },
+  {
+    "q": "I remember ___ this exact street when I was a child — nothing has changed.",
+    "opts": ["to visit", "visiting", "visit", "to visiting"],
+    "correct": 1,
+    "explain": "\"Remember + gerund\" berarti mengingat sesuatu yang sudah terjadi di masa lalu. I remember visiting this exact street when I was a child (Saya ingat pernah mengunjungi jalan ini persis saat saya kecil)."
+  },
+  {
+    "q": "Please remember ___ the lights before you leave the classroom.",
+    "opts": ["turning off", "to turn off", "turn off", "turned off"],
+    "correct": 1,
+    "explain": "\"Remember + to-infinitive\" berarti mengingat untuk melakukan sesuatu yang belum terjadi (sebuah tugas). Please remember to turn off the lights (Tolong ingat untuk mematikan lampu)."
+  },
+  {
+    "q": "He'll never forget ___ his high school graduation — it was the happiest day of his life.",
+    "opts": ["to attend", "attending", "attend", "attends"],
+    "correct": 1,
+    "explain": "\"Forget + gerund\" (biasanya dalam bentuk negatif/never forget) berarti tidak melupakan kenangan/kejadian di masa lalu. He'll never forget attending his high school graduation (Dia tidak akan pernah lupa menghadiri wisuda SMA-nya)."
+  },
+  {
+    "q": "I forgot ___ my ID card, so I couldn't enter the building.",
+    "opts": ["bringing", "to bring", "bring", "brought"],
+    "correct": 1,
+    "explain": "\"Forget + to-infinitive\" berarti lupa melakukan sesuatu yang seharusnya dilakukan. I forgot to bring my ID card (Saya lupa membawa kartu identitas saya)."
+  },
+  {
+    "q": "The doctor stopped ___ patients at 5 PM every day.",
+    "opts": ["to see", "seeing", "see", "saw"],
+    "correct": 1,
+    "explain": "\"Stop + gerund\" berarti berhenti melakukan aktivitas itu sepenuhnya. The doctor stopped seeing patients at 5 PM every day (Dokter itu berhenti menerima pasien pada pukul 5 sore setiap hari)."
+  },
+  {
+    "q": "While driving, he stopped ___ a photo of the sunset.",
+    "opts": ["to take", "taking", "take", "took"],
+    "correct": 0,
+    "explain": "\"Stop + to-infinitive\" berarti berhenti sejenak dari aktivitas lain (mengemudi) untuk melakukan sesuatu. He stopped to take a photo of the sunset (Dia berhenti sejenak untuk memotret matahari terbenam)."
+  },
+  {
+    "q": "If your computer freezes, try ___ it and see if that helps.",
+    "opts": ["to restart", "restart", "restarting", "restarts"],
+    "correct": 2,
+    "explain": "\"Try + gerund\" berarti mencoba sebagai eksperimen, melihat apakah sesuatu berhasil. Try restarting it and see if that helps (Coba restart, lihat apakah itu membantu)."
+  },
+  {
+    "q": "He tried ___ the heavy door, but it wouldn't budge.",
+    "opts": ["opening", "to open", "open", "opens"],
+    "correct": 1,
+    "explain": "\"Try + to-infinitive\" berarti berusaha keras melakukan sesuatu yang sulit. He tried to open the heavy door, but it wouldn't budge (Dia berusaha membuka pintu berat itu, tapi tidak bergeming)."
+  },
+  {
+    "q": "I regret ___ so rude to my teacher back then; I still feel guilty.",
+    "opts": ["to be", "being", "be", "to being"],
+    "correct": 1,
+    "explain": "\"Regret + gerund\" berarti menyesali tindakan yang sudah dilakukan di masa lalu. I regret being so rude to my teacher back then (Saya menyesal pernah bersikap kasar pada guru saya dulu)."
+  },
+  {
+    "q": "We regret ___ you that the flight has been cancelled.",
+    "opts": ["informing", "to inform", "inform", "informed"],
+    "correct": 1,
+    "explain": "\"Regret + to-infinitive\" berarti menyesal harus menyampaikan sesuatu sekarang, biasanya kabar buruk secara formal. We regret to inform you that the flight has been cancelled (Kami menyesal harus memberitahukan bahwa penerbangan telah dibatalkan)."
+  },
+  {
+    "q": "I'm really looking forward ___ my grandparents this summer.",
+    "opts": ["to visit", "visit", "to visiting", "visits"],
+    "correct": 2,
+    "explain": "Di \"look forward to\", kata \"to\" adalah preposisi, bukan penanda infinitive, jadi selalu diikuti gerund. I'm looking forward to visiting my grandparents (Saya menantikan mengunjungi kakek-nenek saya)."
+  },
+  {
+    "q": "She is used ___ up at 4 AM for swimming practice every day.",
+    "opts": ["to waking", "to wake", "wake", "waking"],
+    "correct": 0,
+    "explain": "\"Be used to\" berarti terbiasa dengan sesuatu — \"to\" di sini preposisi, jadi diikuti gerund. She is used to waking up at 4 AM (Dia sudah terbiasa bangun jam 4 pagi)."
+  },
+  {
+    "q": "Dulu saya tinggal di Medan, tapi sekarang tidak lagi. Which sentence is correct?",
+    "opts": ["I used to living in Medan.", "I used to live in Medan.", "I am used to live in Medan.", "I used to lived in Medan."],
+    "correct": 1,
+    "explain": "\"Used to + V1\" (tanpa \"be\") menyatakan kebiasaan di masa lalu yang sudah tidak lagi dilakukan. I used to live in Medan (Dulu saya tinggal di Medan) — berbeda dengan \"be used to + V-ing\" yang berarti terbiasa dengan kondisi sekarang."
+  },
+  {
+    "q": "Find the error: \"She is good at to cook Indonesian food.\"",
+    "opts": ["\"good\" should be \"well\"", "\"to cook\" should be \"cooking\"", "\"is\" should be \"are\"", "No error"],
+    "correct": 1,
+    "explain": "Setelah preposisi (\"at\"), kata kerja harus berbentuk gerund, tidak pernah to-infinitive. Kalimat yang benar: She is good at cooking Indonesian food (Dia pandai memasak makanan Indonesia)."
+  },
+  {
+    "q": "Find the error: \"I want going home now, I'm so tired.\"",
+    "opts": ["\"want\" should be \"wants\"", "\"going\" should be \"to go\"", "\"now\" should be removed", "No error"],
+    "correct": 1,
+    "explain": "\"Want\" ada di daftar kata kerja yang harus diikuti to-infinitive, bukan gerund. Kalimat yang benar: I want to go home now (Saya ingin pulang sekarang)."
+  },
+  {
+    "q": "Find the error: \"I'm looking forward to see you at the reunion.\"",
+    "opts": ["\"looking forward\" should be \"look forward\"", "\"to see\" should be \"to seeing\"", "\"at\" should be \"in\"", "No error"],
+    "correct": 1,
+    "explain": "\"To\" pada \"look forward to\" adalah preposisi, harus diikuti gerund, bukan V1. Kalimat yang benar: I'm looking forward to seeing you at the reunion (Saya menantikan bertemu kamu di reuni)."
+  },
+  {
+    "q": "Find the error: \"He admitted to steal the money from the drawer.\"",
+    "opts": ["\"admitted\" should be \"admit\"", "\"to steal\" should be \"stealing\"", "\"the\" should be removed", "No error"],
+    "correct": 1,
+    "explain": "\"Admit\" termasuk kata kerja yang selalu diikuti gerund. Kalimat yang benar: He admitted stealing the money from the drawer (Dia mengaku mencuri uang dari laci)."
+  },
+  {
+    "q": "Find the error: \"She promised helping me move next weekend.\"",
+    "opts": ["\"promised\" should be \"promises\"", "\"helping\" should be \"to help\"", "\"move\" should be \"moving\"", "No error"],
+    "correct": 1,
+    "explain": "\"Promise\" termasuk kata kerja yang selalu diikuti to-infinitive. Kalimat yang benar: She promised to help me move next weekend (Dia berjanji akan membantu saya pindahan minggu depan)."
+  },
+  {
+    "q": "Which sentence means \"Dia sudah berhenti merokok sepenuhnya\"?",
+    "opts": ["He stopped to smoke.", "He stopped smoking.", "He stops to smoke.", "He is stopping to smoking."],
+    "correct": 1,
+    "explain": "\"Stop + gerund\" berarti berhenti melakukan aktivitas itu sepenuhnya. He stopped smoking (Dia berhenti merokok — sudah tidak merokok lagi)."
+  },
+  {
+    "q": "Which sentence means \"Saat sedang bekerja, dia berhenti sejenak untuk menelepon istrinya\"?",
+    "opts": ["He stopped calling his wife.", "He stopped to call his wife.", "He tried calling his wife.", "He avoided calling his wife."],
+    "correct": 1,
+    "explain": "\"Stop + to-infinitive\" berarti berhenti sejenak dari aktivitas lain untuk melakukan sesuatu. He stopped to call his wife (Dia berhenti sejenak untuk menelepon istrinya)."
+  },
+  {
+    "q": "\"I suggest ___ your resume before the interview.\" Choose the correct form.",
+    "opts": ["review", "to review", "reviewing", "reviewed"],
+    "correct": 2,
+    "explain": "\"Suggest\" termasuk kata kerja yang selalu diikuti gerund. I suggest reviewing your resume before the interview (Saya sarankan meninjau ulang CV-mu sebelum wawancara)."
+  },
+  {
+    "q": "\"He offered ___ me to the airport since I don't have a car.\" Choose the correct form.",
+    "opts": ["driving", "to drive", "drive", "drives"],
+    "correct": 1,
+    "explain": "\"Offer\" termasuk kata kerja yang selalu diikuti to-infinitive. He offered to drive me to the airport (Dia menawarkan diri untuk mengantarku ke bandara)."
+  },
+  {
+    "q": "\"Without ___ a word, she left the room.\" Choose the correct form.",
+    "opts": ["say", "to say", "saying", "said"],
+    "correct": 2,
+    "explain": "Setelah preposisi (\"without\"), kata kerja harus berbentuk gerund. Without saying a word, she left the room (Tanpa mengatakan sepatah kata pun, dia meninggalkan ruangan)."
+  },
+  {
+    "q": "\"We can't afford ___ a house right now with these prices.\" Choose the correct form.",
+    "opts": ["buying", "buy", "to buy", "bought"],
+    "correct": 2,
+    "explain": "\"Afford\" termasuk kata kerja yang selalu diikuti to-infinitive. We can't afford to buy a house right now (Kami tidak mampu membeli rumah sekarang dengan harga-harga ini)."
+  },
+  {
+    "q": "\"He kept ___ the same mistake over and over.\" Choose the correct form.",
+    "opts": ["make", "to make", "making", "made"],
+    "correct": 2,
+    "explain": "\"Keep\" termasuk kata kerja yang selalu diikuti gerund. He kept making the same mistake over and over (Dia terus-menerus membuat kesalahan yang sama)."
+  },
+  {
+    "q": "\"She's not used ___ such spicy food; her stomach hurts now.\" Choose the correct form.",
+    "opts": ["to eat", "eating", "to eating", "eat"],
+    "correct": 2,
+    "explain": "\"Be used to\" berarti terbiasa — \"to\" adalah preposisi, sehingga diikuti gerund. She's not used to eating such spicy food (Dia belum terbiasa makan makanan sepedas ini)."
+  },
+  {
+    "q": "Context: A sign at a job interview reads \"We regret ___ you that the position has been filled.\" What does this imply?",
+    "opts": ["A past action the company feels sorry about", "A formal, present announcement of bad news", "An experiment the company tried", "A habit the company had"],
+    "correct": 1,
+    "explain": "\"Regret + to-infinitive\" adalah pola formal untuk menyampaikan kabar buruk saat ini. We regret to inform you (Kami menyesal harus memberitahukan) menandakan pengumuman resmi, bukan penyesalan atas kejadian masa lalu."
+  },
+  {
+    "q": "Context: \"I'll never forget meeting the President in person.\" What does this sentence emphasize?",
+    "opts": ["A task he needs to complete soon", "An unforgettable memory from the past", "A future plan", "A warning he forgot to give"],
+    "correct": 1,
+    "explain": "\"Forget + gerund\" merujuk pada kejadian yang sudah terjadi dan tidak akan dilupakan — sebuah kenangan, bukan tugas yang belum dilakukan."
+  },
+  {
+    "q": "\"___ a second language opens up a lot of career opportunities.\" Choose the correct form to start this sentence.",
+    "opts": ["To learn", "Learn", "Learning", "Learned"],
+    "correct": 2,
+    "explain": "Gerund dipakai sebagai subjek kalimat. Learning a second language opens up a lot of career opportunities (Mempelajari bahasa kedua membuka banyak peluang karier)."
+  },
+  {
+    "q": "\"He apologized for ___ late to the meeting.\" Choose the correct form.",
+    "opts": ["be", "to be", "being", "been"],
+    "correct": 2,
+    "explain": "Setelah preposisi (\"for\"), kata kerja harus berbentuk gerund. He apologized for being late to the meeting (Dia meminta maaf karena terlambat rapat)."
+  },
+  {
+    "q": "\"They plan ___ a new branch in Surabaya next year.\" Choose the correct form.",
+    "opts": ["opening", "to open", "open", "opens"],
+    "correct": 1,
+    "explain": "\"Plan\" termasuk kata kerja yang selalu diikuti to-infinitive. They plan to open a new branch in Surabaya next year (Mereka berencana membuka cabang baru di Surabaya tahun depan)."
+  },
+  {
+    "q": "Find the error: \"I am used to slept late during weekends.\"",
+    "opts": ["\"am\" should be removed", "\"slept\" should be \"sleeping\"", "\"during\" should be \"in\"", "No error"],
+    "correct": 1,
+    "explain": "\"Be used to\" diikuti gerund, bukan bentuk lampau V2. Kalimat yang benar: I am used to sleeping late during weekends (Saya sudah terbiasa tidur larut saat akhir pekan)."
+  },
+  {
+    "q": "\"The teacher postponed ___ the test until next Monday.\" Choose the correct form.",
+    "opts": ["give", "to give", "giving", "gave"],
+    "correct": 2,
+    "explain": "\"Postpone\" termasuk kata kerja yang selalu diikuti gerund. The teacher postponed giving the test until next Monday (Guru menunda memberikan ujian sampai Senin depan)."
+  },
+  {
+    "q": "\"It's important ___ your homework before you play games.\" Choose the correct form.",
+    "opts": ["finishing", "finish", "to finish", "finished"],
+    "correct": 2,
+    "explain": "To-infinitive dipakai setelah frasa kata sifat seperti \"it's important\". It's important to finish your homework before you play games (Penting untuk menyelesaikan PR-mu sebelum bermain game)."
+  },
+  {
+    "q": "\"She practices ___ English with native speakers every weekend.\" Choose the correct form.",
+    "opts": ["speaking", "to speak", "speak", "spoke"],
+    "correct": 0,
+    "explain": "\"Practice\" termasuk kata kerja yang selalu diikuti gerund. She practices speaking English with native speakers (Dia berlatih berbicara bahasa Inggris dengan penutur asli)."
+  },
+  {
+    "q": "Which pair correctly shows the meaning difference of \"try\"?",
+    "opts": ["try + gerund = usaha keras yang sulit; try + infinitive = eksperimen", "try + gerund = eksperimen; try + infinitive = usaha keras yang sulit", "Keduanya sama persis maknanya", "try selalu hanya diikuti gerund"],
+    "correct": 1,
+    "explain": "\"Try + gerund\" (mis. try restarting) berarti mencoba sebagai eksperimen untuk melihat hasilnya. \"Try + to-infinitive\" (mis. try to open) berarti berusaha keras melakukan sesuatu yang sulit."
+  },
+  {
+    "q": "\"Do you mind ___ the window? It's cold in here.\" Choose the correct form.",
+    "opts": ["close", "to close", "closing", "closed"],
+    "correct": 2,
+    "explain": "\"Mind\" termasuk kata kerja yang selalu diikuti gerund. Do you mind closing the window? (Apa kamu keberatan menutup jendela?)"
+  },
+  {
+    "q": "\"He seems ___ everything about world history.\" Choose the correct form.",
+    "opts": ["knowing", "to know", "know", "known"],
+    "correct": 1,
+    "explain": "\"Seem\" termasuk kata kerja yang selalu diikuti to-infinitive. He seems to know everything about world history (Dia sepertinya tahu segalanya tentang sejarah dunia)."
+  },
+  {
+    "q": "Find the error: \"Before to leave the house, please lock the door.\"",
+    "opts": ["\"to leave\" should be \"leaving\"", "\"lock\" should be \"locking\"", "\"the\" should be removed", "No error"],
+    "correct": 0,
+    "explain": "\"Before\" adalah preposisi (di sini berfungsi sebagai kata depan waktu), harus diikuti gerund. Kalimat yang benar: Before leaving the house, please lock the door (Sebelum meninggalkan rumah, tolong kunci pintunya)."
+  },
+  {
+    "q": "\"I can't imagine ___ without my phone for a whole day.\" Choose the correct form.",
+    "opts": ["to live", "living", "live", "lived"],
+    "correct": 1,
+    "explain": "\"Imagine\" termasuk kata kerja yang selalu diikuti gerund. I can't imagine living without my phone for a whole day (Saya tidak bisa membayangkan hidup tanpa ponsel selama sehari penuh)."
+  },
+  {
+    "q": "Context: \"I remember locking the door\" vs \"I remembered to lock the door.\" What's the key difference?",
+    "opts": ["No real difference in meaning", "The first recalls a past action; the second refers to not forgetting a task", "The first is about the future; the second is about the past", "The second sentence is grammatically incorrect"],
+    "correct": 1,
+    "explain": "\"Remember + gerund\" mengingat sesuatu yang sudah terjadi (kenangan). \"Remember + to-infinitive\" mengingat untuk melakukan sesuatu (tugas yang belum/baru akan dilakukan, dan berhasil tidak lupa)."
+  }
+]

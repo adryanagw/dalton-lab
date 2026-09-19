@@ -1,0 +1,574 @@
+[
+  {
+    "q": "Apa perbedaan paling mendasar antara <i>finite verb</i> dan <i>non-finite verb</i>?",
+    "opts": [
+      "Finite verb selalu lebih panjang dari non-finite verb",
+      "Finite verb menunjukkan tense dan cocok dengan subjeknya, non-finite verb tidak menunjukkan tense dan tidak berubah sesuai subjek",
+      "Finite verb hanya dipakai dalam kalimat tanya, non-finite verb dalam kalimat berita",
+      "Finite verb hanya berupa satu kata, non-finite verb selalu dua kata"
+    ],
+    "correct": 1,
+    "explain": "Finite verb membawa informasi tense (waktu) dan harus sesuai (agreement) dengan jumlah/orang subjeknya. Non-finite verb tidak menunjukkan tense sendiri dan bentuknya tetap sama untuk subjek apa pun."
+  },
+  {
+    "q": "Manakah dari kalimat berikut yang verb-nya berstatus <b>finite</b>?",
+    "opts": [
+      "I want to walk.",
+      "Walking to school, he saw an accident.",
+      "She walks to school every day.",
+      "Written in 1997, the book became a bestseller."
+    ],
+    "correct": 2,
+    "explain": "\"Walks\" menunjukkan Simple Present tense dan cocok dengan subjek orang ketiga tunggal (she) lewat akhiran -s — ini ciri finite verb. Tiga opsi lain masing-masing non-finite: to-infinitive, present participle, dan past participle."
+  },
+  {
+    "q": "Pada kalimat <i>\"I want to walk.\"</i>, manakah verb yang finite?",
+    "opts": [
+      "want",
+      "to walk",
+      "Keduanya finite",
+      "Tidak ada yang finite"
+    ],
+    "correct": 0,
+    "explain": "\"Want\" menunjukkan present tense dan cocok dengan subjek \"I\" (kalau subjek berubah jadi \"he\", bentuknya berubah jadi \"wants\"). \"To walk\" adalah to-infinitive, non-finite, tidak pernah berubah bentuk untuk subjek apa pun."
+  },
+  {
+    "q": "Kenapa \"to walk\" pada kalimat \"I want to walk\" disebut non-finite?",
+    "opts": [
+      "Karena diawali huruf kecil",
+      "Karena tidak menunjukkan tense sendiri dan tidak bisa berdiri sendiri sebagai predikat utama kalimat itu",
+      "Karena hanya dipakai dalam bahasa lisan",
+      "Karena kata \"to\" membuatnya jadi kata benda permanen"
+    ],
+    "correct": 1,
+    "explain": "To-infinitive tidak membawa informasi tense sendiri — tense kalimat itu ditentukan oleh verb finite-nya (\"want\"). \"To walk\" juga tidak bisa jadi satu-satunya predikat kalimat lengkap."
+  },
+  {
+    "q": "Sebutkan tiga bentuk non-finite verb dalam bahasa Inggris.",
+    "opts": [
+      "Simple Present, Simple Past, Simple Future",
+      "To-infinitive, gerund/present participle, past participle",
+      "Active voice, passive voice, causative voice",
+      "Modal, auxiliary, linking verb"
+    ],
+    "correct": 1,
+    "explain": "Tiga bentuk non-finite: to-infinitive (to + V1), gerund/present participle (V-ing), dan past participle (V3). Ketiganya tidak pernah menunjukkan tense sendiri."
+  },
+  {
+    "q": "Pada kalimat \"He is studying English now.\", verb mana yang finite?",
+    "opts": [
+      "is",
+      "studying",
+      "English",
+      "now"
+    ],
+    "correct": 0,
+    "explain": "\"Is\" adalah auxiliary \"be\" yang membawa tense (present) dan cocok dengan subjek \"he\". \"Studying\" adalah present participle, non-finite, meskipun dia bagian penting dari makna kalimat."
+  },
+  {
+    "q": "Dalam verb phrase yang punya auxiliary/modal + verb utama, bagian mana yang berstatus finite?",
+    "opts": [
+      "Verb utama, karena dia yang membawa arti utama",
+      "Auxiliary atau modal-nya, bukan verb utama setelahnya",
+      "Keduanya sama-sama finite",
+      "Tidak ada yang finite kalau ada auxiliary"
+    ],
+    "correct": 1,
+    "explain": "Auxiliary (be/have) atau modal (can/will/must, dst.) yang membawa tense dan agreement, sehingga dialah yang finite. Verb utama setelahnya (V-ing, V3, atau bare infinitive) selalu non-finite."
+  },
+  {
+    "q": "Pada kalimat \"She has finished her homework.\", verb mana yang non-finite?",
+    "opts": [
+      "has",
+      "finished",
+      "her",
+      "homework"
+    ],
+    "correct": 1,
+    "explain": "\"Has\" adalah auxiliary \"have\" yang finite (present, cocok dengan subjek she). \"Finished\" di sini past participle (V3), non-finite — dia tidak menunjukkan tense sendiri, tensenya dibawa oleh \"has\"."
+  },
+  {
+    "q": "Setelah modal (can, will, must, should, dst.), verb utama selalu memakai bentuk...",
+    "opts": [
+      "V2 (past)",
+      "V-ing",
+      "Bare infinitive (V1 tanpa \"to\"), non-finite",
+      "To-infinitive (to + V1)"
+    ],
+    "correct": 2,
+    "explain": "Setelah modal, verb utama memakai bare infinitive — V1 tanpa \"to\" — dan statusnya non-finite. Modal itu sendiri yang finite. Contoh: \"You must submit the form.\""
+  },
+  {
+    "q": "Manakah kalimat berikut yang PENULISANNYA SALAH karena memakai bentuk verb yang salah setelah modal?",
+    "opts": [
+      "You must submit the form today.",
+      "She can speak three languages.",
+      "*He must to go now.",
+      "They should finish the report soon."
+    ],
+    "correct": 2,
+    "explain": "Setelah modal, verb utama tidak boleh memakai \"to\" — ini kesalahan struktural klasik pelajar Indonesia (\"*can to go\"). Bentuk yang benar: \"He must go now.\""
+  },
+  {
+    "q": "Pilih bentuk yang tepat: \"He ___ football every weekend.\"",
+    "opts": [
+      "play",
+      "plays",
+      "playing",
+      "to play"
+    ],
+    "correct": 1,
+    "explain": "Subjek \"he\" (orang ketiga tunggal) di Simple Present membutuhkan finite verb dengan akhiran -s: \"plays\". \"Play\" tanpa -s salah secara agreement, sedangkan \"playing\" dan \"to play\" non-finite, tidak bisa berdiri sendiri sebagai predikat utama di sini."
+  },
+  {
+    "q": "\"Swimming is her favorite hobby.\" — verb \"swimming\" di kalimat ini berfungsi sebagai apa?",
+    "opts": [
+      "Finite verb yang menunjukkan present tense",
+      "Gerund (V-ing yang berfungsi seperti kata benda, jadi subjek kalimat)",
+      "Modal",
+      "Past participle dalam passive voice"
+    ],
+    "correct": 1,
+    "explain": "\"Swimming\" di sini gerund — bentuk -ing yang berfungsi seperti kata benda, menjadi subjek kalimat. Verb finite kalimat ini adalah \"is\"."
+  },
+  {
+    "q": "Manakah pasangan kalimat yang benar menunjukkan gerund vs present participle dalam participle clause?",
+    "opts": [
+      "\"Reading is fun.\" (gerund) vs \"Reading a book, she fell asleep.\" (participle clause)",
+      "Keduanya selalu disebut gerund tanpa perbedaan fungsi",
+      "\"Reading\" hanya bisa jadi gerund, tidak pernah jadi participle clause",
+      "Gerund selalu diikuti kata benda, participle clause tidak pernah"
+    ],
+    "correct": 0,
+    "explain": "Bentuk -ing yang sama (\"reading\") bisa berfungsi sebagai gerund (berperan seperti kata benda: subjek/objek) atau sebagai present participle dalam participle clause (menggantikan klausa penuh) — tergantung posisi & fungsinya dalam kalimat."
+  },
+  {
+    "q": "\"Written in 1997, the book became a bestseller.\" — kata \"written\" di sini berfungsi sebagai apa?",
+    "opts": [
+      "Finite verb, past tense",
+      "Past participle dalam participle clause pasif, menggantikan \"Because it was written in 1997\"",
+      "Gerund",
+      "Modal"
+    ],
+    "correct": 1,
+    "explain": "\"Written\" adalah past participle (V3) yang membuka participle clause pasif — versi ringkas dari klausa penuh seperti \"Because it was written in 1997\". Verb finite kalimat ini adalah \"became\"."
+  },
+  {
+    "q": "Apa fungsi to-infinitive pada kalimat \"She studied hard to pass the exam.\"?",
+    "opts": [
+      "Menunjukkan waktu lampau",
+      "Menyatakan tujuan (kenapa dia belajar keras)",
+      "Menjadi subjek kalimat",
+      "Menggantikan auxiliary \"have\""
+    ],
+    "correct": 1,
+    "explain": "\"To pass the exam\" menyatakan tujuan dari aksi \"studied hard\" — pola umum to-infinitive untuk menjawab \"untuk apa/kenapa\". Verb finite kalimatnya \"studied\"."
+  },
+  {
+    "q": "Kalimat mana yang menggunakan to-infinitive sebagai SUBJEK kalimat?",
+    "opts": [
+      "I want to walk to the market.",
+      "To finish early was her main goal.",
+      "She studied hard to pass the exam.",
+      "They decided to leave early."
+    ],
+    "correct": 1,
+    "explain": "\"To finish early\" berada di posisi subjek kalimat (di depan verb finite \"was\") — pola formal to-infinitive sebagai subjek. Tiga opsi lain menggunakan to-infinitive sebagai objek atau keterangan tujuan."
+  },
+  {
+    "q": "Manakah kalimat berikut ini yang merupakan SENTENCE FRAGMENT (kalimat tidak lengkap)?",
+    "opts": [
+      "The boy was running in the park.",
+      "The boy running in the park.",
+      "The boy who was running in the park waved at us.",
+      "The boy ran in the park."
+    ],
+    "correct": 1,
+    "explain": "\"The boy running in the park.\" tidak punya finite verb sama sekali — \"running\" di sini non-finite (present participle) tanpa auxiliary \"was/is\" yang menyertainya, sehingga kalimat ini fragmen, bukan kalimat lengkap."
+  },
+  {
+    "q": "Kenapa \"The boy running in the park.\" dianggap kalimat tidak lengkap?",
+    "opts": [
+      "Karena terlalu pendek",
+      "Karena tidak ada objek",
+      "Karena tidak ada finite verb yang bisa jadi predikat utama — \"running\" saja bersifat non-finite",
+      "Karena tidak ada kata sifat"
+    ],
+    "correct": 2,
+    "explain": "Kalimat lengkap butuh minimal satu finite verb sebagai predikat utama. \"Running\" tanpa auxiliary (\"was/is\") berstatus non-finite dan tidak bisa berdiri sendiri sebagai predikat."
+  },
+  {
+    "q": "Perbaikan yang tepat untuk fragmen \"To win the championship.\" adalah...",
+    "opts": [
+      "To win the championship they.",
+      "They wanted to win the championship.",
+      "Winning the championship to they.",
+      "The championship to win they."
+    ],
+    "correct": 1,
+    "explain": "Menambahkan finite verb (\"wanted\") membuat kalimat lengkap; \"to win the championship\" kemudian berfungsi sebagai objek non-finite dari \"wanted\", bukan berdiri sendiri sebagai predikat."
+  },
+  {
+    "q": "Apa itu \"participle clause\"?",
+    "opts": [
+      "Klausa yang selalu memakai kata tanya",
+      "Cara memadatkan sebuah klausa penuh (berfinite verb) menjadi frasa non-finite yang lebih ringkas, dengan syarat subjeknya sama dengan klausa utama",
+      "Klausa yang hanya dipakai dalam passive voice",
+      "Klausa yang selalu diawali kata \"which\""
+    ],
+    "correct": 1,
+    "explain": "Participle clause meringkas klausa penuh menjadi frasa non-finite (V-ing, V3, atau having + V3), tapi hanya valid kalau subjek klausa yang direduksi sama dengan subjek klausa utamanya."
+  },
+  {
+    "q": "Ubah kalimat berikut menjadi participle clause: \"Because he was tired, he went home.\"",
+    "opts": [
+      "Tired he, he went home.",
+      "Being tired, he went home.",
+      "He being tired went home he.",
+      "To be tired, he went home."
+    ],
+    "correct": 1,
+    "explain": "Subjek kedua klausa sama (\"he\"), jadi bisa direduksi: buang subjek & kata sambung \"because\", ubah \"was\" jadi \"being\" → \"Being tired, he went home.\""
+  },
+  {
+    "q": "Ubah kalimat berikut menjadi participle clause: \"After he had finished his homework, he went out to play.\"",
+    "opts": [
+      "Finishing his homework, he went out to play.",
+      "Having finished his homework, he went out to play.",
+      "Finished his homework, he went out to play.",
+      "To finish his homework, he went out to play."
+    ],
+    "correct": 1,
+    "explain": "Karena aksi \"menyelesaikan PR\" terjadi LEBIH DULU sebelum aksi \"pergi bermain\", dipakai perfect participle \"having + V3\": \"Having finished his homework, he went out to play.\""
+  },
+  {
+    "q": "Kenapa \"Having finished\" (bukan cuma \"Finishing\") yang dipakai untuk mereduksi \"After he had finished his homework...\"?",
+    "opts": [
+      "Karena \"having + V3\" menunjukkan aksi itu selesai lebih dulu sebelum aksi di klausa utama (urutan waktu penting)",
+      "Karena \"finishing\" tidak pernah boleh dipakai dalam participle clause",
+      "Karena \"having\" wajib dipakai di semua participle clause tanpa terkecuali",
+      "Karena subjeknya jamak"
+    ],
+    "correct": 0,
+    "explain": "\"Having + V3\" (perfect participle) menegaskan urutan waktu: aksi itu selesai lebih dulu, baru aksi di klausa utama terjadi. \"Finishing\" saja (present participle) menyiratkan aksinya terjadi bersamaan, bukan lebih dulu."
+  },
+  {
+    "q": "Ubah kalimat pasif berikut menjadi participle clause: \"Because it was cooked in butter, the fish tasted amazing.\"",
+    "opts": [
+      "Being cooking in butter, the fish tasted amazing.",
+      "Cooked in butter, the fish tasted amazing.",
+      "To cook in butter, the fish tasted amazing.",
+      "Cook in butter, the fish tasted amazing."
+    ],
+    "correct": 1,
+    "explain": "Untuk klausa pasif, kata \"being\" biasanya dihilangkan dan cukup memakai V3 langsung: \"Cooked in butter, the fish tasted amazing.\""
+  },
+  {
+    "q": "Ubah kalimat berikut menjadi participle clause: \"While she was walking to the station, she met her friend.\"",
+    "opts": [
+      "Walk to the station, she met her friend.",
+      "Walking to the station, she met her friend.",
+      "Having walked to the station, she met her friend.",
+      "To walk to the station, she met her friend."
+    ],
+    "correct": 1,
+    "explain": "Aksi \"berjalan\" dan \"bertemu teman\" terjadi bersamaan (aktif), jadi cukup pakai present participle \"walking\": \"Walking to the station, she met her friend.\""
+  },
+  {
+    "q": "Syarat mutlak sebelum mereduksi klausa penuh menjadi participle clause adalah...",
+    "opts": [
+      "Klausa harus menggunakan tense yang sama persis",
+      "Subjek klausa yang direduksi harus sama dengan subjek klausa utama",
+      "Kalimat harus dalam bentuk pasif",
+      "Kalimat harus lebih dari 15 kata"
+    ],
+    "correct": 1,
+    "explain": "Reduksi klausa hanya valid kalau subjek kedua klausa sama — karena subjek klausa yang direduksi akan dibuang, dan pembaca menyimpulkannya sama dengan subjek klausa utama. Kalau subjeknya beda, hasilnya dangling participle."
+  },
+  {
+    "q": "Apa itu \"dangling participle\"?",
+    "opts": [
+      "Participle yang terlalu panjang",
+      "Participle clause di mana subjek yang tersirat tidak cocok dengan subjek klausa utama, sehingga maknanya jadi salah/ambigu",
+      "Participle yang tidak memakai akhiran -ing",
+      "Participle yang hanya muncul di akhir kalimat"
+    ],
+    "correct": 1,
+    "explain": "Dangling participle terjadi ketika subjek \"tersirat\" dari participle clause tidak sama dengan subjek klausa utama — secara struktur kalimat kelihatan benar, tapi maknanya jadi tidak logis."
+  },
+  {
+    "q": "Apa yang salah dengan kalimat \"Walking to the store, the rain started to fall.\"?",
+    "opts": [
+      "Tidak ada yang salah, kalimat ini benar",
+      "Subjek klausa utama (\"the rain\") secara tersirat dianggap sebagai pelaku \"walking\", padahal hujan tidak bisa berjalan — ini dangling participle",
+      "Kalimat ini salah karena memakai past tense",
+      "Kalimat ini salah karena tidak ada objek"
+    ],
+    "correct": 1,
+    "explain": "Secara struktur, subjek yang \"berjalan\" seharusnya sama dengan subjek klausa utama (\"the rain\"), tapi hujan tidak bisa berjalan ke toko — inilah dangling participle, kesalahan logika-struktur yang klasik."
+  },
+  {
+    "q": "Perbaikan yang tepat untuk \"Walking to the store, the rain started to fall.\" adalah...",
+    "opts": [
+      "Walking to the store, I got caught in the rain.",
+      "The rain, walking to the store, started to fall.",
+      "Walking to the store the rain started to fall faster.",
+      "To walk to the store, the rain started to fall."
+    ],
+    "correct": 0,
+    "explain": "\"Walking to the store, I got caught in the rain.\" memperbaiki masalahnya karena sekarang subjek klausa utama (\"I\") memang orang yang berjalan ke toko — cocok dengan subjek tersirat dari participle clause."
+  },
+  {
+    "q": "Apa yang salah dengan kalimat \"Having finished the report, the computer was turned off.\"?",
+    "opts": [
+      "Tidak ada yang salah",
+      "Subjek klausa utama (\"the computer\") secara tersirat dianggap sebagai yang \"menyelesaikan laporan\", padahal komputer tidak bisa mengerjakan laporan",
+      "Kalimat ini salah karena memakai present participle, bukan past participle",
+      "Kalimat ini salah karena tidak memakai koma"
+    ],
+    "correct": 1,
+    "explain": "\"Having finished the report\" secara tersirat menunjuk pada subjek klausa utama, yaitu \"the computer\" — padahal komputer tidak bisa menyelesaikan laporan. Ini dangling participle."
+  },
+  {
+    "q": "Perbaikan yang tepat untuk \"Having finished the report, the computer was turned off.\" adalah...",
+    "opts": [
+      "Having finished the report, she turned off the computer.",
+      "The computer having finished the report was turned off.",
+      "Finished the report, the computer was turned off.",
+      "Having finish the report, the computer was turned off."
+    ],
+    "correct": 0,
+    "explain": "\"Having finished the report, she turned off the computer.\" memperbaikinya karena sekarang subjek klausa utama (\"she\") memang orang yang menyelesaikan laporan."
+  },
+  {
+    "q": "\"Excited about the trip, the suitcase was packed early.\" — apa masalah struktural kalimat ini?",
+    "opts": [
+      "Tidak ada masalah",
+      "Dangling participle: koper tidak bisa merasa \"excited\", subjek tersirat seharusnya orangnya",
+      "Kalimat ini fragmen karena tidak ada finite verb",
+      "Kalimat ini salah karena memakai passive voice"
+    ],
+    "correct": 1,
+    "explain": "Subjek tersirat dari \"excited about the trip\" seharusnya orang yang merasa bersemangat, bukan \"the suitcase\" (koper) yang jadi subjek klausa utama. Koper tidak bisa merasa bersemangat — ini dangling participle."
+  },
+  {
+    "q": "Perbaikan yang tepat untuk \"Excited about the trip, the suitcase was packed early.\" adalah...",
+    "opts": [
+      "Excited about the trip, she packed the suitcase early.",
+      "The suitcase excited about the trip was packed early.",
+      "Exciting about the trip, the suitcase was packed early.",
+      "To excite about the trip, the suitcase was packed early."
+    ],
+    "correct": 0,
+    "explain": "Mengganti subjek klausa utama jadi orangnya (\"she\") membuat participle clause \"excited about the trip\" cocok secara makna — dia yang bersemangat, dan dia juga yang mengemas koper."
+  },
+  {
+    "q": "Manakah kalimat berikut yang PALING pas mengilustrasikan kesalahan umum \"dropping to be\" pada pelajar Indonesia?",
+    "opts": [
+      "*She happy today. (seharusnya: She is happy today.)",
+      "She was happy yesterday.",
+      "She has been happy all week.",
+      "She will be happy tomorrow."
+    ],
+    "correct": 0,
+    "explain": "Karena bahasa Indonesia tidak punya \"to be\" (kata \"adalah\" opsional), pelajar Indonesia sering lupa menyertakannya di kalimat nominal/adjektival bahasa Inggris, menghasilkan kalimat tanpa finite verb sama sekali: \"*She happy today.\" seharusnya \"She is happy today.\""
+  },
+  {
+    "q": "Manakah kalimat berikut yang salah karena lupa menambahkan -s/-es untuk subjek orang ketiga tunggal?",
+    "opts": [
+      "They go to school by bus.",
+      "*He go to school by bus. (seharusnya: He goes to school by bus.)",
+      "I go to school by bus.",
+      "We go to school by bus."
+    ],
+    "correct": 1,
+    "explain": "Subjek \"he\" (orang ketiga tunggal) di Simple Present wajib memakai verb dengan akhiran -s/-es agar berstatus finite yang benar (agreement): \"He goes to school by bus.\""
+  },
+  {
+    "q": "Mana yang benar: \"She decided ___ early tomorrow.\"",
+    "opts": [
+      "leave",
+      "leaving",
+      "to leave",
+      "left"
+    ],
+    "correct": 2,
+    "explain": "\"Decide\" adalah salah satu verb yang diikuti to-infinitive sebagai objeknya: \"She decided to leave early tomorrow.\" \"Decided\" sendiri sudah jadi finite verb (past tense)."
+  },
+  {
+    "q": "Mana yang benar: \"___ a new language can be challenging.\"",
+    "opts": [
+      "Learn",
+      "Learning",
+      "To learning",
+      "Learned"
+    ],
+    "correct": 1,
+    "explain": "Di posisi subjek kalimat, dipakai gerund (V-ing yang berfungsi sebagai kata benda): \"Learning a new language can be challenging.\" \"Learn\" (bare V1) tidak bisa jadi subjek, dan \"to learning\" bukan bentuk yang valid."
+  },
+  {
+    "q": "Kalimat mana yang berisi kesalahan struktural (fragmen/non-finite berdiri sendiri)?",
+    "opts": [
+      "The team practicing every day before the tournament.",
+      "The team practices every day before the tournament.",
+      "The team was practicing every day before the tournament.",
+      "The team has practiced every day before the tournament."
+    ],
+    "correct": 0,
+    "explain": "\"The team practicing every day...\" tidak punya finite verb — \"practicing\" tanpa auxiliary (was/is) berstatus non-finite, sehingga kalimat ini fragmen. Tiga opsi lain masing-masing punya finite verb yang jelas."
+  },
+  {
+    "q": "Kalimat mana yang secara struktural SUDAH LENGKAP (bukan fragmen)?",
+    "opts": [
+      "The manager sending the email to all staff.",
+      "The manager to send the email to all staff.",
+      "The manager sent the email to all staff.",
+      "The manager, sending the email to all staff."
+    ],
+    "correct": 2,
+    "explain": "\"The manager sent the email to all staff.\" punya finite verb \"sent\" (Simple Past, predikat utama). Tiga opsi lain hanya punya bentuk non-finite (present participle, to-infinitive) tanpa finite verb yang menyertainya."
+  },
+  {
+    "q": "Manakah kalimat berikut yang menggunakan past participle sebagai post-modifier kata benda (mirip reduced relative clause pasif)?",
+    "opts": [
+      "The window opened this morning.",
+      "The window broken by the storm needs repair.",
+      "The window breaks easily.",
+      "The window is broken."
+    ],
+    "correct": 1,
+    "explain": "\"Broken by the storm\" pada \"The window broken by the storm needs repair.\" adalah past participle yang memodifikasi \"the window\" — versi ringkas dari \"the window that was broken by the storm\". Verb finite kalimat ini adalah \"needs\"."
+  },
+  {
+    "q": "Bentuk V3 (past participle) dari verb \"write\" adalah...",
+    "opts": [
+      "wrote",
+      "written",
+      "writing",
+      "writed"
+    ],
+    "correct": 1,
+    "explain": "\"Write\" adalah irregular verb: V1 write, V2 wrote, V3 written. \"Writing\" adalah present participle/gerund, bukan past participle."
+  },
+  {
+    "q": "Bentuk V3 (past participle) dari verb \"go\" adalah...",
+    "opts": [
+      "went",
+      "gone",
+      "going",
+      "goed"
+    ],
+    "correct": 1,
+    "explain": "\"Go\" adalah irregular verb dengan V2 dan V3 yang berbeda: V1 go, V2 went, V3 gone. \"Went\" hanya dipakai untuk Simple Past, bukan untuk passive voice/present perfect (\"has gone\", bukan \"*has went\")."
+  },
+  {
+    "q": "Mana yang benar: \"She has already ___ the letter.\"",
+    "opts": [
+      "wrote",
+      "writing",
+      "written",
+      "write"
+    ],
+    "correct": 2,
+    "explain": "Present Perfect membutuhkan V3 setelah auxiliary \"has\": \"She has already written the letter.\" \"Wrote\" (V2) tidak boleh dipakai setelah auxiliary \"have/has/had\"."
+  },
+  {
+    "q": "Kesalahan apa yang terjadi pada \"*She has wrote the letter.\"?",
+    "opts": [
+      "Memakai V2 (wrote) di tempat yang seharusnya memakai V3 (written) setelah auxiliary \"has\"",
+      "Lupa subjek",
+      "Memakai to-infinitive yang salah",
+      "Tidak ada kesalahan"
+    ],
+    "correct": 0,
+    "explain": "Setelah auxiliary \"have/has/had\", verb utama harus V3 (past participle), bukan V2 (past tense). Bentuk benar: \"She has written the letter.\""
+  },
+  {
+    "q": "Manakah pasangan kalimat yang paling tepat mengilustrasikan perbedaan makna antara \"Being tired, he went home.\" (dari klausa sebab) dan \"Having finished his homework, he went out to play.\" (dari klausa yang selesai lebih dulu)?",
+    "opts": [
+      "Keduanya berarti persis sama, tidak ada perbedaan",
+      "\"Being + adjective\" untuk keadaan/alasan yang berlangsung, \"Having + V3\" untuk aksi yang sudah selesai sebelum aksi di klausa utama",
+      "\"Being\" hanya dipakai untuk passive voice, \"Having\" untuk active voice",
+      "Keduanya salah tata bahasa"
+    ],
+    "correct": 1,
+    "explain": "\"Being + adjective/V-ing\" mereduksi klausa yang menyatakan keadaan/alasan yang berlaku (sering dari \"because ... was/were\"). \"Having + V3\" mereduksi klausa yang aksinya selesai lebih dulu sebelum aksi di klausa utama (dari \"after ... had + V3\")."
+  },
+  {
+    "q": "Kalimat: \"Preparing for the exam, all the students studied together in the library every night.\" — apakah ini contoh reduksi klausa yang valid atau dangling participle?",
+    "opts": [
+      "Valid, karena subjek tersirat (\"all the students\") sama dengan subjek klausa utama",
+      "Dangling participle, karena perpustakaan tidak bisa belajar",
+      "Fragmen, karena tidak ada finite verb",
+      "Salah karena tidak memakai koma"
+    ],
+    "correct": 0,
+    "explain": "Subjek yang \"preparing for the exam\" (mempersiapkan ujian) memang \"all the students\", sama persis dengan subjek klausa utama — jadi reduksi ini valid, bukan dangling participle."
+  },
+  {
+    "q": "Kalimat: \"Known for its stunning beaches, tourists flock to Bali every year.\" — apa masalahnya?",
+    "opts": [
+      "Tidak ada masalah",
+      "Dangling participle: subjek tersirat dari \"known for its stunning beaches\" seharusnya \"Bali\", bukan \"tourists\"",
+      "Fragmen karena tidak ada finite verb",
+      "Salah tense di verb \"flock\""
+    ],
+    "correct": 1,
+    "explain": "Yang \"known for its stunning beaches\" (dikenal karena pantainya) itu Bali, bukan \"tourists\" (wisatawan) yang jadi subjek klausa utama. Perbaikan: \"Known for its stunning beaches, Bali attracts tourists every year.\""
+  },
+  {
+    "q": "Manakah opsi yang mengubah kalimat pasif \"Because the cake was baked with fresh ingredients, it tasted delicious.\" menjadi participle clause yang benar?",
+    "opts": [
+      "Baking with fresh ingredients, it tasted delicious.",
+      "Baked with fresh ingredients, it tasted delicious.",
+      "To bake with fresh ingredients, it tasted delicious.",
+      "Being baking with fresh ingredients, it tasted delicious."
+    ],
+    "correct": 1,
+    "explain": "Karena klausa aslinya pasif (\"was baked\"), reduksinya memakai V3 langsung tanpa \"being\": \"Baked with fresh ingredients, it tasted delicious.\""
+  },
+  {
+    "q": "Manakah kalimat berikut yang finite verb-nya adalah sebuah MODAL (bukan verb biasa)?",
+    "opts": [
+      "She sings beautifully.",
+      "She can sing beautifully.",
+      "She sang beautifully.",
+      "She is singing beautifully."
+    ],
+    "correct": 1,
+    "explain": "\"Can\" adalah modal yang berstatus finite (tidak berubah bentuk untuk subjek apa pun, tapi tetap membawa \"kepastian gramatikal\" sebagai predikat utama); \"sing\" setelahnya adalah bare infinitive, non-finite."
+  },
+  {
+    "q": "Tes praktis apa yang bisa dipakai untuk mengecek apakah sebuah verb finite atau non-finite dalam kalimat?",
+    "opts": [
+      "Hitung jumlah huruf pada verb tersebut",
+      "Hapus verb yang dicurigai — kalau kalimatnya jadi terasa tidak lengkap/fragmen, berarti verb itu finite",
+      "Cek apakah verb itu ada di kamus",
+      "Cek apakah verb itu diawali huruf kapital"
+    ],
+    "correct": 1,
+    "explain": "Kalau menghapus sebuah verb membuat kalimat kehilangan predikat utamanya (jadi fragmen), verb itu finite. Menghapus verb non-finite biasanya tidak membuat kalimat kehilangan status kelengkapannya sebagai kalimat (asal masih ada finite verb lain)."
+  },
+  {
+    "q": "Manakah kalimat yang paling tepat menggabungkan dua klausa berikut memakai participle clause: \"The manager reviewed the proposal. She approved the budget afterward.\" (subjek kedua klausa sama)",
+    "opts": [
+      "Reviewing the proposal, the manager approved the budget.",
+      "Having reviewed the proposal, the manager approved the budget.",
+      "To review the proposal, the manager approved the budget.",
+      "Review the proposal, the manager approved the budget."
+    ],
+    "correct": 1,
+    "explain": "Karena aksi meninjau proposal (review) terjadi lebih dulu sebelum menyetujui anggaran (approve), dipakai perfect participle \"having + V3\": \"Having reviewed the proposal, the manager approved the budget.\""
+  },
+  {
+    "q": "Kalimat: \"Read carefully, the instructions were easy to follow.\" — manakah analisis yang tepat?",
+    "opts": [
+      "Ini kalimat yang benar dan tidak dangling, karena \"instructions\" memang bisa \"dibaca\" secara pasif dan subjeknya cocok",
+      "Ini dangling participle karena \"read\" seharusnya \"reading\"",
+      "Ini fragmen karena tidak ada finite verb",
+      "Kalimat ini salah tense"
+    ],
+    "correct": 0,
+    "explain": "\"Read\" (V3, past participle, dibaca /red/) di sini pasif — yang \"dibaca\" adalah \"the instructions\", subjek klausa utama. Ini cocok secara logika (instruksi memang objek yang dibaca), jadi bukan dangling participle. Verb finite kalimat ini \"were\"."
+  }
+]

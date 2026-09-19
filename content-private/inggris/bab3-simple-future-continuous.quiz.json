@@ -1,0 +1,290 @@
+[
+  {
+    "q": "Choose the grammatically correct sentence.",
+    "opts": ["She will calls you tomorrow.", "She will to call you tomorrow.", "She will call you tomorrow.", "She wills call you tomorrow."],
+    "correct": 2,
+    "explain": "Setelah \"will\", kata kerja selalu bentuk dasar (V1) — nggak boleh ditambah -s, nggak boleh pakai \"to\", dan \"will\" sendiri nggak berubah bentuk apapun subjeknya."
+  },
+  {
+    "q": "Choose the correct negative sentence using \"will\".",
+    "opts": ["He will not comes to the party.", "He not will come to the party.", "He won't to come to the party.", "He won't come to the party."],
+    "correct": 3,
+    "explain": "Won't (= will not) langsung diikuti V1 tanpa \"to\" dan tanpa perubahan bentuk kata kerja."
+  },
+  {
+    "q": "Choose the correct question form.",
+    "opts": ["You will help me?", "Will you help me?", "Do you will help me?", "Will you helping me?"],
+    "correct": 1,
+    "explain": "Bentuk tanya simple future: Will + S + V1 — \"will\" dipindah ke depan subjek, kata kerja tetap V1."
+  },
+  {
+    "q": "Complete: \"I ___ visit my grandmother next week.\"",
+    "opts": ["am going to", "is going to", "going to", "are going to"],
+    "correct": 0,
+    "explain": "Subjek \"I\" selalu berpasangan dengan \"am\", bukan is/are."
+  },
+  {
+    "q": "Complete: \"They ___ travel to Bandung this weekend.\"",
+    "opts": ["is going to", "are going to", "am going to", "going to"],
+    "correct": 1,
+    "explain": "Subjek jamak \"they\" berpasangan dengan \"are\"."
+  },
+  {
+    "q": "Complete: \"He ___ attend the seminar tomorrow.\"",
+    "opts": ["are going to", "am going to", "is going to", "going to"],
+    "correct": 2,
+    "explain": "Subjek tunggal orang ketiga \"he\" berpasangan dengan \"is\"."
+  },
+  {
+    "q": "Complete: \"We ___ join the trip because of the rain.\" (negative)",
+    "opts": ["aren't going to", "isn't going to", "am not going to", "not going to"],
+    "correct": 0,
+    "explain": "Subjek \"we\" pakai \"are\", jadi bentuk negatifnya \"aren't going to\"."
+  },
+  {
+    "q": "Complete the question: \"___ she going to cook dinner tonight?\"",
+    "opts": ["Is", "Are", "Am", "Does"],
+    "correct": 0,
+    "explain": "Subjek \"she\" berpasangan dengan \"is\" — be dipindah ke depan subjek untuk bentuk tanya."
+  },
+  {
+    "q": "Complete: \"By 8 PM tomorrow, I ___ for the test.\" (study)",
+    "opts": ["will study", "will be studying", "am studying", "will studying"],
+    "correct": 1,
+    "explain": "Menekankan aksi yang sedang berlangsung di satu titik waktu tertentu (jam 8 malam besok) = future continuous: will + be + V-ing."
+  },
+  {
+    "q": "Complete: \"She ___ at midnight — she has a night shift.\" (not/sleep)",
+    "opts": ["won't sleeping", "won't be sleeping", "isn't be sleeping", "won't been sleeping"],
+    "correct": 1,
+    "explain": "Future continuous negatif: S + won't + be + V-ing. \"Be\" wajib ada sebelum V-ing."
+  },
+  {
+    "q": "Complete the future continuous question: \"___ you be doing this time next week?\"",
+    "opts": ["What will", "Will what", "What are will", "Do will what"],
+    "correct": 0,
+    "explain": "Kata tanya (what) selalu di paling depan kalimat, baru diikuti will + subjek + be + V-ing."
+  },
+  {
+    "q": "\"Look at those clouds! It ___ soon.\" (rain)",
+    "opts": ["will rain", "is going to rain", "rains", "is raining"],
+    "correct": 1,
+    "explain": "Ada bukti konkret di depan mata (awan gelap) yang mendukung prediksi ini — pakai going to, bukan will."
+  },
+  {
+    "q": "\"I've already booked the flight tickets. We ___ to Bali next month.\" (go)",
+    "opts": ["will go", "are going to go", "go", "is going to go"],
+    "correct": 1,
+    "explain": "Tiket sudah dipesan sebelum kalimat ini diucapkan — ini rencana yang sudah diatur, bukan keputusan dadakan, jadi pakai going to."
+  },
+  {
+    "q": "\"I don't know what to have for lunch. I think I ___ pizza.\" (order)",
+    "opts": ["am going to order", "will order", "order", "going to order"],
+    "correct": 1,
+    "explain": "Keputusan baru dibuat saat itu juga (spontan), belum direncanakan sebelumnya — pakai will."
+  },
+  {
+    "q": "\"A: 'The doorbell is ringing.' B: 'I ___ it.'\" (get)",
+    "opts": ["am going to get", "will get", "get", "going to get"],
+    "correct": 1,
+    "explain": "Keputusan spontan yang muncul saat itu juga karena bel berbunyi — pakai will."
+  },
+  {
+    "q": "\"Based on the current economic data, experts believe the company ___ financial trouble next year.\" (face)",
+    "opts": ["will face", "is going to face", "faces", "is facing"],
+    "correct": 1,
+    "explain": "Prediksi ini didasarkan pada bukti konkret (data ekonomi), bukan sekadar opini — pakai going to."
+  },
+  {
+    "q": "\"I promise I ___ anyone your secret.\" (never/tell)",
+    "opts": ["won't never tell", "will never tell", "am never going to tell", "never will telling"],
+    "correct": 1,
+    "explain": "Ini janji (promise) — fungsi utama \"will\". \"Won't never\" salah karena double negative, dan \"never will telling\" salah bentuk (harus V1, bukan V-ing)."
+  },
+  {
+    "q": "\"She has just failed her driving test three times. She ___ on getting her license.\" (give up)",
+    "opts": ["will give up", "is going to give up", "gives up", "is giving up"],
+    "correct": 1,
+    "explain": "Kegagalan berulang jadi bukti nyata yang mendukung prediksi ini — pakai going to."
+  },
+  {
+    "q": "\"A: 'Why are you carrying that suitcase?' B: 'I ___ my cousin in Surabaya — I've had this planned for weeks.'\" (visit)",
+    "opts": ["will visit", "am going to visit", "visit", "am visiting"],
+    "correct": 1,
+    "explain": "\"Planned for weeks\" secara eksplisit menunjukkan ini rencana yang sudah dipikirkan sebelumnya — pakai going to."
+  },
+  {
+    "q": "\"I can't decide what to wear. Okay, I ___ the blue dress.\" (wear)",
+    "opts": ["am going to wear", "will wear", "wear", "wearing"],
+    "correct": 1,
+    "explain": "Keputusan baru diambil saat itu juga setelah bimbang — pakai will."
+  },
+  {
+    "q": "\"According to the official weather forecast, it ___ sunny this weekend.\" (be)",
+    "opts": ["will be", "is going to be", "is", "was"],
+    "correct": 1,
+    "explain": "Forecast resmi = bukti/data konkret yang mendukung prediksi — pakai going to."
+  },
+  {
+    "q": "\"I have a feeling that team ___ the championship this year.\" (win)",
+    "opts": ["will win", "is going to win", "wins", "win"],
+    "correct": 0,
+    "explain": "\"I have a feeling\" menandakan ini opini/perkiraan pribadi, bukan bukti konkret — pakai will."
+  },
+  {
+    "q": "\"We've hired a wedding planner and booked the venue. We ___ in December.\" (get married)",
+    "opts": ["will get married", "are going to get married", "get married", "getting married"],
+    "correct": 1,
+    "explain": "Sudah menyewa wedding planner dan memesan venue — rencana sudah diatur sebelumnya, pakai going to."
+  },
+  {
+    "q": "Which sentence correctly uses future continuous to describe an action in progress at a specific future time?",
+    "opts": ["I will call you at 7 PM.", "At 7 PM, I will be having dinner with my parents.", "I am going to call you at 7 PM.", "I called you at 7 PM."],
+    "correct": 1,
+    "explain": "Future continuous (will be + V-ing) menekankan aksi yang sedang berlangsung tepat pada titik waktu tertentu di masa depan, bukan sekadar aksi yang akan terjadi."
+  },
+  {
+    "q": "Which signal word most strongly signals future continuous rather than simple future?",
+    "opts": ["tomorrow", "next week", "at this time tomorrow", "soon"],
+    "correct": 2,
+    "explain": "\"At this time tomorrow\" menunjuk ke satu titik waktu spesifik di masa depan — ciri khas future continuous, bukan cuma \"besok\" secara umum."
+  },
+  {
+    "q": "\"Will you be using the printer soon?\" is an example of future continuous used for...",
+    "opts": ["a spontaneous decision", "asking about plans politely", "a promise", "a prediction with evidence"],
+    "correct": 1,
+    "explain": "Future continuous sering dipakai untuk menanyakan rencana orang lain dengan nada lebih sopan/netral, nggak terkesan mengatur-ngatur."
+  },
+  {
+    "q": "Complete: \"While you ___ tonight, I ___ dinner.\" (study / cook)",
+    "opts": ["are studying / will be cooking", "will study / cook", "study / will cooking", "are study / will cook"],
+    "correct": 0,
+    "explain": "Klausa \"while\" memakai present tense, dan klausa utamanya memakai future continuous untuk aksi yang akan sedang berlangsung bersamaan."
+  },
+  {
+    "q": "Complete: \"This time next month, they ___ around Europe.\" (travel)",
+    "opts": ["will traveling", "will be traveling", "are traveling", "going to be traveling"],
+    "correct": 1,
+    "explain": "Future continuous: S + will + be + V-ing, berlaku sama untuk semua subjek termasuk \"they\"."
+  },
+  {
+    "q": "\"What will you be doing at 10 AM tomorrow?\" is most likely asking about...",
+    "opts": ["a spontaneous decision", "an action in progress at a specific future time", "a promise", "a general prediction"],
+    "correct": 1,
+    "explain": "Pertanyaan ini menanyakan aksi apa yang akan sedang berlangsung tepat jam 10 pagi besok — fungsi utama future continuous."
+  },
+  {
+    "q": "Choose the correctly ordered future continuous question.",
+    "opts": ["You will be doing what tomorrow?", "What you will be doing tomorrow?", "What will you be doing tomorrow?", "Will what you be doing tomorrow?"],
+    "correct": 2,
+    "explain": "Urutan yang benar: kata tanya + will + subjek + be + V-ing."
+  },
+  {
+    "q": "Which sentence is an example of future continuous, NOT simple future?",
+    "opts": ["I will finish my homework tonight.", "I will be finishing my homework at 9 PM tonight.", "I am going to finish my homework tonight.", "I finished my homework tonight."],
+    "correct": 1,
+    "explain": "Hanya opsi B yang memakai will + be + V-ing dan menekankan aksi yang sedang berlangsung pada titik waktu tertentu (jam 9 malam)."
+  },
+  {
+    "q": "Find the error: \"She going to travel to Japan next year.\"",
+    "opts": ["\"going\" should be \"go\"", "missing \"is\" before \"going to\"", "\"travel\" should be \"traveled\"", "no error"],
+    "correct": 1,
+    "explain": "Going to selalu butuh be (am/is/are) sesuai subjeknya. Subjek \"she\" butuh \"is\" sebelum \"going to\"."
+  },
+  {
+    "q": "Find the error: \"At this time tomorrow, I will studying for my exam.\"",
+    "opts": ["missing \"be\" before \"studying\"", "\"will\" should be \"is going to\"", "\"studying\" should be \"study\"", "no error"],
+    "correct": 0,
+    "explain": "Future continuous wajib pakai will + be + V-ing. Kata \"be\"-nya hilang di kalimat ini."
+  },
+  {
+    "q": "Find the error: \"You will be doing what at this time tomorrow?\"",
+    "opts": ["\"will\" should be \"would\"", "word order — \"what\" should come first", "\"be doing\" should be \"do\"", "no error"],
+    "correct": 1,
+    "explain": "Kata tanya \"what\" harus di paling depan kalimat: \"What will you be doing at this time tomorrow?\""
+  },
+  {
+    "q": "Find the error: \"I think it going to rain later.\"",
+    "opts": ["missing \"is\" before \"going to\"", "\"going\" should be \"go\"", "\"rain\" should be \"raining\"", "no error"],
+    "correct": 0,
+    "explain": "Subjek \"it\" butuh \"is\" sebelum \"going to\" — bentuk going to selalu butuh be."
+  },
+  {
+    "q": "Find the error: \"We will be arrive at the station at 6 PM.\"",
+    "opts": ["\"arrive\" should be \"arriving\"", "\"will\" should be \"are\"", "\"be\" is unnecessary", "no error"],
+    "correct": 0,
+    "explain": "Setelah will + be, kata kerja harus V-ing, bukan V1. Seharusnya \"will be arriving\"."
+  },
+  {
+    "q": "Find the error: \"A: 'Why do you have a suitcase?' B: 'I go to visit my aunt this weekend.'\"",
+    "opts": ["missing \"am going\" before \"to visit\"", "\"visit\" should be \"visiting\"", "\"go\" should be \"went\"", "no error"],
+    "correct": 0,
+    "explain": "Konteks menunjukkan rencana yang sudah diatur (membawa koper), jadi seharusnya bentuk going to lengkap: \"I'm going to visit\"."
+  },
+  {
+    "q": "Find the error: \"He won't to come to the meeting tomorrow.\"",
+    "opts": ["\"won't\" should be \"don't\"", "unnecessary \"to\" after \"won't\"", "\"come\" should be \"coming\"", "no error"],
+    "correct": 1,
+    "explain": "Setelah won't (will not), kata kerja langsung V1 tanpa \"to\"."
+  },
+  {
+    "q": "Find the error: \"They isn't going to attend the party.\"",
+    "opts": ["\"isn't\" should be \"aren't\"", "\"attend\" should be \"attending\"", "\"going to\" should be \"going\"", "no error"],
+    "correct": 0,
+    "explain": "Subjek jamak \"they\" harus pakai \"aren't\", bukan \"isn't\"."
+  },
+  {
+    "q": "\"A: 'The printer is out of paper.' B: 'Oh, I ___ some from the storage room.'\" (get)",
+    "opts": ["will get", "am going to get", "get", "am getting"],
+    "correct": 0,
+    "explain": "Keputusan spontan yang baru muncul saat mendengar masalah itu — pakai will."
+  },
+  {
+    "q": "\"A: 'What are your plans after graduation?' B: 'I ___ abroad — I've already applied to three universities.'\" (study)",
+    "opts": ["will study", "am going to study", "study", "studying"],
+    "correct": 1,
+    "explain": "Sudah mendaftar ke tiga universitas = rencana yang sudah dipikirkan sebelumnya — pakai going to."
+  },
+  {
+    "q": "\"Budi has saved money for two years and already picked a car model. Next month, he ___ his first car.\" (buy)",
+    "opts": ["will buy", "is going to buy", "buys", "is buying"],
+    "correct": 1,
+    "explain": "Menabung dua tahun dan sudah memilih model mobil = bukti kuat rencana yang sudah matang — pakai going to."
+  },
+  {
+    "q": "\"Rina hears her phone buzzing but has no idea who it is. 'I wonder who that is. I ___ it.'\" (check)",
+    "opts": ["will check", "am going to check", "check", "am checking"],
+    "correct": 0,
+    "explain": "Keputusan dibuat saat itu juga, tanpa rencana sebelumnya — pakai will."
+  },
+  {
+    "q": "Choose the sentence that best expresses a promise.",
+    "opts": ["I am going to help you with your homework.", "I promise I will always be there for you.", "I help you with your homework.", "I am helping you with your homework."],
+    "correct": 1,
+    "explain": "Janji (promise) adalah salah satu fungsi utama \"will\", bukan going to."
+  },
+  {
+    "q": "Which sentence best shows an action in progress at a specific point in the future?",
+    "opts": ["I will visit my grandparents next week.", "This time next week, I will be visiting my grandparents.", "I am going to visit my grandparents next week.", "I visited my grandparents last week."],
+    "correct": 1,
+    "explain": "Hanya opsi B (future continuous) yang menekankan aksi sedang berlangsung pada titik waktu spesifik di masa depan."
+  },
+  {
+    "q": "\"Meteorologists say that based on satellite data, a storm ___ the coast tomorrow morning.\" (hit)",
+    "opts": ["will hit", "is going to hit", "hits", "is hitting"],
+    "correct": 1,
+    "explain": "Prediksi ini berdasarkan data satelit (bukti konkret) — pakai going to."
+  },
+  {
+    "q": "\"A: 'Why is your bag so heavy?' B: 'I've packed all my camping gear — we ___ hiking this weekend.'\" (go)",
+    "opts": ["will go", "are going to go", "go", "going"],
+    "correct": 1,
+    "explain": "Sudah mengemas semua peralatan camping = rencana yang sudah disiapkan sebelumnya — pakai going to."
+  },
+  {
+    "q": "Choose the best response to: \"Can you help me carry these boxes?\"",
+    "opts": ["Sure, I'll help you.", "Sure, I'm going to help you.", "Sure, I help you.", "Sure, I'm helping you."],
+    "correct": 0,
+    "explain": "Ini tawaran menolong yang diputuskan saat itu juga (spontan) — fungsi will, bukan going to."
+  }
+]

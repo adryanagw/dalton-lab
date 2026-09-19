@@ -1,0 +1,338 @@
+[
+  {
+    "q": "She ___ to school every day.",
+    "opts": ["go", "goes", "is going", "going"],
+    "correct": 1,
+    "explain": "Signal word 'every day' menandai kebiasaan → Simple Present. Subjek 'she' orang ketiga tunggal, dan 'go' berakhiran -o, jadi tambah -es → 'goes'."
+  },
+  {
+    "q": "He ___ football on weekends.",
+    "opts": ["play", "plays", "is playing", "played"],
+    "correct": 1,
+    "explain": "'on weekends' = kebiasaan berulang → Simple Present. Subjek 'he' → V1 + s: 'play' → 'plays' (berakhiran vokal+y, cukup tambah -s)."
+  },
+  {
+    "q": "My mother ___ dinner in the kitchen right now.",
+    "opts": ["cooks", "cook", "is cooking", "cooking"],
+    "correct": 2,
+    "explain": "'right now' adalah signal word aksi yang sedang berlangsung → Present Continuous: is + V-ing → 'is cooking'."
+  },
+  {
+    "q": "Look! The baby ___.",
+    "opts": ["cries", "cry", "is crying", "cried"],
+    "correct": 2,
+    "explain": "'Look!' selalu menandai aksi yang sedang terjadi di depan mata → Present Continuous. 'cry' + -ing = 'crying'."
+  },
+  {
+    "q": "Water ___ at 100°C.",
+    "opts": ["boil", "boils", "is boiling", "boiled"],
+    "correct": 1,
+    "explain": "Fakta ilmiah/kebenaran umum selalu pakai Simple Present, meski tidak ada signal word eksplisit. Subjek 'water' = it → 'boils'."
+  },
+  {
+    "q": "The plane ___ at 9 p.m. tonight, according to the schedule.",
+    "opts": ["leaves", "is leaving", "leave", "left"],
+    "correct": 0,
+    "explain": "Jadwal resmi/timetable (pesawat, kereta) memakai Simple Present walau peristiwanya ada di masa depan ('tonight'). Ini beda dari rencana pribadi yang pakai Present Continuous."
+  },
+  {
+    "q": "We ___ our grandparents next weekend — we already booked the train tickets.",
+    "opts": ["visit", "visits", "are visiting", "visited"],
+    "correct": 2,
+    "explain": "Ini rencana pribadi yang sudah diatur (tiket sudah dipesan), bukan jadwal resmi → Present Continuous untuk rencana masa depan: 'are visiting'."
+  },
+  {
+    "q": "I ___ the answer to this question.",
+    "opts": ["am knowing", "know", "is knowing", "knows"],
+    "correct": 1,
+    "explain": "'know' adalah stative verb (kategori pikiran/pengetahuan), tidak pernah dipakai dalam bentuk -ing. Subjek 'I' → V1 tanpa -s → 'know'."
+  },
+  {
+    "q": "He ___ always ___ his homework until the last minute — it's so annoying!",
+    "opts": ["is / leaving", "does / leave", "/ leaves", "is / leaves"],
+    "correct": 0,
+    "explain": "Pola 'always' + Present Continuous dipakai untuk kebiasaan berulang yang mengganggu/mengesalkan, bukan kebiasaan netral. Bentuknya: is + always + V-ing → 'is always leaving'."
+  },
+  {
+    "q": "She ___ a new dress for her sister's wedding this month.",
+    "opts": ["makes", "make", "is making", "made"],
+    "correct": 2,
+    "explain": "'this month' menandai situasi sementara yang sedang berlangsung, bukan kebiasaan permanen → Present Continuous: 'is making'."
+  },
+  {
+    "q": "Manakah bentuk -es yang benar untuk kata kerja 'watch' pada subjek 'he'?",
+    "opts": ["watchs", "watches", "watchies", "watching"],
+    "correct": 1,
+    "explain": "Kata kerja berakhiran -ch mendapat -es supaya bisa dilafalkan: watch → watches."
+  },
+  {
+    "q": "Manakah bentuk -s/-es yang benar untuk kata kerja 'study' pada subjek 'she'?",
+    "opts": ["studys", "studyes", "studies", "studying"],
+    "correct": 2,
+    "explain": "Kata kerja berakhiran konsonan + y: ubah y jadi i, tambah -es → study menjadi studies."
+  },
+  {
+    "q": "Manakah bentuk -s/-es yang benar untuk kata kerja 'enjoy' pada subjek 'he'?",
+    "opts": ["enjoies", "enjoys", "enjoyes", "enjoying"],
+    "correct": 1,
+    "explain": "Kata kerja berakhiran vokal + y (di sini 'o' + y) hanya perlu tambah -s, y tidak berubah: enjoy → enjoys."
+  },
+  {
+    "q": "Manakah bentuk -s/-es yang benar untuk kata kerja 'fix' pada subjek 'she'?",
+    "opts": ["fixs", "fixies", "fixes", "fixing"],
+    "correct": 2,
+    "explain": "Kata kerja berakhiran -x mendapat -es: fix → fixes."
+  },
+  {
+    "q": "Manakah bentuk yang benar dari 'have' untuk subjek 'he'?",
+    "opts": ["haves", "has", "haing", "is having"],
+    "correct": 1,
+    "explain": "'have' adalah kata kerja tidak beraturan di Simple Present: bentuk untuk he/she/it adalah 'has', bukan 'haves'."
+  },
+  {
+    "q": "Manakah bentuk -ing yang benar untuk kata kerja 'make'?",
+    "opts": ["makeing", "making", "makking", "makying"],
+    "correct": 1,
+    "explain": "Kata kerja berakhiran silent-e: hilangkan e, lalu tambah -ing. make → making."
+  },
+  {
+    "q": "Manakah bentuk -ing yang benar untuk kata kerja 'run'?",
+    "opts": ["runing", "runeing", "running", "runring"],
+    "correct": 2,
+    "explain": "'run' berpola CVC bersuku kata tunggal (konsonan-vokal-konsonan: r-u-n) yang ditekankan, jadi konsonan terakhir digandakan sebelum tambah -ing: run → running."
+  },
+  {
+    "q": "Manakah bentuk -ing yang benar untuk kata kerja 'lie' (berbaring)?",
+    "opts": ["lieing", "lying", "liing", "lyeing"],
+    "correct": 1,
+    "explain": "Kata kerja berakhiran -ie: ubah ie jadi y, lalu tambah -ing. lie → lying."
+  },
+  {
+    "q": "Manakah bentuk -ing yang benar untuk kata kerja 'visit'?",
+    "opts": ["visitting", "visiting", "visitying", "visitieing"],
+    "correct": 1,
+    "explain": "'visit' memang berpola CVC di suku kata terakhir (s-i-t), tapi suku kata itu TIDAK ditekankan (tekanan ada di 'VI-sit'), jadi konsonan tidak digandakan: visit → visiting."
+  },
+  {
+    "q": "Manakah bentuk -ing yang benar untuk kata kerja 'stop'?",
+    "opts": ["stoping", "stopping", "stopeing", "stopying"],
+    "correct": 1,
+    "explain": "'stop' berpola CVC bersuku kata tunggal yang ditekankan (s-t-o-p), konsonan terakhir digandakan: stop → stopping."
+  },
+  {
+    "q": "Kalimat 'The sun rises in the east' termasuk fungsi Simple Present yang mana?",
+    "opts": ["Kebiasaan/rutinitas", "Kebenaran umum/fakta ilmiah", "Jadwal tetap/timetable", "Rencana masa depan"],
+    "correct": 1,
+    "explain": "Matahari terbit di timur adalah fakta alam yang selalu benar, tidak terikat kebiasaan personal atau jadwal — termasuk kebenaran umum."
+  },
+  {
+    "q": "Kalimat 'I brush my teeth twice a day' termasuk fungsi Simple Present yang mana?",
+    "opts": ["Kebiasaan/rutinitas", "Kebenaran umum/fakta ilmiah", "Jadwal tetap/timetable", "Aksi sedang berlangsung"],
+    "correct": 0,
+    "explain": "'twice a day' menandai aksi yang diulang secara rutin sehari-hari — ini kebiasaan/rutinitas personal, bukan fakta ilmiah universal."
+  },
+  {
+    "q": "Kalimat 'The exam starts next Monday' termasuk fungsi Simple Present yang mana?",
+    "opts": ["Kebiasaan/rutinitas", "Kebenaran umum/fakta ilmiah", "Jadwal tetap/timetable", "Situasi sementara"],
+    "correct": 2,
+    "explain": "Jadwal resmi (ujian, kereta, pesawat) yang sudah tetap dipakai Simple Present walau peristiwanya di masa depan — 'next Monday' menunjukkan jadwal yang sudah pasti."
+  },
+  {
+    "q": "Kalimat 'I am staying at my aunt's house this week' termasuk fungsi Present Continuous yang mana?",
+    "opts": ["Aksi sedang berlangsung detik ini", "Situasi sementara", "Rencana masa depan yang diatur", "Kebiasaan mengganggu dengan always"],
+    "correct": 1,
+    "explain": "'this week' menandai situasi yang berlangsung sekitar waktu ini tapi tidak permanen dan bukan aksi yang persis terjadi detik ini juga — ini situasi sementara."
+  },
+  {
+    "q": "Kalimat 'She is always complaining about her job' termasuk fungsi Present Continuous yang mana?",
+    "opts": ["Aksi sedang berlangsung detik ini", "Situasi sementara", "Rencana masa depan yang diatur", "Kebiasaan mengganggu berulang"],
+    "correct": 3,
+    "explain": "Pola 'always' + Continuous menandai kebiasaan berulang yang dianggap mengganggu/mengesalkan si pembicara, bukan aksi sesaat."
+  },
+  {
+    "q": "Manakah kalimat yang menggunakan stative verb dengan BENAR?",
+    "opts": ["I am wanting a new phone.", "I want a new phone.", "I is wanting a new phone.", "I wants a new phone."],
+    "correct": 1,
+    "explain": "'want' adalah stative verb (keinginan), tidak boleh -ing. Bentuk benar: Simple Present, subjek 'I' tanpa -s → 'I want a new phone.'"
+  },
+  {
+    "q": "Manakah dari kata kerja berikut yang TERMASUK stative verb (tidak lazim dipakai -ing)?",
+    "opts": ["run", "believe", "cook", "write"],
+    "correct": 1,
+    "explain": "'believe' (percaya) adalah stative verb kategori pikiran/pengetahuan. Run, cook, write adalah kata kerja aksi/dinamis yang lazim dipakai -ing."
+  },
+  {
+    "q": "Kalimat mana yang benar: 'I ___ this song is beautiful.'",
+    "opts": ["am thinking", "think", "thinking", "is thinking"],
+    "correct": 1,
+    "explain": "'think' di sini bermakna berpendapat (stative), bukan sedang memikirkan secara aktif — jadi pakai Simple Present: 'think'."
+  },
+  {
+    "q": "Kalimat mana yang benar: 'I ___ about my future career right now.'",
+    "opts": ["think", "am thinking", "thinks", "thought"],
+    "correct": 1,
+    "explain": "Di sini 'think about' bermakna sedang memikirkan secara aktif (dinamis), berbeda dari 'think' = berpendapat. Dengan signal word 'right now', bentuknya Present Continuous: 'am thinking'."
+  },
+  {
+    "q": "Manakah kalimat yang benar terkait kata kerja 'have'?",
+    "opts": ["I am having a car.", "I have a car.", "I haves a car.", "I is having a car."],
+    "correct": 1,
+    "explain": "'have' bermakna memiliki di sini = stative verb, tidak boleh -ing. Bentuk benar: 'I have a car.'"
+  },
+  {
+    "q": "Manakah kalimat yang benar terkait kata kerja 'have' dalam makna berbeda?",
+    "opts": ["She has lunch right now.", "She is having lunch right now.", "She have lunch right now.", "She haves lunch right now."],
+    "correct": 1,
+    "explain": "'have lunch' = sedang makan siang, ini makna dinamis (bukan kepemilikan), jadi boleh -ing. Dengan signal word 'right now' → Present Continuous: 'is having'."
+  },
+  {
+    "q": "Temukan kesalahan pada kalimat: 'He go to school every day.'",
+    "opts": ["Tidak ada kesalahan", "Seharusnya 'goes', bukan 'go'", "Seharusnya 'is going', bukan 'go'", "Seharusnya 'went', bukan 'go'"],
+    "correct": 1,
+    "explain": "Subjek 'he' orang ketiga tunggal wajib memakai bentuk +s/-es di Simple Present. 'go' berakhiran -o → 'goes'."
+  },
+  {
+    "q": "Temukan kesalahan pada kalimat: 'She don't like coffee.'",
+    "opts": ["Tidak ada kesalahan", "Seharusnya 'doesn't', bukan 'don't'", "Seharusnya 'isn't liking'", "Seharusnya 'not like'"],
+    "correct": 1,
+    "explain": "Subjek orang ketiga tunggal (she) memakai auxiliary 'does' pada bentuk negatif, bukan 'do'. Bentuk benar: 'She doesn't like coffee.'"
+  },
+  {
+    "q": "Temukan kesalahan pada kalimat: 'Look! He runs to catch the bus.'",
+    "opts": ["Tidak ada kesalahan", "Seharusnya Present Continuous: 'is running'", "Seharusnya 'ran'", "Seharusnya 'run' tanpa -s"],
+    "correct": 1,
+    "explain": "'Look!' adalah signal word aksi yang sedang berlangsung di depan mata → wajib Present Continuous: 'is running'."
+  },
+  {
+    "q": "Temukan kesalahan pada kalimat: 'I am knowing the answer.'",
+    "opts": ["Tidak ada kesalahan", "Seharusnya 'know' (Simple Present), bukan '-ing'", "Seharusnya 'knows'", "Seharusnya 'am know'"],
+    "correct": 1,
+    "explain": "'know' adalah stative verb, tidak pernah dalam bentuk -ing. Bentuk benar: 'I know the answer.'"
+  },
+  {
+    "q": "Temukan kesalahan pada kalimat: 'She studys English every day.'",
+    "opts": ["Tidak ada kesalahan", "Ejaan salah, seharusnya 'studies'", "Seharusnya 'study' tanpa akhiran", "Seharusnya 'is studying'"],
+    "correct": 1,
+    "explain": "'study' berakhiran konsonan + y, aturannya ubah y jadi i lalu tambah -es: 'studies', bukan 'studys'."
+  },
+  {
+    "q": "Temukan kesalahan pada kalimat: 'He is have a meeting now.'",
+    "opts": ["Tidak ada kesalahan", "Seharusnya 'is having', bukan 'is have'", "Seharusnya 'has'", "Seharusnya 'have'"],
+    "correct": 1,
+    "explain": "Setelah auxiliary 'is', kata kerja harus dalam bentuk -ing: 'is having', bukan 'is have'."
+  },
+  {
+    "q": "Temukan kesalahan pada kalimat: 'They is playing basketball now.'",
+    "opts": ["Tidak ada kesalahan", "Seharusnya 'are playing', bukan 'is playing'", "Seharusnya 'plays'", "Seharusnya 'play'"],
+    "correct": 1,
+    "explain": "Subjek jamak 'they' memakai auxiliary 'are', bukan 'is'. Bentuk benar: 'They are playing basketball now.'"
+  },
+  {
+    "q": "Ubah kalimat positif 'She works in a hospital' menjadi kalimat tanya.",
+    "opts": ["Does she works in a hospital?", "Does she work in a hospital?", "Is she working in a hospital?", "Do she work in a hospital?"],
+    "correct": 1,
+    "explain": "Kalimat tanya Simple Present: Does + S + V1 (bentuk dasar, bukan +s karena 'does' sudah membawa perubahannya). 'Does she work...?' benar; 'works' salah karena double marking."
+  },
+  {
+    "q": "Ubah kalimat positif 'They watch TV every night' menjadi kalimat negatif.",
+    "opts": ["They doesn't watch TV every night.", "They don't watch TV every night.", "They not watch TV every night.", "They isn't watching TV every night."],
+    "correct": 1,
+    "explain": "Subjek jamak 'they' memakai auxiliary 'do' pada negatif: 'They don't watch TV every night.'"
+  },
+  {
+    "q": "Ubah kalimat positif 'He is reading a book' menjadi kalimat tanya.",
+    "opts": ["Does he reading a book?", "Is he reading a book?", "Is he read a book?", "Do he read a book?"],
+    "correct": 1,
+    "explain": "Kalimat tanya Present Continuous: Is/Am/Are + S + V-ing. 'Is he reading a book?' adalah bentuk yang benar."
+  },
+  {
+    "q": "Ubah kalimat positif 'We are waiting for the bus' menjadi kalimat negatif.",
+    "opts": ["We don't wait for the bus.", "We are not waiting for the bus.", "We not waiting for the bus.", "We doesn't wait for the bus."],
+    "correct": 1,
+    "explain": "Negatif Present Continuous: S + is/am/are + not + V-ing. 'We are not waiting for the bus.'"
+  },
+  {
+    "q": "Konteks: 'A: What are you doing? B: I ___ a letter to my friend.' Lengkapi jawaban B.",
+    "opts": ["write", "am writing", "writes", "wrote"],
+    "correct": 1,
+    "explain": "Pertanyaan 'What are you doing?' menanyakan aksi yang sedang berlangsung sekarang, jawaban juga harus Present Continuous: 'am writing'."
+  },
+  {
+    "q": "Konteks: 'A: Does he play the guitar? B: Yes, he ___ every Sunday with his band.' Lengkapi jawaban B.",
+    "opts": ["play", "plays", "is playing", "playing"],
+    "correct": 1,
+    "explain": "Pertanyaan pakai 'Does' menandai Simple Present (kebiasaan), dan 'every Sunday' menegaskan itu. Jawaban: 'plays' (subjek 'he')."
+  },
+  {
+    "q": "Konteks: Paragraf tentang jadwal harian Dito: 'Dito usually wakes up at 6 a.m. But this morning, he ___ still ___ (sleep) because he stayed up late last night.' Lengkapi.",
+    "opts": ["is / sleeping", "does / sleep", "/ sleeps", "was / sleeping"],
+    "correct": 0,
+    "explain": "'this morning' + konteks 'stayed up late' menandai situasi khusus yang sedang terjadi sekarang, berbeda dari kebiasaan 'usually' → Present Continuous: 'is still sleeping'."
+  },
+  {
+    "q": "Konteks: 'The Earth ___ around the Sun, and right now, scientists ___ new data about its orbit.' Lengkapi kedua blank.",
+    "opts": ["revolves / are analyzing", "is revolving / analyze", "revolve / analyzing", "revolves / analyze"],
+    "correct": 0,
+    "explain": "Klausa pertama = fakta ilmiah abadi → Simple Present: 'revolves'. Klausa kedua ada signal 'right now' → aksi sedang terjadi → Present Continuous: 'are analyzing' (subjek jamak 'scientists')."
+  },
+  {
+    "q": "Manakah kalimat yang paling tepat menggambarkan RENCANA masa depan yang sudah diatur (bukan jadwal resmi)?",
+    "opts": ["The store opens at 9 a.m.", "I am meeting my dentist at 3 p.m. tomorrow.", "The sun sets in the west.", "She usually meets her friends on Fridays."],
+    "correct": 1,
+    "explain": "'am meeting...tomorrow' adalah janji/rencana pribadi yang sudah diatur untuk masa depan — pakai Present Continuous, bukan Simple Present (yang dipakai untuk jadwal resmi atau kebiasaan)."
+  },
+  {
+    "q": "Manakah kalimat yang paling tepat menggambarkan JADWAL RESMI (timetable), bukan rencana pribadi?",
+    "opts": ["The train departs at 6 a.m. every day.", "I am departing for Bali tomorrow.", "We are visiting our uncle next week.", "He is meeting his client this afternoon."],
+    "correct": 0,
+    "explain": "Jadwal resmi seperti keberangkatan kereta yang tetap setiap hari memakai Simple Present, bukan Present Continuous — meski waktunya spesifik."
+  },
+  {
+    "q": "Pilih kata kerja yang tepat: 'This soup ___ delicious!' (memberi komentar tentang rasa saat mencicipinya).",
+    "opts": ["is tasting", "tastes", "taste", "tasted"],
+    "correct": 1,
+    "explain": "'taste' di sini bermakna 'memiliki rasa' (stative, deskripsi keadaan), bukan aksi 'mencicipi' aktif — jadi Simple Present: 'tastes'."
+  },
+  {
+    "q": "Pilih kata kerja yang tepat: 'The chef ___ the soup to check the seasoning.' (aksi mencicipi secara aktif).",
+    "opts": ["tastes", "taste", "is tasting", "tasted"],
+    "correct": 2,
+    "explain": "Di sini 'taste' bermakna aksi aktif mencicipi (dinamis), bukan deskripsi rasa — dan tidak ada signal kebiasaan, konteksnya sedang dilakukan → Present Continuous: 'is tasting'."
+  },
+  {
+    "q": "Manakah kalimat dengan ejaan -ing yang SALAH?",
+    "opts": ["swimming", "beginning", "openning", "sitting"],
+    "correct": 2,
+    "explain": "'open' bersuku kata dua dengan tekanan di suku kata pertama ('O-pen'), jadi konsonan terakhir TIDAK digandakan: 'opening', bukan 'openning'."
+  },
+  {
+    "q": "Manakah kalimat dengan ejaan -es yang SALAH?",
+    "opts": ["washes", "kisses", "gos", "fixes"],
+    "correct": 2,
+    "explain": "'go' berakhiran -o, harus ditambah -es: 'goes', bukan 'gos'."
+  },
+  {
+    "q": "Konteks: 'I usually ___ (drink) tea, but today I ___ (drink) coffee because I'm very tired.' Lengkapi.",
+    "opts": ["drink / am drinking", "drinks / drink", "am drinking / drink", "drink / drink"],
+    "correct": 0,
+    "explain": "'usually' → kebiasaan → Simple Present: 'drink' (subjek I, tanpa -s). 'today...because I'm tired' → situasi khusus hari ini → Present Continuous: 'am drinking'."
+  },
+  {
+    "q": "Manakah pasangan subjek-kata kerja yang benar dalam Simple Present negatif?",
+    "opts": ["They doesn't like it.", "He don't like it.", "We doesn't like it.", "She doesn't like it."],
+    "correct": 3,
+    "explain": "'doesn't' dipakai untuk subjek orang ketiga tunggal (he/she/it). 'She doesn't like it.' adalah satu-satunya pasangan yang benar di sini."
+  },
+  {
+    "q": "Konteks percakapan: 'A: You look busy. B: Yes, I ___ (finish) this report for my boss.' Lengkapi jawaban B yang paling natural.",
+    "opts": ["finish", "am finishing", "finishes", "finished"],
+    "correct": 1,
+    "explain": "Konteks percakapan langsung ('you look busy' = sedang mengamati kondisi saat ini) menandai aksi yang sedang berlangsung → Present Continuous: 'am finishing'."
+  },
+  {
+    "q": "Manakah kalimat yang benar untuk menyatakan kebenaran umum tentang geografi?",
+    "opts": ["Indonesia is consisting of thousands of islands.", "Indonesia consists of thousands of islands.", "Indonesia consist of thousands of islands.", "Indonesia is consist of thousands of islands."],
+    "correct": 1,
+    "explain": "Fakta geografis permanen memakai Simple Present. 'consist' berakhiran konsonan, subjek 'Indonesia' = it/tunggal → tambah -s: 'consists'."
+  }
+]

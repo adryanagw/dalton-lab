@@ -1,0 +1,354 @@
+[
+  {
+    "q": "Choose the correct form: <i>She ___ to the market yesterday.</i>",
+    "opts": ["go", "goes", "went", "was going"],
+    "correct": 2,
+    "explain": "Signal word 'yesterday' menandakan Simple Past untuk aksi yang sudah selesai. 'go' adalah irregular verb, bentuk V2-nya adalah 'went', bukan hasil tambah -ed."
+  },
+  {
+    "q": "Choose the correct form: <i>They ___ football when it started to rain.</i>",
+    "opts": ["played", "were playing", "play", "was playing"],
+    "correct": 1,
+    "explain": "Pola interupsi: aksi yang sedang berlangsung (bermain bola) sebelum diinterupsi aksi lain (mulai hujan) memakai Past Continuous. Subjek 'they' jamak, jadi 'were playing', bukan 'was playing'."
+  },
+  {
+    "q": "Choose the correct form: <i>I ___ my homework at 8 PM last night.</i>",
+    "opts": ["do", "did", "was doing", "am doing"],
+    "correct": 2,
+    "explain": "Jam spesifik di masa lalu ('at 8 PM last night') yang menunjukkan aksi sedang berlangsung pada saat itu memakai Past Continuous: 'was doing'."
+  },
+  {
+    "q": "Choose the correct form: <i>He ___ three years ago.</i>",
+    "opts": ["move to Jakarta", "moved to Jakarta", "was moving to Jakarta", "moves to Jakarta"],
+    "correct": 1,
+    "explain": "'... ago' adalah signal word Simple Past untuk aksi yang sudah selesai di titik waktu tertentu di masa lalu."
+  },
+  {
+    "q": "Pilih bentuk V2 yang benar dari 'study':",
+    "opts": ["studyed", "studied", "studing", "studdied"],
+    "correct": 1,
+    "explain": "Verb berakhiran konsonan + -y: ganti -y jadi -i lalu tambah -ed → 'studied'."
+  },
+  {
+    "q": "Pilih bentuk V2 yang benar dari 'stop':",
+    "opts": ["stoped", "stoping", "stopped", "stopeed"],
+    "correct": 2,
+    "explain": "Verb 1 suku kata pola konsonan-vokal-konsonan (CVC): konsonan terakhir digandakan dulu sebelum tambah -ed → 'stopped'."
+  },
+  {
+    "q": "Pilih bentuk V2 yang benar dari 'live':",
+    "opts": ["liveed", "lived", "living", "livd"],
+    "correct": 1,
+    "explain": "Verb berakhiran -e cukup tambah -d saja (tidak dobel -e) → 'lived'."
+  },
+  {
+    "q": "Pilih bentuk V2 yang benar dari 'play':",
+    "opts": ["plaied", "played", "playyed", "plaid"],
+    "correct": 1,
+    "explain": "Sebelum huruf -y ada vokal (a), jadi tetap tambah -ed biasa, bukan diubah jadi -i dulu → 'played'."
+  },
+  {
+    "q": "Pilih bentuk V2 yang benar dari 'carry':",
+    "opts": ["carryed", "carried", "carring", "carreid"],
+    "correct": 1,
+    "explain": "Konsonan + -y: ganti -y jadi -i, tambah -ed → 'carried'."
+  },
+  {
+    "q": "Pilih bentuk V2 dari irregular verb 'eat':",
+    "opts": ["eated", "eaten", "ate", "eating"],
+    "correct": 2,
+    "explain": "'eat' irregular, bentuk V2 (Simple Past)-nya adalah 'ate'. 'eaten' adalah V3 (past participle), bukan V2."
+  },
+  {
+    "q": "Pilih bentuk V2 dari irregular verb 'write':",
+    "opts": ["writed", "wrote", "written", "writing"],
+    "correct": 1,
+    "explain": "'write' irregular, V2-nya 'wrote'. 'written' adalah bentuk V3."
+  },
+  {
+    "q": "Pilih bentuk V2 dari irregular verb 'buy':",
+    "opts": ["buyed", "boughted", "bought", "buied"],
+    "correct": 2,
+    "explain": "'buy' irregular, V2-nya 'bought', bukan hasil tambah -ed."
+  },
+  {
+    "q": "Pilih bentuk V2 dari irregular verb 'give':",
+    "opts": ["gived", "gave", "given", "giving"],
+    "correct": 1,
+    "explain": "'give' irregular, V2-nya 'gave'. 'given' adalah bentuk V3."
+  },
+  {
+    "q": "Bentuk kalimat negatif Simple Past yang benar dari 'She watched a movie.' adalah:",
+    "opts": ["She not watched a movie.", "She didn't watched a movie.", "She didn't watch a movie.", "She wasn't watch a movie."],
+    "correct": 2,
+    "explain": "Pola negatif Simple Past: Subjek + did not (didn't) + V1. Verb harus balik ke bentuk dasar karena 'didn't' sudah membawa sinyal masa lalu, jadi 'watch', bukan 'watched'."
+  },
+  {
+    "q": "Bentuk kalimat tanya Simple Past yang benar dari 'They visited Bali.' adalah:",
+    "opts": ["Did they visit Bali?", "Did they visited Bali?", "Were they visit Bali?", "Do they visited Bali?"],
+    "correct": 0,
+    "explain": "Pola tanya Simple Past: Did + Subjek + V1?. Verb kembali ke bentuk dasar 'visit', bukan 'visited'."
+  },
+  {
+    "q": "Spot the error: <i>Yesterday, I goed to school by bus.</i>",
+    "opts": ["'Yesterday' seharusnya 'yesterday's'", "'goed' seharusnya 'went'", "'by bus' seharusnya 'with bus'", "Tidak ada kesalahan"],
+    "correct": 1,
+    "explain": "'go' adalah irregular verb. Menambahkan -ed ('goed') adalah kesalahan umum pelajar Indonesia yang menyamakan semua verb dengan aturan regular. Bentuk yang benar adalah 'went'."
+  },
+  {
+    "q": "Spot the error: <i>They was playing basketball at the park.</i>",
+    "opts": ["'was' seharusnya 'were'", "'playing' seharusnya 'played'", "'at' seharusnya 'in'", "Tidak ada kesalahan"],
+    "correct": 0,
+    "explain": "Subjek 'they' jamak, jadi harus pakai 'were', bukan 'was'. Ini kesalahan subject-verb agreement yang paling umum di Past Continuous."
+  },
+  {
+    "q": "Spot the error: <i>I were cooking dinner when the phone rang.</i>",
+    "opts": ["'were' seharusnya 'was'", "'cooking' seharusnya 'cook'", "'rang' seharusnya 'ringed'", "Tidak ada kesalahan"],
+    "correct": 0,
+    "explain": "Subjek 'I' tunggal, jadi harus pakai 'was', bukan 'were'."
+  },
+  {
+    "q": "Spot the error: <i>While I was reading, when my sister called me.</i>",
+    "opts": ["'while' dan 'when' tidak boleh dipakai bersamaan dalam satu klausa interupsi", "'reading' seharusnya 'read'", "'called' seharusnya 'call'", "Tidak ada kesalahan"],
+    "correct": 0,
+    "explain": "Pola interupsi hanya butuh satu konjungsi: 'while' menempel ke klausa Past Continuous, atau 'when' menempel ke klausa Simple Past — tidak keduanya sekaligus di satu kalimat. Kalimat yang benar: 'While I was reading, my sister called me.'"
+  },
+  {
+    "q": "Spot the error: <i>He heared a strange noise last night.</i>",
+    "opts": ["'heared' seharusnya 'heard'", "'strange' seharusnya 'stranger'", "'last night' seharusnya 'lastnight'", "Tidak ada kesalahan"],
+    "correct": 0,
+    "explain": "'hear' adalah irregular verb dengan bentuk V2 'heard', bukan hasil tambah -ed ('heared')."
+  },
+  {
+    "q": "Spot the error: <i>Were you sleep when I called you?</i>",
+    "opts": ["'sleep' seharusnya 'sleeping'", "'called' seharusnya 'call'", "'Were' seharusnya 'Did'", "Tidak ada kesalahan"],
+    "correct": 0,
+    "explain": "Pola tanya Past Continuous: Was/Were + Subjek + V-ing?. Verb harus dalam bentuk -ing, jadi 'sleeping', bukan 'sleep'."
+  },
+  {
+    "q": "Combine using WHEN: <i>(a) I was walking home. (b) I saw an accident.</i>",
+    "opts": [
+      "I was walking home when I saw an accident.",
+      "I saw an accident when I was walking home",
+      "When I walked home, I was seeing an accident.",
+      "I was walking home while I saw an accident."
+    ],
+    "correct": 0,
+    "explain": "Aksi latar/panjang ('walking home') pakai Past Continuous, aksi interupsi/pendek ('saw an accident') pakai Simple Past, dengan 'when' menempel di klausa interupsi: [Past Continuous] + when + [Simple Past]."
+  },
+  {
+    "q": "Combine using WHILE (klausa while di awal kalimat): <i>(a) My father was reading the newspaper. (b) My mother cooked breakfast.</i>",
+    "opts": [
+      "While my father was reading the newspaper, my mother cooked breakfast.",
+      "My father was reading the newspaper while my mother was cooking breakfast when.",
+      "While my father read the newspaper, my mother was cooking breakfast.",
+      "My father read the newspaper while my mother cooking breakfast."
+    ],
+    "correct": 0,
+    "explain": "Dua aksi berlangsung bersamaan bisa keduanya Past Continuous, tapi di soal ini polanya adalah klausa 'while' menempel ke aksi latar yang sedang berlangsung. Karena while-clause ada di awal kalimat, wajib pakai koma sebelum klausa utama: 'While my father was reading the newspaper, my mother cooked breakfast.'"
+  },
+  {
+    "q": "Combine correctly: <i>(a) The students were doing an exam. (b) The fire alarm rang.</i>",
+    "opts": [
+      "The students were doing an exam when the fire alarm rang.",
+      "The students did an exam when the fire alarm was ringing.",
+      "The students were doing an exam when the fire alarm was ringing.",
+      "When the students were doing an exam, the fire alarm rang so"
+    ],
+    "correct": 0,
+    "explain": "Mengerjakan ujian = aksi latar/panjang (Past Continuous), alarm kebakaran berbunyi = aksi tiba-tiba yang menginterupsi (Simple Past): 'The students were doing an exam when the fire alarm rang.'"
+  },
+  {
+    "q": "Combine correctly: <i>(a) It was raining heavily. (b) We arrived at the airport.</i>",
+    "opts": [
+      "It was raining heavily when we arrived at the airport.",
+      "It rained heavily when we were arriving at the airport.",
+      "It was raining heavily when we were arriving at the airport.",
+      "It rains heavily when we arrived at the airport."
+    ],
+    "correct": 0,
+    "explain": "Hujan deras = kondisi yang sedang berlangsung (Past Continuous), kedatangan kami di bandara = aksi titik/pendek yang menginterupsi (Simple Past)."
+  },
+  {
+    "q": "Manakah kalimat yang paling tepat menggambarkan dua aksi masa lalu yang berlangsung BERSAMAAN (bukan interupsi)?",
+    "opts": [
+      "While I was studying, my brother was watching TV.",
+      "I was studying when my brother watched TV.",
+      "I studied when my brother was watching TV.",
+      "While I studied, my brother watched TV."
+    ],
+    "correct": 0,
+    "explain": "Dua aksi paralel yang sama-sama sedang berlangsung memakai Past Continuous di kedua klausa: 'While I was studying, my brother was watching TV.'"
+  },
+  {
+    "q": "Which sentence correctly uses Simple Past to describe a sequence of past actions?",
+    "opts": [
+      "I woke up, brushed my teeth, and had breakfast.",
+      "I was waking up, was brushing my teeth, and was having breakfast.",
+      "I wake up, brush my teeth, and have breakfast.",
+      "I woke up, was brushing my teeth, and had breakfast."
+    ],
+    "correct": 0,
+    "explain": "Urutan aksi masa lalu yang berurutan (satu demi satu selesai) menggunakan Simple Past di semua verb, bukan Past Continuous."
+  },
+  {
+    "q": "Which sentence describes a past habit using Simple Past (alternatif dari 'used to')?",
+    "opts": [
+      "When I was young, I played football every weekend.",
+      "When I was young, I was playing football every weekend.",
+      "When I am young, I play football every weekend.",
+      "When I was young, I have played football every weekend."
+    ],
+    "correct": 0,
+    "explain": "Kebiasaan masa lalu yang sudah tidak berlaku lagi bisa dinyatakan dengan Simple Past biasa ('played'), sama maknanya dengan 'used to play', bukan Past Continuous."
+  },
+  {
+    "q": "Choose the correct signal word: <i>My parents got married ___ 2001.</i>",
+    "opts": ["in", "at", "on", "since"],
+    "correct": 0,
+    "explain": "'in + tahun lampau' adalah signal word Simple Past yang benar untuk menyatakan tahun terjadinya suatu peristiwa, contoh: 'in 2001'."
+  },
+  {
+    "q": "Choose the correct signal word: <i>___ that moment, everyone was cheering loudly.</i>",
+    "opts": ["At", "In", "On", "For"],
+    "correct": 0,
+    "explain": "'At that moment' adalah signal word khas Past Continuous untuk menunjukkan aksi sedang berlangsung pada titik waktu tertentu."
+  },
+  {
+    "q": "Reading context: <i>\"Last summer, my family and I went to Bali. We stayed there for five days. Every morning, we swam in the sea.\"</i> Kalimat kedua dan ketiga memakai Simple Past untuk fungsi apa?",
+    "opts": [
+      "Urutan/rangkaian aksi masa lalu yang selesai",
+      "Aksi yang sedang berlangsung dan diinterupsi",
+      "Dua aksi paralel yang terjadi bersamaan",
+      "Prediksi masa depan"
+    ],
+    "correct": 0,
+    "explain": "'stayed' dan 'swam' menceritakan rangkaian aksi/kejadian masa lalu yang masing-masing sudah selesai, bukan aksi yang sedang berlangsung saat diinterupsi."
+  },
+  {
+    "q": "Reading context: <i>\"At 9 PM yesterday, I was watching a horror movie when suddenly the TV turned off.\"</i> Manakah aksi latar (Past Continuous) dan mana aksi interupsi (Simple Past)?",
+    "opts": [
+      "Latar: watching a horror movie. Interupsi: turned off.",
+      "Latar: turned off. Interupsi: watching a horror movie.",
+      "Keduanya adalah aksi interupsi.",
+      "Keduanya adalah aksi latar."
+    ],
+    "correct": 0,
+    "explain": "'was watching' (Past Continuous) adalah aksi yang sedang berlangsung sejak sebelumnya, sedangkan 'turned off' (Simple Past) adalah aksi tiba-tiba yang menginterupsinya."
+  },
+  {
+    "q": "Choose the correct form: <i>We ___ at the same restaurant last Friday.</i>",
+    "opts": ["eat", "ate", "eaten", "eating"],
+    "correct": 1,
+    "explain": "'last Friday' adalah signal word Simple Past. 'eat' irregular, V2-nya 'ate'."
+  },
+  {
+    "q": "Choose the correct form: <i>___ she call you while you ___ dinner?</i>",
+    "opts": ["Did / were having", "Was / was having", "Were / did have", "Did / did have"],
+    "correct": 0,
+    "explain": "Klausa utama tanya memakai Simple Past ('Did she call'), klausa 'while' menandakan aksi latar yang sedang berlangsung sehingga memakai Past Continuous — subjek 'you' selalu berpasangan dengan 'were', bukan 'was', jadi 'were having'."
+  },
+  {
+    "q": "Choose the correct form: <i>The bus ___ just when I arrived at the station.</i>",
+    "opts": ["leaves", "was leaving", "left", "leaving"],
+    "correct": 2,
+    "explain": "Dua aksi masa lalu yang sama-sama sudah selesai (bus berangkat, saya tiba) memakai Simple Past biasa di keduanya: 'The bus left just when I arrived at the station.'"
+  },
+  {
+    "q": "Choose the correct question form: <i>___ they playing outside when it started to thunder?</i>",
+    "opts": ["Was", "Were", "Did", "Are"],
+    "correct": 1,
+    "explain": "Subjek 'they' jamak dan verb dalam bentuk -ing ('playing') menunjukkan pola tanya Past Continuous: Were + Subjek + V-ing?."
+  },
+  {
+    "q": "Choose the correct negative form: <i>She ___ TV when her mother came home.</i> (negatif)",
+    "opts": ["wasn't watching", "didn't watch", "weren't watching", "isn't watching"],
+    "correct": 0,
+    "explain": "Subjek tunggal 'she' + konteks aksi latar yang sedang tidak berlangsung memakai 'wasn't' + V-ing: 'wasn't watching'."
+  },
+  {
+    "q": "Manakah pasangan V1-V2 yang BENAR?",
+    "opts": ["see - seed", "come - came", "take - taked", "make - maked"],
+    "correct": 1,
+    "explain": "'come' adalah irregular verb dengan V2 'came'. Tiga pilihan lain salah karena menambahkan -ed pada irregular verb ('seed', 'taked', 'maked' semuanya salah; bentuk benarnya 'saw', 'took', 'made')."
+  },
+  {
+    "q": "Manakah pasangan V1-V2 yang BENAR?",
+    "opts": ["do - doed", "have - haved", "be - was/were", "write - writed"],
+    "correct": 2,
+    "explain": "'be' (is/am/are) adalah irregular verb paling unik, V2-nya berubah jadi 'was' (tunggal) atau 'were' (jamak). Tiga pilihan lain salah karena hasil tambah -ed pada irregular verb."
+  },
+  {
+    "q": "Choose the best translation-matched sentence for: 'Sementara saya sedang memasak, kakak saya sedang membersihkan rumah.'",
+    "opts": [
+      "While I was cooking, my sister was cleaning the house.",
+      "While I cooked, my sister cleaned the house.",
+      "When I was cooking, my sister cleaned the house.",
+      "I was cooking, my sister was cleaning the house."
+    ],
+    "correct": 0,
+    "explain": "Dua aksi paralel yang berlangsung bersamaan menggunakan Past Continuous di kedua klausa, dihubungkan dengan 'while': 'While I was cooking, my sister was cleaning the house.'"
+  },
+  {
+    "q": "Choose the best translation-matched sentence for: 'Saya sedang tidur ketika gempa terjadi.'",
+    "opts": [
+      "I was sleeping when the earthquake happened.",
+      "I slept when the earthquake was happening.",
+      "I was sleeping while the earthquake happened.",
+      "I sleep when the earthquake happens."
+    ],
+    "correct": 0,
+    "explain": "Aksi latar 'tidur' = Past Continuous ('was sleeping'), aksi interupsi 'gempa terjadi' = Simple Past ('happened'), dihubungkan dengan 'when' menempel ke klausa interupsi."
+  },
+  {
+    "q": "Spot the error: <i>When I was young, I use to play football every weekend.</i>",
+    "opts": [
+      "'use to' seharusnya 'used to', atau bisa diganti Simple Past biasa 'played'",
+      "'was young' seharusnya 'am young'",
+      "'weekend' seharusnya 'weekends' saja tanpa 'every'",
+      "Tidak ada kesalahan"
+    ],
+    "correct": 0,
+    "explain": "Bentuk baku untuk kebiasaan masa lalu adalah 'used to' (dengan -d), atau bisa juga diganti Simple Past biasa 'played every weekend' seperti dibahas di materi — 'use to' tanpa -d adalah kesalahan ejaan yang umum."
+  },
+  {
+    "q": "Choose the correct form: <i>My grandfather ___ in a small village when he was a child.</i>",
+    "opts": ["lived", "was living", "lives", "live"],
+    "correct": 0,
+    "explain": "Konteks 'when he was a child' menandakan kebiasaan/kondisi masa lalu yang sudah tidak berlaku — memakai Simple Past biasa ('lived'), setara makna dengan 'used to live'."
+  },
+  {
+    "q": "Choose the correct form: <i>At midnight, the whole city ___ silent.</i>",
+    "opts": ["was", "were", "is", "did"],
+    "correct": 0,
+    "explain": "'the whole city' adalah subjek tunggal (kata benda tak terhitung/kolektif tunggal), jadi memakai 'was', bukan 'were'."
+  },
+  {
+    "q": "Choose the correct form: <i>My friends and I ___ soccer when it began to rain.</i>",
+    "opts": ["was playing", "were playing", "played", "plays"],
+    "correct": 1,
+    "explain": "Subjek 'my friends and I' jamak → 'were playing'. Konteks 'when it began to rain' menunjukkan aksi bermain bola adalah aksi latar yang sedang berlangsung, jadi Past Continuous."
+  },
+  {
+    "q": "Manakah kalimat yang paling TEPAT secara struktur untuk konteks: seseorang sedang mandi (durasi panjang), lalu tiba-tiba mati listrik (kejadian singkat)?",
+    "opts": [
+      "I was taking a shower when the electricity went out.",
+      "I took a shower when the electricity was going out.",
+      "I was taking a shower when the electricity was going out.",
+      "I take a shower when the electricity went out."
+    ],
+    "correct": 0,
+    "explain": "Aksi berdurasi panjang (mandi) = Past Continuous, aksi singkat yang menginterupsi (mati listrik) = Simple Past: 'I was taking a shower when the electricity went out.'"
+  },
+  {
+    "q": "Spot the error: <i>Did you went to the party last Saturday?</i>",
+    "opts": [
+      "'went' seharusnya 'go' karena sudah ada 'Did'",
+      "'you' seharusnya 'your'",
+      "'last Saturday' seharusnya 'the last Saturday'",
+      "Tidak ada kesalahan"
+    ],
+    "correct": 0,
+    "explain": "Setelah 'Did' dalam kalimat tanya, verb harus kembali ke bentuk dasar (V1) karena sinyal masa lalu sudah dipegang oleh 'did'. Yang benar: 'Did you go to the party last Saturday?'"
+  }
+]

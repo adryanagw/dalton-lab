@@ -1,0 +1,260 @@
+[
+  {
+    "q": "Manakah yang termasuk <b>Full/Lexical Verb</b>?",
+    "opts": ["is", "do (sebagai auxiliary)", "run", "have (sebagai auxiliary)"],
+    "correct": 2,
+    "explain": "Full/lexical verb punya arti sendiri yang lengkap dan bisa berdiri sendiri sebagai verb satu-satunya di kalimat — 'run' (berlari) memenuhi itu. 'is', 'do', dan 'have' di sini dipakai sebagai auxiliary, yang tidak bawa arti penting sendiri."
+  },
+  {
+    "q": "Manakah yang termasuk kelompok <b>Modal Auxiliary Verb</b>?",
+    "opts": ["be", "must", "do", "have"],
+    "correct": 1,
+    "explain": "Modal auxiliary verbs meliputi can, could, may, might, will, would, shall, should, must — kelompok ini selalu nambahin makna (kemampuan, izin, keharusan, dst.) ke verb utama. Be, do, dan have adalah primary auxiliary verbs, kelompok yang berbeda."
+  },
+  {
+    "q": "Apa fungsi utama <b>primary auxiliary verbs</b> (be, do, have)?",
+    "opts": ["Menambahkan makna kemampuan/izin ke verb lain", "Membantu bentuk tenses, kalimat tanya, dan kalimat negatif, tanpa bawa arti penting sendiri", "Selalu berarti 'memiliki'", "Menggantikan kata benda dalam kalimat"],
+    "correct": 1,
+    "explain": "Primary auxiliary verbs (be, do, have) tugasnya membantu pembentukan tenses, kalimat tanya, dan kalimat negatif — ketika berperan sebagai auxiliary, mereka tidak bawa arti penting tersendiri (beda dengan modal yang selalu nambahin makna)."
+  },
+  {
+    "q": "Lengkapi: <i>___ she coming to the party?</i> (Apakah dia datang ke pestanya?)",
+    "opts": ["Do", "Does", "Is", "Have"],
+    "correct": 2,
+    "explain": "'She is coming' (Present Continuous) — untuk membentuk kalimat tanya dari continuous tense, auxiliary 'be' (di sini 'is') diinversi ke depan subjek: 'Is she coming?'."
+  },
+  {
+    "q": "Ubah menjadi kalimat negatif: <i>He likes coffee.</i>",
+    "opts": ["He not likes coffee.", "He isn't like coffee.", "He doesn't like coffee.", "He don't likes coffee."],
+    "correct": 2,
+    "explain": "Simple Present, subjek orang ketiga tunggal (he), butuh do-support dengan 'doesn't', dan verb utama wajib balik ke bentuk dasar (V1): 'He doesn't like coffee.' bukan 'likes' (dobel penanda) atau 'don't' (salah subjek)."
+  },
+  {
+    "q": "Lengkapi: <i>I ___ finished my homework yet.</i> (Saya belum menyelesaikan PR saya.)",
+    "opts": ["don't", "haven't", "am not", "wasn't"],
+    "correct": 1,
+    "explain": "'Finished' di sini adalah Verb-3 (past participle) setelah auxiliary — konteks 'belum' menunjukkan Present Perfect negatif, yang dibentuk dengan 'haven't' + Verb-3: 'I haven't finished my homework yet.'."
+  },
+  {
+    "q": "Lengkapi: <i>___ they left for the airport?</i> (Apakah mereka sudah berangkat ke bandara?)",
+    "opts": ["Do", "Are", "Have", "Did"],
+    "correct": 2,
+    "explain": "'Left' adalah Verb-3, menunjukkan Present Perfect — kalimat tanya Present Perfect dibentuk dengan inversion auxiliary 'have/has' ke depan subjek: 'Have they left for the airport?'."
+  },
+  {
+    "q": "Dalam kalimat <i>I HAVE a car</i>, apa status kata 'have'?",
+    "opts": ["Primary auxiliary verb", "Modal auxiliary verb", "Full/lexical verb", "Bukan verb sama sekali"],
+    "correct": 2,
+    "explain": "Di sini 'have' berarti 'memiliki' dan berdiri sendiri sebagai satu-satunya verb di kalimat, membawa arti penuh — jadi ini full/lexical verb, bukan auxiliary."
+  },
+  {
+    "q": "Dalam kalimat <i>I HAVE finished</i>, apa status kata 'have'?",
+    "opts": ["Full/lexical verb", "Modal auxiliary verb", "Primary auxiliary verb", "Linking verb"],
+    "correct": 2,
+    "explain": "Di sini 'have' tidak berarti 'memiliki' apa-apa — dia hanya membantu membentuk Present Perfect, dan verb utamanya adalah 'finished'. Ini fungsi auxiliary."
+  },
+  {
+    "q": "Dalam kalimat <i>She IS a teacher</i>, apa status kata 'is'?",
+    "opts": ["Primary auxiliary verb", "Full verb (linking verb)", "Modal auxiliary verb", "Verb bantu untuk continuous tense"],
+    "correct": 1,
+    "explain": "'Is' di sini menghubungkan subjek 'she' dengan pelengkap 'a teacher' dan menjadi verb satu-satunya di kalimat — ini fungsi full verb (linking verb), bukan auxiliary, karena tidak ada verb lain yang dibantunya."
+  },
+  {
+    "q": "Dalam kalimat <i>She IS working</i>, apa status kata 'is'?",
+    "opts": ["Full verb (linking verb)", "Modal auxiliary verb", "Primary auxiliary verb", "Objek kalimat"],
+    "correct": 2,
+    "explain": "'Is' di sini membantu membentuk Present Continuous ('is' + V-ing); verb utamanya adalah 'working'. Ini fungsi auxiliary."
+  },
+  {
+    "q": "Manakah kalimat yang menggunakan 'do' sebagai <b>full verb</b>, bukan auxiliary?",
+    "opts": ["Do you like it?", "I don't understand.", "He does his homework every day.", "Does she play the piano?"],
+    "correct": 2,
+    "explain": "'Does his homework' — di sini 'does' berarti 'mengerjakan/melakukan' dan berdiri sendiri sebagai verb utama kalimat, bukan membantu verb lain. Di tiga opsi lain, 'do/don't/does' berfungsi sebagai auxiliary yang membantu bentuk tanya/negatif."
+  },
+  {
+    "q": "Apa fungsi 'do' dalam kalimat <i>I DO like it — I just don't have time to say so.</i>?",
+    "opts": ["Membentuk kalimat tanya", "Membentuk kalimat negatif", "Menambahkan penekanan (emphasis)", "Membentuk Present Perfect"],
+    "correct": 2,
+    "explain": "'I DO like it' menggunakan 'do' sebagai penekanan (emphatic do) untuk menegaskan bahwa sesuatu itu benar, biasanya menekankan kontras dengan dugaan sebaliknya — bukan untuk membentuk tanya, negatif, atau perfect tense."
+  },
+  {
+    "q": "Pilih bentuk yang benar: <i>Last night, my mother ___ (cook) fried rice.</i> (bentuk negatif)",
+    "opts": ["didn't cooked", "didn't cook", "wasn't cook", "not cooked"],
+    "correct": 1,
+    "explain": "Simple Past negatif dibentuk dengan 'did not/didn't' + Verb-1 (bentuk dasar) — begitu 'didn't' muncul, verb utama wajib balik ke V1: 'didn't cook', bukan 'didn't cooked' (dobel penanda masa lalu)."
+  },
+  {
+    "q": "Kenapa auxiliary 'do' hanya dipakai untuk Simple Present dan Simple Past, tidak untuk tenses lain?",
+    "opts": ["Karena aturan sejarah bahasa Inggris kuno yang tidak berlaku lagi sekarang", "Karena Simple Present dan Simple Past tidak punya auxiliary bawaan, jadi 'do' 'dipanggil' untuk mengisi slot itu — sementara continuous sudah punya 'be' dan perfect sudah punya 'have'", "Karena 'do' hanya bisa dipakai dengan subjek tunggal", "Karena Simple Present dan Simple Past selalu memerlukan penekanan"],
+    "correct": 1,
+    "explain": "Continuous tenses sudah punya auxiliary bawaan ('be'), perfect tenses sudah punya auxiliary bawaan ('have') — tapi Simple Present/Past tidak punya auxiliary sama sekali dalam kalimat positifnya, jadi ketika butuh bentuk tanya/negatif, 'do' hadir untuk mengisi slot auxiliary itu."
+  },
+  {
+    "q": "Spot the error: <i>She doesn't goes to school on Sundays.</i>",
+    "opts": ["Kalimatnya sudah benar", "'doesn't' seharusnya 'don't'", "'goes' seharusnya 'go' — dobel penanda orang ketiga tunggal", "'to school' seharusnya 'at school'"],
+    "correct": 2,
+    "explain": "'Doesn't' sudah memegang tanda orang ketiga tunggal (does), jadi verb utamanya wajib balik ke V1 (bentuk dasar): 'doesn't go', bukan 'doesn't goes' — ini kesalahan dobel penanda tense/subjek yang sangat umum."
+  },
+  {
+    "q": "Spot the error: <i>He don't like it.</i>",
+    "opts": ["Kalimatnya sudah benar", "'don't' seharusnya 'doesn't' karena subjek 'he' orang ketiga tunggal", "'like' seharusnya 'likes'", "'it' seharusnya dihilangkan"],
+    "correct": 1,
+    "explain": "Subjek 'he' (orang ketiga tunggal) wajib memakai auxiliary 'doesn't', bukan 'don't' — 'don't' hanya untuk I/you/we/they. Verb utamanya sendiri sudah benar tetap V1 ('like')."
+  },
+  {
+    "q": "Spot the error: <i>You like it?</i> sebagai kalimat tanya baku.",
+    "opts": ["Kalimatnya sudah benar dan baku", "Seharusnya 'Do you like it?' — kalimat tanya baku butuh auxiliary di depan subjek", "Seharusnya 'Are you like it?'", "Seharusnya 'You do like it?'"],
+    "correct": 1,
+    "explain": "Bahasa Indonesia cukup mengubah intonasi untuk membuat kalimat tanya, tapi bahasa Inggris butuh auxiliary (do-support atau inversion) di depan subjek untuk bentuk tanya baku: 'Do you like it?'."
+  },
+  {
+    "q": "Spot the error: <i>I must to go now.</i>",
+    "opts": ["Kalimatnya sudah benar", "Seharusnya 'I must going now.'", "Seharusnya 'I must go now.' — modal auxiliary langsung diikuti V1 tanpa 'to'", "Seharusnya 'I am must go now.'"],
+    "correct": 2,
+    "explain": "Modal auxiliary verbs (must, can, should, dst.) selalu langsung diikuti Verb-1 tanpa 'to' — 'must go', bukan 'must to go'. Detail lengkap tiap modal dibahas di Bab 12."
+  },
+  {
+    "q": "Lengkapi: <i>___ you studying at 8 PM last night?</i> (Apakah kamu sedang belajar jam 8 malam kemarin?)",
+    "opts": ["Do", "Did", "Were", "Have"],
+    "correct": 2,
+    "explain": "'Studying' menunjukkan continuous tense, konteks 'last night' menunjukkan masa lalu — jadi Past Continuous, dibentuk tanya dengan inversion 'was/were' + subjek + V-ing: 'Were you studying...?'."
+  },
+  {
+    "q": "Manakah kalimat yang menggunakan 'have' sebagai <b>auxiliary</b> (bukan full verb)?",
+    "opts": ["I have a new phone.", "She has a headache.", "They have finished the project.", "We have breakfast at 7 AM."],
+    "correct": 2,
+    "explain": "'Have finished' — 'have' di sini diikuti Verb-3 ('finished') dan membantu bentuk Present Perfect, tidak berarti 'memiliki' apa-apa. Tiga opsi lain memakai 'have/has' sebagai full verb yang berarti 'memiliki/mengalami/makan'."
+  },
+  {
+    "q": "Manakah kalimat yang menggunakan 'be' sebagai <b>auxiliary</b> (bukan full verb)?",
+    "opts": ["He is a doctor.", "They are happy.", "I am tired.", "She is working on a project."],
+    "correct": 3,
+    "explain": "'Is working' — 'is' di sini diikuti Verb-ing ('working') dan membantu bentuk Present Continuous. Tiga opsi lain memakai 'be' sebagai linking verb (full verb) yang menghubungkan subjek ke pelengkap kata benda/sifat."
+  },
+  {
+    "q": "Apa yang menandakan sebuah kalimat memakai 'be/do/have' sebagai auxiliary, bukan full verb?",
+    "opts": ["Kalimatnya pendek", "Ada verb LAIN di belakangnya (biasanya -ing atau V3) yang menjadi verb utama sebenarnya", "Subjeknya orang pertama", "Kalimatnya dalam bentuk tanya"],
+    "correct": 1,
+    "explain": "Trik cepatnya: kalau ada verb kedua (bentuk -ing untuk continuous, atau V3 untuk perfect/passive) di kalimat yang sama, verb pertama (be/do/have) adalah auxiliary dan verb kedua itu verb utamanya. Kalau be/do/have berdiri sendiri tanpa verb lain, dia full verb."
+  },
+  {
+    "q": "Ubah menjadi kalimat tanya: <i>They have left for the airport.</i>",
+    "opts": ["Do they have left for the airport?", "Have they left for the airport?", "Are they left for the airport?", "Did they have left for the airport?"],
+    "correct": 1,
+    "explain": "Present Perfect ('have' + V3), kalimat tanya dibentuk dengan inversion — pindahkan auxiliary 'have' ke depan subjek: 'Have they left for the airport?'."
+  },
+  {
+    "q": "Kenapa kalimat <i>Did she watched a movie?</i> salah?",
+    "opts": ["'Did' seharusnya 'do'", "Verb setelah 'did' harus V1 (bentuk dasar), bukan V2 — 'watched' seharusnya 'watch'", "'she' seharusnya diganti dengan 'her'", "Kalimatnya sudah benar"],
+    "correct": 1,
+    "explain": "Begitu 'did' muncul di kalimat, dia sudah memegang tanda masa lalu — verb utama wajib balik ke V1 (bentuk dasar): 'Did she watch a movie?', bukan 'watched' (dobel penanda masa lalu)."
+  },
+  {
+    "q": "Klasifikasikan verb yang digarisbawahi: <i>She <u>can</u> speak three languages.</i>",
+    "opts": ["Full/lexical verb", "Primary auxiliary verb", "Modal auxiliary verb", "Linking verb"],
+    "correct": 2,
+    "explain": "'Can' menambahkan makna kemampuan ke verb utama 'speak', diikuti V1 tanpa 'to' — ini ciri khas modal auxiliary verb."
+  },
+  {
+    "q": "Manakah pernyataan yang BENAR tentang modal auxiliary verbs?",
+    "opts": ["Bentuknya berubah sesuai subjek, misalnya 'cans' untuk subjek tunggal", "Selalu diikuti 'to' + Verb-1", "Selalu diikuti Verb-1 (bentuk dasar) tanpa 'to', dan bentuknya tidak berubah sesuai subjek", "Tidak bisa dipakai untuk membentuk kalimat tanya"],
+    "correct": 2,
+    "explain": "Modal auxiliary verbs selalu diikuti V1 tanpa 'to' (bukan 'can to swim'), dan bentuknya tetap sama untuk semua subjek (tidak ada 'cans', 'musts') — beda dengan primary auxiliary yang berubah sesuai subjek (is/am/are, do/does)."
+  },
+  {
+    "q": "Lengkapi: <i>___ she finished the report?</i> (Apakah dia sudah menyelesaikan laporannya?)",
+    "opts": ["Does", "Is", "Has", "Did"],
+    "correct": 2,
+    "explain": "'Finished' adalah Verb-3, subjek 'she' orang ketiga tunggal, konteks 'sudah' menunjukkan Present Perfect — auxiliary yang dipakai adalah 'has': 'Has she finished the report?'."
+  },
+  {
+    "q": "Manakah kalimat negatif yang BENAR dari <i>We had eaten before he called.</i>?",
+    "opts": ["We not had eaten before he called.", "We didn't had eaten before he called.", "We hadn't eaten before he called.", "We haven't ate before he called."],
+    "correct": 2,
+    "explain": "Past Perfect negatif dibentuk dengan 'had not/hadn't' + Verb-3: 'We hadn't eaten before he called.' — bukan 'didn't had' (dobel auxiliary/salah bentuk) atau 'haven't ate' (salah tense dan salah bentuk verb)."
+  },
+  {
+    "q": "Spot the error: <i>While my brother were sleeping, I heared a strange noise.</i>",
+    "opts": ["Kalimatnya sudah benar", "'were' seharusnya 'was' (subjek tunggal), dan 'heared' seharusnya 'heard' (irregular verb)", "'While' seharusnya 'When'", "'sleeping' seharusnya 'sleep'"],
+    "correct": 1,
+    "explain": "Subjek 'my brother' tunggal → auxiliary 'be'-nya harus 'was', bukan 'were'. Dan 'hear' adalah irregular verb, bentuk V2-nya 'heard', bukan hasil tambah -ed ('heared')."
+  },
+  {
+    "q": "Dalam kalimat <i>He does his homework every day, doesn't he?</i>, sebutkan status kedua kata 'does'.",
+    "opts": ["Keduanya full verb", "Keduanya auxiliary verb", "'does' pertama = full verb, 'doesn't' (tag question) = auxiliary verb", "'does' pertama = auxiliary, 'doesn't' = full verb"],
+    "correct": 2,
+    "explain": "'Does his homework' — 'does' pertama berarti 'mengerjakan' dan berdiri sendiri sebagai verb utama (full verb). 'doesn't he' adalah tag question yang memakai 'do' sebagai auxiliary untuk mewakili verb utama 'does' di klausa sebelumnya."
+  },
+  {
+    "q": "Manakah kalimat yang paling tepat menggunakan 'do' untuk penekanan (emphasis)?",
+    "opts": ["Do you study every day?", "I don't study on weekends.", "I DO study every day, even though my grades don't show it.", "Does she study English?"],
+    "correct": 2,
+    "explain": "Emphatic 'do' dipakai pada kalimat positif untuk menegaskan kebenaran sesuatu, biasanya melawan dugaan sebaliknya — 'I DO study every day' menegaskan fakta itu benar meski terlihat sebaliknya. Opsi lain adalah bentuk tanya/negatif biasa."
+  },
+  {
+    "q": "Kenapa 'must to go' pada kalimat <i>I must to go now</i> salah, sementara 'have to go' pada <i>I have to go now</i> benar?",
+    "opts": ["Keduanya sama-sama salah", "'must' adalah modal auxiliary (tidak pakai 'to'), sedangkan 'have to' adalah ekspresi tersendiri yang memang membutuhkan 'to', bukan modal auxiliary murni", "'have to' sebenarnya juga salah tapi biasa dipakai orang", "'must' hanya dipakai dalam kalimat negatif"],
+    "correct": 1,
+    "explain": "'Must' termasuk modal auxiliary sejati yang selalu langsung diikuti V1 tanpa 'to'. 'Have to' adalah ekspresi semi-modal yang maknanya mirip 'must' (keharusan) tapi secara struktur berbeda — dia memang membutuhkan 'to' + V1. Ini dibahas lebih detail di Bab 12."
+  },
+  {
+    "q": "Manakah yang merupakan contoh <b>primary auxiliary verb</b> yang membentuk passive voice?",
+    "opts": ["The cake was made by my mother.", "She can bake a cake.", "I have baked a cake.", "Do you bake cakes?"],
+    "correct": 0,
+    "explain": "'Was made' — auxiliary 'be' (was) + Verb-3 (made) membentuk passive voice. Opsi lain menunjukkan modal ('can'), perfect ('have baked'), dan do-support tanya."
+  },
+  {
+    "q": "Klasifikasikan verb: <i>They <u>are</u> playing football in the park.</i>",
+    "opts": ["Full verb (linking verb)", "Primary auxiliary verb (membentuk Present Continuous)", "Modal auxiliary verb", "Verb dalam bentuk Simple Present"],
+    "correct": 1,
+    "explain": "'Are' diikuti Verb-ing ('playing') — ini fungsi auxiliary yang membantu membentuk Present Continuous, bukan linking verb karena ada verb utama lain di belakangnya."
+  },
+  {
+    "q": "Lengkapi bentuk negatif: <i>I ___ studying at 8 PM last night.</i> (Saya tidak sedang belajar jam 8 malam kemarin.)",
+    "opts": ["don't", "didn't", "wasn't", "haven't"],
+    "correct": 2,
+    "explain": "Past Continuous negatif dibentuk dengan 'was/were + not' + Verb-ing — subjek 'I' pakai 'wasn't': 'I wasn't studying at 8 PM last night.'."
+  },
+  {
+    "q": "Manakah pasangan pertanyaan-jawaban yang paling tepat menunjukkan perbedaan auxiliary 'have' vs full verb 'have'?",
+    "opts": ["'Have you finished?' (auxiliary) vs 'Do you have a pen?' (full verb, dibantu do-support karena Simple Present)", "'Have you finished?' (full verb) vs 'Do you have a pen?' (auxiliary)", "Keduanya sama-sama auxiliary", "Keduanya sama-sama full verb"],
+    "correct": 0,
+    "explain": "'Have you finished?' — 'have' langsung diinversi ke depan subjek karena dia auxiliary Present Perfect. 'Do you have a pen?' — 'have' di sini full verb (berarti 'punya'), jadi kalimat tanyanya butuh do-support tambahan ('do'), bukan inversion 'have' itu sendiri."
+  },
+  {
+    "q": "Spot the error: <i>Does she goes to school by bus?</i>",
+    "opts": ["Kalimatnya sudah benar", "'Does' seharusnya 'Do'", "'goes' seharusnya 'go' — dobel penanda orang ketiga tunggal setelah auxiliary 'does'", "'by bus' seharusnya 'with bus'"],
+    "correct": 2,
+    "explain": "'Does' sudah memegang tanda orang ketiga tunggal, jadi verb setelahnya wajib balik ke V1: 'Does she go to school by bus?', bukan 'goes'."
+  },
+  {
+    "q": "Lengkapi: <i>___ they studying English yesterday afternoon?</i> (Apakah mereka sedang belajar Bahasa Inggris kemarin sore?)",
+    "opts": ["Do", "Did", "Were", "Have"],
+    "correct": 2,
+    "explain": "'Studying' menandakan continuous, 'yesterday afternoon' menandakan masa lalu → Past Continuous, kalimat tanya dibentuk dengan inversion 'was/were': subjek jamak 'they' pakai 'were': 'Were they studying...?'."
+  },
+  {
+    "q": "Manakah kalimat yang secara struktur BENAR?",
+    "opts": ["She don't like coffee.", "She doesn't likes coffee.", "She doesn't like coffee.", "She not like coffee."],
+    "correct": 2,
+    "explain": "Subjek tunggal orang ketiga butuh 'doesn't', dan verb setelahnya wajib V1 (bentuk dasar): 'She doesn't like coffee.' — opsi lain salah subjek-auxiliary ('don't'), dobel penanda ('doesn't likes'), atau kehilangan auxiliary ('not like')."
+  },
+  {
+    "q": "Dalam kalimat <i>Has she ever visited Bali?</i>, apa fungsi 'has' di sini?",
+    "opts": ["Full verb yang berarti 'memiliki'", "Primary auxiliary yang membentuk kalimat tanya Present Perfect", "Modal auxiliary", "Linking verb"],
+    "correct": 1,
+    "explain": "'Has' diikuti Verb-3 ('visited') dan diinversi ke depan subjek untuk membentuk kalimat tanya Present Perfect — ini fungsi auxiliary, bukan full verb 'memiliki'."
+  },
+  {
+    "q": "Manakah kalimat yang benar menggabungkan makna 'must' (keharusan) tanpa kesalahan modal?",
+    "opts": ["You must to finish this today.", "You must finishing this today.", "You must finish this today.", "You musts finish this today."],
+    "correct": 2,
+    "explain": "Modal 'must' langsung diikuti V1 tanpa 'to' dan tanpa -ing, serta bentuknya tidak berubah sesuai subjek: 'You must finish this today.' adalah satu-satunya bentuk yang benar."
+  },
+  {
+    "q": "Apa perbedaan utama antara primary auxiliary verb dan modal auxiliary verb dari segi makna?",
+    "opts": ["Tidak ada perbedaan, keduanya sama saja", "Primary auxiliary (be/do/have) umumnya tidak bawa arti tambahan saat berfungsi sebagai auxiliary, sedangkan modal auxiliary selalu menambahkan makna (kemampuan, izin, keharusan, dst.) ke verb utama", "Modal auxiliary tidak bisa dipakai dalam kalimat negatif", "Primary auxiliary hanya dipakai untuk kalimat tanya"],
+    "correct": 1,
+    "explain": "Ini pembeda konseptual utama antara dua kelompok auxiliary tersebut: be/do/have sebagai auxiliary murni membantu struktur tata bahasa (tense/tanya/negatif) tanpa nambah makna baru, sementara modal auxiliary (can, must, dst.) selalu menyisipkan makna tambahan ke verb utamanya."
+  }
+]

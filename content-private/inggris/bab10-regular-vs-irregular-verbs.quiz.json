@@ -1,0 +1,308 @@
+[
+  {
+    "q": "Apa fungsi V3 (past participle) dalam kalimat Bahasa Inggris?",
+    "opts": ["Berdiri sendiri di Simple Past", "Selalu menempel pada auxiliary have/has/had atau be (Passive Voice)", "Dipakai di Simple Present untuk subjek he/she/it", "Dipakai setelah modal verb seperti can/will"],
+    "correct": 1,
+    "explain": "V3 tidak pernah berdiri sendiri — ia selalu muncul bersama auxiliary have/has/had (Present/Past Perfect) atau be (Passive Voice). V2 justru yang berdiri sendiri di Simple Past tanpa auxiliary."
+  },
+  {
+    "q": "Bentuk V1 dari sebuah verb dipakai di dua situasi utama, yaitu ...",
+    "opts": ["Simple Past dan Present Perfect", "Simple Present (+s/es untuk he/she/it) dan setelah modal verb", "Past Perfect dan Passive Voice", "Present Continuous dan Past Continuous"],
+    "correct": 1,
+    "explain": "V1 (base form) dipakai di Simple Present (dengan tambahan -s/-es untuk subjek tunggal orang ketiga) dan setelah modal verb (can, will, must, dst.), misalnya 'She can go' bukan 'She can goes'."
+  },
+  {
+    "q": "walk → walked, play → played. Aturan ejaan -ed apa yang berlaku di kedua verb ini?",
+    "opts": ["Ganti -y jadi -i lalu tambah -ed", "Gandakan konsonan terakhir lalu tambah -ed", "Tambah -ed langsung (pola default)", "Tambah -d saja karena berakhiran -e"],
+    "correct": 2,
+    "explain": "walk dan play tidak masuk tiga pola khusus (bukan berakhiran -e, bukan konsonan+y, bukan CVC satu suku kata) sehingga memakai pola default: tambah -ed langsung."
+  },
+  {
+    "q": "live → lived, dance → danced. Kenapa cukup ditambah -d, bukan -ed?",
+    "opts": ["Karena verb-nya irregular", "Karena verb-nya berakhiran huruf -e, jadi tinggal tambah -d saja (tidak dobel -e)", "Karena verb-nya CVC satu suku kata", "Karena verb-nya berakhiran konsonan + y"],
+    "correct": 1,
+    "explain": "Verb yang sudah berakhiran -e hanya perlu ditambah -d, bukan -ed, supaya tidak terjadi dobel -e (bukan 'liveed' tapi 'lived')."
+  },
+  {
+    "q": "study → studied, carry → carried. Apa aturan ejaan yang berlaku?",
+    "opts": ["Tambah -ed langsung", "Ganti -y jadi -i, lalu tambah -ed (karena huruf sebelum -y adalah konsonan)", "Gandakan konsonan terakhir", "Tambah -d saja"],
+    "correct": 1,
+    "explain": "Kalau huruf sebelum -y adalah konsonan, -y diganti -i lalu ditambah -ed: study → studied, carry → carried."
+  },
+  {
+    "q": "Kenapa play → played TIDAK mengikuti aturan 'ganti -y jadi -i', padahal sama-sama berakhiran -y seperti study?",
+    "opts": ["Karena play adalah irregular verb", "Karena huruf sebelum -y pada 'play' adalah vokal (a), bukan konsonan, jadi -y tetap dan langsung tambah -ed", "Karena play satu suku kata sedangkan study dua suku kata", "Karena play berakhiran konsonan ganda"],
+    "correct": 1,
+    "explain": "Aturan ganti -y jadi -i hanya berlaku jika huruf sebelum -y adalah konsonan. Pada 'play', huruf sebelum -y adalah 'a' (vokal), jadi aturannya justru tambah -ed langsung: played, bukan plaied."
+  },
+  {
+    "q": "stop → stopped, plan → planned. Apa nama pola verb ini, dan apa yang terjadi pada ejaannya?",
+    "opts": ["Pola CVC (konsonan-vokal-konsonan) satu suku kata — konsonan terakhir digandakan sebelum tambah -ed", "Pola berakhiran -e — tambah -d saja", "Pola konsonan + y — ganti jadi -i", "Pola default — tambah -ed langsung tanpa perubahan"],
+    "correct": 0,
+    "explain": "stop dan plan adalah verb satu suku kata dengan pola konsonan-vokal-konsonan (CVC): huruf terakhirnya harus digandakan dulu sebelum ditambah -ed, supaya bunyi vokalnya tetap pendek — stopped, planned."
+  },
+  {
+    "q": "Kenapa look → looked TIDAK menggandakan huruf 'k' menjadi 'lookked'?",
+    "opts": ["Karena look adalah irregular verb", "Karena polanya bukan CVC murni — ada dua huruf vokal (oo), bukan satu vokal tunggal sebelum konsonan terakhir", "Karena look berakhiran huruf -e", "Karena aturan CVC hanya berlaku untuk verb dua suku kata"],
+    "correct": 1,
+    "explain": "Aturan gandakan konsonan hanya berlaku untuk pola konsonan-VOKAL TUNGGAL-konsonan. 'look' punya vokal ganda (oo), bukan CVC murni, jadi cukup tambah -ed biasa: looked."
+  },
+  {
+    "q": "chat → chatted, grab → grabbed. Verb ini digandakan konsonannya karena ...",
+    "opts": ["Berakhiran -e", "Satu suku kata dengan pola konsonan-vokal-konsonan (CVC)", "Berakhiran konsonan + y", "Termasuk irregular verb kelompok C"],
+    "correct": 1,
+    "explain": "chat (c-h-a-t) dan grab (g-r-a-b) satu suku kata dengan pola CVC (huruf terakhir konsonan, didahului satu vokal, didahului satu konsonan) — konsonan terakhirnya digandakan: chatted, grabbed."
+  },
+  {
+    "q": "Manakah pasangan V1 → V2 yang ejaannya SALAH secara aturan regular verb?",
+    "opts": ["carry → carried", "hope → hoped", "stop → stoped", "watch → watched"],
+    "correct": 2,
+    "explain": "'stop' adalah pola CVC satu suku kata, konsonan terakhirnya harus digandakan: stopped, bukan stoped. 'stoped' dengan satu -p akan terbaca seperti punya vokal panjang, salah secara aturan ejaan."
+  },
+  {
+    "q": "Akhiran -ed pada 'walked' dibaca dengan bunyi apa?",
+    "opts": ["/t/", "/d/", "/ɪd/", "/ed/ seperti dieja"],
+    "correct": 0,
+    "explain": "'walk' berakhiran bunyi konsonan tak bersuara /k/, sehingga -ed dibaca /t/: walked dibaca 'wawkt'."
+  },
+  {
+    "q": "Akhiran -ed pada 'played' dibaca dengan bunyi apa?",
+    "opts": ["/t/", "/d/", "/ɪd/", "Tidak dibaca sama sekali"],
+    "correct": 1,
+    "explain": "'play' berakhiran bunyi vokal (bersuara), sehingga -ed dibaca /d/: played dibaca 'pleyd'."
+  },
+  {
+    "q": "Akhiran -ed pada 'wanted' dibaca dengan bunyi apa, dan kenapa beda dari dua kelompok lainnya?",
+    "opts": ["/t/, karena 'want' berakhiran bunyi tak bersuara", "/d/, karena 'want' berakhiran bunyi bersuara", "/ɪd/, karena 'want' berakhiran bunyi 't' — -ed jadi suku kata tambahan", "/ɪd/, karena 'want' adalah irregular verb"],
+    "correct": 2,
+    "explain": "Verb yang berakhiran bunyi 't' atau 'd' membuat -ed dibaca sebagai suku kata tambahan, /ɪd/ — 'wanted' punya dua suku kata (want-ed), beda dari kelompok /t/ dan /d/ yang jumlah suku katanya tidak bertambah."
+  },
+  {
+    "q": "Manakah dari verb berikut yang -ed-nya dibaca /ɪd/?",
+    "opts": ["watched", "cleaned", "decided", "kissed"],
+    "correct": 2,
+    "explain": "'decide' berakhiran bunyi 'd', sehingga -ed-nya dibaca /ɪd/ sebagai suku kata tambahan: decided (de-ci-ded). watched dan kissed dibaca /t/ (berakhiran bunyi tak bersuara), cleaned dibaca /d/ (berakhiran bunyi bersuara)."
+  },
+  {
+    "q": "Kelompok verb 'miss, laugh, help, kiss' semuanya membentuk -ed dengan bunyi ...",
+    "opts": ["/t/, karena semua berakhiran bunyi konsonan tak bersuara", "/d/, karena semua berakhiran bunyi vokal", "/ɪd/, karena semua berakhiran bunyi t/d", "Berbeda-beda tergantung jumlah suku kata"],
+    "correct": 0,
+    "explain": "miss (/s/), laugh (/f/), help (/p/), kiss (/s/) semuanya berakhiran bunyi konsonan tak bersuara, sehingga -ed-nya sama-sama dibaca /t/: missed, laughed, helped, kissed."
+  },
+  {
+    "q": "Manakah verb yang pengucapan -ed-nya BERBEDA dari tiga lainnya: 'called, listened, learned, watched'?",
+    "opts": ["called", "listened", "learned", "watched"],
+    "correct": 3,
+    "explain": "'watch' berakhiran bunyi tak bersuara /ch/, jadi -ed-nya dibaca /t/ (watched). Tiga lainnya (called, listened, learned) berakhiran bunyi bersuara sehingga -ed-nya dibaca /d/."
+  },
+  {
+    "q": "Apa definisi paling tepat dari irregular verb?",
+    "opts": ["Verb yang V2-nya selalu ditambah -ed dengan ejaan khusus", "Verb yang V2 dan/atau V3-nya tidak mengikuti aturan -ed sama sekali, bentuknya harus dihafal", "Verb yang hanya dipakai di Simple Present", "Verb yang tidak punya bentuk V3"],
+    "correct": 1,
+    "explain": "Irregular verb adalah verb yang bentuk V2 dan/atau V3-nya berubah secara tidak beraturan (bukan hasil tambah -ed) — satu-satunya cara menguasainya adalah menghafal bentuknya."
+  },
+  {
+    "q": "Kelompok irregular verb 'cut, put, hit, hurt, let' punya ciri khas apa?",
+    "opts": ["V1, V2, dan V3 semuanya sama persis, tidak ada perubahan bentuk", "V2 dan V3 sama, tapi beda dari V1", "Ketiga bentuknya berbeda semua", "Semuanya berakhiran -ed"],
+    "correct": 0,
+    "explain": "cut-cut-cut, put-put-put, hit-hit-hit, hurt-hurt-hurt, let-let-let adalah Kelompok A: V1=V2=V3, tidak ada perubahan bentuk sama sekali."
+  },
+  {
+    "q": "Apa bentuk V2 dan V3 dari 'set'?",
+    "opts": ["set — set", "seted — seted", "sat — sat", "setted — setted"],
+    "correct": 0,
+    "explain": "'set' termasuk Kelompok A (V1=V2=V3) — bentuknya tetap 'set' di semua posisi: set-set-set."
+  },
+  {
+    "q": "Apa bentuk V2 dan V3 dari 'cost'?",
+    "opts": ["costed — costed", "cost — cost", "costen — costed", "cast — cast"],
+    "correct": 1,
+    "explain": "'cost' (berharga/memakan biaya) adalah Kelompok A: cost-cost-cost, tidak berubah bentuk."
+  },
+  {
+    "q": "Apa bentuk V2 dari 'buy'?",
+    "opts": ["buyed", "bought", "boughted", "buy"],
+    "correct": 1,
+    "explain": "'buy' irregular Kelompok B (V2=V3, beda dari V1): buy-bought-bought."
+  },
+  {
+    "q": "Apa bentuk V3 dari 'bring', dan sama atau beda dengan V2-nya?",
+    "opts": ["brang, beda dengan V2", "brought, sama dengan V2 (brought)", "bringed, beda dengan V2", "brung, sama dengan V2"],
+    "correct": 1,
+    "explain": "'bring' Kelompok B: V2 dan V3-nya sama-sama 'brought' — bring-brought-brought."
+  },
+  {
+    "q": "Lengkapi: I have already ___ (think) about this problem carefully.",
+    "opts": ["thinked", "thought", "thinking", "think"],
+    "correct": 1,
+    "explain": "Ada 'have' → butuh V3. 'think' Kelompok B, V3-nya 'thought': I have already thought about this problem carefully."
+  },
+  {
+    "q": "Apa bentuk V2 dari 'catch'?",
+    "opts": ["catched", "caught", "catchen", "cought"],
+    "correct": 1,
+    "explain": "'catch' irregular Kelompok B: catch-caught-caught."
+  },
+  {
+    "q": "Lengkapi: The teacher ___ (teach) us grammar yesterday, and she has ___ (teach) at this school for ten years.",
+    "opts": ["taught / taught", "teached / teached", "taught / teached", "teached / taught"],
+    "correct": 0,
+    "explain": "Kata pertama tanpa auxiliary + signal word 'yesterday' → V2 'taught'. Kata kedua ada 'has' → V3, dan karena 'teach' Kelompok B (V2=V3), jawabannya sama: 'taught'."
+  },
+  {
+    "q": "Apa bentuk V2 dan V3 dari 'find'?",
+    "opts": ["find — found", "found — found", "finded — finded", "found — finded"],
+    "correct": 1,
+    "explain": "'find' Kelompok B: find-found-found, V2 sama dengan V3."
+  },
+  {
+    "q": "Apa bentuk V2 dari 'have'?",
+    "opts": ["haved", "have", "had", "haven"],
+    "correct": 2,
+    "explain": "'have' irregular Kelompok B: have-had-had."
+  },
+  {
+    "q": "Apa bentuk V2 dan V3 dari 'sell'?",
+    "opts": ["selled — selled", "sold — sold", "sell — sold", "sold — sellen"],
+    "correct": 1,
+    "explain": "'sell' Kelompok B: sell-sold-sold."
+  },
+  {
+    "q": "Lengkapi: My father has ___ (hold) that position since 2015.",
+    "opts": ["held", "holded", "holden", "hold"],
+    "correct": 0,
+    "explain": "Ada 'has' → butuh V3. 'hold' Kelompok B, V3-nya 'held': has held."
+  },
+  {
+    "q": "Apa bentuk V2 dari 'leave'?",
+    "opts": ["leaved", "left", "leaven", "leaves"],
+    "correct": 1,
+    "explain": "'leave' Kelompok B: leave-left-left."
+  },
+  {
+    "q": "Apa bentuk V3 dari 'go'?",
+    "opts": ["went", "goed", "gone", "going"],
+    "correct": 2,
+    "explain": "'go' Kelompok C (semua bentuk beda): go-went-gone. V3-nya adalah 'gone', bukan 'went' (yang merupakan V2)."
+  },
+  {
+    "q": "Apa bentuk V2 dan V3 dari 'eat', dan apakah sama?",
+    "opts": ["ate — eaten, beda", "eated — eaten, beda", "ate — ate, sama", "eaten — ate, beda"],
+    "correct": 0,
+    "explain": "'eat' Kelompok C: eat-ate-eaten. V2-nya 'ate', V3-nya 'eaten' — dua bentuk yang berbeda."
+  },
+  {
+    "q": "Lengkapi: She has ___ (write) three books, but she never ___ (write) a novel.",
+    "opts": ["wrote / wrote", "wrote / written", "written / wrote", "writed / writed"],
+    "correct": 2,
+    "explain": "Klausa pertama ada 'has' → butuh V3 'written'. Klausa kedua tidak ada auxiliary have/has/had, jadi butuh V2 berdiri sendiri: 'wrote'. 'write' Kelompok C: write-wrote-written, dua bentuk yang berbeda, jadi urutannya harus tepat sesuai posisinya."
+  },
+  {
+    "q": "Apa bentuk V2 dari 'speak'?",
+    "opts": ["speaked", "spoken", "spoke", "speak"],
+    "correct": 2,
+    "explain": "'speak' Kelompok C: speak-spoke-spoken. V2-nya 'spoke'."
+  },
+  {
+    "q": "Apa bentuk V3 dari 'break'?",
+    "opts": ["broke", "breaked", "broken", "break"],
+    "correct": 2,
+    "explain": "'break' Kelompok C: break-broke-broken. V3-nya 'broken', dipakai misalnya di 'The window has been broken.'"
+  },
+  {
+    "q": "Lengkapi: He has already ___ (give) his presentation, but he ___ (give) the wrong data yesterday.",
+    "opts": ["given / gave", "gave / given", "given / given", "gave / gave"],
+    "correct": 0,
+    "explain": "Klausa pertama ada 'has' → V3 'given'. Klausa kedua ada signal word 'yesterday' tanpa auxiliary → V2 'gave'. 'give' Kelompok C: give-gave-given."
+  },
+  {
+    "q": "Apa bentuk V2 dari 'know'?",
+    "opts": ["knowed", "known", "knew", "know"],
+    "correct": 2,
+    "explain": "'know' Kelompok C: know-knew-known. V2-nya 'knew'."
+  },
+  {
+    "q": "Apa bentuk V3 dari 'see'?",
+    "opts": ["saw", "seen", "seed", "see"],
+    "correct": 1,
+    "explain": "'see' Kelompok C: see-saw-seen. V3-nya 'seen', dipakai misalnya 'I have seen that movie.'"
+  },
+  {
+    "q": "Apa bentuk V2 dari 'take'?",
+    "opts": ["taken", "taked", "took", "take"],
+    "correct": 2,
+    "explain": "'take' Kelompok C: take-took-taken. V2-nya 'took'."
+  },
+  {
+    "q": "Apa bentuk V2 dan V3 dari 'begin'?",
+    "opts": ["began — begun", "begun — began", "begined — begined", "begin — begun"],
+    "correct": 0,
+    "explain": "'begin' Kelompok C: begin-began-begun. V2-nya 'began', V3-nya 'begun' — dua bentuk berbeda."
+  },
+  {
+    "q": "Apa bentuk V3 dari 'do'?",
+    "opts": ["did", "done", "doed", "does"],
+    "correct": 1,
+    "explain": "'do' Kelompok C: do-did-done. V3-nya 'done', dipakai misalnya 'I have done my homework.'"
+  },
+  {
+    "q": "Manakah kalimat yang bentuk verb-nya SALAH?",
+    "opts": ["I went to school yesterday.", "She has gone to Bali twice.", "Yesterday, I goed to the market.", "They have eaten dinner already."],
+    "correct": 2,
+    "explain": "'go' adalah irregular verb — V2-nya 'went', bukan hasil tambah -ed. Kalimat yang benar: 'Yesterday, I went to the market.'"
+  },
+  {
+    "q": "Manakah kalimat yang bentuk verb-nya SALAH?",
+    "opts": ["I have went to Bali last year.", "I went to Bali last year.", "I have been to Bali.", "I have gone to Bali before."],
+    "correct": 0,
+    "explain": "'have' harus diikuti V3, bukan V2. 'went' adalah V2 — salah dipasangkan dengan 'have'. Seharusnya 'I have gone to Bali' atau (tanpa have) 'I went to Bali last year'."
+  },
+  {
+    "q": "Manakah kalimat yang bentuk verb-nya SALAH?",
+    "opts": ["She has eaten breakfast.", "She has ate breakfast.", "She ate breakfast an hour ago.", "She has already eaten breakfast."],
+    "correct": 1,
+    "explain": "Setelah 'has' wajib pakai V3 ('eaten'), bukan V2 ('ate'). Kalimat yang benar: 'She has eaten breakfast.'"
+  },
+  {
+    "q": "Manakah kalimat yang bentuk verb-nya SALAH?",
+    "opts": ["They had written the report before the deadline.", "They had wrote the report before the deadline.", "They wrote the report last week.", "The report has been written by them."],
+    "correct": 1,
+    "explain": "'had' (Past Perfect) wajib diikuti V3, bukan V2. Seharusnya 'They had written the report...', bukan 'had wrote'."
+  },
+  {
+    "q": "Kenapa 'I have went' salah, sementara 'I went' dan 'I have gone' sama-sama benar?",
+    "opts": ["Karena 'went' hanya boleh dipakai di kalimat tanya", "Karena V2 ('went') hanya boleh berdiri sendiri tanpa auxiliary have/has/had, sedangkan setelah 'have' wajib pakai V3 ('gone')", "Karena 'gone' dan 'went' sebenarnya sama saja, tidak ada aturan pasti", "Karena 'go' adalah regular verb sehingga bebas dipasangkan dengan auxiliary apapun"],
+    "correct": 1,
+    "explain": "Aturan bakunya: V2 berdiri sendiri (Simple Past), V3 selalu menempel auxiliary have/has/had. Mencampur keduanya ('have' + V2) adalah kesalahan struktur yang sangat umum bagi pelajar Indonesia."
+  },
+  {
+    "q": "Lengkapi kalimat berikut dengan bentuk yang tepat: My brother ___ (drink) three cups of coffee this morning, but he still feels sleepy.",
+    "opts": ["drank", "drunk", "drinked", "drinking"],
+    "correct": 0,
+    "explain": "Tidak ada auxiliary have/has di kalimat ini, dan konteksnya aksi selesai di masa lalu ('this morning', sudah lewat) → pakai V2. 'drink' Kelompok C: drink-drank-drunk, V2-nya 'drank'."
+  },
+  {
+    "q": "Manakah pasangan V1-V2-V3 yang SALAH?",
+    "opts": ["speak - spoke - spoken", "write - wrote - written", "sing - sang - sung", "fall - fell - fallen - falled"],
+    "correct": 3,
+    "explain": "Irregular verb hanya punya tiga bentuk (V1-V2-V3), bukan empat. 'fall' Kelompok C yang benar: fall-fell-fallen, tanpa tambahan bentuk keempat 'falled' yang tidak ada dalam Bahasa Inggris."
+  },
+  {
+    "q": "Verb 'cook, worry, hold, break' masing-masing berasal dari kategori berbeda (regular, atau irregular Kelompok A/B/C). Manakah pengelompokan yang BENAR?",
+    "opts": ["cook = regular, worry = regular, hold = Kelompok B, break = Kelompok C", "cook = Kelompok A, worry = regular, hold = Kelompok C, break = Kelompok B", "cook = regular, worry = Kelompok A, hold = regular, break = Kelompok C", "cook = Kelompok B, worry = Kelompok A, hold = regular, break = regular"],
+    "correct": 0,
+    "explain": "'cook' (cooked-cooked) dan 'worry' (worried-worried) mengikuti aturan -ed biasa, jadi regular. 'hold' (held-held) V2=V3 beda dari V1 → Kelompok B. 'break' (broke-broken) semua bentuk beda → Kelompok C."
+  },
+  {
+    "q": "Ubah kalimat aktif berikut ke passive voice: 'The chef cooks this dish every day.' → 'This dish ___ every day.'",
+    "opts": ["is cooked", "was cooked", "cooked", "has cooked"],
+    "correct": 0,
+    "explain": "Passive voice memakai be + V3. 'cook' regular verb, V3-nya 'cooked'. Karena subjek 'this dish' + kebiasaan rutin (Simple Present), auxiliary be-nya 'is': This dish is cooked every day."
+  },
+  {
+    "q": "Baca konteks berikut: 'By the time we arrived at the cinema, the movie ___ (already/start).' Bentuk verb yang tepat adalah ...",
+    "opts": ["had already started", "already started", "has already started", "was already starting"],
+    "correct": 0,
+    "explain": "Struktur 'by the time + Simple Past (arrived)' menandakan aksi lain sudah selesai lebih dulu → Past Perfect (had + V3). 'start' regular verb, V3-nya 'started': had already started."
+  }
+]

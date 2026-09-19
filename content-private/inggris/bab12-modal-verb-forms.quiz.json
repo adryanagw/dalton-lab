@@ -1,0 +1,290 @@
+[
+  {
+    "q": "Manakah bentuk yang benar setelah modal verb?",
+    "opts": ["S + modal + to + V1", "S + modal + V1", "S + modal + V-ing", "S + modal + V2"],
+    "correct": 1,
+    "explain": "Modal verb selalu diikuti bare infinitive (V1 tanpa 'to', tanpa -s/-es). Modal tidak pernah diikuti 'to' atau V-ing."
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "opts": ["You must to go home now.", "You must going home now.", "You must go home now.", "You musts go home now."],
+    "correct": 2,
+    "explain": "Modal tidak boleh diikuti 'to' atau V-ing, dan tidak pernah ditambah -s meski subjeknya 'you'. 'You must go home now' adalah bentuk yang benar."
+  },
+  {
+    "q": "She ___ (can) speak three languages fluently.",
+    "opts": ["cans", "can", "could", "can to"],
+    "correct": 1,
+    "explain": "Modal 'can' tidak berubah bentuk meski subjeknya orang ketiga tunggal (she) — tidak ditambah -s. 'Can' di sini menyatakan kemampuan sekarang."
+  },
+  {
+    "q": "Which sentence is grammatically correct?",
+    "opts": ["He can swimming very well.", "He can swims very well.", "He can swim very well.", "He can to swim very well."],
+    "correct": 2,
+    "explain": "Modal 'can' harus diikuti bare infinitive (V1), jadi 'swim' tanpa -s/-ing/to. Kalimat yang benar: 'He can swim very well.'"
+  },
+  {
+    "q": "'May' dalam kalimat '<i>May I come in, sir?</i>' berfungsi sebagai...",
+    "opts": ["Izin formal/sopan", "Kemampuan", "Kewajiban", "Prediksi"],
+    "correct": 0,
+    "explain": "'May' dipakai untuk meminta izin dalam situasi resmi/sopan — lebih formal dibanding 'can' untuk fungsi yang sama."
+  },
+  {
+    "q": "It ___ rain this afternoon — the sky looks cloudy but it's not certain.",
+    "opts": ["must", "may", "should", "will definitely"],
+    "correct": 1,
+    "explain": "'May' dipakai untuk menyatakan kemungkinan tanpa kepastian tinggi — cocok untuk situasi yang 'belum pasti' seperti awan mendung yang belum tentu berujung hujan."
+  },
+  {
+    "q": "You ___ wear a seatbelt in the car — it's the law.",
+    "opts": ["may", "could", "must", "would"],
+    "correct": 2,
+    "explain": "'Must' dipakai untuk kewajiban/keharusan yang kuat, cocok untuk aturan hukum seperti memakai sabuk pengaman."
+  },
+  {
+    "q": "She's not answering her phone — she ___ be in a meeting right now (kesimpulan logis, bukan fakta pasti).",
+    "opts": ["can", "must", "would", "shall"],
+    "correct": 1,
+    "explain": "'Must' juga dipakai untuk kesimpulan logis yang hampir pasti benar berdasarkan bukti (dia tidak menjawab telepon), bukan hanya untuk kewajiban."
+  },
+  {
+    "q": "Manakah fungsi modal 'shall' yang paling umum di teks formal/British English?",
+    "opts": ["Kemampuan fisik", "Tawaran formal atau saran, biasanya dengan I/we", "Ketidakmungkinan di masa lalu", "Kebiasaan masa lalu"],
+    "correct": 1,
+    "explain": "'Shall' sering dipakai untuk tawaran formal atau saran, contohnya 'Shall we start the meeting?' — jarang dipakai di percakapan sehari-hari Amerika."
+  },
+  {
+    "q": "Don't worry, I ___ help you with your homework (keputusan spontan, kesediaan).",
+    "opts": ["must", "will", "should", "might"],
+    "correct": 1,
+    "explain": "'Will' dipakai untuk kesediaan (willingness) atau keputusan yang dibuat saat itu juga, seperti menawarkan bantuan secara spontan."
+  },
+  {
+    "q": "When I was young, I ___ run very fast, but I can't anymore.",
+    "opts": ["can", "could", "should", "would rather"],
+    "correct": 1,
+    "explain": "'Could' di sini menyatakan kemampuan di masa lalu yang sekarang sudah tidak dimiliki lagi — fungsi 'could' sebagai past ability."
+  },
+  {
+    "q": "___ you open the window, please? (permintaan sopan)",
+    "opts": ["Must", "Could", "Shall", "Might"],
+    "correct": 1,
+    "explain": "'Could' dipakai untuk permintaan yang sopan di masa sekarang — bukan menyatakan masa lalu sama sekali, meski bentuknya 'past' dari 'can'."
+  },
+  {
+    "q": "Perhatikan dua kalimat: (A) 'When I was a child, I could run very fast.' (B) 'Could you help me carry this box?' Apa perbedaan fungsi 'could' di kedua kalimat ini?",
+    "opts": ["Keduanya menyatakan kemampuan masa lalu", "(A) kemampuan masa lalu, (B) permintaan sopan untuk sekarang", "Keduanya adalah permintaan sopan", "(A) permintaan sopan, (B) kemampuan masa lalu"],
+    "correct": 1,
+    "explain": "'Could' punya dua makna berbeda tergantung konteks: (A) menceritakan kemampuan yang dulu dimiliki, sedangkan (B) adalah permintaan sopan untuk sekarang, bukan soal masa lalu."
+  },
+  {
+    "q": "Manakah pernyataan yang benar tentang 'might' dibanding 'may'?",
+    "opts": ["'Might' hanya dipakai untuk masa lalu, 'may' untuk sekarang", "'Might' dan 'may' sama persis tanpa perbedaan makna", "'Might' menunjukkan kemungkinan yang lebih lemah/lebih ragu daripada 'may'", "'Might' lebih formal daripada 'may'"],
+    "correct": 2,
+    "explain": "Meski secara bentuk 'might' terlihat seperti past dari 'may', keduanya sama-sama bisa dipakai untuk sekarang/masa depan. Bedanya ada di kadar keyakinan — 'might' lebih ragu daripada 'may'."
+  },
+  {
+    "q": "It may rain later. / It might rain later. Kalimat mana yang menunjukkan keyakinan pembicara lebih rendah?",
+    "opts": ["It may rain later.", "It might rain later.", "Keduanya sama persis", "Tidak bisa dibandingkan"],
+    "correct": 1,
+    "explain": "'Might' menunjukkan kemungkinan yang lebih kecil/lebih ragu dibanding 'may', meski keduanya sama-sama membicarakan waktu sekarang/masa depan."
+  },
+  {
+    "q": "Fungsi utama 'should' dalam kalimat 'You should drink more water every day' adalah...",
+    "opts": ["Kewajiban hukum yang ketat", "Nasihat/rekomendasi untuk sekarang atau masa depan", "Kemampuan masa lalu", "Ketidakmungkinan"],
+    "correct": 1,
+    "explain": "'Should' dipakai untuk memberi nasihat atau rekomendasi tentang sesuatu yang idealnya dilakukan — bukan bentuk lampau dari 'shall' dalam penggunaan sehari-hari."
+  },
+  {
+    "q": "'Should' dalam praktik sehari-hari umumnya membicarakan waktu...",
+    "opts": ["Masa lalu yang sudah selesai", "Sekarang atau masa depan", "Hanya masa depan yang jauh", "Tidak menunjukkan waktu sama sekali"],
+    "correct": 1,
+    "explain": "Meski secara bentuk 'should' adalah past dari 'shall', dalam praktik sehari-hari 'should' hampir selalu dipakai untuk nasihat tentang situasi sekarang/masa depan, bukan masa lalu."
+  },
+  {
+    "q": "When I was a kid, I ___ visit my grandmother every summer.",
+    "opts": ["would", "should", "must", "may"],
+    "correct": 0,
+    "explain": "'Would' di sini menyatakan kebiasaan masa lalu yang rutin dilakukan (mirip 'used to'), tapi khusus untuk aksi berulang, bukan keadaan/state."
+  },
+  {
+    "q": "___ you like some coffee? (tawaran sopan)",
+    "opts": ["Must", "Should", "Would", "Shall we"],
+    "correct": 2,
+    "explain": "'Would' dipakai untuk membuat tawaran terdengar lebih sopan/halus — 'Would you like...?' adalah pola standar untuk menawarkan sesuatu."
+  },
+  {
+    "q": "If I had more time, I ___ learn to play guitar.",
+    "opts": ["would", "must", "shall", "can"],
+    "correct": 0,
+    "explain": "'Would' dipakai sebagai hasil dari pengandaian (conditional) yang tidak nyata — klausa 'if I had more time' menunjukkan ini pengandaian, bukan fakta."
+  },
+  {
+    "q": "Manakah TIGA fungsi utama 'would' yang harus dibedakan dari konteks?",
+    "opts": ["Kewajiban, izin, kemampuan", "Kebiasaan masa lalu, tawaran/permintaan sopan, conditional", "Prediksi, deduksi, ketidakmungkinan", "Fakta ilmiah, jadwal tetap, rutinitas"],
+    "correct": 1,
+    "explain": "'Would' punya tiga fungsi utama: (1) kebiasaan masa lalu seperti 'used to', (2) tawaran/permintaan sopan, dan (3) hasil dari conditional/pengandaian."
+  },
+  {
+    "q": "Bentuk perfect modal yang benar adalah...",
+    "opts": ["Modal + have + V2", "Modal + have + V3", "Modal + has + V3", "Modal + had + V1"],
+    "correct": 1,
+    "explain": "Perfect modal selalu berbentuk modal + have + V3 (past participle) — 'have' tidak berubah jadi 'has' meski subjeknya orang ketiga tunggal, karena mengikuti modal."
+  },
+  {
+    "q": "He ___ already. The lights are off and the car is gone.",
+    "opts": ["must have left", "must have leave", "must has left", "must leaving"],
+    "correct": 0,
+    "explain": "Bukti kuat (lampu mati, mobil hilang) mengarah pada kesimpulan yang sangat yakin tentang masa lalu, jadi butuh 'must have' + V3. 'Leave' → V3 = 'left'."
+  },
+  {
+    "q": "Manakah perfect modal yang menunjukkan kesimpulan PALING YAKIN bahwa sesuatu TERJADI di masa lalu?",
+    "opts": ["might have + V3", "should have + V3", "must have + V3", "could have + V3"],
+    "correct": 2,
+    "explain": "'Must have + V3' menunjukkan tingkat keyakinan tertinggi bahwa sesuatu benar-benar terjadi, berdasarkan bukti kuat — ini kesimpulan logis (deduction), bukan dugaan ragu-ragu."
+  },
+  {
+    "q": "She isn't answering her phone — she ___ gone to bed early, or she ___ forgotten to charge it (dua dugaan, tidak yakin mana yang benar).",
+    "opts": ["must have ... must have", "might have ... could have", "should have ... should have", "can't have ... can't have"],
+    "correct": 1,
+    "explain": "Karena ada dua kemungkinan penjelasan dan pembicara tidak yakin mana yang benar, dipakai 'might have'/'could have' — modal untuk kemungkinan yang tidak pasti."
+  },
+  {
+    "q": "You ___ harder for the test — you failed because you didn't prepare enough.",
+    "opts": ["should study", "should have studied", "must study", "would study"],
+    "correct": 1,
+    "explain": "Karena ujiannya sudah lewat dan hasilnya sudah diketahui (gagal), ini penyesalan/kritik terhadap tindakan masa lalu yang tidak dilakukan → 'should have' + V3."
+  },
+  {
+    "q": "Manakah perfect modal yang tepat untuk menyatakan penyesalan atau kritik terhadap sesuatu yang seharusnya dilakukan di masa lalu tapi tidak dilakukan?",
+    "opts": ["must have + V3", "might have + V3", "should have + V3", "will have + V3"],
+    "correct": 2,
+    "explain": "'Should have + V3' dipakai khusus untuk nasihat yang terlambat/penyesalan — sesuatu yang idealnya dilakukan di masa lalu tapi ternyata tidak terjadi."
+  },
+  {
+    "q": "He ___ finished the marathon already — it only started an hour ago.",
+    "opts": ["must have", "might have", "should have", "can't have"],
+    "correct": 3,
+    "explain": "Karena maraton baru dimulai satu jam lalu, secara logika tidak mungkin sudah selesai — ini kesimpulan yang sangat yakin bahwa sesuatu TIDAK TERJADI, jadi butuh 'can't have' + V3."
+  },
+  {
+    "q": "Urutkan tingkat keyakinan dari yang PALING YAKIN TERJADI ke yang PALING YAKIN TIDAK TERJADI.",
+    "opts": ["must have → might/could have → should have → can't have", "can't have → might have → must have → should have", "should have → must have → can't have → might have", "might have → must have → should have → can't have"],
+    "correct": 0,
+    "explain": "Gradien keyakinan perfect modal: must have (paling yakin terjadi) → might/could have (ragu-ragu) → should have (penyesalan, aksi tidak dilakukan) → can't/couldn't have (paling yakin tidak terjadi)."
+  },
+  {
+    "q": "The ground is wet — it ___ last night.",
+    "opts": ["must have rained", "must have rain", "must rained", "must have raining"],
+    "correct": 0,
+    "explain": "Bukti kuat (tanah basah) mengarah pada kesimpulan yang sangat yakin → 'must have' + V3. V3 dari 'rain' (kata kerja beraturan) adalah 'rained'."
+  },
+  {
+    "q": "She's late — she ___ the bus (dugaan, tidak yakin sepenuhnya).",
+    "opts": ["must have missed", "might have missed", "can't have missed", "should have missed"],
+    "correct": 1,
+    "explain": "Terlambat bisa disebabkan berbagai hal, jadi ini cuma salah satu kemungkinan penjelasan, bukan kesimpulan pasti → 'might have' + V3."
+  },
+  {
+    "q": "He ___ (should) brought an umbrella — now he's completely soaked.",
+    "opts": ["should have", "should", "must have", "would have"],
+    "correct": 0,
+    "explain": "Kondisinya sudah terjadi (dia basah kuyup) dan ini kritik terhadap keputusan masa lalu yang tidak diambil (tidak bawa payung) → 'should have' + V3."
+  },
+  {
+    "q": "She ___ eaten yet — the restaurant just opened.",
+    "opts": ["must have", "might have", "should have", "can't have"],
+    "correct": 3,
+    "explain": "Karena restoran baru saja buka, secara logika tidak mungkin dia sudah makan — kesimpulan yang sangat yakin bahwa itu TIDAK TERJADI → 'can't have' + V3."
+  },
+  {
+    "q": "Manakah kalimat yang menggunakan V3 dengan benar setelah perfect modal?",
+    "opts": ["He must have went to the store.", "He must have gone to the store.", "He must have go to the store.", "He must have going to the store."],
+    "correct": 1,
+    "explain": "V3 dari 'go' adalah 'gone', bukan 'went' (yang merupakan V2/simple past). Setelah 'have' pada perfect modal, kata kerjanya wajib V3."
+  },
+  {
+    "q": "Apa kesalahan pada kalimat 'She might have forgot her umbrella at school'?",
+    "opts": ["Seharusnya 'might' diganti 'must'", "Seharusnya 'forgot' diganti 'forgotten' (V3, bukan V2)", "Seharusnya 'have' diganti 'has'", "Tidak ada kesalahan"],
+    "correct": 1,
+    "explain": "'Forgot' adalah V2 (simple past); V3 dari 'forget' adalah 'forgotten'. Perfect modal wajib pakai V3 setelah 'have', jadi kalimat yang benar: 'She might have forgotten her umbrella at school.'"
+  },
+  {
+    "q": "Manakah pasangan V2-V3 berikut yang SAMA bentuknya (kata kerja beraturan)?",
+    "opts": ["go — went / gone", "see — saw / seen", "study — studied / studied", "write — wrote / written"],
+    "correct": 2,
+    "explain": "'Study' adalah kata kerja beraturan, jadi V2 dan V3-nya sama: studied/studied. Go, see, dan write adalah kata kerja tidak beraturan dengan V2 dan V3 yang berbeda."
+  },
+  {
+    "q": "Choose the sentence with a modal verb error.",
+    "opts": ["Students must submit their assignments on time.", "If they can swim across the river, they should try it.", "If they can swimming across the river, they should try it.", "They must have finished the project by now."],
+    "correct": 2,
+    "explain": "'Can swimming' salah — modal harus diikuti bare infinitive (V1), bukan V-ing. Seharusnya 'can swim'."
+  },
+  {
+    "q": "Manakah kalimat yang benar secara struktur?",
+    "opts": ["Must we submit it by Friday?", "Do we must submit it by Friday?", "Must we to submit it by Friday?", "We must submitting it by Friday?"],
+    "correct": 0,
+    "explain": "Modal langsung dipakai untuk kalimat tanya tanpa 'do/does' tambahan: Modal + S + V1? 'Must we submit it by Friday?' adalah bentuk yang benar."
+  },
+  {
+    "q": "You ___ not enter this room — it's strictly forbidden.",
+    "opts": ["may", "must", "should", "would"],
+    "correct": 1,
+    "explain": "'Must not (mustn't)' dipakai untuk larangan yang kuat/tegas. Kalimat lengkap: 'You must not enter this room.'"
+  },
+  {
+    "q": "Baca konteks: 'Andi's car is still in the garage this morning.' Manakah kesimpulan yang paling logis?",
+    "opts": ["Andi must have gone to work today.", "Andi can't have gone to work today.", "Andi should go to work today.", "Andi would go to work today."],
+    "correct": 1,
+    "explain": "Mobil yang masih ada di garasi adalah bukti kuat yang membantah kemungkinan dia pergi kerja (kalau naik mobil) — jadi kesimpulannya adalah ketidakmungkinan → 'can't have' + V3."
+  },
+  {
+    "q": "Neighbors heard loud music from Andi's house until 3 a.m. Manakah kesimpulan yang tepat?",
+    "opts": ["Andi might have had a party last night.", "Andi must have had a party last night.", "Andi should have had a party last night.", "Andi will have a party last night."],
+    "correct": 1,
+    "explain": "Bukti langsung dan kuat (tetangga benar-benar mendengar musik sampai jam 3 pagi) mendukung kesimpulan dengan keyakinan tinggi → 'must have' + V3, bukan sekadar dugaan ('might have')."
+  },
+  {
+    "q": "This morning, Andi looks extremely tired and can barely open his eyes. Berdasarkan konteks pesta semalam, kesimpulan logisnya adalah...",
+    "opts": ["Andi must have slept well last night.", "Andi can't have slept well last night.", "Andi should sleep well last night.", "Andi would have slept well last night."],
+    "correct": 1,
+    "explain": "Terlihat sangat lelah setelah begadang sampai jam 3 pagi adalah bukti kuat bahwa dia TIDAK tidur nyenyak — kesimpulan yang sangat yakin secara negatif → 'can't have' + V3."
+  },
+  {
+    "q": "Manakah yang BUKAN merupakan aturan bentuk modal verb?",
+    "opts": ["Modal tidak diikuti 'to'", "Modal tidak diikuti V-ing", "Modal ditambah -s untuk subjek he/she/it", "Modal tidak butuh do/does untuk kalimat negatif/tanya"],
+    "correct": 2,
+    "explain": "Modal verb TIDAK PERNAH ditambah -s/-es meski subjeknya he/she/it — ini salah satu dari tiga aturan mutlak modal verb, bukan pengecualian."
+  },
+  {
+    "q": "Perbedaan utama antara 'should' dan 'should have' + V3 adalah...",
+    "opts": ["Tidak ada perbedaan, keduanya sama", "'Should' untuk nasihat sekarang/masa depan, 'should have' untuk kritik/penyesalan masa lalu", "'Should' untuk masa lalu, 'should have' untuk sekarang", "'Should have' lebih sopan daripada 'should'"],
+    "correct": 1,
+    "explain": "'Should' memberi nasihat untuk aksi yang masih bisa dilakukan (sekarang/masa depan), sedangkan 'should have' + V3 mengkritik/menyesali aksi masa lalu yang sudah terlambat untuk diubah."
+  },
+  {
+    "q": "You should study harder for next week's test. / You should have studied harder for yesterday's test. Apa perbedaan konteks kedua kalimat ini?",
+    "opts": ["Keduanya soal ujian yang sudah lewat", "Kalimat pertama: ujian belum terjadi (nasihat berguna); kalimat kedua: ujian sudah lewat (penyesalan)", "Kalimat pertama soal masa lalu, kalimat kedua soal sekarang", "Tidak ada perbedaan makna"],
+    "correct": 1,
+    "explain": "Kalimat pertama membicarakan ujian minggu depan yang belum terjadi — nasihat yang masih bisa dijalankan. Kalimat kedua membicarakan ujian kemarin yang sudah lewat — penyesalan karena sudah terlambat."
+  },
+  {
+    "q": "Manakah kalimat yang paling tepat menggambarkan 'kemampuan masa lalu yang sekarang sudah tidak dimiliki'?",
+    "opts": ["I can play the piano.", "I could play the piano when I was young, but I've forgotten how.", "I would play the piano every day.", "I should play the piano."],
+    "correct": 1,
+    "explain": "'Could' + keterangan waktu lampau ('when I was young') menyatakan kemampuan yang dulu dimiliki tapi sekarang belum tentu masih ada — fungsi 'could' sebagai past ability."
+  },
+  {
+    "q": "I ___ (will) help you with your project this weekend, I promise.",
+    "opts": ["will", "would", "must", "should"],
+    "correct": 0,
+    "explain": "'Will' dipakai untuk menyatakan kesediaan (willingness) dan janji terkait masa depan."
+  },
+  {
+    "q": "Manakah kalimat dengan kesalahan modal + verb?",
+    "opts": ["He must not enter the lab without permission.", "She could have called before coming.", "They must have went there yesterday.", "We should have listened to the warning."],
+    "correct": 2,
+    "explain": "'Must have went' salah karena 'went' adalah V2, bukan V3. Seharusnya 'must have gone' — V3 dari 'go' adalah 'gone'."
+  }
+]

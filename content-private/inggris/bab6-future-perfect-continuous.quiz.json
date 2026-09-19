@@ -1,0 +1,272 @@
+[
+  {
+    "q": "Choose the correct sentence: By 2030, I ___ from university.",
+    "opts": ["will graduate", "will have graduated", "will be graduating", "graduate"],
+    "correct": 1,
+    "explain": "Ada sinyal 'by' + titik waktu di masa depan (2030) yang menandai aksi akan SUDAH selesai sebelum titik itu tercapai — ini pola Future Perfect: will have + V3 (graduated)."
+  },
+  {
+    "q": "Complete the sentence: By the time you arrive, she ___ already ___.",
+    "opts": ["will / leave", "will have / left", "have / left", "will / left"],
+    "correct": 1,
+    "explain": "'By the time' + 'already' adalah sinyal khas Future Perfect. Strukturnya butuh tiga kata: will have + V3, di sini V3 dari 'leave' adalah 'left'."
+  },
+  {
+    "q": "By next month, my sister ___ working at that company for five years.",
+    "opts": ["will have", "will have been", "will be", "has been"],
+    "correct": 1,
+    "explain": "Ada sinyal durasi 'for five years' bersama titik waktu depan 'by next month' → menekankan lamanya aksi berlangsung = Future Perfect Continuous: will have been + V-ing."
+  },
+  {
+    "q": "Choose the correct form: When she arrives, we ___ for two hours.",
+    "opts": ["will wait", "will have waited", "will have been waiting", "wait"],
+    "correct": 2,
+    "explain": "'For two hours' menekankan durasi aksi menunggu yang masih berlangsung sampai dia tiba → Future Perfect Continuous: will have been waiting."
+  },
+  {
+    "q": "Manakah struktur Future Perfect yang benar untuk kalimat negatif?",
+    "opts": ["S + will not + V3", "S + will not have + V3", "S + have not + V3", "S + will not have been + V3"],
+    "correct": 1,
+    "explain": "Bentuk negatif Future Perfect: S + will not (won't) have + V3. Contoh: 'She won't have arrived by 8 PM.'"
+  },
+  {
+    "q": "Manakah struktur Future Perfect Continuous yang benar untuk kalimat tanya?",
+    "opts": ["Will + S + have + V-ing?", "Will + S + have been + V-ing?", "Have + S + will + V-ing?", "Will + S + be + V-ing?"],
+    "correct": 1,
+    "explain": "Bentuk interogatif Future Perfect Continuous: Will + S + have been + V-ing? Contoh: 'Will you have been studying for six hours by midnight?'"
+  },
+  {
+    "q": "By the end of this year, the company ___ 500 units.",
+    "opts": ["will produce", "will have been producing", "will have produced", "produces"],
+    "correct": 2,
+    "explain": "'By the end of this year' + angka target total (500 units) menekankan hasil yang sudah tercapai, bukan durasi berlangsungnya → Future Perfect: will have produced."
+  },
+  {
+    "q": "Spot the error: 'By next year, I will finished my thesis.'",
+    "opts": ["will → would", "finished → finish", "will finished → will have finished", "next year → this year"],
+    "correct": 2,
+    "explain": "Kesalahan klasik: lupa kata 'have'. Struktur Future Perfect butuh tiga kata bantu: will + have + V3, jadi harus 'will have finished', bukan 'will finished'."
+  },
+  {
+    "q": "Spot the error: 'She will have went home by then.'",
+    "opts": ["will have → will has", "went → gone", "by then → since then", "she → her"],
+    "correct": 1,
+    "explain": "'Went' adalah bentuk V2 (Simple Past). Future Perfect butuh V3 (Past Participle) — untuk verb 'go', V3-nya adalah 'gone', bukan 'went'."
+  },
+  {
+    "q": "Spot the error: 'By 10 PM, he will have working on this report for six hours.'",
+    "opts": ["will have → will has", "will have working → will have been working", "for → since", "by → until"],
+    "correct": 1,
+    "explain": "Future Perfect Continuous butuh empat kata bantu: will + have + been + V-ing. Kata 'been' sering hilang, padahal wajib ada sebelum V-ing."
+  },
+  {
+    "q": "Manakah kalimat yang paling tepat untuk konteks: aksi menulis laporan sudah SELESAI sebelum jam 6 sore?",
+    "opts": ["By 6 PM, I will have been writing the report.", "By 6 PM, I will have written the report.", "By 6 PM, I will write the report.", "By 6 PM, I am writing the report."],
+    "correct": 1,
+    "explain": "Menekankan hasil (laporan sudah selesai) = Future Perfect biasa: will have written, bukan Future Perfect Continuous yang menekankan proses/durasi."
+  },
+  {
+    "q": "Manakah kalimat yang paling tepat untuk konteks: sudah tiga jam menulis laporan pada jam 6 sore, belum tentu selesai?",
+    "opts": ["By 6 PM, I will have written the report for three hours.", "By 6 PM, I will have been writing the report for three hours.", "By 6 PM, I write the report for three hours.", "By 6 PM, I will write the report for three hours."],
+    "correct": 1,
+    "explain": "Menekankan durasi/lamanya proses menulis (belum tentu selesai) = Future Perfect Continuous: will have been writing."
+  },
+  {
+    "q": "By 2030, Sarah and Tom ___ each other for 15 years.",
+    "opts": ["will have been knowing", "will have known", "will know", "will be knowing"],
+    "correct": 1,
+    "explain": "'Know' adalah stative verb (menyatakan keadaan, bukan aksi yang bisa 'sedang berlangsung'). Stative verb tidak pernah memakai bentuk -ing, jadi meskipun ada sinyal durasi 'for 15 years', tetap pakai Future Perfect biasa: will have known."
+  },
+  {
+    "q": "Manakah verb berikut yang TIDAK boleh dipakai dalam bentuk Future Perfect Continuous (karena stative verb)?",
+    "opts": ["work", "study", "believe", "write"],
+    "correct": 2,
+    "explain": "'Believe' adalah stative verb (menyatakan keadaan mempercayai), sehingga tidak bisa dipakai dalam bentuk continuous (-ing) di tense manapun, termasuk Future Perfect Continuous."
+  },
+  {
+    "q": "Choose the correct sentence: By the time we get married, we ___ each other for ten years.",
+    "opts": ["will have been knowing", "will know", "will have known", "know"],
+    "correct": 2,
+    "explain": "'Know' adalah stative verb, jadi walau ada sinyal durasi 'for ten years', tetap pakai Future Perfect (will have known), bukan Future Perfect Continuous."
+  },
+  {
+    "q": "Signal word manakah yang KHAS untuk Future Perfect Continuous tapi jarang dipakai sendirian di Future Perfect biasa?",
+    "opts": ["by", "before", "for + durasi", "by the time"],
+    "correct": 2,
+    "explain": "'For + durasi' (contoh: for five years, for two hours) adalah sinyal khas yang menekankan lamanya aksi berlangsung — ciri utama Future Perfect Continuous."
+  },
+  {
+    "q": "Transform to Future Perfect: 'He finishes the project.' (dengan tambahan 'by Friday')",
+    "opts": ["He will finish the project by Friday.", "He will have finished the project by Friday.", "He has finished the project by Friday.", "He will have been finishing the project by Friday."],
+    "correct": 1,
+    "explain": "Untuk menyatakan aksi yang akan SUDAH selesai sebelum hari Jumat, gunakan Future Perfect: will have finished."
+  },
+  {
+    "q": "Transform to Future Perfect Continuous: 'They live in that house.' (dengan tambahan 'for 20 years by 2035')",
+    "opts": ["They will live in that house for 20 years by 2035.", "They will have lived in that house for 20 years by 2035.", "They will have been living in that house for 20 years by 2035.", "They live in that house for 20 years by 2035."],
+    "correct": 2,
+    "explain": "Sinyal durasi 'for 20 years' + titik waktu depan 'by 2035' menekankan lamanya proses tinggal → Future Perfect Continuous: will have been living. (Catatan: 'live' di sini dipakai sebagai aksi/kebiasaan tinggal, bukan makna stative murni, sehingga tetap bisa memakai -ing.)"
+  },
+  {
+    "q": "By the time the guests arrive, we ___ the whole house.",
+    "opts": ["will clean", "will have cleaned", "will have been cleaning", "clean"],
+    "correct": 1,
+    "explain": "Menekankan hasil: seluruh rumah sudah bersih sebelum tamu datang → Future Perfect: will have cleaned."
+  },
+  {
+    "q": "By midnight, the team ___ on the bug fix for twelve straight hours.",
+    "opts": ["will work", "will have worked", "will have been working", "works"],
+    "correct": 2,
+    "explain": "Sinyal 'for twelve straight hours' menekankan durasi kerja yang berlangsung terus-menerus → Future Perfect Continuous: will have been working."
+  },
+  {
+    "q": "Spot the error: 'By 2025, scientists will have find a cure for many diseases.'",
+    "opts": ["will have → will has", "find → found", "scientists → scientist", "by → until"],
+    "correct": 1,
+    "explain": "Future Perfect butuh V3 (Past Participle), bukan V1. V3 dari 'find' adalah 'found', bukan 'find'."
+  },
+  {
+    "q": "Which sentence correctly uses Future Perfect in the negative form?",
+    "opts": ["She won't have finish the exam by noon.", "She won't finished the exam by noon.", "She won't have finished the exam by noon.", "She hasn't finished the exam by noon."],
+    "correct": 2,
+    "explain": "Bentuk negatif Future Perfect: S + won't have + V3. 'Finished' adalah bentuk V3 yang tepat setelah 'won't have'."
+  },
+  {
+    "q": "Which sentence correctly uses Future Perfect Continuous in the question form?",
+    "opts": ["Will you have study for six hours by midnight?", "Will you have been studying for six hours by midnight?", "Have you will be studying for six hours by midnight?", "Will you be studying for six hours by midnight?"],
+    "correct": 1,
+    "explain": "Bentuk tanya Future Perfect Continuous: Will + S + have been + V-ing? Opsi terakhir ('Will you be studying...') adalah Future Continuous, tense yang berbeda — tidak menekankan durasi sampai titik waktu tertentu."
+  },
+  {
+    "q": "By the time she turns 30, Maria ___ her own business for a decade.",
+    "opts": ["will run", "will have run", "will have been running", "runs"],
+    "correct": 2,
+    "explain": "Sinyal 'for a decade' menekankan durasi menjalankan bisnis → Future Perfect Continuous: will have been running."
+  },
+  {
+    "q": "Manakah pasangan ❌/✅ yang BENAR untuk kesalahan 'lupa have'?",
+    "opts": ["❌ By tomorrow, I will finished it. / ✅ By tomorrow, I will have finished it.", "❌ By tomorrow, I will have finish it. / ✅ By tomorrow, I will finished it.", "❌ By tomorrow, I finished it. / ✅ By tomorrow, I will finish it.", "❌ By tomorrow, I will have finished it. / ✅ By tomorrow, I finished it."],
+    "correct": 0,
+    "explain": "Kesalahan umum: melewatkan kata 'have' di antara 'will' dan V3. Bentuk benar butuh tiga kata bantu: will have finished."
+  },
+  {
+    "q": "Why is 'By next year, I will finish the project' different in meaning from 'By next year, I will have finished the project'?",
+    "opts": ["Tidak ada bedanya, keduanya sama", "Yang pertama Simple Future (aksi akan terjadi, tanpa penekanan sudah tuntas sebelum deadline), yang kedua Future Perfect (aksi sudah tuntas sebelum deadline)", "Yang pertama Future Perfect, yang kedua Simple Future", "Yang pertama untuk masa lalu, yang kedua untuk masa depan"],
+    "correct": 1,
+    "explain": "Simple Future ('will finish') hanya menyatakan aksi akan terjadi, tanpa menegaskan sudah tuntas sebelum deadline tertentu. Future Perfect ('will have finished') secara eksplisit menandai aksi sudah SELESAI sebelum titik waktu itu."
+  },
+  {
+    "q": "By 8 AM tomorrow, the bakery ___ 200 loaves of bread.",
+    "opts": ["will bake", "will have baked", "will have been baking", "bakes"],
+    "correct": 1,
+    "explain": "Angka target total (200 loaves) menekankan hasil akhir yang sudah tercapai → Future Perfect: will have baked."
+  },
+  {
+    "q": "By the time the bell rings, the students ___ the exam for three hours.",
+    "opts": ["will take", "will have taken", "will have been taking", "take"],
+    "correct": 2,
+    "explain": "Sinyal durasi 'for three hours' menekankan lamanya proses mengerjakan ujian → Future Perfect Continuous: will have been taking."
+  },
+  {
+    "q": "Choose the correct short answer for: 'Will you have finished the report by Friday?' (Yes)",
+    "opts": ["Yes, I will.", "Yes, I have.", "Yes, I will have.", "Yes, I do."],
+    "correct": 2,
+    "explain": "Jawaban singkat mengikuti auxiliary yang dipakai di pertanyaan: 'Will you have...?' dijawab dengan 'Yes, I will have.'"
+  },
+  {
+    "q": "Manakah kalimat yang salah secara struktur?",
+    "opts": ["By 2030, I will have owned this car for ten years.", "By 2030, I will have been owning this car for ten years.", "By 2030, I will own this car.", "By 2030, this car will have been mine for ten years."],
+    "correct": 1,
+    "explain": "'Own' adalah stative verb, jadi tidak bisa dipakai dalam bentuk continuous (-ing) meskipun ada sinyal durasi 'for ten years'. Bentuk yang benar adalah Future Perfect biasa: will have owned."
+  },
+  {
+    "q": "Identifikasi tense: 'By the time you finish reading this, I will have already left the office.'",
+    "opts": ["Simple Future", "Future Continuous", "Future Perfect", "Future Perfect Continuous"],
+    "correct": 2,
+    "explain": "Struktur 'will have + V3' (will have left) + sinyal 'by the time' + 'already' menandai aksi yang akan sudah selesai sebelum momen lain terjadi = Future Perfect."
+  },
+  {
+    "q": "Identifikasi tense: 'She is reading a novel right now.'",
+    "opts": ["Simple Present", "Present Continuous", "Present Perfect", "Present Perfect Continuous"],
+    "correct": 1,
+    "explain": "Struktur 'is + V-ing' dan sinyal 'right now' menandai aksi yang sedang berlangsung saat ini = Present Continuous."
+  },
+  {
+    "q": "Identifikasi tense: 'They have visited Bali three times.'",
+    "opts": ["Simple Past", "Present Perfect", "Past Perfect", "Present Perfect Continuous"],
+    "correct": 1,
+    "explain": "Struktur 'have + V3' (have visited) tanpa waktu spesifik, menandai pengalaman yang relevan sampai sekarang = Present Perfect."
+  },
+  {
+    "q": "Identifikasi tense: 'He had already left when I arrived.'",
+    "opts": ["Simple Past", "Past Continuous", "Past Perfect", "Past Perfect Continuous"],
+    "correct": 2,
+    "explain": "Struktur 'had + V3' (had left) menandai aksi yang sudah selesai sebelum aksi lampau lainnya terjadi = Past Perfect."
+  },
+  {
+    "q": "Identifikasi tense: 'I was cooking dinner when the phone rang.'",
+    "opts": ["Past Continuous", "Simple Past", "Past Perfect", "Past Perfect Continuous"],
+    "correct": 0,
+    "explain": "Struktur 'was + V-ing' (was cooking) menandai aksi yang sedang berlangsung saat aksi lain (rang) menyela = Past Continuous."
+  },
+  {
+    "q": "Identifikasi tense: 'She had been studying for two hours before she took a break.'",
+    "opts": ["Past Perfect", "Past Perfect Continuous", "Present Perfect Continuous", "Future Perfect Continuous"],
+    "correct": 1,
+    "explain": "Struktur 'had been + V-ing' menekankan durasi aksi lampau yang berlangsung sebelum aksi lampau lain terjadi = Past Perfect Continuous."
+  },
+  {
+    "q": "Identifikasi tense: 'By next year, she will have been teaching for 15 years.'",
+    "opts": ["Future Perfect", "Future Continuous", "Future Perfect Continuous", "Present Perfect Continuous"],
+    "correct": 2,
+    "explain": "Struktur 'will have been + V-ing' menekankan durasi aksi yang akan sudah berlangsung sampai titik waktu di masa depan = Future Perfect Continuous."
+  },
+  {
+    "q": "Identifikasi tense: 'We usually have breakfast at 7 AM.'",
+    "opts": ["Simple Present", "Present Continuous", "Simple Future", "Present Perfect"],
+    "correct": 0,
+    "explain": "Sinyal 'usually' + struktur V1 menandai kebiasaan rutin = Simple Present."
+  },
+  {
+    "q": "Identifikasi tense: 'I will be traveling to Bandung this time next week.'",
+    "opts": ["Simple Future", "Future Continuous", "Future Perfect", "Future Perfect Continuous"],
+    "correct": 1,
+    "explain": "Struktur 'will be + V-ing' + sinyal 'this time next week' menandai aksi yang sedang berlangsung pada titik waktu tertentu di masa depan = Future Continuous."
+  },
+  {
+    "q": "Identifikasi tense: 'She has been working here since 2015.'",
+    "opts": ["Present Perfect", "Present Perfect Continuous", "Past Perfect Continuous", "Simple Present"],
+    "correct": 1,
+    "explain": "Struktur 'has been + V-ing' + sinyal 'since 2015' menekankan durasi aksi yang mulai di masa lalu dan masih berlangsung sampai sekarang = Present Perfect Continuous."
+  },
+  {
+    "q": "Menurut tabel rekap 12 tenses, apa bentuk dasar (+) untuk Past Perfect?",
+    "opts": ["S + had + V3", "S + has/have + V3", "S + was/were + V-ing", "S + will have + V3"],
+    "correct": 0,
+    "explain": "Past Perfect: S + had + V3 — satu-satunya aspek Perfect yang memakai 'had' untuk semua subjek, tanpa perbedaan has/have."
+  },
+  {
+    "q": "Menurut tabel rekap 12 tenses, kombinasi aspek Continuous + waktu Future menghasilkan tense apa, dan apa bentuknya?",
+    "opts": ["Future Continuous, S + will + V-ing", "Future Continuous, S + will be + V-ing", "Future Perfect Continuous, S + will have been + V-ing", "Present Continuous, S + is/am/are + V-ing"],
+    "correct": 1,
+    "explain": "Baris 'Continuous' × kolom 'Future' = Future Continuous, dengan bentuk S + will be + V-ing."
+  },
+  {
+    "q": "Bab 6 ini (Future Perfect & Future Perfect Continuous) berada di kombinasi baris × kolom mana pada tabel rekap 12 tenses?",
+    "opts": ["Simple × Future dan Continuous × Future", "Perfect × Future dan Perfect Continuous × Future", "Perfect × Past dan Perfect Continuous × Past", "Perfect × Present dan Perfect Continuous × Present"],
+    "correct": 1,
+    "explain": "Future Perfect ada di baris 'Perfect', kolom 'Future'. Future Perfect Continuous ada di baris 'Perfect Continuous', kolom 'Future' — keduanya di pojok kanan bawah tabel rekap."
+  },
+  {
+    "q": "By the time the concert ends, the band ___ ten songs.",
+    "opts": ["will play", "will have played", "will have been playing", "plays"],
+    "correct": 1,
+    "explain": "Angka total (ten songs) menekankan hasil/pencapaian yang sudah tuntas sebelum konser berakhir → Future Perfect: will have played."
+  },
+  {
+    "q": "By 9 PM, my parents ___ on the road for eight hours straight.",
+    "opts": ["will drive", "will have driven", "will have been driving", "drive"],
+    "correct": 2,
+    "explain": "Sinyal 'for eight hours straight' menekankan lamanya proses mengemudi yang berlangsung terus-menerus → Future Perfect Continuous: will have been driving."
+  }
+]
