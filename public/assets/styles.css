@@ -318,9 +318,14 @@ section.tight{padding:44px 0;}
    above this button's z-index:5): when it sat near the sidebar's top,
    the subnav's opaque/blurred background painted over it on every
    lesson page, leaving it looking half cut-off — 124px from the
-   bottom stays well clear of that. */
+   bottom stays well clear of that. right:8px (not a negative value
+   that pokes past the sidebar's own edge) because .sidebar has
+   overflow-x:hidden (needed so the collapse width-transition never
+   shows a horizontal scrollbar) — a negative right previously pushed
+   half the circle outside that box, straight into the region
+   overflow-x:hidden clips away, so it rendered visibly cut in half. */
 .sidebar-collapse-btn{
-  position:absolute;bottom:124px;right:-13px;z-index:5;
+  position:absolute;bottom:124px;right:8px;z-index:5;
   width:26px;height:26px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   background:var(--card);border:1px solid var(--line);color:var(--slate);
