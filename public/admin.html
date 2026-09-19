@@ -46,6 +46,19 @@
   h2.section-title:first-child{margin-top:0;}
   .empty{color:var(--slate); font-size:.86rem; padding:20px 0;}
 
+  .admin-tabs{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:24px; border-bottom:1.5px solid var(--line); padding-bottom:0;}
+  .admin-tab{
+    background:none; border:none; border-bottom:2.5px solid transparent; color:var(--slate);
+    padding:10px 4px; margin-right:18px; font-size:.88rem; font-weight:600; cursor:pointer;
+    display:flex; align-items:center; gap:7px; transition:color .15s, border-color .15s;
+  }
+  .admin-tab:hover{color:var(--ink);}
+  .admin-tab.active{color:var(--navy); border-bottom-color:var(--orange);}
+  .tab-count{background:var(--navy); color:#fff; font-size:.68rem; font-weight:700; border-radius:20px; padding:1px 7px; min-width:16px; text-align:center;}
+  .tab-count.zero{background:var(--line); color:var(--ink);}
+  .admin-page{display:none;}
+  .admin-page.active{display:block;}
+
   .order-card{
     background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
     padding:18px 20px; margin-bottom:12px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
@@ -93,7 +106,9 @@
     padding:16px 20px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;
   }
   .session-username{font-weight:700; font-family:monospace; font-size:.92rem;}
-  .session-meta{font-size:.8rem; color:var(--slate); margin-top:3px;}
+  .session-meta{font-size:.8rem; color:var(--slate); margin-top:3px; line-height:1.7;}
+  .session-meta b{color:var(--ink); font-weight:600;}
+  .session-ip{font-family:monospace; font-size:.78rem;}
   .device-count{font-size:.72rem; padding:4px 10px; border-radius:20px; font-weight:700;}
   .device-count.ok{background:rgba(47,158,110,.12); color:var(--success);}
   .device-count.full{background:rgba(226,87,76,.12); color:var(--danger);}
@@ -134,29 +149,46 @@
     <button id="logoutBtn">Keluar</button>
   </header>
   <div class="wrap">
-    <div class="toolbar"><button id="refreshBtn">↻ Refresh</button></div>
+    <nav class="admin-tabs" id="adminTabs">
+      <button class="admin-tab active" data-page="approval">Menunggu Approval <span class="tab-count zero" id="pendingCount">0</span></button>
+      <button class="admin-tab" data-page="riwayat">Riwayat</button>
+      <button class="admin-tab" data-page="sesi">Sesi Aktif</button>
+      <button class="admin-tab" data-page="siswa">Data Siswa</button>
+      <button class="admin-tab" data-page="paket">Kelola Paket</button>
+    </nav>
 
-    <h2 class="section-title">Menunggu Approval</h2>
-    <div id="pendingList"></div>
-
-    <h2 class="section-title">Riwayat Terbaru</h2>
-    <div id="recentList"></div>
-
-    <h2 class="section-title">Sesi Aktif (Device)</h2>
-    <p style="color:var(--slate); font-size:.82rem; margin:-6px 0 14px;">Login di device baru otomatis logout device lama — cuma 1 device aktif per akun. Paksa keluar cuma dibutuhin buat kasus khusus (mis. akun dicurigai dipakai orang lain).</p>
-    <div id="sessionsList"></div>
-
-    <h2 class="section-title">Data Siswa (KYC)</h2>
-    <div class="toolbar"><button id="exportStudentsBtn" class="btn-secondary">⬇ Export CSV</button></div>
-    <div id="studentsList"></div>
-
-    <h2 class="section-title">Kelola Paket</h2>
-    <div class="pkg-editor" id="pkgEditor"><p class="empty">Memuat…</p></div>
-    <div class="pkg-actions-row">
-      <button class="btn" id="savePkgBtn">💾 Simpan Harga</button>
-      <span class="saved-note" id="pkgSavedNote">Tersimpan.</span>
+    <div class="admin-page active" data-page="approval">
+      <div class="toolbar"><button id="refreshBtn">↻ Refresh</button></div>
+      <h2 class="section-title">Menunggu Approval</h2>
+      <div id="pendingList"></div>
     </div>
-    <div class="error" id="pkgError"></div>
+
+    <div class="admin-page" data-page="riwayat">
+      <h2 class="section-title">Riwayat Terbaru</h2>
+      <div id="recentList"></div>
+    </div>
+
+    <div class="admin-page" data-page="sesi">
+      <h2 class="section-title">Sesi Aktif (Device)</h2>
+      <p style="color:var(--slate); font-size:.82rem; margin:-6px 0 14px;">Login di device baru otomatis logout device lama — cuma 1 device aktif per akun. Paksa keluar cuma dibutuhin buat kasus khusus (mis. akun dicurigai dipakai orang lain).</p>
+      <div id="sessionsList"></div>
+    </div>
+
+    <div class="admin-page" data-page="siswa">
+      <h2 class="section-title">Data Siswa (KYC)</h2>
+      <div class="toolbar"><button id="exportStudentsBtn" class="btn-secondary">⬇ Export CSV</button></div>
+      <div id="studentsList"></div>
+    </div>
+
+    <div class="admin-page" data-page="paket">
+      <h2 class="section-title">Kelola Paket</h2>
+      <div class="pkg-editor" id="pkgEditor"><p class="empty">Memuat…</p></div>
+      <div class="pkg-actions-row">
+        <button class="btn" id="savePkgBtn">💾 Simpan Harga</button>
+        <span class="saved-note" id="pkgSavedNote">Tersimpan.</span>
+      </div>
+      <div class="error" id="pkgError"></div>
+    </div>
   </div>
 </div>
 
@@ -186,6 +218,14 @@ function showDashboard(){
   loadSessions();
   loadStudents();
 }
+
+document.getElementById('adminTabs').addEventListener('click', e=>{
+  const btn = e.target.closest('.admin-tab');
+  if(!btn) return;
+  const page = btn.dataset.page;
+  document.querySelectorAll('.admin-tab').forEach(b=>b.classList.toggle('active', b===btn));
+  document.querySelectorAll('.admin-page').forEach(p=>p.classList.toggle('active', p.dataset.page===page));
+});
 
 document.getElementById('loginBtn').addEventListener('click', attemptLogin);
 document.getElementById('passwordInput').addEventListener('keydown', e=>{ if(e.key==='Enter') attemptLogin(); });
@@ -243,6 +283,10 @@ async function loadOrders(){
     pendingList.innerHTML = data.pending.length === 0
       ? '<p class="empty">Gak ada pesanan yang nunggu nih. 🎉</p>'
       : data.pending.map(renderPendingCard).join('');
+
+    const countEl = document.getElementById('pendingCount');
+    countEl.textContent = data.pending.length;
+    countEl.classList.toggle('zero', data.pending.length === 0);
 
     recentList.innerHTML = data.recent.length === 0
       ? '<p class="empty">Belum ada riwayat.</p>'
@@ -367,15 +411,32 @@ async function loadSessions(){
   }
 }
 
+function geoLabel(s){
+  const parts = [s.geo_city, s.geo_region, s.geo_country].filter(Boolean);
+  return parts.length ? parts.join(', ') : null;
+}
+
+function deviceLabel(ua){
+  if(!ua) return null;
+  // Short, readable OS/browser guess from the raw user-agent string —
+  // good enough for an admin glance, not a full UA-parser dependency.
+  const os = /iPhone|iPad/.test(ua) ? 'iOS' : /Android/.test(ua) ? 'Android' : /Mac OS X/.test(ua) ? 'macOS' : /Windows/.test(ua) ? 'Windows' : /Linux/.test(ua) ? 'Linux' : 'Unknown OS';
+  const browser = /Edg\//.test(ua) ? 'Edge' : /Chrome\//.test(ua) ? 'Chrome' : /Firefox\//.test(ua) ? 'Firefox' : /Safari\//.test(ua) ? 'Safari' : 'Unknown Browser';
+  return `${browser} · ${os}`;
+}
+
 function renderSessionCard(s){
-  const loginRange = s.oldest_login === s.newest_login
-    ? fmtDate(s.newest_login)
-    : `${fmtDate(s.oldest_login)} – ${fmtDate(s.newest_login)}`;
+  const geo = geoLabel(s);
+  const device = deviceLabel(s.user_agent);
   return `
     <div class="session-card">
       <div>
         <div class="session-username">${escapeHtml(s.username)}</div>
-        <div class="session-meta">Login: ${loginRange}</div>
+        <div class="session-meta">
+          Login: <b>${fmtDate(s.created_at)}</b><br>
+          IP: <span class="session-ip">${s.ip_address ? escapeHtml(s.ip_address) : '—'}</span>${geo ? ' · Lokasi: <b>' + escapeHtml(geo) + '</b>' : ''}<br>
+          Device: <b>${device ? escapeHtml(device) : 'Tidak diketahui'}</b>
+        </div>
       </div>
       <div style="display:flex; align-items:center; gap:12px;">
         <span class="device-count ok">Aktif</span>

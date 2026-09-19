@@ -304,18 +304,23 @@ section.tight{padding:44px 0;}
    the section label, and the session-badge details all hide, leaving
    just each nav item's icon so it reads as a slim button column. State
    persists via localStorage (see app.js) so it survives reloads. */
-/* Vertically aligned with the theme toggle switch in .sidebar-footer
-   (bottom:44px puts its center at the same height as the toggle's),
-   so it reads as part of that same control row instead of floating
-   at an arbitrary height. Still clears the lesson page's sticky
-   subnav bar (z-index:90, far above this button's z-index:5): when it
-   sat near the sidebar's top, the subnav's opaque/blurred background
-   painted over it on every lesson page, leaving it looking half
-   cut-off. bottom (not top) since .sidebar-footer sits at the
-   sidebar's own bottom edge regardless of how tall the nav list above
-   it grows. */
+/* Sits just above .sidebar-footer's top divider line (border-top),
+   clear of the profile/theme-toggle row below it — standing user
+   instruction after an earlier version sat down inside that row,
+   overlapping the theme toggle. bottom:124px was measured against the
+   logged-in footer (name + status pill + theme toggle + Pengaturan/
+   Keluar links, the tallest state the footer ever renders at in the
+   248px sidebar width) so there's still a clear gap above the line in
+   every state, not just the shorter logged-out "Masuk" button one.
+   bottom (not top) since .sidebar-footer sits at the sidebar's own
+   bottom edge regardless of how tall the nav list above it grows.
+   Still clears the lesson page's sticky subnav bar (z-index:90, far
+   above this button's z-index:5): when it sat near the sidebar's top,
+   the subnav's opaque/blurred background painted over it on every
+   lesson page, leaving it looking half cut-off — 124px from the
+   bottom stays well clear of that. */
 .sidebar-collapse-btn{
-  position:absolute;bottom:44px;right:-13px;z-index:5;
+  position:absolute;bottom:124px;right:-13px;z-index:5;
   width:26px;height:26px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   background:var(--card);border:1px solid var(--line);color:var(--slate);

@@ -1,7 +1,9 @@
 /**
  * GET /api/admin/sessions — lists every account that currently has a
  * logged-in device (normally at most one row each, since /api/login
- * auto-evicts other devices on a fresh sign-in) and when it logged in.
+ * auto-evicts other devices on a fresh sign-in), when it logged in, and
+ * that device's IP address / geo location (city/region/country, from
+ * Vercel's edge geo headers at login time) plus user-agent string.
  *
  * GET /api/admin/sessions?resource=students — lists every student
  * account with the personal info (KYC) they've filled in from Settings.
@@ -40,12 +42,13 @@ module.exports = async function handler(req, res) {
     }
 
     if (req.method === 'GET') {
+      // One row per logged-in device (see the file-level comment — a
+      // fresh login always evicts any other device for that account
+      // first, so this is effectively one row per active student).
       const sessions = await sql`
-        SELECT username, COUNT(*)::int AS device_count,
-               MIN(created_at) AS oldest_login, MAX(created_at) AS newest_login
+        SELECT username, user_agent, ip_address, geo_city, geo_region, geo_country, created_at
         FROM sessions
-        GROUP BY username
-        ORDER BY device_count DESC, newest_login DESC
+        ORDER BY created_at DESC
       `;
       res.status(200).json({ success: true, sessions });
       return;
