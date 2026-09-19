@@ -336,6 +336,7 @@ const subjectsData = {
       {id:'bab3-struktur-atom-sistem-periodik', num:'Bab 3', title:'Struktur Atom & Sistem Periodik Unsur', desc:'Partikel sub-atomik, notasi nuklida, konfigurasi elektron kuantum, hingga tabel periodik dan tren keperiodikan.', ready:true, estMinutes:20, subbabCount:8},
       {id:'bab4-ikatan-kimia-dasar', num:'Bab 4', title:'Ikatan Kimia Dasar', desc:'Kaidah duplet & oktet, notasi & struktur Lewis, ikatan ion & kovalen, kepolaran molekul, hingga tata nama IUPAC.', ready:true, estMinutes:22, subbabCount:9},
       {id:'bab4b-bentuk-molekul-vsepr', num:'Bab 4B', title:'Pengayaan: Bentuk Molekul & Teori VSEPR', desc:'Notasi AXnEm, matriks geometri molekul lengkap, kepolaran molekul berdasarkan bentuk, dan pengaruh PEB terhadap kompresi sudut ikatan.', ready:true, estMinutes:18, subbabCount:8},
+      {id:'bab5-hukum-dasar-kimia-stoikiometri', num:'Bab 5', title:'Hukum Dasar Kimia & Stoikiometri', desc:'Lima hukum dasar kimia, massa atom & molekul relatif, konsep mol dan konversinya, hingga pereaksi pembatas dan persen hasil.', ready:true, estMinutes:20, subbabCount:8},
     ]
   },
   fisika: {

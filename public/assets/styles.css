@@ -304,17 +304,18 @@ section.tight{padding:44px 0;}
    the section label, and the session-badge details all hide, leaving
    just each nav item's icon so it reads as a slim button column. State
    persists via localStorage (see app.js) so it survives reloads. */
-/* Anchored near the bottom, just above .sidebar-footer's own dividing
-   border-top line (not below it, overlapping the account row) — stays
-   discoverable right next to the account section without sitting
-   inside it, and still clears the lesson page's sticky subnav bar
-   (z-index:90, far above this button's z-index:5): when it sat near
-   the top, the subnav's opaque/blurred background painted over it on
-   every lesson page, leaving it looking half cut-off. bottom (not top)
-   since .sidebar-footer sits at the sidebar's own bottom edge
-   regardless of how tall the nav list above it grows. */
+/* Vertically aligned with the theme toggle switch in .sidebar-footer
+   (bottom:44px puts its center at the same height as the toggle's),
+   so it reads as part of that same control row instead of floating
+   at an arbitrary height. Still clears the lesson page's sticky
+   subnav bar (z-index:90, far above this button's z-index:5): when it
+   sat near the sidebar's top, the subnav's opaque/blurred background
+   painted over it on every lesson page, leaving it looking half
+   cut-off. bottom (not top) since .sidebar-footer sits at the
+   sidebar's own bottom edge regardless of how tall the nav list above
+   it grows. */
 .sidebar-collapse-btn{
-  position:absolute;bottom:118px;right:-13px;z-index:5;
+  position:absolute;bottom:44px;right:-13px;z-index:5;
   width:26px;height:26px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   background:var(--card);border:1px solid var(--line);color:var(--slate);
@@ -1111,7 +1112,15 @@ table.compare-table tbody th{font-family:'Space Grotesk';font-size:.74rem;color:
 }
 .diagram-eyebrow{font-family:'Space Grotesk';font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--orange-dark);margin:0 0 14px;}
 .diagram-eyebrow .katex{text-transform:none;}
-.diagram-card svg{width:100%;height:auto;display:block;}
+/* :not(.katex-html svg) matters more than it looks: no chapter has
+   ever actually shipped an inline illustrative <svg> here (this rule
+   was pure dead CSS until now), but a diagram-caption CAN contain
+   KaTeX-rendered chemistry (e.g. \(\ce{A + 2B -> C}\)), and mhchem's
+   arrow is itself a small inline <svg>. Without this exclusion, the
+   width:100%/height:auto meant for a full-size diagram graphic forces
+   that tiny arrow's aspect ratio to collapse to near-zero height,
+   making the arrow invisible while everything around it renders fine. */
+.diagram-card svg:not(.katex-html svg){width:100%;height:auto;display:block;}
 .diagram-card img{width:100%;height:auto;display:block;border-radius:12px;background:#fff;padding:14px;box-sizing:border-box;border:1px solid var(--line);}
 .diagram-caption{font-size:.8rem;color:var(--slate);text-align:left;margin:16px 0 0;line-height:1.5;}
 

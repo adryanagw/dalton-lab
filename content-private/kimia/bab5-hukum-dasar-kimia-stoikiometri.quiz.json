@@ -1,0 +1,497 @@
+[
+  {
+    "q": "Hukum Kekekalan Massa yang menyatakan massa total zat sebelum reaksi sama dengan massa total zat setelah reaksi (dalam sistem tertutup) ditemukan oleh...",
+    "opts": [
+      "Joseph Proust (1799)",
+      "Antoine Lavoisier (1789)",
+      "John Dalton (1803)",
+      "Amedeo Avogadro (1811)"
+    ],
+    "correct": 1,
+    "explain": "Hukum Kekekalan Massa ditemukan Antoine Lavoisier tahun 1789: \\(\\sum m_{\\text{reaktan}} = \\sum m_{\\text{produk}}\\) dalam sistem tertutup. Proust menemukan hukum Perbandingan Tetap, Dalton hukum Perbandingan Berganda, dan Avogadro hipotesis jumlah molekul gas."
+  },
+  {
+    "q": "Perbandingan massa unsur-unsur pembentuk suatu senyawa selalu tetap dan tertentu, tidak bergantung pada asal pembuatannya — ini adalah bunyi hukum...",
+    "opts": [
+      "Kekekalan Massa",
+      "Perbandingan Berganda",
+      "Perbandingan Tetap (Proust)",
+      "Perbandingan Volume"
+    ],
+    "correct": 2,
+    "explain": "Ini adalah Hukum Perbandingan Tetap yang ditemukan Joseph Proust (1799). Contohnya, air (H2O) yang dibuat dari sumber mana pun selalu punya perbandingan massa H:O yang sama."
+  },
+  {
+    "q": "John Dalton (1803) menemukan hukum Perbandingan Berganda, yang berlaku ketika...",
+    "opts": [
+      "Satu unsur membentuk satu senyawa saja",
+      "Dua unsur membentuk lebih dari satu senyawa, dengan massa unsur pertama konstan, massa unsur kedua berbanding sebagai bilangan bulat sederhana",
+      "Gas-gas bereaksi pada volume yang sama",
+      "Massa total zat sebelum dan sesudah reaksi selalu sama"
+    ],
+    "correct": 1,
+    "explain": "Hukum Perbandingan Berganda Dalton berlaku ketika dua unsur bisa membentuk lebih dari satu senyawa (mis. CO dan CO2) — jika massa unsur pertama dibuat konstan, massa unsur kedua di senyawa-senyawa itu berbanding sebagai bilangan bulat sederhana."
+  },
+  {
+    "q": "Pada suhu dan tekanan sama, volume gas-gas yang bereaksi dan volume hasil reaksi berbanding sebagai bilangan bulat sederhana sesuai koefisien reaksinya — ini adalah hukum...",
+    "opts": [
+      "Perbandingan Volume (Gay-Lussac, 1808)",
+      "Kekekalan Massa (Lavoisier, 1789)",
+      "Hipotesis Avogadro (1811)",
+      "Perbandingan Tetap (Proust, 1799)"
+    ],
+    "correct": 0,
+    "explain": "Ini adalah Hukum Perbandingan Volume yang ditemukan Gay-Lussac tahun 1808 — khusus berlaku untuk gas-gas pada T, P yang sama."
+  },
+  {
+    "q": "Hipotesis Avogadro (1811) menyatakan bahwa pada T dan P yang sama, gas-gas bervolume sama mengandung...",
+    "opts": [
+      "Massa yang sama",
+      "Jumlah molekul (mol) yang sama",
+      "Massa jenis yang sama",
+      "Jenis unsur yang sama"
+    ],
+    "correct": 1,
+    "explain": "Hipotesis Avogadro: pada T, P sama, gas-gas bervolume sama mengandung jumlah molekul (mol) yang sama, dirumuskan \\(\\dfrac{V_1}{n_1} = \\dfrac{V_2}{n_2}\\). Ini dasar dari volume molar gas di STP/RTP."
+  },
+  {
+    "q": "Urutan tahun penemuan lima hukum dasar kimia dari yang paling awal ke paling akhir adalah...",
+    "opts": [
+      "Lavoisier → Proust → Dalton → Gay-Lussac → Avogadro",
+      "Dalton → Lavoisier → Avogadro → Proust → Gay-Lussac",
+      "Avogadro → Gay-Lussac → Dalton → Proust → Lavoisier",
+      "Proust → Lavoisier → Gay-Lussac → Dalton → Avogadro"
+    ],
+    "correct": 0,
+    "explain": "Urutan kronologis: Lavoisier (1789, Kekekalan Massa) → Proust (1799, Perbandingan Tetap) → Dalton (1803, Perbandingan Berganda) → Gay-Lussac (1808, Perbandingan Volume) → Avogadro (1811, Hipotesis Avogadro)."
+  },
+  {
+    "q": "Massa Atom Relatif (Ar) suatu unsur didefinisikan sebagai perbandingan massa rata-rata satu atom unsur tersebut terhadap...",
+    "opts": [
+      "Massa satu atom Hidrogen (H)",
+      "\\(\\tfrac{1}{12}\\) massa satu atom Karbon-12 (\\(\\ce{^{12}C}\\))",
+      "Massa satu mol partikel apa pun",
+      "Massa satu atom Oksigen (O)"
+    ],
+    "correct": 1,
+    "explain": "Ar adalah perbandingan massa rata-rata satu atom unsur terhadap \\(\\tfrac{1}{12}\\) massa satu atom Karbon-12, standar yang disepakati secara internasional."
+  },
+  {
+    "q": "Kenapa perhitungan Ar suatu unsur sering memakai rata-rata terbobot kelimpahan isotop, bukan cuma satu angka massa saja?",
+    "opts": [
+      "Karena semua unsur di alam radioaktif",
+      "Karena di alam kebanyakan unsur memiliki lebih dari satu isotop stabil dengan kelimpahan berbeda-beda",
+      "Karena Ar hanya berlaku untuk gas",
+      "Karena massa atom selalu berubah setiap saat"
+    ],
+    "correct": 1,
+    "explain": "Banyak unsur di alam adalah campuran beberapa isotop stabil (mis. Klorin: 35Cl dan 37Cl) dengan proporsi kelimpahan tertentu, sehingga Ar dihitung sebagai \\(\\sum(\\%\\text{Kelimpahan}_i \\times A_{r,i})\\), bukan diambil dari satu isotop saja."
+  },
+  {
+    "q": "Unsur Klorin terdiri dari isotop \\(\\ce{^{35}Cl}\\) (massa 34,97 sma, kelimpahan 75,78%) dan \\(\\ce{^{37}Cl}\\) (massa 36,97 sma, kelimpahan 24,22%). Berapa Ar Klorin?",
+    "opts": [
+      "34,97 sma",
+      "36,97 sma",
+      "35,453 sma",
+      "36,00 sma"
+    ],
+    "correct": 2,
+    "explain": "\\(A_r(\\ce{Cl}) = (0{,}7578 \\times 34{,}97) + (0{,}2422 \\times 36{,}97) = 26{,}499 + 8{,}954 = 35{,}453\\) sma (dibulatkan 35,5)."
+  },
+  {
+    "q": "Massa Molekul Relatif (Mr) suatu senyawa dihitung dengan cara...",
+    "opts": [
+      "Mengalikan Ar seluruh unsur penyusunnya",
+      "Menjumlahkan Ar tiap unsur penyusun dikali jumlah atomnya masing-masing",
+      "Membagi Ar unsur terbesar dengan jumlah atom total",
+      "Mengambil rata-rata Ar seluruh unsur penyusunnya tanpa memperhatikan jumlah atom"
+    ],
+    "correct": 1,
+    "explain": "\\(M_r(\\ce{A_aB_b}) = a \\cdot A_r(\\ce{A}) + b \\cdot A_r(\\ce{B})\\) — Mr adalah jumlah Ar tiap unsur dikali koefisien/jumlah atomnya dalam rumus kimia."
+  },
+  {
+    "q": "Manakah pernyataan yang benar tentang hubungan Ar dan Mr?",
+    "opts": [
+      "Ar dan Mr adalah dua besaran yang sama sekali tidak berkaitan",
+      "Mr hanya dipakai untuk unsur, Ar hanya dipakai untuk senyawa",
+      "Mr adalah jumlah Ar dari seluruh atom penyusun suatu molekul/senyawa",
+      "Ar selalu lebih besar nilainya daripada Mr"
+    ],
+    "correct": 2,
+    "explain": "Mr sebenarnya cuma penjumlahan Ar unsur-unsur penyusun molekul. Ar dipakai untuk satu unsur (bisa jadi rata-rata beberapa isotop), Mr dipakai untuk gabungan unsur dalam satu senyawa."
+  },
+  {
+    "q": "Satu mol zat didefinisikan sebagai jumlah zat yang mengandung tepat berapa spesi elementer (atom/molekul/ion)?",
+    "opts": [
+      "\\(6{,}022 \\times 10^{20}\\)",
+      "\\(3{,}011 \\times 10^{23}\\)",
+      "\\(6{,}022 \\times 10^{23}\\)",
+      "\\(1{,}204 \\times 10^{23}\\)"
+    ],
+    "correct": 2,
+    "explain": "Satu mol mengandung tepat \\(6{,}022 \\times 10^{23}\\) spesi elementer — angka ini disebut Tetapan Avogadro (\\(N_A\\))."
+  },
+  {
+    "q": "Rumus untuk mengubah massa zat (gram) menjadi mol adalah...",
+    "opts": [
+      "\\(n = m \\times M_m\\)",
+      "\\(n = \\dfrac{m}{M_m}\\)",
+      "\\(n = \\dfrac{M_m}{m}\\)",
+      "\\(n = m + M_m\\)"
+    ],
+    "correct": 1,
+    "explain": "Mol dihitung dari massa dibagi massa molar: \\(n = \\dfrac{m}{M_m}\\), dengan \\(M_m\\) bernilai sama dengan Ar atau Mr zat tersebut."
+  },
+  {
+    "q": "Diketahui 8,8 gram gas \\(\\ce{CO2}\\) (Mr = 44 g/mol). Berapa mol \\(\\ce{CO2}\\) tersebut?",
+    "opts": [
+      "0,10 mol",
+      "0,20 mol",
+      "0,40 mol",
+      "2,00 mol"
+    ],
+    "correct": 1,
+    "explain": "\\(n = \\dfrac{m}{M_r} = \\dfrac{8{,}8}{44} = 0{,}20\\) mol."
+  },
+  {
+    "q": "Jika diketahui 0,20 mol gas \\(\\ce{CO2}\\), berapa jumlah molekul \\(\\ce{CO2}\\) tersebut?",
+    "opts": [
+      "\\(6{,}022 \\times 10^{23}\\) molekul",
+      "\\(1{,}204 \\times 10^{23}\\) molekul",
+      "\\(3{,}011 \\times 10^{22}\\) molekul",
+      "\\(2{,}000 \\times 10^{23}\\) molekul"
+    ],
+    "correct": 1,
+    "explain": "\\(N = n \\times N_A = 0{,}20 \\times 6{,}022 \\times 10^{23} = 1{,}204 \\times 10^{23}\\) molekul."
+  },
+  {
+    "q": "Berapa volume 0,20 mol gas \\(\\ce{CO2}\\) pada kondisi STP (0°C, 1 atm)?",
+    "opts": [
+      "2,24 Liter",
+      "4,48 Liter",
+      "4,80 Liter",
+      "22,4 Liter"
+    ],
+    "correct": 1,
+    "explain": "\\(V_{\\text{STP}} = n \\times 22{,}4 = 0{,}20 \\times 22{,}4 = 4{,}48\\) Liter."
+  },
+  {
+    "q": "Volume molar gas pada kondisi RTP (25°C, 1 atm) untuk setiap 1 mol gas adalah...",
+    "opts": [
+      "22,4 Liter",
+      "24,0 Liter",
+      "25,0 Liter",
+      "20,4 Liter"
+    ],
+    "correct": 1,
+    "explain": "Pada RTP (25°C, 1 atm), 1 mol gas menempati volume 24,0 Liter — berbeda dari STP (0°C, 1 atm) yang bernilai 22,4 Liter."
+  },
+  {
+    "q": "Untuk gas pada kondisi selain STP/RTP (suhu &amp; tekanan sembarang), rumus yang berlaku adalah Persamaan Gas Ideal:",
+    "opts": [
+      "\\(P \\cdot V = n \\cdot R \\cdot T\\)",
+      "\\(P + V = n + R + T\\)",
+      "\\(P \\cdot n = V \\cdot R \\cdot T\\)",
+      "\\(V = n \\cdot T\\)"
+    ],
+    "correct": 0,
+    "explain": "Persamaan Gas Ideal: \\(P \\cdot V = n \\cdot R \\cdot T\\), dengan \\(R = 0{,}0821\\) L·atm/(mol·K). Dipakai kalau kondisi gas bukan STP (0°C, 1 atm) atau RTP (25°C, 1 atm)."
+  },
+  {
+    "q": "Nilai tetapan gas ideal \\(R\\) yang umum dipakai dalam satuan L·atm/(mol·K) adalah...",
+    "opts": [
+      "8,314",
+      "0,0821",
+      "22,4",
+      "6,022"
+    ],
+    "correct": 1,
+    "explain": "\\(R = 0{,}0821\\) L·atm/(mol·K) adalah nilai yang dipakai bersama satuan atm dan Liter dalam persamaan gas ideal \\(PV = nRT\\)."
+  },
+  {
+    "q": "Dua gas berada pada suhu dan tekanan yang sama. Gas A punya volume 2× volume gas B. Berdasarkan Hipotesis Avogadro, hubungan jumlah mol keduanya adalah...",
+    "opts": [
+      "Mol gas A = mol gas B",
+      "Mol gas A = 2× mol gas B",
+      "Mol gas A = 0,5× mol gas B",
+      "Tidak bisa ditentukan tanpa tahu jenis gasnya"
+    ],
+    "correct": 1,
+    "explain": "Karena \\(\\dfrac{V_1}{n_1} = \\dfrac{V_2}{n_2}\\) pada T, P sama, jika volume gas A 2× volume gas B maka mol gas A juga 2× mol gas B — berlaku untuk gas apa pun, tidak bergantung jenisnya."
+  },
+  {
+    "q": "Alur konversi yang BENAR untuk mengubah jumlah partikel langsung menjadi massa (gram) adalah...",
+    "opts": [
+      "Partikel langsung dikonversi ke gram tanpa lewat mol",
+      "Partikel → mol (bagi \\(N_A\\)) → massa (kali \\(M_m\\))",
+      "Partikel → massa (kali \\(N_A\\)) → mol (bagi \\(M_m\\))",
+      "Partikel → volume STP → massa"
+    ],
+    "correct": 1,
+    "explain": "Sesuai peta konversi mol, tidak ada jalan pintas langsung dari partikel ke gram — harus lewat mol dulu: jumlah partikel dibagi \\(N_A\\) untuk dapat mol, lalu mol dikali massa molar untuk dapat gram."
+  },
+  {
+    "q": "Berapa massa (gram) dari \\(3{,}011\\times10^{23}\\) molekul gas \\(\\ce{O2}\\) (Mr = 32 g/mol)?",
+    "opts": [
+      "8 gram",
+      "16 gram",
+      "32 gram",
+      "64 gram"
+    ],
+    "correct": 1,
+    "explain": "Mol \\(\\ce{O2} = \\dfrac{3{,}011\\times10^{23}}{6{,}022\\times10^{23}} = 0{,}5\\) mol. Massa \\(= n \\times M_r = 0{,}5 \\times 32 = 16\\) gram."
+  },
+  {
+    "q": "Berapa mol gas \\(\\ce{N2}\\) yang terkandung dalam 5,6 Liter gas tersebut pada kondisi STP?",
+    "opts": [
+      "0,10 mol",
+      "0,25 mol",
+      "0,50 mol",
+      "1,00 mol"
+    ],
+    "correct": 1,
+    "explain": "\\(n = \\dfrac{V_{\\text{STP}}}{22{,}4} = \\dfrac{5{,}6}{22{,}4} = 0{,}25\\) mol."
+  },
+  {
+    "q": "Dalam reaksi kimia setara, koefisien reaksi menyatakan perbandingan...",
+    "opts": [
+      "Massa zat-zat yang bereaksi",
+      "Volume zat cair yang bereaksi",
+      "Mol zat-zat yang bereaksi dan dihasilkan",
+      "Jumlah unsur dalam tabel periodik"
+    ],
+    "correct": 2,
+    "explain": "Koefisien pada persamaan reaksi setara menyatakan perbandingan mol (bukan langsung massa atau volume) zat-zat yang bereaksi dan dihasilkan."
+  },
+  {
+    "q": "Pereaksi Pembatas (Limiting Reactant) adalah pereaksi yang...",
+    "opts": [
+      "Jumlahnya paling banyak dalam campuran",
+      "Habis bereaksi lebih dulu sehingga membatasi jumlah produk yang bisa terbentuk",
+      "Tidak ikut bereaksi sama sekali",
+      "Selalu unsur logam dalam reaksi"
+    ],
+    "correct": 1,
+    "explain": "Pereaksi Pembatas adalah pereaksi yang habis lebih dulu karena tidak dicampur dalam perbandingan stoikiometri yang pas — dialah yang membatasi berapa banyak produk maksimal yang bisa terbentuk."
+  },
+  {
+    "q": "Langkah pertama untuk menentukan Pereaksi Pembatas dalam suatu reaksi adalah...",
+    "opts": [
+      "Langsung membandingkan massa awal tiap pereaksi",
+      "Menghitung mol awal masing-masing pereaksi",
+      "Menghitung Mr produk reaksi",
+      "Mengisi baris Sisa (S) pada tabel M-R-S"
+    ],
+    "correct": 1,
+    "explain": "Langkah menentukan Pereaksi Pembatas: (1) hitung mol awal masing-masing pereaksi, (2) bagi mol awal dengan koefisien reaksinya, (3) nilai terkecil adalah Pereaksi Pembatas."
+  },
+  {
+    "q": "Setelah mol awal tiap pereaksi dibagi dengan koefisien reaksinya masing-masing, Pereaksi Pembatas ditentukan sebagai pereaksi dengan hasil bagi yang...",
+    "opts": [
+      "Paling besar",
+      "Paling kecil",
+      "Sama dengan nol",
+      "Sama dengan koefisien reaksi produk"
+    ],
+    "correct": 1,
+    "explain": "Pereaksi dengan nilai \\(\\tfrac{n}{\\text{Koefisien}}\\) paling kecil adalah Pereaksi Pembatas — dialah yang habis bereaksi (nilai Sisa = 0)."
+  },
+  {
+    "q": "Pada reaksi \\(\\ce{CH4(g) + 2O2(g) -> CO2(g) + 2H2O(g)}\\), tersedia 0,5 mol \\(\\ce{CH4}\\) dan 1,2 mol \\(\\ce{O2}\\). Manakah pereaksi pembatasnya?",
+    "opts": [
+      "\\(\\ce{CH4}\\)",
+      "\\(\\ce{O2}\\)",
+      "\\(\\ce{CO2}\\)",
+      "Keduanya habis bersamaan"
+    ],
+    "correct": 0,
+    "explain": "Uji perbandingan: CH4 → 0,5/1 = 0,5; O2 → 1,2/2 = 0,6. Karena 0,5 < 0,6, CH4 adalah Pereaksi Pembatas."
+  },
+  {
+    "q": "Melanjutkan soal \\(\\ce{CH4(g) + 2O2(g) -> CO2(g) + 2H2O(g)}\\) dengan 0,5 mol \\(\\ce{CH4}\\) dan 1,2 mol \\(\\ce{O2}\\), berapa mol gas \\(\\ce{CO2}\\) yang dihasilkan?",
+    "opts": [
+      "0,20 mol",
+      "0,50 mol",
+      "1,00 mol",
+      "1,20 mol"
+    ],
+    "correct": 1,
+    "explain": "Karena CH4 (0,5 mol) adalah pereaksi pembatas dan koefisien CH4:CO2 = 1:1, maka CO2 yang terbentuk juga 0,5 mol (dihitung dari baris Reaksi pada tabel M-R-S: \\(x = 0{,}5\\))."
+  },
+  {
+    "q": "Pada reaksi yang sama (\\(\\ce{CH4 + 2O2 -> CO2 + 2H2O}\\), CH4 = 0,5 mol, O2 = 1,2 mol), berapa mol \\(\\ce{O2}\\) yang tersisa setelah reaksi?",
+    "opts": [
+      "0 mol",
+      "0,10 mol",
+      "0,20 mol",
+      "1,00 mol"
+    ],
+    "correct": 2,
+    "explain": "O2 yang bereaksi = 2 × 0,5 = 1,0 mol (sesuai koefisien dan x=0,5 dari pereaksi pembatas CH4). Sisa O2 = 1,2 − 1,0 = 0,2 mol."
+  },
+  {
+    "q": "Dalam tabel M-R-S, baris Mula-mula (M) diisi dengan...",
+    "opts": [
+      "Hasil akhir setelah reaksi selesai",
+      "Kondisi awal (mol) sebelum reaksi terjadi",
+      "Selisih mol pereaksi dan produk",
+      "Nol untuk semua zat"
+    ],
+    "correct": 1,
+    "explain": "Baris Mula-mula (M) selalu diisi kondisi mol awal sebelum reaksi berlangsung — bukan hasil hitungan apa pun."
+  },
+  {
+    "q": "Dalam tabel M-R-S, baris Reaksi (R) untuk pereaksi selalu diberi tanda...",
+    "opts": [
+      "Positif (+), karena mol pereaksi bertambah",
+      "Negatif (−), karena mol pereaksi berkurang saat bereaksi",
+      "Nol, karena pereaksi tidak berubah",
+      "Tergantung jenis pereaksinya"
+    ],
+    "correct": 1,
+    "explain": "Baris Reaksi (R) untuk pereaksi selalu bertanda negatif (−) karena mol pereaksi berkurang selama reaksi berlangsung, sedangkan untuk produk bertanda positif (+) karena mol produk bertambah."
+  },
+  {
+    "q": "Dalam tabel M-R-S, baris Sisa (S) dihitung dengan cara...",
+    "opts": [
+      "Mula-mula (M) dikurangi Reaksi (R)",
+      "Mula-mula (M) ditambah Reaksi (R), dijumlahkan langsung ke bawah per kolom",
+      "Reaksi (R) dikali koefisien produk",
+      "Mula-mula (M) dibagi Reaksi (R)"
+    ],
+    "correct": 1,
+    "explain": "Baris Sisa (S) = M + R (dijumlahkan ke bawah per kolom, memperhitungkan tanda + / − pada baris R). Tepat satu pereaksi di baris S wajib bernilai 0, yaitu Pereaksi Pembatasnya."
+  },
+  {
+    "q": "Dalam Kalsium Oksida (\\(\\ce{CaO}\\)), perbandingan massa Ca : O selalu 5 : 2 (Hukum Proust). Jika 20 gram Ca direaksikan dengan 10 gram O, berapa gram O yang sebenarnya dibutuhkan agar tepat habis bereaksi dengan 20 gram Ca?",
+    "opts": [
+      "4 gram",
+      "8 gram",
+      "10 gram",
+      "12 gram"
+    ],
+    "correct": 1,
+    "explain": "\\(m_O = \\dfrac{2}{5} \\times 20 \\text{ g} = 8\\) gram. Karena tersedia 10 g O (lebih dari 8 g), maka Ca habis duluan dan O berlebih 2 gram."
+  },
+  {
+    "q": "Melanjutkan soal Kalsium Oksida (Ca:O = 5:2, 20 g Ca + 10 g O), berapa massa \\(\\ce{CaO}\\) yang terbentuk?",
+    "opts": [
+      "18 gram",
+      "20 gram",
+      "28 gram",
+      "30 gram"
+    ],
+    "correct": 2,
+    "explain": "Massa CaO = massa Ca bereaksi + massa O bereaksi = 20 g + 8 g = 28 gram (Hukum Kekekalan Massa)."
+  },
+  {
+    "q": "Melanjutkan soal Kalsium Oksida yang sama, berapa gram Oksigen yang tersisa (tidak ikut bereaksi)?",
+    "opts": [
+      "0 gram",
+      "2 gram",
+      "8 gram",
+      "10 gram"
+    ],
+    "correct": 1,
+    "explain": "Sisa Oksigen = O tersedia − O bereaksi = 10 g − 8 g = 2 gram."
+  },
+  {
+    "q": "Percent Yield (Persentase Hasil) dihitung dengan rumus...",
+    "opts": [
+      "\\(\\dfrac{\\text{Hasil Teoretis}}{\\text{Hasil Aktual}} \\times 100\\%\\)",
+      "\\(\\dfrac{\\text{Hasil Aktual}}{\\text{Hasil Teoretis}} \\times 100\\%\\)",
+      "Hasil Aktual − Hasil Teoretis",
+      "Hasil Aktual + Hasil Teoretis"
+    ],
+    "correct": 1,
+    "explain": "Percent Yield = (Hasil Aktual / Hasil Teoretis) × 100%. Hasil Teoretis dihitung dari tabel M-R-S, Hasil Aktual adalah hasil sungguhan di eksperimen/lab."
+  },
+  {
+    "q": "Kenapa Percent Yield di eksperimen nyata biasanya di bawah 100%?",
+    "opts": [
+      "Karena hukum kekekalan massa tidak berlaku di lab",
+      "Karena ada faktor seperti reaksi samping, zat yang menguap, atau produk yang tertinggal di alat, sehingga hasil aktual lebih kecil dari hasil teoretis",
+      "Karena mol pereaksi pembatas selalu dihitung terlalu besar",
+      "Karena koefisien reaksi selalu salah ditulis"
+    ],
+    "correct": 1,
+    "explain": "Hasil teoretis dari tabel M-R-S adalah hasil maksimal ideal. Di dunia nyata, reaksi samping, zat yang menguap/tertinggal di alat, atau reaksi yang tidak sempurna membuat hasil aktual biasanya lebih kecil, sehingga Percent Yield < 100%."
+  },
+  {
+    "q": "Sebuah reaksi punya hasil teoretis 10 gram produk, tapi hasil aktual di lab hanya 8 gram. Berapa Percent Yield reaksi tersebut?",
+    "opts": [
+      "8%",
+      "80%",
+      "125%",
+      "800%"
+    ],
+    "correct": 1,
+    "explain": "Percent Yield = (8/10) × 100% = 80%."
+  },
+  {
+    "q": "Pada diagram peta konversi mol, panah dari 'Mass (Grams)' menuju 'Moles (mol)' menyatakan operasi...",
+    "opts": [
+      "Dikali dengan tetapan Avogadro",
+      "Dibagi dengan massa molar",
+      "Dikali dengan massa molar",
+      "Dibagi dengan tetapan Avogadro"
+    ],
+    "correct": 1,
+    "explain": "Untuk mengubah massa (gram) menjadi mol, gram dibagi massa molar (\\(M_m\\)): \\(n = m / M_m\\). Arah sebaliknya (mol ke massa) memakai perkalian dengan massa molar."
+  },
+  {
+    "q": "Pada diagram peta konversi mol, panah dari 'Moles (mol)' menuju 'Number of Particles' menyatakan operasi...",
+    "opts": [
+      "Dibagi massa molar",
+      "Dikali massa molar",
+      "Dikali tetapan Avogadro (\\(N_A\\))",
+      "Dibagi 22,4"
+    ],
+    "correct": 2,
+    "explain": "Untuk mengubah mol menjadi jumlah partikel, mol dikali tetapan Avogadro: \\(N = n \\times N_A\\). Arah sebaliknya (partikel ke mol) memakai pembagian dengan \\(N_A\\)."
+  },
+  {
+    "q": "Manakah alur konversi mol dari gram ke jumlah partikel yang BENAR?",
+    "opts": [
+      "gram → (bagi \\(M_m\\)) → mol → (kali \\(N_A\\)) → jumlah partikel",
+      "gram → (kali \\(M_m\\)) → mol → (bagi \\(N_A\\)) → jumlah partikel",
+      "gram → (bagi \\(N_A\\)) → mol → (kali \\(M_m\\)) → jumlah partikel",
+      "gram langsung dikali \\(N_A\\) tanpa lewat mol"
+    ],
+    "correct": 0,
+    "explain": "Dari gram ke mol: bagi massa molar. Dari mol ke jumlah partikel: kali tetapan Avogadro. Mol selalu jadi titik tengah wajib, tidak ada jalan pintas langsung gram ke partikel."
+  },
+  {
+    "q": "Diketahui gas metana \\(\\ce{CH4}\\) sebanyak 0,4 mol berada pada kondisi RTP (25°C, 1 atm). Berapa volume gas tersebut?",
+    "opts": [
+      "8,96 Liter",
+      "9,60 Liter",
+      "22,4 Liter",
+      "24,0 Liter"
+    ],
+    "correct": 1,
+    "explain": "\\(V_{\\text{RTP}} = n \\times 24{,}0 = 0{,}4 \\times 24{,}0 = 9{,}60\\) Liter."
+  },
+  {
+    "q": "Manakah pernyataan yang paling tepat menggambarkan hubungan antara lima hukum dasar kimia dan konsep mol?",
+    "opts": [
+      "Konsep mol tidak berkaitan sama sekali dengan hukum-hukum dasar kimia",
+      "Konsep mol adalah alat praktis untuk menerapkan hukum-hukum dasar kimia secara kuantitatif, terutama hukum Perbandingan Volume dan Hipotesis Avogadro",
+      "Hukum-hukum dasar kimia hanya berlaku untuk zat padat, sedangkan konsep mol hanya untuk gas",
+      "Konsep mol menggantikan seluruh hukum dasar kimia sehingga hukum-hukum lama sudah tidak relevan"
+    ],
+    "correct": 1,
+    "explain": "Kelima hukum dasar kimia menjelaskan hubungan kuantitatif massa/volume zat dalam reaksi. Konsep mol (terutama volume molar gas 22,4 L/mol dan hubungan \\(V_1/n_1 = V_2/n_2\\)) adalah alat praktis untuk menghitungnya, langsung diturunkan dari Hipotesis Avogadro."
+  },
+  {
+    "q": "Sebanyak 6 gram gas \\(\\ce{H2}\\) (Mr = 2 g/mol) direaksikan dengan gas \\(\\ce{N2}\\) berlebih membentuk \\(\\ce{NH3}\\) sesuai reaksi \\(\\ce{N2 + 3H2 -> 2NH3}\\). Berapa mol \\(\\ce{NH3}\\) maksimal yang bisa terbentuk (H2 sebagai pereaksi pembatas karena N2 berlebih)?",
+    "opts": [
+      "1 mol",
+      "2 mol",
+      "3 mol",
+      "6 mol"
+    ],
+    "correct": 1,
+    "explain": "Mol H2 = 6/2 = 3 mol. Karena N2 berlebih, H2 pasti pereaksi pembatas. Sesuai perbandingan koefisien H2:NH3 = 3:2, mol NH3 = (2/3) × mol H2 = (2/3) × 3 = 2 mol."
+  }
+]
